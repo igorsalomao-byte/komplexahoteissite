@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contato — Fale com a Komplexa Hotéis</title>
+  <meta name="description" content="Fale com a Komplexa Hotéis e estruture seu sistema de reservas diretas. Preencha o formulário e receba contato em até 24 horas. Estratégia personalizada para o seu hotel." />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://komplexahoteis.com/contato.html" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://komplexahoteis.com/contato.html" />
+  <meta property="og:title" content="Contato — Fale com a Komplexa Hotéis" />
+  <meta property="og:description" content="Fale com a Komplexa Hotéis e estruture seu sistema de reservas diretas. Preencha o formulário e receba contato em até 24 horas." />
+  <meta property="og:image" content="https://komplexahoteis.com/assets/og-image.jpg" />
+  <meta property="og:locale" content="pt_BR" />
+  <meta property="og:site_name" content="Komplexa Hotéis" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Contato — Komplexa Hotéis" />
+  <meta name="twitter:description" content="Estruture seu sistema de reservas diretas. Preencha o formulário e receba contato em até 24 horas." />
+  <meta name="twitter:image" content="https://komplexahoteis.com/assets/og-image.jpg" />
+
+  <!-- Schema.org -->
+  <script type="application/ld+json">
+  [
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "Komplexa Hotéis",
+      "url": "https://komplexahoteis.com",
+      "logo": "https://komplexahoteis.com/assets/logo.svg",
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "contactType": "sales",
+        "url": "https://form.respondi.app/QnLOVD5g",
+        "availableLanguage": "Portuguese"
+      }
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://komplexahoteis.com/" },
+        { "@type": "ListItem", "position": 2, "name": "Contato", "item": "https://komplexahoteis.com/contato.html" }
+      ]
+    }
+  ]
+  </script>
+
+  <link rel="stylesheet" href="assets/style.css" />
+  <style>
+    /* ─── HERO ─────────────────────────────── */
+    .contact-hero {
+      background: var(--navy);
+      padding: 140px 0 100px;
+      position: relative; overflow: hidden;
+    }
+    .contact-hero::before {
+      content: '';
+      position: absolute; top: -100px; right: -80px;
+      width: 500px; height: 500px;
+      background: radial-gradient(circle, rgba(0,198,255,0.1) 0%, transparent 65%);
+    }
+    .contact-hero .container { position: relative; z-index: 1; }
+    .contact-hero .tag { color: rgba(0,198,255,0.8); }
+    .contact-hero h1 {
+      font-size: clamp(2.4rem, 4vw, 3.4rem); font-weight: 800;
+      letter-spacing: -1px; color: #fff;
+      margin-bottom: 18px; max-width: 640px;
+    }
+    .contact-hero p {
+      font-size: 1.05rem; color: rgba(255,255,255,0.55);
+      max-width: 520px; line-height: 1.75;
+    }
+
+    /* ─── MAIN SECTION ───────────────────────── */
+    .contact-main { background: var(--bg); padding: 80px 0; }
+    .contact-grid {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: start;
+    }
+
+    /* CTA card */
+    .cta-card {
+      background: var(--white); border: 1px solid var(--border);
+      border-radius: 20px; padding: 40px;
+      box-shadow: 0 8px 40px rgba(20,35,60,0.07);
+    }
+    .cta-card h2 {
+      font-size: 1.5rem; font-weight: 800; color: var(--navy);
+      letter-spacing: -0.3px; margin-bottom: 10px;
+    }
+    .cta-card > p {
+      font-size: 0.9rem; color: var(--text); line-height: 1.7; margin-bottom: 28px;
+    }
+    .cta-main-btn {
+      display: flex; align-items: center; justify-content: space-between;
+      background: var(--grad); color: #fff;
+      border-radius: 12px; padding: 20px 24px;
+      text-decoration: none; margin-bottom: 12px;
+      box-shadow: 0 6px 24px rgba(0,198,255,0.3);
+      transition: all 0.2s;
+    }
+    .cta-main-btn:hover { transform: translateY(-2px); box-shadow: 0 10px 32px rgba(0,198,255,0.4); }
+    .cta-main-btn-left h4 {
+      font-family: 'Exo 2', sans-serif; font-weight: 700; font-size: 1rem; margin-bottom: 2px;
+    }
+    .cta-main-btn-left p { font-size: 0.8rem; opacity: 0.75; }
+    .cta-main-btn-arrow { font-size: 1.3rem; opacity: 0.8; }
+
+    .cta-trust {
+      display: flex; align-items: center; gap: 8px;
+      font-size: 0.78rem; color: var(--gray);
+      margin-top: 16px;
+    }
+    .cta-trust::before { content: '🔒'; font-size: 0.85rem; }
+
+    .contact-divider { height: 1px; background: var(--border); margin: 28px 0; }
+
+    .contact-steps { display: flex; flex-direction: column; gap: 16px; }
+    .cs-step {
+      display: flex; gap: 14px; align-items: flex-start;
+    }
+    .cs-num {
+      width: 28px; height: 28px; border-radius: 50%;
+      background: rgba(0,198,255,0.1); color: var(--blue);
+      display: flex; align-items: center; justify-content: center;
+      font-family: 'Exo 2', sans-serif; font-weight: 700; font-size: 0.8rem;
+      flex-shrink: 0; margin-top: 2px;
+    }
+    .cs-step h5 {
+      font-family: 'Exo 2', sans-serif; font-size: 0.88rem; font-weight: 700;
+      color: var(--navy); margin-bottom: 2px;
+    }
+    .cs-step p { font-size: 0.8rem; color: var(--text); line-height: 1.6; }
+
+    /* Info column */
+    .info-col { display: flex; flex-direction: column; gap: 20px; }
+
+    .info-card {
+      background: var(--white); border: 1px solid var(--border);
+      border-radius: 16px; padding: 28px;
+    }
+    .info-card h3 {
+      font-size: 1rem; font-weight: 700; color: var(--navy); margin-bottom: 16px;
+    }
+    .info-list { display: flex; flex-direction: column; gap: 12px; }
+    .info-item {
+      display: flex; align-items: flex-start; gap: 12px;
+    }
+    .info-icon {
+      width: 36px; height: 36px; border-radius: 10px;
+      background: rgba(0,198,255,0.09);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 0.9rem; flex-shrink: 0;
+    }
+    .info-item h5 {
+      font-family: 'Exo 2', sans-serif; font-size: 0.85rem; font-weight: 700;
+      color: var(--navy); margin-bottom: 2px;
+    }
+    .info-item p { font-size: 0.78rem; color: var(--text); line-height: 1.5; }
+
+    /* What to expect */
+    .expect-card {
+      background: var(--navy); border-radius: 16px; padding: 28px;
+    }
+    .expect-card h3 { font-size: 1rem; font-weight: 700; color: #fff; margin-bottom: 16px; }
+    .expect-list { display: flex; flex-direction: column; gap: 10px; }
+    .expect-item {
+      display: flex; align-items: flex-start; gap: 10px;
+      font-size: 0.85rem; color: rgba(255,255,255,0.65);
+    }
+    .expect-item::before { content: '✓'; color: var(--blue); font-weight: 700; flex-shrink: 0; }
+
+    /* ─── FAQ ────────────────────────────────── */
+    .faq { background: var(--white); padding: 80px 0; }
+    .faq h2 { font-size: 1.6rem; font-weight: 800; color: var(--navy); margin-bottom: 40px; }
+    .faq-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    .faq-item {
+      background: var(--bg); border: 1px solid var(--border);
+      border-radius: 14px; padding: 24px;
+    }
+    .faq-item h4 { font-size: 0.95rem; font-weight: 700; color: var(--navy); margin-bottom: 8px; }
+    .faq-item p { font-size: 0.85rem; color: var(--text); line-height: 1.65; }
+
+    /* ─── RESPONSIVE ─────────────────────────── */
+    @media (max-width: 768px) {
+      .contact-grid { grid-template-columns: 1fr; }
+      .faq-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">
+      <img src="assets/logo.svg" alt="Komplexa" />
+      <span class="nav-logo-text">Komplexa Hotéis</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="sistema.html">O Sistema</a></li>
+      <li><a href="ia.html">IA Aplicada</a></li>
+      <li><a href="arquitetura.html">Arquitetura</a></li>
+      <li><a href="blog/index.html">Blog</a></li>
+      <li><a href="contato.html" class="active">Contato</a></li>
+    </ul>
+    <a href="https://form.respondi.app/QnLOVD5g" target="_blank" class="btn btn-primary">Começar agora →</a>
+    <div class="nav-hamburger" onclick="toggleMenu()">
+      <span></span><span></span><span></span>
+    </div>
+  </div>
+</nav>
+<div class="mobile-nav" id="mobileNav">
+  <a href="sistema.html">O Sistema</a>
+  <a href="ia.html">IA Aplicada</a>
+  <a href="arquitetura.html">Arquitetura</a>
+  <a href="blog/index.html">Blog</a>
+  <a href="contato.html">Contato</a>
+  <a href="https://form.respondi.app/QnLOVD5g" target="_blank" class="btn btn-primary" style="width:fit-content">Começar agora →</a>
+</div>
+
+<!-- HERO -->
+<section class="contact-hero">
+  <div class="container">
+    <div class="tag">Fale com a Komplexa</div>
+    <h1>Vamos estruturar seu sistema de <span class="grad-text">reservas diretas</span></h1>
+    <p>Preencha o formulário e um especialista da Komplexa entra em contato para entender o perfil do seu hotel e apresentar a estratégia personalizada.</p>
+  </div>
+</section>
+
+<!-- MAIN -->
+<section class="contact-main">
+  <div class="container">
+    <div class="contact-grid">
+
+      <!-- CTA CARD -->
+      <div class="cta-card">
+        <h2>Começar é simples</h2>
+        <p>Preencha o formulário em menos de 2 minutos. Nossa equipe entra em contato em até 24 horas para uma conversa inicial sem compromisso.</p>
+
+        <a href="https://form.respondi.app/QnLOVD5g" target="_blank" class="cta-main-btn">
+          <div class="cta-main-btn-left">
+            <h4>Preencher o formulário</h4>
+            <p>Leva menos de 2 minutos</p>
+          </div>
+          <span class="cta-main-btn-arrow">→</span>
+        </a>
+
+        <div class="cta-trust">Seus dados são tratados com confidencialidade</div>
+
+        <div class="contact-divider"></div>
+
+        <p style="font-size:0.85rem;font-weight:700;color:var(--navy);margin-bottom:16px;font-family:'Exo 2',sans-serif;">O que acontece depois</p>
+        <div class="contact-steps">
+          <div class="cs-step">
+            <div class="cs-num">1</div>
+            <div>
+              <h5>Você preenche o formulário</h5>
+              <p>Informações básicas sobre o hotel e seus objetivos atuais com reservas.</p>
+            </div>
+          </div>
+          <div class="cs-step">
+            <div class="cs-num">2</div>
+            <div>
+              <h5>Nossa equipe entra em contato</h5>
+              <p>Um especialista da Komplexa agenda uma conversa em até 24 horas.</p>
+            </div>
+          </div>
+          <div class="cs-step">
+            <div class="cs-num">3</div>
+            <div>
+              <h5>Análise do perfil do seu hotel</h5>
+              <p>Entendemos sua situação atual, seus canais, métricas e oportunidades.</p>
+            </div>
+          </div>
+          <div class="cs-step">
+            <div class="cs-num">4</div>
+            <div>
+              <h5>Proposta personalizada</h5>
+              <p>Apresentamos uma estratégia desenhada para o perfil específico do seu hotel.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- INFO COLUMN -->
+      <div class="info-col">
+
+        <div class="info-card">
+          <h3>O que você está contratando</h3>
+          <div class="info-list">
+            <div class="info-item">
+              <div class="info-icon">⚙️</div>
+              <div>
+                <h5>Implementação completa do sistema</h5>
+                <p>Funil completo: atração, conversão, recuperação, conversão assistida e pós-venda.</p>
+              </div>
+            </div>
+            <div class="info-item">
+              <div class="info-icon">🧠</div>
+              <div>
+                <h5>IA aplicada na aquisição</h5>
+                <p>Segmentação inteligente com base nos seus melhores hóspedes. Otimização contínua por dados reais.</p>
+              </div>
+            </div>
+            <div class="info-item">
+              <div class="info-icon">📊</div>
+              <div>
+                <h5>Gestão contínua com dados</h5>
+                <p>Acompanhamento com métricas reais de receita. Nenhuma decisão baseada em achismo.</p>
+              </div>
+            </div>
+            <div class="info-item">
+              <div class="info-icon">🎯</div>
+              <div>
+                <h5>Estratégia personalizada</h5>
+                <p>Cada hotel tem um perfil de público, sazonalidade e mix de canais diferente. A estratégia é construída para o seu contexto.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="expect-card">
+          <h3>O que muda depois da implementação</h3>
+          <div class="expect-list">
+            <div class="expect-item">Ocupação com mais previsibilidade ao longo do mês</div>
+            <div class="expect-item">Mais reservas diretas, menos comissões de OTA</div>
+            <div class="expect-item">Custo por reserva menor com otimização da IA</div>
+            <div class="expect-item">ROAS crescente com o tempo de operação</div>
+            <div class="expect-item">RevPAR em crescimento com canal direto mais forte</div>
+            <div class="expect-item">Base de hóspedes como ativo estratégico do hotel</div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq">
+  <div class="container">
+    <h2>Perguntas frequentes</h2>
+    <div class="faq-grid">
+      <div class="faq-item">
+        <h4>A Komplexa funciona para qualquer tipo de hotel?</h4>
+        <p>O sistema é desenhado para hotéis independentes ou redes menores que querem aumentar o volume de reservas diretas e reduzir dependência de OTAs. A estratégia é personalizada para cada perfil.</p>
+      </div>
+      <div class="faq-item">
+        <h4>Quanto tempo leva para ver resultados?</h4>
+        <p>Os primeiros indicadores de melhora aparecem nas primeiras semanas. Resultados consistentes e crescentes se consolidam ao longo de 3 a 6 meses, conforme a IA aprende e o funil se otimiza.</p>
+      </div>
+      <div class="faq-item">
+        <h4>O hotel precisa já ter campanhas rodando?</h4>
+        <p>Não. A Komplexa estrutura o sistema do início. Hotéis sem histórico de campanhas se beneficiam de uma implementação limpa, sem vícios de configuração anteriores.</p>
+      </div>
+      <div class="faq-item">
+        <h4>Como funciona a integração com o motor de reservas?</h4>
+        <p>Trabalhamos com os principais motores de reservas do mercado. A integração é parte do processo de implementação e não requer troca do sistema que o hotel já utiliza.</p>
+      </div>
+      <div class="faq-item">
+        <h4>A Komplexa substitui a equipe de marketing do hotel?</h4>
+        <p>Não substituímos — complementamos. Se o hotel tem equipe interna, trabalhamos em conjunto. Se não tem, a Komplexa opera o sistema de forma completa.</p>
+      </div>
+      <div class="faq-item">
+        <h4>Quais métricas são acompanhadas?</h4>
+        <p>Focamos em métricas de negócio: receita direta, ROAS, custo por reserva, taxa de ocupação, RevPAR e redução de comissões de OTA. Sem métricas de vaidade.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA FINAL -->
+<div class="cta-banner">
+  <div class="container">
+    <div class="tag" style="color:rgba(0,198,255,0.8)">Sem compromisso</div>
+    <h2 class="section-title" style="color:#fff">Pronto para a conversa?</h2>
+    <p class="section-sub" style="color:rgba(255,255,255,0.5);margin:16px auto 36px;">Preencha o formulário e receba contato em até 24 horas. A conversa inicial é gratuita e sem compromisso.</p>
+    <div class="actions">
+      <a href="https://form.respondi.app/QnLOVD5g" target="_blank" class="btn btn-primary">Preencher formulário →</a>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <div class="footer-logo">
+          <img src="assets/logo.svg" alt="Komplexa" />
+          <span class="footer-logo-text">Komplexa Hotéis</span>
+        </div>
+        <p>Arquitetura de crescimento para reservas diretas. Transformamos hotéis em sistemas de receita previsível.</p>
+      </div>
+      <div class="footer-col">
+        <h5>Solução</h5>
+        <ul>
+          <li><a href="sistema.html">O Sistema</a></li>
+          <li><a href="ia.html">IA Aplicada</a></li>
+          <li><a href="arquitetura.html">Arquitetura</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Conteúdo</h5>
+        <ul>
+          <li><a href="blog/index.html">Blog</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Contato</h5>
+        <ul>
+          <li><a href="contato.html">Falar com a equipe</a></li>
+          <li><a href="https://form.respondi.app/QnLOVD5g" target="_blank">Começar agora</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2025 Komplexa Hotéis. Todos os direitos reservados.</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+  function toggleMenu() {
+    document.getElementById('mobileNav').classList.toggle('open');
+  }
+</script>
+</body>
+</html>

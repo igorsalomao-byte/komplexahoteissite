@@ -1,0 +1,616 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>IA Aplicada na Hotelaria — Segmentação e Otimização de Reservas | Komplexa Hotéis</title>
+  <meta name="description" content="Inteligência artificial na prática: segmentação inteligente baseada em hóspedes reais, otimização contínua de campanhas e integração com motor de reservas. Reduza o custo por reserva." />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://komplexahoteis.com/ia.html" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://komplexahoteis.com/ia.html" />
+  <meta property="og:title" content="IA Aplicada na Hotelaria — Segmentação e Otimização de Reservas | Komplexa Hotéis" />
+  <meta property="og:description" content="Inteligência artificial na prática: segmentação inteligente, otimização contínua e integração com motor de reservas. Reduza o custo por reserva." />
+  <meta property="og:image" content="https://komplexahoteis.com/assets/og-image.jpg" />
+  <meta property="og:locale" content="pt_BR" />
+  <meta property="og:site_name" content="Komplexa Hotéis" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="IA Aplicada na Hotelaria — Komplexa Hotéis" />
+  <meta name="twitter:description" content="Segmentação inteligente, otimização contínua e integração com motor de reservas. IA que executa, não só promete." />
+  <meta name="twitter:image" content="https://komplexahoteis.com/assets/og-image.jpg" />
+
+  <!-- Schema.org -->
+  <script type="application/ld+json">
+  [
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "Komplexa Hotéis",
+      "url": "https://komplexahoteis.com",
+      "logo": "https://komplexahoteis.com/assets/logo.svg"
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://komplexahoteis.com/" },
+        { "@type": "ListItem", "position": 2, "name": "IA Aplicada", "item": "https://komplexahoteis.com/ia.html" }
+      ]
+    }
+  ]
+  </script>
+
+  <link rel="stylesheet" href="assets/style.css" />
+  <style>
+    /* ─── HERO ─────────────────────────────── */
+    .ia-hero {
+      background: var(--navy);
+      padding: 140px 0 100px;
+      position: relative; overflow: hidden;
+    }
+    .ia-hero::before {
+      content: '';
+      position: absolute; top: -150px; right: -100px;
+      width: 600px; height: 600px;
+      background: radial-gradient(circle, rgba(0,198,255,0.1) 0%, transparent 65%);
+      pointer-events: none;
+    }
+    .ia-hero .container { position: relative; z-index: 1; }
+    .ia-hero .tag { color: rgba(0,198,255,0.8); }
+    .ia-hero h1 {
+      font-size: clamp(2.4rem, 4vw, 3.6rem);
+      font-weight: 800; letter-spacing: -1.5px;
+      color: #fff; margin-bottom: 20px; max-width: 700px;
+    }
+    .ia-hero p {
+      font-size: 1.05rem; color: rgba(255,255,255,0.55);
+      max-width: 520px; line-height: 1.75; margin-bottom: 36px;
+    }
+    .hero-stats {
+      display: flex; gap: 40px; margin-top: 56px;
+      padding-top: 40px; border-top: 1px solid rgba(255,255,255,0.07);
+      flex-wrap: wrap;
+    }
+    .hs-item {}
+    .hs-val {
+      font-family: 'Exo 2', sans-serif; font-weight: 800; font-size: 2rem;
+      background: var(--grad);
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .hs-label { font-size: 0.82rem; color: rgba(255,255,255,0.4); margin-top: 4px; }
+
+    /* ─── AI PILLARS ─────────────────────────── */
+    .pillars { background: var(--white); padding: 96px 0; }
+    .pillar {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 80px; align-items: center;
+      padding: 64px 0;
+      border-bottom: 1px solid var(--border);
+    }
+    .pillar:last-child { border-bottom: none; padding-bottom: 0; }
+    .pillar:first-child { padding-top: 0; }
+    .pillar.reverse { direction: rtl; }
+    .pillar.reverse > * { direction: ltr; }
+
+    .pillar-num {
+      font-family: 'Exo 2', sans-serif; font-size: 0.72rem; font-weight: 700;
+      text-transform: uppercase; letter-spacing: 1.2px;
+      color: var(--blue); margin-bottom: 10px;
+    }
+    .pillar h2 {
+      font-size: clamp(1.7rem, 2.5vw, 2.2rem); font-weight: 800;
+      color: var(--navy); letter-spacing: -0.5px; margin-bottom: 16px;
+    }
+    .pillar > div > p {
+      font-size: 0.95rem; color: var(--text); line-height: 1.75; margin-bottom: 28px;
+    }
+
+    .pillar-points { display: flex; flex-direction: column; gap: 12px; }
+    .pp-item {
+      display: flex; align-items: flex-start; gap: 12px;
+    }
+    .pp-dot {
+      width: 8px; height: 8px; border-radius: 50%;
+      background: var(--blue); flex-shrink: 0; margin-top: 7px;
+    }
+    .pp-item p { font-size: 0.88rem; color: var(--text); line-height: 1.6; }
+    .pp-item strong { color: var(--navy); }
+
+    /* Visual elements */
+    .pillar-visual {
+      border-radius: 20px; overflow: hidden;
+      background: var(--bg); border: 1px solid var(--border);
+      padding: 32px;
+    }
+    .pv-title {
+      font-family: 'Exo 2', sans-serif; font-size: 0.72rem; font-weight: 700;
+      text-transform: uppercase; letter-spacing: 1px; color: var(--gray);
+      margin-bottom: 24px;
+    }
+    .pv-chart { margin-bottom: 24px; }
+    .pv-bar-row {
+      display: flex; align-items: center; gap: 12px; margin-bottom: 12px;
+    }
+    .pv-bar-label { font-size: 0.78rem; color: var(--text); width: 120px; flex-shrink: 0; }
+    .pv-bar-track {
+      flex: 1; height: 8px; background: var(--border);
+      border-radius: 100px; overflow: hidden;
+    }
+    .pv-bar-fill { height: 100%; border-radius: 100px; background: var(--grad); transition: width 1s ease; }
+    .pv-bar-val { font-size: 0.78rem; font-weight: 600; color: var(--blue); width: 36px; text-align: right; }
+
+    .pv-tags { display: flex; flex-wrap: wrap; gap: 8px; }
+    .pv-tag {
+      font-size: 0.75rem; font-weight: 600;
+      padding: 6px 14px; border-radius: 100px;
+      background: var(--white); border: 1px solid var(--border);
+      color: var(--navy); font-family: 'Exo 2', sans-serif;
+    }
+    .pv-tag.active { background: var(--grad); color: #fff; border-color: transparent; }
+
+    .pv-flow { display: flex; flex-direction: column; gap: 10px; }
+    .pv-flow-item {
+      display: flex; align-items: center; gap: 12px;
+      background: var(--white); border: 1px solid var(--border);
+      border-radius: 10px; padding: 12px 16px;
+    }
+    .pv-flow-icon {
+      width: 32px; height: 32px; border-radius: 8px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 0.9rem; background: rgba(0,198,255,0.09); flex-shrink: 0;
+    }
+    .pv-flow-label { font-size: 0.83rem; color: var(--navy); font-weight: 500; flex: 1; }
+    .pv-flow-status {
+      font-size: 0.7rem; font-weight: 700; padding: 3px 10px; border-radius: 100px;
+      font-family: 'Exo 2', sans-serif;
+    }
+    .status-on { background: rgba(0,200,120,0.1); color: #00A86B; }
+    .status-run { background: rgba(0,198,255,0.1); color: #0099CC; }
+
+    /* ─── HOW IT CONNECTS ─────────────────────── */
+    .connects { background: var(--bg); padding: 80px 0; }
+    .connects-grid {
+      display: grid; grid-template-columns: repeat(3, 1fr);
+      gap: 20px; margin-top: 48px;
+    }
+    .connect-card {
+      background: var(--white); border: 1px solid var(--border);
+      border-radius: 16px; padding: 28px;
+    }
+    .connect-step {
+      width: 36px; height: 36px; border-radius: 10px;
+      background: var(--grad); color: #fff;
+      display: flex; align-items: center; justify-content: center;
+      font-family: 'Exo 2', sans-serif; font-weight: 700; font-size: 0.9rem;
+      margin-bottom: 16px;
+    }
+    .connect-card h4 { font-size: 0.95rem; font-weight: 700; color: var(--navy); margin-bottom: 8px; }
+    .connect-card p { font-size: 0.83rem; color: var(--text); line-height: 1.65; }
+
+    /* ─── NOT JUST CONCEPT ────────────────────── */
+    .not-concept { background: var(--navy); padding: 80px 0; }
+    .nc-grid {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 48px; align-items: center;
+    }
+    .nc-list { display: flex; flex-direction: column; gap: 16px; margin-top: 32px; }
+    .nc-item {
+      display: flex; gap: 16px; align-items: flex-start;
+    }
+    .nc-icon {
+      width: 44px; height: 44px; border-radius: 12px;
+      background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.09);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.1rem; flex-shrink: 0;
+    }
+    .nc-item h5 { font-size: 0.9rem; font-weight: 700; color: #fff; margin-bottom: 4px; }
+    .nc-item p { font-size: 0.82rem; color: rgba(255,255,255,0.5); line-height: 1.6; }
+
+    .nc-visual {
+      background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.07);
+      border-radius: 20px; padding: 32px;
+    }
+    .nv-title {
+      font-family: 'Exo 2', sans-serif; font-size: 0.7rem; font-weight: 700;
+      text-transform: uppercase; letter-spacing: 1px; color: rgba(255,255,255,0.3);
+      margin-bottom: 20px;
+    }
+    .nv-metric {
+      background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.06);
+      border-radius: 12px; padding: 18px;
+      display: flex; align-items: center; justify-content: space-between;
+      margin-bottom: 10px;
+    }
+    .nv-label { font-size: 0.82rem; color: rgba(255,255,255,0.5); }
+    .nv-val {
+      font-family: 'Exo 2', sans-serif; font-weight: 800; font-size: 1.2rem;
+      background: var(--grad);
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    /* ─── RESPONSIVE ─────────────────────────── */
+    @media (max-width: 1024px) {
+      .connects-grid { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 768px) {
+      .pillar { grid-template-columns: 1fr; gap: 40px; }
+      .pillar.reverse { direction: ltr; }
+      .nc-grid { grid-template-columns: 1fr; gap: 40px; }
+      .connects-grid { grid-template-columns: 1fr; }
+      .hero-stats { gap: 24px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">
+      <img src="assets/logo.svg" alt="Komplexa" />
+      <span class="nav-logo-text">Komplexa Hotéis</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="sistema.html">O Sistema</a></li>
+      <li><a href="ia.html" class="active">IA Aplicada</a></li>
+      <li><a href="arquitetura.html">Arquitetura</a></li>
+      <li><a href="blog/index.html">Blog</a></li>
+      <li><a href="contato.html">Contato</a></li>
+    </ul>
+    <a href="https://form.respondi.app/QnLOVD5g" target="_blank" class="btn btn-primary">Começar agora →</a>
+    <div class="nav-hamburger" onclick="toggleMenu()">
+      <span></span><span></span><span></span>
+    </div>
+  </div>
+</nav>
+<div class="mobile-nav" id="mobileNav">
+  <a href="sistema.html">O Sistema</a>
+  <a href="ia.html">IA Aplicada</a>
+  <a href="arquitetura.html">Arquitetura</a>
+  <a href="blog/index.html">Blog</a>
+  <a href="contato.html">Contato</a>
+  <a href="https://form.respondi.app/QnLOVD5g" target="_blank" class="btn btn-primary" style="width:fit-content">Começar agora →</a>
+</div>
+
+<!-- HERO -->
+<section class="ia-hero">
+  <div class="container">
+    <div class="tag">Inteligência Artificial</div>
+    <h1>IA que executa,<br /><span class="grad-text">não só promete</span></h1>
+    <p>
+      A IA na Komplexa não é conceito. É execução. Ela atua diretamente no que mais impacta resultado: quem vê seus anúncios, quanto custa cada reserva e como o orçamento é distribuído em tempo real.
+    </p>
+    <a href="https://form.respondi.app/QnLOVD5g" target="_blank" class="btn btn-primary">Quero essa vantagem →</a>
+    <div class="hero-stats">
+      <div class="hs-item">
+        <div class="hs-val">↑ ROAS</div>
+        <div class="hs-label">Crescente ao longo do tempo</div>
+      </div>
+      <div class="hs-item">
+        <div class="hs-val">↓ CAC</div>
+        <div class="hs-label">Custo de aquisição reduzido</div>
+      </div>
+      <div class="hs-item">
+        <div class="hs-val">+ Precisão</div>
+        <div class="hs-label">Segmentação que aprende</div>
+      </div>
+      <div class="hs-item">
+        <div class="hs-val">0 achismo</div>
+        <div class="hs-label">Decisões baseadas em dados reais</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PILLARS -->
+<section class="pillars">
+  <div class="container">
+
+    <!-- PILLAR 1: SEGMENTAÇÃO -->
+    <div class="pillar">
+      <div>
+        <div class="pillar-num">01 — Segmentação Inteligente</div>
+        <h2>Atinge quem tem perfil real de hóspede</h2>
+        <p>
+          A maioria dos hotéis cria públicos com base em dados demográficos genéricos — idade, localização, interesses amplos. Resultado: muito tráfego, pouca conversão. Na Komplexa, construímos públicos com base nos hóspedes que já compraram do seu hotel. A IA aprende com esses dados e encontra mais pessoas com o mesmo padrão de comportamento.
+        </p>
+        <div class="pillar-points">
+          <div class="pp-item">
+            <div class="pp-dot"></div>
+            <p><strong>Públicos baseados em hóspedes reais:</strong> usamos os dados de quem já ficou no hotel para construir lookalikes precisos.</p>
+          </div>
+          <div class="pp-item">
+            <div class="pp-dot"></div>
+            <p><strong>Exclusão automática de perfis sem potencial:</strong> quem demonstra comportamento fora do perfil ideal é automaticamente removido da segmentação.</p>
+          </div>
+          <div class="pp-item">
+            <div class="pp-dot"></div>
+            <p><strong>Aprendizado contínuo:</strong> cada reserva alimenta o modelo. A segmentação fica mais precisa com o tempo.</p>
+          </div>
+        </div>
+      </div>
+      <div class="pillar-visual">
+        <div class="pv-title">Qualidade do público segmentado</div>
+        <div class="pv-chart">
+          <div class="pv-bar-row">
+            <span class="pv-bar-label">Intenção de compra</span>
+            <div class="pv-bar-track"><div class="pv-bar-fill" style="width:88%"></div></div>
+            <span class="pv-bar-val">Alta</span>
+          </div>
+          <div class="pv-bar-row">
+            <span class="pv-bar-label">Similaridade c/ hóspedes</span>
+            <div class="pv-bar-track"><div class="pv-bar-fill" style="width:92%"></div></div>
+            <span class="pv-bar-val">Alta</span>
+          </div>
+          <div class="pv-bar-row">
+            <span class="pv-bar-label">Desperdício de verba</span>
+            <div class="pv-bar-track"><div class="pv-bar-fill" style="width:15%; background: linear-gradient(90deg, rgba(168,168,168,0.3), rgba(168,168,168,0.5));"></div></div>
+            <span class="pv-bar-val" style="color:var(--gray)">Baixo</span>
+          </div>
+        </div>
+        <div class="pv-tags">
+          <span class="pv-tag active">Lookalike inteligente</span>
+          <span class="pv-tag active">Exclusão automática</span>
+          <span class="pv-tag">Demográfico genérico</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- PILLAR 2: OTIMIZAÇÃO -->
+    <div class="pillar reverse">
+      <div>
+        <div class="pillar-num">02 — Otimização Contínua</div>
+        <h2>Campanhas que melhoram com o tempo</h2>
+        <p>
+          Campanhas tradicionais são configuradas e ficam rodando da mesma forma até o gestor lembrar de ajustá-las. Na Komplexa, a IA monitora dados de conversão em tempo real e redistribui o orçamento automaticamente para os anúncios, públicos e horários com melhor performance.
+        </p>
+        <div class="pillar-points">
+          <div class="pp-item">
+            <div class="pp-dot"></div>
+            <p><strong>Ajuste por dados reais de conversão:</strong> cada clique, visita e reserva alimenta o algoritmo de otimização.</p>
+          </div>
+          <div class="pp-item">
+            <div class="pp-dot"></div>
+            <p><strong>Distribuição inteligente de orçamento:</strong> mais verba para o que converte, menos para o que não converte. Em tempo real.</p>
+          </div>
+          <div class="pp-item">
+            <div class="pp-dot"></div>
+            <p><strong>ROAS crescente:</strong> o desempenho melhora com o tempo à medida que o modelo aprende o que funciona para o seu hotel.</p>
+          </div>
+        </div>
+      </div>
+      <div class="pillar-visual">
+        <div class="pv-title">Otimização em tempo real</div>
+        <div class="pv-flow">
+          <div class="pv-flow-item">
+            <div class="pv-flow-icon">📊</div>
+            <span class="pv-flow-label">Dados de conversão coletados</span>
+            <span class="pv-flow-status status-on">Contínuo</span>
+          </div>
+          <div class="pv-flow-item">
+            <div class="pv-flow-icon">🧮</div>
+            <span class="pv-flow-label">Algoritmo analisa performance</span>
+            <span class="pv-flow-status status-run">Rodando</span>
+          </div>
+          <div class="pv-flow-item">
+            <div class="pv-flow-icon">💡</div>
+            <span class="pv-flow-label">Orçamento redistribuído</span>
+            <span class="pv-flow-status status-on">Automático</span>
+          </div>
+          <div class="pv-flow-item">
+            <div class="pv-flow-icon">📈</div>
+            <span class="pv-flow-label">ROAS aumenta progressivamente</span>
+            <span class="pv-flow-status status-run">↑ Crescendo</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- PILLAR 3: INTEGRAÇÃO -->
+    <div class="pillar">
+      <div>
+        <div class="pillar-num">03 — Integração com Dados do Hotel</div>
+        <h2>Aprendizado com quem realmente compra</h2>
+        <p>
+          A maioria das campanhas roda no escuro — sem saber quem de fato reservou depois do clique. Integrando com o motor de reservas do hotel, a IA tem acesso ao dado mais valioso: quem converteu em reserva real. Com isso, as campanhas aprendem não apenas a gerar cliques, mas a gerar hóspedes.
+        </p>
+        <div class="pillar-points">
+          <div class="pp-item">
+            <div class="pp-dot"></div>
+            <p><strong>Conexão com o motor de reservas:</strong> integração que leva dados reais de conversão de volta para as campanhas.</p>
+          </div>
+          <div class="pp-item">
+            <div class="pp-dot"></div>
+            <p><strong>Leitura de quem realmente compra:</strong> o modelo aprende o perfil dos hóspedes que convertem, não dos que apenas clicam.</p>
+          </div>
+          <div class="pp-item">
+            <div class="pp-dot"></div>
+            <p><strong>Campanhas cada vez mais precisas:</strong> quanto mais reservas acontecem, mais preciso o modelo fica em encontrar pessoas semelhantes.</p>
+          </div>
+        </div>
+      </div>
+      <div class="pillar-visual">
+        <div class="pv-title">Ciclo de aprendizado</div>
+        <div class="pv-chart">
+          <div class="pv-bar-row">
+            <span class="pv-bar-label">Dado do motor de reservas</span>
+            <div class="pv-bar-track"><div class="pv-bar-fill" style="width:100%"></div></div>
+            <span class="pv-bar-val">↑ In</span>
+          </div>
+          <div class="pv-bar-row">
+            <span class="pv-bar-label">Aprendizado do modelo</span>
+            <div class="pv-bar-track"><div class="pv-bar-fill" style="width:85%"></div></div>
+            <span class="pv-bar-val">Alto</span>
+          </div>
+          <div class="pv-bar-row">
+            <span class="pv-bar-label">Precisão da segmentação</span>
+            <div class="pv-bar-track"><div class="pv-bar-fill" style="width:90%"></div></div>
+            <span class="pv-bar-val">Alta</span>
+          </div>
+          <div class="pv-bar-row">
+            <span class="pv-bar-label">Custo por reserva</span>
+            <div class="pv-bar-track"><div class="pv-bar-fill" style="width:25%; background: linear-gradient(90deg, rgba(0,198,255,0.5), rgba(0,198,255,0.3));"></div></div>
+            <span class="pv-bar-val">↓ Baixo</span>
+          </div>
+        </div>
+        <div class="pv-tags" style="margin-top:16px">
+          <span class="pv-tag active">Motor de reservas</span>
+          <span class="pv-tag active">Dados reais</span>
+          <span class="pv-tag active">Aprendizado contínuo</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- HOW IT CONNECTS -->
+<section class="connects soft">
+  <div class="container">
+    <div class="tag">Como se Conecta ao Sistema</div>
+    <h2 class="section-title">A IA não opera sozinha</h2>
+    <p class="section-sub">Ela está integrada em cada etapa do funil de reservas. Os dados gerados em um estágio alimentam e otimizam os estágios seguintes.</p>
+    <div class="connects-grid">
+      <div class="connect-card">
+        <div class="connect-step">1</div>
+        <h4>Atração → IA segmenta</h4>
+        <p>A IA recebe os dados dos melhores hóspedes e constrói o público de prospecção. Meta Ads e Google Ads passam a mirar nas pessoas certas.</p>
+      </div>
+      <div class="connect-card">
+        <div class="connect-step">2</div>
+        <h4>Conversão → IA aprende</h4>
+        <p>Cada reserva confirmada volta como sinal para o modelo. A IA entende quais anúncios e públicos geram hóspedes reais, não apenas cliques.</p>
+      </div>
+      <div class="connect-card">
+        <div class="connect-step">3</div>
+        <h4>Recuperação → IA reativa</h4>
+        <p>Quem visitou mas não reservou entra em fluxos automatizados de remarketing. A IA define frequência, formato e momento ideal do contato.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- NOT JUST CONCEPT -->
+<section class="not-concept">
+  <div class="container">
+    <div class="nc-grid">
+      <div>
+        <div class="tag" style="color:rgba(0,198,255,0.8)">Execução Real</div>
+        <h2 class="section-title" style="color:#fff">Não é conceito.<br />É execução no dia a dia.</h2>
+        <p style="font-size:0.95rem;color:rgba(255,255,255,0.5);line-height:1.75;margin-bottom:0">A IA roda enquanto você opera o hotel. Ela ajusta, aprende e melhora sem interrupção. O resultado aparece nos dados: mais reservas com o mesmo orçamento.</p>
+        <div class="nc-list">
+          <div class="nc-item">
+            <div class="nc-icon">⚙️</div>
+            <div>
+              <h5>Sem trabalho manual de otimização</h5>
+              <p>A IA cuida dos ajustes de campanha. Sua equipe foca no hóspede.</p>
+            </div>
+          </div>
+          <div class="nc-item">
+            <div class="nc-icon">📡</div>
+            <div>
+              <h5>Dados em tempo real</h5>
+              <p>Decisões baseadas no que está acontecendo agora, não em relatórios da semana passada.</p>
+            </div>
+          </div>
+          <div class="nc-item">
+            <div class="nc-icon">📉</div>
+            <div>
+              <h5>Custo por reserva que cai</h5>
+              <p>Quanto mais o modelo aprende, mais eficiente ele fica. O custo de aquisição tende a cair com o tempo.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="nc-visual">
+        <div class="nv-title">Impacto da IA ao longo do tempo</div>
+        <div class="nv-metric">
+          <span class="nv-label">ROAS (mês 1)</span>
+          <span class="nv-val">Baseline</span>
+        </div>
+        <div class="nv-metric">
+          <span class="nv-label">ROAS (mês 3)</span>
+          <span class="nv-val">↑ Melhor</span>
+        </div>
+        <div class="nv-metric">
+          <span class="nv-label">ROAS (mês 6)</span>
+          <span class="nv-val">↑↑ Ótimo</span>
+        </div>
+        <div class="nv-metric">
+          <span class="nv-label">Custo por reserva</span>
+          <span class="nv-val">↓ Menor</span>
+        </div>
+        <div class="nv-metric">
+          <span class="nv-label">Precisão da segmentação</span>
+          <span class="nv-val">↑ Crescente</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<div class="cta-banner">
+  <div class="container">
+    <div class="tag" style="color:rgba(0,198,255,0.8)">Próximo passo</div>
+    <h2 class="section-title" style="color:#fff">Quer IA trabalhando<br />pelas suas reservas?</h2>
+    <p class="section-sub" style="color:rgba(255,255,255,0.5);margin:16px auto 36px;">Implementação personalizada para o perfil do seu hotel. Sem achismo, sem tráfego genérico.</p>
+    <div class="actions">
+      <a href="https://form.respondi.app/QnLOVD5g" target="_blank" class="btn btn-primary">Falar com especialista →</a>
+      <a href="arquitetura.html" class="btn btn-ghost">Ver Arquitetura</a>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <div class="footer-logo">
+          <img src="assets/logo.svg" alt="Komplexa" />
+          <span class="footer-logo-text">Komplexa Hotéis</span>
+        </div>
+        <p>Arquitetura de crescimento para reservas diretas. Transformamos hotéis em sistemas de receita previsível.</p>
+      </div>
+      <div class="footer-col">
+        <h5>Solução</h5>
+        <ul>
+          <li><a href="sistema.html">O Sistema</a></li>
+          <li><a href="ia.html">IA Aplicada</a></li>
+          <li><a href="arquitetura.html">Arquitetura</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Conteúdo</h5>
+        <ul>
+          <li><a href="blog/index.html">Blog</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Contato</h5>
+        <ul>
+          <li><a href="contato.html">Falar com a equipe</a></li>
+          <li><a href="https://form.respondi.app/QnLOVD5g" target="_blank">Começar agora</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2025 Komplexa Hotéis. Todos os direitos reservados.</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+  function toggleMenu() {
+    document.getElementById('mobileNav').classList.toggle('open');
+  }
+</script>
+</body>
+</html>

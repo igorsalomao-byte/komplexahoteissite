@@ -1,0 +1,14 @@
+# Robots.txt — Komplexa Hotéis
+# https://komplexahoteis.com
+
+User-agent: *
+Allow: /
+
+# Bloqueio de arquivos desnecessários
+Disallow: /assets/
+Allow: /assets/logo.svg
+Allow: /assets/logo-white.svg
+Allow: /assets/og-image.jpg
+
+# Sitemap
+Sitemap: https://komplexahoteis.com/sitemap.xml

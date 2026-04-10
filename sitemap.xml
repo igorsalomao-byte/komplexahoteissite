@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+
+  <!-- HOME -->
+  <url>
+    <loc>https://komplexahoteis.com/</loc>
+    <lastmod>2025-04-10</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://komplexahoteis.com/"/>
+  </url>
+
+  <!-- O SISTEMA -->
+  <url>
+    <loc>https://komplexahoteis.com/sistema.html</loc>
+    <lastmod>2025-04-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://komplexahoteis.com/sistema.html"/>
+  </url>
+
+  <!-- IA APLICADA -->
+  <url>
+    <loc>https://komplexahoteis.com/ia.html</loc>
+    <lastmod>2025-04-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://komplexahoteis.com/ia.html"/>
+  </url>
+
+  <!-- ARQUITETURA -->
+  <url>
+    <loc>https://komplexahoteis.com/arquitetura.html</loc>
+    <lastmod>2025-04-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://komplexahoteis.com/arquitetura.html"/>
+  </url>
+
+  <!-- CONTATO -->
+  <url>
+    <loc>https://komplexahoteis.com/contato.html</loc>
+    <lastmod>2025-04-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://komplexahoteis.com/contato.html"/>
+  </url>
+
+  <!-- BLOG INDEX -->
+  <url>
+    <loc>https://komplexahoteis.com/blog/</loc>
+    <lastmod>2025-04-10</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://komplexahoteis.com/blog/"/>
+  </url>
+
+  <!-- BLOG POST: OTA -->
+  <url>
+    <loc>https://komplexahoteis.com/blog/post-ota.html</loc>
+    <lastmod>2025-01-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://komplexahoteis.com/blog/post-ota.html"/>
+  </url>
+
+</urlset>
