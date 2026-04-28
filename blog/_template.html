@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>__TITLE__ — Komplexa Hotéis</title>
+  <meta name="description" content="__DESCRIPTION__" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://komplexahoteis.com/blog/post-__SLUG__.html" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://komplexahoteis.com/blog/post-__SLUG__.html" />
+  <meta property="og:title" content="__TITLE__" />
+  <meta property="og:description" content="__DESCRIPTION__" />
+  <meta property="og:image" content="https://komplexahoteis.com/assets/og-image.jpg" />
+  <meta property="og:locale" content="pt_BR" />
+  <meta property="og:site_name" content="Komplexa Hotéis" />
+  <meta property="article:published_time" content="__DATE_ISO__" />
+  <meta property="article:author" content="Komplexa Hotéis" />
+  <meta property="article:section" content="__CATEGORY__" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="__TITLE__" />
+  <meta name="twitter:description" content="__DESCRIPTION__" />
+  <meta name="twitter:image" content="https://komplexahoteis.com/assets/og-image.jpg" />
+
+  <!-- Schema.org -->
+  <script type="application/ld+json">
+  [
+    {
+      "@context": "https://schema.org",
+      "@type": "BlogPosting",
+      "headline": "__TITLE__",
+      "description": "__DESCRIPTION__",
+      "url": "https://komplexahoteis.com/blog/post-__SLUG__.html",
+      "datePublished": "__DATE_ISO__",
+      "dateModified": "__DATE_ISO__",
+      "inLanguage": "pt-BR",
+      "author": {
+        "@type": "Organization",
+        "name": "Komplexa Hotéis",
+        "url": "https://komplexahoteis.com"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Komplexa Hotéis",
+        "logo": { "@type": "ImageObject", "url": "https://komplexahoteis.com/assets/logo.svg" }
+      },
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://komplexahoteis.com/blog/post-__SLUG__.html"
+      },
+      "articleSection": "__CATEGORY__"
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://komplexahoteis.com/" },
+        { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://komplexahoteis.com/blog/" },
+        { "@type": "ListItem", "position": 3, "name": "__TITLE__", "item": "https://komplexahoteis.com/blog/post-__SLUG__.html" }
+      ]
+    }
+  ]
+  </script>
+
+  <link rel="stylesheet" href="../assets/style.css" />
+  <style>
+    /* ─── POST HERO ─────────────────────────── */
+    .post-hero { background: var(--navy); padding: 130px 0 72px; position: relative; overflow: hidden; }
+    .post-hero::before {
+      content: ''; position: absolute; top: -100px; right: -100px;
+      width: 500px; height: 500px;
+      background: radial-gradient(circle, rgba(0,198,255,0.1) 0%, transparent 65%);
+    }
+    .post-hero .container { position: relative; z-index: 1; }
+    .post-breadcrumb {
+      display: flex; align-items: center; gap: 8px;
+      font-size: 0.8rem; color: rgba(255,255,255,0.4);
+      margin-bottom: 24px;
+    }
+    .post-breadcrumb a { color: rgba(255,255,255,0.4); text-decoration: none; transition: color 0.2s; }
+    .post-breadcrumb a:hover { color: var(--blue); }
+    .post-breadcrumb span { color: rgba(255,255,255,0.2); }
+    .post-category-pill {
+      display: inline-block;
+      font-family: 'Exo 2', sans-serif; font-size: 0.72rem; font-weight: 700;
+      text-transform: uppercase; letter-spacing: 0.8px;
+      background: var(--grad); color: #fff;
+      padding: 5px 14px; border-radius: 100px;
+      margin-bottom: 16px;
+    }
+    .post-hero h1 {
+      font-size: clamp(2rem, 3.5vw, 3rem); font-weight: 800;
+      letter-spacing: -1px; color: #fff; max-width: 760px;
+      margin-bottom: 20px;
+    }
+    .post-meta {
+      display: flex; align-items: center; gap: 20px;
+      flex-wrap: wrap;
+    }
+    .pm-item { font-size: 0.82rem; color: rgba(255,255,255,0.45); display: flex; align-items: center; gap: 6px; }
+
+    /* ─── POST CONTENT ───────────────────────── */
+    .post-layout {
+      max-width: 1160px; margin: 0 auto; padding: 72px 5%;
+      display: grid; grid-template-columns: 1fr 320px; gap: 72px; align-items: start;
+    }
+    .post-content { min-width: 0; }
+    .post-content h2 {
+      font-size: 1.6rem; font-weight: 800; color: var(--navy);
+      letter-spacing: -0.5px; margin: 40px 0 14px;
+    }
+    .post-content h3 {
+      font-size: 1.15rem; font-weight: 700; color: var(--navy);
+      margin: 28px 0 10px;
+    }
+    .post-content p {
+      font-size: 1rem; color: var(--text); line-height: 1.8;
+      margin-bottom: 18px;
+    }
+    .post-content strong { color: var(--navy); font-weight: 600; }
+    .post-content ul, .post-content ol {
+      margin: 0 0 20px 20px; display: flex; flex-direction: column; gap: 8px;
+    }
+    .post-content li { font-size: 0.95rem; color: var(--text); line-height: 1.7; }
+
+    .highlight-box {
+      background: rgba(0,198,255,0.06); border: 1px solid rgba(0,198,255,0.15);
+      border-left: 3px solid var(--blue);
+      border-radius: 0 10px 10px 0; padding: 20px 24px;
+      margin: 28px 0;
+    }
+    .highlight-box p { font-size: 0.95rem; color: var(--navy); margin: 0; font-weight: 500; line-height: 1.7; }
+
+    .post-cta {
+      background: var(--navy); border-radius: 16px; padding: 32px;
+      margin: 40px 0; text-align: center;
+    }
+    .post-cta h4 { font-size: 1.1rem; font-weight: 700; color: #fff; margin-bottom: 8px; }
+    .post-cta p { font-size: 0.85rem; color: rgba(255,255,255,0.5); margin-bottom: 20px; }
+
+    .post-divider { height: 1px; background: var(--border); margin: 40px 0; }
+
+    /* ─── SIDEBAR ────────────────────────────── */
+    .post-sidebar { position: sticky; top: 88px; }
+    .sidebar-card {
+      background: var(--bg); border: 1px solid var(--border);
+      border-radius: 14px; padding: 24px; margin-bottom: 20px;
+    }
+    .sidebar-card h4 {
+      font-family: 'Exo 2', sans-serif; font-size: 0.75rem; font-weight: 700;
+      text-transform: uppercase; letter-spacing: 1px; color: var(--gray);
+      margin-bottom: 16px;
+    }
+    .toc-link {
+      display: block; font-size: 0.85rem; color: var(--text);
+      padding: 7px 0; border-bottom: 1px solid var(--border);
+      text-decoration: none; transition: color 0.2s;
+    }
+    .toc-link:last-child { border-bottom: none; }
+    .toc-link:hover { color: var(--blue); }
+    .toc-link.active { color: var(--blue); font-weight: 600; }
+
+    .related-post {
+      display: flex; gap: 12px; align-items: flex-start;
+      padding: 12px 0; border-bottom: 1px solid var(--border);
+      text-decoration: none;
+    }
+    .related-post:last-child { border-bottom: none; padding-bottom: 0; }
+    .rp-icon {
+      width: 36px; height: 36px; border-radius: 8px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1rem; flex-shrink: 0;
+    }
+    .rp-icon.c1 { background: linear-gradient(135deg, #1670C3, #00C6FF); }
+    .rp-icon.c2 { background: linear-gradient(135deg, #14233C, #1099E9); }
+    .rp-icon.c3 { background: linear-gradient(135deg, #1099E9, #24D5FF); }
+    .rp-text h5 { font-size: 0.82rem; font-weight: 600; color: var(--navy); margin-bottom: 2px; line-height: 1.35; }
+    .rp-text span { font-size: 0.73rem; color: var(--gray); }
+
+    .cta-sidebar {
+      background: var(--navy); border-radius: 14px; padding: 24px; text-align: center;
+    }
+    .cta-sidebar h4 { font-size: 1rem; font-weight: 700; color: #fff; margin-bottom: 8px; }
+    .cta-sidebar p { font-size: 0.8rem; color: rgba(255,255,255,0.5); margin-bottom: 16px; line-height: 1.6; }
+
+    /* ─── RELATED POSTS ──────────────────────── */
+    .related { background: var(--bg); padding: 72px 0; }
+    .related h2 { font-size: 1.3rem; font-weight: 700; color: var(--navy); margin-bottom: 32px; }
+    .related-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+    .rg-card {
+      background: var(--white); border: 1px solid var(--border);
+      border-radius: 14px; padding: 24px;
+      text-decoration: none; transition: box-shadow 0.2s, transform 0.2s;
+      display: block;
+    }
+    .rg-card:hover { box-shadow: 0 6px 24px rgba(20,35,60,0.08); transform: translateY(-2px); }
+    .rg-tag {
+      font-family: 'Exo 2', sans-serif; font-size: 0.68rem; font-weight: 700;
+      text-transform: uppercase; letter-spacing: 0.8px;
+      color: var(--blue); margin-bottom: 10px; display: block;
+    }
+    .rg-card h4 { font-size: 0.95rem; font-weight: 700; color: var(--navy); margin-bottom: 6px; line-height: 1.35; }
+    .rg-card p { font-size: 0.8rem; color: var(--text); line-height: 1.6; }
+
+    /* ─── RESPONSIVE ─────────────────────────── */
+    @media (max-width: 1024px) {
+      .post-layout { grid-template-columns: 1fr; }
+      .post-sidebar { position: static; }
+      .related-grid { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 768px) {
+      .related-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-inner">
+    <a href="../index.html" class="nav-logo">
+      <img src="../assets/logo.svg" alt="Komplexa" />
+      <span class="nav-logo-text">Komplexa Hotéis</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="../sistema.html">O Sistema</a></li>
+      <li><a href="../ia.html">IA Aplicada</a></li>
+      <li><a href="../arquitetura.html">Arquitetura</a></li>
+      <li><a href="index.html" class="active">Blog</a></li>
+      <li><a href="../contato.html">Contato</a></li>
+    </ul>
+    <a href="https://form.respondi.app/QnLOVD5g" target="_blank" class="btn btn-primary">Começar agora →</a>
+    <div class="nav-hamburger" onclick="toggleMenu()">
+      <span></span><span></span><span></span>
+    </div>
+  </div>
+</nav>
+<div class="mobile-nav" id="mobileNav">
+  <a href="../sistema.html">O Sistema</a>
+  <a href="../ia.html">IA Aplicada</a>
+  <a href="../arquitetura.html">Arquitetura</a>
+  <a href="index.html">Blog</a>
+  <a href="../contato.html">Contato</a>
+  <a href="https://form.respondi.app/QnLOVD5g" target="_blank" class="btn btn-primary" style="width:fit-content">Começar agora →</a>
+</div>
+
+<!-- POST HERO -->
+<section class="post-hero">
+  <div class="container">
+    <div class="post-breadcrumb">
+      <a href="index.html">Blog</a>
+      <span>/</span>
+      <span>__CATEGORY__</span>
+    </div>
+    <span class="post-category-pill">__CATEGORY__</span>
+    <h1>__TITLE__</h1>
+    <div class="post-meta">
+      <span class="pm-item">📅 __DATE__</span>
+      <span class="pm-item">⏱ __READTIME__ de leitura</span>
+      <span class="pm-item">✍ Komplexa Hotéis</span>
+    </div>
+  </div>
+</section>
+
+<!-- POST LAYOUT -->
+<div class="post-layout">
+
+  <!-- CONTENT -->
+  <article class="post-content">
+
+    <!-- ═══════════════════════════════════════════════════════
+         CONTEÚDO DO ARTIGO — edite abaixo
+         Use: <h2 id="secao1">, <h3>, <p>, <ul>, <li>
+              <div class="highlight-box"><p>...</p></div>
+              <div class="post-cta">...</div>
+         ═══════════════════════════════════════════════════════ -->
+
+    <p>Introdução do artigo aqui.</p>
+
+    <h2 id="secao1">Primeira seção</h2>
+    <p>Conteúdo da primeira seção.</p>
+
+    <h2 id="secao2">Segunda seção</h2>
+    <p>Conteúdo da segunda seção.</p>
+
+    <div class="post-divider"></div>
+
+    <h2 id="conclusao">Conclusão</h2>
+    <p>Conclusão do artigo.</p>
+
+    <div class="post-cta">
+      <h4>Quer esse sistema no seu hotel?</h4>
+      <p>A Komplexa estrutura o funil completo de reservas diretas — da atração ao pós-venda. Estratégia personalizada para o perfil do seu hotel.</p>
+      <a href="https://form.respondi.app/QnLOVD5g" target="_blank" class="btn btn-primary">Falar com especialista →</a>
+    </div>
+
+  </article>
+
+  <!-- SIDEBAR -->
+  <aside class="post-sidebar">
+
+    <div class="sidebar-card">
+      <h4>Neste artigo</h4>
+      <!-- Atualize os links abaixo com os IDs reais das seções do artigo -->
+      <a href="#secao1" class="toc-link active">Primeira seção</a>
+      <a href="#secao2" class="toc-link">Segunda seção</a>
+      <a href="#conclusao" class="toc-link">Conclusão</a>
+    </div>
+
+    <div class="cta-sidebar">
+      <h4>Quer esse sistema no seu hotel?</h4>
+      <p>Implementação + gestão contínua. Estratégia personalizada com dados reais.</p>
+      <a href="https://form.respondi.app/QnLOVD5g" target="_blank" class="btn btn-primary" style="width:100%;justify-content:center">Começar agora →</a>
+    </div>
+
+    <div class="sidebar-card" style="margin-top:20px">
+      <h4>Leia também</h4>
+      <a href="post-ota.html" class="related-post">
+        <div class="rp-icon c1">🏨</div>
+        <div class="rp-text">
+          <h5>Como reduzir a dependência de OTAs e gerar reservas diretas</h5>
+          <span>OTA e Distribuição · 8 min</span>
+        </div>
+      </a>
+      <a href="post-ia.html" class="related-post">
+        <div class="rp-icon c2">🤖</div>
+        <div class="rp-text">
+          <h5>IA na hotelaria: segmentação que reduz custo por reserva</h5>
+          <span>IA Aplicada · 6 min</span>
+        </div>
+      </a>
+    </div>
+
+  </aside>
+</div>
+
+<!-- RELATED -->
+<section class="related">
+  <div class="container">
+    <h2>Continue lendo</h2>
+    <div class="related-grid">
+      <a href="post-ota.html" class="rg-card">
+        <span class="rg-tag">OTA e Distribuição</span>
+        <h4>Como reduzir a dependência de OTAs e gerar reservas diretas</h4>
+        <p>Comissões de 15% a 25% não são inevitáveis. Estratégia completa para construir um canal direto forte.</p>
+      </a>
+      <a href="post-ia.html" class="rg-card">
+        <span class="rg-tag">Inteligência Artificial</span>
+        <h4>IA na hotelaria: segmentação inteligente que reduz custo por reserva</h4>
+        <p>Como lookalike baseado em hóspedes reais é mais eficiente que demográfico genérico.</p>
+      </a>
+      <a href="post-funil.html" class="rg-card">
+        <span class="rg-tag">Conversão</span>
+        <h4>Por que campanhas isoladas não funcionam para hotéis</h4>
+        <p>O funil completo é o único modelo que escala reservas diretas de forma previsível.</p>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <div class="footer-logo">
+          <img src="../assets/logo.svg" alt="Komplexa" />
+          <span class="footer-logo-text">Komplexa Hotéis</span>
+        </div>
+        <p>Arquitetura de crescimento para reservas diretas. Transformamos hotéis em sistemas de receita previsível.</p>
+      </div>
+      <div class="footer-col">
+        <h5>Solução</h5>
+        <ul>
+          <li><a href="../sistema.html">O Sistema</a></li>
+          <li><a href="../ia.html">IA Aplicada</a></li>
+          <li><a href="../arquitetura.html">Arquitetura</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Conteúdo</h5>
+        <ul>
+          <li><a href="index.html">Blog</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Contato</h5>
+        <ul>
+          <li><a href="../contato.html">Falar com a equipe</a></li>
+          <li><a href="https://form.respondi.app/QnLOVD5g" target="_blank">Começar agora</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2025 Komplexa Hotéis. Todos os direitos reservados.</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+  function toggleMenu() {
+    document.getElementById('mobileNav').classList.toggle('open');
+  }
+</script>
+</body>
+</html>

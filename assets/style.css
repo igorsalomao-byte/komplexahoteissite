@@ -2,7 +2,7 @@
    KOMPLEXA HOTÉIS — Shared Stylesheet
    ═══════════════════════════════════════════════ */
 
-@import url('https://fonts.googleapis.com/css2?family=Exo+2:wght@400;600;700;800&family=Work+Sans:wght@400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Exo+2:wght@400;600;700;800&family=Playfair+Display:ital,wght@1,400;1,700&family=Work+Sans:wght@400;500;600&display=swap');
 
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -68,6 +68,13 @@ a { text-decoration: none; }
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
+}
+
+.serif-accent {
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  font-weight: 400;
+  color: #1099E9;
 }
 
 /* ─── BUTTONS ─────────────────────────────────── */
