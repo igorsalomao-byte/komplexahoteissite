@@ -10,5 +10,8 @@ Allow: /assets/logo.svg
 Allow: /assets/logo-white.svg
 Allow: /assets/og-image.jpg
 
+# Pasta de apresentações privadas (links enviados a leads)
+Disallow: /d/
+
 # Sitemap
 Sitemap: https://komplexahoteis.com/sitemap.xml
