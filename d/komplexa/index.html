@@ -2,7 +2,6 @@
 <html lang="pt-BR">
 <head>
 <meta charset="utf-8">
-<link rel="icon" type="image/svg+xml" href="../../assets/logo.svg">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="robots" content="noindex,nofollow,noarchive,nosnippet">
 <meta name="googlebot" content="noindex,nofollow">
@@ -378,7 +377,7 @@ html,body{font-family:var(--fd);background:var(--page-bg);color:var(--navy);-web
 /* ─── KEYBOARD NAV (presentation mode) ─── */
 .deck.present{padding:0;gap:0;background:#000;min-height:100vh;height:100vh;width:100vw;justify-content:center;align-items:center;overflow:hidden}
 .deck.present .slide{margin:0;border-radius:0;box-shadow:none;display:none;flex-shrink:0}
-.deck.present .slide.active{display:flex;transform:scale(calc(min(100vw / 1280, 100vh / 720) * 1.08));transform-origin:center center}
+.deck.present .slide.active{display:flex;transform:scale(calc(min(100vw / 1280, 100vh / 720) * 1.15));transform-origin:center center}
 .nav-hint{position:fixed;bottom:14px;right:14px;background:rgba(0,0,0,.7);color:#fff;padding:6px 12px;border-radius:6px;font-size:11px;font-family:var(--fd);letter-spacing:.4px;z-index:99;display:none}
 .deck.present + .nav-hint{display:block}
 .toggle-present{position:fixed;top:14px;right:14px;background:var(--grad);color:#fff;border:none;padding:8px 16px;border-radius:8px;font-family:var(--fd);font-weight:600;font-size:12px;cursor:pointer;z-index:99;letter-spacing:.3px}
