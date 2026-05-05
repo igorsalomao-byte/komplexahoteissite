@@ -7,7 +7,11 @@
       "Bash(gh api:*)",
       "WebFetch(domain:api.github.com)",
       "Bash(npx --yes serve . --listen 3000)",
-      "Bash(curl:*)"
+      "Bash(curl:*)",
+      "Bash(git add *)",
+      "Bash(git commit -m ' *)",
+      "Bash(git push *)",
+      "Bash(gh pr create --base main --head claude/distracted-jang-0a06e1 --title 'feat\\(blog\\): publica 5 posts que estavam com link quebrado' --body ' *)"
     ]
   }
 }
