@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>IA na hotelaria: segmentação inteligente que reduz custo por reserva — Komplexa Hotéis</title>
+  <meta name="description" content="Como a IA muda a forma de segmentar campanhas de hotel: lookalike baseado em hóspedes reais, exclusão automática de público sem potencial e ROAS crescente ao longo do tempo." />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://komplexahoteis.com/blog/post-ia.html" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://komplexahoteis.com/blog/post-ia.html" />
+  <meta property="og:title" content="IA na hotelaria: segmentação inteligente que reduz custo por reserva" />
+  <meta property="og:description" content="Como a IA muda a forma de segmentar campanhas de hotel: lookalike baseado em hóspedes reais e ROAS crescente ao longo do tempo." />
+  <meta property="og:image" content="https://komplexahoteis.com/assets/og-image.jpg" />
+  <meta property="og:locale" content="pt_BR" />
+  <meta property="og:site_name" content="Komplexa Hotéis" />
+  <meta property="article:published_time" content="2025-02-12" />
+  <meta property="article:author" content="Komplexa Hotéis" />
+  <meta property="article:section" content="Inteligência Artificial" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="IA na hotelaria: segmentação inteligente que reduz custo por reserva" />
+  <meta name="twitter:description" content="Lookalike com hóspedes reais é mais eficiente que demográfico genérico. Veja como aplicar." />
+  <meta name="twitter:image" content="https://komplexahoteis.com/assets/og-image.jpg" />
+
+  <!-- Schema.org -->
+  <script type="application/ld+json">
+  [
+    {
+      "@context": "https://schema.org",
+      "@type": "BlogPosting",
+      "headline": "IA na hotelaria: segmentação inteligente que reduz custo por reserva",
+      "description": "Como a IA muda a forma de segmentar campanhas de hotel: lookalike baseado em hóspedes reais e ROAS crescente ao longo do tempo.",
+      "url": "https://komplexahoteis.com/blog/post-ia.html",
+      "datePublished": "2025-02-12",
+      "dateModified": "2025-02-12",
+      "inLanguage": "pt-BR",
+      "author": { "@type": "Organization", "name": "Komplexa Hotéis", "url": "https://komplexahoteis.com" },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Komplexa Hotéis",
+        "logo": { "@type": "ImageObject", "url": "https://komplexahoteis.com/assets/logo.svg" }
+      },
+      "mainEntityOfPage": { "@type": "WebPage", "@id": "https://komplexahoteis.com/blog/post-ia.html" },
+      "articleSection": "Inteligência Artificial"
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://komplexahoteis.com/" },
+        { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://komplexahoteis.com/blog/" },
+        { "@type": "ListItem", "position": 3, "name": "IA na hotelaria", "item": "https://komplexahoteis.com/blog/post-ia.html" }
+      ]
+    }
+  ]
+  </script>
+
+  <link rel="stylesheet" href="../assets/style.css" />
+  <style>
+    .post-hero { background: var(--navy); padding: 130px 0 72px; position: relative; overflow: hidden; }
+    .post-hero::before { content: ''; position: absolute; top: -100px; right: -100px; width: 500px; height: 500px; background: radial-gradient(circle, rgba(0,198,255,0.1) 0%, transparent 65%); }
+    .post-hero .container { position: relative; z-index: 1; }
+    .post-breadcrumb { display: flex; align-items: center; gap: 8px; font-size: 0.8rem; color: rgba(255,255,255,0.4); margin-bottom: 24px; }
+    .post-breadcrumb a { color: rgba(255,255,255,0.4); text-decoration: none; transition: color 0.2s; }
+    .post-breadcrumb a:hover { color: var(--blue); }
+    .post-breadcrumb span { color: rgba(255,255,255,0.2); }
+    .post-category-pill { display: inline-block; font-family: 'Exo 2', sans-serif; font-size: 0.72rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.8px; background: var(--grad); color: #fff; padding: 5px 14px; border-radius: 100px; margin-bottom: 16px; }
+    .post-hero h1 { font-size: clamp(2rem, 3.5vw, 3rem); font-weight: 800; letter-spacing: -1px; color: #fff; max-width: 760px; margin-bottom: 20px; }
+    .post-meta { display: flex; align-items: center; gap: 20px; flex-wrap: wrap; }
+    .pm-item { font-size: 0.82rem; color: rgba(255,255,255,0.45); display: flex; align-items: center; gap: 6px; }
+    .post-layout { max-width: 1160px; margin: 0 auto; padding: 72px 5%; display: grid; grid-template-columns: 1fr 320px; gap: 72px; align-items: start; }
+    .post-content { min-width: 0; }
+    .post-content h2 { font-size: 1.6rem; font-weight: 800; color: var(--navy); letter-spacing: -0.5px; margin: 40px 0 14px; }
+    .post-content h3 { font-size: 1.15rem; font-weight: 700; color: var(--navy); margin: 28px 0 10px; }
+    .post-content p { font-size: 1rem; color: var(--text); line-height: 1.8; margin-bottom: 18px; }
+    .post-content strong { color: var(--navy); font-weight: 600; }
+    .post-content ul, .post-content ol { margin: 0 0 20px 20px; display: flex; flex-direction: column; gap: 8px; }
+    .post-content li { font-size: 0.95rem; color: var(--text); line-height: 1.7; }
+    .highlight-box { background: rgba(0,198,255,0.06); border: 1px solid rgba(0,198,255,0.15); border-left: 3px solid var(--blue); border-radius: 0 10px 10px 0; padding: 20px 24px; margin: 28px 0; }
+    .highlight-box p { font-size: 0.95rem; color: var(--navy); margin: 0; font-weight: 500; line-height: 1.7; }
+    .post-cta { background: var(--navy); border-radius: 16px; padding: 32px; margin: 40px 0; text-align: center; }
+    .post-cta h4 { font-size: 1.1rem; font-weight: 700; color: #fff; margin-bottom: 8px; }
+    .post-cta p { font-size: 0.85rem; color: rgba(255,255,255,0.5); margin-bottom: 20px; }
+    .post-divider { height: 1px; background: var(--border); margin: 40px 0; }
+    .post-sidebar { position: sticky; top: 88px; }
+    .sidebar-card { background: var(--bg); border: 1px solid var(--border); border-radius: 14px; padding: 24px; margin-bottom: 20px; }
+    .sidebar-card h4 { font-family: 'Exo 2', sans-serif; font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; color: var(--gray); margin-bottom: 16px; }
+    .toc-link { display: block; font-size: 0.85rem; color: var(--text); padding: 7px 0; border-bottom: 1px solid var(--border); text-decoration: none; transition: color 0.2s; }
+    .toc-link:last-child { border-bottom: none; }
+    .toc-link:hover { color: var(--blue); }
+    .toc-link.active { color: var(--blue); font-weight: 600; }
+    .related-post { display: flex; gap: 12px; align-items: flex-start; padding: 12px 0; border-bottom: 1px solid var(--border); text-decoration: none; }
+    .related-post:last-child { border-bottom: none; padding-bottom: 0; }
+    .rp-icon { width: 36px; height: 36px; border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 1rem; flex-shrink: 0; }
+    .rp-icon.c1 { background: linear-gradient(135deg, #1670C3, #00C6FF); }
+    .rp-icon.c2 { background: linear-gradient(135deg, #14233C, #1099E9); }
+    .rp-icon.c3 { background: linear-gradient(135deg, #1099E9, #24D5FF); }
+    .rp-text h5 { font-size: 0.82rem; font-weight: 600; color: var(--navy); margin-bottom: 2px; line-height: 1.35; }
+    .rp-text span { font-size: 0.73rem; color: var(--gray); }
+    .cta-sidebar { background: var(--navy); border-radius: 14px; padding: 24px; text-align: center; }
+    .cta-sidebar h4 { font-size: 1rem; font-weight: 700; color: #fff; margin-bottom: 8px; }
+    .cta-sidebar p { font-size: 0.8rem; color: rgba(255,255,255,0.5); margin-bottom: 16px; line-height: 1.6; }
+    .related { background: var(--bg); padding: 72px 0; }
+    .related h2 { font-size: 1.3rem; font-weight: 700; color: var(--navy); margin-bottom: 32px; }
+    .related-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+    .rg-card { background: var(--white); border: 1px solid var(--border); border-radius: 14px; padding: 24px; text-decoration: none; transition: box-shadow 0.2s, transform 0.2s; display: block; }
+    .rg-card:hover { box-shadow: 0 6px 24px rgba(20,35,60,0.08); transform: translateY(-2px); }
+    .rg-tag { font-family: 'Exo 2', sans-serif; font-size: 0.68rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.8px; color: var(--blue); margin-bottom: 10px; display: block; }
+    .rg-card h4 { font-size: 0.95rem; font-weight: 700; color: var(--navy); margin-bottom: 6px; line-height: 1.35; }
+    .rg-card p { font-size: 0.8rem; color: var(--text); line-height: 1.6; }
+    @media (max-width: 1024px) { .post-layout { grid-template-columns: 1fr; } .post-sidebar { position: static; } .related-grid { grid-template-columns: 1fr 1fr; } }
+    @media (max-width: 768px) { .related-grid { grid-template-columns: 1fr; } }
+  </style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a href="../index.html" class="nav-logo">
+      <img src="../assets/logo.svg" alt="Komplexa" />
+      <span class="nav-logo-text">Komplexa Hotéis</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="../sistema.html">O Sistema</a></li>
+      <li><a href="../ia.html">IA Aplicada</a></li>
+      <li><a href="../arquitetura.html">Arquitetura</a></li>
+      <li><a href="index.html" class="active">Blog</a></li>
+      <li><a href="../contato.html">Contato</a></li>
+    </ul>
+    <a href="https://form.respondi.app/QnLOVD5g" target="_blank" class="btn btn-primary">Começar agora →</a>
+    <div class="nav-hamburger" onclick="toggleMenu()">
+      <span></span><span></span><span></span>
+    </div>
+  </div>
+</nav>
+<div class="mobile-nav" id="mobileNav">
+  <a href="../sistema.html">O Sistema</a>
+  <a href="../ia.html">IA Aplicada</a>
+  <a href="../arquitetura.html">Arquitetura</a>
+  <a href="index.html">Blog</a>
+  <a href="../contato.html">Contato</a>
+  <a href="https://form.respondi.app/QnLOVD5g" target="_blank" class="btn btn-primary" style="width:fit-content">Começar agora →</a>
+</div>
+
+<section class="post-hero">
+  <div class="container">
+    <div class="post-breadcrumb">
+      <a href="index.html">Blog</a>
+      <span>/</span>
+      <span>Inteligência Artificial</span>
+    </div>
+    <span class="post-category-pill">Inteligência Artificial</span>
+    <h1>IA na hotelaria: segmentação inteligente que reduz custo por reserva</h1>
+    <div class="post-meta">
+      <span class="pm-item">📅 Fevereiro 2025</span>
+      <span class="pm-item">⏱ 6 min de leitura</span>
+      <span class="pm-item">✍ Komplexa Hotéis</span>
+    </div>
+  </div>
+</section>
+
+<div class="post-layout">
+
+  <article class="post-content">
+
+    <p>A maior parte das campanhas de hotel ainda é configurada como se fosse 2015: público demográfico amplo, interesse em "viagens", segmentação por idade e cidade. O resultado é tráfego volumoso, com baixa intenção de compra e custo por reserva alto.</p>
+
+    <p>A IA aplicada à mídia paga muda essa lógica. Em vez de adivinhar quem pode reservar, ela aprende com quem <strong>já reservou</strong> — e usa esse comportamento como matéria-prima para encontrar mais pessoas parecidas.</p>
+
+    <div class="highlight-box">
+      <p>Lookalike baseado em hóspedes reais é o tipo de público com maior taxa de conversão dentro de um hotel. E é exatamente o que a maioria dos hotéis ainda não usa.</p>
+    </div>
+
+    <h2 id="problema">O problema da segmentação tradicional</h2>
+    <p>Segmentar por idade, gênero, cidade e interesse em "hotéis" parece lógico, mas é uma camada rasa. Esse perfil é gigantesco — engloba curiosos, comparadores de preço, pessoas que sequer estão considerando viajar nos próximos 90 dias.</p>
+    <p>O resultado prático:</p>
+    <ul>
+      <li>Tráfego que chega ao site mas não busca disponibilidade</li>
+      <li>Custo por clique baixo, mas custo por reserva alto</li>
+      <li>Campanhas que "performam" no relatório de mídia mas não aparecem no PMS</li>
+    </ul>
+
+    <h2 id="ia-real">O que a IA muda na prática</h2>
+    <p>A IA atua em três camadas — todas elas baseadas em <strong>dados reais do hotel</strong>, não em palpite.</p>
+
+    <h3>1. Lookalike de hóspedes que reservaram</h3>
+    <p>O ponto de partida não é uma lista demográfica. É a sua própria base: quem reservou nos últimos 12 meses, quanto pagou, em que datas, por quanto tempo. A IA lê esse padrão de comportamento e busca pessoas estatisticamente parecidas dentro do Meta e do Google.</p>
+    <p>Isso significa que cada hotel acaba mirando um público diferente — porque cada hotel atrai um perfil diferente. Um boutique no Vale dos Vinhedos não tem o mesmo cliente de um resort all-inclusive.</p>
+
+    <h3>2. Exclusão automática de público sem potencial</h3>
+    <p>Tão importante quanto encontrar bons leads é parar de pagar pelos ruins. A IA identifica padrões de quem clica mas nunca reserva — e remove esses perfis da entrega. Em alguns casos, isso sozinho derruba o custo por reserva em 20% ou mais.</p>
+
+    <h3>3. Distribuição inteligente de orçamento</h3>
+    <p>Em vez de dividir o orçamento igualmente entre campanhas, a IA realoca verba em tempo real para os criativos, públicos e horários que estão de fato gerando reservas — não cliques.</p>
+
+    <h2 id="dados">Por que isso só funciona com dados integrados</h2>
+    <p>IA sem dado não é inteligência — é palpite automatizado. Para que a segmentação funcione, é preciso enviar para as plataformas de mídia o que importa de verdade: <strong>quem reservou, quando e quanto pagou</strong>.</p>
+    <p>Isso exige:</p>
+    <ul>
+      <li>Pixel/Conversion API do Meta integrado ao motor de reservas</li>
+      <li>Conversões offline do Google Ads alimentadas com reservas confirmadas</li>
+      <li>Eventos de funil mapeados (busca de disponibilidade, escolha de quarto, checkout)</li>
+    </ul>
+    <p>Sem essa base, qualquer "IA" vira uma caixa preta que decide com critérios irrelevantes.</p>
+
+    <h2 id="resultado">O resultado ao longo do tempo</h2>
+    <p>Diferente de uma campanha tradicional que tem teto de performance, campanhas alimentadas por dados de reserva real <strong>melhoram com o tempo</strong>. A cada nova reserva, o algoritmo aprende mais sobre quem é seu cliente — e o ROAS tende a crescer mês a mês.</p>
+    <p>Em hotéis bem instrumentados, é comum ver:</p>
+    <ul>
+      <li>Custo por reserva caindo 30%–50% nos primeiros 90 dias</li>
+      <li>ROAS subindo de forma consistente após o terceiro mês</li>
+      <li>Maior previsibilidade de aquisição em datas estratégicas</li>
+    </ul>
+
+    <div class="post-divider"></div>
+
+    <h2 id="conclusao">Conclusão</h2>
+    <p>IA na hotelaria não é um filtro novo de campanha. É uma forma diferente de pensar mídia: <strong>parar de mirar em "viajantes" e começar a mirar em pessoas com perfil dos seus melhores hóspedes</strong>.</p>
+    <p>O hotel que faz isso de forma estruturada deixa de competir no leilão genérico e passa a operar com um custo por reserva consistentemente menor — sem aumentar o investimento.</p>
+
+    <div class="post-cta">
+      <h4>Quer aplicar IA de verdade na aquisição do seu hotel?</h4>
+      <p>A Komplexa estrutura mídia paga com IA conectada aos dados reais de reserva. Estratégia personalizada para o perfil do seu hotel.</p>
+      <a href="https://form.respondi.app/QnLOVD5g" target="_blank" class="btn btn-primary">Falar com especialista →</a>
+    </div>
+
+  </article>
+
+  <aside class="post-sidebar">
+
+    <div class="sidebar-card">
+      <h4>Neste artigo</h4>
+      <a href="#problema" class="toc-link active">O problema da segmentação tradicional</a>
+      <a href="#ia-real" class="toc-link">O que a IA muda na prática</a>
+      <a href="#dados" class="toc-link">Por que precisa de dados integrados</a>
+      <a href="#resultado" class="toc-link">O resultado ao longo do tempo</a>
+      <a href="#conclusao" class="toc-link">Conclusão</a>
+    </div>
+
+    <div class="cta-sidebar">
+      <h4>Quer esse sistema no seu hotel?</h4>
+      <p>Implementação + gestão contínua. Estratégia personalizada com dados reais.</p>
+      <a href="https://form.respondi.app/QnLOVD5g" target="_blank" class="btn btn-primary" style="width:100%;justify-content:center">Começar agora →</a>
+    </div>
+
+    <div class="sidebar-card" style="margin-top:20px">
+      <h4>Leia também</h4>
+      <a href="post-ota.html" class="related-post">
+        <div class="rp-icon c1">🏨</div>
+        <div class="rp-text">
+          <h5>Como reduzir a dependência de OTAs e gerar reservas diretas</h5>
+          <span>OTA e Distribuição · 8 min</span>
+        </div>
+      </a>
+      <a href="post-funil.html" class="related-post">
+        <div class="rp-icon c2">🔄</div>
+        <div class="rp-text">
+          <h5>Por que campanhas isoladas não funcionam para hotéis</h5>
+          <span>Conversão · 5 min</span>
+        </div>
+      </a>
+    </div>
+
+  </aside>
+</div>
+
+<section class="related">
+  <div class="container">
+    <h2>Continue lendo</h2>
+    <div class="related-grid">
+      <a href="post-ota.html" class="rg-card">
+        <span class="rg-tag">OTA e Distribuição</span>
+        <h4>Como reduzir a dependência de OTAs e gerar reservas diretas</h4>
+        <p>Comissões de 15% a 25% não são inevitáveis. Estratégia completa para construir um canal direto forte.</p>
+      </a>
+      <a href="post-revpar.html" class="rg-card">
+        <span class="rg-tag">RevPAR e Receita</span>
+        <h4>RevPAR vs. ocupação: qual métrica define o sucesso do seu hotel</h4>
+        <p>Encher o hotel nem sempre significa lucrar mais. Entenda o que medir.</p>
+      </a>
+      <a href="post-funil.html" class="rg-card">
+        <span class="rg-tag">Conversão</span>
+        <h4>Por que campanhas isoladas não funcionam para hotéis</h4>
+        <p>O funil completo é o único modelo que escala reservas diretas de forma previsível.</p>
+      </a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <div class="footer-logo">
+          <img src="../assets/logo.svg" alt="Komplexa" />
+          <span class="footer-logo-text">Komplexa Hotéis</span>
+        </div>
+        <p>Arquitetura de crescimento para reservas diretas. Transformamos hotéis em sistemas de receita previsível.</p>
+      </div>
+      <div class="footer-col">
+        <h5>Solução</h5>
+        <ul>
+          <li><a href="../sistema.html">O Sistema</a></li>
+          <li><a href="../ia.html">IA Aplicada</a></li>
+          <li><a href="../arquitetura.html">Arquitetura</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Conteúdo</h5>
+        <ul><li><a href="index.html">Blog</a></li></ul>
+      </div>
+      <div class="footer-col">
+        <h5>Contato</h5>
+        <ul>
+          <li><a href="../contato.html">Falar com a equipe</a></li>
+          <li><a href="https://form.respondi.app/QnLOVD5g" target="_blank">Começar agora</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2025 Komplexa Hotéis. Todos os direitos reservados.</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+  function toggleMenu() {
+    document.getElementById('mobileNav').classList.toggle('open');
+  }
+</script>
+</body>
+</html>

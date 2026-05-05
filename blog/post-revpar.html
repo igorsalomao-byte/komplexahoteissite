@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>RevPAR vs. ocupação: qual métrica define o sucesso do seu hotel — Komplexa Hotéis</title>
+  <meta name="description" content="Encher o hotel nem sempre significa lucrar mais. Entenda como o RevPAR mostra se você está crescendo de verdade — e como melhorá-lo com reservas diretas." />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://komplexahoteis.com/blog/post-revpar.html" />
+
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://komplexahoteis.com/blog/post-revpar.html" />
+  <meta property="og:title" content="RevPAR vs. ocupação: qual métrica define o sucesso do seu hotel" />
+  <meta property="og:description" content="Encher o hotel nem sempre significa lucrar mais. Entenda o que medir." />
+  <meta property="og:image" content="https://komplexahoteis.com/assets/og-image.jpg" />
+  <meta property="og:locale" content="pt_BR" />
+  <meta property="og:site_name" content="Komplexa Hotéis" />
+  <meta property="article:published_time" content="2025-03-04" />
+  <meta property="article:author" content="Komplexa Hotéis" />
+  <meta property="article:section" content="RevPAR e Receita" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="RevPAR vs. ocupação: qual métrica define o sucesso do seu hotel" />
+  <meta name="twitter:description" content="Encher o hotel nem sempre significa lucrar mais. Entenda o que medir." />
+  <meta name="twitter:image" content="https://komplexahoteis.com/assets/og-image.jpg" />
+
+  <script type="application/ld+json">
+  [
+    {
+      "@context": "https://schema.org",
+      "@type": "BlogPosting",
+      "headline": "RevPAR vs. ocupação: qual métrica define o sucesso do seu hotel",
+      "description": "Encher o hotel nem sempre significa lucrar mais. Entenda como o RevPAR mostra se você está crescendo de verdade.",
+      "url": "https://komplexahoteis.com/blog/post-revpar.html",
+      "datePublished": "2025-03-04",
+      "dateModified": "2025-03-04",
+      "inLanguage": "pt-BR",
+      "author": { "@type": "Organization", "name": "Komplexa Hotéis", "url": "https://komplexahoteis.com" },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Komplexa Hotéis",
+        "logo": { "@type": "ImageObject", "url": "https://komplexahoteis.com/assets/logo.svg" }
+      },
+      "mainEntityOfPage": { "@type": "WebPage", "@id": "https://komplexahoteis.com/blog/post-revpar.html" },
+      "articleSection": "RevPAR e Receita"
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://komplexahoteis.com/" },
+        { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://komplexahoteis.com/blog/" },
+        { "@type": "ListItem", "position": 3, "name": "RevPAR vs. ocupação", "item": "https://komplexahoteis.com/blog/post-revpar.html" }
+      ]
+    }
+  ]
+  </script>
+
+  <link rel="stylesheet" href="../assets/style.css" />
+  <style>
+    .post-hero { background: var(--navy); padding: 130px 0 72px; position: relative; overflow: hidden; }
+    .post-hero::before { content: ''; position: absolute; top: -100px; right: -100px; width: 500px; height: 500px; background: radial-gradient(circle, rgba(0,198,255,0.1) 0%, transparent 65%); }
+    .post-hero .container { position: relative; z-index: 1; }
+    .post-breadcrumb { display: flex; align-items: center; gap: 8px; font-size: 0.8rem; color: rgba(255,255,255,0.4); margin-bottom: 24px; }
+    .post-breadcrumb a { color: rgba(255,255,255,0.4); text-decoration: none; transition: color 0.2s; }
+    .post-breadcrumb a:hover { color: var(--blue); }
+    .post-breadcrumb span { color: rgba(255,255,255,0.2); }
+    .post-category-pill { display: inline-block; font-family: 'Exo 2', sans-serif; font-size: 0.72rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.8px; background: var(--grad); color: #fff; padding: 5px 14px; border-radius: 100px; margin-bottom: 16px; }
+    .post-hero h1 { font-size: clamp(2rem, 3.5vw, 3rem); font-weight: 800; letter-spacing: -1px; color: #fff; max-width: 760px; margin-bottom: 20px; }
+    .post-meta { display: flex; align-items: center; gap: 20px; flex-wrap: wrap; }
+    .pm-item { font-size: 0.82rem; color: rgba(255,255,255,0.45); display: flex; align-items: center; gap: 6px; }
+    .post-layout { max-width: 1160px; margin: 0 auto; padding: 72px 5%; display: grid; grid-template-columns: 1fr 320px; gap: 72px; align-items: start; }
+    .post-content { min-width: 0; }
+    .post-content h2 { font-size: 1.6rem; font-weight: 800; color: var(--navy); letter-spacing: -0.5px; margin: 40px 0 14px; }
+    .post-content h3 { font-size: 1.15rem; font-weight: 700; color: var(--navy); margin: 28px 0 10px; }
+    .post-content p { font-size: 1rem; color: var(--text); line-height: 1.8; margin-bottom: 18px; }
+    .post-content strong { color: var(--navy); font-weight: 600; }
+    .post-content ul, .post-content ol { margin: 0 0 20px 20px; display: flex; flex-direction: column; gap: 8px; }
+    .post-content li { font-size: 0.95rem; color: var(--text); line-height: 1.7; }
+    .highlight-box { background: rgba(0,198,255,0.06); border: 1px solid rgba(0,198,255,0.15); border-left: 3px solid var(--blue); border-radius: 0 10px 10px 0; padding: 20px 24px; margin: 28px 0; }
+    .highlight-box p { font-size: 0.95rem; color: var(--navy); margin: 0; font-weight: 500; line-height: 1.7; }
+    .post-cta { background: var(--navy); border-radius: 16px; padding: 32px; margin: 40px 0; text-align: center; }
+    .post-cta h4 { font-size: 1.1rem; font-weight: 700; color: #fff; margin-bottom: 8px; }
+    .post-cta p { font-size: 0.85rem; color: rgba(255,255,255,0.5); margin-bottom: 20px; }
+    .post-divider { height: 1px; background: var(--border); margin: 40px 0; }
+    .post-sidebar { position: sticky; top: 88px; }
+    .sidebar-card { background: var(--bg); border: 1px solid var(--border); border-radius: 14px; padding: 24px; margin-bottom: 20px; }
+    .sidebar-card h4 { font-family: 'Exo 2', sans-serif; font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; color: var(--gray); margin-bottom: 16px; }
+    .toc-link { display: block; font-size: 0.85rem; color: var(--text); padding: 7px 0; border-bottom: 1px solid var(--border); text-decoration: none; transition: color 0.2s; }
+    .toc-link:last-child { border-bottom: none; }
+    .toc-link:hover { color: var(--blue); }
+    .toc-link.active { color: var(--blue); font-weight: 600; }
+    .related-post { display: flex; gap: 12px; align-items: flex-start; padding: 12px 0; border-bottom: 1px solid var(--border); text-decoration: none; }
+    .related-post:last-child { border-bottom: none; padding-bottom: 0; }
+    .rp-icon { width: 36px; height: 36px; border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 1rem; flex-shrink: 0; }
+    .rp-icon.c1 { background: linear-gradient(135deg, #1670C3, #00C6FF); }
+    .rp-icon.c2 { background: linear-gradient(135deg, #14233C, #1099E9); }
+    .rp-icon.c3 { background: linear-gradient(135deg, #1099E9, #24D5FF); }
+    .rp-text h5 { font-size: 0.82rem; font-weight: 600; color: var(--navy); margin-bottom: 2px; line-height: 1.35; }
+    .rp-text span { font-size: 0.73rem; color: var(--gray); }
+    .cta-sidebar { background: var(--navy); border-radius: 14px; padding: 24px; text-align: center; }
+    .cta-sidebar h4 { font-size: 1rem; font-weight: 700; color: #fff; margin-bottom: 8px; }
+    .cta-sidebar p { font-size: 0.8rem; color: rgba(255,255,255,0.5); margin-bottom: 16px; line-height: 1.6; }
+    .related { background: var(--bg); padding: 72px 0; }
+    .related h2 { font-size: 1.3rem; font-weight: 700; color: var(--navy); margin-bottom: 32px; }
+    .related-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+    .rg-card { background: var(--white); border: 1px solid var(--border); border-radius: 14px; padding: 24px; text-decoration: none; transition: box-shadow 0.2s, transform 0.2s; display: block; }
+    .rg-card:hover { box-shadow: 0 6px 24px rgba(20,35,60,0.08); transform: translateY(-2px); }
+    .rg-tag { font-family: 'Exo 2', sans-serif; font-size: 0.68rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.8px; color: var(--blue); margin-bottom: 10px; display: block; }
+    .rg-card h4 { font-size: 0.95rem; font-weight: 700; color: var(--navy); margin-bottom: 6px; line-height: 1.35; }
+    .rg-card p { font-size: 0.8rem; color: var(--text); line-height: 1.6; }
+    @media (max-width: 1024px) { .post-layout { grid-template-columns: 1fr; } .post-sidebar { position: static; } .related-grid { grid-template-columns: 1fr 1fr; } }
+    @media (max-width: 768px) { .related-grid { grid-template-columns: 1fr; } }
+  </style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a href="../index.html" class="nav-logo">
+      <img src="../assets/logo.svg" alt="Komplexa" />
+      <span class="nav-logo-text">Komplexa Hotéis</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="../sistema.html">O Sistema</a></li>
+      <li><a href="../ia.html">IA Aplicada</a></li>
+      <li><a href="../arquitetura.html">Arquitetura</a></li>
+      <li><a href="index.html" class="active">Blog</a></li>
+      <li><a href="../contato.html">Contato</a></li>
+    </ul>
+    <a href="https://form.respondi.app/QnLOVD5g" target="_blank" class="btn btn-primary">Começar agora →</a>
+    <div class="nav-hamburger" onclick="toggleMenu()">
+      <span></span><span></span><span></span>
+    </div>
+  </div>
+</nav>
+<div class="mobile-nav" id="mobileNav">
+  <a href="../sistema.html">O Sistema</a>
+  <a href="../ia.html">IA Aplicada</a>
+  <a href="../arquitetura.html">Arquitetura</a>
+  <a href="index.html">Blog</a>
+  <a href="../contato.html">Contato</a>
+  <a href="https://form.respondi.app/QnLOVD5g" target="_blank" class="btn btn-primary" style="width:fit-content">Começar agora →</a>
+</div>
+
+<section class="post-hero">
+  <div class="container">
+    <div class="post-breadcrumb">
+      <a href="index.html">Blog</a>
+      <span>/</span>
+      <span>RevPAR e Receita</span>
+    </div>
+    <span class="post-category-pill">RevPAR e Receita</span>
+    <h1>RevPAR vs. ocupação: qual métrica define o sucesso do seu hotel</h1>
+    <div class="post-meta">
+      <span class="pm-item">📅 Março 2025</span>
+      <span class="pm-item">⏱ 7 min de leitura</span>
+      <span class="pm-item">✍ Komplexa Hotéis</span>
+    </div>
+  </div>
+</section>
+
+<div class="post-layout">
+
+  <article class="post-content">
+
+    <p>Existe uma armadilha clássica na hotelaria: olhar para a taxa de ocupação como se ela fosse o termômetro do negócio. Quanto mais cheio o hotel, melhor — certo? Não necessariamente.</p>
+
+    <p>Um hotel pode estar com 90% de ocupação e <strong>perdendo dinheiro</strong>. E outro, com 65% de ocupação, pode estar entregando muito mais lucro. A métrica que separa um cenário do outro é o <strong>RevPAR</strong>.</p>
+
+    <div class="highlight-box">
+      <p>Ocupação te diz se há gente no hotel. RevPAR te diz se há receita no hotel. São coisas diferentes — e operar olhando só para a primeira é o caminho mais curto para um negócio sem margem.</p>
+    </div>
+
+    <h2 id="o-que-e">O que é RevPAR (e por que ele manda)</h2>
+    <p>RevPAR significa <strong>Revenue Per Available Room</strong> — receita por quarto disponível. A fórmula é simples:</p>
+    <ul>
+      <li><strong>RevPAR = Diária Média × Taxa de Ocupação</strong></li>
+      <li>Ou: <strong>RevPAR = Receita Total de Hospedagem ÷ Quartos Disponíveis no Período</strong></li>
+    </ul>
+    <p>O RevPAR combina os dois eixos do negócio: <strong>preço</strong> e <strong>volume</strong>. Por isso ele é mais honesto que ocupação isolada ou diária média isolada.</p>
+
+    <h2 id="armadilha">A armadilha da ocupação alta</h2>
+    <p>Imagine dois hotéis idênticos, com 50 quartos cada, num mesmo mês:</p>
+    <ul>
+      <li><strong>Hotel A:</strong> 90% de ocupação, diária média de R$ 280 → RevPAR de R$ 252</li>
+      <li><strong>Hotel B:</strong> 65% de ocupação, diária média de R$ 450 → RevPAR de R$ 292</li>
+    </ul>
+    <p>O Hotel A está mais cheio. Mas o Hotel B fatura mais por quarto disponível — e ainda gasta menos com lavanderia, café da manhã, energia e desgaste operacional. O lucro do Hotel B é maior, mesmo com menos gente hospedada.</p>
+    <p>Quando você baixa preço para encher, na maioria das vezes está apenas trocando margem por movimento.</p>
+
+    <h2 id="ota-revpar">Por que OTA derruba RevPAR</h2>
+    <p>Vender via Booking ou Expedia "enche" o hotel — mas a uma diária líquida menor. Cada reserva via OTA carrega 15% a 25% de comissão. Em termos de RevPAR líquido, é como se o quarto estivesse vendido por um preço bem inferior ao que aparece no painel.</p>
+    <p>Hotéis que aumentam o mix de reservas diretas conseguem manter ou subir a ocupação <strong>sem comprometer o RevPAR líquido</strong>. É a diferença entre crescer em volume e crescer em receita.</p>
+
+    <h2 id="como-aumentar">Como aumentar o RevPAR de forma estruturada</h2>
+
+    <h3>1. Mudar o mix de canais</h3>
+    <p>Cada ponto percentual que sai da OTA e entra como reserva direta sobe o RevPAR líquido — mesmo com a mesma diária bruta. É a alavanca mais rápida.</p>
+
+    <h3>2. Distribuir ocupação na semana</h3>
+    <p>RevPAR ruim quase nunca é problema de fim de semana. É problema de segunda a quinta. Funis específicos para ocupar dias úteis (públicos corporativos, casais sem filhos, workation) elevam o RevPAR mensal sem mexer na tarifa.</p>
+
+    <h3>3. Reduzir promoções genéricas</h3>
+    <p>Descontos abertos no site cabeceira corroem RevPAR. Ofertas devem ser segmentadas — só para quem precisa de gatilho para fechar (carrinho abandonado, retornantes, datas específicas).</p>
+
+    <h3>4. Trabalhar pacotes em vez de tarifa</h3>
+    <p>Em vez de baixar a diária, agregue valor. Pacote romântico, jantar incluso, late check-out com upgrade. O hóspede percebe valor maior e a diária média sobe.</p>
+
+    <h2 id="medir">O que medir junto com o RevPAR</h2>
+    <p>RevPAR sozinho ainda não é suficiente. Em um sistema saudável de receita direta, ele anda lado a lado com:</p>
+    <ul>
+      <li><strong>% de reservas diretas</strong> sobre o total</li>
+      <li><strong>Custo por reserva</strong> nas mídias pagas</li>
+      <li><strong>Diária média de canal direto vs. OTA</strong></li>
+      <li><strong>RevPAR líquido</strong> (já descontando comissão por canal)</li>
+    </ul>
+
+    <div class="post-divider"></div>
+
+    <h2 id="conclusao">Conclusão</h2>
+    <p>Ocupação te diz se o hotel está cheio. RevPAR te diz se ele está rentável. E RevPAR líquido te diz se a estratégia comercial está funcionando — ou só transferindo margem para a OTA.</p>
+    <p>Quem opera olhando para os três indicadores juntos toma decisões diferentes: vende mais por canal direto, distribui ocupação na semana e protege a diária em vez de afundar para encher.</p>
+
+    <div class="post-cta">
+      <h4>Quer subir o RevPAR sem brigar por preço?</h4>
+      <p>A Komplexa monta a arquitetura completa de reservas diretas — mídia, conversão, recuperação e pós-venda — com foco em receita líquida.</p>
+      <a href="https://form.respondi.app/QnLOVD5g" target="_blank" class="btn btn-primary">Falar com especialista →</a>
+    </div>
+
+  </article>
+
+  <aside class="post-sidebar">
+
+    <div class="sidebar-card">
+      <h4>Neste artigo</h4>
+      <a href="#o-que-e" class="toc-link active">O que é RevPAR</a>
+      <a href="#armadilha" class="toc-link">A armadilha da ocupação alta</a>
+      <a href="#ota-revpar" class="toc-link">Por que OTA derruba RevPAR</a>
+      <a href="#como-aumentar" class="toc-link">Como aumentar o RevPAR</a>
+      <a href="#medir" class="toc-link">O que medir junto</a>
+      <a href="#conclusao" class="toc-link">Conclusão</a>
+    </div>
+
+    <div class="cta-sidebar">
+      <h4>Quer esse sistema no seu hotel?</h4>
+      <p>Implementação + gestão contínua. Estratégia personalizada com dados reais.</p>
+      <a href="https://form.respondi.app/QnLOVD5g" target="_blank" class="btn btn-primary" style="width:100%;justify-content:center">Começar agora →</a>
+    </div>
+
+    <div class="sidebar-card" style="margin-top:20px">
+      <h4>Leia também</h4>
+      <a href="post-ota.html" class="related-post">
+        <div class="rp-icon c1">🏨</div>
+        <div class="rp-text">
+          <h5>Como reduzir a dependência de OTAs</h5>
+          <span>OTA e Distribuição · 8 min</span>
+        </div>
+      </a>
+      <a href="post-semana.html" class="related-post">
+        <div class="rp-icon c2">📅</div>
+        <div class="rp-text">
+          <h5>Como ocupar a semana sem depender de eventos</h5>
+          <span>Marketing Hoteleiro · 5 min</span>
+        </div>
+      </a>
+    </div>
+
+  </aside>
+</div>
+
+<section class="related">
+  <div class="container">
+    <h2>Continue lendo</h2>
+    <div class="related-grid">
+      <a href="post-ota.html" class="rg-card">
+        <span class="rg-tag">OTA e Distribuição</span>
+        <h4>Como reduzir a dependência de OTAs e gerar reservas diretas</h4>
+        <p>Comissões de 15% a 25% não são inevitáveis. Estratégia completa para construir um canal direto forte.</p>
+      </a>
+      <a href="post-semana.html" class="rg-card">
+        <span class="rg-tag">Marketing Hoteleiro</span>
+        <h4>Como ocupar a semana sem depender de eventos</h4>
+        <p>Estratégias de segmentação que estabilizam a receita de segunda a quinta.</p>
+      </a>
+      <a href="post-ltv.html" class="rg-card">
+        <span class="rg-tag">CRM e Pós-venda</span>
+        <h4>LTV em hotéis: o ativo que a maioria ignora</h4>
+        <p>Como reativar hóspedes antigos pode representar 20% a 30% da receita sem custo de aquisição.</p>
+      </a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <div class="footer-logo">
+          <img src="../assets/logo.svg" alt="Komplexa" />
+          <span class="footer-logo-text">Komplexa Hotéis</span>
+        </div>
+        <p>Arquitetura de crescimento para reservas diretas. Transformamos hotéis em sistemas de receita previsível.</p>
+      </div>
+      <div class="footer-col">
+        <h5>Solução</h5>
+        <ul>
+          <li><a href="../sistema.html">O Sistema</a></li>
+          <li><a href="../ia.html">IA Aplicada</a></li>
+          <li><a href="../arquitetura.html">Arquitetura</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Conteúdo</h5>
+        <ul><li><a href="index.html">Blog</a></li></ul>
+      </div>
+      <div class="footer-col">
+        <h5>Contato</h5>
+        <ul>
+          <li><a href="../contato.html">Falar com a equipe</a></li>
+          <li><a href="https://form.respondi.app/QnLOVD5g" target="_blank">Começar agora</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2025 Komplexa Hotéis. Todos os direitos reservados.</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+  function toggleMenu() {
+    document.getElementById('mobileNav').classList.toggle('open');
+  }
+</script>
+</body>
+</html>
