@@ -435,8 +435,12 @@ html,body{font-family:var(--fd);background:var(--page-bg);color:var(--navy);-web
 
   /* MONEY (slide 03) — mantém EXATA composição desktop, slide ocupa tela toda */
   .slide-money{min-height:100vh;min-height:100dvh}
-  .slide-money .body{overflow:hidden;display:flex;flex-direction:column;justify-content:center}
-  .money-left .title{font-size:28px;letter-spacing:-.8px;line-height:1.1}
+  .slide-money .body{overflow:hidden;display:flex;flex-direction:column;justify-content:center;padding:14px 14px 26px}
+  .money-grid{padding:0;margin:0}
+  .money-left{padding:0;width:100%;max-width:100%}
+  .money-left .eyebrow{margin-bottom:8px}
+  .money-left .title{font-size:24px;letter-spacing:-.6px;line-height:1.15;text-wrap:balance;max-width:100%;word-break:normal;overflow-wrap:break-word}
+  .money-left .lead{font-size:13.5px;line-height:1.5;margin-top:14px}
   .money-grid{grid-template-columns:1fr;gap:32px;align-items:stretch}
   .money-left .lead{font-size:14px;max-width:100%}
   .money-left .stats{margin-top:16px;gap:8px}
