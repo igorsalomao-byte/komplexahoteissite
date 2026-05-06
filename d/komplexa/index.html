@@ -84,6 +84,8 @@ html,body{font-family:var(--fd);background:var(--page-bg);color:var(--navy);-web
 
 /* ─── 03 · MONEY SLIDE — FIGMA-STYLE FLOW (split layout) ─── */
 .money-grid{display:grid;grid-template-columns:38% 62%;gap:32px;flex:1;align-items:stretch;position:relative}
+.cover-body{padding:40px 56px;justify-content:center}
+.money-body{padding:24px 56px 12px}
 .money-left{display:flex;flex-direction:column;justify-content:center;padding:8px 0}
 .money-left .title{font-size:38px;letter-spacing:-1.2px;line-height:1.05}
 .money-left .lead{color:rgba(255,255,255,.72);font-size:15px;line-height:1.6;max-width:380px;margin-top:18px}
@@ -403,7 +405,7 @@ html,body{font-family:var(--fd);background:var(--page-bg);color:var(--navy);-web
   .slide .top{padding:22px 20px 12px}
   .slide .top img.brand{height:26px}
   .slide .top .pg{font-size:10px}
-  .slide .body{padding:14px 14px 26px}
+  .slide .body,.slide .cover-body,.slide .money-body{padding:14px 14px 26px}
   .slide .bot{padding:14px 20px 22px;font-size:9.5px}
 
   .title{font-size:30px;letter-spacing:-.8px;line-height:1.1;margin-bottom:14px}
@@ -602,7 +604,7 @@ html,body{font-family:var(--fd);background:var(--page-bg);color:var(--navy);-web
 <!-- ═══════════════════ 01 · COVER ═══════════════════ -->
 <section class="slide dark active cover">
   <div class="top"><img class="brand" src="assets/logotipo_white.svg" alt="Komplexa"><span class="pg">Komplexa · 2026</span></div>
-  <div class="body" style="padding:40px 56px;justify-content:center">
+  <div class="body cover-body">
     <div class="cover-mid">
       <div class="cover-eye">Apresentação institucional</div>
       <h1 class="cover-title">Marketing hoteleiro<br><span class="accent">com método</span></h1>
@@ -647,7 +649,7 @@ html,body{font-family:var(--fd);background:var(--page-bg);color:var(--navy);-web
 <!-- ═══════════════════ 03 · MONEY SLIDE — FIGMA-STYLE FLOW ═══════════════════ -->
 <section class="slide dark slide-money">
   <div class="top"><img class="brand" src="assets/logotipo_white.svg" alt="Komplexa"><span class="pg">03 · 09</span></div>
-  <div class="body" style="padding:24px 56px 12px">
+  <div class="body money-body">
     <div class="money-grid">
       <div class="money-left">
         <div class="eyebrow">O sistema Komplexa</div>
