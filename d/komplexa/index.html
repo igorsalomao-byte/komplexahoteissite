@@ -85,6 +85,7 @@ html,body{font-family:var(--fd);background:var(--page-bg);color:var(--navy);-web
 /* ─── 03 · MONEY SLIDE — FIGMA-STYLE FLOW (split layout) ─── */
 .money-grid{display:grid;grid-template-columns:38% 62%;gap:32px;flex:1;align-items:stretch;position:relative}
 .money-left{display:flex;flex-direction:column;justify-content:center;padding:8px 0}
+.money-left .title{font-size:38px;letter-spacing:-1.2px;line-height:1.05}
 .money-left .lead{color:rgba(255,255,255,.72);font-size:15px;line-height:1.6;max-width:380px;margin-top:18px}
 .money-left .stats{display:flex;flex-direction:column;gap:10px;margin-top:24px}
 .money-left .stat{display:grid;grid-template-columns:32px 1fr;gap:12px;align-items:center;padding:10px 14px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:10px}
@@ -435,6 +436,7 @@ html,body{font-family:var(--fd);background:var(--page-bg);color:var(--navy);-web
   /* MONEY (slide 03) — mantém EXATA composição desktop, slide ocupa tela toda */
   .slide-money{min-height:100vh;min-height:100dvh}
   .slide-money .body{overflow:hidden;display:flex;flex-direction:column;justify-content:center}
+  .money-left .title{font-size:28px;letter-spacing:-.8px;line-height:1.1}
   .money-grid{grid-template-columns:1fr;gap:32px;align-items:stretch}
   .money-left .lead{font-size:14px;max-width:100%}
   .money-left .stats{margin-top:16px;gap:8px}
@@ -645,7 +647,7 @@ html,body{font-family:var(--fd);background:var(--page-bg);color:var(--navy);-web
     <div class="money-grid">
       <div class="money-left">
         <div class="eyebrow">O sistema Komplexa</div>
-        <h2 class="title" style="font-size:38px;letter-spacing:-1.2px;line-height:1.05">Como transformamos tráfego em <em>reservas diretas</em></h2>
+        <h2 class="title">Como transformamos tráfego em <em>reservas diretas</em></h2>
         <p class="lead">Um sistema integrado que vai da segmentação por IA até a recuperação de carrinho — com todas as etapas conectadas e medidas.</p>
         <div class="stats">
           <div class="stat"><span class="ic">◇</span><span class="tx"><strong>5 etapas conectadas</strong> rodando em paralelo</span></div>
