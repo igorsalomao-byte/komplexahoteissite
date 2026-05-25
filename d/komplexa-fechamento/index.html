@@ -523,6 +523,10 @@ html,body{font-family:var(--fd);background:var(--page-bg);color:var(--navy);-web
 .cq-mark{position:absolute;top:-12px;left:14px;font-family:'Fraunces',Georgia,serif;font-size:64px;color:var(--blue);line-height:1;opacity:.55}
 .case-quote p{font-size:14.5px;color:var(--txt);line-height:1.55;margin:0;font-style:italic}
 .case-img{height:290px;border-radius:14px;background-size:cover;background-position:center;position:relative;box-shadow:0 12px 40px rgba(0,0,0,.12);margin-bottom:14px;overflow:hidden}
+.case-grid.reverse .case-img{height:220px;margin-bottom:12px}
+.case-big.compact{min-width:0;padding:14px 12px;gap:2px}
+.case-big.compact .cb-num{font-size:34px;letter-spacing:-1.2px}
+.case-big.compact .cb-lbl{font-size:11px;line-height:1.3}
 .case-img::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 55%,rgba(0,0,0,.55) 100%)}
 .case-img-tag{position:absolute;bottom:14px;left:14px;background:rgba(255,255,255,.95);color:var(--navy);font-size:11.5px;font-weight:700;padding:7px 14px;border-radius:100px;z-index:1;backdrop-filter:blur(6px);box-shadow:0 4px 12px rgba(0,0,0,.15)}
 .case-metrics{display:flex;flex-direction:column;gap:8px}
@@ -1218,23 +1222,22 @@ html,body{font-family:var(--fd);background:var(--page-bg);color:var(--navy);-web
         </div>
       </div>
       <div class="case-right">
-        <div class="case-bigstats stacked">
-          <div class="case-big">
+        <div class="case-img" style="background-image:url('assets/hotel/solar-dona-dora.jpg')">
+          <div class="case-img-tag">Pousada Solar Dona Dora</div>
+        </div>
+        <div class="case-bigstats">
+          <div class="case-big compact">
             <span class="cb-num">3,4x</span>
-            <span class="cb-lbl">Faturamento na baixa temporada</span>
+            <span class="cb-lbl">Faturamento na baixa</span>
           </div>
-          <div class="case-big">
+          <div class="case-big compact">
             <span class="cb-num">+400%</span>
-            <span class="cb-lbl">Reservas vs ano anterior</span>
+            <span class="cb-lbl">Reservas</span>
           </div>
-          <div class="case-big">
+          <div class="case-big compact">
             <span class="cb-num">+323%</span>
             <span class="cb-lbl">Noites vendidas</span>
           </div>
-        </div>
-        <div class="case-method">
-          <strong>Metodologia Komplexa aplicada</strong>
-          <span>Criativos com identidade da pousada · Site de alta performance · Anúncios segmentados para quem realmente compra</span>
         </div>
       </div>
     </div>
