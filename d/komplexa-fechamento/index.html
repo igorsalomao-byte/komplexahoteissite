@@ -1796,12 +1796,11 @@ document.addEventListener('fullscreenchange', () => {
   }
 });
 
-/* ─── ADS CAROUSEL ─── */
+/* ─── ADS CAROUSEL (navegação manual apenas) ─── */
 const adsSlides = document.querySelectorAll('#adsCarousel .car-slide');
 const carLabel = document.getElementById('carLabel');
 const carDots = document.getElementById('carDots');
 let adsIdx = 0;
-let adsTimer = null;
 
 if(adsSlides.length){
   adsSlides.forEach((s,i)=>{
@@ -1810,9 +1809,6 @@ if(adsSlides.length){
     d.onclick = ()=>adsGoTo(i);
     carDots.appendChild(d);
   });
-  startAdsAuto();
-  document.getElementById('adsCarousel').addEventListener('mouseenter', stopAdsAuto);
-  document.getElementById('adsCarousel').addEventListener('mouseleave', startAdsAuto);
 }
 
 function adsGoTo(i){
@@ -1821,11 +1817,8 @@ function adsGoTo(i){
   adsIdx = i;
   if(carLabel) carLabel.textContent = adsSlides[i].dataset.label;
 }
-function adsNext(){ adsGoTo((adsIdx + 1) % adsSlides.length); resetAdsAuto(); }
-function adsPrev(){ adsGoTo((adsIdx - 1 + adsSlides.length) % adsSlides.length); resetAdsAuto(); }
-function startAdsAuto(){ stopAdsAuto(); adsTimer = setInterval(()=>adsGoTo((adsIdx+1)%adsSlides.length), 4500); }
-function stopAdsAuto(){ if(adsTimer){ clearInterval(adsTimer); adsTimer = null; } }
-function resetAdsAuto(){ stopAdsAuto(); startAdsAuto(); }
+function adsNext(){ adsGoTo((adsIdx + 1) % adsSlides.length); }
+function adsPrev(){ adsGoTo((adsIdx - 1 + adsSlides.length) % adsSlides.length); }
 
 /* ─── CARROSSEL DO SLIDE 11 (Tudo que entra no plano) ─── */
 const pacoteSlides = document.querySelectorAll('#pacoteCarousel .pcc-slide');
@@ -1908,21 +1901,16 @@ function pacotePrev(){ pacoteGoTo((pacoteIdx - 1 + pacoteSlides.length) % pacote
 
 /* ─── PDF DOWNLOAD ─── */
 function downloadPdf(){
-  // Para o auto-rotate do carrossel
-  stopAdsAuto();
   // Pausa animações SVG (animateMotion) que travam o Chrome
   document.querySelectorAll('svg').forEach(svg => {
     try { svg.pauseAnimations && svg.pauseAnimations(); } catch(e){}
   });
-  // Pequeno delay para o DOM estabilizar antes de abrir o print
   setTimeout(() => {
     window.print();
-    // Retoma após print (caso usuário cancele)
     setTimeout(() => {
       document.querySelectorAll('svg').forEach(svg => {
         try { svg.unpauseAnimations && svg.unpauseAnimations(); } catch(e){}
       });
-      startAdsAuto();
     }, 500);
   }, 80);
 }
