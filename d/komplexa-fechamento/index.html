@@ -1092,7 +1092,7 @@ html,body{font-family:var(--fd);background:var(--page-bg);color:var(--navy);-web
         </div>
       </div>
     </div>
-    <p class="calc-note">Alavanca 1 simula +20pp de ocupação (cap em 85%). Alavanca 2 simula +R$ 30 de tarifa média. Valores variam por categoria, sazonalidade e estratégia aplicada — esse é o piso, não o teto.</p>
+    <p class="calc-note">Vazamento de ocupação: diferença até 80% (referência saudável da hotelaria boutique). Vazamento de tarifa: R$ 30 abaixo do potencial nas noites efetivamente vendidas. Valores variam por categoria, sazonalidade e estratégia — esse é o piso, não o teto.</p>
   </div>
   <div class="bot"><span>komplexahoteis.com</span><span>03 · 12</span></div>
 </section>
@@ -1861,8 +1861,7 @@ function pacotePrev(){ pacoteGoTo((pacoteIdx - 1 + pacoteSlides.length) % pacote
 
   const fmt = n => Math.round(Math.max(0,n)).toLocaleString('pt-BR');
   const DIAS_MES = 30;
-  const ALV_OCUP_PP = 20;          // alavanca 1: +20pp de ocupação
-  const ALV_OCUP_CAP = 85;         // cap em 85%
+  const ALV_OCUP_ALVO = 80;        // alavanca 1: alvo saudável de ocupação
   const ALV_DIARIA_INC = 30;       // alavanca 2: +R$ 30 na tarifa
 
   function calc(){
@@ -1877,20 +1876,14 @@ function pacotePrev(){ pacoteGoTo((pacoteIdx - 1 + pacoteSlides.length) % pacote
     const fatMes = noitesAtuais * diaria;
     $('calcFatMes').textContent = fmt(fatMes);
 
-    // VAZAMENTO 1 — Ocupação (potencial não capturado)
-    let ocupAlvo;
-    if(ocup >= ALV_OCUP_CAP) {
-      ocupAlvo = Math.min(95, ocup + 5);
-    } else {
-      ocupAlvo = Math.min(ALV_OCUP_CAP, ocup + ALV_OCUP_PP);
-    }
-    const ocupGap = Math.max(0, ocupAlvo - ocup);
+    // VAZAMENTO 1 — Ocupação (diferença até o alvo de 80%)
+    const ocupGap = Math.max(0, ALV_OCUP_ALVO - ocup);
     const noitesGanhas = uhs * DIAS_MES * (ocupGap/100);
     const lvOcupMes = noitesGanhas * diaria;
     $('lvOcupAtual').textContent = ocup + '%';
     $('lvOcupMes').textContent = fmt(lvOcupMes);
 
-    // VAZAMENTO 2 — Tarifa (R$ 30 abaixo do potencial)
+    // VAZAMENTO 2 — Tarifa (R$ 30 abaixo do potencial, nas noites atuais)
     const lvDiariaMes = noitesAtuais * ALV_DIARIA_INC;
     $('lvDiariaMes').textContent = fmt(lvDiariaMes);
 
@@ -1909,7 +1902,7 @@ function pacotePrev(){ pacoteGoTo((pacoteIdx - 1 + pacoteSlides.length) % pacote
     } else if(ocup < 80) {
       ftx.innerHTML = 'Operação saudável, mas <strong>perdendo nas duas pontas</strong>. Atacar OCUPAÇÃO e TARIFA juntas trava esse vazamento — uma reforça a outra.';
     } else {
-      ftx.innerHTML = 'Ocupação no topo (<strong>'+ocup+'%</strong>). Seu maior vazamento é <strong>TARIFA</strong> — R$ 30 a mais por diária, sem mexer em ocupação, deixa de escapar <strong>−R$ '+fmt(lvDiariaMes * 12)+' em 12 meses</strong>.';
+      ftx.innerHTML = 'Ocupação já no alvo (<strong>'+ocup+'%</strong>). Seu vazamento agora é <strong>TARIFA</strong> — R$ 30 a mais por diária, sem mexer em ocupação, deixa de escapar <strong>−R$ '+fmt(lvDiariaMes * 12)+' em 12 meses</strong>.';
     }
   }
 
