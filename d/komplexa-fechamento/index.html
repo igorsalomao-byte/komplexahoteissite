@@ -424,9 +424,10 @@ html,body{font-family:var(--fd);background:var(--page-bg);color:var(--navy);-web
 .calc-result::before{content:"";position:absolute;inset:0;background:var(--grad-r);opacity:.4;pointer-events:none}
 .cr-eyebrow{font-size:10.5px;font-weight:800;letter-spacing:1.8px;text-transform:uppercase;color:rgba(255,255,255,.6);position:relative;z-index:1}
 .cr-main{position:relative;z-index:1}
-.cr-bignum{font-size:46px;font-weight:800;letter-spacing:-1.6px;background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;line-height:1;font-variant-numeric:tabular-nums}
-.cr-lbl{font-size:12.5px;color:rgba(255,255,255,.65);margin-top:6px;line-height:1.45}
-.cr-lbl strong{color:#fff;font-weight:700;font-variant-numeric:tabular-nums}
+.cr-bignum{font-size:46px;font-weight:800;letter-spacing:-1.6px;color:#FFAB6B;line-height:1;font-variant-numeric:tabular-nums;text-shadow:0 0 30px rgba(255,171,107,.18)}
+.cr-bignum .cr-sign{font-weight:600;opacity:.75;margin-right:1px}
+.cr-lbl{font-size:12.5px;color:rgba(255,255,255,.7);margin-top:6px;line-height:1.45}
+.cr-lbl strong{color:#FFAB6B;font-weight:700;font-variant-numeric:tabular-nums}
 
 .cr-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;position:relative;z-index:1}
 .cr-item{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.10);border-radius:10px;padding:12px 14px;display:flex;flex-direction:column;gap:3px}
@@ -434,9 +435,13 @@ html,body{font-family:var(--fd);background:var(--page-bg);color:var(--navy);-web
 .cri-val{font-size:18px;font-weight:800;color:#fff;letter-spacing:-.3px;font-variant-numeric:tabular-nums;margin-top:2px}
 .cri-sub{font-size:10.5px;color:rgba(255,255,255,.5);font-weight:500;margin-top:2px;font-variant-numeric:tabular-nums}
 
-.cr-foot{background:rgba(36,213,255,.10);border:1px solid rgba(36,213,255,.28);border-radius:10px;padding:12px 14px;display:flex;align-items:center;gap:10px;font-size:12.5px;color:rgba(255,255,255,.9);line-height:1.45;position:relative;z-index:1}
-.cr-foot.warn{background:rgba(255,107,107,.16);border-color:rgba(255,107,107,.42)}
-.cr-foot .crf-ic{font-size:18px;flex-shrink:0;color:#24D5FF}
+/* Cards de vazamento (loss) — tom laranja de alerta */
+.cr-item.loss{background:rgba(255,171,107,.08);border-color:rgba(255,171,107,.28)}
+.cr-item.loss .cri-lbl{color:#FFAB6B}
+.cr-item.loss .cri-val{color:#FFAB6B}
+
+.cr-foot{background:rgba(255,171,107,.10);border:1px solid rgba(255,171,107,.28);border-radius:10px;padding:12px 14px;display:flex;align-items:center;gap:10px;font-size:12.5px;color:rgba(255,255,255,.9);line-height:1.45;position:relative;z-index:1}
+.cr-foot .crf-ic{font-size:18px;flex-shrink:0;color:#FFAB6B}
 .cr-foot strong{color:#fff;font-weight:700}
 .calc-note{margin-top:16px;font-size:10.5px;color:var(--gray);font-style:italic;text-align:center;line-height:1.5}
 
@@ -1061,8 +1066,8 @@ html,body{font-family:var(--fd);background:var(--page-bg);color:var(--navy);-web
       <div class="calc-result">
         <div class="cr-eyebrow">Diagnóstico em tempo real</div>
         <div class="cr-main">
-          <div class="cr-bignum">+R$ <span id="calcTotalMes">0</span></div>
-          <div class="cr-lbl">de potencial mensal não capturado · <strong>+R$ <span id="calcTotalAno">0</span></strong> em 12 meses</div>
+          <div class="cr-bignum"><span class="cr-sign">−</span>R$ <span id="calcTotalMes">0</span></div>
+          <div class="cr-lbl">de receita escapando todo mês · <strong>−R$ <span id="calcTotalAno">0</span></strong> em 12 meses</div>
         </div>
         <div class="cr-grid">
           <div class="cr-item">
@@ -1070,19 +1075,19 @@ html,body{font-family:var(--fd);background:var(--page-bg);color:var(--navy);-web
             <span class="cri-val">R$ <span id="calcFatMes">0</span></span>
             <span class="cri-sub">por mês</span>
           </div>
-          <div class="cr-item">
-            <span class="cri-lbl">+ Ocupação</span>
-            <span class="cri-val">+R$ <span id="lvOcupMes">0</span></span>
-            <span class="cri-sub"><span id="lvOcupAtual">55%</span> → <span id="lvOcupAlvo">75%</span></span>
+          <div class="cr-item loss">
+            <span class="cri-lbl">Vazamento · ocupação</span>
+            <span class="cri-val">−R$ <span id="lvOcupMes">0</span></span>
+            <span class="cri-sub">ocupação em <span id="lvOcupAtual">55%</span></span>
           </div>
-          <div class="cr-item">
-            <span class="cri-lbl">+ Tarifa</span>
-            <span class="cri-val">+R$ <span id="lvDiariaMes">0</span></span>
-            <span class="cri-sub">+R$ 30 na diária</span>
+          <div class="cr-item loss">
+            <span class="cri-lbl">Vazamento · tarifa</span>
+            <span class="cri-val">−R$ <span id="lvDiariaMes">0</span></span>
+            <span class="cri-sub">tarifa abaixo do potencial</span>
           </div>
         </div>
         <div class="cr-foot" id="calcFoot">
-          <span class="crf-ic">◆</span>
+          <span class="crf-ic">⚠</span>
           <span id="calcFootTx">Ajuste os números acima para o seu cenário real.</span>
         </div>
       </div>
@@ -1872,7 +1877,7 @@ function pacotePrev(){ pacoteGoTo((pacoteIdx - 1 + pacoteSlides.length) % pacote
     const fatMes = noitesAtuais * diaria;
     $('calcFatMes').textContent = fmt(fatMes);
 
-    // ALAVANCA 1 — Ocupação
+    // VAZAMENTO 1 — Ocupação (potencial não capturado)
     let ocupAlvo;
     if(ocup >= ALV_OCUP_CAP) {
       ocupAlvo = Math.min(95, ocup + 5);
@@ -1883,29 +1888,28 @@ function pacotePrev(){ pacoteGoTo((pacoteIdx - 1 + pacoteSlides.length) % pacote
     const noitesGanhas = uhs * DIAS_MES * (ocupGap/100);
     const lvOcupMes = noitesGanhas * diaria;
     $('lvOcupAtual').textContent = ocup + '%';
-    $('lvOcupAlvo').textContent = ocupAlvo + '%';
     $('lvOcupMes').textContent = fmt(lvOcupMes);
 
-    // ALAVANCA 2 — Tarifa (+R$ 30)
+    // VAZAMENTO 2 — Tarifa (R$ 30 abaixo do potencial)
     const lvDiariaMes = noitesAtuais * ALV_DIARIA_INC;
     $('lvDiariaMes').textContent = fmt(lvDiariaMes);
 
-    // TOTAL (BIG NUMBER) — soma das alavancas
+    // TOTAL (BIG NUMBER) — soma dos vazamentos
     const totalMes = lvOcupMes + lvDiariaMes;
     $('calcTotalMes').textContent = fmt(totalMes);
     $('calcTotalAno').textContent = fmt(totalMes * 12);
 
-    // MENSAGEM DINÂMICA — qual alavanca pesa mais
+    // MENSAGEM DINÂMICA — onde está o maior vazamento
     const foot = $('calcFoot');
     const ftx = $('calcFootTx');
     if(!foot || !ftx) return;
 
     if(ocup < 65) {
-      ftx.innerHTML = 'Sua alavanca principal é <strong>OCUPAÇÃO</strong>. Cada noite vazia é receita que não retorna. <strong>O game está em capturar demanda</strong> que hoje está vazando para concorrentes ou OTAs.';
+      ftx.innerHTML = 'Seu maior vazamento é por <strong>OCUPAÇÃO BAIXA</strong>. Cada noite vazia hoje é receita que <strong>não retorna jamais</strong> — não estoca, não recupera.';
     } else if(ocup < 80) {
-      ftx.innerHTML = 'Operação saudável, mas com folga nas duas pontas. <strong>OCUPAÇÃO e TARIFA trabalhadas juntas</strong> são o ponto de virada — uma multiplica a outra.';
+      ftx.innerHTML = 'Operação saudável, mas <strong>perdendo nas duas pontas</strong>. Atacar OCUPAÇÃO e TARIFA juntas trava esse vazamento — uma reforça a outra.';
     } else {
-      ftx.innerHTML = 'Sua ocupação já está no topo (<strong>'+ocup+'%</strong>). O game agora é <strong>TARIFA</strong> — R$ 30 a mais por diária, mantendo ocupação, já entrega <strong>+R$ '+fmt(lvDiariaMes * 12)+' em 12 meses</strong>.';
+      ftx.innerHTML = 'Ocupação no topo (<strong>'+ocup+'%</strong>). Seu maior vazamento é <strong>TARIFA</strong> — R$ 30 a mais por diária, sem mexer em ocupação, deixa de escapar <strong>−R$ '+fmt(lvDiariaMes * 12)+' em 12 meses</strong>.';
     }
   }
 
