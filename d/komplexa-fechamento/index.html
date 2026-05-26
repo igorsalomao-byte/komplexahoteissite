@@ -411,7 +411,8 @@ html,body{font-family:var(--fd);background:var(--page-bg);color:var(--navy);-web
 .calc-grid{display:grid;grid-template-columns:1fr 1.15fr;gap:24px;margin-top:22px;flex:1}
 .calc-inputs{display:flex;flex-direction:column;gap:12px;background:var(--bg);border-radius:14px;padding:20px 22px;border:1px solid var(--bdr)}
 .calc-field{display:flex;flex-direction:column;gap:6px}
-.calc-field label{font-size:12px;font-weight:700;color:var(--navy);letter-spacing:.2px;display:flex;justify-content:space-between;align-items:baseline}
+.calc-field label{font-size:12px;font-weight:700;color:var(--navy);letter-spacing:.2px;display:flex;justify-content:flex-start;align-items:center;gap:6px;flex-wrap:wrap}
+.calc-opt{font-size:9px;font-weight:700;color:var(--gray);text-transform:uppercase;letter-spacing:.8px;background:var(--bg);padding:2px 7px;border-radius:4px;border:1px solid var(--bdr)}
 .calc-field input[type="number"]{font-family:var(--fd);font-size:18px;font-weight:700;color:var(--navy);background:#fff;border:1px solid var(--bdr);border-radius:8px;padding:10px 14px;outline:none;transition:border-color .2s,box-shadow .2s}
 .calc-field input[type="number"]:focus{border-color:var(--blue);box-shadow:0 0 0 3px rgba(22,112,195,.12)}
 .calc-range{display:flex;align-items:center;gap:10px;background:#fff;border:1px solid var(--bdr);border-radius:8px;padding:10px 14px}
@@ -439,6 +440,10 @@ html,body{font-family:var(--fd);background:var(--page-bg);color:var(--navy);-web
 .cr-item.loss{background:rgba(255,171,107,.08);border-color:rgba(255,171,107,.28)}
 .cr-item.loss .cri-lbl{color:#FFAB6B}
 .cr-item.loss .cri-val{color:#FFAB6B}
+
+/* Card de vazamento desativado (não preencheu input) */
+.cri-empty{color:rgba(255,255,255,.30);font-weight:400;font-size:22px;display:inline-block}
+.cr-item:not(.loss) .cri-sub{font-style:italic;color:rgba(255,255,255,.42)}
 
 .cr-foot{background:rgba(255,171,107,.10);border:1px solid rgba(255,171,107,.28);border-radius:10px;padding:12px 14px;display:flex;align-items:center;gap:10px;font-size:12.5px;color:rgba(255,255,255,.9);line-height:1.45;position:relative;z-index:1}
 .cr-foot .crf-ic{font-size:18px;flex-shrink:0;color:#FFAB6B}
@@ -1052,8 +1057,12 @@ html,body{font-family:var(--fd);background:var(--page-bg);color:var(--navy);-web
           <input type="number" id="calcUhs" value="40" min="1">
         </div>
         <div class="calc-field">
-          <label>Diária média (R$)</label>
+          <label>Diária média atual (R$)</label>
           <input type="number" id="calcDiaria" value="450" min="1">
+        </div>
+        <div class="calc-field">
+          <label>Diária potencial (R$) <span class="calc-opt">opcional</span></label>
+          <input type="number" id="calcNovaDiaria" placeholder="Deixe vazio se já está no preço" min="0">
         </div>
         <div class="calc-field">
           <label>Ocupação média atual: <span id="calcOcupVal" class="calc-range-val">55</span>%</label>
@@ -1075,15 +1084,15 @@ html,body{font-family:var(--fd);background:var(--page-bg);color:var(--navy);-web
             <span class="cri-val">R$ <span id="calcFatMes">0</span></span>
             <span class="cri-sub">por mês</span>
           </div>
-          <div class="cr-item loss">
+          <div class="cr-item">
             <span class="cri-lbl">Vazamento · ocupação</span>
             <span class="cri-val">−R$ <span id="lvOcupMes">0</span></span>
             <span class="cri-sub">ocupação em <span id="lvOcupAtual">55%</span></span>
           </div>
-          <div class="cr-item loss">
+          <div class="cr-item" id="cardTarifa">
             <span class="cri-lbl">Vazamento · tarifa</span>
-            <span class="cri-val">−R$ <span id="lvDiariaMes">0</span></span>
-            <span class="cri-sub">tarifa abaixo do potencial</span>
+            <span class="cri-val" id="lvDiariaValWrap">— <span id="lvDiariaMes" style="display:none">0</span></span>
+            <span class="cri-sub" id="lvDiariaSub">preencha "diária potencial" para simular</span>
           </div>
         </div>
         <div class="cr-foot" id="calcFoot">
@@ -1856,20 +1865,23 @@ function pacotePrev(){ pacoteGoTo((pacoteIdx - 1 + pacoteSlides.length) % pacote
 /* ─── CALCULADORA DE DIAGNÓSTICO (Slide 03) ─── */
 (function(){
   const $ = id => document.getElementById(id);
-  const inputs = ['calcUhs','calcDiaria','calcOcup'].map($).filter(Boolean);
+  const inputs = ['calcUhs','calcDiaria','calcNovaDiaria','calcOcup'].map($).filter(Boolean);
   if(!inputs.length) return;
 
   const fmt = n => Math.round(Math.max(0,n)).toLocaleString('pt-BR');
   const DIAS_MES = 30;
-  const ALV_OCUP_ALVO = 80;        // alavanca 1: alvo saudável de ocupação
-  const ALV_DIARIA_INC = 30;       // alavanca 2: +R$ 30 na tarifa
+  const ALV_OCUP_ALVO = 80;        // alvo saudável de ocupação
 
   function calc(){
     const uhs = +$('calcUhs').value || 0;
     const diaria = +$('calcDiaria').value || 0;
+    const novaDiariaRaw = +$('calcNovaDiaria').value || 0;
     const ocup = +$('calcOcup').value || 0;
 
     if($('calcOcupVal')) $('calcOcupVal').textContent = ocup;
+
+    // Incremento real de tarifa (só conta se nova > atual)
+    const incrementoTarifa = novaDiariaRaw > diaria ? (novaDiariaRaw - diaria) : 0;
 
     // FATURAMENTO ATUAL
     const noitesAtuais = uhs * DIAS_MES * (ocup/100);
@@ -1883,26 +1895,50 @@ function pacotePrev(){ pacoteGoTo((pacoteIdx - 1 + pacoteSlides.length) % pacote
     $('lvOcupAtual').textContent = ocup + '%';
     $('lvOcupMes').textContent = fmt(lvOcupMes);
 
-    // VAZAMENTO 2 — Tarifa (R$ 30 abaixo do potencial, nas noites atuais)
-    const lvDiariaMes = noitesAtuais * ALV_DIARIA_INC;
-    $('lvDiariaMes').textContent = fmt(lvDiariaMes);
+    // ATIVA/DESATIVA card de ocupação (loss)
+    const cardOcup = document.querySelector('.cr-grid .cr-item:nth-child(2)');
+    if(cardOcup) cardOcup.classList.toggle('loss', lvOcupMes > 0);
+
+    // VAZAMENTO 2 — Tarifa (só se informou diária potencial > atual)
+    const lvDiariaMes = noitesAtuais * incrementoTarifa;
+    const cardTarifa = $('cardTarifa');
+    const lvDiariaValWrap = $('lvDiariaValWrap');
+    const lvDiariaSub = $('lvDiariaSub');
+
+    if(incrementoTarifa > 0) {
+      cardTarifa.classList.add('loss');
+      lvDiariaValWrap.innerHTML = '−R$ <span id="lvDiariaMes">'+fmt(lvDiariaMes)+'</span>';
+      lvDiariaSub.innerHTML = 'tarifa pode subir <strong>R$ '+fmt(incrementoTarifa)+'</strong>';
+    } else {
+      cardTarifa.classList.remove('loss');
+      lvDiariaValWrap.innerHTML = '<span class="cri-empty">—</span>';
+      lvDiariaSub.innerHTML = 'preencha &ldquo;diária potencial&rdquo; para simular';
+    }
 
     // TOTAL (BIG NUMBER) — soma dos vazamentos
     const totalMes = lvOcupMes + lvDiariaMes;
     $('calcTotalMes').textContent = fmt(totalMes);
     $('calcTotalAno').textContent = fmt(totalMes * 12);
 
-    // MENSAGEM DINÂMICA — onde está o maior vazamento
+    // MENSAGEM DINÂMICA — orienta conforme cenário
     const foot = $('calcFoot');
     const ftx = $('calcFootTx');
     if(!foot || !ftx) return;
 
-    if(ocup < 65) {
+    const temTarifa = incrementoTarifa > 0;
+
+    if(ocup < 65 && !temTarifa) {
       ftx.innerHTML = 'Seu maior vazamento é por <strong>OCUPAÇÃO BAIXA</strong>. Cada noite vazia hoje é receita que <strong>não retorna jamais</strong> — não estoca, não recupera.';
-    } else if(ocup < 80) {
-      ftx.innerHTML = 'Operação saudável, mas <strong>perdendo nas duas pontas</strong>. Atacar OCUPAÇÃO e TARIFA juntas trava esse vazamento — uma reforça a outra.';
+    } else if(ocup < 65 && temTarifa) {
+      ftx.innerHTML = 'Vazamento principal: <strong>OCUPAÇÃO</strong>. Mas também há espaço em <strong>TARIFA</strong> — atacar as duas pontas é o que destrava resultado.';
+    } else if(ocup < 80 && !temTarifa) {
+      ftx.innerHTML = 'Operação saudável, mas ainda <strong>perdendo receita por ocupação</strong>. Chegar a 80% trava esse vazamento.';
+    } else if(ocup < 80 && temTarifa) {
+      ftx.innerHTML = 'Perdendo nas <strong>duas pontas</strong>: ocupação abaixo do ideal e tarifa com espaço para subir. Atacar juntas multiplica o resultado.';
+    } else if(ocup >= 80 && !temTarifa) {
+      ftx.innerHTML = 'Ocupação já no alvo (<strong>'+ocup+'%</strong>). Se houver espaço para ajuste de tarifa, preencha &ldquo;diária potencial&rdquo; acima para dimensionar.';
     } else {
-      ftx.innerHTML = 'Ocupação já no alvo (<strong>'+ocup+'%</strong>). Seu vazamento agora é <strong>TARIFA</strong> — R$ 30 a mais por diária, sem mexer em ocupação, deixa de escapar <strong>−R$ '+fmt(lvDiariaMes * 12)+' em 12 meses</strong>.';
+      ftx.innerHTML = 'Ocupação no alvo. Vazamento agora é <strong>TARIFA</strong> — subir R$ '+fmt(incrementoTarifa)+' por diária, sem mexer em ocupação, deixa de escapar <strong>−R$ '+fmt(lvDiariaMes * 12)+' em 12 meses</strong>.';
     }
   }
 
