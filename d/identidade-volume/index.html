@@ -1,0 +1,884 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>Komplexa · Direção de Identidade · v2 Volume</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,300;12..96,400;12..96,500;12..96,600;12..96,700;12..96,800&family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --char:#1A1817;
+  --char-2:#2A2622;
+  --cream:#FBF7F1;
+  --paper:#FFFFFF;
+  --sand:#F2EBDF;
+  --terra:#E8704A;
+  --terra-2:#C95A35;
+  --verde:#3D7B5A;
+  --sun:#F5C842;
+  --coral:#FF6B5B;
+  --soft:rgba(26,24,23,.62);
+  --muted:rgba(26,24,23,.42);
+  --line:rgba(26,24,23,.10);
+  --line-strong:rgba(26,24,23,.18);
+  --fd:'Inter',system-ui,sans-serif;
+  --fs:'Bricolage Grotesque',ui-sans-serif,system-ui,sans-serif;
+  --fm:'JetBrains Mono',ui-monospace,monospace;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--fd);background:var(--cream);color:var(--char);-webkit-font-smoothing:antialiased;line-height:1.45;overflow-x:hidden}
+::selection{background:var(--terra);color:var(--cream)}
+
+/* ─── LAYOUT BASE ─── */
+.wrap{max-width:1280px;margin:0 auto;padding:0 48px}
+section{padding:96px 0;position:relative}
+section + section{border-top:1px solid var(--line)}
+.eyebrow{font-family:var(--fm);font-size:11px;font-weight:500;letter-spacing:1.6px;text-transform:uppercase;color:var(--terra-2);margin-bottom:24px;display:inline-flex;align-items:center;gap:8px}
+.eyebrow::before{content:"";width:14px;height:2px;background:var(--terra);border-radius:2px}
+.section-title{font-family:var(--fs);font-weight:600;font-size:68px;line-height:1;letter-spacing:-2.5px;margin-bottom:18px;font-variation-settings:"opsz" 96}
+.section-title span.pop{color:var(--terra)}
+.section-title span.und{position:relative;display:inline-block}
+.section-title span.und::after{content:"";position:absolute;left:-2%;right:-2%;bottom:8%;height:38%;background:var(--sun);z-index:-1;border-radius:4px}
+.section-sub{font-size:18px;color:var(--soft);max-width:680px;line-height:1.55;margin-bottom:56px;font-weight:400}
+
+/* ─── COMPARE NAV (link cruzado v1/v2) ─── */
+.compare-nav{position:sticky;top:0;z-index:100;background:rgba(251,247,241,.92);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+.cn-inner{display:flex;justify-content:space-between;align-items:center;padding:14px 48px;max-width:1280px;margin:0 auto;gap:18px;flex-wrap:wrap}
+.cn-tag{font-family:var(--fm);font-size:10.5px;font-weight:600;letter-spacing:1.6px;text-transform:uppercase;color:var(--char)}
+.cn-links{display:flex;gap:8px;background:var(--paper);padding:5px;border-radius:100px;border:1px solid var(--line)}
+.cn-link{font-family:var(--fd);font-size:12px;font-weight:600;padding:7px 16px;border-radius:100px;color:var(--soft);text-decoration:none;transition:all .2s;display:inline-flex;align-items:center;gap:6px}
+.cn-link.active{background:var(--char);color:var(--cream)}
+.cn-link:hover:not(.active){background:var(--sand);color:var(--char)}
+.cn-link .dot{width:6px;height:6px;border-radius:50%}
+.cn-link.boutique .dot{background:#C8A877}
+.cn-link.volume .dot{background:var(--terra)}
+
+/* ─── HERO ─── */
+.hero{padding:88px 0 80px;background:var(--cream);position:relative;overflow:hidden}
+.hero::before{content:"";position:absolute;top:-160px;right:-120px;width:540px;height:540px;border-radius:50%;background:radial-gradient(circle,rgba(232,112,74,.18) 0%,transparent 65%);pointer-events:none}
+.hero::after{content:"";position:absolute;bottom:-200px;left:-100px;width:480px;height:480px;border-radius:50%;background:radial-gradient(circle,rgba(245,200,66,.18) 0%,transparent 65%);pointer-events:none}
+.hero-meta{display:flex;justify-content:space-between;align-items:center;font-family:var(--fm);font-size:11px;letter-spacing:1.6px;text-transform:uppercase;color:var(--muted);margin-bottom:64px;position:relative;z-index:1}
+.hero-meta .tag{background:var(--terra);color:var(--cream);padding:6px 14px;border-radius:100px;letter-spacing:1.4px;font-weight:600}
+.hero-display{font-family:var(--fs);font-weight:700;font-size:clamp(86px,16vw,200px);line-height:.95;letter-spacing:-7px;color:var(--char);font-variation-settings:"opsz" 96;position:relative;z-index:1;display:flex;align-items:flex-end;gap:6px}
+.hero-display .k-tile{display:inline-flex;align-items:center;justify-content:center;background:var(--terra);color:var(--cream);width:0.95em;height:0.95em;border-radius:20px;font-size:.84em;margin-right:.06em;flex-shrink:0;letter-spacing:0;line-height:1;padding-bottom:.04em;font-weight:700}
+.hero-tagline{margin-top:64px;display:grid;grid-template-columns:1fr 1.2fr;gap:80px;align-items:end;padding-top:36px;border-top:1px solid var(--line);position:relative;z-index:1}
+.hero-tagline h2{font-family:var(--fs);font-weight:500;font-size:36px;letter-spacing:-1px;line-height:1.1;color:var(--char);font-variation-settings:"opsz" 96}
+.hero-tagline h2 .pop{color:var(--terra)}
+.hero-tagline p{font-size:14.5px;color:var(--soft);line-height:1.6;max-width:480px;font-weight:400}
+.hero-tagline p strong{color:var(--char);font-weight:600}
+.hero-tagline .label{font-family:var(--fm);font-size:10.5px;letter-spacing:1.6px;text-transform:uppercase;color:var(--terra-2);margin-bottom:10px;display:block;font-weight:600}
+
+/* ─── COMPARISON CARD ─── */
+.compare{background:var(--char);color:var(--cream);position:relative;overflow:hidden}
+.compare::before{content:"";position:absolute;top:-140px;left:50%;width:300px;height:300px;border-radius:50%;background:radial-gradient(circle,rgba(232,112,74,.20) 0%,transparent 60%);transform:translateX(-50%);pointer-events:none}
+.compare .eyebrow{color:var(--sun)}
+.compare .eyebrow::before{background:var(--sun)}
+.compare .section-title{color:var(--cream)}
+.compare .section-title span.und::after{background:var(--terra);opacity:.45}
+.compare .section-sub{color:rgba(251,247,241,.65)}
+.cmp-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-top:32px;position:relative;z-index:1}
+.cmp-card{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.10);border-radius:18px;padding:32px;display:flex;flex-direction:column;gap:18px;transition:transform .2s}
+.cmp-card:hover{transform:translateY(-2px)}
+.cmp-card.v1{border-color:rgba(200,168,119,.40);background:rgba(200,168,119,.08)}
+.cmp-card.v2{border-color:rgba(232,112,74,.40);background:rgba(232,112,74,.08)}
+.cmp-head{display:flex;align-items:center;gap:14px;padding-bottom:18px;border-bottom:1px solid rgba(255,255,255,.10)}
+.cmp-head .ch-dot{width:14px;height:14px;border-radius:50%}
+.v1 .ch-dot{background:#C8A877}
+.v2 .ch-dot{background:var(--terra)}
+.cmp-head span{font-family:var(--fm);font-size:10px;letter-spacing:1.8px;text-transform:uppercase;color:rgba(251,247,241,.55);font-weight:600}
+.cmp-card h3{font-family:var(--fs);font-weight:600;font-size:28px;letter-spacing:-.6px;line-height:1.1;color:var(--cream);font-variation-settings:"opsz" 96}
+.cmp-card .ttl-pop{color:var(--terra)}
+.v1 .ttl-pop{color:#C8A877}
+.cmp-list{display:flex;flex-direction:column;gap:10px;margin-top:auto}
+.cmp-list-item{display:grid;grid-template-columns:100px 1fr;gap:18px;align-items:start;font-size:13px;line-height:1.5;color:rgba(251,247,241,.75)}
+.cmp-list-item .k{font-family:var(--fm);font-size:10px;letter-spacing:1.4px;text-transform:uppercase;color:rgba(251,247,241,.40);font-weight:500;padding-top:2px}
+.cmp-list-item .v strong{color:var(--cream);font-weight:600}
+.cmp-foot{display:flex;align-items:center;gap:10px;padding:14px 18px;background:rgba(255,255,255,.05);border-radius:10px;margin-top:8px}
+.cmp-foot .fl{font-family:var(--fm);font-size:9.5px;letter-spacing:1.4px;text-transform:uppercase;color:rgba(251,247,241,.5);font-weight:500}
+.cmp-foot a{color:var(--cream);text-decoration:none;font-family:var(--fd);font-size:13px;font-weight:600;display:inline-flex;align-items:center;gap:6px;transition:opacity .2s}
+.cmp-foot a:hover{opacity:.7}
+
+/* ─── POSICIONAMENTO ─── */
+.posicionamento{background:var(--sand)}
+.pos-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+.pos-card{background:var(--paper);padding:32px 28px;display:flex;flex-direction:column;gap:14px;min-height:260px;border-radius:18px;border:1px solid var(--line);transition:transform .2s,box-shadow .2s}
+.pos-card:hover{transform:translateY(-3px);box-shadow:0 18px 40px rgba(26,24,23,.08)}
+.pos-card .ic{width:42px;height:42px;border-radius:11px;display:flex;align-items:center;justify-content:center;font-family:var(--fs);font-size:20px;font-weight:700;color:var(--cream);margin-bottom:6px}
+.pos-card:nth-child(1) .ic{background:var(--terra)}
+.pos-card:nth-child(2) .ic{background:var(--verde)}
+.pos-card:nth-child(3) .ic{background:var(--char)}
+.pos-card:nth-child(4) .ic{background:var(--coral)}
+.pos-card .label{font-family:var(--fm);font-size:10px;letter-spacing:1.8px;text-transform:uppercase;color:var(--soft);font-weight:600}
+.pos-card .text{font-family:var(--fs);font-weight:500;font-size:22px;line-height:1.2;letter-spacing:-.5px;color:var(--char);font-variation-settings:"opsz" 96}
+.pos-card .text .pop{color:var(--terra)}
+.pos-card .meta{font-size:13px;color:var(--soft);margin-top:auto;line-height:1.5}
+
+/* ─── LOGO EXPLORATIONS ─── */
+.logo-section{background:var(--cream)}
+.logo-grid{display:flex;flex-direction:column;gap:24px}
+.logo-card{background:var(--paper);border:1px solid var(--line);border-radius:20px;padding:48px;display:grid;grid-template-columns:1.4fr 1fr;gap:48px;align-items:center;min-height:280px;position:relative;overflow:hidden}
+.logo-card.dark{background:var(--char);color:var(--cream);border-color:transparent}
+.logo-card.dark .lc-label{color:var(--sun)}
+.logo-card.dark .lc-desc{color:rgba(251,247,241,.65)}
+.logo-card.dark .lc-desc strong{color:var(--cream)}
+.logo-card.dark .lc-meta-item span{color:rgba(251,247,241,.5)}
+.logo-card.dark .lc-meta-item strong{color:var(--cream)}
+.logo-card.terra{background:var(--terra);color:var(--cream);border-color:transparent}
+.logo-card.terra .lc-label{color:var(--char)}
+.logo-card.terra .lc-desc{color:rgba(255,255,255,.85)}
+.logo-card.terra .lc-desc strong{color:var(--cream)}
+.logo-card.terra .lc-meta-item span{color:rgba(255,255,255,.65)}
+.logo-card.terra .lc-meta-item strong{color:var(--cream)}
+.lc-preview{display:flex;align-items:center;justify-content:center;min-height:200px;position:relative}
+.lc-info .lc-label{font-family:var(--fm);font-size:10.5px;letter-spacing:1.8px;text-transform:uppercase;color:var(--terra-2);font-weight:600;margin-bottom:14px}
+.lc-info h3{font-family:var(--fs);font-weight:600;font-size:30px;letter-spacing:-.7px;margin-bottom:14px;line-height:1.1;font-variation-settings:"opsz" 96}
+.lc-info .lc-desc{font-size:14px;color:var(--soft);line-height:1.6;margin-bottom:22px}
+.lc-info .lc-desc strong{color:var(--char);font-weight:600}
+.lc-meta{display:flex;gap:32px;flex-wrap:wrap}
+.lc-meta-item{display:flex;flex-direction:column;gap:2px}
+.lc-meta-item span{font-family:var(--fm);font-size:9.5px;letter-spacing:1.6px;text-transform:uppercase;color:var(--muted);font-weight:500}
+.lc-meta-item strong{font-size:13.5px;font-weight:600;color:var(--char)}
+
+/* WORDMARK V2-A — Sans bold com k-tile */
+.wm-v2a{font-family:var(--fs);font-weight:700;font-size:90px;letter-spacing:-4.5px;line-height:1;color:var(--char);display:flex;align-items:flex-end;gap:4px;font-variation-settings:"opsz" 96}
+.wm-v2a .ktile{display:inline-flex;align-items:center;justify-content:center;background:var(--terra);color:var(--cream);width:0.95em;height:0.95em;border-radius:18px;font-size:.84em;flex-shrink:0;letter-spacing:0;line-height:1;padding-bottom:.04em}
+
+/* WORDMARK V2-B — Wordmark + Símbolo simpático */
+.wm-v2b{display:flex;align-items:center;gap:16px;color:var(--cream)}
+.wm-v2b .wm-v2b-text{font-family:var(--fs);font-weight:600;font-size:70px;letter-spacing:-3.2px;line-height:1;font-variation-settings:"opsz" 96;color:var(--cream)}
+.wm-v2b svg{flex-shrink:0}
+
+/* WORDMARK V2-C — Lowercase com ligature na cor */
+.wm-v2c{font-family:var(--fs);font-weight:600;font-size:84px;letter-spacing:-3.5px;line-height:1;color:var(--cream);font-variation-settings:"opsz" 96;display:flex;align-items:baseline;gap:0;position:relative}
+.wm-v2c .underline{position:relative}
+.wm-v2c .underline::after{content:"";position:absolute;left:0;right:0;bottom:.04em;height:.18em;background:var(--sun);z-index:-1;border-radius:4px}
+.wm-v2c .pop{color:var(--sun)}
+
+/* AVATAR / ICON TILES — Volume version (mais "Notion-like") */
+.avatar-strip{display:flex;gap:14px;flex-wrap:wrap;margin-top:32px}
+.av-tile{width:88px;height:88px;border-radius:18px;display:flex;align-items:center;justify-content:center;border:1px solid var(--line);font-family:var(--fs);font-weight:700;font-size:38px;font-variation-settings:"opsz" 96;letter-spacing:-1.5px}
+.av-tile.terra{background:var(--terra);color:var(--cream);border-color:transparent}
+.av-tile.char{background:var(--char);color:var(--cream);border-color:transparent}
+.av-tile.cream{background:var(--paper);color:var(--char)}
+.av-tile.verde{background:var(--verde);color:var(--cream);border-color:transparent}
+.av-tile.sun{background:var(--sun);color:var(--char);border-color:transparent}
+.av-tile.coral{background:var(--coral);color:var(--cream);border-color:transparent}
+
+/* ─── PALETA ─── */
+.paleta{background:var(--paper)}
+.pal-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.pal-card{border-radius:20px;overflow:hidden;border:1px solid var(--line);position:relative;cursor:pointer;transition:transform .2s;background:var(--paper)}
+.pal-card:hover{transform:translateY(-3px)}
+.pal-swatch{aspect-ratio:1.4/1;display:flex;align-items:flex-end;justify-content:space-between;padding:24px;position:relative}
+.pal-swatch .pal-name{font-family:var(--fs);font-weight:600;font-size:30px;letter-spacing:-.7px;line-height:1;font-variation-settings:"opsz" 96}
+.pal-swatch .pal-shape{position:absolute;top:18px;right:18px;width:36px;height:36px;border-radius:10px;background:rgba(255,255,255,.18);display:flex;align-items:center;justify-content:center;font-family:var(--fm);font-size:11px;font-weight:600;letter-spacing:.5px}
+.pal-info{padding:20px 24px;background:var(--paper);display:grid;grid-template-columns:1fr auto;gap:12px;align-items:center}
+.pal-info .role{font-family:var(--fm);font-size:11px;letter-spacing:1.2px;text-transform:uppercase;color:var(--soft);font-weight:600;display:block}
+.pal-info .use{font-size:12.5px;color:var(--muted);margin-top:3px;line-height:1.4}
+.pal-hex{font-family:var(--fm);font-size:13px;color:var(--char);font-weight:600;letter-spacing:.4px;background:var(--cream);padding:6px 11px;border-radius:6px;border:1px solid var(--line)}
+
+/* ─── TIPOGRAFIA ─── */
+.tipografia{background:var(--cream)}
+.type-grid{display:flex;flex-direction:column;gap:48px}
+.type-row{display:grid;grid-template-columns:220px 1fr;gap:48px;align-items:start;padding-bottom:44px;border-bottom:1px solid var(--line)}
+.type-row:last-child{border-bottom:none}
+.type-meta{position:sticky;top:60px}
+.type-meta .tm-tag{display:inline-block;background:var(--terra);color:var(--cream);padding:4px 10px;border-radius:100px;font-family:var(--fm);font-size:9.5px;font-weight:600;letter-spacing:1.4px;text-transform:uppercase;margin-bottom:14px}
+.type-meta h4{font-family:var(--fs);font-weight:600;font-size:24px;letter-spacing:-.5px;color:var(--char);margin-bottom:12px;font-variation-settings:"opsz" 96}
+.type-meta p{font-size:13px;color:var(--soft);line-height:1.55}
+.type-demo{display:flex;flex-direction:column;gap:28px}
+.demo-display{font-family:var(--fs);font-weight:600;font-size:88px;line-height:.95;letter-spacing:-3.5px;color:var(--char);font-variation-settings:"opsz" 96}
+.demo-display .pop{color:var(--terra)}
+.demo-display .und{position:relative;display:inline-block}
+.demo-display .und::after{content:"";position:absolute;left:-1%;right:-1%;bottom:8%;height:34%;background:var(--sun);z-index:-1;border-radius:4px}
+.demo-h1{font-family:var(--fs);font-weight:600;font-size:46px;letter-spacing:-1.4px;line-height:1.05;color:var(--char);font-variation-settings:"opsz" 96}
+.demo-h2{font-family:var(--fs);font-weight:600;font-size:30px;letter-spacing:-.8px;line-height:1.15;color:var(--char)}
+.demo-h3{font-family:var(--fs);font-weight:500;font-size:22px;letter-spacing:-.4px;color:var(--char)}
+
+.demo-body-lg{font-family:var(--fd);font-size:19px;line-height:1.55;color:var(--char);font-weight:400;max-width:680px}
+.demo-body{font-family:var(--fd);font-size:15px;line-height:1.6;color:var(--char-2);font-weight:400;max-width:640px}
+.demo-caption{font-family:var(--fd);font-size:12.5px;line-height:1.5;color:var(--soft);font-weight:500}
+.demo-label{font-family:var(--fm);font-size:11px;letter-spacing:1.4px;text-transform:uppercase;color:var(--terra-2);font-weight:600}
+
+.demo-num{font-family:var(--fm);font-weight:500}
+.demo-num-big{font-size:60px;color:var(--char);letter-spacing:-2px;line-height:1;font-feature-settings:"tnum" on;font-weight:600}
+.demo-num-big .pop{color:var(--terra)}
+.demo-num-row{display:flex;gap:42px;flex-wrap:wrap;align-items:baseline}
+.demo-num-stat{display:flex;flex-direction:column;gap:4px}
+.demo-num-stat .lbl{font-family:var(--fm);font-size:10px;letter-spacing:1.4px;text-transform:uppercase;color:var(--muted);font-weight:500}
+.demo-num-stat .val{font-family:var(--fm);font-size:32px;color:var(--char);letter-spacing:-1px;font-weight:600;font-feature-settings:"tnum" on}
+.demo-num-stat .val.terra{color:var(--terra)}
+.demo-num-stat .val.verde{color:var(--verde)}
+
+/* ─── APLICAÇÕES ─── */
+.aplicacoes{background:var(--sand)}
+.apps-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+.app-card{border-radius:20px;overflow:hidden;border:1px solid var(--line);background:var(--paper)}
+.app-card.full{grid-column:1/-1}
+.app-preview{position:relative;overflow:hidden;background:var(--paper)}
+.app-caption{padding:22px 26px;display:flex;justify-content:space-between;align-items:center;border-top:1px solid var(--line);background:var(--paper)}
+.app-caption .ac-label{font-family:var(--fm);font-size:10px;letter-spacing:1.6px;text-transform:uppercase;color:var(--terra-2);font-weight:600;margin-bottom:4px;display:block}
+.app-caption h4{font-family:var(--fs);font-weight:600;font-size:18px;letter-spacing:-.4px;color:var(--char);font-variation-settings:"opsz" 96}
+.app-caption .ac-meta{font-family:var(--fm);font-size:11px;color:var(--muted);letter-spacing:.5px}
+
+/* APP 1 — Hero de site (SaaS warm) */
+.app-site{background:var(--cream);padding:48px 56px 64px;min-height:500px;position:relative;display:flex;flex-direction:column;justify-content:space-between;overflow:hidden}
+.app-site::before{content:"";position:absolute;top:-100px;right:-80px;width:340px;height:340px;border-radius:50%;background:radial-gradient(circle,rgba(232,112,74,.18) 0%,transparent 65%);pointer-events:none}
+.app-site .site-nav{display:flex;justify-content:space-between;align-items:center;position:relative;z-index:1}
+.app-site .site-logo{font-family:var(--fs);font-weight:700;font-size:24px;letter-spacing:-1px;color:var(--char);display:flex;align-items:center;gap:4px}
+.app-site .site-logo .ktile{background:var(--terra);color:var(--cream);width:0.95em;height:0.95em;display:inline-flex;align-items:center;justify-content:center;border-radius:6px;font-size:.84em;line-height:1;padding-bottom:.06em;letter-spacing:0}
+.app-site .site-menu{display:flex;gap:28px;font-family:var(--fd);font-size:13px;color:var(--soft);font-weight:500}
+.app-site .site-cta{background:var(--terra);color:var(--cream);padding:10px 18px;border-radius:10px;font-family:var(--fd);font-size:12.5px;font-weight:600;letter-spacing:.2px}
+.app-site .site-hero{margin-top:48px;position:relative;z-index:1}
+.app-site .site-eyebrow{display:inline-flex;align-items:center;gap:8px;font-family:var(--fm);font-size:11px;letter-spacing:1.6px;text-transform:uppercase;color:var(--terra-2);font-weight:600;margin-bottom:20px;background:rgba(232,112,74,.10);padding:6px 12px;border-radius:100px}
+.app-site h1{font-family:var(--fs);font-weight:700;font-size:62px;letter-spacing:-2.5px;line-height:1.02;color:var(--char);font-variation-settings:"opsz" 96}
+.app-site h1 .und{position:relative;display:inline-block}
+.app-site h1 .und::after{content:"";position:absolute;left:-2%;right:-2%;bottom:8%;height:34%;background:var(--sun);z-index:-1;border-radius:4px}
+.app-site h1 .pop{color:var(--terra)}
+.app-site .site-sub{font-family:var(--fd);font-size:16px;color:var(--soft);max-width:520px;margin-top:22px;line-height:1.55}
+.app-site .site-actions{display:flex;gap:12px;margin-top:28px;position:relative;z-index:1}
+.app-site .site-actions .btn-pri{background:var(--char);color:var(--cream);padding:13px 22px;border-radius:12px;font-family:var(--fd);font-size:13.5px;font-weight:600;display:inline-flex;align-items:center;gap:8px}
+.app-site .site-actions .btn-sec{background:transparent;color:var(--char);padding:13px 22px;border-radius:12px;font-family:var(--fd);font-size:13.5px;font-weight:600;border:1px solid var(--line-strong);display:inline-flex;align-items:center;gap:8px}
+
+/* APP 2 — Capa de deck (warm dark com pop) */
+.app-deck{background:var(--char);color:var(--cream);padding:52px;min-height:480px;display:flex;flex-direction:column;justify-content:space-between;position:relative;overflow:hidden}
+.app-deck::before{content:"";position:absolute;top:-100px;right:-60px;width:300px;height:300px;border-radius:50%;background:radial-gradient(circle,rgba(232,112,74,.30) 0%,transparent 65%);pointer-events:none}
+.app-deck::after{content:"";position:absolute;bottom:-140px;left:-80px;width:280px;height:280px;border-radius:50%;background:radial-gradient(circle,rgba(245,200,66,.18) 0%,transparent 65%);pointer-events:none}
+.app-deck .deck-top{display:flex;justify-content:space-between;align-items:center;position:relative;z-index:1}
+.app-deck .deck-logo{font-family:var(--fs);font-weight:700;font-size:24px;letter-spacing:-1px;color:var(--cream);display:flex;align-items:center;gap:4px}
+.app-deck .deck-logo .ktile{background:var(--terra);color:var(--cream);width:0.95em;height:0.95em;display:inline-flex;align-items:center;justify-content:center;border-radius:6px;font-size:.84em;line-height:1;padding-bottom:.06em;letter-spacing:0}
+.app-deck .deck-pg{font-family:var(--fm);font-size:11px;letter-spacing:1.6px;text-transform:uppercase;color:rgba(251,247,241,.5)}
+.app-deck .deck-body{position:relative;z-index:1}
+.app-deck .deck-eyebrow{display:inline-flex;align-items:center;gap:8px;font-family:var(--fm);font-size:11px;letter-spacing:1.6px;text-transform:uppercase;color:var(--sun);font-weight:600;margin-bottom:20px}
+.app-deck .deck-eyebrow::before{content:"";width:14px;height:2px;background:var(--sun);border-radius:2px}
+.app-deck h1{font-family:var(--fs);font-weight:700;font-size:58px;letter-spacing:-2.4px;line-height:1;color:var(--cream);font-variation-settings:"opsz" 96}
+.app-deck h1 .pop{color:var(--terra)}
+.app-deck .deck-sub{font-family:var(--fd);font-size:14.5px;color:rgba(251,247,241,.7);max-width:480px;margin-top:20px;line-height:1.55}
+.app-deck .deck-bot{font-family:var(--fm);font-size:10px;letter-spacing:1.6px;text-transform:uppercase;color:rgba(251,247,241,.4);position:relative;z-index:1}
+
+/* APP 3 — Instagram Post (terracota fundo) */
+.app-ig{aspect-ratio:1/1;background:var(--terra);color:var(--cream);padding:44px 40px;display:flex;flex-direction:column;justify-content:space-between;position:relative;overflow:hidden;max-width:540px;margin:0 auto}
+.app-ig::before{content:"";position:absolute;top:-100px;right:-100px;width:300px;height:300px;border-radius:50%;background:radial-gradient(circle,rgba(245,200,66,.40) 0%,transparent 60%);pointer-events:none}
+.app-ig .ig-top{display:flex;justify-content:space-between;align-items:center;position:relative;z-index:1}
+.app-ig .ig-logo{font-family:var(--fs);font-weight:700;font-size:20px;letter-spacing:-.8px;color:var(--cream);display:flex;align-items:center;gap:3px}
+.app-ig .ig-logo .ktile{background:var(--cream);color:var(--terra);width:0.95em;height:0.95em;display:inline-flex;align-items:center;justify-content:center;border-radius:5px;font-size:.84em;line-height:1;padding-bottom:.06em;letter-spacing:0}
+.app-ig .ig-handle{font-family:var(--fm);font-size:10px;letter-spacing:1.4px;text-transform:uppercase;color:rgba(255,255,255,.65)}
+.app-ig .ig-body{position:relative;z-index:1}
+.app-ig .ig-eyebrow{font-family:var(--fm);font-size:10px;letter-spacing:1.6px;text-transform:uppercase;color:var(--sun);margin-bottom:14px;font-weight:600}
+.app-ig h2{font-family:var(--fs);font-weight:700;font-size:44px;letter-spacing:-1.6px;line-height:1.02;color:var(--cream);font-variation-settings:"opsz" 96}
+.app-ig h2 .und{position:relative;display:inline-block}
+.app-ig h2 .und::after{content:"";position:absolute;left:-2%;right:-2%;bottom:8%;height:32%;background:var(--sun);z-index:-1;border-radius:4px;mix-blend-mode:multiply}
+.app-ig .ig-bot{font-family:var(--fd);font-size:12.5px;color:rgba(255,255,255,.78);position:relative;z-index:1;font-weight:500}
+
+/* ─── TOM DE VOZ ─── */
+.tom{background:var(--cream)}
+.tom-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-bottom:48px}
+.tom-card{border:1px solid var(--line);border-radius:18px;padding:32px;background:var(--paper)}
+.tom-card.bandeira{border-color:rgba(61,123,90,.25);background:rgba(61,123,90,.05)}
+.tom-card.veneno{border-color:rgba(255,107,91,.30);background:rgba(255,107,91,.04)}
+.tom-card .tc-label{font-family:var(--fm);font-size:11px;letter-spacing:1.6px;text-transform:uppercase;font-weight:600;margin-bottom:6px;display:block}
+.tom-card.bandeira .tc-label{color:var(--verde)}
+.tom-card.veneno .tc-label{color:var(--coral)}
+.tom-card h4{font-family:var(--fs);font-weight:600;font-size:24px;letter-spacing:-.5px;margin-bottom:20px;color:var(--char);font-variation-settings:"opsz" 96}
+.word-pills{display:flex;flex-wrap:wrap;gap:8px}
+.word-pills span{font-family:var(--fm);font-size:13px;padding:8px 14px;border-radius:100px;font-weight:600;letter-spacing:.2px}
+.tom-card.bandeira .word-pills span{background:var(--verde);color:var(--cream)}
+.tom-card.veneno .word-pills span{background:rgba(255,107,91,.10);color:var(--coral);text-decoration:line-through;text-decoration-color:rgba(255,107,91,.55);text-decoration-thickness:1.5px}
+
+.tom-compare{display:flex;flex-direction:column;gap:20px}
+.compare-row{display:grid;grid-template-columns:1fr 30px 1fr;gap:24px;align-items:center;padding:24px;background:var(--paper);border:1px solid var(--line);border-radius:16px}
+.compare-row .col-bad{font-family:var(--fs);font-weight:400;font-size:18px;color:var(--soft);line-height:1.35;letter-spacing:-.4px;font-variation-settings:"opsz" 96;text-decoration:line-through;text-decoration-color:rgba(255,107,91,.5);text-decoration-thickness:1.5px}
+.compare-row .col-arrow{color:var(--terra);font-size:18px;text-align:center;font-family:var(--fm)}
+.compare-row .col-good{font-family:var(--fs);font-weight:600;font-size:20px;color:var(--char);line-height:1.3;letter-spacing:-.5px;font-variation-settings:"opsz" 96}
+.compare-row .col-good .pop{color:var(--terra)}
+.compare-row .col-good .und{position:relative;display:inline-block}
+.compare-row .col-good .und::after{content:"";position:absolute;left:-2%;right:-2%;bottom:8%;height:30%;background:var(--sun);z-index:-1;border-radius:3px}
+
+/* ─── NEXT ─── */
+.next{background:var(--char);color:var(--cream);position:relative;overflow:hidden}
+.next::before{content:"";position:absolute;top:-100px;right:-50px;width:280px;height:280px;border-radius:50%;background:radial-gradient(circle,rgba(245,200,66,.20) 0%,transparent 65%);pointer-events:none}
+.next::after{content:"";position:absolute;bottom:-140px;left:-80px;width:300px;height:300px;border-radius:50%;background:radial-gradient(circle,rgba(232,112,74,.25) 0%,transparent 65%);pointer-events:none}
+.next .eyebrow{color:var(--sun)}
+.next .eyebrow::before{background:var(--sun)}
+.next .section-title{color:var(--cream)}
+.next .section-title span.und::after{background:var(--terra);opacity:.50}
+.next .section-title .pop{color:var(--terra)}
+.next .section-sub{color:rgba(251,247,241,.65)}
+.next-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:36px;position:relative;z-index:1}
+.next-card{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.10);border-radius:18px;padding:32px 28px;display:flex;flex-direction:column;gap:14px;min-height:240px}
+.next-card .nc-num{font-family:var(--fm);font-size:11px;letter-spacing:1.6px;color:var(--sun);font-weight:600}
+.next-card h4{font-family:var(--fs);font-weight:600;font-size:22px;letter-spacing:-.5px;color:var(--cream);line-height:1.2;font-variation-settings:"opsz" 96}
+.next-card p{font-size:13px;color:rgba(251,247,241,.65);line-height:1.55;margin-top:auto}
+
+/* ─── FOOT ─── */
+.foot{background:var(--char);color:rgba(251,247,241,.55);padding:36px 0;border-top:1px solid rgba(251,247,241,.10)}
+.foot-inner{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:18px}
+.foot .signature{font-family:var(--fs);font-weight:700;font-size:20px;letter-spacing:-.7px;color:var(--cream);display:flex;align-items:center;gap:4px;font-variation-settings:"opsz" 96}
+.foot .signature .ktile{background:var(--terra);color:var(--cream);width:0.95em;height:0.95em;display:inline-flex;align-items:center;justify-content:center;border-radius:6px;font-size:.84em;line-height:1;padding-bottom:.06em;letter-spacing:0}
+.foot .meta{font-family:var(--fm);font-size:11px;letter-spacing:1.6px;text-transform:uppercase}
+
+/* ─── MOBILE ─── */
+@media (max-width:880px){
+  .wrap{padding:0 24px}
+  section{padding:64px 0}
+  .section-title{font-size:42px;letter-spacing:-1.4px}
+  .compare-nav .cn-inner{padding:12px 24px}
+  .cn-tag{font-size:9.5px}
+  .cn-link{font-size:11px;padding:6px 12px}
+  .hero{padding:64px 0 56px}
+  .hero-display{font-size:64px;letter-spacing:-3px}
+  .hero-tagline{grid-template-columns:1fr;gap:28px;margin-top:48px}
+  .hero-tagline h2{font-size:26px;letter-spacing:-.8px}
+  .cmp-grid,.pos-grid{grid-template-columns:1fr}
+  .cmp-list-item{grid-template-columns:80px 1fr;gap:14px;font-size:12.5px}
+  .logo-card{grid-template-columns:1fr;gap:32px;padding:32px;min-height:auto}
+  .wm-v2a{font-size:58px;letter-spacing:-2.8px}
+  .wm-v2b .wm-v2b-text{font-size:46px;letter-spacing:-2px}
+  .wm-v2c{font-size:54px;letter-spacing:-2.4px}
+  .pal-grid{grid-template-columns:1fr 1fr}
+  .type-row{grid-template-columns:1fr;gap:18px;padding-bottom:32px}
+  .type-meta{position:static}
+  .demo-display{font-size:52px;letter-spacing:-1.8px}
+  .demo-h1{font-size:32px;letter-spacing:-.8px}
+  .demo-h2{font-size:24px}
+  .demo-num-big{font-size:42px}
+  .demo-num-stat .val{font-size:24px}
+  .apps-grid{grid-template-columns:1fr}
+  .app-site,.app-deck{padding:32px 24px;min-height:auto}
+  .app-site h1,.app-deck h1{font-size:38px;letter-spacing:-1.2px}
+  .app-site .site-menu{display:none}
+  .app-ig h2{font-size:30px;letter-spacing:-1px}
+  .tom-grid{grid-template-columns:1fr}
+  .compare-row{grid-template-columns:1fr;gap:14px;padding:20px}
+  .compare-row .col-arrow{display:none}
+  .next-grid{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+
+<!-- ═══════════════════ COMPARE NAV ═══════════════════ -->
+<nav class="compare-nav">
+  <div class="cn-inner">
+    <span class="cn-tag">Komplexa · Identidade Visual</span>
+    <div class="cn-links">
+      <a class="cn-link boutique" href="../identidade/"><span class="dot"></span>v1 · Boutique</a>
+      <a class="cn-link volume active"><span class="dot"></span>v2 · Volume</a>
+    </div>
+  </div>
+</nav>
+
+<!-- ═══════════════════ HERO ═══════════════════ -->
+<section class="hero">
+  <div class="wrap">
+    <div class="hero-meta">
+      <span>Direção de identidade · v2</span>
+      <span class="tag">volume / escala</span>
+      <span>Maio 2026</span>
+    </div>
+    <div class="hero-display"><span class="k-tile">k</span>omplexa.</div>
+    <div class="hero-tagline">
+      <div>
+        <span class="label">A proposta</span>
+        <h2>O sistema operacional<br>do <span class="pop">marketing da sua pousada.</span></h2>
+      </div>
+      <div>
+        <span class="label">Por que mudar de direção</span>
+        <p>A versão <strong>boutique (v1)</strong> mira hotel-charme premium, ticket alto, poucos clientes. Esta <strong>v2</strong> é o oposto: posicionada pra atender <strong>volume</strong> — pousadas e hotéis pequenos/médios brasileiros, ticket mais acessível, modelo escalável. Mesmo nome, marca diferente.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════ COMPARISON ═══════════════════ -->
+<section class="compare">
+  <div class="wrap">
+    <span class="eyebrow">Comparação direta</span>
+    <h2 class="section-title">Duas marcas, <span class="und">dois jogos</span> diferentes.</h2>
+    <p class="section-sub">Mesmo nome, posicionamento oposto. Antes de qualquer pixel, fica claro o trade-off — você não pode ter as duas. Tem que escolher uma.</p>
+
+    <div class="cmp-grid">
+      <div class="cmp-card v1">
+        <div class="cmp-head">
+          <span class="ch-dot"></span>
+          <span>v1 · Boutique Premium</span>
+        </div>
+        <h3>Aman + <span class="ttl-pop">Stripe</span></h3>
+        <div class="cmp-list">
+          <div class="cmp-list-item"><span class="k">Público</span><span class="v"><strong>Hotel boutique de charme</strong> · 20-80 UHs</span></div>
+          <div class="cmp-list-item"><span class="k">Ticket</span><span class="v"><strong>R$ 12k–25k/mês</strong></span></div>
+          <div class="cmp-list-item"><span class="k">Escala</span><span class="v">10-30 clientes ativos · alto valor unitário</span></div>
+          <div class="cmp-list-item"><span class="k">Visual</span><span class="v">Serif editorial, navy + champagne, refinamento</span></div>
+          <div class="cmp-list-item"><span class="k">Tom</span><span class="v">Sóbrio, especialista, <strong>autoridade clássica</strong></span></div>
+          <div class="cmp-list-item"><span class="k">Risco</span><span class="v">Intimida pousada simples · mercado limitado</span></div>
+        </div>
+        <div class="cmp-foot">
+          <span class="fl">Ver completo</span>
+          <a href="../identidade/">→ /d/identidade</a>
+        </div>
+      </div>
+
+      <div class="cmp-card v2">
+        <div class="cmp-head">
+          <span class="ch-dot"></span>
+          <span>v2 · Volume / Escala</span>
+        </div>
+        <h3>Resend + <span class="ttl-pop">brasilidade</span></h3>
+        <div class="cmp-list">
+          <div class="cmp-list-item"><span class="k">Público</span><span class="v"><strong>Pousadas + hotéis pequenos/médios</strong> · 8-60 UHs</span></div>
+          <div class="cmp-list-item"><span class="k">Ticket</span><span class="v"><strong>R$ 1,5k–4k/mês</strong></span></div>
+          <div class="cmp-list-item"><span class="k">Escala</span><span class="v">100-500 clientes ativos · volume com margem</span></div>
+          <div class="cmp-list-item"><span class="k">Visual</span><span class="v">Sans moderno, cream + terracota, brasileiro contemporâneo</span></div>
+          <div class="cmp-list-item"><span class="k">Tom</span><span class="v">Próximo, didático, <strong>parceiro prático</strong></span></div>
+          <div class="cmp-list-item"><span class="k">Risco</span><span class="v">Perde aura premium · não atrai 5-estrelas</span></div>
+        </div>
+        <div class="cmp-foot">
+          <span class="fl">Você está aqui</span>
+          <a>→ /d/identidade-volume</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════ POSICIONAMENTO ═══════════════════ -->
+<section class="posicionamento">
+  <div class="wrap">
+    <span class="eyebrow">01 · Posicionamento (v2)</span>
+    <h2 class="section-title">A marca em <span class="und">uma página</span>.</h2>
+    <p class="section-sub">Posicionamento alternativo: a Komplexa como <strong>sistema operacional de marketing</strong> pra pousadas brasileiras. Volume, escala, parceria próxima. Não promete luxo — promete <strong>previsibilidade</strong>.</p>
+    <div class="pos-grid">
+      <div class="pos-card">
+        <div class="ic">K</div>
+        <span class="label">Categoria</span>
+        <p class="text">Sistema operacional de <span class="pop">marketing pra pousadas.</span></p>
+        <span class="meta">Não é agência cara, não é "faça você mesmo". É operação rodando, com método.</span>
+      </div>
+      <div class="pos-card">
+        <div class="ic">P</div>
+        <span class="label">Para quem</span>
+        <p class="text">Pousadas e hotéis <span class="pop">pequenos e médios</span> independentes.</p>
+        <span class="meta">Não rede, não 5 estrelas. Quem precisa de marketing pro hotel funcionar.</span>
+      </div>
+      <div class="pos-card">
+        <div class="ic">M</div>
+        <span class="label">Promessa</span>
+        <p class="text">Marketing <span class="pop">sem improviso,</span> sem mês a mês na sorte.</p>
+        <span class="meta">Você foca na hospedagem. A gente faz a parte digital virar previsibilidade.</span>
+      </div>
+      <div class="pos-card">
+        <div class="ic">+</div>
+        <span class="label">Arquétipo</span>
+        <p class="text">Companheiro <span class="pop">próximo</span>, especialista acessível.</p>
+        <span class="meta">Everyman + Sage. Não é guru, é o parceiro que entende e ajuda a executar.</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════ LOGO EXPLORATIONS ═══════════════════ -->
+<section class="logo-section">
+  <div class="wrap">
+    <span class="eyebrow">02 · Wordmark (v2)</span>
+    <h2 class="section-title">O <span class="und">K</span> vira a assinatura.</h2>
+    <p class="section-sub">Pra volume, a marca precisa ser MAIS memorável (vai aparecer em 100x mais lugares: avatar de WhatsApp, ícone de app, post de Instagram). O "k" isolado vira o <strong>símbolo simpático</strong> que carrega a marca, mesmo sem o nome completo.</p>
+
+    <div class="logo-grid">
+
+      <!-- DIREÇÃO V2-A — Bricolage Sans com k-tile -->
+      <div class="logo-card">
+        <div class="lc-preview">
+          <div class="wm-v2a"><span class="ktile">k</span>omplexa.</div>
+        </div>
+        <div class="lc-info">
+          <span class="lc-label">Direção A · K-tile + sans grosso</span>
+          <h3>O <span style="color:var(--terra)">K</span> como avatar nativo.</h3>
+          <p class="lc-desc">Wordmark sans bold com o "k" inicial <strong>destacado num tile colorido</strong>. Vira ícone de app/avatar de WhatsApp automaticamente — basta cortar o k. Funciona em qualquer tamanho. <strong>Memorabilidade alta</strong>, perfeito pra escala.</p>
+          <div class="lc-meta">
+            <div class="lc-meta-item"><span>Fonte</span><strong>Bricolage Grotesque 700</strong></div>
+            <div class="lc-meta-item"><span>Caráter</span><strong>Acessível, moderno</strong></div>
+            <div class="lc-meta-item"><span>Reference</span><strong>Resend, Notion, Linear</strong></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- DIREÇÃO V2-B — Wordmark + Símbolo "ponto + arco" -->
+      <div class="logo-card dark">
+        <div class="lc-preview">
+          <div class="wm-v2b">
+            <svg viewBox="0 0 64 64" width="60" height="60" fill="none">
+              <path d="M14 32 Q14 18 32 18 Q50 18 50 32" stroke="#E8704A" stroke-width="3" stroke-linecap="round"/>
+              <circle cx="32" cy="44" r="6" fill="#F5C842"/>
+              <line x1="32" y1="32" x2="32" y2="38" stroke="#FBF7F1" stroke-width="2" stroke-linecap="round"/>
+            </svg>
+            <span class="wm-v2b-text">komplexa</span>
+          </div>
+        </div>
+        <div class="lc-info">
+          <span class="lc-label">Direção B · Símbolo "guarda-sol" + wordmark</span>
+          <h3>Acolhimento <strong style="color:var(--sun)">+</strong> hospitality.</h3>
+          <p class="lc-desc">Símbolo abstrato sugere <strong>guarda-sol/cobertura/hospitalidade</strong> — arco protegendo um ponto. Captura visualmente "abrigamos sua operação". Símbolo isolado funciona como avatar simpático em qualquer contexto.</p>
+          <div class="lc-meta">
+            <div class="lc-meta-item"><span>Fonte</span><strong>Bricolage 600</strong></div>
+            <div class="lc-meta-item"><span>Caráter</span><strong>Hospitality + simbolismo</strong></div>
+            <div class="lc-meta-item"><span>Reference</span><strong>Airbnb (antigo), Stays</strong></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- DIREÇÃO V2-C — Highlight amarelo no nome -->
+      <div class="logo-card terra">
+        <div class="lc-preview">
+          <div class="wm-v2c">k<span class="underline">omplex</span>a</div>
+        </div>
+        <div class="lc-info">
+          <span class="lc-label">Direção C · Wordmark com highlight amarelo</span>
+          <h3>Marca-texto, <strong>tipo marca-texto.</strong></h3>
+          <p class="lc-desc">Trecho central do nome destacado com <strong>highlight amarelo</strong> (como marca-texto). Visual jovem, acessível, brasileiro. Lembra brand de SaaS contemporâneo (Notion, Linear, Substack). Risco: pode ficar "tech demais" e perder hospitality.</p>
+          <div class="lc-meta">
+            <div class="lc-meta-item"><span>Fonte</span><strong>Bricolage 600</strong></div>
+            <div class="lc-meta-item"><span>Caráter</span><strong>Jovem, direto, lúdico</strong></div>
+            <div class="lc-meta-item"><span>Reference</span><strong>Notion, Substack, Beehiiv</strong></div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- AVATARS / ICONS -->
+    <span class="eyebrow" style="margin-top:64px;display:inline-block">02b · Avatar · Favicon · App icon</span>
+    <h3 style="font-family:var(--fs);font-weight:600;font-size:32px;letter-spacing:-.8px;margin-bottom:18px;font-variation-settings:'opsz' 96">O <span style="color:var(--terra)">K</span> em todo lugar.</h3>
+    <p style="font-size:14.5px;color:var(--soft);line-height:1.55;max-width:580px;margin-bottom:24px">Em volume, o avatar é tão importante quanto o logo completo. Aparece como foto de perfil no Instagram, ícone de app, favicon. Aqui em <strong>6 cores</strong> da paleta — versatilidade pra qualquer contexto.</p>
+    <div class="avatar-strip">
+      <div class="av-tile terra">k</div>
+      <div class="av-tile char">k</div>
+      <div class="av-tile cream">k</div>
+      <div class="av-tile verde">k</div>
+      <div class="av-tile sun">k</div>
+      <div class="av-tile coral">k</div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════ PALETA ═══════════════════ -->
+<section class="paleta">
+  <div class="wrap">
+    <span class="eyebrow">03 · Paleta cromática (v2)</span>
+    <h2 class="section-title">Cores <span class="und">brasileiras</span>, sem perder a precisão.</h2>
+    <p class="section-sub">Saímos do navy + champagne (boutique premium) e fomos pra <strong>cream + terracota + verde-bossa + amarelo-sol</strong>. Paleta mais quente, mais brasileira, mais acessível. Mas com tipografia e geometria que sustentam autoridade técnica.</p>
+
+    <div class="pal-grid">
+      <div class="pal-card">
+        <div class="pal-swatch" style="background:#1A1817;color:#FBF7F1"><span class="pal-name">Char</span><span class="pal-shape">01</span></div>
+        <div class="pal-info">
+          <div><span class="role">Base escura quente</span><span class="use">Texto principal, hero dark, capa de deck</span></div>
+          <span class="pal-hex">#1A1817</span>
+        </div>
+      </div>
+      <div class="pal-card">
+        <div class="pal-swatch" style="background:#FBF7F1;color:#1A1817;border-bottom:1px solid #E5DFD3"><span class="pal-name">Cream</span><span class="pal-shape" style="background:rgba(0,0,0,.06);color:#1A1817">02</span></div>
+        <div class="pal-info">
+          <div><span class="role">Base clara warm</span><span class="use">Fundo geral, papel principal</span></div>
+          <span class="pal-hex">#FBF7F1</span>
+        </div>
+      </div>
+      <div class="pal-card">
+        <div class="pal-swatch" style="background:#F2EBDF;color:#1A1817;border-bottom:1px solid #E5DFD3"><span class="pal-name">Sand</span><span class="pal-shape" style="background:rgba(0,0,0,.06);color:#1A1817">03</span></div>
+        <div class="pal-info">
+          <div><span class="role">Base clara · alt</span><span class="use">Seção secundária, contraste com cream</span></div>
+          <span class="pal-hex">#F2EBDF</span>
+        </div>
+      </div>
+
+      <div class="pal-card">
+        <div class="pal-swatch" style="background:#E8704A;color:#FBF7F1"><span class="pal-name">Terracota</span><span class="pal-shape">04</span></div>
+        <div class="pal-info">
+          <div><span class="role">Pop principal · brasileiro</span><span class="use">CTAs, K-tile, destaques, sinalização</span></div>
+          <span class="pal-hex">#E8704A</span>
+        </div>
+      </div>
+      <div class="pal-card">
+        <div class="pal-swatch" style="background:#3D7B5A;color:#FBF7F1"><span class="pal-name">Bossa</span><span class="pal-shape">05</span></div>
+        <div class="pal-info">
+          <div><span class="role">Acento positivo · brasileiro</span><span class="use">Sucesso, dados positivos, calmaria</span></div>
+          <span class="pal-hex">#3D7B5A</span>
+        </div>
+      </div>
+      <div class="pal-card">
+        <div class="pal-swatch" style="background:#F5C842;color:#1A1817"><span class="pal-name">Sol</span><span class="pal-shape" style="background:rgba(0,0,0,.10);color:#1A1817">06</span></div>
+        <div class="pal-info">
+          <div><span class="role">Highlight · destaque</span><span class="use">Marca-texto, sublinhado, animação</span></div>
+          <span class="pal-hex">#F5C842</span>
+        </div>
+      </div>
+    </div>
+
+    <p style="margin-top:36px;font-size:13.5px;color:var(--soft);line-height:1.55;font-weight:400;max-width:720px;background:var(--cream);border-left:3px solid var(--terra);padding:14px 20px;border-radius:0 12px 12px 0"><strong style="color:var(--char)">Por que essa paleta funciona pra volume:</strong> tons terrosos sinalizam <strong>brasilidade</strong> e <strong>acolhimento</strong> sem virar piegas. Terracota + verde-bossa puxam a paleta de hospitality brasileiro (pousadas de serra, fazendas, casas coloniais). Amarelo-sol traz vibração jovem.</p>
+  </div>
+</section>
+
+<!-- ═══════════════════ TIPOGRAFIA ═══════════════════ -->
+<section class="tipografia">
+  <div class="wrap">
+    <span class="eyebrow">04 · Tipografia em ação (v2)</span>
+    <h2 class="section-title">Sans <span class="und">moderna</span>, sem serif.</h2>
+    <p class="section-sub">Diferente da v1 (que usa serif editorial), aqui a Komplexa fala em <strong>sans grotesque contemporânea</strong> — Bricolage Grotesque. Mantém modernidade e personalidade sem virar acadêmico/snob.</p>
+
+    <div class="type-grid">
+
+      <!-- Display — Bricolage Grotesque -->
+      <div class="type-row">
+        <div class="type-meta">
+          <span class="tm-tag">Display</span>
+          <h4>Bricolage Grotesque</h4>
+          <p>Sans-serif variável com personalidade, free no Google Fonts. Weight 600–700 pra display, 500 pra subtítulos. Tem ar de marca contemporânea mas sem o snob de Söhne ou Helvetica Now.</p>
+        </div>
+        <div class="type-demo">
+          <div class="demo-display">Saia do mês a mês <span class="und">na sorte</span>.</div>
+          <h2 class="demo-h1">Pousadas que vendem o ano <span class="pop">inteiro.</span></h2>
+          <h3 class="demo-h2">Marketing de pousada, sem complicação</h3>
+          <p class="demo-h3">Pousada Solar Dona Dora · Nova Friburgo</p>
+        </div>
+      </div>
+
+      <!-- Body — Inter -->
+      <div class="type-row">
+        <div class="type-meta">
+          <span class="tm-tag">Body</span>
+          <h4>Inter</h4>
+          <p>Mantida da v1. Sans grotesca neutra, super-legível em qualquer tamanho. Variable, free. Combina bem com Bricolage como dupla.</p>
+        </div>
+        <div class="type-demo">
+          <p class="demo-body-lg">A maioria das pousadas faz marketing no improviso: post de quando der, ad quando lembra, site que ninguém atualiza desde 2019. A Komplexa transforma isso em <strong>sistema rodando</strong> — toda semana, todo mês.</p>
+          <p class="demo-body">Atendemos pousadas e hotéis pequenos/médios brasileiros que querem sair do mês a mês na sorte. A gente cuida de anúncios, site, atendimento e recuperação — tudo conectado, tudo medido, sem você precisar gerenciar 5 fornecedores.</p>
+          <p class="demo-caption">Operação rodando em pousadas de 8 a 60 UHs · Nordeste, Sul e Sudeste · planos a partir de R$ 1.500/mês</p>
+          <span class="demo-label">UH · ADR · Ocupação · Direta · OTA</span>
+        </div>
+      </div>
+
+      <!-- Mono — JetBrains Mono -->
+      <div class="type-row">
+        <div class="type-meta">
+          <span class="tm-tag">Numeric</span>
+          <h4>JetBrains Mono</h4>
+          <p>Monospace pra números e dados técnicos. Mais geometria e calor que Plex Mono — combina melhor com a vibe de v2.</p>
+        </div>
+        <div class="type-demo">
+          <div class="demo-num demo-num-big">R$ 42.<span class="pop">513</span></div>
+          <div class="demo-num-row">
+            <div class="demo-num-stat"><span class="lbl">Faturamento na baixa</span><span class="val terra">3,4×</span></div>
+            <div class="demo-num-stat"><span class="lbl">Reservas no mês</span><span class="val verde">+400%</span></div>
+            <div class="demo-num-stat"><span class="lbl">Noites vendidas</span><span class="val verde">+323%</span></div>
+            <div class="demo-num-stat"><span class="lbl">Mês de aplicação</span><span class="val">06/26</span></div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════ APLICAÇÕES ═══════════════════ -->
+<section class="aplicacoes">
+  <div class="wrap">
+    <span class="eyebrow">05 · Aplicações sample (v2)</span>
+    <h2 class="section-title">A marca, <span class="und">em ação.</span></h2>
+    <p class="section-sub">Como a direção visual da v2 se traduz em peças reais. Mesma estrutura que a v1, identidade completamente diferente.</p>
+
+    <div class="apps-grid">
+
+      <!-- APP 1 — Hero de Site -->
+      <div class="app-card full">
+        <div class="app-preview">
+          <div class="app-site">
+            <div class="site-nav">
+              <div class="site-logo"><span class="ktile">k</span>omplexa</div>
+              <div class="site-menu"><span>Método</span><span>Cases</span><span>Planos</span><span>Sobre</span></div>
+              <div class="site-cta">Falar com a gente</div>
+            </div>
+            <div class="site-hero">
+              <div class="site-eyebrow">● Operação rodando em +120 pousadas</div>
+              <h1>Saia do <span class="und">mês a mês</span><br>na sorte.</h1>
+              <p class="site-sub">A gente toca o marketing da sua pousada de ponta a ponta — anúncios, site, atendimento e recuperação. Você cuida da hospedagem, a Komplexa traz hóspede.</p>
+              <div class="site-actions">
+                <span class="btn-pri">Conhecer o método →</span>
+                <span class="btn-sec">Ver cases reais</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="app-caption">
+          <div>
+            <span class="ac-label">App 01</span>
+            <h4>Hero de site institucional</h4>
+          </div>
+          <span class="ac-meta">komplexahoteis.com</span>
+        </div>
+      </div>
+
+      <!-- APP 2 — Capa de Deck -->
+      <div class="app-card">
+        <div class="app-preview">
+          <div class="app-deck">
+            <div class="deck-top">
+              <div class="deck-logo"><span class="ktile">k</span>omplexa</div>
+              <div class="deck-pg">01 · 12</div>
+            </div>
+            <div class="deck-body">
+              <div class="deck-eyebrow">Apresentação institucional</div>
+              <h1>Marketing<br>de pousada,<br><span class="pop">sem improviso.</span></h1>
+              <p class="deck-sub">Sistema integrado de aquisição e conversão para pousadas que querem vender o ano inteiro — não só na alta.</p>
+            </div>
+            <div class="deck-bot">komplexahoteis.com · Confidencial</div>
+          </div>
+        </div>
+        <div class="app-caption">
+          <div>
+            <span class="ac-label">App 02</span>
+            <h4>Capa de deck comercial</h4>
+          </div>
+          <span class="ac-meta">1280 × 720</span>
+        </div>
+      </div>
+
+      <!-- APP 3 — Instagram Post -->
+      <div class="app-card">
+        <div class="app-preview">
+          <div class="app-ig">
+            <div class="ig-top">
+              <div class="ig-logo"><span class="ktile">k</span>omplexa</div>
+              <div class="ig-handle">@komplexahoteis</div>
+            </div>
+            <div class="ig-body">
+              <div class="ig-eyebrow">● Case Solar Dona Dora</div>
+              <h2>De R$ 12 mil<br>a <span class="und">R$ 42 mil</span><br>na baixa.</h2>
+            </div>
+            <div class="ig-bot">3,4× mais faturamento no mês mais difícil — método aplicado em 90 dias.</div>
+          </div>
+        </div>
+        <div class="app-caption">
+          <div>
+            <span class="ac-label">App 03</span>
+            <h4>Post de feed</h4>
+          </div>
+          <span class="ac-meta">1080 × 1080</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════ TOM DE VOZ ═══════════════════ -->
+<section class="tom">
+  <div class="wrap">
+    <span class="eyebrow">06 · Tom de voz (v2)</span>
+    <h2 class="section-title">Próximo, didático, <span class="und">brasileiro.</span></h2>
+    <p class="section-sub">A v1 fala como especialista sóbrio. A v2 fala como <strong>parceiro próximo</strong>. Conversa, não palestra. Explica, não jargão. Tem brasilidade sem virar piada.</p>
+
+    <div class="tom-grid">
+      <div class="tom-card bandeira">
+        <span class="tc-label">Palavras-bandeira · usar</span>
+        <h4>Vocabulário próximo e prático.</h4>
+        <div class="word-pills">
+          <span>sistema</span>
+          <span>método</span>
+          <span>operação</span>
+          <span>previsibilidade</span>
+          <span>sem improviso</span>
+          <span>a gente toca</span>
+          <span>pousada</span>
+          <span>vender o ano inteiro</span>
+          <span>ocupação</span>
+          <span>baixa temporada</span>
+          <span>direta</span>
+          <span>UH · ADR · ocupação</span>
+        </div>
+      </div>
+      <div class="tom-card veneno">
+        <span class="tc-label">Palavras-veneno · evitar</span>
+        <h4>Jargão de agência e termos importados.</h4>
+        <div class="word-pills">
+          <span>potencialize</span>
+          <span>transforme</span>
+          <span>soluções 4.0</span>
+          <span>jornada do consumidor</span>
+          <span>brand experience</span>
+          <span>disruptivo</span>
+          <span>awareness</span>
+          <span>arquitetura</span>
+          <span>boutique</span>
+          <span>5 estrelas</span>
+          <span>high-end</span>
+          <span>cliente vip</span>
+        </div>
+      </div>
+    </div>
+
+    <span class="eyebrow" style="margin-bottom:18px;display:inline-block">06b · Antes vs depois</span>
+    <h3 style="font-family:var(--fs);font-weight:600;font-size:32px;letter-spacing:-.8px;margin-bottom:28px;font-variation-settings:'opsz' 96">A mesma ideia, <span style="color:var(--terra)">duas vozes.</span></h3>
+
+    <div class="tom-compare">
+      <div class="compare-row">
+        <div class="col-bad">"Arquitetura de Reservas Diretas para hotéis boutique de alta performance"</div>
+        <div class="col-arrow">→</div>
+        <div class="col-good">Marketing de pousada, <span class="und">sem improviso.</span></div>
+      </div>
+      <div class="compare-row">
+        <div class="col-bad">"Operação de growth dedicada à hotelaria boutique de charme"</div>
+        <div class="col-arrow">→</div>
+        <div class="col-good">A gente <span class="pop">toca o marketing</span> da sua pousada de ponta a ponta.</div>
+      </div>
+      <div class="compare-row">
+        <div class="col-bad">"Sistema editorial de captura de reserva direta para hospitalidade premium"</div>
+        <div class="col-arrow">→</div>
+        <div class="col-good">Vender o ano inteiro, <span class="pop">não só na alta.</span></div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ═══════════════════ NEXT STEPS ═══════════════════ -->
+<section class="next">
+  <div class="wrap">
+    <span class="eyebrow">07 · Como decidir entre as duas</span>
+    <h2 class="section-title">Você tem que <span class="und">escolher um caminho</span>.</h2>
+    <p class="section-sub">Não dá pra ser as duas marcas. Cada direção implica modelo de negócio diferente — ticket, escala, time, processo. Três perguntas pra você responder antes de fechar identidade:</p>
+
+    <div class="next-grid">
+      <div class="next-card">
+        <span class="nc-num">01</span>
+        <h4>Qual é o seu LTV-alvo por cliente?</h4>
+        <p>Se for <strong>R$ 150k+</strong> (relação longa, boutique), v1 faz sentido. Se for <strong>R$ 30-60k</strong> (volume com churn médio), v2 ganha.</p>
+      </div>
+      <div class="next-card">
+        <span class="nc-num">02</span>
+        <h4>Qual é o tamanho do funil?</h4>
+        <p>Se você tem <strong>10-30 leads qualificados/mês</strong> e quer fechar 1-2, v1. Se quer fechar <strong>10-30 leads/mês</strong> com ticket menor, v2.</p>
+      </div>
+      <div class="next-card">
+        <span class="nc-num">03</span>
+        <h4>Qual time você consegue manter?</h4>
+        <p>v1 exige <strong>poucos atendentes muito sêniores</strong> (entrega artesanal). v2 exige <strong>operação padronizada</strong> com playbook (entrega escalável).</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════ FOOT ═══════════════════ -->
+<footer class="foot">
+  <div class="wrap">
+    <div class="foot-inner">
+      <div class="signature"><span class="ktile">k</span>omplexa</div>
+      <div class="meta">Direção de identidade · v2 · 2026 · Volume</div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

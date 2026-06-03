@@ -236,6 +236,18 @@ section + section{border-top:1px solid var(--line)}
 .foot .signature{font-family:var(--fs);font-weight:500;font-size:18px;letter-spacing:-.4px;color:var(--linen)}
 .foot .meta{font-family:var(--fm);font-size:11px;letter-spacing:1.8px;text-transform:uppercase}
 
+/* ─── COMPARE NAV ─── */
+.compare-nav{position:sticky;top:0;z-index:100;background:rgba(245,241,234,.92);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+.cn-inner{display:flex;justify-content:space-between;align-items:center;padding:14px 48px;max-width:1240px;margin:0 auto;gap:18px;flex-wrap:wrap}
+.cn-tag{font-family:var(--fm);font-size:10.5px;font-weight:500;letter-spacing:2px;text-transform:uppercase;color:var(--midnight)}
+.cn-links{display:flex;gap:8px;background:var(--paper);padding:5px;border-radius:100px;border:1px solid var(--line)}
+.cn-link{font-family:var(--fd);font-size:12px;font-weight:500;padding:7px 16px;border-radius:100px;color:var(--soft);text-decoration:none;transition:all .2s;display:inline-flex;align-items:center;gap:6px}
+.cn-link.active{background:var(--midnight);color:var(--linen)}
+.cn-link:hover:not(.active){background:var(--linen);color:var(--midnight)}
+.cn-link .dot{width:6px;height:6px;border-radius:50%}
+.cn-link.boutique .dot{background:var(--champagne)}
+.cn-link.volume .dot{background:#E8704A}
+
 /* ─── MOBILE ─── */
 @media (max-width:880px){
   .wrap{padding:0 24px}
@@ -272,6 +284,17 @@ section + section{border-top:1px solid var(--line)}
 </style>
 </head>
 <body>
+
+<!-- ═══════════════════ COMPARE NAV ═══════════════════ -->
+<nav class="compare-nav">
+  <div class="cn-inner">
+    <span class="cn-tag">Komplexa · Identidade Visual</span>
+    <div class="cn-links">
+      <a class="cn-link boutique active"><span class="dot"></span>v1 · Boutique</a>
+      <a class="cn-link volume" href="../identidade-volume/"><span class="dot"></span>v2 · Volume</a>
+    </div>
+  </div>
+</nav>
 
 <!-- ═══════════════════ HERO ═══════════════════ -->
 <section class="hero">
