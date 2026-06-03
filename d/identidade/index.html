@@ -1,0 +1,747 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>Komplexa · Direção de Identidade</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;0,9..144,800;1,9..144,300;1,9..144,400;1,9..144,500&family=Inter:wght@300;400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --midnight:#0A1628;
+  --ink:#1A2942;
+  --slate:#2D3B52;
+  --linen:#F5F1EA;
+  --paper:#FAF7F2;
+  --champagne:#C8A877;
+  --champagne-dim:#A89060;
+  --sage:#8FA694;
+  --wine:#8B2C3E;
+  --soft:rgba(10,22,40,.62);
+  --muted:rgba(10,22,40,.42);
+  --line:rgba(10,22,40,.10);
+  --line-strong:rgba(10,22,40,.18);
+  --fd:'Inter',system-ui,sans-serif;
+  --fs:'Fraunces',Georgia,serif;
+  --fm:'IBM Plex Mono',ui-monospace,monospace;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--fd);background:var(--linen);color:var(--midnight);-webkit-font-smoothing:antialiased;line-height:1.45;overflow-x:hidden}
+::selection{background:var(--midnight);color:var(--linen)}
+
+/* ─── LAYOUT BASE ─── */
+.wrap{max-width:1240px;margin:0 auto;padding:0 48px}
+section{padding:88px 0;position:relative}
+section + section{border-top:1px solid var(--line)}
+.eyebrow{font-family:var(--fm);font-size:11px;font-weight:500;letter-spacing:2px;text-transform:uppercase;color:var(--muted);margin-bottom:24px;display:inline-block}
+.section-title{font-family:var(--fs);font-weight:400;font-size:64px;line-height:1.02;letter-spacing:-1.5px;margin-bottom:18px;font-variation-settings:"opsz" 144}
+.section-title em{font-style:italic;font-weight:400;color:var(--champagne-dim)}
+.section-sub{font-size:17px;color:var(--soft);max-width:640px;line-height:1.55;margin-bottom:56px}
+
+/* ─── HERO ─── */
+.hero{padding:120px 0 100px;background:var(--linen);position:relative;overflow:hidden}
+.hero::before{content:"";position:absolute;top:24px;left:48px;right:48px;height:1px;background:var(--midnight);opacity:.85}
+.hero-meta{display:flex;justify-content:space-between;align-items:center;font-family:var(--fm);font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--muted);margin-bottom:80px}
+.hero-meta span{display:inline-block}
+.hero-meta .tag{background:var(--midnight);color:var(--linen);padding:5px 12px;border-radius:100px;letter-spacing:1.6px;font-weight:500}
+.hero-display{font-family:var(--fs);font-weight:300;font-size:clamp(80px,16vw,220px);line-height:.92;letter-spacing:-7px;color:var(--midnight);font-variation-settings:"opsz" 144;position:relative}
+.hero-display em{font-style:italic;font-weight:300;color:var(--champagne-dim)}
+.hero-tagline{margin-top:48px;display:grid;grid-template-columns:1fr 1.2fr;gap:80px;align-items:end;padding-top:32px;border-top:1px solid var(--line)}
+.hero-tagline h2{font-family:var(--fs);font-weight:400;font-size:32px;letter-spacing:-.6px;line-height:1.15;color:var(--midnight);font-variation-settings:"opsz" 100}
+.hero-tagline h2 em{font-style:italic;color:var(--champagne-dim);font-weight:400}
+.hero-tagline p{font-size:14px;color:var(--soft);line-height:1.6;max-width:480px}
+.hero-tagline .label{font-family:var(--fm);font-size:11px;letter-spacing:1.8px;text-transform:uppercase;color:var(--muted);margin-bottom:10px;display:block}
+
+/* ─── POSICIONAMENTO ─── */
+.posicionamento{background:var(--paper)}
+.pos-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);border:1px solid var(--line);border-radius:14px;overflow:hidden}
+.pos-card{background:var(--paper);padding:32px 28px;display:flex;flex-direction:column;gap:14px;min-height:240px}
+.pos-card .label{font-family:var(--fm);font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--champagne-dim);font-weight:600}
+.pos-card .text{font-family:var(--fs);font-weight:400;font-size:22px;line-height:1.25;letter-spacing:-.4px;color:var(--midnight);font-variation-settings:"opsz" 100}
+.pos-card .text em{font-style:italic;color:var(--champagne-dim)}
+.pos-card .meta{font-size:13px;color:var(--soft);margin-top:auto;line-height:1.5}
+
+/* ─── LOGO EXPLORATIONS ─── */
+.logo-section{background:var(--linen)}
+.logo-grid{display:flex;flex-direction:column;gap:24px}
+.logo-card{background:var(--paper);border:1px solid var(--line);border-radius:16px;padding:48px;display:grid;grid-template-columns:1.4fr 1fr;gap:48px;align-items:center;min-height:260px}
+.logo-card.dark{background:var(--midnight);color:var(--linen);border-color:transparent}
+.logo-card.dark .lc-label,.logo-card.dark .lc-desc{color:rgba(245,241,234,.6)}
+.logo-card.dark .lc-desc strong{color:var(--linen)}
+.logo-card.dark .lc-meta-item span{color:rgba(245,241,234,.5)}
+.logo-card.dark .lc-meta-item strong{color:var(--linen)}
+.lc-preview{display:flex;align-items:center;justify-content:center;min-height:180px}
+.lc-info .lc-label{font-family:var(--fm);font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--champagne-dim);font-weight:600;margin-bottom:14px}
+.lc-info h3{font-family:var(--fs);font-weight:500;font-size:30px;letter-spacing:-.6px;margin-bottom:14px;line-height:1.1;font-variation-settings:"opsz" 100}
+.lc-info .lc-desc{font-size:14px;color:var(--soft);line-height:1.6;margin-bottom:22px}
+.lc-info .lc-desc strong{color:var(--midnight);font-weight:600}
+.lc-meta{display:flex;gap:32px;flex-wrap:wrap}
+.lc-meta-item{display:flex;flex-direction:column;gap:2px}
+.lc-meta-item span{font-family:var(--fm);font-size:9.5px;letter-spacing:1.6px;text-transform:uppercase;color:var(--muted)}
+.lc-meta-item strong{font-size:13px;font-weight:600;color:var(--midnight);font-variation-settings:"opsz" 100}
+
+/* WORDMARK A — Editorial Serif */
+.wm-a{font-family:var(--fs);font-weight:400;font-size:88px;letter-spacing:-3.5px;line-height:1;color:var(--midnight);font-variation-settings:"opsz" 144}
+.wm-a .k-mark{display:inline-block;position:relative}
+.wm-a .k-mark::after{content:"";position:absolute;top:50%;right:-12px;width:6px;height:6px;background:var(--champagne);border-radius:50%;transform:translateY(-50%)}
+
+/* WORDMARK B — Geometric Sans Refined */
+.wm-b{font-family:var(--fd);font-weight:800;font-size:74px;letter-spacing:-4.5px;line-height:1;color:var(--midnight);font-feature-settings:"ss01" on}
+.wm-b .bar{display:inline-block;position:relative}
+.wm-b .bar::before{content:"";position:absolute;top:-14px;left:50%;width:24px;height:2px;background:var(--champagne);transform:translateX(-50%)}
+
+/* WORDMARK C — Hybrid (símbolo + wordmark) */
+.wm-c{display:flex;align-items:center;gap:18px;color:var(--linen)}
+.wm-c svg{flex-shrink:0}
+.wm-c .wm-c-text{font-family:var(--fs);font-weight:400;font-size:64px;letter-spacing:-2.5px;line-height:1;font-variation-settings:"opsz" 144}
+
+/* MONOGRAMA K */
+.monogram-strip{display:flex;gap:14px;flex-wrap:wrap;margin-top:32px}
+.mono-tile{width:90px;height:90px;border-radius:14px;display:flex;align-items:center;justify-content:center;border:1px solid var(--line)}
+.mono-tile.dark{background:var(--midnight);color:var(--linen);border-color:transparent}
+.mono-tile.linen{background:var(--linen);color:var(--midnight)}
+.mono-tile.champ{background:var(--champagne);color:var(--midnight);border-color:transparent}
+.mono-tile.sage{background:var(--sage);color:var(--linen);border-color:transparent}
+.mono-tile svg{width:36px;height:36px}
+
+/* ─── PALETA ─── */
+.paleta{background:var(--paper)}
+.pal-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.pal-card{border-radius:18px;overflow:hidden;border:1px solid var(--line);position:relative;cursor:pointer;transition:transform .2s}
+.pal-card:hover{transform:translateY(-3px)}
+.pal-swatch{aspect-ratio:1.4/1;display:flex;align-items:flex-end;padding:24px}
+.pal-swatch .pal-name{font-family:var(--fs);font-weight:500;font-size:30px;letter-spacing:-.5px;line-height:1;font-variation-settings:"opsz" 100}
+.pal-info{padding:20px 24px;background:var(--paper);display:grid;grid-template-columns:1fr auto;gap:12px;align-items:center}
+.pal-info .role{font-family:var(--fm);font-size:11px;letter-spacing:1.4px;text-transform:uppercase;color:var(--soft);font-weight:500;display:block}
+.pal-info .use{font-size:12.5px;color:var(--muted);margin-top:3px;line-height:1.4}
+.pal-hex{font-family:var(--fm);font-size:13px;color:var(--midnight);font-weight:500;letter-spacing:.4px;background:var(--linen);padding:6px 11px;border-radius:6px;border:1px solid var(--line)}
+
+/* ─── TIPOGRAFIA ─── */
+.tipografia{background:var(--linen)}
+.type-grid{display:flex;flex-direction:column;gap:48px}
+.type-row{display:grid;grid-template-columns:200px 1fr;gap:48px;align-items:start;padding-bottom:40px;border-bottom:1px solid var(--line)}
+.type-row:last-child{border-bottom:none}
+.type-meta{position:sticky;top:24px}
+.type-meta .tm-label{font-family:var(--fm);font-size:10px;letter-spacing:1.8px;text-transform:uppercase;color:var(--champagne-dim);font-weight:600;margin-bottom:8px;display:block}
+.type-meta h4{font-family:var(--fs);font-weight:500;font-size:22px;letter-spacing:-.4px;color:var(--midnight);margin-bottom:10px;font-variation-settings:"opsz" 100}
+.type-meta p{font-size:12.5px;color:var(--soft);line-height:1.55}
+.type-demo{display:flex;flex-direction:column;gap:24px}
+.demo-display{font-family:var(--fs);font-weight:400;font-size:84px;line-height:.95;letter-spacing:-2.8px;color:var(--midnight);font-variation-settings:"opsz" 144}
+.demo-display em{font-style:italic;color:var(--champagne-dim)}
+.demo-h1{font-family:var(--fs);font-weight:500;font-size:48px;letter-spacing:-1.2px;line-height:1.05;color:var(--midnight);font-variation-settings:"opsz" 100}
+.demo-h2{font-family:var(--fs);font-weight:500;font-size:32px;letter-spacing:-.7px;line-height:1.15;color:var(--midnight)}
+.demo-h3{font-family:var(--fs);font-weight:500;font-size:22px;letter-spacing:-.4px;color:var(--midnight)}
+
+.demo-body-lg{font-family:var(--fd);font-size:19px;line-height:1.55;color:var(--midnight);font-weight:400;max-width:680px}
+.demo-body{font-family:var(--fd);font-size:15px;line-height:1.6;color:var(--ink);font-weight:400;max-width:640px}
+.demo-caption{font-family:var(--fd);font-size:12.5px;line-height:1.5;color:var(--soft);font-weight:500}
+.demo-label{font-family:var(--fm);font-size:11px;letter-spacing:1.8px;text-transform:uppercase;color:var(--muted);font-weight:500}
+
+.demo-num{font-family:var(--fm);font-weight:500}
+.demo-num-big{font-size:56px;color:var(--midnight);letter-spacing:-1.8px;line-height:1;font-feature-settings:"tnum" on}
+.demo-num-row{display:flex;gap:42px;flex-wrap:wrap;align-items:baseline}
+.demo-num-stat{display:flex;flex-direction:column;gap:4px}
+.demo-num-stat .lbl{font-family:var(--fm);font-size:10px;letter-spacing:1.6px;text-transform:uppercase;color:var(--muted);font-weight:500}
+.demo-num-stat .val{font-family:var(--fm);font-size:32px;color:var(--midnight);letter-spacing:-1px;font-weight:500;font-feature-settings:"tnum" on}
+.demo-num-stat .val.champ{color:var(--champagne-dim)}
+
+/* ─── APLICAÇÕES ─── */
+.aplicacoes{background:var(--paper)}
+.apps-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+.app-card{border-radius:18px;overflow:hidden;border:1px solid var(--line);background:var(--paper)}
+.app-card.full{grid-column:1/-1}
+.app-preview{padding:0;position:relative;overflow:hidden;background:var(--paper)}
+.app-caption{padding:22px 26px;display:flex;justify-content:space-between;align-items:center;border-top:1px solid var(--line);background:var(--paper)}
+.app-caption .ac-label{font-family:var(--fm);font-size:10px;letter-spacing:1.8px;text-transform:uppercase;color:var(--champagne-dim);font-weight:600;margin-bottom:4px;display:block}
+.app-caption h4{font-family:var(--fs);font-weight:500;font-size:18px;letter-spacing:-.3px;color:var(--midnight);font-variation-settings:"opsz" 100}
+.app-caption .ac-meta{font-family:var(--fm);font-size:11px;color:var(--muted);letter-spacing:.5px}
+
+/* APP 1 — Hero de site */
+.app-site{background:var(--linen);padding:64px 56px 72px;min-height:480px;position:relative;display:flex;flex-direction:column;justify-content:space-between}
+.app-site .site-nav{display:flex;justify-content:space-between;align-items:center}
+.app-site .site-logo{font-family:var(--fs);font-weight:500;font-size:22px;letter-spacing:-.5px;color:var(--midnight)}
+.app-site .site-menu{display:flex;gap:28px;font-family:var(--fd);font-size:13px;color:var(--soft);font-weight:500}
+.app-site .site-cta{background:var(--midnight);color:var(--linen);padding:9px 18px;border-radius:100px;font-family:var(--fd);font-size:12.5px;font-weight:500;letter-spacing:.2px}
+.app-site .site-hero{margin-top:48px}
+.app-site .site-eyebrow{font-family:var(--fm);font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--champagne-dim);font-weight:600;margin-bottom:18px}
+.app-site h1{font-family:var(--fs);font-weight:400;font-size:64px;letter-spacing:-2px;line-height:1;color:var(--midnight);font-variation-settings:"opsz" 144}
+.app-site h1 em{font-style:italic;color:var(--champagne-dim)}
+.app-site .site-sub{font-family:var(--fd);font-size:15px;color:var(--soft);max-width:520px;margin-top:22px;line-height:1.55}
+
+/* APP 2 — Capa de deck */
+.app-deck{background:var(--midnight);color:var(--linen);padding:56px 52px 60px;min-height:480px;display:flex;flex-direction:column;justify-content:space-between;position:relative;overflow:hidden}
+.app-deck::before{content:"";position:absolute;top:0;right:0;bottom:0;left:50%;background:radial-gradient(circle at 100% 50%,rgba(200,168,119,.16) 0%,transparent 65%);pointer-events:none}
+.app-deck .deck-top{display:flex;justify-content:space-between;align-items:center;position:relative;z-index:1}
+.app-deck .deck-logo{font-family:var(--fs);font-weight:500;font-size:22px;letter-spacing:-.5px;color:var(--linen)}
+.app-deck .deck-pg{font-family:var(--fm);font-size:11px;letter-spacing:2px;text-transform:uppercase;color:rgba(245,241,234,.5)}
+.app-deck .deck-body{position:relative;z-index:1}
+.app-deck .deck-eyebrow{font-family:var(--fm);font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--champagne);margin-bottom:18px}
+.app-deck h1{font-family:var(--fs);font-weight:400;font-size:64px;letter-spacing:-2px;line-height:1;color:var(--linen);font-variation-settings:"opsz" 144}
+.app-deck h1 em{font-style:italic;color:var(--champagne)}
+.app-deck .deck-sub{font-family:var(--fd);font-size:14.5px;color:rgba(245,241,234,.7);max-width:480px;margin-top:20px;line-height:1.55}
+.app-deck .deck-bot{font-family:var(--fm);font-size:10px;letter-spacing:1.8px;text-transform:uppercase;color:rgba(245,241,234,.4);position:relative;z-index:1}
+
+/* APP 3 — Post Instagram */
+.app-ig{aspect-ratio:1/1;background:var(--midnight);color:var(--linen);padding:48px 44px;display:flex;flex-direction:column;justify-content:space-between;position:relative;overflow:hidden;max-width:540px;margin:0 auto}
+.app-ig::before{content:"";position:absolute;inset:0;background:radial-gradient(ellipse at 30% 100%,rgba(200,168,119,.20) 0%,transparent 60%);pointer-events:none}
+.app-ig .ig-top{display:flex;justify-content:space-between;align-items:center;position:relative;z-index:1}
+.app-ig .ig-logo{font-family:var(--fs);font-weight:500;font-size:18px;letter-spacing:-.4px;color:var(--linen)}
+.app-ig .ig-handle{font-family:var(--fm);font-size:10px;letter-spacing:1.5px;text-transform:uppercase;color:rgba(245,241,234,.5)}
+.app-ig .ig-body{position:relative;z-index:1}
+.app-ig .ig-eyebrow{font-family:var(--fm);font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--champagne);margin-bottom:14px}
+.app-ig h2{font-family:var(--fs);font-weight:400;font-size:42px;letter-spacing:-1.4px;line-height:1.04;color:var(--linen);font-variation-settings:"opsz" 144}
+.app-ig h2 em{font-style:italic;color:var(--champagne)}
+.app-ig .ig-bot{font-family:var(--fd);font-size:12px;color:rgba(245,241,234,.6);position:relative;z-index:1}
+
+/* ─── TOM DE VOZ ─── */
+.tom{background:var(--linen)}
+.tom-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-bottom:48px}
+.tom-card{border:1px solid var(--line);border-radius:16px;padding:32px;background:var(--paper)}
+.tom-card.bandeira{border-color:var(--champagne);background:rgba(200,168,119,.05)}
+.tom-card.veneno{border-color:rgba(139,44,62,.30);background:rgba(139,44,62,.04)}
+.tom-card .tc-label{font-family:var(--fm);font-size:11px;letter-spacing:1.8px;text-transform:uppercase;font-weight:600;margin-bottom:6px;display:block}
+.tom-card.bandeira .tc-label{color:var(--champagne-dim)}
+.tom-card.veneno .tc-label{color:var(--wine)}
+.tom-card h4{font-family:var(--fs);font-weight:500;font-size:24px;letter-spacing:-.4px;margin-bottom:20px;color:var(--midnight);font-variation-settings:"opsz" 100}
+.word-pills{display:flex;flex-wrap:wrap;gap:8px}
+.word-pills span{font-family:var(--fm);font-size:13px;padding:7px 14px;border-radius:100px;font-weight:500;letter-spacing:.2px}
+.tom-card.bandeira .word-pills span{background:var(--midnight);color:var(--linen)}
+.tom-card.veneno .word-pills span{background:rgba(139,44,62,.10);color:var(--wine);text-decoration:line-through;text-decoration-color:rgba(139,44,62,.55);text-decoration-thickness:1.5px}
+
+.tom-compare{display:flex;flex-direction:column;gap:20px}
+.compare-row{display:grid;grid-template-columns:1fr 30px 1fr;gap:24px;align-items:center;padding:24px;background:var(--paper);border:1px solid var(--line);border-radius:14px}
+.compare-row .col-bad{font-family:var(--fs);font-style:italic;font-weight:400;font-size:18px;color:var(--soft);line-height:1.35;letter-spacing:-.2px;font-variation-settings:"opsz" 100;text-decoration:line-through;text-decoration-color:rgba(139,44,62,.4);text-decoration-thickness:1.5px}
+.compare-row .col-arrow{color:var(--champagne-dim);font-size:18px;text-align:center;font-family:var(--fm)}
+.compare-row .col-good{font-family:var(--fs);font-weight:500;font-size:20px;color:var(--midnight);line-height:1.3;letter-spacing:-.3px;font-variation-settings:"opsz" 100}
+.compare-row .col-good em{font-style:italic;color:var(--champagne-dim)}
+
+/* ─── NEXT ─── */
+.next{background:var(--midnight);color:var(--linen)}
+.next .eyebrow{color:rgba(200,168,119,.85)}
+.next .section-title{color:var(--linen)}
+.next .section-title em{color:var(--champagne)}
+.next .section-sub{color:rgba(245,241,234,.65)}
+.next-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:rgba(245,241,234,.10);border:1px solid rgba(245,241,234,.10);border-radius:16px;overflow:hidden;margin-top:32px}
+.next-card{background:var(--midnight);padding:32px 28px;display:flex;flex-direction:column;gap:14px;min-height:230px}
+.next-card .nc-num{font-family:var(--fm);font-size:11px;letter-spacing:2px;color:var(--champagne);font-weight:600}
+.next-card h4{font-family:var(--fs);font-weight:500;font-size:22px;letter-spacing:-.4px;color:var(--linen);line-height:1.2;font-variation-settings:"opsz" 100}
+.next-card p{font-size:13px;color:rgba(245,241,234,.65);line-height:1.55;margin-top:auto}
+
+/* ─── FOOT ─── */
+.foot{background:var(--midnight);color:rgba(245,241,234,.55);padding:36px 0;border-top:1px solid rgba(245,241,234,.10)}
+.foot-inner{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:18px}
+.foot .signature{font-family:var(--fs);font-weight:500;font-size:18px;letter-spacing:-.4px;color:var(--linen)}
+.foot .meta{font-family:var(--fm);font-size:11px;letter-spacing:1.8px;text-transform:uppercase}
+
+/* ─── MOBILE ─── */
+@media (max-width:880px){
+  .wrap{padding:0 24px}
+  section{padding:64px 0}
+  .section-title{font-size:40px;letter-spacing:-1px}
+  .hero{padding:80px 0 64px}
+  .hero::before{left:24px;right:24px}
+  .hero-display{font-size:64px;letter-spacing:-2.5px}
+  .hero-tagline{grid-template-columns:1fr;gap:24px}
+  .hero-tagline h2{font-size:22px}
+  .pos-grid{grid-template-columns:1fr}
+  .logo-card{grid-template-columns:1fr;gap:32px;padding:32px;min-height:auto}
+  .wm-a{font-size:60px;letter-spacing:-2.5px}
+  .wm-b{font-size:50px;letter-spacing:-3px}
+  .wm-c .wm-c-text{font-size:42px;letter-spacing:-1.5px}
+  .pal-grid{grid-template-columns:1fr 1fr}
+  .type-row{grid-template-columns:1fr;gap:18px;padding-bottom:32px}
+  .type-meta{position:static}
+  .demo-display{font-size:48px;letter-spacing:-1.4px}
+  .demo-h1{font-size:30px;letter-spacing:-.6px}
+  .demo-h2{font-size:24px}
+  .demo-num-big{font-size:38px}
+  .demo-num-stat .val{font-size:24px}
+  .apps-grid{grid-template-columns:1fr}
+  .app-site,.app-deck{padding:32px 24px;min-height:auto}
+  .app-site h1,.app-deck h1{font-size:38px;letter-spacing:-1.2px}
+  .app-site .site-menu{display:none}
+  .app-ig h2{font-size:30px;letter-spacing:-.8px}
+  .tom-grid{grid-template-columns:1fr}
+  .compare-row{grid-template-columns:1fr;gap:14px;padding:20px}
+  .compare-row .col-arrow{display:none}
+  .next-grid{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+
+<!-- ═══════════════════ HERO ═══════════════════ -->
+<section class="hero">
+  <div class="wrap">
+    <div class="hero-meta">
+      <span>Komplexa · Direção de identidade</span>
+      <span class="tag">v1 · moodboard</span>
+      <span>Maio 2026</span>
+    </div>
+    <div class="hero-display">komplex<em>a.</em></div>
+    <div class="hero-tagline">
+      <div>
+        <span class="label">A proposta</span>
+        <h2>Operação de growth<br><em>dedicada à hotelaria.</em></h2>
+      </div>
+      <div>
+        <span class="label">Sobre esta página</span>
+        <p>Esta é uma exploração visual da identidade — não é o logo final, nem o manual de marca. É um <strong>moodboard navegável</strong> pra alinharmos a direção antes de qualquer entrega final. Tudo aqui é editável e iterativo.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════ POSICIONAMENTO ═══════════════════ -->
+<section class="posicionamento">
+  <div class="wrap">
+    <span class="eyebrow">01 · Posicionamento</span>
+    <h2 class="section-title">A marca em <em>uma página.</em></h2>
+    <p class="section-sub">Antes de visual, esta é a base estratégica. Tudo que vem depois (logo, cor, tipografia) precisa servir essas quatro definições.</p>
+    <div class="pos-grid">
+      <div class="pos-card">
+        <span class="label">Categoria</span>
+        <p class="text">Operação de <em>growth</em> dedicada à hotelaria boutique.</p>
+        <span class="meta">Não é agência, não é SaaS, não é consultoria. É operação — implementa e mede.</span>
+      </div>
+      <div class="pos-card">
+        <span class="label">Para quem</span>
+        <p class="text">Hoteleiros de <em>hotéis boutique e pousadas de charme.</em></p>
+        <span class="meta">Não redes, não OTAs, não chains. Operadores donos da própria marca.</span>
+      </div>
+      <div class="pos-card">
+        <span class="label">Promessa</span>
+        <p class="text">Marketing pontual vira <em>sistema de receita previsível.</em></p>
+        <span class="meta">Receita planejada substitui rezar pela alta temporada.</span>
+      </div>
+      <div class="pos-card">
+        <span class="label">Arquétipo</span>
+        <p class="text">O <em>especialista</em> que conhece o setor a fundo.</p>
+        <span class="meta">Sage / Mentor. Não disruptor, não herói, não cuidador.</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════ LOGO EXPLORATIONS ═══════════════════ -->
+<section class="logo-section">
+  <div class="wrap">
+    <span class="eyebrow">02 · Wordmark</span>
+    <h2 class="section-title">Três direções <em>possíveis.</em></h2>
+    <p class="section-sub">Wordmark é a marca-texto. Em vez de símbolo + palavra, é a palavra com tratamento próprio. Mais sofisticado, mais memorável, mais defensável. Três caminhos abaixo — cada um com personalidade distinta.</p>
+
+    <div class="logo-grid">
+
+      <!-- DIREÇÃO A — Editorial Serif -->
+      <div class="logo-card">
+        <div class="lc-preview">
+          <div class="wm-a">komplex<span class="k-mark">a</span></div>
+        </div>
+        <div class="lc-info">
+          <span class="lc-label">Direção A · Editorial serif</span>
+          <h3>Como uma revista de hospitality.</h3>
+          <p class="lc-desc">Wordmark em <strong>serif contemporânea</strong> (Fraunces aqui, Recoleta no final). Lowercase, peso 400, letterspacing apertado. O ponto champagne ao lado do "a" final é a assinatura discreta — como um selo editorial.</p>
+          <div class="lc-meta">
+            <div class="lc-meta-item"><span>Fonte</span><strong>Fraunces / Recoleta</strong></div>
+            <div class="lc-meta-item"><span>Caráter</span><strong>Tradição, autoridade</strong></div>
+            <div class="lc-meta-item"><span>Reference</span><strong>Aman, Soho House</strong></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- DIREÇÃO B — Geometric Sans Refined -->
+      <div class="logo-card dark">
+        <div class="lc-preview">
+          <div class="wm-b" style="color:#F5F1EA">k<span class="bar">o</span>mplexa</div>
+        </div>
+        <div class="lc-info">
+          <span class="lc-label">Direção B · Geometric sans refined</span>
+          <h3>Discreto e técnico.</h3>
+          <p class="lc-desc">Sans grotesca em peso 800, letterspacing bem apertado, all lowercase. A <strong>barra dourada acima do "o" central</strong> é a marca diferencial — sugere precisão arquitetônica sem virar ícone literal.</p>
+          <div class="lc-meta">
+            <div class="lc-meta-item"><span>Fonte</span><strong>Inter / Söhne</strong></div>
+            <div class="lc-meta-item"><span>Caráter</span><strong>Precisão, método</strong></div>
+            <div class="lc-meta-item"><span>Reference</span><strong>Stripe, Linear</strong></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- DIREÇÃO C — Hybrid (símbolo + wordmark) -->
+      <div class="logo-card dark">
+        <div class="lc-preview">
+          <div class="wm-c">
+            <svg viewBox="0 0 60 60" width="56" height="56" fill="none" stroke="#C8A877" stroke-width="1.4">
+              <circle cx="30" cy="10" r="3.5" fill="#C8A877"/>
+              <circle cx="10" cy="30" r="3.5" fill="#C8A877"/>
+              <circle cx="50" cy="30" r="3.5" fill="#C8A877"/>
+              <circle cx="30" cy="50" r="3.5" fill="#C8A877"/>
+              <circle cx="30" cy="30" r="6" fill="none" stroke="#F5F1EA" stroke-width="1.4"/>
+              <line x1="30" y1="13.5" x2="30" y2="24" stroke="#F5F1EA"/>
+              <line x1="13.5" y1="30" x2="24" y2="30" stroke="#F5F1EA"/>
+              <line x1="36" y1="30" x2="46.5" y2="30" stroke="#F5F1EA"/>
+              <line x1="30" y1="36" x2="30" y2="46.5" stroke="#F5F1EA"/>
+            </svg>
+            <span class="wm-c-text" style="color:#F5F1EA">komplexa</span>
+          </div>
+        </div>
+        <div class="lc-info">
+          <span class="lc-label">Direção C · Símbolo + wordmark</span>
+          <h3>Sistema visualizado.</h3>
+          <p class="lc-desc">Símbolo geométrico (4 pontos convergindo num núcleo) representa a <strong>Arquitetura de Reservas Diretas</strong> visualmente — as 4 frentes (estratégia, mídia, site, atendimento) integradas no centro. Risco: vira "logo de software".</p>
+          <div class="lc-meta">
+            <div class="lc-meta-item"><span>Fonte</span><strong>Fraunces + símbolo</strong></div>
+            <div class="lc-meta-item"><span>Caráter</span><strong>Sistema, conexão</strong></div>
+            <div class="lc-meta-item"><span>Reference</span><strong>Mailchimp, Notion</strong></div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- MONOGRAMA K -->
+    <span class="eyebrow" style="margin-top:64px;display:inline-block">02b · Monograma · Avatar · Favicon</span>
+    <h3 style="font-family:var(--fs);font-weight:500;font-size:32px;letter-spacing:-.6px;margin-bottom:18px;font-variation-settings:'opsz' 100">O <em style="color:var(--champagne-dim);font-style:italic">K</em> isolado, em contexto.</h3>
+    <p style="font-size:14.5px;color:var(--soft);line-height:1.55;max-width:560px;margin-bottom:24px">Para avatar de WhatsApp, favicon, marca d'água em propostas, brindes. Versões em quatro acabamentos.</p>
+    <div class="monogram-strip">
+      <div class="mono-tile dark">
+        <svg viewBox="0 0 40 40" fill="none">
+          <path d="M14 10 V30 M14 20 L26 10 M14 20 L26 30" stroke="#F5F1EA" stroke-width="2.5" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <div class="mono-tile linen">
+        <svg viewBox="0 0 40 40" fill="none">
+          <path d="M14 10 V30 M14 20 L26 10 M14 20 L26 30" stroke="#0A1628" stroke-width="2.5" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <div class="mono-tile champ">
+        <svg viewBox="0 0 40 40" fill="none">
+          <path d="M14 10 V30 M14 20 L26 10 M14 20 L26 30" stroke="#0A1628" stroke-width="2.5" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <div class="mono-tile sage">
+        <svg viewBox="0 0 40 40" fill="none">
+          <path d="M14 10 V30 M14 20 L26 10 M14 20 L26 30" stroke="#F5F1EA" stroke-width="2.5" stroke-linecap="round"/>
+        </svg>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ═══════════════════ PALETA ═══════════════════ -->
+<section class="paleta">
+  <div class="wrap">
+    <span class="eyebrow">03 · Paleta cromática</span>
+    <h2 class="section-title">Fuga do <em>azul-genérico.</em></h2>
+    <p class="section-sub">Toda agência hoteleira concorrente usa azul-cyan. Pra diferenciar, a Komplexa vai pra paleta de hospitality boutique: <strong>midnight + champagne + neutros</strong>. Acolhe a tradição do setor, sustenta a autoridade técnica.</p>
+
+    <div class="pal-grid">
+      <div class="pal-card">
+        <div class="pal-swatch" style="background:#0A1628;color:#F5F1EA"><span class="pal-name">Midnight</span></div>
+        <div class="pal-info">
+          <div><span class="role">Base escura · 80% dos contextos dark</span><span class="use">Cabeçalho, hero dark, fundo de slide, capa</span></div>
+          <span class="pal-hex">#0A1628</span>
+        </div>
+      </div>
+      <div class="pal-card">
+        <div class="pal-swatch" style="background:#1A2942;color:#F5F1EA"><span class="pal-name">Ink</span></div>
+        <div class="pal-info">
+          <div><span class="role">Texto base sobre fundo claro</span><span class="use">Body, copy de site, parágrafos</span></div>
+          <span class="pal-hex">#1A2942</span>
+        </div>
+      </div>
+      <div class="pal-card">
+        <div class="pal-swatch" style="background:#F5F1EA;color:#0A1628;border-bottom:1px solid #DDD7CC"><span class="pal-name">Linen</span></div>
+        <div class="pal-info">
+          <div><span class="role">Fundo claro principal</span><span class="use">Página, cards, áreas neutras</span></div>
+          <span class="pal-hex">#F5F1EA</span>
+        </div>
+      </div>
+
+      <div class="pal-card">
+        <div class="pal-swatch" style="background:#C8A877;color:#0A1628"><span class="pal-name">Champagne</span></div>
+        <div class="pal-info">
+          <div><span class="role">Acento principal — hospitality</span><span class="use">CTAs sutis, destaques, marcas de seção</span></div>
+          <span class="pal-hex">#C8A877</span>
+        </div>
+      </div>
+      <div class="pal-card">
+        <div class="pal-swatch" style="background:#8FA694;color:#F5F1EA"><span class="pal-name">Sage</span></div>
+        <div class="pal-info">
+          <div><span class="role">Acento secundário · brasileiro</span><span class="use">Detalhes positivos, calmaria, sucesso</span></div>
+          <span class="pal-hex">#8FA694</span>
+        </div>
+      </div>
+      <div class="pal-card">
+        <div class="pal-swatch" style="background:#8B2C3E;color:#F5F1EA"><span class="pal-name">Wine</span></div>
+        <div class="pal-info">
+          <div><span class="role">Acento raro · destaque pontual</span><span class="use">Citação especial, selo, ocasião</span></div>
+          <span class="pal-hex">#8B2C3E</span>
+        </div>
+      </div>
+    </div>
+
+    <p style="margin-top:36px;font-size:13px;color:var(--muted);line-height:1.55;font-style:italic;max-width:720px">Os neutros (Midnight + Ink + Linen) carregam 80% da identidade. Champagne e Sage entram como acento. Wine quase nunca aparece — quando aparece, marca momento especial (case raro, citação importante, selo de fundador).</p>
+  </div>
+</section>
+
+<!-- ═══════════════════ TIPOGRAFIA ═══════════════════ -->
+<section class="tipografia">
+  <div class="wrap">
+    <span class="eyebrow">04 · Tipografia em ação</span>
+    <h2 class="section-title">Serif <em>editorial</em> + sans <em>discreto</em> + mono <em>técnico.</em></h2>
+    <p class="section-sub">Três fontes com papéis específicos. Serif comunica autoridade e tradição (hospitality). Sans entrega legibilidade (UI/body). Mono carrega números e labels técnicos (precisão).</p>
+
+    <div class="type-grid">
+
+      <!-- Display — Fraunces -->
+      <div class="type-row">
+        <div class="type-meta">
+          <span class="tm-label">Display</span>
+          <h4>Fraunces</h4>
+          <p>Serif contemporânea com personalidade. Variable font (opsz + wght). Free no Google Fonts. Equivalente direto da Recoleta (paga).</p>
+        </div>
+        <div class="type-demo">
+          <div class="demo-display">Saia do mês a mês <em>na sorte.</em></div>
+          <h2 class="demo-h1">Hotéis boutique com método.</h2>
+          <h3 class="demo-h2">Arquitetura de Reservas Diretas</h3>
+          <p class="demo-h3">Pousada Solar Dona Dora</p>
+        </div>
+      </div>
+
+      <!-- Body — Inter -->
+      <div class="type-row">
+        <div class="type-meta">
+          <span class="tm-label">Body</span>
+          <h4>Inter</h4>
+          <p>Sans grotesca neutra, super-legível em qualquer tamanho. Já é usada hoje. Free. Equivalente: Söhne (paga).</p>
+        </div>
+        <div class="type-demo">
+          <p class="demo-body-lg">A maioria dos hotéis boutique está capturando metade do que poderia. Não é falta de demanda — é falta de método. Operações pulverizadas, com 10 fornecedores diferentes, sem integração.</p>
+          <p class="demo-body">A Komplexa é uma operação de growth dedicada exclusivamente à hotelaria. Aplicamos uma metodologia chamada Arquitetura de Reservas Diretas — anúncios, site, atendimento e recuperação conectados num único sistema, executado por um time só.</p>
+          <p class="demo-caption">Comparação 30 dias vs ano anterior — base de 12 hotéis em diferentes regiões. Dado consolidado pelo time de growth.</p>
+          <span class="demo-label">UH · ADR · RevPAR · ROAS · Direta</span>
+        </div>
+      </div>
+
+      <!-- Mono — IBM Plex Mono -->
+      <div class="type-row">
+        <div class="type-meta">
+          <span class="tm-label">Numeric / labels</span>
+          <h4>IBM Plex Mono</h4>
+          <p>Monospace pra números e labels técnicos. Comunica precisão sem invadir o resto. Free.</p>
+        </div>
+        <div class="type-demo">
+          <div class="demo-num demo-num-big">R$ 297.000</div>
+          <div class="demo-num-row">
+            <div class="demo-num-stat"><span class="lbl">ROAS médio</span><span class="val champ">19×</span></div>
+            <div class="demo-num-stat"><span class="lbl">Reservas diretas</span><span class="val">+400%</span></div>
+            <div class="demo-num-stat"><span class="lbl">Faturamento baixa</span><span class="val">3,4×</span></div>
+            <div class="demo-num-stat"><span class="lbl">Ocupação</span><span class="val">78%</span></div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════ APLICAÇÕES ═══════════════════ -->
+<section class="aplicacoes">
+  <div class="wrap">
+    <span class="eyebrow">05 · Aplicações sample</span>
+    <h2 class="section-title">A marca, <em>em ação.</em></h2>
+    <p class="section-sub">Como a direção visual se traduz em peças reais. Hero de site, capa de deck comercial e post no Instagram — mesma identidade, três contextos.</p>
+
+    <div class="apps-grid">
+
+      <!-- APP 1 — Hero de Site -->
+      <div class="app-card full">
+        <div class="app-preview">
+          <div class="app-site">
+            <div class="site-nav">
+              <div class="site-logo">komplexa<span style="color:var(--champagne-dim)">.</span></div>
+              <div class="site-menu"><span>Método</span><span>Cases</span><span>Sobre</span><span>Contato</span></div>
+              <div class="site-cta">Agendar conversa</div>
+            </div>
+            <div class="site-hero">
+              <div class="site-eyebrow">Operação de growth para hotelaria</div>
+              <h1>Arquitetura de<br><em>reservas diretas.</em></h1>
+              <p class="site-sub">Sistema completo de captura e conversão para hotéis boutique. Anúncios, site, atendimento e recuperação — operados por um time só, com método.</p>
+            </div>
+          </div>
+        </div>
+        <div class="app-caption">
+          <div>
+            <span class="ac-label">App 01</span>
+            <h4>Hero de site institucional</h4>
+          </div>
+          <span class="ac-meta">komplexahoteis.com</span>
+        </div>
+      </div>
+
+      <!-- APP 2 — Capa de Deck -->
+      <div class="app-card">
+        <div class="app-preview">
+          <div class="app-deck">
+            <div class="deck-top">
+              <div class="deck-logo">komplexa<span style="color:var(--champagne)">.</span></div>
+              <div class="deck-pg">01 · 12</div>
+            </div>
+            <div class="deck-body">
+              <div class="deck-eyebrow">Apresentação institucional</div>
+              <h1>Hotelaria<br>com <em>método.</em></h1>
+              <p class="deck-sub">Sistema integrado de aquisição e conversão para hotéis e pousadas crescerem com previsibilidade.</p>
+            </div>
+            <div class="deck-bot">komplexahoteis.com · Confidencial</div>
+          </div>
+        </div>
+        <div class="app-caption">
+          <div>
+            <span class="ac-label">App 02</span>
+            <h4>Capa de deck comercial</h4>
+          </div>
+          <span class="ac-meta">1280 × 720</span>
+        </div>
+      </div>
+
+      <!-- APP 3 — Instagram Post -->
+      <div class="app-card">
+        <div class="app-preview">
+          <div class="app-ig">
+            <div class="ig-top">
+              <div class="ig-logo">komplexa<span style="color:var(--champagne)">.</span></div>
+              <div class="ig-handle">@komplexahoteis</div>
+            </div>
+            <div class="ig-body">
+              <div class="ig-eyebrow">Case · Solar Dona Dora</div>
+              <h2>De R$ 12 mil<br>a <em>R$ 42 mil</em><br>na baixa.</h2>
+            </div>
+            <div class="ig-bot">Aumento de 3,4× no mês mais difícil do ano · método aplicado em 90 dias</div>
+          </div>
+        </div>
+        <div class="app-caption">
+          <div>
+            <span class="ac-label">App 03</span>
+            <h4>Post de feed</h4>
+          </div>
+          <span class="ac-meta">1080 × 1080</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════ TOM DE VOZ ═══════════════════ -->
+<section class="tom">
+  <div class="wrap">
+    <span class="eyebrow">06 · Tom de voz</span>
+    <h2 class="section-title">Operação, <em>não marketing.</em></h2>
+    <p class="section-sub">A marca se distingue pelo vocabulário. Hoteleiro tradicional fareja "vendedor de soluções" a um quilômetro. Komplexa fala como quem opera, não como quem promete.</p>
+
+    <div class="tom-grid">
+      <div class="tom-card bandeira">
+        <span class="tc-label">Palavras-bandeira · usar</span>
+        <h4>O vocabulário da operação real.</h4>
+        <div class="word-pills">
+          <span>arquitetura</span>
+          <span>método</span>
+          <span>operação</span>
+          <span>previsibilidade</span>
+          <span>sistema</span>
+          <span>captura</span>
+          <span>reserva direta</span>
+          <span>vazamento</span>
+          <span>ocupação</span>
+          <span>ticket</span>
+          <span>ROAS</span>
+          <span>UH · ADR · RevPAR</span>
+        </div>
+      </div>
+      <div class="tom-card veneno">
+        <span class="tc-label">Palavras-veneno · evitar</span>
+        <h4>Vocabulário genérico de agência digital.</h4>
+        <div class="word-pills">
+          <span>potencialize</span>
+          <span>transforme</span>
+          <span>soluções 4.0</span>
+          <span>jornada do consumidor</span>
+          <span>alavanca digital</span>
+          <span>brand experience</span>
+          <span>disruptivo</span>
+          <span>inovador</span>
+          <span>revolucionário</span>
+          <span>awareness</span>
+          <span>cliente vip</span>
+          <span>presença digital</span>
+        </div>
+      </div>
+    </div>
+
+    <span class="eyebrow" style="margin-bottom:18px;display:inline-block">06b · Antes vs depois</span>
+    <h3 style="font-family:var(--fs);font-weight:500;font-size:30px;letter-spacing:-.6px;margin-bottom:28px;font-variation-settings:'opsz' 100">A mesma ideia, <em style="color:var(--champagne-dim);font-style:italic">duas vozes.</em></h3>
+
+    <div class="tom-compare">
+      <div class="compare-row">
+        <div class="col-bad">"Transforme seu hotel com marketing digital de alta performance"</div>
+        <div class="col-arrow">→</div>
+        <div class="col-good">"Sistema de <em>captura de reserva direta</em>, com método."</div>
+      </div>
+      <div class="compare-row">
+        <div class="col-bad">"Soluções de growth para alavancar suas vendas online"</div>
+        <div class="col-arrow">→</div>
+        <div class="col-good">"<em>Arquitetura</em> de reservas diretas para hotéis boutique."</div>
+      </div>
+      <div class="compare-row">
+        <div class="col-bad">"Aumente sua presença digital e potencialize sua marca"</div>
+        <div class="col-arrow">→</div>
+        <div class="col-good">"Saia do <em>mês a mês na sorte.</em>"</div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ═══════════════════ NEXT STEPS ═══════════════════ -->
+<section class="next">
+  <div class="wrap">
+    <span class="eyebrow">07 · Próximos passos</span>
+    <h2 class="section-title">Como <em>continuar</em> daqui.</h2>
+    <p class="section-sub">Esta página é o <strong>moodboard inicial</strong>. Pra virar identidade rodando em produção, precisamos validar a direção e fechar três decisões críticas.</p>
+
+    <div class="next-grid">
+      <div class="next-card">
+        <span class="nc-num">01</span>
+        <h4>Escolher uma direção de wordmark</h4>
+        <p>Você navega as três opções acima e me diz qual ressoa. A partir disso, eu refino em vetor (SVG editável, várias variações).</p>
+      </div>
+      <div class="next-card">
+        <span class="nc-num">02</span>
+        <h4>Validar paleta + tipografia</h4>
+        <p>Se Midnight + Champagne + Linen + Fraunces te convencer, eu refaço a página inicial do site e a capa do deck com a nova identidade — pra ver no contexto real.</p>
+      </div>
+      <div class="next-card">
+        <span class="nc-num">03</span>
+        <h4>Manual de marca em 1 página</h4>
+        <p>Após aprovação, gero o manual: tokens (hex, fontes, sizes), grid, espaçamentos, regras de uso, do's & don'ts. Vira referência pra qualquer designer/dev terceirizado.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════ FOOT ═══════════════════ -->
+<footer class="foot">
+  <div class="wrap">
+    <div class="foot-inner">
+      <div class="signature">komplexa<span style="color:var(--champagne)">.</span></div>
+      <div class="meta">Direção de identidade · v1 · 2026</div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
