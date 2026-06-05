@@ -1,0 +1,849 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>Komplexa · Elementos Hoteleiros · Logo Exploration</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,400&family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --midnight:#0A1628;
+  --ink:#1A2942;
+  --slate:#2D3B52;
+  --linen:#F5F1EA;
+  --paper:#FAF7F2;
+  --champagne:#C8A877;
+  --champagne-dim:#A89060;
+  --terra:#E8704A;
+  --bossa:#3D7B5A;
+  --soft:rgba(10,22,40,.62);
+  --muted:rgba(10,22,40,.42);
+  --line:rgba(10,22,40,.10);
+  --line-strong:rgba(10,22,40,.18);
+  --fd:'Inter',system-ui,sans-serif;
+  --fs:'Fraunces',Georgia,serif;
+  --fm:'JetBrains Mono',ui-monospace,monospace;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--fd);background:var(--linen);color:var(--midnight);-webkit-font-smoothing:antialiased;line-height:1.5;overflow-x:hidden}
+::selection{background:var(--midnight);color:var(--linen)}
+
+/* ─── NAV STICKY ─── */
+.nav{position:sticky;top:0;z-index:100;background:rgba(245,241,234,.92);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+.nav-inner{max-width:1280px;margin:0 auto;padding:14px 48px;display:flex;justify-content:space-between;align-items:center;gap:18px;flex-wrap:wrap}
+.nav-tag{font-family:var(--fm);font-size:10.5px;font-weight:500;letter-spacing:2px;text-transform:uppercase;color:var(--midnight)}
+.nav-links{display:flex;gap:6px;background:var(--paper);padding:5px;border-radius:100px;border:1px solid var(--line)}
+.nav-link{font-family:var(--fd);font-size:12px;font-weight:500;padding:7px 15px;border-radius:100px;color:var(--soft);text-decoration:none;transition:all .2s;display:inline-flex;align-items:center;gap:6px}
+.nav-link.active{background:var(--midnight);color:var(--linen)}
+.nav-link:hover:not(.active){background:var(--linen);color:var(--midnight)}
+.nav-link .dot{width:6px;height:6px;border-radius:50%}
+.nav-link.boutique .dot{background:var(--champagne)}
+.nav-link.volume .dot{background:var(--terra)}
+.nav-link.elementos .dot{background:var(--bossa)}
+
+/* ─── LAYOUT ─── */
+.wrap{max-width:1280px;margin:0 auto;padding:0 48px}
+section{padding:88px 0;position:relative}
+section + section{border-top:1px solid var(--line)}
+.eyebrow{font-family:var(--fm);font-size:11px;font-weight:500;letter-spacing:2px;text-transform:uppercase;color:var(--muted);margin-bottom:20px;display:inline-block}
+.eyebrow .badge{display:inline-block;background:var(--midnight);color:var(--linen);padding:3px 8px;border-radius:4px;margin-right:8px;letter-spacing:1.4px;font-weight:600}
+.section-title{font-family:var(--fs);font-weight:400;font-size:60px;line-height:1.02;letter-spacing:-1.5px;margin-bottom:18px;font-variation-settings:"opsz" 144}
+.section-title em{font-style:italic;color:var(--champagne-dim)}
+.section-sub{font-size:17px;color:var(--soft);max-width:680px;line-height:1.55;margin-bottom:56px}
+
+/* ─── HERO ─── */
+.hero{padding:96px 0 72px;background:var(--linen)}
+.hero-meta{display:flex;justify-content:space-between;align-items:center;font-family:var(--fm);font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--muted);margin-bottom:48px}
+.hero-meta .tag{background:var(--bossa);color:var(--linen);padding:5px 12px;border-radius:100px;letter-spacing:1.4px;font-weight:500}
+.hero-display{font-family:var(--fs);font-weight:300;font-size:clamp(60px,11vw,140px);line-height:1;letter-spacing:-4.5px;color:var(--midnight);font-variation-settings:"opsz" 144}
+.hero-display em{font-style:italic;color:var(--champagne-dim);font-weight:400}
+.hero-tagline{margin-top:36px;display:grid;grid-template-columns:1fr 1.4fr;gap:64px;align-items:end;padding-top:32px;border-top:1px solid var(--line)}
+.hero-tagline h2{font-family:var(--fs);font-weight:400;font-size:28px;letter-spacing:-.6px;line-height:1.2;color:var(--midnight)}
+.hero-tagline h2 em{font-style:italic;color:var(--champagne-dim)}
+.hero-tagline p{font-size:14.5px;color:var(--soft);line-height:1.65;max-width:540px}
+.hero-tagline p strong{color:var(--midnight);font-weight:600}
+.hero-tagline .label{font-family:var(--fm);font-size:11px;letter-spacing:1.8px;text-transform:uppercase;color:var(--muted);margin-bottom:10px;display:block}
+
+/* ─── ELEMENT SECTION ─── */
+.element{background:var(--linen)}
+.element:nth-child(even){background:var(--paper)}
+.element-head{display:grid;grid-template-columns:auto 1fr;gap:32px;align-items:start;margin-bottom:48px}
+.element-num{font-family:var(--fs);font-weight:400;font-size:120px;color:var(--champagne);letter-spacing:-4px;line-height:.85;font-variation-settings:"opsz" 144}
+.element-meta h3{font-family:var(--fs);font-weight:500;font-size:42px;letter-spacing:-1px;line-height:1;color:var(--midnight);margin-bottom:10px;font-variation-settings:"opsz" 144}
+.element-meta h3 em{font-style:italic;color:var(--champagne-dim)}
+.element-meta .sub{font-size:15px;color:var(--soft);line-height:1.55;max-width:640px}
+
+/* Pills de avaliação */
+.eval-strip{display:flex;gap:8px;margin-top:14px;flex-wrap:wrap}
+.eval-pill{display:inline-flex;align-items:center;gap:5px;background:var(--paper);border:1px solid var(--line);padding:5px 11px;border-radius:100px;font-size:11.5px;font-weight:500;color:var(--soft);font-family:var(--fd)}
+.eval-pill.good{background:rgba(61,123,90,.10);border-color:rgba(61,123,90,.30);color:var(--bossa)}
+.eval-pill.warn{background:rgba(232,112,74,.08);border-color:rgba(232,112,74,.25);color:#C95A35}
+
+/* Grid de explorações */
+.expl-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-bottom:36px}
+.expl-card{background:var(--paper);border:1px solid var(--line);border-radius:16px;overflow:hidden;display:flex;flex-direction:column}
+.expl-card.dark{background:var(--midnight);color:var(--linen);border-color:transparent}
+.expl-preview{aspect-ratio:1.4/1;display:flex;align-items:center;justify-content:center;padding:32px;position:relative}
+.expl-info{padding:18px 22px 22px;border-top:1px solid var(--line)}
+.expl-card.dark .expl-info{border-top-color:rgba(255,255,255,.10)}
+.expl-info .et-name{font-family:var(--fm);font-size:10px;letter-spacing:1.6px;text-transform:uppercase;color:var(--champagne-dim);font-weight:600;margin-bottom:6px;display:block}
+.expl-card.dark .expl-info .et-name{color:var(--champagne)}
+.expl-info h4{font-family:var(--fs);font-weight:500;font-size:17px;letter-spacing:-.3px;line-height:1.15;color:var(--midnight);margin-bottom:8px;font-variation-settings:"opsz" 100}
+.expl-card.dark .expl-info h4{color:var(--linen)}
+.expl-info p{font-size:12.5px;color:var(--soft);line-height:1.5}
+.expl-card.dark .expl-info p{color:rgba(245,241,234,.55)}
+
+/* PROMPT BOX */
+.prompt-box{background:var(--midnight);color:var(--linen);border-radius:14px;padding:24px 28px;margin-bottom:24px;position:relative}
+.prompt-box .pb-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:14px;flex-wrap:wrap;gap:12px}
+.prompt-box .pb-tag{display:inline-flex;align-items:center;gap:8px;font-family:var(--fm);font-size:10px;letter-spacing:1.6px;text-transform:uppercase;color:var(--champagne);font-weight:600}
+.prompt-box .pb-tag .ai-dot{width:8px;height:8px;border-radius:50%;background:var(--champagne)}
+.prompt-box .pb-tool{font-family:var(--fm);font-size:10px;letter-spacing:1.4px;text-transform:uppercase;color:rgba(245,241,234,.45)}
+.prompt-box pre{font-family:var(--fm);font-size:12.5px;line-height:1.7;color:rgba(245,241,234,.88);background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);padding:18px 22px;border-radius:10px;white-space:pre-wrap;word-break:break-word}
+
+/* WORDMARK SECTION */
+.wordmark-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:32px}
+.wm-card{background:var(--paper);border:1px solid var(--line);border-radius:16px;padding:36px;display:flex;flex-direction:column;gap:20px;min-height:240px}
+.wm-card.dark{background:var(--midnight);color:var(--linen);border-color:transparent}
+.wm-card.terra{background:#1A0E08;color:var(--linen);border-color:transparent}
+.wm-preview{flex:1;display:flex;align-items:center;justify-content:flex-start;gap:18px}
+.wm-text-serif{font-family:var(--fs);font-weight:400;font-size:54px;letter-spacing:-2.5px;line-height:1;color:var(--midnight);font-variation-settings:"opsz" 144}
+.wm-card.dark .wm-text-serif{color:var(--linen)}
+.wm-text-serif .acc{color:var(--champagne-dim)}
+.wm-card.dark .wm-text-serif .acc{color:var(--champagne)}
+.wm-info{display:flex;justify-content:space-between;align-items:flex-end;gap:18px;padding-top:18px;border-top:1px solid var(--line)}
+.wm-card.dark .wm-info{border-top-color:rgba(255,255,255,.10)}
+.wm-info .wmi-meta{display:flex;flex-direction:column;gap:4px}
+.wm-info .wmi-label{font-family:var(--fm);font-size:9.5px;letter-spacing:1.6px;text-transform:uppercase;color:var(--champagne-dim);font-weight:600}
+.wm-card.dark .wm-info .wmi-label{color:var(--champagne)}
+.wm-info .wmi-name{font-family:var(--fs);font-weight:500;font-size:15px;letter-spacing:-.3px;color:var(--midnight)}
+.wm-card.dark .wm-info .wmi-name{color:var(--linen)}
+.wm-info .wmi-tags{font-family:var(--fm);font-size:10px;letter-spacing:1.4px;text-transform:uppercase;color:var(--muted)}
+.wm-card.dark .wm-info .wmi-tags{color:rgba(245,241,234,.45)}
+
+/* AZULEJO PATTERN BG */
+.azulejo-bg{background-image:url("data:image/svg+xml;utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='80' viewBox='0 0 80 80'%3E%3Cg fill='none' stroke='%23C8A877' stroke-width='0.6' opacity='0.4'%3E%3Cpath d='M0 40 Q20 20 40 40 T80 40'/%3E%3Cpath d='M40 0 Q20 20 40 40 T40 80'/%3E%3Ccircle cx='40' cy='40' r='5'/%3E%3Ccircle cx='0' cy='0' r='3'/%3E%3Ccircle cx='80' cy='0' r='3'/%3E%3Ccircle cx='0' cy='80' r='3'/%3E%3Ccircle cx='80' cy='80' r='3'/%3E%3C/g%3E%3C/svg%3E")}
+
+/* NEXT STEPS */
+.next{background:var(--midnight);color:var(--linen);position:relative;overflow:hidden}
+.next::before{content:"";position:absolute;top:-160px;right:-120px;width:540px;height:540px;border-radius:50%;background:radial-gradient(circle,rgba(200,168,119,.18) 0%,transparent 65%);pointer-events:none}
+.next .eyebrow{color:rgba(200,168,119,.85)}
+.next .section-title{color:var(--linen)}
+.next .section-title em{color:var(--champagne)}
+.next .section-sub{color:rgba(245,241,234,.65)}
+.next-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:36px;position:relative;z-index:1}
+.next-card{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.10);border-radius:18px;padding:32px 28px;display:flex;flex-direction:column;gap:14px;min-height:240px}
+.next-card .nc-num{font-family:var(--fm);font-size:11px;letter-spacing:2px;color:var(--champagne);font-weight:600}
+.next-card h4{font-family:var(--fs);font-weight:500;font-size:22px;letter-spacing:-.4px;color:var(--linen);line-height:1.2}
+.next-card p{font-size:13px;color:rgba(245,241,234,.65);line-height:1.55;margin-top:auto}
+
+.foot{background:var(--midnight);color:rgba(245,241,234,.55);padding:36px 0;border-top:1px solid rgba(245,241,234,.10)}
+.foot-inner{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:18px}
+.foot .signature{font-family:var(--fs);font-weight:500;font-size:18px;letter-spacing:-.4px;color:var(--linen)}
+.foot .meta{font-family:var(--fm);font-size:11px;letter-spacing:1.8px;text-transform:uppercase}
+
+/* MOBILE */
+@media (max-width:880px){
+  .wrap{padding:0 24px}
+  .nav-inner{padding:12px 24px}
+  section{padding:64px 0}
+  .hero{padding:64px 0 56px}
+  .hero-display{letter-spacing:-2.5px}
+  .hero-tagline{grid-template-columns:1fr;gap:24px}
+  .section-title{font-size:42px;letter-spacing:-1.2px}
+  .element-head{grid-template-columns:1fr;gap:18px}
+  .element-num{font-size:64px}
+  .element-meta h3{font-size:28px;letter-spacing:-.7px}
+  .expl-grid{grid-template-columns:1fr 1fr}
+  .wordmark-grid{grid-template-columns:1fr}
+  .next-grid{grid-template-columns:1fr}
+  .wm-text-serif{font-size:38px;letter-spacing:-1.5px}
+  .prompt-box{padding:20px}
+  .prompt-box pre{font-size:11.5px;padding:14px 16px}
+}
+</style>
+</head>
+<body>
+
+<!-- ═══════════════════ NAV ═══════════════════ -->
+<nav class="nav">
+  <div class="nav-inner">
+    <span class="nav-tag">Komplexa · Identidade Visual</span>
+    <div class="nav-links">
+      <a class="nav-link boutique" href="../identidade/"><span class="dot"></span>v1 · Boutique</a>
+      <a class="nav-link volume" href="../identidade-volume/"><span class="dot"></span>v2 · Volume</a>
+      <a class="nav-link elementos active"><span class="dot"></span>v3 · Elementos</a>
+    </div>
+  </div>
+</nav>
+
+<!-- ═══════════════════ HERO ═══════════════════ -->
+<section class="hero">
+  <div class="wrap">
+    <div class="hero-meta">
+      <span>Direção de identidade · v3</span>
+      <span class="tag">elementos hoteleiros</span>
+      <span>Maio 2026</span>
+    </div>
+    <div class="hero-display">elementos<br><em>de hospedagem.</em></div>
+    <div class="hero-tagline">
+      <div>
+        <span class="label">A proposta</span>
+        <h2>Símbolos visuais<br><em>que respiram</em> hotelaria.</h2>
+      </div>
+      <div>
+        <span class="label">Por que isso importa</span>
+        <p>A v1 e v2 propuseram <strong>direções de marca</strong> (paleta, tipografia, tom). Mas faltou <strong>símbolo do setor</strong> — algo que comunique "hotelaria" antes mesmo da leitura. A Asksuite cravou o sino. Esta exploração mapeia <strong>5 elementos ainda livres</strong> e prototipa cada um como possível símbolo da Komplexa, com prompts prontos para gerar variações em IA (Ideogram + Midjourney).</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════ ELEMENT 1 — ALDRABA ═══════════════════ -->
+<section class="element">
+  <div class="wrap">
+    <div class="element-head">
+      <div class="element-num">01</div>
+      <div class="element-meta">
+        <h3>Aldraba <em>colonial brasileira.</em></h3>
+        <p class="sub">A peça de bronze que se bate na porta dos casarões de Paraty, Olinda, Tiradentes, São Luís. Símbolo universal de "bater à porta · convite para entrar". 100% brasileiro, premium, e <strong>ainda livre no setor</strong>.</p>
+        <div class="eval-strip">
+          <span class="eval-pill good">⭐ Força visual ⭐⭐⭐⭐⭐</span>
+          <span class="eval-pill good">✓ Brasilidade pura</span>
+          <span class="eval-pill good">✓ Não tomada por concorrentes</span>
+          <span class="eval-pill warn">⚠ Risco de virar "antiquário"</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="expl-grid">
+
+      <!-- Exploração A — Aldraba clássica circular -->
+      <div class="expl-card">
+        <div class="expl-preview" style="background:var(--linen)">
+          <svg viewBox="0 0 140 140" width="140" height="140">
+            <!-- Placa ornamental superior -->
+            <rect x="55" y="20" width="30" height="34" rx="4" fill="#C8A877"/>
+            <rect x="55" y="20" width="30" height="34" rx="4" fill="none" stroke="#0A1628" stroke-width="1.4"/>
+            <line x1="59" y1="27" x2="81" y2="27" stroke="#0A1628" stroke-width="0.8"/>
+            <line x1="59" y1="47" x2="81" y2="47" stroke="#0A1628" stroke-width="0.8"/>
+            <!-- Pino central da placa -->
+            <circle cx="70" cy="37" r="4" fill="#0A1628"/>
+            <!-- Anel da aldraba -->
+            <circle cx="70" cy="95" r="28" fill="none" stroke="#0A1628" stroke-width="3.5"/>
+            <!-- Conexão entre placa e anel -->
+            <rect x="67.5" y="54" width="5" height="14" fill="#0A1628"/>
+            <circle cx="70" cy="68" r="4" fill="#C8A877" stroke="#0A1628" stroke-width="1.2"/>
+          </svg>
+        </div>
+        <div class="expl-info">
+          <span class="et-name">Exploração A</span>
+          <h4>Aldraba clássica circular</h4>
+          <p>Placa ornamental + anel pendente. Forma fiel ao original. Funciona como símbolo isolado (avatar, favicon) e ao lado de wordmark.</p>
+        </div>
+      </div>
+
+      <!-- Exploração B — Aldraba geometrizada moderna -->
+      <div class="expl-card dark">
+        <div class="expl-preview" style="background:var(--midnight)">
+          <svg viewBox="0 0 140 140" width="140" height="140">
+            <!-- Versão geometrizada — placa retangular fina + anel perfeito -->
+            <rect x="58" y="22" width="24" height="20" rx="2" fill="#C8A877"/>
+            <circle cx="70" cy="32" r="2.5" fill="#0A1628"/>
+            <!-- Conexão -->
+            <line x1="70" y1="42" x2="70" y2="62" stroke="#C8A877" stroke-width="2.5"/>
+            <!-- Anel circular puro -->
+            <circle cx="70" cy="90" r="28" fill="none" stroke="#C8A877" stroke-width="3"/>
+            <circle cx="70" cy="62" r="3" fill="#C8A877"/>
+          </svg>
+        </div>
+        <div class="expl-info">
+          <span class="et-name">Exploração B</span>
+          <h4>Aldraba minimalista</h4>
+          <p>Mesma metáfora, geometria simplificada. Funciona como ícone de app/favicon. Estética mais "tech" sem perder a referência.</p>
+        </div>
+      </div>
+
+      <!-- Exploração C — Aldraba estilizada como K monograma -->
+      <div class="expl-card">
+        <div class="expl-preview" style="background:var(--paper)">
+          <svg viewBox="0 0 140 140" width="140" height="140">
+            <!-- Anel principal -->
+            <circle cx="70" cy="80" r="34" fill="none" stroke="#0A1628" stroke-width="3.5"/>
+            <!-- K formado dentro do anel -->
+            <path d="M 60 65 V 95 M 60 80 L 78 65 M 60 80 L 78 95" stroke="#C8A877" stroke-width="3.5" stroke-linecap="round" fill="none"/>
+            <!-- Detalhe ornamental superior -->
+            <rect x="64" y="32" width="12" height="10" rx="1.5" fill="#0A1628"/>
+            <line x1="70" y1="42" x2="70" y2="46" stroke="#0A1628" stroke-width="2"/>
+          </svg>
+        </div>
+        <div class="expl-info">
+          <span class="et-name">Exploração C</span>
+          <h4>Aldraba com K integrado</h4>
+          <p>O K da Komplexa formado <strong>dentro</strong> da aldraba. Hibridiza símbolo setorial + monograma. Uma peça, dupla leitura.</p>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="prompt-box">
+      <div class="pb-head">
+        <span class="pb-tag"><span class="ai-dot"></span>Prompt · Ideogram 2.0</span>
+        <span class="pb-tool">copy &amp; paste</span>
+      </div>
+      <pre>Minimal logo design for "komplexa", a brazilian hospitality consultancy.
+Symbol: stylized colonial brazilian door knocker (aldraba),
+ornamental bronze plate with circular hanging ring, simplified to clean
+geometric form, single weight stroke. Mounted vertically on left side.
+Wordmark "komplexa" in contemporary serif typeface (Fraunces or Recoleta)
+on the right, lowercase, weight 400.
+Deep navy color (#0A1628), champagne gold accent (#C8A877) on the plate.
+Cream linen background (#F5F1EA).
+Editorial magazine aesthetic, premium boutique hotel branding.
+Inspired by Aman Resorts brand identity, Soho House.
+NO shadows, NO gradients, vector clean, flat design,
+ample whitespace, centered.
+3:2 aspect ratio</pre>
+    </div>
+
+    <div class="prompt-box">
+      <div class="pb-head">
+        <span class="pb-tag"><span class="ai-dot"></span>Prompt · Midjourney v7</span>
+        <span class="pb-tool">copy &amp; paste</span>
+      </div>
+      <pre>Brand logo exploration, brazilian colonial door knocker symbol,
+hospitality consultancy brand mark, bronze aldraba with circular ring
+hanging from ornamental plate, simplified geometric line drawing,
+single stroke weight, deep navy and champagne gold on cream linen,
+premium boutique hotel branding aesthetic, editorial magazine cover
+quality, no text no letters, isolated brand mark,
+9-grid variations on single canvas --style raw --ar 1:1 --s 100 --v 7</pre>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════ ELEMENT 2 — NÚMERO DE PORTA ═══════════════════ -->
+<section class="element">
+  <div class="wrap">
+    <div class="element-head">
+      <div class="element-num">02</div>
+      <div class="element-meta">
+        <h3>Número de porta <em>em placa.</em></h3>
+        <p class="sub">"Apto. 12", "Suíte 04", "No. 7" — placas que identificam quartos em hotéis tradicionais. Tipograficamente icônico, integra com wordmark naturalmente. Permite usar números grandes como elemento de marca em todo o sistema visual.</p>
+        <div class="eval-strip">
+          <span class="eval-pill good">⭐ Força visual ⭐⭐⭐⭐⭐</span>
+          <span class="eval-pill good">✓ Integra com tipografia</span>
+          <span class="eval-pill good">✓ Versátil em aplicações</span>
+          <span class="eval-pill warn">⚠ Aman/Soho House já usam variações</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="expl-grid">
+
+      <!-- Exploração A — Número grande tipográfico -->
+      <div class="expl-card">
+        <div class="expl-preview" style="background:var(--linen)">
+          <div style="text-align:center">
+            <div style="font-family:var(--fm);font-size:11px;letter-spacing:2.5px;text-transform:uppercase;color:var(--champagne-dim);font-weight:500;margin-bottom:8px">Apto.</div>
+            <div style="font-family:var(--fs);font-weight:400;font-size:96px;color:var(--midnight);letter-spacing:-4px;line-height:.85;font-variation-settings:'opsz' 144">12</div>
+          </div>
+        </div>
+        <div class="expl-info">
+          <span class="et-name">Exploração A</span>
+          <h4>Numeração tipográfica</h4>
+          <p>"Apto. 12" como elemento de identidade. Komplexa pode ter um número-assinatura (ex: ano de fundação, código interno) que aparece em material institucional.</p>
+        </div>
+      </div>
+
+      <!-- Exploração B — Em placa de bronze -->
+      <div class="expl-card dark">
+        <div class="expl-preview" style="background:var(--midnight)">
+          <svg viewBox="0 0 200 160" width="200" height="160">
+            <!-- Placa retangular com gradiente bronze -->
+            <rect x="40" y="35" width="120" height="90" rx="6" fill="#C8A877"/>
+            <rect x="40" y="35" width="120" height="90" rx="6" fill="none" stroke="#0A1628" stroke-width="1.5"/>
+            <!-- Pequenos pregos nos cantos -->
+            <circle cx="50" cy="45" r="2" fill="#0A1628"/>
+            <circle cx="150" cy="45" r="2" fill="#0A1628"/>
+            <circle cx="50" cy="115" r="2" fill="#0A1628"/>
+            <circle cx="150" cy="115" r="2" fill="#0A1628"/>
+            <!-- Número -->
+            <text x="100" y="100" font-family="Fraunces, Georgia, serif" font-size="56" font-weight="400" fill="#0A1628" text-anchor="middle" font-style="italic">07</text>
+          </svg>
+        </div>
+        <div class="expl-info">
+          <span class="et-name">Exploração B</span>
+          <h4>Placa de bronze gravada</h4>
+          <p>Número em placa metálica clássica, com detalhes de fixação. Comunica "hotel premium" instantaneamente. Funciona como selo de marca.</p>
+        </div>
+      </div>
+
+      <!-- Exploração C — Wordmark + número -->
+      <div class="expl-card">
+        <div class="expl-preview" style="background:var(--paper)">
+          <div style="text-align:left;display:flex;align-items:flex-end;gap:14px">
+            <div style="font-family:var(--fs);font-weight:400;font-size:52px;color:var(--midnight);letter-spacing:-2.2px;line-height:1;font-variation-settings:'opsz' 144">komplexa</div>
+            <div style="display:flex;align-items:flex-end;gap:4px">
+              <div style="font-family:var(--fm);font-size:10px;color:var(--champagne-dim);font-weight:600;letter-spacing:1.5px;text-transform:uppercase;padding-bottom:6px">No.</div>
+              <div style="font-family:var(--fs);font-weight:400;font-size:52px;color:var(--champagne-dim);letter-spacing:-2px;line-height:1;font-variation-settings:'opsz' 144">01</div>
+            </div>
+          </div>
+        </div>
+        <div class="expl-info">
+          <span class="et-name">Exploração C</span>
+          <h4>Wordmark · No. 01</h4>
+          <p>O número vira parte do wordmark. "Komplexa · No. 01" — sugere edição/série, vocabulário editorial de hospitality premium.</p>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="prompt-box">
+      <div class="pb-head">
+        <span class="pb-tag"><span class="ai-dot"></span>Prompt · Ideogram 2.0</span>
+        <span class="pb-tool">copy &amp; paste</span>
+      </div>
+      <pre>Vintage hotel door number plate, brass plaque with elegant
+serif numeral "07" engraved, four small screws in corners,
+deep navy engraving on champagne gold metal, mounted on cream
+linen background, premium boutique hotel signage aesthetic,
+photographed straight-on with soft shadow, editorial product
+photography style, no other elements, centered composition,
+1:1 aspect ratio</pre>
+    </div>
+
+    <div class="prompt-box">
+      <div class="pb-head">
+        <span class="pb-tag"><span class="ai-dot"></span>Prompt · Midjourney v7 — Aplicação em wordmark</span>
+        <span class="pb-tool">copy &amp; paste</span>
+      </div>
+      <pre>Editorial brand identity wordmark "komplexa · No. 01" in lowercase
+contemporary serif typeface (Recoleta style), navy color, small
+brass door number plaque integrated to the right showing "01" in
+serif italic, cream linen background, magazine masthead aesthetic,
+Wallpaper magazine style, premium hospitality brand
+--style raw --ar 16:9 --s 100 --v 7</pre>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════ ELEMENT 3 — RACK DE CHAVES ═══════════════════ -->
+<section class="element">
+  <div class="wrap">
+    <div class="element-head">
+      <div class="element-num">03</div>
+      <div class="element-meta">
+        <h3>Rack de chaves <em>antigo.</em></h3>
+        <p class="sub">O painel de madeira atrás da recepção com pinos numerados onde ficam penduradas as chaves. Símbolo da <strong>operação hoteleira real</strong> — mostra quantos quartos estão disponíveis, quem está hospedado. Encaixa narrativamente com "sistema operacional".</p>
+        <div class="eval-strip">
+          <span class="eval-pill good">⭐ Força narrativa ⭐⭐⭐⭐</span>
+          <span class="eval-pill good">✓ "Sistema operacional"</span>
+          <span class="eval-pill good">✓ Pattern visual rico</span>
+          <span class="eval-pill warn">⚠ Pode ficar complexo demais para logo</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="expl-grid">
+
+      <!-- A — Rack completo estilizado -->
+      <div class="expl-card">
+        <div class="expl-preview" style="background:var(--linen)">
+          <svg viewBox="0 0 200 160" width="200" height="160">
+            <!-- Borda do rack -->
+            <rect x="30" y="30" width="140" height="90" rx="3" fill="none" stroke="#0A1628" stroke-width="2"/>
+            <!-- Divisões verticais -->
+            <line x1="65" y1="30" x2="65" y2="120" stroke="#0A1628" stroke-width="1"/>
+            <line x1="100" y1="30" x2="100" y2="120" stroke="#0A1628" stroke-width="1"/>
+            <line x1="135" y1="30" x2="135" y2="120" stroke="#0A1628" stroke-width="1"/>
+            <!-- Divisão horizontal -->
+            <line x1="30" y1="75" x2="170" y2="75" stroke="#0A1628" stroke-width="1"/>
+            <!-- Pinos -->
+            <circle cx="47" cy="52" r="2" fill="#C8A877"/>
+            <circle cx="82" cy="52" r="2" fill="#C8A877"/>
+            <circle cx="117" cy="52" r="2" fill="#C8A877"/>
+            <circle cx="152" cy="52" r="2" fill="#C8A877"/>
+            <circle cx="47" cy="97" r="2" fill="#C8A877"/>
+            <circle cx="82" cy="97" r="2" fill="#C8A877"/>
+            <circle cx="117" cy="97" r="2" fill="#C8A877"/>
+            <circle cx="152" cy="97" r="2" fill="#C8A877"/>
+            <!-- Chaves penduradas em alguns pinos -->
+            <g stroke="#0A1628" stroke-width="1.5" fill="none">
+              <line x1="47" y1="54" x2="47" y2="65"/>
+              <circle cx="47" cy="68" r="3.5"/>
+              <line x1="117" y1="54" x2="117" y2="65"/>
+              <circle cx="117" cy="68" r="3.5"/>
+              <line x1="82" y1="99" x2="82" y2="108"/>
+              <rect x="79" y="108" width="6" height="3"/>
+            </g>
+            <!-- Numerais nos compartimentos -->
+            <text x="47" y="42" font-family="JetBrains Mono, monospace" font-size="6" fill="#0A1628" text-anchor="middle">01</text>
+            <text x="82" y="42" font-family="JetBrains Mono, monospace" font-size="6" fill="#0A1628" text-anchor="middle">02</text>
+            <text x="117" y="42" font-family="JetBrains Mono, monospace" font-size="6" fill="#0A1628" text-anchor="middle">03</text>
+            <text x="152" y="42" font-family="JetBrains Mono, monospace" font-size="6" fill="#0A1628" text-anchor="middle">04</text>
+          </svg>
+        </div>
+        <div class="expl-info">
+          <span class="et-name">Exploração A</span>
+          <h4>Rack realista</h4>
+          <p>Grade detalhada com pinos, chaves e numerais. Funciona como ilustração de marca (BG de slide, hero), não como logo isolado.</p>
+        </div>
+      </div>
+
+      <!-- B — Rack abstrato (apenas grade + pinos) -->
+      <div class="expl-card dark">
+        <div class="expl-preview" style="background:var(--midnight)">
+          <svg viewBox="0 0 200 160" width="200" height="160">
+            <!-- Grade abstrata 4×2 -->
+            <g fill="#C8A877">
+              <circle cx="60" cy="60" r="4"/>
+              <circle cx="90" cy="60" r="4"/>
+              <circle cx="120" cy="60" r="4"/>
+              <circle cx="150" cy="60" r="4"/>
+              <circle cx="60" cy="100" r="4"/>
+              <circle cx="90" cy="100" r="4"/>
+              <circle cx="120" cy="100" r="4"/>
+              <circle cx="150" cy="100" r="4"/>
+            </g>
+            <!-- Borda sutil -->
+            <rect x="45" y="45" width="120" height="70" rx="4" fill="none" stroke="#C8A877" stroke-width="1.2" opacity="0.4"/>
+          </svg>
+        </div>
+        <div class="expl-info">
+          <span class="et-name">Exploração B</span>
+          <h4>Rack abstrato (8 pinos)</h4>
+          <p>Grade simplificada — 8 pontos em retângulo. Lê como "sistema de quartos" sem ser literal. Funciona como ícone, padrão, BG.</p>
+        </div>
+      </div>
+
+      <!-- C — Chave única estilizada -->
+      <div class="expl-card">
+        <div class="expl-preview" style="background:var(--paper)">
+          <svg viewBox="0 0 140 140" width="140" height="140">
+            <!-- Chave vintage -->
+            <circle cx="50" cy="70" r="22" fill="none" stroke="#0A1628" stroke-width="3.5"/>
+            <circle cx="50" cy="70" r="9" fill="#C8A877"/>
+            <rect x="69" y="66" width="46" height="8" fill="#0A1628"/>
+            <rect x="100" y="66" width="6" height="14" fill="#0A1628"/>
+            <rect x="110" y="66" width="4" height="10" fill="#0A1628"/>
+          </svg>
+        </div>
+        <div class="expl-info">
+          <span class="et-name">Exploração C</span>
+          <h4>Chave vintage</h4>
+          <p>Chave clássica de quarto. Mais simples que o rack, mais icônica. Aman usa estética similar. Risco: virar "hotéis dos anos 1920".</p>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="prompt-box">
+      <div class="pb-head">
+        <span class="pb-tag"><span class="ai-dot"></span>Prompt · Ideogram 2.0</span>
+        <span class="pb-tool">copy &amp; paste</span>
+      </div>
+      <pre>Minimal abstract brand symbol representing a hotel key rack,
+geometric grid of 8 small champagne gold dots arranged in 2 rows of 4,
+inside a thin navy rectangle outline, deep navy background, premium
+hospitality consultancy brand mark, suggesting "operational system"
+without being literal, flat design, vector clean, no other elements,
+1:1 aspect ratio centered</pre>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════ ELEMENT 4 — CARTÃO-CHAVE ═══════════════════ -->
+<section class="element">
+  <div class="wrap">
+    <div class="element-head">
+      <div class="element-num">04</div>
+      <div class="element-meta">
+        <h3>Cartão-chave <em>moderno.</em></h3>
+        <p class="sub">O cartão magnético/RFID que substituiu a chave física. Símbolo da <strong>transição moderna da hotelaria</strong> — combina hospedagem clássica com tech. Forma geométrica simples permite virar K monogramático naturalmente.</p>
+        <div class="eval-strip">
+          <span class="eval-pill good">⭐ Força tech ⭐⭐⭐⭐</span>
+          <span class="eval-pill good">✓ Hotel + tech</span>
+          <span class="eval-pill good">✓ Vira K monograma fácil</span>
+          <span class="eval-pill warn">⚠ Pode parecer "cartão de crédito"</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="expl-grid">
+
+      <!-- A — Cartão simples com corte característico -->
+      <div class="expl-card">
+        <div class="expl-preview" style="background:var(--linen)">
+          <svg viewBox="0 0 180 140" width="180" height="140">
+            <!-- Cartão -->
+            <path d="M 40 35 L 130 35 L 145 50 L 145 105 L 40 105 Z" fill="#C8A877" stroke="#0A1628" stroke-width="2"/>
+            <!-- Faixa magnética -->
+            <rect x="48" y="48" width="90" height="6" fill="#0A1628"/>
+            <!-- Logo K -->
+            <text x="55" y="88" font-family="Fraunces" font-size="34" font-weight="500" fill="#0A1628">k</text>
+            <!-- Chip / circulo decorativo -->
+            <circle cx="125" cy="85" r="6" fill="none" stroke="#0A1628" stroke-width="1.5"/>
+          </svg>
+        </div>
+        <div class="expl-info">
+          <span class="et-name">Exploração A</span>
+          <h4>Cartão-chave com K</h4>
+          <p>Cartão realista com K como elemento principal. Funciona como brinde físico real, mockup de marca. Forte como ilustração.</p>
+        </div>
+      </div>
+
+      <!-- B — K em formato de cartão (monograma) -->
+      <div class="expl-card dark">
+        <div class="expl-preview" style="background:var(--midnight)">
+          <svg viewBox="0 0 140 140" width="140" height="140">
+            <!-- Forma de cartão arredondada -->
+            <rect x="30" y="45" width="80" height="50" rx="8" fill="#C8A877"/>
+            <!-- K estilizado -->
+            <path d="M 50 60 V 80 M 50 70 L 65 60 M 50 70 L 65 80" stroke="#0A1628" stroke-width="3" stroke-linecap="round" fill="none"/>
+            <!-- Pequeno detalhe de "chip" -->
+            <rect x="80" y="58" width="14" height="9" rx="1.5" fill="#0A1628"/>
+            <line x1="83" y1="62" x2="91" y2="62" stroke="#C8A877" stroke-width="0.6"/>
+            <line x1="83" y1="65" x2="91" y2="65" stroke="#C8A877" stroke-width="0.6"/>
+          </svg>
+        </div>
+        <div class="expl-info">
+          <span class="et-name">Exploração B</span>
+          <h4>K monograma · key card</h4>
+          <p>O K dentro de uma forma de cartão arredondado. Combina monograma + hotel + tech. <strong>Forma de avatar ideal.</strong></p>
+        </div>
+      </div>
+
+      <!-- C — Cartão tilted -->
+      <div class="expl-card">
+        <div class="expl-preview" style="background:var(--paper)">
+          <svg viewBox="0 0 180 140" width="180" height="140">
+            <g transform="rotate(-12 90 70)">
+              <rect x="40" y="40" width="100" height="60" rx="6" fill="#0A1628"/>
+              <rect x="48" y="55" width="84" height="3" fill="#C8A877" opacity="0.8"/>
+              <text x="55" y="85" font-family="Fraunces" font-size="22" font-weight="400" fill="#C8A877">komplexa</text>
+            </g>
+          </svg>
+        </div>
+        <div class="expl-info">
+          <span class="et-name">Exploração C</span>
+          <h4>Cartão como "credencial"</h4>
+          <p>Cartão com wordmark dentro, em ângulo. Foi escolhido pra mostrar "você foi credenciado, faz parte". Ótimo pra peças de marketing.</p>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="prompt-box">
+      <div class="pb-head">
+        <span class="pb-tag"><span class="ai-dot"></span>Prompt · Ideogram 2.0</span>
+        <span class="pb-tool">copy &amp; paste</span>
+      </div>
+      <pre>Minimal monogram logo, letter K formed inside a rounded rectangle
+shape resembling a modern hotel key card, simplified geometric
+construction, navy K on champagne gold card, small chip detail in
+corner, deep navy background, premium hospitality tech brand mark,
+flat design vector clean, isolated, centered,
+1:1 aspect ratio</pre>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════ ELEMENT 5 — AZULEJO PATTERN ═══════════════════ -->
+<section class="element">
+  <div class="wrap">
+    <div class="element-head">
+      <div class="element-num">05</div>
+      <div class="element-meta">
+        <h3>Padrão de <em>azulejo colonial.</em></h3>
+        <p class="sub">Pattern geométrico/floral de azulejo português adaptado ao Brasil colonial — Olinda, Salvador, São Luís, Recife. <strong>Não é símbolo isolado</strong>, é <strong>textura de marca</strong> — vira BG de slides, pattern de Instagram, marca d'água em propostas, embalagem de brindes.</p>
+        <div class="eval-strip">
+          <span class="eval-pill good">⭐ Brasilidade ⭐⭐⭐⭐⭐</span>
+          <span class="eval-pill good">✓ Sub-elemento, não logo</span>
+          <span class="eval-pill good">✓ Combina com qualquer símbolo principal</span>
+          <span class="eval-pill warn">⚠ Não substitui logo</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Pattern aplicado em fundo -->
+    <div class="expl-grid" style="grid-template-columns:1fr 1fr">
+
+      <div class="expl-card">
+        <div class="expl-preview azulejo-bg" style="background-color:var(--linen);aspect-ratio:1.4/1;padding:0">
+          <div style="background:var(--linen);padding:32px 38px;border-radius:14px;margin:auto">
+            <div style="font-family:var(--fs);font-weight:400;font-size:38px;color:var(--midnight);letter-spacing:-1.5px;line-height:1;font-variation-settings:'opsz' 144">komplexa<span style="color:var(--champagne-dim)">.</span></div>
+          </div>
+        </div>
+        <div class="expl-info">
+          <span class="et-name">Aplicação A</span>
+          <h4>Pattern como fundo de marca</h4>
+          <p>Azulejo como BG sutil — wordmark flutua sobre o pattern. Brasilidade discreta, premium.</p>
+        </div>
+      </div>
+
+      <div class="expl-card dark">
+        <div class="expl-preview" style="background:var(--midnight);aspect-ratio:1.4/1;padding:0;position:relative">
+          <div style="position:absolute;inset:0;background-image:url(&quot;data:image/svg+xml;utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='80' viewBox='0 0 80 80'%3E%3Cg fill='none' stroke='%23C8A877' stroke-width='0.6' opacity='0.18'%3E%3Cpath d='M0 40 Q20 20 40 40 T80 40'/%3E%3Cpath d='M40 0 Q20 20 40 40 T40 80'/%3E%3Ccircle cx='40' cy='40' r='5'/%3E%3Ccircle cx='0' cy='0' r='3'/%3E%3Ccircle cx='80' cy='0' r='3'/%3E%3Ccircle cx='0' cy='80' r='3'/%3E%3Ccircle cx='80' cy='80' r='3'/%3E%3C/g%3E%3C/svg%3E&quot;)"></div>
+          <div style="position:relative;z-index:1;text-align:center">
+            <div style="font-family:var(--fm);font-size:9.5px;letter-spacing:2px;text-transform:uppercase;color:var(--champagne);font-weight:600;margin-bottom:14px">Case · Pousada Solar Dona Dora</div>
+            <div style="font-family:var(--fs);font-weight:400;font-size:32px;color:var(--linen);letter-spacing:-1px;line-height:1.05;font-variation-settings:'opsz' 144">De R$ 12 mil<br>a <em style="color:var(--champagne);font-style:italic">R$ 42 mil</em><br>na baixa.</div>
+          </div>
+        </div>
+        <div class="expl-info">
+          <span class="et-name">Aplicação B</span>
+          <h4>Post de Instagram com pattern</h4>
+          <p>Azulejo discreto como textura de fundo em peças sociais. Sustenta brasilidade sem competir com mensagem principal.</p>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="prompt-box">
+      <div class="pb-head">
+        <span class="pb-tag"><span class="ai-dot"></span>Prompt · Midjourney v7 (pattern)</span>
+        <span class="pb-tool">copy &amp; paste</span>
+      </div>
+      <pre>Seamless tile pattern inspired by brazilian colonial portuguese
+azulejo tiles from Olinda Recife, geometric floral motif with
+champagne gold thin line drawing on cream linen background,
+ultra minimal and refined, single weight stroke, no fills,
+luxury hospitality brand pattern, repeatable seamless,
+4:4 aspect ratio --tile --ar 1:1 --style raw --s 50 --v 7</pre>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════ COMPOSITE WORDMARKS ═══════════════════ -->
+<section class="element">
+  <div class="wrap">
+    <span class="eyebrow"><span class="badge">06</span>Wordmarks completos</span>
+    <h2 class="section-title">Os elementos <em>aplicados.</em></h2>
+    <p class="section-sub">Quatro combinações de símbolo + wordmark já como lockups finais. Use como referência pra brifar designer/IA.</p>
+
+    <div class="wordmark-grid">
+
+      <!-- Lockup 1: Aldraba + wordmark -->
+      <div class="wm-card">
+        <div class="wm-preview">
+          <svg viewBox="0 0 70 70" width="60" height="60" style="flex-shrink:0">
+            <circle cx="35" cy="42" r="20" fill="none" stroke="#0A1628" stroke-width="2.5"/>
+            <rect x="29" y="14" width="12" height="14" rx="1.5" fill="#C8A877" stroke="#0A1628" stroke-width="1"/>
+            <circle cx="35" cy="21" r="2" fill="#0A1628"/>
+            <line x1="35" y1="28" x2="35" y2="32" stroke="#0A1628" stroke-width="2"/>
+          </svg>
+          <div class="wm-text-serif">komplexa</div>
+        </div>
+        <div class="wm-info">
+          <div class="wmi-meta">
+            <span class="wmi-label">Lockup 1</span>
+            <span class="wmi-name">Aldraba · clássica</span>
+          </div>
+          <span class="wmi-tags">símbolo + wordmark</span>
+        </div>
+      </div>
+
+      <!-- Lockup 2: Número + wordmark -->
+      <div class="wm-card">
+        <div class="wm-preview" style="gap:14px">
+          <div class="wm-text-serif">komplexa</div>
+          <div style="display:flex;align-items:flex-end;gap:4px;padding-bottom:6px">
+            <div style="font-family:var(--fm);font-size:11px;color:var(--champagne-dim);font-weight:600;letter-spacing:1.5px;text-transform:uppercase">No.</div>
+            <div style="font-family:var(--fs);font-weight:400;font-size:46px;color:var(--champagne-dim);letter-spacing:-1.8px;line-height:.85;font-variation-settings:'opsz' 144;font-style:italic">07</div>
+          </div>
+        </div>
+        <div class="wm-info">
+          <div class="wmi-meta">
+            <span class="wmi-label">Lockup 2</span>
+            <span class="wmi-name">Wordmark · No. 07</span>
+          </div>
+          <span class="wmi-tags">editorial</span>
+        </div>
+      </div>
+
+      <!-- Lockup 3: K em key card -->
+      <div class="wm-card dark">
+        <div class="wm-preview">
+          <svg viewBox="0 0 140 80" width="80" height="46" style="flex-shrink:0">
+            <rect x="20" y="15" width="100" height="50" rx="8" fill="#C8A877"/>
+            <path d="M 38 28 V 52 M 38 40 L 52 28 M 38 40 L 52 52" stroke="#0A1628" stroke-width="3" stroke-linecap="round" fill="none"/>
+            <rect x="80" y="35" width="14" height="9" rx="1.5" fill="#0A1628"/>
+          </svg>
+          <div class="wm-text-serif">komplexa</div>
+        </div>
+        <div class="wm-info">
+          <div class="wmi-meta">
+            <span class="wmi-label">Lockup 3</span>
+            <span class="wmi-name">K · key card</span>
+          </div>
+          <span class="wmi-tags">tech + hotel</span>
+        </div>
+      </div>
+
+      <!-- Lockup 4: Aldraba minimal + wordmark -->
+      <div class="wm-card dark">
+        <div class="wm-preview">
+          <svg viewBox="0 0 70 70" width="58" height="58" style="flex-shrink:0">
+            <circle cx="35" cy="42" r="20" fill="none" stroke="#C8A877" stroke-width="2.5"/>
+            <rect x="29" y="14" width="12" height="11" rx="1.5" fill="#C8A877"/>
+            <circle cx="35" cy="19.5" r="1.8" fill="#0A1628"/>
+            <line x1="35" y1="25" x2="35" y2="32" stroke="#C8A877" stroke-width="2"/>
+          </svg>
+          <div class="wm-text-serif">komplexa</div>
+        </div>
+        <div class="wm-info">
+          <div class="wmi-meta">
+            <span class="wmi-label">Lockup 4</span>
+            <span class="wmi-name">Aldraba · minimal dark</span>
+          </div>
+          <span class="wmi-tags">modern + classic</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════ NEXT STEPS ═══════════════════ -->
+<section class="next">
+  <div class="wrap">
+    <span class="eyebrow"><span class="badge" style="background:var(--champagne);color:var(--midnight)">07</span>Próximos passos</span>
+    <h2 class="section-title">Como <em>seguir</em> daqui.</h2>
+    <p class="section-sub">Você tem agora 5 elementos e 12+ prompts prontos. Próximos passos pra fechar identidade real.</p>
+
+    <div class="next-grid">
+      <div class="next-card">
+        <span class="nc-num">01</span>
+        <h4>Roda os prompts em Ideogram + Midjourney</h4>
+        <p>Cada elemento gera <strong>20-50 variações</strong>. Sentir cada um na carne ajuda a decidir muito mais que olhar protótipo. Reserva 1-2 horas pra explorar e salvar os 5 melhores de cada.</p>
+      </div>
+      <div class="next-card">
+        <span class="nc-num">02</span>
+        <h4>Escolhe UM elemento principal</h4>
+        <p>Aldraba, número, rack, cartão-chave ou pattern. Não dá pra usar todos — vira ruído visual. Eu recomendo <strong>aldraba colonial</strong> ou <strong>K key card</strong> como símbolo + <strong>azulejo</strong> como pattern secundário.</p>
+      </div>
+      <div class="next-card">
+        <span class="nc-num">03</span>
+        <h4>Brifa designer pra refinar em vetor</h4>
+        <p>Outputs de IA viram <strong>referência visual</strong>, não logo final. Designer humano refina em SVG editável com variações (positivo, negativo, mono, mini). Eu posso te ajudar a redigir o brief.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════ FOOT ═══════════════════ -->
+<footer class="foot">
+  <div class="wrap">
+    <div class="foot-inner">
+      <div class="signature">komplexa<span style="color:var(--champagne)">.</span></div>
+      <div class="meta">v3 · elementos hoteleiros · 2026</div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
