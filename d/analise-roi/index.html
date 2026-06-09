@@ -1,0 +1,753 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>Análise Financeira · Projeto de Reservas Diretas · Komplexa</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,400;1,9..144,500&family=Inter:wght@300;400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --navy:#0E1E35;
+  --navy-9:#081525;
+  --ink:#1A2942;
+  --blue:#1670C3;
+  --blue-2:#1099E9;
+  --cyan:#24D5FF;
+  --linen:#F5F1EA;
+  --paper:#FAF7F2;
+  --bg:#F3F6FA;
+  --champagne:#C8A877;
+  --champ-dim:#A89060;
+  --red:#D04545;
+  --red-2:#FF6B6B;
+  --green:#1F9D55;
+  --soft:rgba(14,30,53,.65);
+  --muted:rgba(14,30,53,.45);
+  --line:rgba(14,30,53,.10);
+  --line-strong:rgba(14,30,53,.18);
+  --grad:linear-gradient(90deg,#1670C3 0%,#1099E9 48%,#24D5FF 100%);
+  --grad-r:radial-gradient(circle at 70% 50%,rgba(36,213,255,.30) 0%,transparent 65%);
+  --fd:'Inter',system-ui,sans-serif;
+  --fs:'Fraunces',Georgia,serif;
+  --fm:'IBM Plex Mono',ui-monospace,monospace;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--fd);background:var(--linen);color:var(--navy);-webkit-font-smoothing:antialiased;line-height:1.5;overflow-x:hidden}
+::selection{background:var(--navy);color:var(--linen)}
+
+/* ─── LAYOUT ─── */
+.wrap{max-width:1240px;margin:0 auto;padding:0 48px}
+section{padding:88px 0;position:relative}
+section + section{border-top:1px solid var(--line)}
+.eyebrow{font-family:var(--fm);font-size:11px;font-weight:500;letter-spacing:1.8px;text-transform:uppercase;color:var(--blue);margin-bottom:20px;display:inline-flex;align-items:center;gap:10px}
+.eyebrow::before{content:"";width:18px;height:2px;background:var(--blue)}
+.section-title{font-family:var(--fs);font-weight:400;font-size:54px;line-height:1.04;letter-spacing:-1.4px;margin-bottom:18px;font-variation-settings:"opsz" 144}
+.section-title em{font-style:italic;color:var(--blue)}
+.section-sub{font-size:17px;color:var(--soft);max-width:720px;line-height:1.55;margin-bottom:48px}
+
+/* ─── HEADER STICKY ─── */
+.head{position:sticky;top:0;z-index:100;background:rgba(245,241,234,.92);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+.head-inner{max-width:1240px;margin:0 auto;padding:16px 48px;display:flex;justify-content:space-between;align-items:center;gap:18px}
+.head-brand{display:flex;align-items:center;gap:10px;font-family:var(--fs);font-weight:500;font-size:18px;letter-spacing:-.4px;color:var(--navy);font-variation-settings:"opsz" 100}
+.head-brand .dot{width:8px;height:8px;border-radius:50%;background:var(--blue)}
+.head-meta{display:flex;gap:18px;font-family:var(--fm);font-size:10.5px;letter-spacing:1.6px;text-transform:uppercase;color:var(--muted);font-weight:500}
+.head-meta .sep{color:var(--line-strong)}
+.head-meta strong{color:var(--navy);font-weight:600}
+
+/* ─── HERO ─── */
+.hero{padding:104px 0 84px;background:var(--linen);position:relative;overflow:hidden}
+.hero::before{content:"";position:absolute;top:-180px;right:-160px;width:680px;height:680px;border-radius:50%;background:radial-gradient(circle,rgba(22,112,195,.10) 0%,transparent 65%);pointer-events:none}
+.hero-meta{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:56px;flex-wrap:wrap;gap:18px}
+.hero-meta-left{display:flex;flex-direction:column;gap:6px}
+.hero-meta-left .label{font-family:var(--fm);font-size:11px;letter-spacing:1.8px;text-transform:uppercase;color:var(--muted)}
+.hero-meta-left .value{font-family:var(--fs);font-weight:500;font-size:18px;letter-spacing:-.3px;color:var(--navy);font-variation-settings:"opsz" 100}
+.hero-meta-right{font-family:var(--fm);font-size:10.5px;letter-spacing:1.6px;text-transform:uppercase;color:var(--blue);font-weight:600;background:rgba(22,112,195,.08);padding:6px 14px;border-radius:100px;border:1px solid rgba(22,112,195,.18)}
+.hero-display{font-family:var(--fs);font-weight:300;font-size:clamp(54px,8vw,96px);line-height:1.02;letter-spacing:-3px;color:var(--navy);font-variation-settings:"opsz" 144;max-width:1000px}
+.hero-display em{font-style:italic;color:var(--blue);font-weight:400}
+.hero-sub{margin-top:32px;font-size:17px;color:var(--soft);line-height:1.6;max-width:680px}
+.hero-sub strong{color:var(--navy);font-weight:600}
+
+/* Hero stats strip */
+.hero-stats{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;margin-top:64px;background:var(--line);border:1px solid var(--line);border-radius:16px;overflow:hidden}
+.hs-item{background:var(--paper);padding:24px 26px;display:flex;flex-direction:column;gap:6px}
+.hs-item .lbl{font-family:var(--fm);font-size:9.5px;letter-spacing:1.6px;text-transform:uppercase;color:var(--muted);font-weight:600}
+.hs-item .val{font-family:var(--fm);font-size:32px;color:var(--navy);font-weight:600;letter-spacing:-1px;line-height:1;font-feature-settings:"tnum" on}
+.hs-item .sub{font-size:11.5px;color:var(--soft);margin-top:2px}
+
+/* ─── SUMÁRIO EXECUTIVO ─── */
+.sumario{background:var(--navy);color:var(--linen);position:relative;overflow:hidden}
+.sumario::before{content:"";position:absolute;inset:0;background:var(--grad-r);opacity:.5;pointer-events:none}
+.sumario .section-title{color:var(--linen)}
+.sumario .section-title em{color:var(--cyan)}
+.sumario .section-sub{color:rgba(245,241,234,.65)}
+.sumario .eyebrow{color:var(--cyan)}
+.sumario .eyebrow::before{background:var(--cyan)}
+.sum-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:24px;position:relative;z-index:1}
+.sum-card{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.10);border-radius:16px;padding:28px 26px;display:flex;flex-direction:column;gap:10px;min-height:200px}
+.sum-card .sc-tag{font-family:var(--fm);font-size:9.5px;letter-spacing:1.6px;text-transform:uppercase;color:rgba(245,241,234,.5);font-weight:600}
+.sum-card .sc-num{font-family:var(--fm);font-size:36px;font-weight:600;color:var(--cyan);letter-spacing:-1.4px;line-height:1;font-feature-settings:"tnum" on;background:var(--grad);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+.sum-card .sc-text{font-family:var(--fs);font-weight:500;font-size:18px;letter-spacing:-.4px;color:var(--linen);line-height:1.25;font-variation-settings:"opsz" 100;margin-top:auto}
+
+/* ─── DIAGNÓSTICO ─── */
+.diag{background:var(--linen)}
+.diag-grid{display:grid;grid-template-columns:1fr 1.1fr;gap:36px;margin-top:24px}
+.diag-card{background:var(--paper);border:1px solid var(--line);border-radius:16px;padding:32px;display:flex;flex-direction:column;gap:18px}
+.diag-card.dark{background:var(--navy);color:var(--linen);border-color:transparent;position:relative;overflow:hidden}
+.diag-card.dark::before{content:"";position:absolute;inset:0;background:var(--grad-r);opacity:.4;pointer-events:none}
+.diag-card .dc-tag{font-family:var(--fm);font-size:10.5px;letter-spacing:1.6px;text-transform:uppercase;color:var(--blue);font-weight:600;position:relative;z-index:1}
+.diag-card.dark .dc-tag{color:var(--cyan)}
+.diag-card h3{font-family:var(--fs);font-weight:500;font-size:26px;letter-spacing:-.6px;line-height:1.15;color:var(--navy);font-variation-settings:"opsz" 100;position:relative;z-index:1}
+.diag-card.dark h3{color:var(--linen)}
+.diag-card h3 em{font-style:italic;color:var(--blue)}
+.diag-card.dark h3 em{color:var(--cyan)}
+.diag-list{display:flex;flex-direction:column;gap:0;position:relative;z-index:1}
+.diag-row{display:grid;grid-template-columns:1fr auto;align-items:baseline;padding:14px 0;border-bottom:1px solid var(--line);gap:18px}
+.diag-card.dark .diag-row{border-bottom-color:rgba(255,255,255,.10)}
+.diag-row:last-child{border-bottom:none}
+.diag-row.total{padding-top:18px;margin-top:6px;border-top:2px solid var(--navy);border-bottom:none}
+.diag-card.dark .diag-row.total{border-top-color:var(--cyan)}
+.dr-label{font-size:14px;color:var(--soft);line-height:1.4}
+.diag-card.dark .dr-label{color:rgba(245,241,234,.65)}
+.dr-value{font-family:var(--fm);font-size:20px;color:var(--navy);font-weight:600;letter-spacing:-.4px;text-align:right;font-feature-settings:"tnum" on;white-space:nowrap}
+.diag-card.dark .dr-value{color:var(--linen)}
+.dr-value.big{font-size:28px;color:var(--blue);font-weight:700;letter-spacing:-.6px}
+.diag-card.dark .dr-value.big{color:var(--cyan)}
+.dr-value.neg{color:var(--red)}
+.diag-card.dark .dr-value.neg{color:var(--red-2)}
+.dr-formula{font-family:var(--fm);font-size:11px;color:var(--muted);margin-top:3px;display:block;letter-spacing:.2px;font-weight:400}
+.diag-card.dark .dr-formula{color:rgba(245,241,234,.40)}
+
+/* ─── BREAK-EVEN ─── */
+.breakeven{background:var(--paper)}
+.be-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:18px;margin-top:24px}
+.be-card{background:var(--linen);border:1px solid var(--line);border-radius:18px;padding:32px 28px;display:flex;flex-direction:column;gap:14px;text-align:left;min-height:200px;position:relative;overflow:hidden}
+.be-card.hero-card{background:linear-gradient(135deg,var(--navy) 0%,var(--blue) 100%);color:var(--linen);border-color:transparent}
+.be-card.hero-card::before{content:"";position:absolute;inset:0;background:var(--grad-r);opacity:.4;pointer-events:none}
+.be-card .be-num{font-family:var(--fm);font-size:9.5px;letter-spacing:1.6px;text-transform:uppercase;color:var(--blue);font-weight:600;position:relative;z-index:1}
+.be-card.hero-card .be-num{color:var(--cyan)}
+.be-card .be-big{font-family:var(--fm);font-size:54px;font-weight:600;color:var(--navy);letter-spacing:-2px;line-height:.95;font-feature-settings:"tnum" on;position:relative;z-index:1}
+.be-card.hero-card .be-big{color:var(--linen);background:var(--grad);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+.be-card .be-lbl{font-family:var(--fs);font-weight:500;font-size:16px;letter-spacing:-.3px;color:var(--soft);line-height:1.35;font-variation-settings:"opsz" 100;position:relative;z-index:1}
+.be-card.hero-card .be-lbl{color:rgba(245,241,234,.75)}
+.be-card .be-formula{font-family:var(--fm);font-size:11px;color:var(--muted);margin-top:auto;letter-spacing:.2px;line-height:1.5;position:relative;z-index:1}
+.be-card.hero-card .be-formula{color:rgba(245,241,234,.50)}
+
+/* ─── CENÁRIOS ─── */
+.cenarios{background:var(--linen)}
+.scen-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:24px}
+.scen-card{background:var(--paper);border:1px solid var(--line);border-radius:18px;overflow:hidden;display:flex;flex-direction:column;position:relative}
+.scen-card.recommended{border:2px solid var(--blue);box-shadow:0 14px 36px rgba(22,112,195,.14);transform:translateY(-6px)}
+.scen-head{padding:24px 28px 18px;display:flex;justify-content:space-between;align-items:flex-start;gap:14px;border-bottom:1px solid var(--line)}
+.scen-card.recommended .scen-head{background:rgba(22,112,195,.05);border-bottom-color:rgba(22,112,195,.15)}
+.scen-meta-left{display:flex;flex-direction:column;gap:4px}
+.scen-meta-left .sc-tag{font-family:var(--fm);font-size:10px;letter-spacing:1.6px;text-transform:uppercase;font-weight:600}
+.scen-card:nth-child(1) .sc-tag{color:var(--red)}
+.scen-card:nth-child(2) .sc-tag{color:var(--blue)}
+.scen-card:nth-child(3) .sc-tag{color:var(--green)}
+.scen-meta-left h4{font-family:var(--fs);font-weight:600;font-size:24px;letter-spacing:-.5px;line-height:1.1;color:var(--navy);font-variation-settings:"opsz" 100}
+.scen-meta-right{font-family:var(--fm);font-size:32px;font-weight:600;color:var(--navy);letter-spacing:-1.2px;line-height:1;font-feature-settings:"tnum" on}
+.scen-card:nth-child(2) .scen-meta-right{color:var(--blue)}
+.scen-card:nth-child(3) .scen-meta-right{color:var(--green)}
+.scen-card:nth-child(1) .scen-meta-right{color:var(--red)}
+.scen-body{padding:24px 28px;display:flex;flex-direction:column;gap:0;flex:1}
+.scen-row{display:grid;grid-template-columns:1fr auto;gap:14px;align-items:baseline;padding:12px 0;border-bottom:1px solid var(--line)}
+.scen-row:last-child{border-bottom:none;padding-top:16px;margin-top:4px;border-top:2px solid var(--navy)}
+.scen-card:nth-child(1) .scen-row:last-child{border-top-color:var(--red)}
+.scen-card:nth-child(2) .scen-row:last-child{border-top-color:var(--blue)}
+.scen-card:nth-child(3) .scen-row:last-child{border-top-color:var(--green)}
+.scen-row .sr-label{font-size:12.5px;color:var(--soft);line-height:1.4}
+.scen-row .sr-value{font-family:var(--fm);font-size:16px;color:var(--navy);font-weight:600;letter-spacing:-.3px;text-align:right;font-feature-settings:"tnum" on;white-space:nowrap}
+.scen-row:last-child .sr-label{font-size:13.5px;color:var(--navy);font-weight:700;text-transform:uppercase;letter-spacing:.5px}
+.scen-row:last-child .sr-value{font-size:22px;letter-spacing:-.5px;font-weight:700}
+.scen-card:nth-child(1) .scen-row:last-child .sr-value{color:var(--red)}
+.scen-card:nth-child(2) .scen-row:last-child .sr-value{color:var(--blue)}
+.scen-card:nth-child(3) .scen-row:last-child .sr-value{color:var(--green)}
+.scen-badge{position:absolute;top:-14px;left:50%;transform:translateX(-50%);background:var(--blue);color:#fff;font-family:var(--fm);font-size:10px;letter-spacing:1.4px;text-transform:uppercase;font-weight:700;padding:6px 14px;border-radius:100px;box-shadow:0 4px 14px rgba(22,112,195,.30)}
+
+/* ─── PROJEÇÃO 12M ─── */
+.projecao{background:var(--paper)}
+.proj-table{margin-top:24px;background:var(--linen);border:1px solid var(--line);border-radius:18px;overflow:hidden}
+.proj-row{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:16px;padding:18px 28px;align-items:center}
+.proj-row:not(:last-child){border-bottom:1px solid var(--line)}
+.proj-row.header{background:var(--navy);color:var(--linen);padding:16px 28px}
+.proj-row.header .ph-cell{font-family:var(--fm);font-size:10.5px;letter-spacing:1.6px;text-transform:uppercase;font-weight:600;color:rgba(245,241,234,.7)}
+.proj-row .pr-cell-label{font-size:14px;color:var(--navy);font-weight:600}
+.proj-row .pr-cell-num{font-family:var(--fm);font-size:18px;font-weight:600;letter-spacing:-.3px;font-feature-settings:"tnum" on;text-align:right}
+.proj-row.r-pess .pr-cell-num{color:var(--red)}
+.proj-row.r-real .pr-cell-num{color:var(--blue)}
+.proj-row.r-oti .pr-cell-num{color:var(--green)}
+
+/* Gráfico barras */
+.chart-section{margin-top:32px;background:var(--linen);border:1px solid var(--line);border-radius:18px;padding:32px}
+.chart-title{font-family:var(--fs);font-weight:500;font-size:20px;letter-spacing:-.4px;margin-bottom:24px;color:var(--navy)}
+.chart-rows{display:flex;flex-direction:column;gap:14px}
+.chart-row{display:grid;grid-template-columns:140px 1fr 100px;gap:14px;align-items:center}
+.chart-row .cr-label{font-family:var(--fm);font-size:11px;letter-spacing:1.4px;text-transform:uppercase;color:var(--soft);font-weight:600}
+.chart-bar{height:24px;border-radius:6px;position:relative;overflow:hidden;background:var(--bg)}
+.chart-bar .fill{height:100%;border-radius:6px;display:flex;align-items:center;justify-content:flex-end;padding-right:10px;font-family:var(--fm);font-size:11px;font-weight:600;color:#fff}
+.chart-bar.pess .fill{background:linear-gradient(90deg,#FF6B6B,#D04545)}
+.chart-bar.real .fill{background:var(--grad)}
+.chart-bar.oti .fill{background:linear-gradient(90deg,#1F9D55,#0F7A40)}
+.chart-row .cr-value{font-family:var(--fm);font-size:14px;font-weight:600;color:var(--navy);text-align:right;font-feature-settings:"tnum" on}
+
+/* ─── MARGEM ─── */
+.margem{background:var(--linen)}
+.marg-grid{display:grid;grid-template-columns:1.05fr 1fr;gap:36px;margin-top:24px;align-items:center}
+.marg-text h3{font-family:var(--fs);font-weight:500;font-size:30px;letter-spacing:-.7px;line-height:1.15;color:var(--navy);margin-bottom:18px;font-variation-settings:"opsz" 100}
+.marg-text h3 em{font-style:italic;color:var(--blue)}
+.marg-text p{font-size:15px;color:var(--soft);line-height:1.7;margin-bottom:14px}
+.marg-text p strong{color:var(--navy);font-weight:600}
+.marg-cards{display:flex;flex-direction:column;gap:14px}
+.marg-card{background:var(--paper);border:1px solid var(--line);border-radius:14px;padding:22px 26px;display:flex;justify-content:space-between;align-items:center;gap:18px}
+.marg-card .mc-info{display:flex;flex-direction:column;gap:3px}
+.marg-card .mc-tag{font-family:var(--fm);font-size:10px;letter-spacing:1.6px;text-transform:uppercase;font-weight:600;color:var(--muted)}
+.marg-card .mc-label{font-family:var(--fs);font-weight:500;font-size:17px;letter-spacing:-.3px;color:var(--navy);font-variation-settings:"opsz" 100}
+.marg-card .mc-value{font-family:var(--fm);font-size:28px;font-weight:600;letter-spacing:-1px;font-feature-settings:"tnum" on}
+.marg-card:nth-child(1) .mc-value{color:var(--red)}
+.marg-card:nth-child(2) .mc-value{color:var(--blue)}
+.marg-card:nth-child(3) .mc-value{color:var(--green)}
+
+/* ─── CONCLUSÃO ─── */
+.conclusao{background:var(--navy);color:var(--linen);position:relative;overflow:hidden}
+.conclusao::before{content:"";position:absolute;top:-200px;right:-100px;width:600px;height:600px;border-radius:50%;background:radial-gradient(circle,rgba(22,112,195,.20) 0%,transparent 65%);pointer-events:none}
+.conclusao::after{content:"";position:absolute;bottom:-200px;left:-100px;width:600px;height:600px;border-radius:50%;background:radial-gradient(circle,rgba(36,213,255,.14) 0%,transparent 65%);pointer-events:none}
+.conclusao .section-title{color:var(--linen)}
+.conclusao .section-title em{color:var(--cyan)}
+.conclusao .section-sub{color:rgba(245,241,234,.65)}
+.conclusao .eyebrow{color:var(--cyan)}
+.conclusao .eyebrow::before{background:var(--cyan)}
+.conc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:32px;position:relative;z-index:1}
+.conc-card{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.10);border-radius:18px;padding:32px 28px;display:flex;flex-direction:column;gap:14px;min-height:240px}
+.conc-card .cc-num{font-family:var(--fm);font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--cyan);font-weight:600}
+.conc-card h4{font-family:var(--fs);font-weight:500;font-size:22px;letter-spacing:-.5px;color:var(--linen);line-height:1.2;font-variation-settings:"opsz" 100}
+.conc-card h4 em{font-style:italic;color:var(--cyan)}
+.conc-card p{font-size:13.5px;color:rgba(245,241,234,.7);line-height:1.6;margin-top:auto}
+.conc-card p strong{color:var(--linen);font-weight:600}
+.cta-banner{margin-top:40px;background:linear-gradient(90deg,rgba(36,213,255,.14),rgba(22,112,195,.06));border:1px solid rgba(36,213,255,.30);border-radius:18px;padding:28px 36px;display:grid;grid-template-columns:1fr auto;gap:32px;align-items:center;position:relative;z-index:1}
+.cta-banner .cb-info{display:flex;flex-direction:column;gap:6px}
+.cta-banner .cb-tag{font-family:var(--fm);font-size:10.5px;letter-spacing:1.8px;text-transform:uppercase;font-weight:600;color:var(--cyan)}
+.cta-banner h3{font-family:var(--fs);font-weight:500;font-size:24px;letter-spacing:-.5px;color:var(--linen);line-height:1.2;font-variation-settings:"opsz" 100}
+.cta-banner h3 em{font-style:italic;color:var(--cyan)}
+.cta-banner .cb-btn{background:var(--linen);color:var(--navy);padding:14px 26px;border-radius:12px;font-family:var(--fd);font-weight:600;font-size:14px;letter-spacing:.2px}
+
+/* ─── FOOT ─── */
+.foot{background:var(--navy-9);color:rgba(245,241,234,.55);padding:32px 0;border-top:1px solid rgba(245,241,234,.10)}
+.foot-inner{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:18px}
+.foot .sig{font-family:var(--fs);font-weight:500;font-size:18px;letter-spacing:-.4px;color:var(--linen);font-variation-settings:"opsz" 100}
+.foot .meta{font-family:var(--fm);font-size:10.5px;letter-spacing:1.6px;text-transform:uppercase}
+
+/* ─── MOBILE ─── */
+@media (max-width:880px){
+  .wrap{padding:0 22px}
+  section{padding:60px 0}
+  .head-inner{padding:14px 22px}
+  .head-meta{display:none}
+  .section-title{font-size:34px;letter-spacing:-1px}
+  .hero{padding:64px 0 56px}
+  .hero-display{font-size:42px;letter-spacing:-1.5px}
+  .hero-sub{font-size:15px;margin-top:24px}
+  .hero-meta{flex-direction:column;gap:14px;margin-bottom:36px}
+  .hero-stats{grid-template-columns:1fr 1fr;margin-top:40px}
+  .hs-item .val{font-size:24px}
+  .sum-grid{grid-template-columns:1fr}
+  .sum-card{min-height:auto}
+  .sum-card .sc-num{font-size:28px}
+  .sum-card .sc-text{font-size:15px}
+  .diag-grid{grid-template-columns:1fr;gap:18px}
+  .diag-card{padding:24px}
+  .diag-card h3{font-size:20px}
+  .dr-value{font-size:16px}
+  .dr-value.big{font-size:22px}
+  .be-grid{grid-template-columns:1fr;gap:14px}
+  .be-card{padding:24px;min-height:auto}
+  .be-card .be-big{font-size:42px}
+  .scen-grid{grid-template-columns:1fr;gap:32px}
+  .scen-card.recommended{transform:none}
+  .proj-row{grid-template-columns:1fr;gap:8px;padding:14px 20px;text-align:left}
+  .proj-row.header{display:none}
+  .proj-row .pr-cell-num{text-align:left;font-size:15px;display:flex;justify-content:space-between}
+  .proj-row .pr-cell-num::before{content:attr(data-lbl);font-family:var(--fm);font-size:9.5px;letter-spacing:1.4px;text-transform:uppercase;color:var(--muted);font-weight:500}
+  .chart-section{padding:22px}
+  .chart-row{grid-template-columns:1fr;gap:6px}
+  .chart-row .cr-label{margin-bottom:2px}
+  .marg-grid{grid-template-columns:1fr;gap:24px}
+  .marg-text h3{font-size:24px}
+  .marg-card .mc-value{font-size:20px}
+  .conc-grid{grid-template-columns:1fr}
+  .conc-card{min-height:auto;padding:24px}
+  .cta-banner{grid-template-columns:1fr;gap:18px;padding:22px 24px;text-align:left}
+  .cta-banner h3{font-size:18px}
+  .foot-inner{padding:0 22px}
+}
+</style>
+</head>
+<body>
+
+<!-- ═══════════════════ HEADER STICKY ═══════════════════ -->
+<header class="head">
+  <div class="head-inner">
+    <div class="head-brand"><span class="dot"></span>komplexa</div>
+    <div class="head-meta">
+      <span>Análise financeira</span>
+      <span class="sep">·</span>
+      <span><strong>Projeto Reservas Diretas</strong></span>
+      <span class="sep">·</span>
+      <span>Maio 2026</span>
+    </div>
+  </div>
+</header>
+
+<!-- ═══════════════════ HERO ═══════════════════ -->
+<section class="hero">
+  <div class="wrap">
+    <div class="hero-meta">
+      <div class="hero-meta-left">
+        <span class="label">Preparado por</span>
+        <span class="value">Komplexa Hotéis · Departamento de Performance</span>
+      </div>
+      <span class="hero-meta-right">Documento executivo · confidencial</span>
+    </div>
+
+    <h1 class="hero-display">Quanto sua dependência da<br><em>Booking.com</em> custa por ano?</h1>
+    <p class="hero-sub">Análise financeira do projeto de marketing focado em migrar reservas pagas com comissão para canais diretos. <strong>Cenários conservador, realista e otimista</strong> sobre um investimento de R$ 12.600 distribuídos em 3 meses.</p>
+
+    <div class="hero-stats">
+      <div class="hs-item">
+        <span class="lbl">Unidades habitacionais</span>
+        <span class="val">99</span>
+        <span class="sub">UHs operacionais</span>
+      </div>
+      <div class="hs-item">
+        <span class="lbl">Ocupação média</span>
+        <span class="val">62%</span>
+        <span class="sub">média mensal</span>
+      </div>
+      <div class="hs-item">
+        <span class="lbl">Diária média (ADR)</span>
+        <span class="val">R$ 234</span>
+        <span class="sub">ticket médio</span>
+      </div>
+      <div class="hs-item">
+        <span class="lbl">Dependência Booking</span>
+        <span class="val">35%</span>
+        <span class="sub">a 18% de comissão</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════ SUMÁRIO EXECUTIVO ═══════════════════ -->
+<section class="sumario">
+  <div class="wrap">
+    <span class="eyebrow">Sumário executivo</span>
+    <h2 class="section-title">A oportunidade <em>em quatro números.</em></h2>
+    <p class="section-sub">Antes da análise detalhada, o resumo do que está em jogo. Cada número é fruto dos cálculos abertos nas próximas seções — sem inflar premissas, sem ancoragem otimista.</p>
+
+    <div class="sum-grid">
+      <div class="sum-card">
+        <span class="sc-tag">Comissão paga hoje</span>
+        <span class="sc-num">R$ 27.146</span>
+        <span class="sc-text">de comissão paga à Booking <em>por mês</em>.</span>
+      </div>
+      <div class="sum-card">
+        <span class="sc-tag">Comissão paga em 12 meses</span>
+        <span class="sc-num">R$ 325.752</span>
+        <span class="sc-text">de comissão <em>anual</em> no patamar atual.</span>
+      </div>
+      <div class="sum-card">
+        <span class="sc-tag">Cenário realista (15%)</span>
+        <span class="sc-num">R$ 48.863</span>
+        <span class="sc-text">de economia <em>recorrente</em> nos próximos 12 meses.</span>
+      </div>
+      <div class="sum-card">
+        <span class="sc-tag">Payback realista</span>
+        <span class="sc-num">3,1 meses</span>
+        <span class="sc-text">para recuperar todo investimento de R$ 12.600.</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════ DIAGNÓSTICO ═══════════════════ -->
+<section class="diag">
+  <div class="wrap">
+    <span class="eyebrow">01 · Diagnóstico</span>
+    <h2 class="section-title">A conta da Booking, <em>aberta.</em></h2>
+    <p class="section-sub">Cálculos transparentes a partir dos dados operacionais do hotel. Todas as fórmulas foram mantidas visíveis para auditoria.</p>
+
+    <div class="diag-grid">
+
+      <div class="diag-card">
+        <span class="dc-tag">Operação atual</span>
+        <h3>Volume de <em>diárias.</em></h3>
+        <div class="diag-list">
+          <div class="diag-row">
+            <div>
+              <div class="dr-label">Diárias disponíveis no mês</div>
+              <span class="dr-formula">99 UHs × 30 dias</span>
+            </div>
+            <span class="dr-value">2.970</span>
+          </div>
+          <div class="diag-row">
+            <div>
+              <div class="dr-label">Diárias vendidas no mês</div>
+              <span class="dr-formula">2.970 × 62% ocupação</span>
+            </div>
+            <span class="dr-value">1.841</span>
+          </div>
+          <div class="diag-row total">
+            <div>
+              <div class="dr-label" style="font-weight:600;color:var(--navy)">Diárias via Booking</div>
+              <span class="dr-formula">1.841 × 35% participação</span>
+            </div>
+            <span class="dr-value big">644</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="diag-card dark">
+        <span class="dc-tag">A conta sangrando</span>
+        <h3>Comissão paga à <em>Booking.</em></h3>
+        <div class="diag-list">
+          <div class="diag-row">
+            <div>
+              <div class="dr-label">Receita mensal via Booking</div>
+              <span class="dr-formula">644 diárias × R$ 234</span>
+            </div>
+            <span class="dr-value">R$ 150.811</span>
+          </div>
+          <div class="diag-row">
+            <div>
+              <div class="dr-label">Comissão paga por mês</div>
+              <span class="dr-formula">R$ 150.811 × 18%</span>
+            </div>
+            <span class="dr-value neg">– R$ 27.146</span>
+          </div>
+          <div class="diag-row">
+            <div>
+              <div class="dr-label">Comissão paga em 12 meses</div>
+              <span class="dr-formula">R$ 27.146 × 12</span>
+            </div>
+            <span class="dr-value neg">– R$ 325.752</span>
+          </div>
+          <div class="diag-row total">
+            <div>
+              <div class="dr-label" style="font-weight:600;color:var(--linen)">Em 5 anos</div>
+              <span class="dr-formula">se mantiver a dependência atual</span>
+            </div>
+            <span class="dr-value big neg">– R$ 1,63 milhão</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════ BREAK-EVEN ═══════════════════ -->
+<section class="breakeven">
+  <div class="wrap">
+    <span class="eyebrow">02 · Ponto de equilíbrio</span>
+    <h2 class="section-title">O número <em>que destrava tudo.</em></h2>
+    <p class="section-sub">Para o investimento de R$ 12.600 (3 meses × R$ 4.200) virar economia equivalente, é preciso migrar uma quantidade específica de diárias da Booking para reserva direta. Esse é o piso — qualquer resultado acima é lucro líquido sobre o projeto.</p>
+
+    <div class="be-grid">
+
+      <div class="be-card">
+        <span class="be-num">Economia por diária</span>
+        <span class="be-big">R$ 42,12</span>
+        <span class="be-lbl">de comissão poupada para cada reserva migrada para o canal direto.</span>
+        <span class="be-formula">Fórmula: R$ 234 ADR × 18% de comissão</span>
+      </div>
+
+      <div class="be-card hero-card">
+        <span class="be-num">Break-even em 3 meses</span>
+        <span class="be-big">100 diárias / mês</span>
+        <span class="be-lbl">é o volume mensal mínimo de migração para o projeto se pagar em 3 meses.</span>
+        <span class="be-formula">Fórmula: R$ 12.600 ÷ R$ 42,12 ÷ 3 meses ≈ 100</span>
+      </div>
+
+      <div class="be-card">
+        <span class="be-num">% das reservas Booking</span>
+        <span class="be-big">15,5%</span>
+        <span class="be-lbl">do volume Booking atual precisa ir para canal direto. Patamar perfeitamente viável.</span>
+        <span class="be-formula">Fórmula: 100 ÷ 644 diárias Booking ≈ 15,5%</span>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════ CENÁRIOS ═══════════════════ -->
+<section class="cenarios">
+  <div class="wrap">
+    <span class="eyebrow">03 · Cenários</span>
+    <h2 class="section-title">Três projeções, <em>três decisões.</em></h2>
+    <p class="section-sub">Modelagem com três percentuais distintos de migração da Booking para reserva direta. Premissas conservadoras em todos: assumimos que as reservas migradas mantêm o mesmo ADR (R$ 234) e que a economia se realiza linearmente.</p>
+
+    <div class="scen-grid">
+
+      <!-- PESSIMISTA -->
+      <div class="scen-card">
+        <div class="scen-head">
+          <div class="scen-meta-left">
+            <span class="sc-tag">Cenário conservador</span>
+            <h4>Pessimista</h4>
+          </div>
+          <span class="scen-meta-right">10%</span>
+        </div>
+        <div class="scen-body">
+          <div class="scen-row">
+            <span class="sr-label">Diárias migradas / mês</span>
+            <span class="sr-value">64</span>
+          </div>
+          <div class="scen-row">
+            <span class="sr-label">Economia mensal</span>
+            <span class="sr-value">R$ 2.714,59</span>
+          </div>
+          <div class="scen-row">
+            <span class="sr-label">Economia em 3 meses</span>
+            <span class="sr-value">R$ 8.143,77</span>
+          </div>
+          <div class="scen-row">
+            <span class="sr-label">Investimento</span>
+            <span class="sr-value">– R$ 12.600</span>
+          </div>
+          <div class="scen-row">
+            <span class="sr-label">ROI em 3 meses</span>
+            <span class="sr-value">– 35,4%</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- REALISTA (RECOMENDADO) -->
+      <div class="scen-card recommended">
+        <span class="scen-badge">Recomendado</span>
+        <div class="scen-head">
+          <div class="scen-meta-left">
+            <span class="sc-tag">Cenário base</span>
+            <h4>Realista</h4>
+          </div>
+          <span class="scen-meta-right">15%</span>
+        </div>
+        <div class="scen-body">
+          <div class="scen-row">
+            <span class="sr-label">Diárias migradas / mês</span>
+            <span class="sr-value">97</span>
+          </div>
+          <div class="scen-row">
+            <span class="sr-label">Economia mensal</span>
+            <span class="sr-value">R$ 4.071,89</span>
+          </div>
+          <div class="scen-row">
+            <span class="sr-label">Economia em 3 meses</span>
+            <span class="sr-value">R$ 12.215,66</span>
+          </div>
+          <div class="scen-row">
+            <span class="sr-label">Investimento</span>
+            <span class="sr-value">– R$ 12.600</span>
+          </div>
+          <div class="scen-row">
+            <span class="sr-label">ROI em 3 meses</span>
+            <span class="sr-value">– 3,1%</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- OTIMISTA -->
+      <div class="scen-card">
+        <div class="scen-head">
+          <div class="scen-meta-left">
+            <span class="sc-tag">Cenário superávit</span>
+            <h4>Otimista</h4>
+          </div>
+          <span class="scen-meta-right">20%</span>
+        </div>
+        <div class="scen-body">
+          <div class="scen-row">
+            <span class="sr-label">Diárias migradas / mês</span>
+            <span class="sr-value">129</span>
+          </div>
+          <div class="scen-row">
+            <span class="sr-label">Economia mensal</span>
+            <span class="sr-value">R$ 5.429,18</span>
+          </div>
+          <div class="scen-row">
+            <span class="sr-label">Economia em 3 meses</span>
+            <span class="sr-value">R$ 16.287,55</span>
+          </div>
+          <div class="scen-row">
+            <span class="sr-label">Investimento</span>
+            <span class="sr-value">– R$ 12.600</span>
+          </div>
+          <div class="scen-row">
+            <span class="sr-label">ROI em 3 meses</span>
+            <span class="sr-value">+ 29,3%</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <p style="margin-top:30px;font-size:13px;color:var(--soft);line-height:1.55;max-width:900px;font-style:italic;background:var(--paper);border-left:3px solid var(--blue);padding:14px 18px;border-radius:0 10px 10px 0">
+      <strong style="color:var(--navy);font-style:normal">Observação:</strong> o ROI dos primeiros 3 meses considera apenas o período do investimento inicial. A real força do projeto está na <strong style="color:var(--navy);font-style:normal">economia recorrente</strong> — a partir do quarto mês, todo valor poupado vira lucro líquido sobre o resultado do hotel, conforme demonstrado a seguir.
+    </p>
+  </div>
+</section>
+
+<!-- ═══════════════════ PROJEÇÃO 12 MESES ═══════════════════ -->
+<section class="projecao">
+  <div class="wrap">
+    <span class="eyebrow">04 · Projeção 12 meses</span>
+    <h2 class="section-title">Onde o jogo <em>realmente acontece.</em></h2>
+    <p class="section-sub">O investimento dura 3 meses. A economia, se a operação de aquisição direta for mantida ativa, segue recorrente. A tabela abaixo projeta o impacto financeiro acumulado em 12 meses para cada cenário.</p>
+
+    <div class="proj-table">
+      <div class="proj-row header">
+        <span class="ph-cell">Cenário</span>
+        <span class="ph-cell" style="text-align:right">Economia anual</span>
+        <span class="ph-cell" style="text-align:right">Retorno líquido 12M</span>
+        <span class="ph-cell" style="text-align:right">Payback</span>
+      </div>
+      <div class="proj-row r-pess">
+        <span class="pr-cell-label">Pessimista (10%)</span>
+        <span class="pr-cell-num" data-lbl="Economia anual">R$ 32.575</span>
+        <span class="pr-cell-num" data-lbl="Retorno líquido 12M">R$ 19.975</span>
+        <span class="pr-cell-num" data-lbl="Payback">4,6 meses</span>
+      </div>
+      <div class="proj-row r-real">
+        <span class="pr-cell-label">Realista (15%) — recomendado</span>
+        <span class="pr-cell-num" data-lbl="Economia anual">R$ 48.863</span>
+        <span class="pr-cell-num" data-lbl="Retorno líquido 12M">R$ 36.263</span>
+        <span class="pr-cell-num" data-lbl="Payback">3,1 meses</span>
+      </div>
+      <div class="proj-row r-oti">
+        <span class="pr-cell-label">Otimista (20%)</span>
+        <span class="pr-cell-num" data-lbl="Economia anual">R$ 65.150</span>
+        <span class="pr-cell-num" data-lbl="Retorno líquido 12M">R$ 52.550</span>
+        <span class="pr-cell-num" data-lbl="Payback">2,3 meses</span>
+      </div>
+    </div>
+
+    <!-- Gráfico visual de retorno -->
+    <div class="chart-section">
+      <h3 class="chart-title">Retorno líquido acumulado em 12 meses (após descontar o investimento)</h3>
+      <div class="chart-rows">
+        <div class="chart-row">
+          <span class="cr-label">Pessimista</span>
+          <div class="chart-bar pess"><div class="fill" style="width:38%">R$ 19.975</div></div>
+          <span class="cr-value">+ 158% ROI</span>
+        </div>
+        <div class="chart-row">
+          <span class="cr-label">Realista</span>
+          <div class="chart-bar real"><div class="fill" style="width:69%">R$ 36.263</div></div>
+          <span class="cr-value">+ 288% ROI</span>
+        </div>
+        <div class="chart-row">
+          <span class="cr-label">Otimista</span>
+          <div class="chart-bar oti"><div class="fill" style="width:100%">R$ 52.550</div></div>
+          <span class="cr-value">+ 417% ROI</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ═══════════════════ IMPACTO MARGEM ═══════════════════ -->
+<section class="margem">
+  <div class="wrap">
+    <span class="eyebrow">05 · Impacto na margem</span>
+    <h2 class="section-title">Cada real <em>economizado em comissão</em> vira lucro.</h2>
+    <p class="section-sub">Diferente de receita nova (que tem custos variáveis associados), economia em comissão flui direto para a margem operacional. Sobre uma receita mensal estimada de <strong>R$ 430.888</strong>, o impacto se distribui assim:</p>
+
+    <div class="marg-grid">
+      <div class="marg-text">
+        <h3>Por que <em>esse R$ ganha mais peso</em> que receita nova?</h3>
+        <p>Quando o hotel <strong>vende uma nova diária</strong>, parte da receita é absorvida em custos variáveis (lavanderia, amenities, café da manhã, energia). A margem líquida média na hotelaria gira em torno de <strong>10% a 15%</strong>.</p>
+        <p>Já a <strong>economia em comissão</strong> não tem custo variável associado — é receita que <em>já estava sendo gerada</em> sendo retida no caixa. Ou seja: <strong>R$ 1 economizado em comissão equivale a aproximadamente R$ 7 a R$ 10 de receita bruta nova.</strong></p>
+        <p>É essa multiplicação que torna a redução de dependência de OTA o investimento mais alto-leverage da hotelaria.</p>
+      </div>
+
+      <div class="marg-cards">
+        <div class="marg-card">
+          <div class="mc-info">
+            <span class="mc-tag">Pessimista · 10%</span>
+            <span class="mc-label">Aumento de margem operacional</span>
+          </div>
+          <span class="mc-value">+ 0,63%</span>
+        </div>
+        <div class="marg-card">
+          <div class="mc-info">
+            <span class="mc-tag">Realista · 15%</span>
+            <span class="mc-label">Aumento de margem operacional</span>
+          </div>
+          <span class="mc-value">+ 0,94%</span>
+        </div>
+        <div class="marg-card">
+          <div class="mc-info">
+            <span class="mc-tag">Otimista · 20%</span>
+            <span class="mc-label">Aumento de margem operacional</span>
+          </div>
+          <span class="mc-value">+ 1,26%</span>
+        </div>
+      </div>
+    </div>
+
+    <p style="margin-top:32px;font-size:13px;color:var(--soft);line-height:1.55;max-width:900px;font-style:italic;background:var(--paper);border-left:3px solid var(--blue);padding:14px 18px;border-radius:0 10px 10px 0">
+      <strong style="color:var(--navy);font-style:normal">Sobre os percentuais:</strong> a aparência modesta (0,6% a 1,3%) esconde a real magnitude. Em hotelaria, cada ponto percentual de margem operacional movimenta entre 8% e 12% do resultado líquido anual. Em valores: cenário realista equivale a <strong style="color:var(--navy);font-style:normal">um aumento estimado de 7% a 9% no lucro anual do hotel</strong> — sem nenhum aumento de tarifa, ocupação ou estrutura operacional.
+    </p>
+  </div>
+</section>
+
+<!-- ═══════════════════ CONCLUSÃO ═══════════════════ -->
+<section class="conclusao">
+  <div class="wrap">
+    <span class="eyebrow">06 · Conclusão</span>
+    <h2 class="section-title">Três conclusões <em>práticas.</em></h2>
+    <p class="section-sub">A análise demonstra que, em qualquer cenário projetado, o projeto se paga dentro do horizonte de 12 meses. O risco é controlado, o upside é assimétrico.</p>
+
+    <div class="conc-grid">
+      <div class="conc-card">
+        <span class="cc-num">Conclusão 01</span>
+        <h4>Mesmo no <em>pior cenário</em>, o investimento se paga em 4,6 meses.</h4>
+        <p>Com apenas <strong>10% de migração</strong> — patamar baixíssimo, conservador — o hotel recupera o investimento em menos de 5 meses e gera <strong>R$ 20 mil de retorno líquido</strong> em 12 meses. <strong>Não existe cenário de prejuízo material.</strong></p>
+      </div>
+      <div class="conc-card">
+        <span class="cc-num">Conclusão 02</span>
+        <h4>No cenário <em>realista</em>, o ROI anual chega a <em>288%</em>.</h4>
+        <p>Com 15% de migração — número compatível com performance típica de operações de aquisição estruturadas — o hotel devolve <strong>R$ 36.263 líquidos</strong> em 12 meses sobre o investimento de R$ 12.600. <strong>Próximo de 4x sobre o capital aplicado.</strong></p>
+      </div>
+      <div class="conc-card">
+        <span class="cc-num">Conclusão 03</span>
+        <h4>O verdadeiro ganho <em>é recorrente.</em></h4>
+        <p>O investimento dura 3 meses. A economia em comissão, se a aquisição direta for mantida ativa, segue <strong>todos os meses dos próximos anos</strong>. Em 5 anos no cenário realista, são <strong>R$ 244.313 retidos no caixa do hotel</strong> — sem aumentar uma diária sequer.</p>
+      </div>
+    </div>
+
+    <div class="cta-banner">
+      <div class="cb-info">
+        <span class="cb-tag">Recomendação técnica</span>
+        <h3>Avançar para a fase de <em>kickoff e cronograma operacional.</em></h3>
+      </div>
+      <span class="cb-btn">Agendar reunião de alinhamento →</span>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════ FOOT ═══════════════════ -->
+<footer class="foot">
+  <div class="wrap">
+    <div class="foot-inner">
+      <div class="sig">komplexa<span style="color:var(--cyan)">.</span></div>
+      <div class="meta">Análise financeira · Projeto de Reservas Diretas · 2026</div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
