@@ -1,0 +1,1980 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow,noarchive,nosnippet">
+<meta name="googlebot" content="noindex,nofollow">
+<title>Komplexa — Apresentação Comercial · Fechamento</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Fraunces:ital,wght@1,400;1,500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --navy:#0E1E35;--navy9:#081525;--white:#fff;
+  --blue:#1670C3;--g1:#1670C3;--g2:#1099E9;--g3:#24D5FF;
+  --grad:linear-gradient(90deg,#1670C3 0%,#1099E9 48%,#24D5FF 100%);
+  --grad-r:radial-gradient(circle at 70% 50%,rgba(36,213,255,.35) 0%,transparent 60%);
+  --txt:#4A5770;--gray:#8896A8;--bdr:#DDE3ED;--bg:#F3F6FA;
+  --tb09:rgba(22,112,195,.09);--tb18:rgba(22,112,195,.18);
+  --ok:#16A34A;--okbg:rgba(22,163,74,.10);
+  --fd:'Inter',system-ui,sans-serif;
+  --page-bg:#0a0f1a;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{font-family:var(--fd);background:var(--page-bg);color:var(--navy);-webkit-font-smoothing:antialiased}
+
+/* ─── DOC VIEW (stacked) ─── */
+.deck{display:flex;flex-direction:column;align-items:center;gap:32px;padding:64px 24px 96px}
+.slide{
+  width:1280px;height:720px;border-radius:8px;overflow:hidden;
+  box-shadow:0 20px 60px rgba(0,0,0,.4);
+  position:relative;display:flex;flex-direction:column;
+  page-break-after:always;break-after:page;
+}
+.slide *{font-family:var(--fd)}
+
+/* ─── SLIDE BASE STYLES ─── */
+.slide.dark{background:var(--navy);color:#fff}
+.slide.dark::before{content:"";position:absolute;inset:0;background:var(--grad-r);opacity:.45;pointer-events:none}
+.slide.light{background:#fff;color:var(--navy)}
+
+.slide .top{display:flex;justify-content:space-between;align-items:center;padding:36px 56px 0;position:relative;z-index:2}
+.slide .top img.brand{height:32px;width:auto}
+.slide .top .pg{font-size:11px;letter-spacing:1.5px;text-transform:uppercase;font-weight:600;color:rgba(255,255,255,.45)}
+.slide.light .top .pg{color:var(--gray)}
+
+.slide .body{flex:1;padding:32px 56px;position:relative;z-index:2;display:flex;flex-direction:column}
+.slide .bot{padding:20px 56px 28px;display:flex;justify-content:space-between;align-items:flex-end;font-size:10px;color:rgba(255,255,255,.4);letter-spacing:.6px;text-transform:uppercase;position:relative;z-index:2}
+.slide.light .bot{color:var(--gray)}
+
+.eyebrow{display:inline-block;font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:1.8px;margin-bottom:16px}
+.dark .eyebrow{color:var(--g3)}
+.light .eyebrow{color:var(--blue)}
+.title{font-weight:800;font-size:54px;line-height:1.05;letter-spacing:-1.6px;margin:0 0 16px}
+.dark .title{color:#fff}
+.light .title{color:var(--navy)}
+.title em{font-style:normal;font-family:'Fraunces',Georgia,serif;font-weight:400;letter-spacing:-.5px;background:var(--grad);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+.lead{font-size:17px;line-height:1.55;max-width:680px}
+.dark .lead{color:rgba(255,255,255,.75)}
+.light .lead{color:var(--txt)}
+
+/* ─── 01 · COVER ─── */
+.cover-mid{flex:1;display:flex;flex-direction:column;justify-content:center}
+.cover-eye{font-size:14px;font-weight:500;color:rgba(255,255,255,.65);letter-spacing:.4px;margin-bottom:10px}
+.cover-title{font-weight:800;font-size:88px;line-height:.98;letter-spacing:-3px;color:#fff;margin:0 0 18px}
+.cover-title .accent{font-style:normal;font-family:'Fraunces',Georgia,serif;font-weight:400;background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.cover-sub{font-size:18px;color:rgba(255,255,255,.72);max-width:560px;line-height:1.5}
+.cover-meta{padding:28px 56px;display:grid;grid-template-columns:1fr 1fr 1fr;gap:32px;border-top:1px solid rgba(255,255,255,.12);position:relative;z-index:2}
+.cover-meta .label{font-size:10.5px;text-transform:uppercase;letter-spacing:1.2px;color:rgba(255,255,255,.55);font-weight:500;margin-bottom:6px}
+.cover-meta .value{font-size:14px;font-weight:600;color:#fff}
+
+/* ─── 02 · ABOUT + PARTNERS ─── */
+.about-grid{display:grid;grid-template-columns:1.1fr 1fr;gap:48px;flex:1;align-items:center}
+.about-bio p{font-size:15px;line-height:1.65;color:var(--txt);margin-bottom:12px}
+.about-bio p strong{color:var(--navy);font-weight:600}
+.about-bio .pillstrip{display:flex;gap:8px;flex-wrap:wrap;margin-top:18px}
+.about-bio .pillstrip .ps{font-size:11px;font-weight:600;padding:5px 11px;background:var(--tb09);color:var(--blue);border-radius:100px;letter-spacing:.3px}
+.about-partners h4{font-size:11px;font-weight:700;letter-spacing:1.6px;text-transform:uppercase;color:var(--gray);margin-bottom:18px}
+.partner-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.partner{border:1px solid var(--bdr);border-radius:10px;padding:18px 14px 12px;background:#fff;display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:130px;text-align:center;gap:10px}
+.partner .logo{flex:1;display:flex;align-items:center;justify-content:center;width:100%;min-height:70px}
+.partner .logo img{max-height:80px;max-width:100%;width:auto;height:auto;object-fit:contain;display:block}
+.partner .logo img[alt="Foco"]{max-height:60px}
+.partner .cat{font-size:8.5px;color:var(--gray);text-transform:uppercase;letter-spacing:1px;font-weight:600}
+.partner.feat{background:linear-gradient(135deg,rgba(22,112,195,.04),rgba(36,213,255,.04));border-color:var(--tb18)}
+
+/* ─── 03 · MONEY SLIDE — FIGMA-STYLE FLOW (split layout) ─── */
+.money-grid{display:grid;grid-template-columns:38% 62%;gap:32px;flex:1;align-items:stretch;position:relative}
+.cover-body{padding:40px 56px;justify-content:center}
+.money-body{padding:24px 56px 12px}
+.money-left{display:flex;flex-direction:column;justify-content:center;padding:8px 0}
+.money-left .title{font-size:38px;letter-spacing:-1.2px;line-height:1.05}
+.money-left .lead{color:rgba(255,255,255,.72);font-size:15px;line-height:1.6;max-width:380px;margin-top:18px}
+.money-left .stats{display:flex;flex-direction:column;gap:10px;margin-top:24px}
+.money-left .stat{display:grid;grid-template-columns:32px 1fr;gap:12px;align-items:center;padding:10px 14px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:10px}
+.money-left .stat .ic{width:28px;height:28px;border-radius:7px;background:var(--grad);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:12px;flex-shrink:0}
+.money-left .stat .tx{font-size:12.5px;color:rgba(255,255,255,.85);line-height:1.4}
+.money-left .stat .tx strong{color:#fff;font-weight:600}
+
+.flow-stage{position:relative;display:flex;flex-direction:column;align-items:center;justify-content:space-between;padding:0;gap:14px;overflow:visible;height:100%}
+.flow-stage::before{content:"";position:absolute;inset:0;background-image:radial-gradient(circle at 50% 50%,rgba(36,213,255,.18) 0%,transparent 50%),url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><circle cx="1" cy="1" r="1" fill="white" opacity="0.05"/></svg>');background-size:cover,24px 24px;pointer-events:none;z-index:0}
+.flow-svg{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;z-index:1}
+
+.fcard{position:relative;z-index:3;background:rgba(14,30,53,.70);border:1px solid rgba(36,213,255,.30);border-radius:11px;padding:8px 14px;color:#fff;backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);display:flex;align-items:center;gap:9px;min-width:0;box-shadow:0 6px 24px rgba(0,0,0,.30)}
+.fcard .ic{width:28px;height:28px;border-radius:7px;display:flex;align-items:center;justify-content:center;flex-shrink:0;background:rgba(255,255,255,.06)}
+.fcard .ic svg{width:16px;height:16px}
+.fcard .info .lbl{font-size:8.5px;font-weight:700;letter-spacing:1.1px;text-transform:uppercase;color:var(--g3);margin-bottom:1px;line-height:1}
+.fcard .info .name{font-weight:700;font-size:12.5px;color:#fff;letter-spacing:-.2px;line-height:1.1}
+.fcard .info .sub{font-size:9.5px;color:rgba(255,255,255,.6);margin-top:1px;line-height:1.3}
+
+.fcard.ai{background:linear-gradient(135deg,rgba(22,112,195,.30),rgba(36,213,255,.20));border-color:rgba(36,213,255,.55);box-shadow:0 0 40px rgba(36,213,255,.25),0 6px 24px rgba(0,0,0,.30)}
+.fcard.ai .ic{background:var(--grad)}
+.fcard.ai .ic svg{stroke:#fff}
+
+.fcard .ic.ig{background:linear-gradient(45deg,#feda75,#fa7e1e 35%,#d62976 65%,#962fbf 90%)}
+.fcard .ic.fb{background:#1877F2}
+.fcard .ic.gg{background:#fff;color:var(--blue)}
+.fcard .ic.wa{background:#25D366}
+.fcard .ic.em{background:#EA4335}
+.fcard .ic.rm{background:linear-gradient(45deg,#feda75,#fa7e1e 35%,#d62976 65%,#962fbf 90%)}
+
+.frow{display:flex;gap:18px;justify-content:center;position:relative;z-index:3;width:100%}
+
+/* Site mockup — center stage */
+.fsite{position:relative;z-index:3;background:#fff;border-radius:10px;overflow:hidden;width:340px;box-shadow:0 12px 40px rgba(0,0,0,.45),0 0 0 1px rgba(255,255,255,.08),0 0 70px rgba(36,213,255,.20)}
+.fsite .browser-bar{background:#F3F4F6;padding:6px 10px;display:flex;align-items:center;gap:7px;border-bottom:1px solid #E5E7EB}
+.fsite .browser-bar .dots{display:flex;gap:4px}
+.fsite .browser-bar .dots span{width:7px;height:7px;border-radius:50%}
+.fsite .browser-bar .dots span:nth-child(1){background:#FF5F57}
+.fsite .browser-bar .dots span:nth-child(2){background:#FEBC2E}
+.fsite .browser-bar .dots span:nth-child(3){background:#28C840}
+.fsite .browser-bar .url{flex:1;background:#fff;border-radius:4px;padding:2px 8px;font-size:9px;color:#6B7280;font-family:'SF Mono',Menlo,monospace;display:flex;align-items:center;gap:5px}
+.fsite .browser-bar .url::before{content:"🔒";font-size:8px;opacity:.6}
+.fsite .site-hero{height:108px;background-size:cover;background-position:center;position:relative;display:flex;flex-direction:column;justify-content:flex-end;padding:12px 14px;color:#fff;overflow:hidden}
+.fsite .site-hero::before{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(14,30,53,.55) 0%,rgba(14,30,53,.30) 40%,rgba(14,30,53,.85) 100%);pointer-events:none}
+.fsite .site-nav{position:absolute;top:8px;left:14px;right:14px;display:flex;justify-content:space-between;align-items:center;z-index:2}
+.fsite .site-nav img{height:12px}
+.fsite .site-nav .menu{display:flex;gap:10px;font-size:7.5px;color:rgba(255,255,255,.85);font-weight:500}
+.fsite .site-h1{position:relative;z-index:2;font-weight:800;font-size:15px;letter-spacing:-.4px;line-height:1.1;margin-bottom:2px}
+.fsite .site-h1 em{font-style:normal;font-family:'Fraunces',Georgia,serif;font-weight:400;background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.fsite .site-sub{position:relative;z-index:2;font-size:8.5px;color:rgba(255,255,255,.7)}
+.fsite .booking{padding:8px 10px;background:#fff;display:grid;grid-template-columns:1fr 1fr 1fr auto;gap:5px;align-items:center;border-top:1px solid #E5E7EB}
+.fsite .booking .field{padding:3px 5px}
+.fsite .booking .field .lab{font-size:7px;color:#9CA3AF;text-transform:uppercase;letter-spacing:.6px;font-weight:600;display:block}
+.fsite .booking .field .val{font-size:10px;color:#111;font-weight:600;margin-top:1px}
+.fsite .booking .btn{background:var(--grad);color:#fff;font-size:9px;font-weight:700;padding:7px 12px;border-radius:5px;letter-spacing:.2px}
+
+.ffinal{position:relative;z-index:3;background:var(--grad);color:#fff;padding:11px 28px;border-radius:100px;display:flex;align-items:center;gap:10px;font-weight:800;letter-spacing:.5px;box-shadow:0 0 50px rgba(36,213,255,.55),0 8px 30px rgba(0,0,0,.3);text-shadow:0 1px 2px rgba(0,0,0,.15)}
+.ffinal .star{font-size:15px;opacity:.95}
+.ffinal .txt{font-size:15px;letter-spacing:1px}
+.ffinal .badge-sub{font-size:8.5px;font-weight:600;background:rgba(0,0,0,.18);padding:3px 8px;border-radius:100px;letter-spacing:.5px;text-transform:uppercase;text-shadow:none}
+
+/* ─── 04 · ETAPAS — TEMPLATE ─── */
+.etapa-grid{display:grid;grid-template-columns:1fr 1.1fr;gap:48px;flex:1;align-items:center}
+.etapa-left h2{margin-bottom:20px}
+.etapa-points{list-style:none;padding:0;margin:24px 0 0;display:flex;flex-direction:column;gap:14px}
+.etapa-points li{display:grid;grid-template-columns:32px 1fr;gap:14px;align-items:start;font-size:14px;color:var(--txt);line-height:1.55}
+.etapa-points li .ic{width:28px;height:28px;border-radius:7px;background:var(--grad);color:#fff;font-weight:700;font-size:11px;display:flex;align-items:center;justify-content:center;letter-spacing:0;flex-shrink:0;margin-top:1px}
+.etapa-points li strong{color:var(--navy);font-weight:600}
+.etapa-visual{height:520px;border-radius:14px;border:1px solid var(--bdr);background:var(--bg);display:flex;align-items:center;justify-content:center;overflow:hidden;position:relative}
+
+/* Visual: AI segmentation */
+.ai-vis{display:flex;flex-direction:column;align-items:center;gap:14px;padding:24px;width:100%}
+.ai-people{display:grid;grid-template-columns:repeat(7,1fr);gap:6px;width:100%}
+.ai-person{aspect-ratio:1;border-radius:50%;background:var(--bdr);position:relative;display:flex;align-items:center;justify-content:center;font-size:14px;color:var(--gray);font-weight:600}
+.ai-person.match{background:var(--grad);color:#fff;box-shadow:0 0 16px rgba(36,213,255,.4)}
+.ai-brain{margin:6px 0;padding:14px 20px;background:var(--navy);color:#fff;border-radius:12px;display:flex;align-items:center;gap:10px;font-weight:600;font-size:13px;position:relative;overflow:hidden}
+.ai-brain::before{content:"";position:absolute;inset:0;background:var(--grad-r);opacity:.5}
+.ai-brain span{position:relative;z-index:1}
+.ai-brain .ic{position:relative;z-index:1;font-size:18px}
+.ai-result{display:flex;gap:8px}
+.ai-result .pill-r{background:var(--grad);color:#fff;font-size:11px;font-weight:600;padding:6px 14px;border-radius:100px}
+
+/* Visual: Ads */
+.ads-vis{display:grid;grid-template-columns:1fr 1fr;gap:14px;padding:24px;width:100%}
+.ad-card{background:#fff;border:1px solid var(--bdr);border-radius:10px;overflow:hidden;display:flex;flex-direction:column}
+.ad-card .ad-hdr{padding:8px 12px;display:flex;align-items:center;gap:8px;border-bottom:1px solid var(--bdr);font-size:11px;color:var(--navy);font-weight:600}
+.ad-card .ad-hdr .av{width:22px;height:22px;border-radius:50%;background:var(--grad)}
+.ad-card .ad-img{height:140px;background:linear-gradient(135deg,#0E1E35 0%,#1670C3 100%);position:relative;display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700;font-size:14px}
+.ad-card .ad-img::after{content:"";position:absolute;inset:0;background:url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><defs><pattern id="g" width="20" height="20" patternUnits="userSpaceOnUse"><circle cx="10" cy="10" r="1" fill="white" opacity="0.15"/></pattern></defs><rect width="100" height="100" fill="url(%23g)"/></svg>');opacity:.6}
+.ad-card .ad-img .label{position:relative;z-index:1;background:rgba(0,0,0,.3);padding:4px 10px;border-radius:4px;font-size:11px;letter-spacing:.4px}
+.ad-card .ad-body{padding:10px 12px}
+.ad-card .ad-body h5{font-size:12px;color:var(--navy);font-weight:700;margin-bottom:4px}
+.ad-card .ad-body p{font-size:10px;color:var(--txt);margin:0;line-height:1.4}
+.ad-card .ad-cta{margin:8px 12px 12px;background:var(--grad);color:#fff;font-size:10px;font-weight:600;padding:5px 0;border-radius:6px;text-align:center}
+.ad-card.google{background:#fff}
+.ad-card.google .g-result{padding:14px}
+.ad-card.google .g-url{font-size:9.5px;color:var(--ok);margin-bottom:3px}
+.ad-card.google .g-title{font-size:13px;color:#1a0dab;font-weight:500;margin-bottom:4px;line-height:1.25}
+.ad-card.google .g-desc{font-size:10px;color:var(--txt);line-height:1.45}
+.ad-card.google .g-ad{display:inline-block;font-size:8px;font-weight:700;color:var(--ok);border:1px solid var(--ok);padding:1px 4px;border-radius:3px;margin-bottom:6px}
+
+/* Visual: Ads carousel (slide 05) */
+.ads-carousel{width:100%;height:100%;display:flex;flex-direction:column;padding:16px;gap:12px}
+.car-track{flex:1;position:relative;overflow:hidden;border-radius:10px}
+.car-slide{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;opacity:0;transform:scale(.96);transition:opacity .55s ease,transform .55s ease;pointer-events:none}
+.car-slide.active{opacity:1;transform:scale(1);pointer-events:auto}
+.car-controls{display:flex;justify-content:space-between;align-items:center;padding:0 4px}
+.car-label{display:flex;align-items:center;gap:8px;font-size:10px;color:var(--navy);font-weight:600;text-transform:uppercase;letter-spacing:1.2px}
+.car-label .ic{width:18px;height:18px;border-radius:4px;background:var(--grad);color:#fff;display:flex;align-items:center;justify-content:center;font-size:10px}
+.car-arrows{display:flex;gap:6px}
+.car-btn{width:28px;height:28px;border-radius:6px;background:#fff;border:1px solid var(--bdr);color:var(--navy);font-weight:700;font-size:14px;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all .2s}
+.car-btn:hover{background:var(--grad);color:#fff;border-color:transparent}
+.car-dots{display:flex;gap:6px;align-items:center}
+.car-dot{width:7px;height:7px;border-radius:50%;background:var(--bdr);cursor:pointer;transition:all .35s;border:none;padding:0}
+.car-dot.active{background:var(--grad);width:22px;border-radius:100px}
+
+/* AD #1: Instagram Feed */
+.ad-ig-feed{width:300px;background:#fff;border-radius:10px;border:1px solid #DBDBDB;overflow:hidden;box-shadow:0 8px 24px rgba(0,0,0,.08)}
+.ad-ig-feed .h{display:flex;align-items:center;gap:9px;padding:9px 12px}
+.ad-ig-feed .h .av{width:28px;height:28px;border-radius:50%;background:linear-gradient(45deg,#feda75,#fa7e1e 35%,#d62976 65%,#962fbf 90%);padding:1.5px;flex-shrink:0}
+.ad-ig-feed .h .av div{width:100%;height:100%;border-radius:50%;background:#fff;display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:700;color:var(--navy)}
+.ad-ig-feed .h .info{flex:1;font-size:11.5px;font-weight:600;color:#262626}
+.ad-ig-feed .h .info small{display:block;font-weight:400;color:#737373;font-size:9.5px}
+.ad-ig-feed .h .more{color:#262626;font-size:14px;font-weight:700}
+.ad-ig-feed .img{aspect-ratio:1/1;background-size:cover;background-position:center;position:relative;display:flex;align-items:center;justify-content:center;color:#fff;font-size:12px}
+.ad-ig-feed .img::after{content:"Patrocinado";position:absolute;top:10px;right:10px;background:rgba(0,0,0,.55);color:#fff;font-size:9px;font-weight:600;padding:3px 7px;border-radius:4px}
+.ad-ig-feed .actions{display:flex;align-items:center;gap:14px;padding:8px 12px;font-size:18px;color:#262626}
+.ad-ig-feed .actions span:last-child{margin-left:auto}
+.ad-ig-feed .body{padding:0 12px 12px}
+.ad-ig-feed .body .copy{font-size:11px;color:#262626;line-height:1.4}
+.ad-ig-feed .body .copy strong{font-weight:600}
+.ad-ig-feed .cta{display:flex;align-items:center;justify-content:space-between;padding:10px 12px;border-top:1px solid #EFEFEF;font-size:11px;color:#262626;font-weight:600}
+.ad-ig-feed .cta .arrow{color:#737373}
+
+/* AD #2: Instagram Story */
+.ad-ig-story{width:200px;aspect-ratio:9/16;background-size:cover;background-position:center;border-radius:14px;overflow:hidden;position:relative;display:flex;flex-direction:column;justify-content:space-between;padding:14px;box-shadow:0 12px 32px rgba(0,0,0,.25)}
+.ad-ig-story::before{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(14,30,53,.45) 0%,rgba(14,30,53,.15) 40%,rgba(14,30,53,.75) 100%);pointer-events:none}
+.ad-ig-story .top-bars{display:flex;gap:3px}
+.ad-ig-story .top-bars span{flex:1;height:2px;background:rgba(255,255,255,.4);border-radius:2px}
+.ad-ig-story .top-bars span:first-child{background:#fff}
+.ad-ig-story .head{display:flex;align-items:center;gap:8px;margin-top:8px;position:relative;z-index:1}
+.ad-ig-story .head .av{width:24px;height:24px;border-radius:50%;background:#fff;border:2px solid #fff;display:flex;align-items:center;justify-content:center;font-size:9px;font-weight:700;color:var(--navy)}
+.ad-ig-story .head .name{font-size:11px;color:#fff;font-weight:600}
+.ad-ig-story .head .name small{display:block;font-size:8.5px;color:rgba(255,255,255,.65);font-weight:400}
+.ad-ig-story .center{flex:1;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;position:relative;z-index:1;color:#fff;padding:0 10px}
+.ad-ig-story .center .em{font-size:9.5px;font-weight:700;letter-spacing:1.2px;text-transform:uppercase;color:rgba(255,255,255,.85);margin-bottom:8px}
+.ad-ig-story .center h3{font-weight:800;font-size:24px;line-height:1.05;letter-spacing:-.5px;margin:0}
+.ad-ig-story .center h3 em{font-style:normal;font-family:'Fraunces',Georgia,serif;font-weight:400;color:#fff}
+.ad-ig-story .bot-area{position:relative;z-index:1;display:flex;flex-direction:column;align-items:center;gap:8px}
+.ad-ig-story .swipe-cta{background:#fff;color:var(--navy);font-weight:700;font-size:11px;padding:8px 18px;border-radius:100px;letter-spacing:.3px}
+.ad-ig-story .arrow-up{font-size:14px;color:#fff;animation:bounce 1.4s ease-in-out infinite}
+@keyframes bounce{0%,100%{transform:translateY(0)}50%{transform:translateY(-4px)}}
+
+/* AD #3: Google Search */
+.ad-gs{width:480px;background:#fff;border-radius:10px;border:1px solid var(--bdr);padding:18px 22px;box-shadow:0 8px 24px rgba(0,0,0,.06)}
+.ad-gs .src{display:flex;align-items:center;gap:10px;font-size:11px;color:#5F6368;margin-bottom:10px;padding-bottom:8px;border-bottom:1px solid #f0f0f0}
+.ad-gs .src .g-logo{display:flex;align-items:baseline;font-size:14px;font-weight:600;letter-spacing:-.5px}
+.ad-gs .src .g-logo .b{color:#4285F4}.ad-gs .src .g-logo .r{color:#EA4335}.ad-gs .src .g-logo .y{color:#FBBC05}.ad-gs .src .g-logo .gr{color:#34A853}
+.ad-gs .src .query{flex:1;background:var(--bg);padding:6px 12px;border-radius:100px;font-size:11px;color:var(--navy)}
+.ad-gs .ad-tag{display:inline-block;font-size:9px;font-weight:700;color:#202124;border:1px solid #5F6368;padding:1px 5px;border-radius:3px;margin-bottom:6px}
+.ad-gs .url{display:flex;align-items:center;gap:8px;font-size:11px;color:#202124;margin-bottom:4px}
+.ad-gs .url .fav{width:16px;height:16px;border-radius:50%;background:var(--grad);display:flex;align-items:center;justify-content:center;color:#fff;font-size:9px;font-weight:700}
+.ad-gs .url .dom{color:#202124}
+.ad-gs .ttl{color:#1a0dab;font-size:18px;font-weight:400;margin-bottom:4px;line-height:1.25;letter-spacing:-.2px}
+.ad-gs .desc{font-size:12px;color:#4D5156;line-height:1.45}
+.ad-gs .links{display:grid;grid-template-columns:1fr 1fr;gap:6px 16px;margin-top:10px;padding-top:8px;border-top:1px solid #f0f0f0}
+.ad-gs .links a{font-size:11px;color:#1a0dab;text-decoration:none}
+
+/* AD #4: Google Hotel Ads */
+.ad-gha{width:460px;background:#fff;border-radius:10px;border:1px solid var(--bdr);overflow:hidden;box-shadow:0 8px 24px rgba(0,0,0,.06)}
+.ad-gha .top{padding:10px 14px;display:flex;align-items:center;gap:10px;border-bottom:1px solid #f0f0f0;background:#fafafa}
+.ad-gha .top .g-logo{display:flex;align-items:baseline;font-size:14px;font-weight:600;letter-spacing:-.5px}
+.ad-gha .top .g-logo .b{color:#4285F4}.ad-gha .top .g-logo .r{color:#EA4335}.ad-gha .top .g-logo .y{color:#FBBC05}.ad-gha .top .g-logo .gr{color:#34A853}
+.ad-gha .top .label{font-size:11px;color:#5F6368;font-weight:600}
+.ad-gha .body{display:grid;grid-template-columns:140px 1fr;gap:14px;padding:14px}
+.ad-gha .photo{height:130px;border-radius:6px;background-size:cover;background-position:center;display:flex;align-items:flex-end;justify-content:flex-start;padding:8px;color:#fff;font-size:9px;position:relative}
+.ad-gha .photo::before{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 50%,rgba(0,0,0,.5) 100%);border-radius:6px;pointer-events:none}
+.ad-gha .photo .badge{background:rgba(0,0,0,.5);padding:3px 7px;border-radius:3px;backdrop-filter:blur(4px)}
+.ad-gha .info h5{font-size:14px;font-weight:600;color:#1a0dab;margin-bottom:3px;letter-spacing:-.2px}
+.ad-gha .info .stars{font-size:11px;color:#fbbc04;margin-bottom:5px;letter-spacing:1px}
+.ad-gha .info .stars span{color:#5F6368;font-size:10px;margin-left:6px;letter-spacing:0}
+.ad-gha .info .desc{font-size:10.5px;color:#5F6368;line-height:1.4;margin-bottom:8px}
+.ad-gha .prices{display:flex;flex-direction:column;gap:3px}
+.ad-gha .price{display:grid;grid-template-columns:1fr auto;align-items:center;font-size:11px;padding:4px 8px;border-radius:5px}
+.ad-gha .price.feat{background:rgba(22,112,195,.08);border:1px solid var(--tb18)}
+.ad-gha .price .src{color:#202124;font-weight:500}
+.ad-gha .price.feat .src{font-weight:700;color:var(--blue)}
+.ad-gha .price .val{font-weight:700;font-size:13px;color:#202124}
+.ad-gha .price.feat .val{color:var(--blue)}
+
+/* AD #5: YouTube Preroll */
+.ad-yt{width:460px;aspect-ratio:16/9;background:#000;border-radius:8px;position:relative;overflow:hidden;box-shadow:0 8px 24px rgba(0,0,0,.4)}
+.ad-yt .frame{position:absolute;inset:0;background-size:cover;background-position:center;display:flex;align-items:center;justify-content:center}
+.ad-yt .frame::before{content:"";position:absolute;inset:0;background:linear-gradient(135deg,rgba(14,30,53,.55) 0%,rgba(14,30,53,.30) 50%,rgba(14,30,53,.55) 100%)}
+.ad-yt .play{width:64px;height:64px;border-radius:50%;background:rgba(255,255,255,.95);display:flex;align-items:center;justify-content:center;color:#000;font-size:24px;position:relative;z-index:2;box-shadow:0 4px 16px rgba(0,0,0,.4)}
+.ad-yt .skip{position:absolute;bottom:14px;right:14px;background:rgba(0,0,0,.75);color:#fff;font-size:10px;font-weight:600;padding:6px 12px;border-radius:0;display:flex;align-items:center;gap:5px;z-index:3}
+.ad-yt .skip::after{content:"⏵⏵";font-size:9px;opacity:.85}
+.ad-yt .ad-badge{position:absolute;top:14px;left:14px;background:#FFCC00;color:#000;font-size:10px;font-weight:700;padding:3px 7px;border-radius:3px;letter-spacing:.5px;z-index:3}
+.ad-yt .yt-cta{position:absolute;bottom:0;left:0;right:0;background:linear-gradient(180deg,transparent 0%,rgba(0,0,0,.75) 60%,rgba(0,0,0,.85) 100%);padding:20px 14px 14px;display:flex;align-items:center;gap:10px;z-index:2}
+.ad-yt .yt-cta .av{width:32px;height:32px;border-radius:50%;background:var(--grad);display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700;font-size:13px;flex-shrink:0}
+.ad-yt .yt-cta .info{flex:1;color:#fff;font-size:11px}
+.ad-yt .yt-cta .info .name{font-weight:600}
+.ad-yt .yt-cta .info .copy{color:rgba(255,255,255,.75);font-size:9.5px;margin-top:1px}
+.ad-yt .yt-cta .btn{background:#fff;color:#000;font-weight:600;font-size:10px;padding:6px 12px;border-radius:4px}
+
+/* AD #6: TikTok / Reels vertical */
+.ad-tt{width:200px;aspect-ratio:9/16;background:#000;border-radius:14px;overflow:hidden;position:relative;box-shadow:0 12px 32px rgba(0,0,0,.35)}
+.ad-tt .bg{position:absolute;inset:0;background:linear-gradient(180deg,#0E1E35 0%,#1670C3 50%,#24D5FF 100%)}
+.ad-tt .bg::before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 50% 40%,rgba(36,213,255,.4) 0%,transparent 50%)}
+.ad-tt .top{position:absolute;top:0;left:0;right:0;display:flex;justify-content:center;gap:18px;padding:10px;color:#fff;font-size:10px;font-weight:600;z-index:2}
+.ad-tt .top .active{color:#fff}.ad-tt .top .inactive{color:rgba(255,255,255,.55)}
+.ad-tt .right{position:absolute;right:8px;bottom:60px;display:flex;flex-direction:column;gap:14px;align-items:center;z-index:2;color:#fff}
+.ad-tt .right .av{width:32px;height:32px;border-radius:50%;background:var(--grad);border:2px solid #fff;position:relative}
+.ad-tt .right .av .plus{position:absolute;bottom:-4px;left:50%;transform:translateX(-50%);width:14px;height:14px;border-radius:50%;background:#fe2c55;color:#fff;font-size:10px;font-weight:700;display:flex;align-items:center;justify-content:center}
+.ad-tt .right .ic-blk{display:flex;flex-direction:column;align-items:center;gap:2px;font-size:9px;font-weight:600}
+.ad-tt .right .ic-blk .em{font-size:18px}
+.ad-tt .bot{position:absolute;bottom:0;left:0;right:48px;padding:12px 12px 50px;color:#fff;z-index:2}
+.ad-tt .bot .name{font-size:11px;font-weight:700;margin-bottom:4px}
+.ad-tt .bot .copy{font-size:10px;line-height:1.4;color:rgba(255,255,255,.92);margin-bottom:6px}
+.ad-tt .bot .music{font-size:9px;color:rgba(255,255,255,.85);display:flex;align-items:center;gap:5px}
+.ad-tt .reserve{position:absolute;bottom:8px;left:8px;right:8px;background:#fff;color:var(--navy);font-weight:700;font-size:10px;padding:7px 0;border-radius:4px;text-align:center;z-index:3}
+
+/* Visual: Sites */
+.site-vis{padding:24px;width:100%;display:flex;flex-direction:column;gap:10px}
+.browser{background:#fff;border:1px solid var(--bdr);border-radius:8px;overflow:hidden}
+.browser .url{background:var(--bg);padding:8px 12px;display:flex;align-items:center;gap:8px;border-bottom:1px solid var(--bdr)}
+.browser .url .dots{display:flex;gap:4px}
+.browser .url .dots span{width:8px;height:8px;border-radius:50%;background:var(--bdr)}
+.browser .url .addr{flex:1;background:#fff;border:1px solid var(--bdr);border-radius:4px;padding:3px 8px;font-size:9.5px;color:var(--gray);font-family:monospace}
+.browser .page{height:200px;background-size:cover;background-position:center;position:relative;display:flex;flex-direction:column;justify-content:flex-end;padding:14px;color:#fff}
+.browser .page::before{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(14,30,53,.45) 0%,rgba(14,30,53,.20) 40%,rgba(14,30,53,.85) 100%)}
+.browser .page .heading{position:relative;z-index:1;font-weight:800;font-size:18px;letter-spacing:-.4px;margin-bottom:4px}
+.browser .page .heading em{font-style:normal;font-family:'Fraunces',Georgia,serif;font-weight:400;background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.browser .page .sub{position:relative;z-index:1;font-size:10px;color:rgba(255,255,255,.7);margin-bottom:8px}
+.browser .page .booking{position:relative;z-index:1;background:rgba(255,255,255,.95);border-radius:6px;padding:6px;display:grid;grid-template-columns:1fr 1fr 1fr auto;gap:4px;align-items:center}
+.browser .page .booking .field{padding:5px 7px;font-size:8.5px;color:var(--gray)}
+.browser .page .booking .field strong{display:block;color:var(--navy);font-weight:600;font-size:10px}
+.browser .page .booking .btn{background:var(--grad);color:#fff;font-size:9.5px;font-weight:700;padding:7px 12px;border-radius:4px}
+
+/* Visual: Remarketing */
+.rm-vis{padding:24px;width:100%;display:flex;flex-direction:column;gap:10px}
+.rm-feed{background:#fff;border:1px solid var(--bdr);border-radius:10px;overflow:hidden}
+.rm-feed .post-hdr{padding:8px 12px;display:flex;align-items:center;gap:8px;border-bottom:1px solid var(--bdr)}
+.rm-feed .post-hdr .av{width:24px;height:24px;border-radius:50%;background:var(--grad)}
+.rm-feed .post-hdr .info{flex:1;font-size:10.5px;color:var(--navy);font-weight:600}
+.rm-feed .post-hdr .info small{display:block;font-size:8.5px;color:var(--gray);font-weight:400}
+.rm-feed .post-hdr .ad{font-size:8px;color:var(--gray);background:var(--bg);padding:2px 5px;border-radius:3px;font-weight:600}
+.rm-feed .post-img{height:140px;background-size:cover;background-position:center;display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700;font-size:14px}
+.rm-feed .post-body{padding:10px 12px}
+.rm-feed .post-body .copy{font-size:10px;color:var(--txt);line-height:1.5;margin-bottom:8px}
+.rm-feed .post-body .copy strong{color:var(--navy)}
+.rm-feed .post-body .cta{display:inline-block;background:var(--blue);color:#fff;font-size:9.5px;font-weight:600;padding:5px 12px;border-radius:5px}
+.rm-arrow{display:flex;justify-content:center;color:var(--blue);font-size:18px;font-weight:700;letter-spacing:.5em;line-height:0}
+
+/* Visual: Recovery */
+.rec-vis{padding:24px;width:100%;display:flex;flex-direction:column;gap:10px}
+.wa-chat{background:#ECE5DD;border-radius:10px;padding:14px;display:flex;flex-direction:column;gap:8px}
+.wa-msg{max-width:78%;padding:8px 12px;border-radius:8px;font-size:11px;line-height:1.45;color:var(--navy);position:relative}
+.wa-msg.in{background:#fff;align-self:flex-start;border-top-left-radius:2px}
+.wa-msg.out{background:#DCF8C6;align-self:flex-end;border-top-right-radius:2px}
+.wa-msg .time{display:block;font-size:8px;color:var(--gray);margin-top:3px;text-align:right}
+.wa-msg strong{font-weight:600;color:var(--navy)}
+.email-mini{background:#fff;border:1px solid var(--bdr);border-radius:8px;overflow:hidden}
+.email-mini .em-hdr{background:var(--navy);padding:10px 14px;color:#fff;font-size:11px;font-weight:600;display:flex;justify-content:space-between;align-items:center}
+.email-mini .em-hdr .tag{font-size:8px;color:rgba(255,255,255,.6);text-transform:uppercase;letter-spacing:1px;font-weight:500}
+.email-mini .em-grad{height:2px;background:var(--grad)}
+.email-mini .em-body{padding:10px 14px}
+.email-mini .em-body h6{font-size:12px;color:var(--navy);font-weight:700;margin-bottom:4px}
+.email-mini .em-body p{font-size:10px;color:var(--txt);margin:0 0 6px;line-height:1.5}
+.email-mini .em-body .cta{display:inline-block;background:var(--blue);color:#fff;font-size:9px;font-weight:600;padding:5px 10px;border-radius:4px}
+
+/* ─── 09 · NEXT ─── */
+.next-grid{display:grid;grid-template-columns:1.2fr 1fr;gap:40px;flex:1;align-items:center}
+.steps-list{display:flex;flex-direction:column;gap:14px;margin-top:24px}
+.step-item{display:grid;grid-template-columns:40px 1fr;gap:16px;align-items:start;padding:14px 18px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-radius:10px}
+.step-item .nu{width:32px;height:32px;border-radius:8px;background:var(--grad);color:#fff;font-weight:800;font-size:14px;display:flex;align-items:center;justify-content:center}
+.step-item .info h4{font-weight:700;font-size:15px;color:#fff;margin-bottom:3px}
+.step-item .info p{font-size:12px;color:rgba(255,255,255,.65);margin:0;line-height:1.5}
+.contact-card{padding:30px 28px;background:#fff;border-radius:16px;color:var(--navy)}
+.contact-card .lbl{font-size:10.5px;color:var(--gray);text-transform:uppercase;letter-spacing:1.4px;font-weight:600;margin-bottom:12px}
+.contact-card .who{display:flex;align-items:center;gap:14px;margin-bottom:18px}
+.contact-card .who .av{width:60px;height:60px;border-radius:50%;background:var(--grad);overflow:hidden;box-shadow:0 0 0 2px var(--blue)}
+.contact-card .who .av img{width:100%;height:100%;object-fit:cover}
+.contact-card .who h4{font-size:16px;font-weight:700;color:var(--navy);margin:0}
+.contact-card .who .role{font-size:12px;color:var(--txt);margin-top:1px}
+.contact-card .lines{display:flex;flex-direction:column;gap:10px}
+.contact-card .line{display:grid;grid-template-columns:24px 1fr;gap:12px;align-items:center;font-size:13px;color:var(--navy)}
+.contact-card .line .ic{width:24px;height:24px;border-radius:5px;background:var(--tb09);color:var(--blue);display:flex;align-items:center;justify-content:center;font-size:12px}
+.contact-card .line a{color:var(--blue);font-weight:500;text-decoration:none}
+
+/* ═══════════════════════════════════════════════════════════════
+   NEW SLIDES — FECHAMENTO
+   02 Tempo · 03 Calculadora · 04 Previsibilidade
+   05-06 Cases · 14 Ancoragem
+   ═══════════════════════════════════════════════════════════════ */
+
+/* ─── 02 · TEMPO QUE NÃO VOLTA ─── */
+.slide-tempo::before{background:radial-gradient(circle at 70% 50%,rgba(255,171,107,.25) 0%,transparent 60%)!important;opacity:1}
+.tempo-grid{display:grid;grid-template-columns:1.1fr 1fr;gap:32px;margin-top:14px;align-items:start}
+.tempo-calendar{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.10);border-radius:14px;padding:22px}
+.tc-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:14px;padding-bottom:12px;border-bottom:1px solid rgba(255,255,255,.08)}
+.tc-month{font-size:13.5px;font-weight:700;color:#fff;letter-spacing:.3px}
+.tc-occ{font-size:11px;color:#FFAB6B;font-weight:700;text-transform:uppercase;letter-spacing:1.2px}
+.tc-days{display:grid;grid-template-columns:repeat(7,1fr);gap:5px}
+.tc-day{aspect-ratio:1;border-radius:5px;display:flex;align-items:center;justify-content:center;font-size:10.5px;font-weight:600;color:rgba(255,255,255,.7)}
+.tc-day.sold{background:linear-gradient(135deg,rgba(36,213,255,.35),rgba(22,112,195,.20));color:#fff;border:1px solid rgba(36,213,255,.4)}
+.tc-day.lost{background:rgba(255,107,107,.13);color:rgba(255,107,107,.65);border:1px solid rgba(255,107,107,.25)}
+.tc-legend{display:flex;justify-content:space-between;margin-top:12px;font-size:10.5px;font-weight:600;letter-spacing:.3px}
+.tc-legend .leg.sold{color:#24D5FF}
+.tc-legend .leg.lost{color:#FF6B6B}
+.tempo-msg{display:flex;flex-direction:column;gap:14px}
+.tm-stat{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.10);border-radius:12px;padding:16px 20px;display:flex;align-items:center;gap:18px}
+.tm-num{font-size:42px;font-weight:800;background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;letter-spacing:-1.5px;line-height:1;flex-shrink:0}
+.tm-num.red{background:linear-gradient(135deg,#FF6B6B,#FF4444);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.tm-lbl{font-size:13px;color:rgba(255,255,255,.78);line-height:1.45}
+.tm-lbl strong{color:#fff;font-weight:700}
+.tm-src{display:block;margin-top:6px;font-size:9.5px;color:rgba(255,255,255,.45);font-weight:500;letter-spacing:.3px;font-style:italic}
+.tm-quote{font-size:14px;font-style:italic;color:rgba(255,255,255,.7);padding:8px 0 8px 18px;border-left:3px solid #FFAB6B;line-height:1.5}
+
+/* ─── 03 · CALCULADORA DE DIAGNÓSTICO ─── */
+.slide-calc .body{padding-top:24px}
+.calc-grid{display:grid;grid-template-columns:1fr 1.15fr;gap:24px;margin-top:22px;flex:1}
+.calc-inputs{display:flex;flex-direction:column;gap:12px;background:var(--bg);border-radius:14px;padding:20px 22px;border:1px solid var(--bdr)}
+.calc-field{display:flex;flex-direction:column;gap:6px}
+.calc-field label{font-size:12px;font-weight:700;color:var(--navy);letter-spacing:.2px;display:flex;justify-content:flex-start;align-items:center;gap:6px;flex-wrap:wrap}
+.calc-opt{font-size:9px;font-weight:700;color:var(--gray);text-transform:uppercase;letter-spacing:.8px;background:var(--bg);padding:2px 7px;border-radius:4px;border:1px solid var(--bdr)}
+.calc-field input[type="number"]{font-family:var(--fd);font-size:18px;font-weight:700;color:var(--navy);background:#fff;border:1px solid var(--bdr);border-radius:8px;padding:10px 14px;outline:none;transition:border-color .2s,box-shadow .2s}
+.calc-field input[type="number"]:focus{border-color:var(--blue);box-shadow:0 0 0 3px rgba(22,112,195,.12)}
+.calc-range{display:flex;align-items:center;gap:10px;background:#fff;border:1px solid var(--bdr);border-radius:8px;padding:10px 14px}
+.calc-range input[type="range"]{flex:1;height:6px;-webkit-appearance:none;appearance:none;background:linear-gradient(90deg,#FF6B6B 0%,#FFAB6B 40%,#24D5FF 80%);border-radius:100px;outline:none}
+.calc-range input[type="range"]::-webkit-slider-thumb{-webkit-appearance:none;width:18px;height:18px;border-radius:50%;background:var(--navy);border:3px solid #fff;box-shadow:0 2px 6px rgba(0,0,0,.25);cursor:pointer}
+.calc-range input[type="range"]::-moz-range-thumb{width:18px;height:18px;border-radius:50%;background:var(--navy);border:3px solid #fff;box-shadow:0 2px 6px rgba(0,0,0,.25);cursor:pointer;border:none}
+.calc-range-val{font-weight:800;color:var(--blue);font-size:16px}
+.calc-range-marks{display:flex;justify-content:space-between;font-size:9.5px;color:var(--gray);font-weight:600;letter-spacing:.4px;padding:0 8px;margin-top:-2px}
+.calc-result{background:linear-gradient(160deg,var(--navy) 0%,#1670C3 100%);color:#fff;border-radius:14px;padding:24px;display:flex;flex-direction:column;gap:14px;position:relative;overflow:hidden;box-shadow:0 12px 36px rgba(22,112,195,.25)}
+.calc-result::before{content:"";position:absolute;inset:0;background:var(--grad-r);opacity:.4;pointer-events:none}
+.cr-eyebrow{font-size:10.5px;font-weight:800;letter-spacing:1.8px;text-transform:uppercase;color:rgba(255,255,255,.6);position:relative;z-index:1}
+.cr-main{position:relative;z-index:1}
+.cr-bignum{font-size:46px;font-weight:800;letter-spacing:-1.6px;color:#FFAB6B;line-height:1;font-variant-numeric:tabular-nums;text-shadow:0 0 30px rgba(255,171,107,.18)}
+.cr-bignum .cr-sign{font-weight:600;opacity:.75;margin-right:1px}
+.cr-lbl{font-size:12.5px;color:rgba(255,255,255,.7);margin-top:6px;line-height:1.45}
+.cr-lbl strong{color:#FFAB6B;font-weight:700;font-variant-numeric:tabular-nums}
+
+.cr-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;position:relative;z-index:1}
+.cr-item{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.10);border-radius:10px;padding:12px 14px;display:flex;flex-direction:column;gap:3px}
+.cri-lbl{font-size:9.5px;font-weight:800;text-transform:uppercase;letter-spacing:1.2px;color:rgba(255,255,255,.55)}
+.cri-val{font-size:18px;font-weight:800;color:#fff;letter-spacing:-.3px;font-variant-numeric:tabular-nums;margin-top:2px}
+.cri-sub{font-size:10.5px;color:rgba(255,255,255,.5);font-weight:500;margin-top:2px;font-variant-numeric:tabular-nums}
+
+/* Cards de vazamento (loss) — tom laranja de alerta */
+.cr-item.loss{background:rgba(255,171,107,.08);border-color:rgba(255,171,107,.28)}
+.cr-item.loss .cri-lbl{color:#FFAB6B}
+.cr-item.loss .cri-val{color:#FFAB6B}
+
+/* Card de vazamento desativado (não preencheu input) */
+.cri-empty{color:rgba(255,255,255,.30);font-weight:400;font-size:22px;display:inline-block}
+.cr-item:not(.loss) .cri-sub{font-style:italic;color:rgba(255,255,255,.42)}
+
+.cr-foot{background:rgba(255,171,107,.10);border:1px solid rgba(255,171,107,.28);border-radius:10px;padding:12px 14px;display:flex;align-items:center;gap:10px;font-size:12.5px;color:rgba(255,255,255,.9);line-height:1.45;position:relative;z-index:1}
+.cr-foot .crf-ic{font-size:18px;flex-shrink:0;color:#FFAB6B}
+.cr-foot strong{color:#fff;font-weight:700}
+.calc-note{margin-top:16px;font-size:10.5px;color:var(--gray);font-style:italic;text-align:center;line-height:1.5}
+
+/* ─── 04 · ROLETA VS PREVISIBILIDADE ─── */
+.slide-prev .body{padding-top:24px}
+.slide-prev .title{margin-bottom:10px}
+.slide-prev .lead{margin-bottom:0}
+.prev-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:14px}
+.prev-chart{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.10);border-radius:12px;padding:14px 16px;display:flex;flex-direction:column;gap:8px}
+.prev-chart.bad{border-color:rgba(255,107,107,.30)}
+.prev-chart.good{border-color:rgba(36,213,255,.32);background:linear-gradient(180deg,rgba(36,213,255,.06) 0%,rgba(36,213,255,.02) 100%)}
+.pc-head{display:flex;justify-content:space-between;align-items:flex-end;gap:14px}
+.pc-tag{font-size:10px;font-weight:800;letter-spacing:1.5px;text-transform:uppercase;padding:4px 10px;border-radius:100px;white-space:nowrap}
+.pc-tag.red{background:rgba(255,107,107,.16);color:#FF6B6B}
+.pc-tag.green{background:rgba(36,213,255,.18);color:#24D5FF}
+.pc-sub{font-size:10.5px;color:rgba(255,255,255,.6);font-weight:500;text-align:right;line-height:1.35}
+.pc-graph{display:grid;grid-template-columns:repeat(12,1fr);gap:4px;align-items:flex-end;height:108px;padding:6px 0;border-bottom:1px solid rgba(255,255,255,.08)}
+.pc-bar{width:100%;border-radius:4px 4px 0 0;transition:height .8s ease;min-height:6px}
+.pc-bar.red{background:linear-gradient(180deg,#FF6B6B 0%,rgba(255,107,107,.45) 100%)}
+.pc-bar.green{background:linear-gradient(180deg,#24D5FF 0%,#1670C3 100%)}
+.pc-foot{display:flex;justify-content:space-between;font-size:9.5px;color:rgba(255,255,255,.5);font-weight:600;letter-spacing:.4px}
+.pc-result{margin-top:4px;font-size:11.5px;font-weight:700;text-align:center;padding:7px;border-radius:8px;letter-spacing:.3px}
+.pc-result.red{background:rgba(255,107,107,.10);color:#FF6B6B;border:1px solid rgba(255,107,107,.25)}
+.pc-result.green{background:rgba(36,213,255,.10);color:#24D5FF;border:1px solid rgba(36,213,255,.28)}
+.prev-conclusion{margin-top:14px;background:linear-gradient(90deg,rgba(36,213,255,.10),rgba(22,112,195,.04));border:1px solid rgba(36,213,255,.28);border-left:4px solid #24D5FF;border-radius:10px;padding:12px 18px;display:flex;flex-direction:column;gap:3px}
+.prev-conclusion strong{font-size:13.5px;color:#fff;font-weight:800;letter-spacing:.2px}
+.prev-conclusion span{font-size:12.5px;color:rgba(255,255,255,.78);line-height:1.5}
+
+/* ─── 10 · SITE + REMARKETING + RECUPERAÇÃO (3 cards com mini-mockups) ─── */
+.slide-exec3 .body{padding-top:24px}
+.exec3-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:14px;margin-top:18px;flex:1}
+.exec3-card{background:#fff;border:1px solid var(--bdr);border-radius:14px;padding:14px;display:flex;flex-direction:column;gap:10px;transition:border-color .2s,box-shadow .2s}
+.exec3-card:hover{border-color:var(--tb18);box-shadow:0 6px 20px rgba(22,112,195,.06)}
+.ec3-head{display:flex;flex-direction:column;gap:2px}
+.ec3-lbl{font-size:9.5px;font-weight:800;text-transform:uppercase;letter-spacing:1.4px;color:var(--blue)}
+.ec3-head h4{font-size:15px;font-weight:700;color:var(--navy);letter-spacing:-.3px;margin:0;line-height:1.2}
+.ec3-visual{background:var(--bg);border-radius:10px;padding:10px;height:160px;display:flex;align-items:center;justify-content:center;overflow:hidden;border:1px solid var(--bdr)}
+
+/* mini browser (Sites) */
+.ec3-browser{width:100%;background:#fff;border-radius:6px;overflow:hidden;border:1px solid var(--bdr);box-shadow:0 4px 12px rgba(0,0,0,.06)}
+.ec3-bar{display:flex;gap:3px;padding:5px 8px;background:#f0f0f0;border-bottom:1px solid var(--bdr)}
+.ec3-bar span{width:6px;height:6px;border-radius:50%}
+.ec3-bar span:nth-child(1){background:#FF5F57}
+.ec3-bar span:nth-child(2){background:#FEBC2E}
+.ec3-bar span:nth-child(3){background:#28C840}
+.ec3-img{height:96px;background-size:cover;background-position:center;position:relative;padding:8px;display:flex;flex-direction:column;justify-content:flex-end;color:#fff}
+.ec3-img::before{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(14,30,53,.25) 0%,rgba(14,30,53,.78) 100%)}
+.ec3-head-site{position:relative;z-index:1;font-size:10px;font-weight:800;line-height:1.1;letter-spacing:-.2px;margin-bottom:4px}
+.ec3-head-site em{font-style:normal;font-family:'Fraunces',Georgia,serif;font-weight:400;background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.ec3-booking{position:relative;z-index:1;background:rgba(255,255,255,.95);border-radius:4px;padding:4px;display:flex;gap:3px;align-items:center}
+.ec3-field{padding:2px 4px;font-size:6.5px;color:var(--gray)}
+.ec3-field strong{display:block;color:var(--navy);font-size:7.5px;font-weight:700}
+.ec3-cta{background:var(--grad);color:#fff;padding:4px 6px;border-radius:3px;font-size:7px;font-weight:700;margin-left:auto}
+
+/* mini feed (Remarketing) */
+.ec3-feed{width:100%;background:#fff;border-radius:6px;overflow:hidden;border:1px solid var(--bdr);box-shadow:0 4px 12px rgba(0,0,0,.06)}
+.ec3-feed-hdr{padding:5px 8px;display:flex;align-items:center;gap:6px;border-bottom:1px solid var(--bdr)}
+.ec3-feed-av{width:16px;height:16px;border-radius:50%;background:var(--grad);flex-shrink:0}
+.ec3-feed-info{font-size:8px;font-weight:600;color:var(--navy);line-height:1.1}
+.ec3-feed-info small{display:block;font-size:6.5px;color:var(--gray);font-weight:400}
+.ec3-feed-img{height:62px;background-size:cover;background-position:center}
+.ec3-feed-body{padding:5px 8px 7px;font-size:8px;color:var(--txt);line-height:1.4}
+.ec3-feed-body strong{color:var(--navy);font-weight:700}
+.ec3-feed-cta{display:block;margin-top:3px;color:var(--blue);font-weight:700;font-size:8px}
+
+/* mini WhatsApp (Recuperação) */
+.ec3-wa{width:100%;background:#ECE5DD;border-radius:6px;padding:8px;display:flex;flex-direction:column;gap:4px;overflow:hidden}
+.ec3-wa-msg{font-size:8px;line-height:1.35;padding:4px 7px;border-radius:6px;max-width:88%;color:var(--navy)}
+.ec3-wa-msg.in{background:#fff;align-self:flex-start;border-top-left-radius:2px}
+.ec3-wa-msg.out{background:#DCF8C6;align-self:flex-end;border-top-right-radius:2px}
+.ec3-wa-msg strong{font-weight:700}
+
+.ec3-pts{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:5px}
+.ec3-pts li{font-size:11px;color:var(--txt);line-height:1.45;padding-left:14px;position:relative}
+.ec3-pts li::before{content:"›";position:absolute;left:0;top:-2px;color:var(--blue);font-weight:800;font-size:13px}
+
+/* ─── 12-13 · CASES ─── */
+.case-grid{display:grid;grid-template-columns:1.05fr 1fr;gap:44px;flex:1;align-items:center}
+.case-grid.reverse{grid-template-columns:1fr 1.05fr}
+.case-left .title{font-size:46px;letter-spacing:-1.4px;line-height:1.05;margin-bottom:18px}
+.case-bigstats{margin-top:22px;display:flex;gap:14px;flex-wrap:wrap}
+.case-bigstats.stacked{flex-direction:column;gap:12px;margin-top:0}
+.case-big{flex:1;min-width:160px;background:linear-gradient(135deg,rgba(22,112,195,.06),rgba(36,213,255,.04));border:1px solid var(--tb18);border-radius:14px;padding:20px 24px;display:flex;flex-direction:column;gap:4px}
+.cb-num{font-size:50px;font-weight:800;letter-spacing:-1.8px;background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;line-height:.95}
+.cb-lbl{font-size:12.5px;font-weight:600;color:var(--txt)}
+.case-quote{margin-top:22px;background:#fff;border-left:4px solid var(--blue);padding:16px 20px 16px 24px;border-radius:0 12px 12px 0;position:relative;box-shadow:0 4px 16px rgba(0,0,0,.05)}
+.cq-mark{position:absolute;top:-12px;left:14px;font-family:'Fraunces',Georgia,serif;font-size:64px;color:var(--blue);line-height:1;opacity:.55}
+.case-quote p{font-size:14.5px;color:var(--txt);line-height:1.55;margin:0;font-style:italic}
+.case-img{height:290px;border-radius:14px;background-size:cover;background-position:center;position:relative;box-shadow:0 12px 40px rgba(0,0,0,.12);margin-bottom:14px;overflow:hidden}
+.case-grid.reverse .case-img{height:220px;margin-bottom:12px}
+.case-big.compact{min-width:0;padding:14px 12px;gap:2px}
+.case-big.compact .cb-num{font-size:34px;letter-spacing:-1.2px}
+.case-big.compact .cb-lbl{font-size:11px;line-height:1.3}
+.case-img::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 55%,rgba(0,0,0,.55) 100%)}
+.case-img-tag{position:absolute;bottom:14px;left:14px;background:rgba(255,255,255,.95);color:var(--navy);font-size:11.5px;font-weight:700;padding:7px 14px;border-radius:100px;z-index:1;backdrop-filter:blur(6px);box-shadow:0 4px 12px rgba(0,0,0,.15)}
+.case-metrics{display:flex;flex-direction:column;gap:8px}
+.cm-item{display:grid;grid-template-columns:28px 1fr;gap:10px;align-items:center;padding:10px 14px;background:var(--bg);border-radius:10px}
+.cm-ic{width:24px;height:24px;border-radius:6px;background:var(--grad);color:#fff;font-size:12px;display:flex;align-items:center;justify-content:center}
+.cm-tx{font-size:13px;color:var(--txt)}
+.cm-tx strong{color:var(--navy);font-weight:600}
+.case-comparison{margin-top:22px;background:#fff;border-radius:14px;border:1px solid var(--bdr);overflow:hidden}
+.ccm-row{display:grid;grid-template-columns:1.2fr 1fr 1fr;align-items:center;padding:12px 18px;gap:10px;border-bottom:1px solid var(--bdr)}
+.ccm-row:last-child{border-bottom:none}
+.ccm-row.header{padding:10px 18px;background:var(--bg);border-bottom:1px solid var(--bdr)}
+.ccm-lbl{font-size:10.5px;font-weight:700;text-transform:uppercase;letter-spacing:1.2px;color:var(--gray);text-align:center}
+.ccm-lbl.green{color:var(--blue)}
+.ccm-name{font-size:13px;color:var(--txt);font-weight:500}
+.ccm-val{font-size:15px;font-weight:700;color:var(--gray);text-align:center}
+.ccm-val.green{font-size:19px;background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;letter-spacing:-.3px}
+.case-method{margin-top:18px;padding:14px 18px;background:linear-gradient(135deg,rgba(22,112,195,.05),rgba(36,213,255,.03));border-radius:12px;border:1px solid var(--tb18)}
+.case-method strong{display:block;font-size:10.5px;font-weight:800;text-transform:uppercase;letter-spacing:1.4px;color:var(--blue);margin-bottom:6px}
+.case-method span{font-size:13px;color:var(--txt);line-height:1.55}
+
+/* ─── 11 · TUDO QUE ENTRA NO PLANO (CARROSSEL DE CATEGORIAS) ─── */
+.slide-pacote .body{padding-top:22px;display:flex;flex-direction:column;gap:12px}
+
+/* Hero compacto */
+.pacote-hero{padding-bottom:10px;border-bottom:1px dashed var(--bdr)}
+.ph-eyebrow{font-size:11px;font-weight:800;letter-spacing:1.8px;text-transform:uppercase;color:var(--blue);margin-bottom:6px}
+.ph-title{font-size:30px;font-weight:800;letter-spacing:-1px;line-height:1.05;color:var(--navy);margin:0}
+.ph-title em{font-style:normal;font-family:'Fraunces',Georgia,serif;font-weight:400;background:var(--grad);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;letter-spacing:-.5px}
+
+/* Carousel container */
+.pacote-carousel{flex:1;display:flex;flex-direction:column;gap:8px;min-height:0}
+.pcc-controls{display:flex;justify-content:space-between;align-items:center;padding:0 4px}
+.pcc-label{display:flex;align-items:center;gap:9px;font-size:11px;color:var(--navy);font-weight:800;text-transform:uppercase;letter-spacing:1.5px}
+.pcc-label .ic{width:22px;height:22px;border-radius:6px;background:var(--grad);color:#fff;display:flex;align-items:center;justify-content:center;font-size:11px}
+.pcc-arrows{display:flex;gap:6px}
+.pcc-btn{width:32px;height:32px;border-radius:8px;background:#fff;border:1px solid var(--bdr);color:var(--navy);font-weight:700;font-size:16px;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all .2s}
+.pcc-btn:hover{background:var(--grad);color:#fff;border-color:transparent}
+
+.pcc-track{flex:1;position:relative;overflow:hidden;border-radius:14px;background:linear-gradient(180deg,#fff 0%,var(--bg) 100%);border:1px solid var(--bdr);box-shadow:0 2px 8px rgba(0,0,0,.03)}
+.pcc-slide{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;opacity:0;transform:scale(.97);transition:opacity .55s ease,transform .55s ease;pointer-events:none;padding:24px 32px;overflow:auto}
+.pcc-slide.active{opacity:1;transform:scale(1);pointer-events:auto}
+
+.pcs-content{display:grid;grid-template-columns:1fr 1.35fr;gap:32px;width:100%;align-items:center}
+.pcs-left{display:flex;flex-direction:column;gap:12px}
+.pcs-ic{width:78px;height:78px;border-radius:18px;background:linear-gradient(135deg,#1670C3 0%,#24D5FF 100%);color:#fff;display:flex;align-items:center;justify-content:center;box-shadow:0 14px 36px rgba(22,112,195,.30),0 0 50px rgba(36,213,255,.15)}
+.pcs-ic svg{width:40px;height:40px}
+.pcs-nu{font-size:10.5px;font-weight:800;color:var(--blue);letter-spacing:1.6px;background:var(--tb09);padding:5px 11px;border-radius:5px;align-self:flex-start;text-transform:uppercase}
+.pcs-title{font-size:30px;font-weight:800;color:var(--navy);letter-spacing:-.8px;line-height:1.05;margin:0}
+.pcs-sub{font-size:13.5px;color:var(--txt);line-height:1.5;margin:0;max-width:300px}
+
+.pcs-right{display:flex;flex-direction:column}
+.pcs-items{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:9px}
+.pcs-items li{font-size:13.5px;color:var(--navy);line-height:1.4;padding-left:24px;position:relative;font-weight:500}
+.pcs-items li::before{content:"✓";position:absolute;left:0;top:-1px;color:var(--blue);font-weight:800;font-size:15px}
+.pcs-items li.wow{background:linear-gradient(135deg,#0E1E35 0%,#1670C3 100%);color:#fff;padding:11px 14px;border-radius:10px;font-weight:600;position:relative;overflow:hidden;box-shadow:0 8px 22px rgba(22,112,195,.25);margin:3px 0;display:flex;flex-direction:column;gap:4px;padding-left:14px}
+.pcs-items li.wow::before{display:none}
+.pcs-items li.wow::after{content:"";position:absolute;inset:0;background:var(--grad-r);opacity:.35;pointer-events:none}
+.pcs-items li.wow .wow-badge{font-size:8.5px;font-weight:800;background:var(--grad);color:#fff;padding:3px 8px;border-radius:4px;letter-spacing:1.4px;align-self:flex-start;position:relative;z-index:1;box-shadow:0 2px 6px rgba(36,213,255,.35)}
+.pcs-items li.wow .wow-tx{position:relative;z-index:1;font-size:13.5px;line-height:1.35}
+
+/* Dots */
+.pcc-dots{display:flex;justify-content:center;gap:8px;align-items:center;padding:4px 0}
+.pcc-dot{width:8px;height:8px;border-radius:50%;background:var(--bdr);cursor:pointer;transition:all .35s;border:none;padding:0}
+.pcc-dot.active{background:var(--grad);width:28px;border-radius:100px}
+
+/* Footer dark banner com stats */
+.pacote-foot{background:linear-gradient(90deg,#0E1E35 0%,#1670C3 100%);color:#fff;padding:14px 22px;border-radius:12px;display:grid;grid-template-columns:auto 1fr;gap:24px;align-items:center;position:relative;overflow:hidden;box-shadow:0 10px 28px rgba(22,112,195,.22)}
+.pacote-foot::before{content:"";position:absolute;inset:0;background:var(--grad-r);opacity:.45;pointer-events:none}
+.pf-stats{display:flex;align-items:center;gap:18px;position:relative;z-index:1}
+.pfs{display:flex;flex-direction:column;align-items:flex-start;gap:0}
+.pfs strong{font-size:30px;font-weight:800;background:var(--grad);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;letter-spacing:-1px;line-height:.95}
+.pfs span{font-size:9.5px;color:rgba(255,255,255,.7);font-weight:700;letter-spacing:1.2px;text-transform:uppercase;margin-top:2px}
+.pfs:not(:last-child){border-right:1px solid rgba(255,255,255,.15);padding-right:18px}
+.pf-msg{position:relative;z-index:1;display:flex;flex-direction:column;gap:2px}
+.pf-msg strong{font-size:14.5px;color:#fff;font-weight:700;letter-spacing:-.1px}
+.pf-msg span{font-size:12px;color:rgba(255,255,255,.72);line-height:1.45}
+
+/* ─── 14 · ANCORAGEM ─── */
+.slide-anchor .body{padding-top:24px}
+.anchor-grid{display:grid;grid-template-columns:1fr 1fr 1.1fr;gap:14px;margin-top:20px;flex:1}
+.anchor-card{border-radius:14px;padding:20px 18px;display:flex;flex-direction:column;gap:10px;border:1px solid var(--bdr);background:#fff;position:relative}
+.anchor-card.option{background:linear-gradient(180deg,#fff 0%,var(--bg) 100%)}
+.anchor-card.komplexa{background:linear-gradient(160deg,var(--navy) 0%,#1670C3 100%);color:#fff;border:none;box-shadow:0 14px 40px rgba(22,112,195,.28)}
+.anchor-card.komplexa::before{content:"";position:absolute;inset:0;background:var(--grad-r);opacity:.45;border-radius:14px;pointer-events:none}
+.anc-tag{font-size:9.5px;font-weight:800;letter-spacing:1.6px;text-transform:uppercase;padding:4px 11px;background:var(--bg);color:var(--gray);border-radius:100px;align-self:flex-start;position:relative;z-index:1}
+.anc-tag.grad{background:#fff;color:var(--blue)}
+.anchor-card h4{font-size:16px;font-weight:700;color:var(--navy);letter-spacing:-.3px;position:relative;z-index:1;margin:0}
+.anchor-card.komplexa h4{color:#fff;font-size:17px}
+.anc-list{display:flex;flex-direction:column;gap:4px;flex:1;position:relative;z-index:1}
+.anc-item{display:flex;justify-content:space-between;align-items:center;padding:7px 0;font-size:11.5px;color:var(--txt);border-bottom:1px dashed var(--bdr)}
+.anc-item:last-child{border-bottom:none}
+.anc-item .v{font-weight:700;color:var(--navy)}
+.anc-total{padding:12px 0 0;margin-top:6px;border-top:2px solid var(--bdr);font-size:11.5px;font-weight:700;color:var(--navy);text-transform:uppercase;letter-spacing:1px;display:flex;justify-content:space-between;align-items:center;position:relative;z-index:1}
+.anc-total span{font-size:18px;letter-spacing:-.4px;color:#FF6B6B;font-weight:800;text-transform:none}
+.anc-cav{margin:6px 0 0;font-size:10.5px;color:var(--gray);line-height:1.5;font-style:italic;position:relative;z-index:1}
+.anc-features{display:flex;flex-direction:column;gap:9px;flex:1;position:relative;z-index:1;margin-top:4px}
+.anc-features > div{display:flex;align-items:center;gap:10px;font-size:12.5px;color:rgba(255,255,255,.92)}
+.anc-features .ck{width:20px;height:20px;border-radius:50%;background:rgba(36,213,255,.22);color:#24D5FF;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;flex-shrink:0}
+.anc-features strong{color:#fff;font-weight:700}
+.anc-total-k{padding-top:14px;border-top:1px solid rgba(255,255,255,.18);display:flex;flex-direction:column;gap:4px;position:relative;z-index:1}
+.ank-lbl{font-size:10.5px;font-weight:800;letter-spacing:1.6px;text-transform:uppercase;color:rgba(255,255,255,.55)}
+.ank-val{font-size:18px;font-weight:800;letter-spacing:-.3px;background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;line-height:1.2}
+.ank-sub{font-size:11.5px;color:rgba(255,255,255,.7);font-style:italic;margin-top:4px}
+
+/* ─── KEYBOARD NAV (presentation mode) ─── */
+.deck.present{padding:0;gap:0;background:#000;min-height:100vh;height:100vh;width:100vw;justify-content:center;align-items:center;overflow:hidden}
+.deck.present .slide{margin:0;border-radius:0;box-shadow:none;display:none;flex-shrink:0}
+.deck.present .slide.active{display:flex;transform:scale(var(--present-scale,1));transform-origin:center center}
+.nav-hint{position:fixed;bottom:14px;right:14px;background:rgba(0,0,0,.7);color:#fff;padding:6px 12px;border-radius:6px;font-size:11px;font-family:var(--fd);letter-spacing:.4px;z-index:99;display:none}
+.deck.present + .nav-hint{display:block}
+.toggle-present{position:fixed;top:14px;right:14px;background:var(--grad);color:#fff;border:none;padding:8px 16px;border-radius:8px;font-family:var(--fd);font-weight:600;font-size:12px;cursor:pointer;z-index:99;letter-spacing:.3px}
+.toggle-pdf{position:fixed;top:14px;left:14px;background:#fff;border:1px solid var(--bdr);color:var(--navy);padding:8px 14px;border-radius:8px;font-family:var(--fd);font-weight:600;font-size:12px;cursor:pointer;z-index:99;letter-spacing:.3px;display:flex;align-items:center;gap:6px;box-shadow:0 2px 8px rgba(0,0,0,.08)}
+.toggle-pdf:hover{background:var(--bg);border-color:var(--blue);color:var(--blue)}
+
+/* ─── MOBILE — reflow para link enviado ao cliente ─── */
+.scroll-progress{position:fixed;top:0;left:0;height:3px;background:var(--grad);z-index:100;transition:width .1s ease;width:0;display:none}
+.to-top{position:fixed;bottom:20px;right:20px;width:46px;height:46px;border-radius:50%;background:var(--grad);color:#fff;border:none;font-size:18px;font-weight:700;cursor:pointer;box-shadow:0 4px 16px rgba(0,0,0,.25);display:none;z-index:99;align-items:center;justify-content:center;opacity:0;pointer-events:none;transition:opacity .25s}
+.to-top.visible{opacity:1;pointer-events:auto}
+
+@media (max-width:820px){
+  html,body{background:#fff;overflow-x:hidden;max-width:100vw}
+  .toggle-present,.toggle-pdf{display:none}
+  .scroll-progress{display:block}
+  .to-top{display:flex}
+
+  .deck{padding:0;gap:0;align-items:stretch;background:#fff;width:100%;max-width:100vw;overflow-x:hidden}
+  .slide{width:100%;height:auto;min-height:auto;border-radius:0;box-shadow:none;flex-shrink:0;overflow-x:hidden;max-width:100vw}
+  .slide.dark{box-shadow:inset 0 -1px 0 rgba(255,255,255,.04)}
+
+  .slide .top{padding:22px 20px 12px}
+  .slide .top img.brand{height:26px}
+  .slide .top .pg{font-size:10px}
+  .slide .body,.slide .cover-body,.slide .money-body{padding:14px 14px 26px}
+  .slide .bot{padding:14px 20px 22px;font-size:9.5px}
+
+  .title{font-size:30px;letter-spacing:-.8px;line-height:1.1;margin-bottom:14px}
+  .lead{font-size:15px;line-height:1.55;max-width:100%}
+  .eyebrow{font-size:10.5px;letter-spacing:1.4px;margin-bottom:10px}
+  .subtitle{font-size:16px;margin:18px 0 10px}
+
+  /* COVER — preenche tela inteira no mobile (com 100dvh pra Safari iOS) */
+  .cover{min-height:100vh;min-height:100dvh;display:flex!important;flex-direction:column!important}
+  .cover .top{padding:24px 20px 0}
+  .cover .top img.brand{height:28px}
+  .cover .body{flex:1!important;padding:24px 20px!important;display:flex!important;align-items:center!important;justify-content:center!important}
+  .cover-mid{padding:0!important;width:100%}
+  .cover-eye{font-size:12px;margin-bottom:10px}
+  .cover-title{font-size:46px;letter-spacing:-1.6px;line-height:1;margin-bottom:18px}
+  .cover-sub{font-size:15px;max-width:100%;line-height:1.5;color:rgba(255,255,255,.78)}
+
+  /* ABOUT */
+  .about-grid{grid-template-columns:1fr;gap:28px;margin-top:14px}
+  .about-bio p{font-size:14px;line-height:1.6;margin-bottom:14px}
+  .about-bio .pillstrip{justify-content:flex-start}
+  .about-bio .pillstrip .ps{font-size:10.5px;padding:5px 10px}
+  .about-partners h4{text-align:left;font-size:10.5px;margin-bottom:14px}
+  .partner-grid{gap:8px}
+  .partner{padding:14px 10px;min-height:84px;gap:6px}
+  .partner .logo{height:38px}
+  .partner .logo img{max-height:38px}
+  .partner .cat{font-size:8px}
+
+  /* MONEY (slide 03) — mantém EXATA composição desktop, slide ocupa tela toda */
+  .slide-money{min-height:100vh;min-height:100dvh}
+  .slide-money .body{overflow:hidden;display:flex;flex-direction:column;justify-content:center;padding:14px 14px 26px}
+  .money-grid{padding:0;margin:0}
+  .money-left{padding:0;width:100%;max-width:100%}
+  .money-left .eyebrow{margin-bottom:8px}
+  .money-left .title{font-size:26px;letter-spacing:-.6px;line-height:1.15;max-width:100%;text-wrap:wrap}
+  .money-left .lead{font-size:13.5px;line-height:1.5;margin-top:14px}
+  .money-grid{grid-template-columns:1fr;gap:32px;align-items:stretch}
+  .money-left .lead{font-size:14px;max-width:100%}
+  .money-left .stats{margin-top:16px;gap:8px}
+  .money-left .stat{padding:9px 12px}
+  .money-left .stat .tx{font-size:12px}
+  /* zoom maior + gap vertical generoso entre os blocos do fluxo */
+  .flow-stage{zoom:.85;margin:0 auto;gap:28px}
+  /* tightening da frow só no mobile pra garantir que a fileira de 3 cards caiba */
+  .frow{gap:8px}
+
+  /* ETAPAS (04-08) — texto em cima, visual embaixo */
+  .etapa-grid{grid-template-columns:1fr;gap:22px;align-items:stretch}
+  .etapa-left h2.title{font-size:28px}
+  .etapa-points{margin-top:18px;gap:12px}
+  .etapa-points li{font-size:13px;grid-template-columns:28px 1fr;gap:12px}
+  .etapa-points li .ic{width:24px;height:24px;font-size:10px}
+  .etapa-visual{height:auto;min-height:340px;padding:14px}
+
+  /* AI segmentation */
+  .ai-vis{padding:14px;gap:10px}
+  .ai-people{gap:5px}
+  .ai-person{font-size:11px}
+  .ai-brain{font-size:11px;padding:10px 14px}
+  .ai-result{flex-wrap:wrap;justify-content:center;gap:6px}
+  .ai-result .pill-r{font-size:9.5px;padding:4px 10px}
+
+  /* Ads carousel (slide 05) */
+  .etapa-visual{overflow:visible}
+  .ads-carousel{padding:12px;gap:10px}
+  .car-track{min-height:380px;border-radius:8px}
+  .car-label{font-size:9px}
+  .car-btn{width:30px;height:30px}
+  .ad-ig-feed{width:240px}
+  .ad-ig-feed .img{aspect-ratio:1/1}
+  .ad-ig-feed .body .copy{font-size:10.5px}
+  .ad-ig-story{width:170px}
+  .ad-ig-story .center h3{font-size:20px}
+  .ad-gs{width:100%;max-width:320px;padding:14px 16px}
+  .ad-gs .ttl{font-size:15px}
+  .ad-gs .desc{font-size:11px}
+  .ad-gs .links{grid-template-columns:1fr;gap:4px}
+  .ad-gha{width:100%;max-width:320px}
+  .ad-gha .body{grid-template-columns:90px 1fr;gap:10px;padding:10px}
+  .ad-gha .photo{height:90px}
+  .ad-gha .info h5{font-size:12.5px}
+  .ad-gha .price{font-size:10px}
+  .ad-gha .price .val{font-size:11px}
+  .ad-yt{width:100%;max-width:320px}
+
+  /* Sites mockup (slide 06) */
+  .site-vis{padding:14px;gap:8px}
+  .browser .page{height:160px;padding:12px}
+  .browser .page .heading{font-size:15px}
+  .browser .page .booking{padding:5px;grid-template-columns:1fr 1fr 1fr auto;gap:3px}
+  .browser .page .booking .field{padding:4px 5px;font-size:7.5px}
+  .browser .page .booking .field strong{font-size:9px}
+  .browser .page .booking .btn{padding:6px 9px;font-size:8.5px}
+
+  /* Remarketing (slide 07) */
+  .rm-vis{padding:14px;gap:8px}
+  .rm-feed .post-img{height:130px;font-size:11.5px}
+
+  /* Recuperação (slide 08) */
+  .rec-vis{padding:14px;gap:8px}
+  .wa-chat{padding:12px;gap:6px}
+  .wa-msg{font-size:11px;max-width:85%}
+  .email-mini .em-body h6{font-size:12px}
+  .email-mini .em-body p{font-size:10.5px}
+
+  /* NEXT (slide 15) */
+  .next-grid{grid-template-columns:1fr;gap:24px}
+  .steps-list{gap:10px;margin-top:18px}
+  .step-item{padding:12px 14px;gap:12px}
+  .step-item .info h4{font-size:13.5px}
+  .step-item .info p{font-size:11.5px}
+  .contact-card{padding:22px 20px;border-radius:14px}
+  .contact-card .who .av{width:54px;height:54px}
+  .contact-card .who h4{font-size:15px}
+  .contact-card .line{font-size:12.5px}
+
+  /* ═══ NOVOS SLIDES — MOBILE ═══ */
+  /* 02 TEMPO QUE NÃO VOLTA */
+  .tempo-grid{grid-template-columns:1fr;gap:16px;margin-top:14px}
+  .tempo-calendar{padding:16px}
+  .tc-month{font-size:12.5px}
+  .tc-occ{font-size:10px}
+  .tc-days{gap:4px}
+  .tc-day{font-size:9.5px}
+  .tc-legend{font-size:10px;gap:6px;flex-wrap:wrap}
+  .tm-stat{padding:14px 16px;gap:12px}
+  .tm-num{font-size:34px}
+  .tm-lbl{font-size:12px}
+  .tm-quote{font-size:12.5px;padding:6px 0 6px 14px}
+
+  /* 03 CALCULADORA */
+  .calc-grid{grid-template-columns:1fr;gap:16px;margin-top:16px}
+  .calc-inputs{padding:16px 18px;gap:10px}
+  .calc-field label{font-size:11px}
+  .calc-field input[type="number"]{font-size:16px;padding:9px 12px}
+  .calc-range-val{font-size:14px}
+  .calc-result{padding:18px;gap:12px}
+  .cr-bignum{font-size:32px}
+  .cr-lbl{font-size:11.5px}
+  .cr-grid{gap:8px}
+  .cr-item{padding:10px 12px}
+  .cri-lbl{font-size:8.5px}
+  .cri-val{font-size:15px}
+  .cri-sub{font-size:9.5px}
+  .cr-foot{font-size:11.5px;padding:10px 12px}
+  .calc-note{font-size:10px;margin-top:12px}
+
+  /* 04 PREVISIBILIDADE */
+  .prev-grid{grid-template-columns:1fr;gap:14px;margin-top:14px}
+  .prev-chart{padding:14px 16px;gap:10px}
+  .pc-head{align-items:flex-start;flex-direction:column;gap:4px}
+  .pc-sub{text-align:left;font-size:10.5px}
+  .pc-graph{height:100px;gap:3px}
+  .pc-foot{font-size:9.5px}
+  .pc-result{font-size:11px;padding:7px}
+  .prev-conclusion{padding:12px 16px}
+  .prev-conclusion strong{font-size:13px}
+  .prev-conclusion span{font-size:12px}
+
+  /* 10 SITE + REMKT + RECUPERAÇÃO */
+  .exec3-grid{grid-template-columns:1fr;gap:12px;margin-top:14px}
+  .exec3-card{padding:14px;gap:10px}
+  .ec3-head h4{font-size:14px}
+  .ec3-lbl{font-size:9px}
+  .ec3-visual{height:150px}
+  .ec3-pts{gap:5px}
+  .ec3-pts li{font-size:11px;padding-left:13px}
+
+  /* 12-13 CASES */
+  .case-grid,.case-grid.reverse{grid-template-columns:1fr;gap:22px}
+  .case-left .title{font-size:28px;margin-bottom:14px}
+  .case-bigstats{flex-direction:column;gap:10px}
+  .case-bigstats.stacked{margin-top:14px}
+  .cb-num{font-size:36px}
+  .cb-lbl{font-size:11.5px}
+  .case-quote{margin-top:16px;padding:14px 18px}
+  .case-quote p{font-size:13px}
+  .case-img{height:200px}
+  .case-comparison{margin-top:16px}
+  .ccm-row{padding:10px 12px;gap:6px}
+  .ccm-name{font-size:11.5px}
+  .ccm-val{font-size:13px}
+  .ccm-val.green{font-size:15px}
+  .case-method{padding:12px 14px;margin-top:14px}
+  .case-method span{font-size:12px}
+
+  /* 11 TUDO QUE ENTRA NO PLANO (carrossel) */
+  .slide-pacote .body{gap:12px;padding-top:18px}
+  .pacote-hero{padding-bottom:10px}
+  .ph-eyebrow{font-size:10px;letter-spacing:1.4px}
+  .ph-title{font-size:22px;letter-spacing:-.6px}
+
+  .pacote-carousel{gap:8px}
+  .pcc-label{font-size:10px;gap:7px}
+  .pcc-label .ic{width:20px;height:20px;font-size:10px}
+  .pcc-btn{width:28px;height:28px;font-size:14px}
+
+  .pcc-track{min-height:380px}
+  .pcc-slide{padding:18px}
+  .pcs-content{grid-template-columns:1fr;gap:14px}
+  .pcs-left{gap:8px;text-align:left;align-items:flex-start}
+  .pcs-ic{width:56px;height:56px;border-radius:13px}
+  .pcs-ic svg{width:28px;height:28px}
+  .pcs-nu{font-size:9.5px;padding:4px 10px}
+  .pcs-title{font-size:22px;letter-spacing:-.5px}
+  .pcs-sub{font-size:12.5px;max-width:none}
+  .pcs-items{gap:7px}
+  .pcs-items li{font-size:12px;padding-left:20px}
+  .pcs-items li.wow{padding:10px 12px}
+  .pcs-items li.wow .wow-badge{font-size:7.5px;padding:2px 6px}
+  .pcs-items li.wow .wow-tx{font-size:12px}
+
+  .pcc-dots{padding:2px 0}
+
+  .pacote-foot{grid-template-columns:1fr;gap:12px;padding:12px 16px;text-align:center}
+  .pf-stats{justify-content:center;gap:14px}
+  .pfs strong{font-size:24px}
+  .pfs span{font-size:9px}
+  .pfs:not(:last-child){padding-right:14px}
+  .pf-msg{align-items:center;text-align:center}
+  .pf-msg strong{font-size:13px}
+  .pf-msg span{font-size:11.5px}
+
+  /* 14 ANCORAGEM */
+  .anchor-grid{grid-template-columns:1fr;gap:12px;margin-top:14px}
+  .anchor-card{padding:16px}
+  .anchor-card h4{font-size:14.5px}
+  .anc-item{font-size:11px;padding:6px 0}
+  .anc-item .v{font-size:11.5px}
+  .anc-total{font-size:11px}
+  .anc-total span{font-size:16px}
+  .anc-cav{font-size:10.5px}
+  .anc-features > div{font-size:12px}
+  .ank-val{font-size:16px}
+  .ank-sub{font-size:11px}
+}
+
+@media (max-width:480px){
+  .title{font-size:26px}
+  .cover-title{font-size:38px;letter-spacing:-1.3px}
+  .flow-stage{zoom:.78;gap:24px}
+  .ad-ig-feed{width:220px}
+  .ad-ig-story{width:160px}
+  .ad-gs,.ad-gha,.ad-yt{max-width:300px}
+  .car-track{min-height:420px}
+}
+@media (max-width:380px){
+  .flow-stage{zoom:.68;gap:20px}
+}
+
+@media print{
+  *{-webkit-print-color-adjust:exact!important;print-color-adjust:exact!important;color-adjust:exact!important;animation:none!important;transition:none!important}
+  @page{size:13.333in 7.5in;margin:0}
+  html,body{background:#fff!important;margin:0!important;padding:0!important}
+
+  /* Esconder TODA UI interativa */
+  .toggle-present,.toggle-pdf,.to-top,.scroll-progress,.nav-hint{display:none!important}
+  .car-controls,.car-dots{display:none!important}
+  /* Desliga animações SVG SMIL (animateMotion) que travam o print */
+  .flow-svg circle{display:none!important}
+  .flow-svg animateMotion{display:none!important}
+
+  /* Deck/slide reset (anula qualquer regra mobile) */
+  .deck{padding:0!important;gap:0!important;background:#fff!important;align-items:stretch!important;display:block!important}
+  .slide{border-radius:0!important;box-shadow:none!important;width:1280px!important;height:720px!important;min-height:0!important;margin:0!important;page-break-after:always!important;break-after:page!important;page-break-inside:avoid!important;break-inside:avoid-page!important;display:flex!important;flex-direction:column!important;flex-shrink:0!important;transform:none!important}
+  .slide:last-child{page-break-after:auto!important;break-after:auto!important}
+
+  /* Slide structure default desktop padding */
+  .slide .top{padding:36px 56px 0!important}
+  .slide .top img.brand{height:32px!important}
+  .slide .body{padding:32px 56px!important;overflow:visible!important;display:flex!important;flex-direction:column!important;flex:1!important;justify-content:initial!important;align-items:initial!important}
+  .slide .bot{padding:20px 56px 28px!important}
+
+  /* Cover */
+  .cover{min-height:0!important;height:720px!important;display:flex!important;flex-direction:column!important}
+  .cover-title{font-size:88px!important;letter-spacing:-3px!important;line-height:.98!important}
+
+  /* Money slide — força composição desktop, anula zoom mobile */
+  .slide-money{min-height:0!important;height:720px!important}
+  .slide-money .body{overflow:visible!important;justify-content:initial!important}
+  .money-grid{grid-template-columns:38% 62%!important;gap:32px!important}
+  .flow-stage{zoom:1!important;gap:14px!important;margin:0!important;height:100%!important}
+  .frow{flex-direction:row!important;flex-wrap:nowrap!important;gap:18px!important}
+
+  /* Etapas — força grid 2col desktop */
+  .etapa-grid{grid-template-columns:1fr 1.1fr!important;gap:48px!important}
+  .etapa-visual{height:520px!important;overflow:hidden!important}
+
+  /* CARROSSEL — mostra só o 1º anúncio (Instagram Feed) como exemplo */
+  .ads-carousel{padding:16px!important;gap:0!important;display:flex!important;align-items:center!important;justify-content:center!important;height:100%!important}
+  .car-track{position:relative!important;height:100%!important;min-height:auto!important;overflow:hidden!important;display:flex!important;align-items:center!important;justify-content:center!important;padding:0!important;width:100%!important}
+  .car-slide{display:none!important}
+  .car-slide.active,.car-slide:first-child{display:flex!important;position:relative!important;inset:auto!important;opacity:1!important;transform:none!important;pointer-events:auto!important;align-items:center!important;justify-content:center!important}
+
+  /* Cover footer/meta caso exista */
+  .cover-mid{padding:0 56px!important}
+  .cover .body{padding:40px 56px!important;justify-content:center!important}
+
+  /* About grid 2col */
+  .about-grid{grid-template-columns:1.1fr 1fr!important;gap:48px!important}
+
+  /* Next grid 2col */
+  .next-grid{grid-template-columns:1.2fr 1fr!important;gap:40px!important}
+}
+</style>
+</head>
+<body>
+
+<div class="scroll-progress" id="scrollProgress"></div>
+<button class="toggle-present" onclick="togglePresent()">▶ Apresentar</button>
+<button class="to-top" id="toTop" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Voltar ao topo">↑</button>
+
+<div class="deck" id="deck">
+
+<!-- ═══════════════════ 01 · COVER ═══════════════════ -->
+<section class="slide dark active cover">
+  <div class="top"><img class="brand" src="assets/logotipo_white.svg" alt="Komplexa"><span class="pg">Komplexa · 2026</span></div>
+  <div class="body cover-body">
+    <div class="cover-mid">
+      <div class="cover-eye">Apresentação institucional</div>
+      <h1 class="cover-title">Marketing hoteleiro<br><span class="accent">com método</span></h1>
+      <p class="cover-sub">Sistema completo de aquisição e conversão para hotéis e pousadas crescerem com previsibilidade.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════ 02 · O TEMPO QUE NÃO VOLTA ═══════════════════ -->
+<section class="slide dark slide-tempo">
+  <div class="top"><img class="brand" src="assets/logotipo_white.svg" alt="Komplexa"><span class="pg">02 · 12</span></div>
+  <div class="body">
+    <div class="eyebrow" style="color:#FFAB6B">A dor invisível da hotelaria</div>
+    <h2 class="title" style="font-size:48px">Cada noite vazia é receita<br>que <em>nunca</em> volta.</h2>
+    <p class="lead">Diferente de qualquer outro negócio, sua diária <strong>não pode ser estocada</strong>. A noite de hoje, se não foi vendida hoje, está perdida pra sempre. Não volta amanhã. Não volta no mês que vem. Evapora.</p>
+    <div class="tempo-grid">
+      <div class="tempo-calendar">
+        <div class="tc-head">
+          <span class="tc-month">Mês típico de baixa</span>
+          <span class="tc-occ">Ocupação: 35%</span>
+        </div>
+        <div class="tc-days">
+          <div class="tc-day sold">1</div><div class="tc-day lost">2</div><div class="tc-day lost">3</div><div class="tc-day lost">4</div><div class="tc-day sold">5</div><div class="tc-day lost">6</div><div class="tc-day lost">7</div>
+          <div class="tc-day lost">8</div><div class="tc-day sold">9</div><div class="tc-day lost">10</div><div class="tc-day lost">11</div><div class="tc-day sold">12</div><div class="tc-day lost">13</div><div class="tc-day lost">14</div>
+          <div class="tc-day sold">15</div><div class="tc-day lost">16</div><div class="tc-day lost">17</div><div class="tc-day sold">18</div><div class="tc-day lost">19</div><div class="tc-day lost">20</div><div class="tc-day lost">21</div>
+          <div class="tc-day sold">22</div><div class="tc-day lost">23</div><div class="tc-day lost">24</div><div class="tc-day sold">25</div><div class="tc-day lost">26</div><div class="tc-day sold">27</div><div class="tc-day lost">28</div>
+          <div class="tc-day lost">29</div><div class="tc-day sold">30</div>
+        </div>
+        <div class="tc-legend">
+          <span class="leg sold">● Vendido (10 dias)</span>
+          <span class="leg lost">● Receita perdida (20 dias)</span>
+        </div>
+      </div>
+      <div class="tempo-msg">
+        <div class="tm-stat">
+          <span class="tm-num">~40%</span>
+          <span class="tm-lbl">das noites do ano sem receita capturada — ocupação média Brasil: <strong>59,2%</strong>
+            <span class="tm-src">Fonte: FOHB · InFOHB (Panorama da Hotelaria Brasileira)</span>
+          </span>
+        </div>
+        <div class="tm-stat">
+          <span class="tm-num red">100%</span>
+          <span class="tm-lbl">dessa receita evapora — não pode ser recuperada nunca mais</span>
+        </div>
+        <div class="tm-quote">"Em hotelaria, tempo é literalmente dinheiro. Cada hora que passa, diárias morrem em silêncio."</div>
+      </div>
+    </div>
+  </div>
+  <div class="bot"><span>komplexahoteis.com</span><span>02 · 12</span></div>
+</section>
+
+<!-- ═══════════════════ 03 · CALCULADORA DE DIAGNÓSTICO ═══════════════════ -->
+<section class="slide light slide-calc">
+  <div class="top"><img class="brand" src="assets/logotipo_blue.svg" alt="Komplexa"><span class="pg">03 · 12</span></div>
+  <div class="body">
+    <div class="eyebrow">Diagnóstico operacional do seu hotel</div>
+    <h2 class="title" style="font-size:44px">Quanto seu hotel está <em>deixando na mesa</em>?</h2>
+    <p class="lead">Com os números reais da sua operação, dimensionamos juntos o tamanho exato da receita que não está sendo capturada hoje — e o ponto de virada possível.</p>
+    <div class="calc-grid">
+      <div class="calc-inputs">
+        <div class="calc-field">
+          <label>Unidades habitacionais (UHs)</label>
+          <input type="number" id="calcUhs" value="40" min="1">
+        </div>
+        <div class="calc-field">
+          <label>Diária média atual (R$)</label>
+          <input type="number" id="calcDiaria" value="450" min="1">
+        </div>
+        <div class="calc-field">
+          <label>Diária potencial (R$) <span class="calc-opt">opcional</span></label>
+          <input type="number" id="calcNovaDiaria" placeholder="Deixe vazio se já está no preço" min="0">
+        </div>
+        <div class="calc-field">
+          <label>Ocupação média atual: <span id="calcOcupVal" class="calc-range-val">55</span>%</label>
+          <div class="calc-range">
+            <input type="range" id="calcOcup" value="55" min="20" max="95" step="1">
+          </div>
+          <div class="calc-range-marks"><span>20%</span><span>50%</span><span>80%</span><span>95%</span></div>
+        </div>
+      </div>
+      <div class="calc-result">
+        <div class="cr-eyebrow">Diagnóstico em tempo real</div>
+        <div class="cr-main">
+          <div class="cr-bignum"><span class="cr-sign">−</span>R$ <span id="calcTotalMes">0</span></div>
+          <div class="cr-lbl">de receita escapando todo mês · <strong>−R$ <span id="calcTotalAno">0</span></strong> em 12 meses</div>
+        </div>
+        <div class="cr-grid">
+          <div class="cr-item">
+            <span class="cri-lbl">Faturamento hoje</span>
+            <span class="cri-val">R$ <span id="calcFatMes">0</span></span>
+            <span class="cri-sub">por mês</span>
+          </div>
+          <div class="cr-item">
+            <span class="cri-lbl">Vazamento · ocupação</span>
+            <span class="cri-val">−R$ <span id="lvOcupMes">0</span></span>
+            <span class="cri-sub">ocupação em <span id="lvOcupAtual">55%</span></span>
+          </div>
+          <div class="cr-item" id="cardTarifa">
+            <span class="cri-lbl">Vazamento · tarifa</span>
+            <span class="cri-val" id="lvDiariaValWrap">— <span id="lvDiariaMes" style="display:none">0</span></span>
+            <span class="cri-sub" id="lvDiariaSub">preencha "diária potencial" para simular</span>
+          </div>
+        </div>
+        <div class="cr-foot" id="calcFoot">
+          <span class="crf-ic">⚠</span>
+          <span id="calcFootTx">Ajuste os números acima para o seu cenário real.</span>
+        </div>
+      </div>
+    </div>
+    <p class="calc-note">Vazamento de ocupação: diferença até 80% (referência saudável da hotelaria boutique). Vazamento de tarifa: R$ 30 abaixo do potencial nas noites efetivamente vendidas. Valores variam por categoria, sazonalidade e estratégia — esse é o piso, não o teto.</p>
+  </div>
+  <div class="bot"><span>komplexahoteis.com</span><span>03 · 12</span></div>
+</section>
+
+<!-- ═══════════════════ 04 · ROLETA VS PREVISIBILIDADE ═══════════════════ -->
+<section class="slide dark slide-prev">
+  <div class="top"><img class="brand" src="assets/logotipo_white.svg" alt="Komplexa"><span class="pg">04 · 12</span></div>
+  <div class="body">
+    <div class="eyebrow">O que dói mais que a perda? Não saber o que vem.</div>
+    <h2 class="title" style="font-size:46px">Sem aquisição ativa, sua operação<br>é uma <em>roleta</em>.</h2>
+    <p class="lead">A maioria dos hotéis vive na sorte — mês bom, mês ruim, alta, baixa. Sem previsibilidade, você não consegue planejar contratação, reforma, reposição de enxoval, expansão. <strong>Aquisição ativa transforma sazonalidade em curva controlada.</strong></p>
+    <div class="prev-grid">
+      <div class="prev-chart bad">
+        <div class="pc-head">
+          <span class="pc-tag red">Sem aquisição ativa</span>
+          <span class="pc-sub">Ocupação balança entre 30% e 90%</span>
+        </div>
+        <div class="pc-graph">
+          <div class="pc-bar red" style="height:38%" data-m="J"></div>
+          <div class="pc-bar red" style="height:32%" data-m="F"></div>
+          <div class="pc-bar red" style="height:48%" data-m="M"></div>
+          <div class="pc-bar red" style="height:62%" data-m="A"></div>
+          <div class="pc-bar red" style="height:75%" data-m="M"></div>
+          <div class="pc-bar red" style="height:42%" data-m="J"></div>
+          <div class="pc-bar red" style="height:30%" data-m="J"></div>
+          <div class="pc-bar red" style="height:28%" data-m="A"></div>
+          <div class="pc-bar red" style="height:45%" data-m="S"></div>
+          <div class="pc-bar red" style="height:68%" data-m="O"></div>
+          <div class="pc-bar red" style="height:82%" data-m="N"></div>
+          <div class="pc-bar red" style="height:55%" data-m="D"></div>
+        </div>
+        <div class="pc-foot">
+          <span>Jan</span><span>Dez</span>
+        </div>
+        <div class="pc-result red">Receita imprevisível · Caixa apertado</div>
+      </div>
+      <div class="prev-chart good">
+        <div class="pc-head">
+          <span class="pc-tag green">Com aquisição ativa</span>
+          <span class="pc-sub">Ocupação entre 65% e 85% o ano todo</span>
+        </div>
+        <div class="pc-graph">
+          <div class="pc-bar green" style="height:68%" data-m="J"></div>
+          <div class="pc-bar green" style="height:72%" data-m="F"></div>
+          <div class="pc-bar green" style="height:74%" data-m="M"></div>
+          <div class="pc-bar green" style="height:78%" data-m="A"></div>
+          <div class="pc-bar green" style="height:82%" data-m="M"></div>
+          <div class="pc-bar green" style="height:76%" data-m="J"></div>
+          <div class="pc-bar green" style="height:72%" data-m="J"></div>
+          <div class="pc-bar green" style="height:70%" data-m="A"></div>
+          <div class="pc-bar green" style="height:75%" data-m="S"></div>
+          <div class="pc-bar green" style="height:80%" data-m="O"></div>
+          <div class="pc-bar green" style="height:84%" data-m="N"></div>
+          <div class="pc-bar green" style="height:78%" data-m="D"></div>
+        </div>
+        <div class="pc-foot">
+          <span>Jan</span><span>Dez</span>
+        </div>
+        <div class="pc-result green">Receita previsível · Decisão estratégica</div>
+      </div>
+    </div>
+    <div class="prev-conclusion">
+      <strong>Previsibilidade = poder de decisão.</strong>
+      <span>Você só investe, contrata e cresce quando sabe o que o próximo mês vai render. Aquisição ativa é o que coloca esse poder na sua mão.</span>
+    </div>
+  </div>
+  <div class="bot"><span>komplexahoteis.com</span><span>04 · 12</span></div>
+</section>
+
+<!-- ═══════════════════ 05 · CASE BAHIA BONITA ═══════════════════ -->
+<section class="slide light slide-case">
+  <div class="top"><img class="brand" src="assets/logotipo_blue.svg" alt="Komplexa"><span class="pg">05 · 12</span></div>
+  <div class="body">
+    <div class="case-grid">
+      <div class="case-left">
+        <div class="eyebrow">Case real · Cliente Komplexa</div>
+        <h2 class="title">Hotel Boutique<br><em>Bahia Bonita</em></h2>
+        <p class="lead">Hotel boutique no litoral baiano, dependente de tráfego espontâneo e ocupação oscilante. Em poucos meses, virou o jogo com aquisição ativa.</p>
+        <div class="case-bigstats">
+          <div class="case-big">
+            <span class="cb-num">19x</span>
+            <span class="cb-lbl">ROI sobre o investido em mídia</span>
+          </div>
+        </div>
+        <div class="case-quote">
+          <span class="cq-mark">"</span>
+          <p>Cada R$ 1 investido em aquisição voltou R$ 19 em receita medida via PMS. Saiu da sorte e entrou na previsibilidade.</p>
+        </div>
+      </div>
+      <div class="case-right">
+        <div class="case-img" style="background-image:url('assets/hotel/hotel-01.jpg')">
+          <div class="case-img-tag">Hotel Boutique Bahia Bonita</div>
+        </div>
+        <div class="case-metrics">
+          <div class="cm-item"><span class="cm-ic">↗</span><span class="cm-tx"><strong>Ocupação estabilizada</strong> mês após mês</span></div>
+          <div class="cm-item"><span class="cm-ic">✦</span><span class="cm-tx"><strong>Aquisição ativa</strong> em vez de espera passiva</span></div>
+          <div class="cm-item"><span class="cm-ic">◆</span><span class="cm-tx"><strong>Base própria de hóspedes</strong> construída</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="bot"><span>komplexahoteis.com</span><span>05 · 12</span></div>
+</section>
+
+<!-- ═══════════════════ 06 · CASE SOLAR DONA DORA ═══════════════════ -->
+<section class="slide light slide-case">
+  <div class="top"><img class="brand" src="assets/logotipo_blue.svg" alt="Komplexa"><span class="pg">06 · 12</span></div>
+  <div class="body">
+    <div class="case-grid reverse">
+      <div class="case-left">
+        <div class="eyebrow">Case real · Cliente Komplexa</div>
+        <h2 class="title">Pousada Solar<br><em>Dona Dora</em></h2>
+        <p class="lead">Baixa temporada é o pior mês do ano em hotelaria. Antes da Komplexa: R$ 12.403 de faturamento. Depois: <strong>R$ 42.513</strong>. No mesmo mês de baixa, no ano seguinte — com aquisição ativa.</p>
+        <div class="case-comparison">
+          <div class="ccm-row header">
+            <span></span>
+            <span class="ccm-lbl">Antes</span>
+            <span class="ccm-lbl green">Com Komplexa</span>
+          </div>
+          <div class="ccm-row">
+            <span class="ccm-name">Faturamento (baixa)</span>
+            <span class="ccm-val">R$ 12.403</span>
+            <span class="ccm-val green">R$ 42.513</span>
+          </div>
+          <div class="ccm-row">
+            <span class="ccm-name">Reservas no mês</span>
+            <span class="ccm-val">12</span>
+            <span class="ccm-val green">60</span>
+          </div>
+          <div class="ccm-row">
+            <span class="ccm-name">Noites vendidas</span>
+            <span class="ccm-val">26</span>
+            <span class="ccm-val green">110</span>
+          </div>
+        </div>
+      </div>
+      <div class="case-right">
+        <div class="case-img" style="background-image:url('assets/hotel/solar-dona-dora.jpg')">
+          <div class="case-img-tag">Pousada Solar Dona Dora</div>
+        </div>
+        <div class="case-bigstats">
+          <div class="case-big compact">
+            <span class="cb-num">3,4x</span>
+            <span class="cb-lbl">Faturamento na baixa</span>
+          </div>
+          <div class="case-big compact">
+            <span class="cb-num">+400%</span>
+            <span class="cb-lbl">Reservas</span>
+          </div>
+          <div class="case-big compact">
+            <span class="cb-num">+323%</span>
+            <span class="cb-lbl">Noites vendidas</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="bot"><span>komplexahoteis.com</span><span>06 · 12</span></div>
+</section>
+
+<!-- ═══════════════════ 07 · MONEY SLIDE — FIGMA-STYLE FLOW ═══════════════════ -->
+<section class="slide dark slide-money">
+  <div class="top"><img class="brand" src="assets/logotipo_white.svg" alt="Komplexa"><span class="pg">07 · 12</span></div>
+  <div class="body money-body">
+    <div class="money-grid">
+      <div class="money-left">
+        <div class="eyebrow">O sistema Komplexa</div>
+        <h2 class="title">Como transformamos tráfego em <em>reservas diretas</em></h2>
+        <p class="lead">Um sistema integrado que vai da segmentação por IA até a recuperação de carrinho — com todas as etapas conectadas e medidas.</p>
+        <div class="stats">
+          <div class="stat"><span class="ic">◇</span><span class="tx"><strong>5 etapas conectadas</strong> rodando em paralelo</span></div>
+          <div class="stat"><span class="ic">◆</span><span class="tx"><strong>Aquisição + retenção</strong> — do primeiro clique à reserva recorrente</span></div>
+          <div class="stat"><span class="ic">✦</span><span class="tx"><strong>Foco em reserva direta</strong> — menos OTA, mais margem</span></div>
+        </div>
+      </div>
+      <div class="flow-stage">
+      <!-- SVG connectors overlay (viewBox tuned for narrower canvas) -->
+      <svg class="flow-svg" viewBox="0 0 700 660" preserveAspectRatio="none">
+        <defs>
+          <linearGradient id="fg" x1="0" x2="0" y1="0" y2="1">
+            <stop offset="0" stop-color="#1670C3" stop-opacity=".75"/>
+            <stop offset=".5" stop-color="#1099E9" stop-opacity=".85"/>
+            <stop offset="1" stop-color="#24D5FF" stop-opacity=".75"/>
+          </linearGradient>
+          <filter id="glow" x="-20%" y="-20%" width="140%" height="140%"><feGaussianBlur stdDeviation="2.5" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+        </defs>
+
+        <!-- IA → 2 ads (split outward) -->
+        <path d="M350 55 C 350 100, 200 100, 180 140" stroke="url(#fg)" stroke-width="1.8" fill="none" filter="url(#glow)"/>
+        <path d="M350 55 C 350 100, 500 100, 520 140" stroke="url(#fg)" stroke-width="1.8" fill="none" filter="url(#glow)"/>
+
+        <!-- 2 ads → site (merge inward) -->
+        <path d="M180 195 C 180 240, 340 245, 350 280" stroke="url(#fg)" stroke-width="1.8" fill="none" filter="url(#glow)"/>
+        <path d="M520 195 C 520 240, 360 245, 350 280" stroke="url(#fg)" stroke-width="1.8" fill="none" filter="url(#glow)"/>
+
+        <!-- site → 3 retention (split S) -->
+        <path d="M270 470 C 270 510, 130 510, 110 540" stroke="url(#fg)" stroke-width="1.8" fill="none" filter="url(#glow)"/>
+        <path d="M350 470 C 350 505, 350 520, 350 540" stroke="url(#fg)" stroke-width="1.8" fill="none" filter="url(#glow)"/>
+        <path d="M430 470 C 430 510, 570 510, 590 540" stroke="url(#fg)" stroke-width="1.8" fill="none" filter="url(#glow)"/>
+
+        <!-- 3 retention → final -->
+        <path d="M110 590 C 110 625, 300 630, 340 645" stroke="url(#fg)" stroke-width="1.8" fill="none" filter="url(#glow)"/>
+        <path d="M350 590 C 350 615, 350 630, 350 645" stroke="url(#fg)" stroke-width="1.8" fill="none" filter="url(#glow)"/>
+        <path d="M590 590 C 590 625, 400 630, 360 645" stroke="url(#fg)" stroke-width="1.8" fill="none" filter="url(#glow)"/>
+
+        <!-- Animated flowing dots -->
+        <circle r="3" fill="#24D5FF" opacity=".85">
+          <animateMotion dur="3s" repeatCount="indefinite" path="M350 55 C 350 100, 200 100, 180 140"/>
+        </circle>
+        <circle r="3" fill="#24D5FF" opacity=".85">
+          <animateMotion dur="3s" repeatCount="indefinite" begin="0.5s" path="M350 55 C 350 100, 500 100, 520 140"/>
+        </circle>
+        <circle r="3" fill="#24D5FF" opacity=".85">
+          <animateMotion dur="2.8s" repeatCount="indefinite" begin="1s" path="M180 195 C 180 240, 340 245, 350 280"/>
+        </circle>
+        <circle r="3" fill="#24D5FF" opacity=".85">
+          <animateMotion dur="2.8s" repeatCount="indefinite" begin="1.5s" path="M520 195 C 520 240, 360 245, 350 280"/>
+        </circle>
+        <circle r="3" fill="#24D5FF" opacity=".85">
+          <animateMotion dur="3s" repeatCount="indefinite" begin="2s" path="M270 470 C 270 510, 130 510, 110 540"/>
+        </circle>
+        <circle r="3" fill="#24D5FF" opacity=".85">
+          <animateMotion dur="3s" repeatCount="indefinite" begin="2.3s" path="M350 470 C 350 505, 350 520, 350 540"/>
+        </circle>
+        <circle r="3" fill="#24D5FF" opacity=".85">
+          <animateMotion dur="3s" repeatCount="indefinite" begin="2.6s" path="M430 470 C 430 510, 570 510, 590 540"/>
+        </circle>
+      </svg>
+
+      <!-- Layer 1: AI -->
+      <div class="fcard ai">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a3 3 0 0 0-3 3v1.4A4 4 0 0 0 5 10v3a4 4 0 0 0 1 2.6V18a3 3 0 0 0 3 3h6a3 3 0 0 0 3-3v-2.4a4 4 0 0 0 1-2.6v-3a4 4 0 0 0-4-3.6V5a3 3 0 0 0-3-3z"/><circle cx="9" cy="11" r="1" fill="currentColor"/><circle cx="15" cy="11" r="1" fill="currentColor"/><path d="M9 16h6"/></svg></div>
+        <div class="info"><div class="lbl">◇ Topo do funil</div><div class="name">IA · Segmentação avançada</div><div class="sub">Lookalike dos melhores hóspedes</div></div>
+      </div>
+
+      <!-- Layer 2: Ad sources -->
+      <div class="frow">
+        <div class="fcard">
+          <div class="ic fb"><svg viewBox="0 0 24 24" fill="#fff"><path d="M22 12c0-5.52-4.48-10-10-10S2 6.48 2 12c0 4.84 3.44 8.87 8 9.8V15H8v-3h2V9.5C10 7.57 11.57 6 13.5 6H16v3h-2c-.55 0-1 .45-1 1v2h3v3h-3v6.95c5.05-.5 9-4.76 9-9.95z"/></svg></div>
+          <div class="ic ig" style="margin-left:-22px"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="#fff" stroke="none"/></svg></div>
+          <div class="info"><div class="lbl">Mídia paga</div><div class="name">Meta Ads</div><div class="sub">Facebook + Instagram</div></div>
+        </div>
+        <div class="fcard">
+          <div class="ic gg"><svg viewBox="0 0 24 24"><path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/><path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/><path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/><path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/></svg></div>
+          <div class="info"><div class="lbl">Mídia paga</div><div class="name">Google Ads</div><div class="sub">Search + Performance Max</div></div>
+        </div>
+      </div>
+
+      <!-- Layer 3: Site mockup CENTER STAGE -->
+      <div class="fsite">
+        <div class="browser-bar">
+          <div class="dots"><span></span><span></span><span></span></div>
+          <div class="url">komplexahoteis.com/cliente</div>
+        </div>
+        <div class="site-hero" style="background-image:url('assets/hotel/hotel-01.jpg')">
+          <div class="site-nav"><img src="assets/logotipo_white.svg" alt=""><div class="menu"><span>Suítes</span><span>Pacotes</span><span>Reservar</span></div></div>
+          <div class="site-h1">Sua próxima estadia <em>começa aqui</em></div>
+          <div class="site-sub">Reserva direta com benefícios exclusivos</div>
+        </div>
+        <div class="booking">
+          <div class="field"><span class="lab">Check-in</span><div class="val">15 mai</div></div>
+          <div class="field"><span class="lab">Check-out</span><div class="val">17 mai</div></div>
+          <div class="field"><span class="lab">Hóspedes</span><div class="val">2 adultos</div></div>
+          <div class="btn">Buscar →</div>
+        </div>
+      </div>
+
+      <!-- Layer 4: Retention -->
+      <div class="frow">
+        <div class="fcard">
+          <div class="ic rm"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a9 9 0 1 1-3-6.7"/><path d="M21 4v5h-5"/></svg></div>
+          <div class="info"><div class="lbl">Retenção</div><div class="name">Remarketing</div><div class="sub">Redes sociais</div></div>
+        </div>
+        <div class="fcard">
+          <div class="ic wa"><svg viewBox="0 0 24 24" fill="#fff"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413"/></svg></div>
+          <div class="info"><div class="lbl">Atendimento</div><div class="name">WhatsApp</div><div class="sub">Reservas + bot</div></div>
+        </div>
+        <div class="fcard">
+          <div class="ic em"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg></div>
+          <div class="info"><div class="lbl">Recuperação</div><div class="name">E-mail + WhatsApp</div><div class="sub">Carrinho abandonado</div></div>
+        </div>
+      </div>
+
+      <!-- Layer 5: Final -->
+      <div class="ffinal">
+        <span class="star">✦</span>
+        <span class="txt">RESERVAS DIRETAS</span>
+        <span class="badge-sub">sem comissão de OTA</span>
+      </div>
+      </div>
+    </div>
+  </div>
+  <div class="bot"><span>komplexahoteis.com</span><span>07 · 12</span></div>
+</section>
+
+<!-- ═══════════════════ 08 · SOBRE + PARCERIAS ═══════════════════ -->
+<section class="slide light">
+  <div class="top"><img class="brand" src="assets/logotipo_blue.svg" alt="Komplexa"><span class="pg">08 · 12</span></div>
+  <div class="body">
+    <div class="eyebrow">A Komplexa</div>
+    <h2 class="title">A operação de growth do setor <em>hoteleiro</em></h2>
+    <div class="about-grid" style="margin-top:20px">
+      <div class="about-bio">
+        <p>A Komplexa é uma operação de <strong>marketing e aquisição</strong> dedicada exclusivamente a hotéis e pousadas. Nascemos para resolver um descompasso óbvio do setor: hoteleiros são os donos dos dados mais valiosos do funil de reserva — e raramente os transformam em máquina de demanda direta.</p>
+        <p>O <strong>time fundador tem background em growth</strong>, com atuação conectando <strong>marketing, vendas e pós-vendas</strong> em startups de tecnologia. Atuando como consultores, estruturamos operações de aquisição em empresas de diferentes setores — incluindo o inbound do maior chatbot da América Latina na <strong>área da saúde</strong>, no período em que escalou de R$ 400k para R$ 1,5MM em MRR.</p>
+        <p>Foi atendendo o <strong>primeiro hotel</strong> que descobrimos: a metodologia de aquisição que funciona em SaaS e serviços se aplica perfeitamente ao setor hoteleiro — e ninguém estava executando isso de forma estruturada. A Komplexa nasceu para preencher essa lacuna.</p>
+        <div class="pillstrip">
+          <span class="ps">100% setor hoteleiro</span>
+          <span class="ps">Aquisição + retenção</span>
+          <span class="ps">Background enterprise</span>
+        </div>
+      </div>
+      <div class="about-partners">
+        <h4>Integrados ao seu ecossistema</h4>
+        <div class="partner-grid">
+          <div class="partner feat"><div class="logo"><img src="assets/partners/erbon.png" alt="Erbon"></div><div class="cat">PMS</div></div>
+          <div class="partner feat"><div class="logo"><img src="assets/partners/hsystem.png" alt="HSystem"></div><div class="cat">PMS</div></div>
+          <div class="partner feat"><div class="logo"><img src="assets/partners/omnibees.png" alt="Omnibees"></div><div class="cat">Channel Manager</div></div>
+          <div class="partner feat"><div class="logo"><img src="assets/partners/foco.png" alt="Foco"></div><div class="cat">Motor de reservas</div></div>
+          <div class="partner feat" style="grid-column:span 2"><div class="logo"><img src="assets/partners/asksuite.jpeg" alt="Asksuite"></div><div class="cat">Chatbot · Atendimento</div></div>
+        </div>
+        <p style="font-size:11px;color:var(--gray);margin-top:12px;line-height:1.5;text-align:center">Nossos parceiros — integramos com as principais ferramentas do setor.</p>
+      </div>
+    </div>
+  </div>
+  <div class="bot"><span>komplexahoteis.com</span><span>Confidencial</span></div>
+</section>
+
+<!-- ═══════════════════ 09 · ANÚNCIOS · VITRINE COMPLETA ═══════════════════ -->
+<section class="slide light">
+  <div class="top"><img class="brand" src="assets/logotipo_blue.svg" alt="Komplexa"><span class="pg">09 · 12</span></div>
+  <div class="body">
+    <div class="etapa-grid">
+      <div class="etapa-left">
+        <div class="eyebrow">Execução · Mídia paga</div>
+        <h2 class="title">Anúncios em <em>todas as superfícies</em></h2>
+        <p class="lead">Onde seu hóspede está, sua marca também está. Criativos próprios, segmentação alimentada pela IA do money slide, otimização semanal sobre ROAS real.</p>
+        <ul class="etapa-points">
+          <li><span class="ic">01</span><span><strong>Meta Ads (FB + Instagram):</strong> feed, story, reels — criativos estáticos, vídeo e UGC produzidos in-house.</span></li>
+          <li><span class="ic">02</span><span><strong>Google Ads + Hotel Ads:</strong> Search com intenção, Performance Max e o leilão direto vs OTAs no Hotel Ads.</span></li>
+          <li><span class="ic">03</span><span><strong>YouTube + display:</strong> presença em vídeo e nos sites que o hóspede já frequenta na jornada de pesquisa.</span></li>
+        </ul>
+      </div>
+      <div class="etapa-visual">
+        <div class="ads-carousel" id="adsCarousel">
+          <div class="car-controls">
+            <div class="car-label"><span class="ic">▣</span><span id="carLabel">Instagram · Feed</span></div>
+            <div class="car-arrows">
+              <button class="car-btn" onclick="adsPrev()">‹</button>
+              <button class="car-btn" onclick="adsNext()">›</button>
+            </div>
+          </div>
+          <div class="car-track">
+            <div class="car-slide active" data-label="Instagram · Feed">
+              <div class="ad-ig-feed">
+                <div class="h"><div class="av"><div>K</div></div><div class="info">hotelboutique<small>Patrocinado</small></div><div class="more">⋯</div></div>
+                <div class="img" style="background-image:url('assets/hotel/dominguez-creative.jpg')"></div>
+                <div class="actions"><span>♡</span><span>💬</span><span>↗</span><span>🔖</span></div>
+                <div class="body"><div class="copy"><strong>hotelboutique</strong> Sua próxima estadia começa aqui ✨ 3 noites · café incluso · cancelamento grátis até 24h.</div></div>
+                <div class="cta"><span>Reservar agora</span><span class="arrow">›</span></div>
+              </div>
+            </div>
+            <div class="car-slide" data-label="Instagram · Story">
+              <div class="ad-ig-story" style="background-image:url('assets/hotel/hotel-experiencia.jpg')">
+                <div class="top-bars"><span></span><span></span><span></span></div>
+                <div class="head"><div class="av">K</div><div class="name">hotelboutique<small>Patrocinado</small></div></div>
+                <div class="center"><div class="em">Oferta limitada</div><h3>Reserve direto<br>e ganhe <em>upgrade</em></h3></div>
+                <div class="bot-area"><div class="arrow-up">⌃</div><div class="swipe-cta">Deslize para cima</div></div>
+              </div>
+            </div>
+            <div class="car-slide" data-label="Google · Search Ad">
+              <div class="ad-gs">
+                <div class="src"><div class="g-logo"><span class="b">G</span><span class="r">o</span><span class="y">o</span><span class="b">g</span><span class="gr">l</span><span class="r">e</span></div><div class="query">hotel boutique em [cidade]</div></div>
+                <span class="ad-tag">Anúncio</span>
+                <div class="url"><span class="fav">K</span><span class="dom">www.hotelboutique.com.br</span></div>
+                <div class="ttl">Hotel Boutique · Reserve no site oficial e economize até 20%</div>
+                <div class="desc">A melhor tarifa garantida. Café da manhã incluso. Cancelamento flexível. Reserve direto e ganhe benefícios exclusivos não disponíveis em OTAs.</div>
+                <div class="links"><a>› Suítes e diárias</a><a>› Pacotes especiais</a><a>› Localização</a><a>› Galeria de fotos</a></div>
+              </div>
+            </div>
+            <div class="car-slide" data-label="Google Hotel Ads">
+              <div class="ad-gha">
+                <div class="top"><div class="g-logo"><span class="b">G</span><span class="r">o</span><span class="y">o</span><span class="b">g</span><span class="gr">l</span><span class="r">e</span></div><span class="label">Hotel Ads</span></div>
+                <div class="body">
+                  <div class="photo" style="background-image:url('assets/hotel/hotel-02.jpg')"><span class="badge" style="position:relative;z-index:1">3 fotos</span></div>
+                  <div class="info">
+                    <h5>Hotel Boutique · Centro</h5>
+                    <div class="stars">★★★★★ <span>4.8 (312)</span></div>
+                    <div class="desc">Quarto duplo · 2 adultos · 15 a 17 mai</div>
+                    <div class="prices">
+                      <div class="price feat"><span class="src">▦ Site oficial</span><span class="val">R$ 540</span></div>
+                      <div class="price"><span class="src">Booking.com</span><span class="val">R$ 612</span></div>
+                      <div class="price"><span class="src">Expedia</span><span class="val">R$ 638</span></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="car-slide" data-label="YouTube · Preroll">
+              <div class="ad-yt">
+                <div class="frame" style="background-image:url('assets/hotel/hotel-05.jpg')"><div class="play" style="position:relative;z-index:2">▶</div></div>
+                <span class="ad-badge">Anúncio</span>
+                <div class="skip">Pular anúncio</div>
+                <div class="yt-cta"><div class="av">K</div><div class="info"><div class="name">Hotel Boutique</div><div class="copy">Reserve direto e ganhe noite extra</div></div><div class="btn">Visitar site</div></div>
+              </div>
+            </div>
+          </div>
+          <div class="car-dots" id="carDots"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="bot"><span>komplexahoteis.com</span><span>09 · 12</span></div>
+</section>
+
+<!-- ═══════════════════ 10 · SITE + REMARKETING + RECUPERAÇÃO ═══════════════════ -->
+<section class="slide light slide-exec3">
+  <div class="top"><img class="brand" src="assets/logotipo_blue.svg" alt="Komplexa"><span class="pg">10 · 12</span></div>
+  <div class="body">
+    <div class="eyebrow">Execução · 3 frentes complementares</div>
+    <h2 class="title" style="font-size:42px">Onde o tráfego vira <em>reserva</em></h2>
+    <p class="lead">Os anúncios trazem o hóspede até a porta. O sistema abaixo faz ele <strong>entrar, voltar e fechar</strong>.</p>
+    <div class="exec3-grid">
+      <div class="exec3-card">
+        <div class="ec3-head">
+          <div class="ec3-lbl">Conversão</div>
+          <h4>Sites de alta performance</h4>
+        </div>
+        <div class="ec3-visual">
+          <div class="ec3-browser">
+            <div class="ec3-bar"><span></span><span></span><span></span></div>
+            <div class="ec3-img" style="background-image:url('assets/hotel/hotel-03.jpg')">
+              <div class="ec3-head-site">Sua próxima estadia <em>começa aqui</em></div>
+              <div class="ec3-booking">
+                <div class="ec3-field"><strong>15 mai</strong>Check-in</div>
+                <div class="ec3-field"><strong>17 mai</strong>Check-out</div>
+                <div class="ec3-cta">Buscar →</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <ul class="ec3-pts">
+          <li>Mobile-first — 70% do tráfego do celular</li>
+          <li>Motor integrado: Foco, Omnibees, Asksuite</li>
+          <li>Identidade preservada, sem template</li>
+        </ul>
+      </div>
+      <div class="exec3-card">
+        <div class="ec3-head">
+          <div class="ec3-lbl">Frequência</div>
+          <h4>Remarketing por comportamento</h4>
+        </div>
+        <div class="ec3-visual">
+          <div class="ec3-feed">
+            <div class="ec3-feed-hdr">
+              <div class="ec3-feed-av"></div>
+              <div class="ec3-feed-info">hotel boutique<small>Patrocinado</small></div>
+            </div>
+            <div class="ec3-feed-img" style="background-image:url('assets/hotel/hotel-cafe.jpg')"></div>
+            <div class="ec3-feed-body"><strong>Você esteve por aqui!</strong> Garanta sua suíte com 10% off + upgrade.<span class="ec3-feed-cta">Reservar agora →</span></div>
+          </div>
+        </div>
+        <ul class="ec3-pts">
+          <li>Regra dos 3+ impactos por jornada</li>
+          <li>Públicos: visitou home, viu suíte, abandonou</li>
+          <li>Criativo: experiência → prova → gatilho</li>
+        </ul>
+      </div>
+      <div class="exec3-card">
+        <div class="ec3-head">
+          <div class="ec3-lbl">Recuperação</div>
+          <h4>WhatsApp + E-mail</h4>
+        </div>
+        <div class="ec3-visual">
+          <div class="ec3-wa">
+            <div class="ec3-wa-msg in">Olá Maria! 👋 Vi que estava reservando a <strong>Suíte Master</strong> 15–17 mai.</div>
+            <div class="ec3-wa-msg out">Acabei me distraindo</div>
+            <div class="ec3-wa-msg in">Reservei por <strong>24h</strong> com <strong>10% off</strong>. Link direto?</div>
+          </div>
+        </div>
+        <ul class="ec3-pts">
+          <li>Automação começa 1h após o abandono</li>
+          <li>Cita suíte, datas e valor da reserva</li>
+          <li>Régua de reativação contínua</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="bot"><span>komplexahoteis.com</span><span>10 · 12</span></div>
+</section>
+
+<!-- ═══════════════════ 11 · TUDO QUE ENTRA NO PLANO ═══════════════════ -->
+<section class="slide light slide-pacote">
+  <div class="top"><img class="brand" src="assets/logotipo_blue.svg" alt="Komplexa"><span class="pg">11 · 12</span></div>
+  <div class="body">
+    <div class="pacote-hero">
+      <div>
+        <div class="ph-eyebrow">O sistema completo · executado por um time só</div>
+        <h2 class="ph-title">Não é um pedaço. É a <em>operação inteira</em>.</h2>
+      </div>
+    </div>
+
+    <div class="pacote-carousel" id="pacoteCarousel">
+      <div class="pcc-controls">
+        <div class="pcc-label"><span class="ic">◆</span><span id="pacoteLabel">01 · Estratégia &amp; Inteligência</span></div>
+        <div class="pcc-arrows">
+          <button class="pcc-btn" onclick="pacotePrev()">‹</button>
+          <button class="pcc-btn" onclick="pacoteNext()">›</button>
+        </div>
+      </div>
+
+      <div class="pcc-track">
+        <!-- 01 ESTRATÉGIA -->
+        <div class="pcc-slide active" data-label="01 · Estratégia &amp; Inteligência">
+          <div class="pcs-content">
+            <div class="pcs-left">
+              <div class="pcs-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg></div>
+              <span class="pcs-nu">01 · O início</span>
+              <h3 class="pcs-title">Estratégia<br>&amp; Inteligência</h3>
+              <p class="pcs-sub">Como pensamos a aquisição do seu hotel — antes de gastar R$ 1 em mídia.</p>
+            </div>
+            <div class="pcs-right">
+              <ul class="pcs-items">
+                <li>Briefing completo de marca</li>
+                <li>Metodologia Arquitetura de Reservas Diretas</li>
+                <li class="wow"><span class="wow-badge">DIFERENCIAL</span><span class="wow-tx">IA de segmentação alimentada pelo seu PMS</span></li>
+                <li>Otimização semanal sobre ROAS real</li>
+                <li>Reuniões mensais de performance</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- 02 MÍDIA -->
+        <div class="pcc-slide" data-label="02 · Mídia paga &amp; Criativo">
+          <div class="pcs-content">
+            <div class="pcs-left">
+              <div class="pcs-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11l18-5v12L3 13v-2z"/><path d="M11.6 16.8a3 3 0 1 1-5.8-1.6"/></svg></div>
+              <span class="pcs-nu">02 · A captura</span>
+              <h3 class="pcs-title">Mídia paga<br>&amp; Criativo</h3>
+              <p class="pcs-sub">Onde sua marca aparece para o hóspede certo, no momento certo — com criativos feitos pelo nosso time.</p>
+            </div>
+            <div class="pcs-right">
+              <ul class="pcs-items">
+                <li>Meta Ads — Instagram + Facebook</li>
+                <li>Google Ads + Google Hotel Ads</li>
+                <li>Até 6 criativos novos por mês</li>
+                <li>Públicos personalizados e lookalikes</li>
+                <li>Remarketing comportamental</li>
+                <li>Campanhas com objetivo de reserva direta</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- 03 SITE -->
+        <div class="pcc-slide" data-label="03 · Site &amp; Conversão">
+          <div class="pcs-content">
+            <div class="pcs-left">
+              <div class="pcs-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8"/><path d="M12 17v4"/><path d="M2 9h20"/></svg></div>
+              <span class="pcs-nu">03 · A conversão</span>
+              <h3 class="pcs-title">Site<br>&amp; Conversão</h3>
+              <p class="pcs-sub">Onde o tráfego pago vira reserva direta — sem fricção, sem vazamento para OTA.</p>
+            </div>
+            <div class="pcs-right">
+              <ul class="pcs-items">
+                <li>Site de alta performance (mobile-first)</li>
+                <li>Motor de reservas integrado</li>
+                <li>Identidade do hotel preservada</li>
+                <li>Ofertas e cupons de reserva direta</li>
+                <li>Página otimizada por acomodação</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- 04 ATENDIMENTO -->
+        <div class="pcc-slide" data-label="04 · Atendimento &amp; Operação">
+          <div class="pcs-content">
+            <div class="pcs-left">
+              <div class="pcs-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg></div>
+              <span class="pcs-nu">04 · O fechamento</span>
+              <h3 class="pcs-title">Atendimento<br>&amp; Operação</h3>
+              <p class="pcs-sub">Da primeira mensagem ao check-in — e depois também. Tocamos a operação real, não só o marketing.</p>
+            </div>
+            <div class="pcs-right">
+              <ul class="pcs-items">
+                <li>Boas-vindas de alta conversão no Direct</li>
+                <li>Recuperação WhatsApp + e-mail</li>
+                <li class="wow"><span class="wow-badge">EXCLUSIVO</span><span class="wow-tx">Cliente oculto trimestral na recepção</span></li>
+                <li class="wow"><span class="wow-badge">EXCLUSIVO</span><span class="wow-tx">Treinamento da equipe de recepção</span></li>
+                <li>Régua de reativação de hóspedes</li>
+                <li>Relatório mensal consolidado</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="pcc-dots" id="pacoteDots"></div>
+    </div>
+
+    <div class="pacote-foot">
+      <div class="pf-stats">
+        <div class="pfs"><strong>+22</strong><span>entregas</span></div>
+        <div class="pfs"><strong>1</strong><span>time só</span></div>
+        <div class="pfs"><strong>4</strong><span>profissionais no seu projeto</span></div>
+      </div>
+      <div class="pf-msg">
+        <strong>Tudo executado pelo nosso time.</strong>
+        <span>Conectado, medido, sem terceirização escondida.</span>
+      </div>
+    </div>
+  </div>
+  <div class="bot"><span>komplexahoteis.com</span><span>11 · 12</span></div>
+</section>
+
+<!-- ═══════════════════ 12 · NEXT STEPS ═══════════════════ -->
+<section class="slide dark">
+  <div class="top"><img class="brand" src="assets/logotipo_white.svg" alt="Komplexa"><span class="pg">12 · 12</span></div>
+  <div class="body">
+    <div class="next-grid">
+      <div>
+        <div class="eyebrow">Próximos passos</div>
+        <h2 class="title">Vamos colocar isso <em>em prática</em></h2>
+        <p class="lead">Em até 14 dias após a contratação, entregamos o diagnóstico completo do seu hotel e o plano dos primeiros 90 dias.</p>
+        <div class="steps-list">
+          <div class="step-item"><div class="nu">1</div><div class="info"><h4>Proposta personalizada</h4><p>Você recebe a proposta com escopo, investimento e prazos em até 48h.</p></div></div>
+          <div class="step-item"><div class="nu">2</div><div class="info"><h4>Aprovação e kickoff</h4><p>Após aprovação, agendamos kickoff em até 5 dias úteis.</p></div></div>
+          <div class="step-item"><div class="nu">3</div><div class="info"><h4>Diagnóstico em 14 dias</h4><p>Auditoria completa entregue + plano dos primeiros 90 dias.</p></div></div>
+        </div>
+      </div>
+      <div class="contact-card">
+        <div class="lbl">Falou com você</div>
+        <div class="who">
+          <div class="av"><img src="assets/igor-foto-png-proposta.png" alt=""></div>
+          <div><h4>Igor Salomão</h4><div class="role">Sócio-fundador · Komplexa</div></div>
+        </div>
+        <div class="lines">
+          <div class="line"><span class="ic">✉</span><a>igor.salomao@komplexagrowth.com</a></div>
+          <div class="line"><span class="ic">▦</span><a>komplexahoteis.com</a></div>
+          <div class="line"><span class="ic">☎</span><span>+55 12 98193-5958</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="bot"><span>komplexahoteis.com</span><span>Obrigado!</span></div>
+</section>
+
+</div>
+
+<div class="nav-hint">← →  navegar  ·  Esc  sair</div>
+
+<script>
+const deck = document.getElementById('deck');
+const slides = deck.querySelectorAll('.slide');
+let current = 0;
+
+function show(i){
+  slides.forEach((s,idx) => s.classList.toggle('active', idx === i));
+  current = i;
+}
+
+function applyPresentScale(){
+  const w = window.innerWidth, h = window.innerHeight;
+  // scale to fit perfectly preserving aspect; 1280x720 base
+  const fitW = w / 1280, fitH = h / 720;
+  // use the larger ratio to FILL the viewport (some content cropping at edges,
+  // but slide padding 56px protects content)
+  const fillScale = Math.max(fitW, fitH);
+  const fitScale = Math.min(fitW, fitH);
+  // 70% blend toward fill = "preenche quase a tela toda"
+  const scale = fitScale + (fillScale - fitScale) * 0.7;
+  deck.style.setProperty('--present-scale', scale.toFixed(3));
+}
+
+function togglePresent(){
+  deck.classList.toggle('present');
+  const btn = document.querySelector('.toggle-present');
+  if(deck.classList.contains('present')){
+    btn.textContent = '✕ Sair';
+    show(0);
+    applyPresentScale();
+    if(deck.requestFullscreen){
+      deck.requestFullscreen().then(applyPresentScale).catch(()=>{});
+    }
+  } else {
+    btn.textContent = '▶ Apresentar';
+    slides.forEach(s => s.classList.add('active'));
+    deck.style.removeProperty('--present-scale');
+    if(document.fullscreenElement) document.exitFullscreen();
+  }
+}
+
+window.addEventListener('resize', () => {
+  if(deck.classList.contains('present')) applyPresentScale();
+});
+
+document.addEventListener('keydown', e => {
+  if(!deck.classList.contains('present')) return;
+  if(e.key === 'ArrowRight' || e.key === ' '){ if(current < slides.length-1) show(current+1); }
+  if(e.key === 'ArrowLeft'){ if(current > 0) show(current-1); }
+  if(e.key === 'Escape'){ if(deck.classList.contains('present')) togglePresent(); }
+});
+
+document.addEventListener('fullscreenchange', () => {
+  if(!document.fullscreenElement && deck.classList.contains('present')){
+    togglePresent();
+  }
+});
+
+/* ─── ADS CAROUSEL (navegação manual apenas) ─── */
+const adsSlides = document.querySelectorAll('#adsCarousel .car-slide');
+const carLabel = document.getElementById('carLabel');
+const carDots = document.getElementById('carDots');
+let adsIdx = 0;
+
+if(adsSlides.length){
+  adsSlides.forEach((s,i)=>{
+    const d = document.createElement('button');
+    d.className = 'car-dot' + (i===0?' active':'');
+    d.onclick = ()=>adsGoTo(i);
+    carDots.appendChild(d);
+  });
+}
+
+function adsGoTo(i){
+  adsSlides.forEach((s,idx)=>s.classList.toggle('active', idx===i));
+  document.querySelectorAll('#carDots .car-dot').forEach((d,idx)=>d.classList.toggle('active', idx===i));
+  adsIdx = i;
+  if(carLabel) carLabel.textContent = adsSlides[i].dataset.label;
+}
+function adsNext(){ adsGoTo((adsIdx + 1) % adsSlides.length); }
+function adsPrev(){ adsGoTo((adsIdx - 1 + adsSlides.length) % adsSlides.length); }
+
+/* ─── CARROSSEL DO SLIDE 11 (Tudo que entra no plano) ─── */
+const pacoteSlides = document.querySelectorAll('#pacoteCarousel .pcc-slide');
+const pacoteLabel = document.getElementById('pacoteLabel');
+const pacoteDotsEl = document.getElementById('pacoteDots');
+let pacoteIdx = 0;
+let pacoteTimer = null;
+
+if(pacoteSlides.length && pacoteDotsEl){
+  pacoteSlides.forEach((s,i)=>{
+    const d = document.createElement('button');
+    d.className = 'pcc-dot' + (i===0?' active':'');
+    d.onclick = ()=>pacoteGoTo(i);
+    pacoteDotsEl.appendChild(d);
+  });
+}
+
+function pacoteGoTo(i){
+  pacoteSlides.forEach((s,idx)=>s.classList.toggle('active', idx===i));
+  document.querySelectorAll('#pacoteDots .pcc-dot').forEach((d,idx)=>d.classList.toggle('active', idx===i));
+  pacoteIdx = i;
+  if(pacoteLabel) pacoteLabel.innerHTML = pacoteSlides[i].dataset.label;
+}
+function pacoteNext(){ pacoteGoTo((pacoteIdx + 1) % pacoteSlides.length); }
+function pacotePrev(){ pacoteGoTo((pacoteIdx - 1 + pacoteSlides.length) % pacoteSlides.length); }
+
+/* ─── CALCULADORA DE DIAGNÓSTICO (Slide 03) ─── */
+(function(){
+  const $ = id => document.getElementById(id);
+  const inputs = ['calcUhs','calcDiaria','calcNovaDiaria','calcOcup'].map($).filter(Boolean);
+  if(!inputs.length) return;
+
+  const fmt = n => Math.round(Math.max(0,n)).toLocaleString('pt-BR');
+  const DIAS_MES = 30;
+  const ALV_OCUP_ALVO = 80;        // alvo saudável de ocupação
+
+  function calc(){
+    const uhs = +$('calcUhs').value || 0;
+    const diaria = +$('calcDiaria').value || 0;
+    const novaDiariaRaw = +$('calcNovaDiaria').value || 0;
+    const ocup = +$('calcOcup').value || 0;
+
+    if($('calcOcupVal')) $('calcOcupVal').textContent = ocup;
+
+    // Incremento real de tarifa (só conta se nova > atual)
+    const incrementoTarifa = novaDiariaRaw > diaria ? (novaDiariaRaw - diaria) : 0;
+
+    // FATURAMENTO ATUAL
+    const noitesAtuais = uhs * DIAS_MES * (ocup/100);
+    const fatMes = noitesAtuais * diaria;
+    $('calcFatMes').textContent = fmt(fatMes);
+
+    // VAZAMENTO 1 — Ocupação (diferença até o alvo de 80%)
+    const ocupGap = Math.max(0, ALV_OCUP_ALVO - ocup);
+    const noitesGanhas = uhs * DIAS_MES * (ocupGap/100);
+    const lvOcupMes = noitesGanhas * diaria;
+    $('lvOcupAtual').textContent = ocup + '%';
+    $('lvOcupMes').textContent = fmt(lvOcupMes);
+
+    // ATIVA/DESATIVA card de ocupação (loss)
+    const cardOcup = document.querySelector('.cr-grid .cr-item:nth-child(2)');
+    if(cardOcup) cardOcup.classList.toggle('loss', lvOcupMes > 0);
+
+    // VAZAMENTO 2 — Tarifa (só se informou diária potencial > atual)
+    const lvDiariaMes = noitesAtuais * incrementoTarifa;
+    const cardTarifa = $('cardTarifa');
+    const lvDiariaValWrap = $('lvDiariaValWrap');
+    const lvDiariaSub = $('lvDiariaSub');
+
+    if(incrementoTarifa > 0) {
+      cardTarifa.classList.add('loss');
+      lvDiariaValWrap.innerHTML = '−R$ <span id="lvDiariaMes">'+fmt(lvDiariaMes)+'</span>';
+      lvDiariaSub.innerHTML = 'tarifa pode subir <strong>R$ '+fmt(incrementoTarifa)+'</strong>';
+    } else {
+      cardTarifa.classList.remove('loss');
+      lvDiariaValWrap.innerHTML = '<span class="cri-empty">—</span>';
+      lvDiariaSub.innerHTML = 'preencha &ldquo;diária potencial&rdquo; para simular';
+    }
+
+    // TOTAL (BIG NUMBER) — soma dos vazamentos
+    const totalMes = lvOcupMes + lvDiariaMes;
+    $('calcTotalMes').textContent = fmt(totalMes);
+    $('calcTotalAno').textContent = fmt(totalMes * 12);
+
+    // MENSAGEM DINÂMICA — orienta conforme cenário
+    const foot = $('calcFoot');
+    const ftx = $('calcFootTx');
+    if(!foot || !ftx) return;
+
+    const temTarifa = incrementoTarifa > 0;
+
+    if(ocup < 65 && !temTarifa) {
+      ftx.innerHTML = 'Seu maior vazamento é por <strong>OCUPAÇÃO BAIXA</strong>. Cada noite vazia hoje é receita que <strong>não retorna jamais</strong> — não estoca, não recupera.';
+    } else if(ocup < 65 && temTarifa) {
+      ftx.innerHTML = 'Vazamento principal: <strong>OCUPAÇÃO</strong>. Mas também há espaço em <strong>TARIFA</strong> — atacar as duas pontas é o que destrava resultado.';
+    } else if(ocup < 80 && !temTarifa) {
+      ftx.innerHTML = 'Operação saudável, mas ainda <strong>perdendo receita por ocupação</strong>. Chegar a 80% trava esse vazamento.';
+    } else if(ocup < 80 && temTarifa) {
+      ftx.innerHTML = 'Perdendo nas <strong>duas pontas</strong>: ocupação abaixo do ideal e tarifa com espaço para subir. Atacar juntas multiplica o resultado.';
+    } else if(ocup >= 80 && !temTarifa) {
+      ftx.innerHTML = 'Ocupação já no alvo (<strong>'+ocup+'%</strong>). Se houver espaço para ajuste de tarifa, preencha &ldquo;diária potencial&rdquo; acima para dimensionar.';
+    } else {
+      ftx.innerHTML = 'Ocupação no alvo. Vazamento agora é <strong>TARIFA</strong> — subir R$ '+fmt(incrementoTarifa)+' por diária, sem mexer em ocupação, deixa de escapar <strong>−R$ '+fmt(lvDiariaMes * 12)+' em 12 meses</strong>.';
+    }
+  }
+
+  inputs.forEach(el => el.addEventListener('input', calc));
+  calc();
+})();
+
+/* ─── PDF DOWNLOAD ─── */
+function downloadPdf(){
+  // Pausa animações SVG (animateMotion) que travam o Chrome
+  document.querySelectorAll('svg').forEach(svg => {
+    try { svg.pauseAnimations && svg.pauseAnimations(); } catch(e){}
+  });
+  setTimeout(() => {
+    window.print();
+    setTimeout(() => {
+      document.querySelectorAll('svg').forEach(svg => {
+        try { svg.unpauseAnimations && svg.unpauseAnimations(); } catch(e){}
+      });
+    }, 500);
+  }, 80);
+}
+
+/* ─── MOBILE: scroll progress + back-to-top ─── */
+const progress = document.getElementById('scrollProgress');
+const toTop = document.getElementById('toTop');
+window.addEventListener('scroll', () => {
+  const max = document.body.scrollHeight - window.innerHeight;
+  const pct = max > 0 ? (window.scrollY / max) * 100 : 0;
+  progress.style.width = pct + '%';
+  if(window.scrollY > window.innerHeight * 0.6){
+    toTop.classList.add('visible');
+  } else {
+    toTop.classList.remove('visible');
+  }
+}, {passive:true});
+</script>
+</body>
+</html>

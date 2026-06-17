@@ -1,0 +1,450 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>O que sua dependência da Booking custa · Komplexa</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500&family=Inter:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --navy:#0E1E35;
+  --ink:#1A2942;
+  --blue:#1670C3;
+  --cyan:#24D5FF;
+  --linen:#F5F1EA;
+  --paper:#FAF7F2;
+  --red:#D04545;
+  --green:#1F9D55;
+  --soft:rgba(14,30,53,.65);
+  --muted:rgba(14,30,53,.42);
+  --line:rgba(14,30,53,.10);
+  --grad:linear-gradient(90deg,#1670C3,#1099E9 48%,#24D5FF);
+  --fd:'Inter',system-ui,sans-serif;
+  --fs:'Fraunces',Georgia,serif;
+  --fm:'IBM Plex Mono',ui-monospace,monospace;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--fd);background:var(--linen);color:var(--navy);-webkit-font-smoothing:antialiased;line-height:1.55;overflow-x:hidden}
+::selection{background:var(--navy);color:var(--linen)}
+
+/* ─── LAYOUT BASE ─── */
+.wrap{max-width:1080px;margin:0 auto;padding:0 32px}
+.wrap-narrow{max-width:880px;margin:0 auto;padding:0 32px}
+section{padding:96px 0;position:relative}
+
+/* ─── HEADER MINIMAL ─── */
+.head{padding:24px 0;border-bottom:1px solid var(--line);background:var(--linen)}
+.head-inner{max-width:1080px;margin:0 auto;padding:0 32px;display:flex;justify-content:space-between;align-items:center;gap:18px}
+.head-brand{display:flex;align-items:center;gap:8px;font-family:var(--fs);font-weight:500;font-size:17px;letter-spacing:-.3px;color:var(--navy);font-variation-settings:"opsz" 100}
+.head-brand .dot{width:7px;height:7px;border-radius:50%;background:var(--blue)}
+.head-meta{font-family:var(--fm);font-size:10.5px;letter-spacing:1.6px;text-transform:uppercase;color:var(--muted);font-weight:500}
+
+/* ─── HERO ─── */
+.hero{background:var(--linen);padding:120px 0 80px}
+.hero-eyebrow{font-family:var(--fm);font-size:11px;font-weight:500;letter-spacing:1.8px;text-transform:uppercase;color:var(--red);margin-bottom:32px;display:inline-flex;align-items:center;gap:10px}
+.hero-eyebrow::before{content:"";width:18px;height:2px;background:var(--red)}
+.hero-h1{font-family:var(--fs);font-weight:300;font-size:clamp(40px,5.5vw,68px);line-height:1.05;letter-spacing:-1.8px;color:var(--navy);font-variation-settings:"opsz" 144;max-width:900px;margin-bottom:48px}
+.hero-h1 em{font-style:italic;color:var(--red);font-weight:400}
+
+/* Big number do hero */
+.hero-big{padding:48px 0 32px;border-top:1px solid var(--line);border-bottom:1px solid var(--line);margin-bottom:32px}
+.hero-big-lbl{font-family:var(--fm);font-size:11px;letter-spacing:1.6px;text-transform:uppercase;color:var(--muted);font-weight:500;margin-bottom:14px}
+.hero-big-num{font-family:var(--fm);font-size:clamp(72px,11vw,148px);font-weight:600;color:var(--red);letter-spacing:-5px;line-height:.95;font-feature-settings:"tnum" on}
+.hero-big-sub{font-size:16px;color:var(--soft);margin-top:18px;line-height:1.55;max-width:580px}
+.hero-big-sub strong{color:var(--navy);font-weight:600}
+
+/* ─── SEÇÃO: SITUAÇÃO ATUAL ─── */
+.situacao{background:var(--paper)}
+.section-eyebrow{font-family:var(--fm);font-size:11px;font-weight:500;letter-spacing:1.8px;text-transform:uppercase;color:var(--blue);margin-bottom:20px;display:inline-flex;align-items:center;gap:10px}
+.section-eyebrow::before{content:"";width:18px;height:2px;background:var(--blue)}
+.section-title{font-family:var(--fs);font-weight:400;font-size:clamp(34px,4.5vw,56px);line-height:1.05;letter-spacing:-1.4px;margin-bottom:48px;font-variation-settings:"opsz" 144}
+.section-title em{font-style:italic;color:var(--blue)}
+
+.hotel-row{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;margin-bottom:48px}
+.hotel-stat{display:flex;flex-direction:column;gap:6px;padding:24px 0;border-top:1px solid var(--navy)}
+.hotel-stat .hs-lbl{font-family:var(--fm);font-size:10px;letter-spacing:1.6px;text-transform:uppercase;color:var(--muted);font-weight:600}
+.hotel-stat .hs-val{font-family:var(--fm);font-size:36px;font-weight:600;color:var(--navy);letter-spacing:-1.4px;line-height:1;font-feature-settings:"tnum" on}
+
+.calc-box{background:var(--linen);border:1px solid var(--line);border-radius:18px;padding:36px;display:grid;grid-template-columns:1fr 1fr 1fr;gap:32px;align-items:center}
+.calc-step{display:flex;flex-direction:column;gap:4px}
+.calc-step .cs-lbl{font-family:var(--fm);font-size:10.5px;letter-spacing:1.4px;text-transform:uppercase;color:var(--muted);font-weight:500}
+.calc-step .cs-val{font-family:var(--fm);font-size:28px;font-weight:600;color:var(--navy);letter-spacing:-.8px;line-height:1;font-feature-settings:"tnum" on}
+.calc-step.final .cs-val{color:var(--red);font-size:38px;letter-spacing:-1.2px}
+.calc-arrow{text-align:center;font-family:var(--fm);font-size:22px;color:var(--blue);font-weight:400}
+
+/* ─── SEÇÃO: PROPOSTA ─── */
+.proposta{background:var(--navy);color:var(--linen);position:relative;overflow:hidden}
+.proposta::before{content:"";position:absolute;top:-200px;right:-100px;width:540px;height:540px;border-radius:50%;background:radial-gradient(circle,rgba(36,213,255,.18) 0%,transparent 65%);pointer-events:none}
+.proposta .section-eyebrow{color:var(--cyan)}
+.proposta .section-eyebrow::before{background:var(--cyan)}
+.proposta .section-title{color:var(--linen)}
+.proposta .section-title em{color:var(--cyan)}
+
+.prop-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center;position:relative;z-index:1;margin-bottom:48px}
+.prop-info p{font-size:17px;color:rgba(245,241,234,.75);line-height:1.65;margin-bottom:16px}
+.prop-info p strong{color:var(--linen);font-weight:600}
+.prop-card{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.10);border-radius:18px;padding:38px}
+.prop-card .pc-row{display:flex;justify-content:space-between;align-items:baseline;padding:14px 0;border-bottom:1px solid rgba(255,255,255,.10)}
+.prop-card .pc-row:last-child{border-bottom:none;padding-top:20px;margin-top:6px;border-top:2px solid var(--cyan);padding-bottom:0}
+.prop-card .pc-lbl{font-size:14px;color:rgba(245,241,234,.65)}
+.prop-card .pc-val{font-family:var(--fm);font-size:18px;color:var(--linen);font-weight:600;font-feature-settings:"tnum" on}
+.prop-card .pc-row:last-child .pc-lbl{font-family:var(--fm);font-size:11px;color:var(--cyan);font-weight:600;letter-spacing:1.6px;text-transform:uppercase}
+.prop-card .pc-row:last-child .pc-val{font-size:32px;color:var(--cyan);letter-spacing:-1px}
+
+/* ─── SEÇÃO: TIMELINE / RETORNO ─── */
+.retorno{background:var(--linen)}
+.timeline{margin-top:48px;background:var(--paper);border:1px solid var(--line);border-radius:20px;padding:40px;position:relative;overflow:hidden}
+.timeline-title{font-family:var(--fs);font-weight:500;font-size:22px;letter-spacing:-.5px;margin-bottom:32px;color:var(--navy);font-variation-settings:"opsz" 100}
+.timeline-grid{display:grid;grid-template-columns:repeat(12,1fr);gap:6px;margin-bottom:18px}
+.tl-month{display:flex;flex-direction:column;align-items:center;gap:8px;padding:14px 4px;border-radius:10px;text-align:center;min-height:90px;justify-content:flex-end}
+.tl-month.invest{background:rgba(208,69,69,.10);border:1px solid rgba(208,69,69,.30)}
+.tl-month.profit{background:rgba(31,157,85,.10);border:1px solid rgba(31,157,85,.25)}
+.tl-month.payback{background:linear-gradient(135deg,rgba(22,112,195,.15),rgba(36,213,255,.10));border:2px solid var(--blue);position:relative}
+.tl-month.payback::before{content:"PAYBACK";position:absolute;top:-9px;left:50%;transform:translateX(-50%);font-family:var(--fm);font-size:8.5px;font-weight:700;letter-spacing:1.4px;background:var(--blue);color:#fff;padding:3px 8px;border-radius:100px;white-space:nowrap}
+.tl-month .tlm-month{font-family:var(--fm);font-size:10px;letter-spacing:1px;text-transform:uppercase;color:var(--muted);font-weight:600}
+.tl-month .tlm-val{font-family:var(--fm);font-size:11px;font-weight:600;line-height:1.2}
+.tl-month.invest .tlm-val{color:var(--red)}
+.tl-month.profit .tlm-val{color:var(--green)}
+.tl-month.payback .tlm-val{color:var(--blue)}
+
+.timeline-legend{display:flex;gap:24px;flex-wrap:wrap;padding-top:24px;border-top:1px solid var(--line);font-size:13px;color:var(--soft)}
+.tl-leg{display:flex;align-items:center;gap:8px}
+.tl-leg .dot{width:12px;height:12px;border-radius:4px}
+.tl-leg.invest .dot{background:rgba(208,69,69,.30);border:1px solid var(--red)}
+.tl-leg.profit .dot{background:rgba(31,157,85,.25);border:1px solid var(--green)}
+.tl-leg.payback .dot{background:var(--blue)}
+
+/* Final big number do retorno */
+.retorno-final{margin-top:64px;display:grid;grid-template-columns:1fr 1fr;gap:32px;align-items:center;padding:48px 0;border-top:1px solid var(--line)}
+.rf-text h3{font-family:var(--fs);font-weight:400;font-size:32px;letter-spacing:-.8px;line-height:1.1;color:var(--navy);margin-bottom:18px;font-variation-settings:"opsz" 100}
+.rf-text h3 em{font-style:italic;color:var(--green)}
+.rf-text p{font-size:15px;color:var(--soft);line-height:1.65}
+.rf-num{text-align:right}
+.rf-num .rfn-lbl{font-family:var(--fm);font-size:11px;letter-spacing:1.6px;text-transform:uppercase;color:var(--muted);font-weight:600;margin-bottom:12px;display:block}
+.rf-num .rfn-val{font-family:var(--fm);font-size:clamp(64px,8.5vw,108px);font-weight:600;color:var(--green);letter-spacing:-4px;line-height:.95;font-feature-settings:"tnum" on;display:block}
+.rf-num .rfn-sub{font-family:var(--fm);font-size:12px;color:var(--soft);margin-top:10px;letter-spacing:.3px}
+
+/* ─── SEÇÃO: 3 CENÁRIOS (tabela compacta) ─── */
+.cenarios-section{background:var(--paper)}
+.scen-table{margin-top:48px;border:1px solid var(--line);border-radius:18px;overflow:hidden;background:var(--linen)}
+.scen-header{display:grid;grid-template-columns:1.6fr 1fr 1fr 1fr;background:var(--navy);color:var(--linen);padding:18px 28px}
+.scen-header .sh-cell{font-family:var(--fm);font-size:10.5px;letter-spacing:1.6px;text-transform:uppercase;font-weight:600;color:rgba(245,241,234,.7)}
+.scen-row-tbl{display:grid;grid-template-columns:1.6fr 1fr 1fr 1fr;padding:20px 28px;border-bottom:1px solid var(--line);align-items:center}
+.scen-row-tbl:last-child{border-bottom:none}
+.scen-row-tbl.featured{background:linear-gradient(90deg,rgba(22,112,195,.05),rgba(22,112,195,.02));position:relative}
+.scen-row-tbl.featured::before{content:"";position:absolute;left:0;top:0;bottom:0;width:4px;background:var(--blue)}
+.scen-label{display:flex;align-items:center;gap:14px}
+.scen-label .sl-dot{width:10px;height:10px;border-radius:50%}
+.scen-label.pess .sl-dot{background:var(--red)}
+.scen-label.real .sl-dot{background:var(--blue)}
+.scen-label.oti .sl-dot{background:var(--green)}
+.scen-label .sl-name{font-family:var(--fs);font-weight:500;font-size:18px;letter-spacing:-.3px;color:var(--navy);font-variation-settings:"opsz" 100}
+.scen-label .sl-badge{display:inline-block;background:var(--blue);color:#fff;font-family:var(--fm);font-size:9px;font-weight:700;letter-spacing:1.2px;text-transform:uppercase;padding:3px 8px;border-radius:4px;margin-left:6px}
+.scen-cell{font-family:var(--fm);font-size:17px;font-weight:600;color:var(--navy);text-align:right;letter-spacing:-.3px;font-feature-settings:"tnum" on}
+.scen-cell.green{color:var(--green)}
+.scen-cell.blue{color:var(--blue);font-size:19px}
+.scen-cell.red{color:var(--red)}
+
+.scen-note{margin-top:24px;font-size:13.5px;color:var(--soft);line-height:1.6;background:var(--linen);border-left:3px solid var(--blue);padding:16px 22px;border-radius:0 10px 10px 0}
+.scen-note strong{color:var(--navy);font-weight:600}
+
+/* ─── SEÇÃO: PROJEÇÃO 5 ANOS ─── */
+.longprazo{background:var(--navy);color:var(--linen);position:relative;overflow:hidden;text-align:center}
+.longprazo::before{content:"";position:absolute;top:-200px;left:-100px;width:540px;height:540px;border-radius:50%;background:radial-gradient(circle,rgba(36,213,255,.18) 0%,transparent 65%);pointer-events:none}
+.longprazo::after{content:"";position:absolute;bottom:-200px;right:-100px;width:540px;height:540px;border-radius:50%;background:radial-gradient(circle,rgba(22,112,195,.18) 0%,transparent 65%);pointer-events:none}
+.longprazo .section-eyebrow{color:var(--cyan);justify-content:center}
+.longprazo .section-eyebrow::before{background:var(--cyan)}
+.longprazo h2{font-family:var(--fs);font-weight:400;font-size:clamp(36px,5vw,56px);line-height:1.1;letter-spacing:-1.4px;margin-bottom:32px;color:var(--linen);font-variation-settings:"opsz" 144;max-width:780px;margin-left:auto;margin-right:auto;position:relative;z-index:1}
+.longprazo h2 em{font-style:italic;color:var(--cyan)}
+.lp-num{font-family:var(--fm);font-weight:600;font-size:clamp(80px,12vw,168px);letter-spacing:-6px;line-height:.95;background:var(--grad);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;margin-bottom:18px;font-feature-settings:"tnum" on;position:relative;z-index:1}
+.lp-sub{font-size:17px;color:rgba(245,241,234,.65);max-width:580px;margin:0 auto;line-height:1.6;position:relative;z-index:1}
+.lp-sub strong{color:var(--linen);font-weight:600}
+
+/* ─── CTA FINAL ─── */
+.cta-section{background:var(--linen);padding:96px 0;text-align:center}
+.cta-section h2{font-family:var(--fs);font-weight:400;font-size:clamp(36px,5vw,56px);line-height:1.1;letter-spacing:-1.4px;margin-bottom:24px;color:var(--navy);font-variation-settings:"opsz" 144}
+.cta-section h2 em{font-style:italic;color:var(--blue)}
+.cta-section p{font-size:17px;color:var(--soft);max-width:580px;margin:0 auto 40px;line-height:1.6}
+.cta-btn{display:inline-flex;align-items:center;gap:10px;background:var(--navy);color:var(--linen);padding:18px 32px;border-radius:14px;font-family:var(--fd);font-weight:600;font-size:15px;letter-spacing:.2px;text-decoration:none;box-shadow:0 8px 24px rgba(14,30,53,.18);transition:transform .2s}
+.cta-btn:hover{transform:translateY(-2px)}
+.cta-btn .arr{font-family:var(--fm);font-size:18px}
+
+/* ─── FOOT ─── */
+.foot{background:var(--navy);color:rgba(245,241,234,.5);padding:32px 0;border-top:1px solid rgba(245,241,234,.10)}
+.foot-inner{max-width:1080px;margin:0 auto;padding:0 32px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:18px}
+.foot .sig{font-family:var(--fs);font-weight:500;font-size:18px;letter-spacing:-.4px;color:var(--linen);font-variation-settings:"opsz" 100}
+.foot .meta{font-family:var(--fm);font-size:10.5px;letter-spacing:1.6px;text-transform:uppercase}
+
+/* ─── MOBILE ─── */
+@media (max-width:780px){
+  .wrap,.wrap-narrow{padding:0 22px}
+  section{padding:64px 0}
+  .head-inner{padding:0 22px}
+  .head-meta{display:none}
+  .hero{padding:64px 0 48px}
+  .hero-h1{font-size:32px;letter-spacing:-1px;margin-bottom:36px}
+  .hero-big-num{font-size:72px;letter-spacing:-3px}
+  .hero-big-sub{font-size:14px}
+  .section-title{font-size:30px;letter-spacing:-1px;margin-bottom:32px}
+  .hotel-row{grid-template-columns:1fr 1fr;gap:10px;margin-bottom:32px}
+  .hotel-stat{padding:16px 0}
+  .hotel-stat .hs-val{font-size:26px}
+  .calc-box{grid-template-columns:1fr;gap:18px;padding:24px}
+  .calc-arrow{transform:rotate(90deg);font-size:18px}
+  .calc-step .cs-val{font-size:22px}
+  .calc-step.final .cs-val{font-size:28px}
+  .prop-grid{grid-template-columns:1fr;gap:24px}
+  .prop-card{padding:26px}
+  .prop-card .pc-row:last-child .pc-val{font-size:22px}
+  .timeline{padding:24px;margin-top:32px}
+  .timeline-grid{grid-template-columns:repeat(6,1fr);gap:5px}
+  .tl-month{min-height:64px;padding:10px 2px}
+  .tl-month .tlm-month{font-size:9px}
+  .tl-month .tlm-val{font-size:9.5px}
+  .tl-month.payback::before{font-size:7px;padding:2px 6px}
+  .timeline-legend{font-size:11.5px;gap:14px}
+  .retorno-final{grid-template-columns:1fr;gap:24px;margin-top:48px;padding-top:32px;text-align:left}
+  .rf-num{text-align:left}
+  .rf-num .rfn-val{font-size:60px;letter-spacing:-2px}
+  .rf-text h3{font-size:22px}
+  .scen-header,.scen-row-tbl{grid-template-columns:1fr;padding:14px 18px;gap:8px}
+  .scen-header{display:none}
+  .scen-row-tbl{border-bottom:1px solid var(--line)}
+  .scen-cell{text-align:left;font-size:14px;display:flex;justify-content:space-between}
+  .scen-cell::before{content:attr(data-lbl);font-family:var(--fm);font-size:9.5px;letter-spacing:1.4px;text-transform:uppercase;color:var(--muted);font-weight:500}
+  .scen-row-tbl.featured::before{display:none}
+  .scen-row-tbl.featured{border-left:4px solid var(--blue)}
+  .scen-label .sl-name{font-size:16px}
+  .longprazo h2{font-size:26px;letter-spacing:-.8px}
+  .lp-num{font-size:60px;letter-spacing:-2.5px}
+  .lp-sub{font-size:14px}
+  .cta-section{padding:64px 0}
+  .cta-section h2{font-size:28px}
+  .cta-section p{font-size:14px}
+  .cta-btn{padding:14px 24px;font-size:13.5px}
+}
+</style>
+</head>
+<body>
+
+<!-- ═══════════════════ HEADER ═══════════════════ -->
+<header class="head">
+  <div class="head-inner">
+    <div class="head-brand"><span class="dot"></span>komplexa</div>
+    <div class="head-meta">Análise · Reservas Diretas · Maio 2026</div>
+  </div>
+</header>
+
+<!-- ═══════════════════ HERO ═══════════════════ -->
+<section class="hero">
+  <div class="wrap-narrow">
+    <span class="hero-eyebrow">A conta que você paga sem perceber</span>
+    <h1 class="hero-h1">Hoje seu hotel paga<br>quase <em>R$ 326 mil por ano</em><br>em comissão para a Booking.</h1>
+
+    <div class="hero-big">
+      <span class="hero-big-lbl">Comissão paga em 12 meses</span>
+      <div class="hero-big-num">R$ 325.752</div>
+      <p class="hero-big-sub">Esse valor sai do seu caixa <strong>todo mês</strong> e vai para uma empresa que nunca pisou no seu hotel. <strong>A boa notícia:</strong> dá pra recuperar uma parte significativa disso com um projeto pequeno. Vamos mostrar quanto.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════ SITUAÇÃO ATUAL ═══════════════════ -->
+<section class="situacao">
+  <div class="wrap-narrow">
+    <span class="section-eyebrow">01 · Onde estamos hoje</span>
+    <h2 class="section-title">Como a conta <em>é montada.</em></h2>
+
+    <div class="hotel-row">
+      <div class="hotel-stat">
+        <span class="hs-lbl">Quartos (UHs)</span>
+        <span class="hs-val">99</span>
+      </div>
+      <div class="hotel-stat">
+        <span class="hs-lbl">Ocupação média</span>
+        <span class="hs-val">62%</span>
+      </div>
+      <div class="hotel-stat">
+        <span class="hs-lbl">Diária média</span>
+        <span class="hs-val">R$ 234</span>
+      </div>
+      <div class="hotel-stat">
+        <span class="hs-lbl">Vem da Booking</span>
+        <span class="hs-val">35%</span>
+      </div>
+    </div>
+
+    <div class="calc-box">
+      <div class="calc-step">
+        <span class="cs-lbl">Reservas Booking/mês</span>
+        <span class="cs-val">644 diárias</span>
+      </div>
+      <div class="calc-arrow">→</div>
+      <div class="calc-step">
+        <span class="cs-lbl">Receita Booking/mês</span>
+        <span class="cs-val">R$ 150.811</span>
+      </div>
+      <div class="calc-arrow">→</div>
+      <div class="calc-step final">
+        <span class="cs-lbl">Comissão paga / mês</span>
+        <span class="cs-val">R$ 27.146</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════ PROPOSTA ═══════════════════ -->
+<section class="proposta">
+  <div class="wrap-narrow">
+    <span class="section-eyebrow">02 · A proposta</span>
+    <h2 class="section-title">O investimento é <em>menor do que a comissão</em> de 1 mês.</h2>
+
+    <div class="prop-grid">
+      <div class="prop-info">
+        <p>Vamos rodar uma operação de marketing focada em <strong>migrar 15% das reservas que hoje vêm pela Booking para o canal direto</strong> do seu hotel.</p>
+        <p>Cada reserva migrada deixa de pagar a comissão de 18%. Esse valor vai direto para o seu caixa.</p>
+        <p>O projeto custa <strong>R$ 4.200 por mês durante 3 meses</strong>. Total: <strong>R$ 12.600</strong> — menos do que metade do que você paga em UM mês de comissão hoje.</p>
+      </div>
+
+      <div class="prop-card">
+        <div class="pc-row">
+          <span class="pc-lbl">Mensalidade</span>
+          <span class="pc-val">R$ 4.200</span>
+        </div>
+        <div class="pc-row">
+          <span class="pc-lbl">Duração</span>
+          <span class="pc-val">3 meses</span>
+        </div>
+        <div class="pc-row">
+          <span class="pc-lbl">Investimento total</span>
+          <span class="pc-val">R$ 12.600</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════ RETORNO COM TIMELINE ═══════════════════ -->
+<section class="retorno">
+  <div class="wrap">
+    <span class="section-eyebrow">03 · O retorno</span>
+    <h2 class="section-title">Quando o investimento <em>vira lucro.</em></h2>
+    <p style="font-size:17px;color:var(--soft);max-width:720px;line-height:1.6;margin-bottom:8px">A linha do tempo abaixo mostra os 12 meses do projeto no <strong style="color:var(--navy)">cenário realista</strong> (15% das reservas Booking migrando para o canal direto). Os 3 primeiros meses são de investimento. O quarto mês é onde tudo se paga. Daí em diante, é economia recorrente que entra direto no resultado.</p>
+
+    <div class="timeline">
+      <h3 class="timeline-title">Saldo acumulado mês a mês</h3>
+      <div class="timeline-grid">
+        <div class="tl-month invest"><span class="tlm-month">M1</span><span class="tlm-val">– R$ 128</span></div>
+        <div class="tl-month invest"><span class="tlm-month">M2</span><span class="tlm-val">– R$ 256</span></div>
+        <div class="tl-month invest"><span class="tlm-month">M3</span><span class="tlm-val">– R$ 384</span></div>
+        <div class="tl-month payback"><span class="tlm-month">M4</span><span class="tlm-val">+ R$ 3.688</span></div>
+        <div class="tl-month profit"><span class="tlm-month">M5</span><span class="tlm-val">+ R$ 7.760</span></div>
+        <div class="tl-month profit"><span class="tlm-month">M6</span><span class="tlm-val">+ R$ 11.832</span></div>
+        <div class="tl-month profit"><span class="tlm-month">M7</span><span class="tlm-val">+ R$ 15.904</span></div>
+        <div class="tl-month profit"><span class="tlm-month">M8</span><span class="tlm-val">+ R$ 19.976</span></div>
+        <div class="tl-month profit"><span class="tlm-month">M9</span><span class="tlm-val">+ R$ 24.047</span></div>
+        <div class="tl-month profit"><span class="tlm-month">M10</span><span class="tlm-val">+ R$ 28.119</span></div>
+        <div class="tl-month profit"><span class="tlm-month">M11</span><span class="tlm-val">+ R$ 32.191</span></div>
+        <div class="tl-month profit"><span class="tlm-month">M12</span><span class="tlm-val">+ R$ 36.263</span></div>
+      </div>
+      <div class="timeline-legend">
+        <div class="tl-leg invest"><span class="dot"></span><span>Meses 1–3 · investimento ativo</span></div>
+        <div class="tl-leg payback"><span class="dot"></span><span>Mês 4 · payback do projeto</span></div>
+        <div class="tl-leg profit"><span class="dot"></span><span>Meses 5–12 · lucro recorrente</span></div>
+      </div>
+    </div>
+
+    <div class="retorno-final">
+      <div class="rf-text">
+        <h3>Em 12 meses, sobram<br><em>R$ 36.263</em> no seu caixa.</h3>
+        <p>O equivalente a <strong>2,9× o que você investiu</strong>. E esse valor continua entrando todos os meses dos anos seguintes — a operação de marketing continua rodando, a economia em comissão continua acontecendo.</p>
+      </div>
+      <div class="rf-num">
+        <span class="rfn-lbl">Líquido em 12 meses</span>
+        <span class="rfn-val">R$ 36.263</span>
+        <span class="rfn-sub">+ 288% sobre o capital investido</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════ CENÁRIOS COMPARADOS ═══════════════════ -->
+<section class="cenarios-section">
+  <div class="wrap">
+    <span class="section-eyebrow">04 · E se variar?</span>
+    <h2 class="section-title">Os 3 cenários, <em>lado a lado.</em></h2>
+    <p style="font-size:17px;color:var(--soft);max-width:720px;line-height:1.6">Caso a migração de reservas fique abaixo ou acima do esperado, veja o impacto. Em todos os cenários, o investimento se paga dentro do horizonte de 12 meses.</p>
+
+    <div class="scen-table">
+      <div class="scen-header">
+        <span class="sh-cell">Cenário</span>
+        <span class="sh-cell" style="text-align:right">Economia/mês</span>
+        <span class="sh-cell" style="text-align:right">Líquido 12m</span>
+        <span class="sh-cell" style="text-align:right">Payback</span>
+      </div>
+      <div class="scen-row-tbl">
+        <div class="scen-label pess">
+          <span class="sl-dot"></span>
+          <span class="sl-name">Pessimista — 10% migração</span>
+        </div>
+        <span class="scen-cell" data-lbl="Economia/mês">R$ 2.715</span>
+        <span class="scen-cell" data-lbl="Líquido 12m">R$ 19.975</span>
+        <span class="scen-cell" data-lbl="Payback">4,6 meses</span>
+      </div>
+      <div class="scen-row-tbl featured">
+        <div class="scen-label real">
+          <span class="sl-dot"></span>
+          <span class="sl-name">Realista — 15% migração<span class="sl-badge">Esperado</span></span>
+        </div>
+        <span class="scen-cell blue" data-lbl="Economia/mês">R$ 4.072</span>
+        <span class="scen-cell blue" data-lbl="Líquido 12m">R$ 36.263</span>
+        <span class="scen-cell blue" data-lbl="Payback">3,1 meses</span>
+      </div>
+      <div class="scen-row-tbl">
+        <div class="scen-label oti">
+          <span class="sl-dot"></span>
+          <span class="sl-name">Otimista — 20% migração</span>
+        </div>
+        <span class="scen-cell green" data-lbl="Economia/mês">R$ 5.429</span>
+        <span class="scen-cell green" data-lbl="Líquido 12m">R$ 52.550</span>
+        <span class="scen-cell green" data-lbl="Payback">2,3 meses</span>
+      </div>
+    </div>
+
+    <p class="scen-note"><strong>Mesmo no pior cenário</strong> (10% de migração), o hotel recupera o investimento em menos de 5 meses e termina o ano com <strong>R$ 19.975 líquidos no caixa</strong>. Não existe cenário com prejuízo material — a única variável é o tamanho do ganho.</p>
+  </div>
+</section>
+
+<!-- ═══════════════════ PROJEÇÃO LONGO PRAZO ═══════════════════ -->
+<section class="longprazo">
+  <div class="wrap-narrow">
+    <span class="section-eyebrow">05 · Em 5 anos</span>
+    <h2>Mantendo o projeto rodando,<br>o impacto acumulado chega a</h2>
+    <div class="lp-num">R$ 244.313</div>
+    <p class="lp-sub"><strong>retidos no caixa do hotel</strong> em 5 anos. Sem subir uma diária sequer. Sem vender um quarto novo. Apenas reduzindo a dependência da Booking de forma estruturada e mantendo o canal direto saudável.</p>
+  </div>
+</section>
+
+<!-- ═══════════════════ CTA FINAL ═══════════════════ -->
+<section class="cta-section">
+  <div class="wrap-narrow">
+    <h2>Pronto pra começar a <em>recuperar essa receita?</em></h2>
+    <p>Próximo passo: agendar reunião de kickoff com o nosso time pra alinhar o cronograma operacional e dar partida no projeto.</p>
+    <a href="https://form.respondi.app/QnLOVD5g" target="_blank" class="cta-btn">Agendar reunião de kickoff <span class="arr">→</span></a>
+  </div>
+</section>
+
+<!-- ═══════════════════ FOOT ═══════════════════ -->
+<footer class="foot">
+  <div class="foot-inner">
+    <div class="sig">komplexa<span style="color:var(--cyan)">.</span></div>
+    <div class="meta">Análise financeira · Projeto Reservas Diretas · 2026</div>
+  </div>
+</footer>
+
+</body>
+</html>
