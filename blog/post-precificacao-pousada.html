@@ -1,0 +1,633 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="../assets/logo.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Performance: preconnect às fontes (Core Web Vitals) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+  <title>Precificação para pousada: revenue management na prática (sem complicar)</title>
+  <meta name="description" content="Tarifa fixa o ano todo deixa dinheiro na mesa. Aprenda revenue management na prática para pousadas: como precificar por demanda, sazonalidade e antecedência." />
+  <meta name="keywords" content="precificação pousada, revenue management hotelaria, como definir diária pousada, tarifa dinâmica pousada, precificação dinâmica hotel" />
+  <meta name="author" content="Komplexa Hotéis" />
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1" />
+  <meta name="theme-color" content="#14233C" />
+  <link rel="canonical" href="https://komplexahoteis.com/blog/post-precificacao-pousada.html" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://komplexahoteis.com/blog/post-precificacao-pousada.html" />
+  <meta property="og:title" content="Precificação para pousada: revenue management na prática (sem complicar)" />
+  <meta property="og:description" content="Tarifa fixa o ano todo deixa dinheiro na mesa. Aprenda revenue management na prática para pousadas: como precificar por demanda, sazonalidade e antecedência." />
+  <meta property="og:image" content="https://komplexahoteis.com/assets/og-image.jpg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="Precificação para pousada: revenue management na prática — Komplexa Hotéis" />
+  <meta property="og:locale" content="pt_BR" />
+  <meta property="og:site_name" content="Komplexa Hotéis" />
+  <meta property="article:published_time" content="2026-06-17" />
+  <meta property="article:author" content="Komplexa Hotéis" />
+  <meta property="article:section" content="RevPAR e Receita" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Precificação para pousada: revenue management na prática (sem complicar)" />
+  <meta name="twitter:description" content="Tarifa fixa o ano todo deixa dinheiro na mesa. Aprenda revenue management na prática para pousadas: precifique por demanda, sazonalidade e antecedência." />
+  <meta name="twitter:image" content="https://komplexahoteis.com/assets/og-image.jpg" />
+
+  <!-- Schema.org -->
+  <script type="application/ld+json">
+  [
+    {
+      "@context": "https://schema.org",
+      "@type": "BlogPosting",
+      "headline": "Precificação para pousada: revenue management na prática (sem complicar)",
+      "description": "Tarifa fixa o ano todo deixa dinheiro na mesa. Aprenda revenue management na prática para pousadas: como precificar por demanda, sazonalidade e antecedência.",
+      "image": ["https://komplexahoteis.com/assets/og-image.jpg"],
+      "url": "https://komplexahoteis.com/blog/post-precificacao-pousada.html",
+      "datePublished": "2026-06-17",
+      "dateModified": "2026-06-17",
+      "inLanguage": "pt-BR",
+      "keywords": "precificação pousada, revenue management hotelaria, como definir diária pousada, tarifa dinâmica pousada, precificação dinâmica hotel",
+      "author": {
+        "@type": "Organization",
+        "name": "Komplexa Hotéis",
+        "url": "https://komplexahoteis.com"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Komplexa Hotéis",
+        "logo": { "@type": "ImageObject", "url": "https://komplexahoteis.com/assets/logo.svg" }
+      },
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://komplexahoteis.com/blog/post-precificacao-pousada.html"
+      },
+      "articleSection": "RevPAR e Receita"
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://komplexahoteis.com/" },
+        { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://komplexahoteis.com/blog/" },
+        { "@type": "ListItem", "position": 3, "name": "Precificação para pousada: revenue management na prática", "item": "https://komplexahoteis.com/blog/post-precificacao-pousada.html" }
+      ]
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "O que é revenue management na hotelaria?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Revenue management é a prática de vender o quarto certo, pela tarifa certa, no momento certo, ajustando o preço conforme a demanda. Em vez de uma diária fixa o ano inteiro, a tarifa varia segundo ocupação, sazonalidade, antecedência da reserva, dia da semana e eventos locais. O objetivo é maximizar a receita total, não apenas a taxa de ocupação." }
+        },
+        {
+          "@type": "Question",
+          "name": "Como definir o preço da diária de uma pousada?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Comece definindo faixas de tarifa por temporada (baixa, média e alta) a partir dos seus custos e da concorrência. Depois aplique regras simples: subir o preço quando a ocupação prevista estiver alta, dar desconto para reservas feitas com muita antecedência e exigir mínimo de noites em datas de pico. Não é preciso software caro para começar — uma planilha e disciplina já mudam o resultado." }
+        },
+        {
+          "@type": "Question",
+          "name": "Pousada pequena precisa de precificação dinâmica?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Sim, mas em proporção ao seu tamanho. Pousada pequena não precisa de um software sofisticado de início — precisa parar de cobrar o mesmo valor o ano todo. Faixas por temporada e regras de antecedência já capturam boa parte do ganho. A precificação dinâmica automatizada com IA entra depois, quando o volume de reservas e a operação justificam o investimento." }
+        }
+      ]
+    }
+  ]
+  </script>
+
+  <link rel="stylesheet" href="../assets/style.css" />
+  <style>
+    /* ─── POST HERO ─────────────────────────── */
+    .post-hero { background: var(--navy); padding: 130px 0 72px; position: relative; overflow: hidden; }
+    .post-hero::before {
+      content: ''; position: absolute; top: -100px; right: -100px;
+      width: 500px; height: 500px;
+      background: radial-gradient(circle, rgba(0,198,255,0.1) 0%, transparent 65%);
+    }
+    .post-hero .container { position: relative; z-index: 1; }
+    .post-breadcrumb {
+      display: flex; align-items: center; gap: 8px;
+      font-size: 0.8rem; color: rgba(255,255,255,0.4);
+      margin-bottom: 24px;
+    }
+    .post-breadcrumb a { color: rgba(255,255,255,0.4); text-decoration: none; transition: color 0.2s; }
+    .post-breadcrumb a:hover { color: var(--blue); }
+    .post-breadcrumb span { color: rgba(255,255,255,0.2); }
+    .post-category-pill {
+      display: inline-block;
+      font-family: 'Exo 2', sans-serif; font-size: 0.72rem; font-weight: 700;
+      text-transform: uppercase; letter-spacing: 0.8px;
+      background: var(--grad); color: #fff;
+      padding: 5px 14px; border-radius: 100px;
+      margin-bottom: 16px;
+    }
+    .post-hero h1 {
+      font-size: clamp(2rem, 3.5vw, 3rem); font-weight: 800;
+      letter-spacing: -1px; color: #fff; max-width: 760px;
+      margin-bottom: 20px;
+    }
+    .post-meta {
+      display: flex; align-items: center; gap: 20px;
+      flex-wrap: wrap;
+    }
+    .pm-item { font-size: 0.82rem; color: rgba(255,255,255,0.45); display: flex; align-items: center; gap: 6px; }
+
+    /* ─── POST CONTENT ───────────────────────── */
+    .post-layout {
+      max-width: 1160px; margin: 0 auto; padding: 72px 5%;
+      display: grid; grid-template-columns: 1fr 320px; gap: 72px; align-items: start;
+    }
+    .post-content { min-width: 0; }
+    .post-content h2 {
+      font-size: 1.6rem; font-weight: 800; color: var(--navy);
+      letter-spacing: -0.5px; margin: 40px 0 14px;
+    }
+    .post-content h3 {
+      font-size: 1.15rem; font-weight: 700; color: var(--navy);
+      margin: 28px 0 10px;
+    }
+    .post-content p {
+      font-size: 1rem; color: var(--text); line-height: 1.8;
+      margin-bottom: 18px;
+    }
+    .post-content strong { color: var(--navy); font-weight: 600; }
+    .post-content ul, .post-content ol {
+      margin: 0 0 20px 20px; display: flex; flex-direction: column; gap: 8px;
+    }
+    .post-content li { font-size: 0.95rem; color: var(--text); line-height: 1.7; }
+
+    .highlight-box {
+      background: rgba(0,198,255,0.06); border: 1px solid rgba(0,198,255,0.15);
+      border-left: 3px solid var(--blue);
+      border-radius: 0 10px 10px 0; padding: 20px 24px;
+      margin: 28px 0;
+    }
+    .highlight-box p { font-size: 0.95rem; color: var(--navy); margin: 0; font-weight: 500; line-height: 1.7; }
+
+    /* ─── DATA BLOCK (gráfico de barras) ─────── */
+    .data-block {
+      background: var(--bg); border: 1px solid var(--border);
+      border-radius: 14px; padding: 28px; margin: 32px 0;
+    }
+    .data-block h4 {
+      font-family: 'Exo 2', sans-serif; font-size: 0.75rem; font-weight: 700;
+      text-transform: uppercase; letter-spacing: 1px; color: var(--gray);
+      margin-bottom: 16px;
+    }
+    .db-row { display: flex; align-items: center; gap: 12px; margin-bottom: 12px; }
+    .db-label { font-size: 0.85rem; color: var(--text); width: 200px; flex-shrink: 0; }
+    .db-bar-wrap { flex: 1; height: 8px; background: var(--border); border-radius: 100px; overflow: hidden; }
+    .db-bar { height: 100%; border-radius: 100px; background: var(--grad); }
+    .db-val { font-size: 0.82rem; font-weight: 700; color: var(--blue); width: 56px; text-align: right; }
+
+    /* ─── FAQ (acordeão nativo <details>) ────── */
+    .faq-list { margin: 24px 0; display: flex; flex-direction: column; gap: 10px; }
+    .faq-item {
+      background: var(--bg); border: 1px solid var(--border);
+      border-radius: 12px; overflow: hidden;
+    }
+    .faq-item summary {
+      cursor: pointer; list-style: none;
+      font-size: 0.98rem; font-weight: 600; color: var(--navy);
+      padding: 18px 22px; display: flex; align-items: center; justify-content: space-between; gap: 12px;
+    }
+    .faq-item summary::-webkit-details-marker { display: none; }
+    .faq-item summary::after {
+      content: '+'; font-size: 1.4rem; font-weight: 400; color: var(--blue);
+      transition: transform 0.2s; flex-shrink: 0; line-height: 1;
+    }
+    .faq-item[open] summary::after { transform: rotate(45deg); }
+    .faq-item .faq-answer { padding: 0 22px 20px; }
+    .faq-item .faq-answer p { font-size: 0.95rem; color: var(--text); line-height: 1.75; margin: 0; }
+
+    .post-cta {
+      background: var(--navy); border-radius: 16px; padding: 32px;
+      margin: 40px 0; text-align: center;
+    }
+    .post-cta h4 { font-size: 1.1rem; font-weight: 700; color: #fff; margin-bottom: 8px; }
+    .post-cta p { font-size: 0.85rem; color: rgba(255,255,255,0.5); margin-bottom: 20px; }
+
+    .post-divider { height: 1px; background: var(--border); margin: 40px 0; }
+
+    /* ─── SIDEBAR ────────────────────────────── */
+    .post-sidebar { position: sticky; top: 88px; }
+    .sidebar-card {
+      background: var(--bg); border: 1px solid var(--border);
+      border-radius: 14px; padding: 24px; margin-bottom: 20px;
+    }
+    .sidebar-card h4 {
+      font-family: 'Exo 2', sans-serif; font-size: 0.75rem; font-weight: 700;
+      text-transform: uppercase; letter-spacing: 1px; color: var(--gray);
+      margin-bottom: 16px;
+    }
+    .toc-link {
+      display: block; font-size: 0.85rem; color: var(--text);
+      padding: 7px 0; border-bottom: 1px solid var(--border);
+      text-decoration: none; transition: color 0.2s;
+    }
+    .toc-link:last-child { border-bottom: none; }
+    .toc-link:hover { color: var(--blue); }
+    .toc-link.active { color: var(--blue); font-weight: 600; }
+
+    .related-post {
+      display: flex; gap: 12px; align-items: flex-start;
+      padding: 12px 0; border-bottom: 1px solid var(--border);
+      text-decoration: none;
+    }
+    .related-post:last-child { border-bottom: none; padding-bottom: 0; }
+    .rp-icon {
+      width: 36px; height: 36px; border-radius: 8px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1rem; flex-shrink: 0;
+    }
+    .rp-icon.c1 { background: linear-gradient(135deg, #1670C3, #00C6FF); }
+    .rp-icon.c2 { background: linear-gradient(135deg, #14233C, #1099E9); }
+    .rp-icon.c3 { background: linear-gradient(135deg, #1099E9, #24D5FF); }
+    .rp-text h5 { font-size: 0.82rem; font-weight: 600; color: var(--navy); margin-bottom: 2px; line-height: 1.35; }
+    .rp-text span { font-size: 0.73rem; color: var(--gray); }
+
+    .cta-sidebar {
+      background: var(--navy); border-radius: 14px; padding: 24px; text-align: center;
+    }
+    .cta-sidebar h4 { font-size: 1rem; font-weight: 700; color: #fff; margin-bottom: 8px; }
+    .cta-sidebar p { font-size: 0.8rem; color: rgba(255,255,255,0.5); margin-bottom: 16px; line-height: 1.6; }
+
+    /* ─── RELATED POSTS ──────────────────────── */
+    .related { background: var(--bg); padding: 72px 0; }
+    .related h2 { font-size: 1.3rem; font-weight: 700; color: var(--navy); margin-bottom: 32px; }
+    .related-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+    .rg-card {
+      background: var(--white); border: 1px solid var(--border);
+      border-radius: 14px; padding: 24px;
+      text-decoration: none; transition: box-shadow 0.2s, transform 0.2s;
+      display: block;
+    }
+    .rg-card:hover { box-shadow: 0 6px 24px rgba(20,35,60,0.08); transform: translateY(-2px); }
+    .rg-tag {
+      font-family: 'Exo 2', sans-serif; font-size: 0.68rem; font-weight: 700;
+      text-transform: uppercase; letter-spacing: 0.8px;
+      color: var(--blue); margin-bottom: 10px; display: block;
+    }
+    .rg-card h4 { font-size: 0.95rem; font-weight: 700; color: var(--navy); margin-bottom: 6px; line-height: 1.35; }
+    .rg-card p { font-size: 0.8rem; color: var(--text); line-height: 1.6; }
+
+    /* ─── RESPONSIVE ─────────────────────────── */
+    @media (max-width: 1024px) {
+      .post-layout { grid-template-columns: 1fr; }
+      .post-sidebar { position: static; }
+      .related-grid { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 768px) {
+      .related-grid { grid-template-columns: 1fr; }
+      .db-label { width: 130px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-inner">
+    <a href="../index.html" class="nav-logo">
+      <img src="../assets/logo.svg" alt="Komplexa" />
+      <span class="nav-logo-text">Komplexa Hotéis</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="../sistema.html">O Sistema</a></li>
+      <li><a href="../ia.html">IA Aplicada</a></li>
+      <li><a href="../arquitetura.html">Arquitetura</a></li>
+      <li><a href="index.html" class="active">Blog</a></li>
+      <li><a href="../contato.html">Contato</a></li>
+    </ul>
+    <a href="https://form.respondi.app/QnLOVD5g" target="_blank" class="btn btn-primary">Começar agora →</a>
+    <div class="nav-hamburger" onclick="toggleMenu()">
+      <span></span><span></span><span></span>
+    </div>
+  </div>
+</nav>
+<div class="mobile-nav" id="mobileNav">
+  <a href="../sistema.html">O Sistema</a>
+  <a href="../ia.html">IA Aplicada</a>
+  <a href="../arquitetura.html">Arquitetura</a>
+  <a href="index.html">Blog</a>
+  <a href="../contato.html">Contato</a>
+  <a href="https://form.respondi.app/QnLOVD5g" target="_blank" class="btn btn-primary" style="width:fit-content">Começar agora →</a>
+</div>
+
+<!-- POST HERO -->
+<section class="post-hero">
+  <div class="container">
+    <div class="post-breadcrumb">
+      <a href="index.html">Blog</a>
+      <span>/</span>
+      <span>RevPAR e Receita</span>
+    </div>
+    <span class="post-category-pill">RevPAR e Receita</span>
+    <h1>Precificação para pousada: revenue management na prática (sem complicar)</h1>
+    <div class="post-meta">
+      <span class="pm-item">📅 Junho 2026</span>
+      <span class="pm-item">⏱ 9 min de leitura</span>
+      <span class="pm-item">✍ Komplexa Hotéis</span>
+    </div>
+  </div>
+</section>
+
+<!-- POST LAYOUT -->
+<div class="post-layout">
+
+  <!-- CONTENT -->
+  <article class="post-content">
+
+    <p>
+      Se a sua pousada cobra a mesma diária em janeiro e em maio, no feriado prolongado e na terça-feira de baixa temporada, há uma quase certeza por trás disso: você está <strong>deixando dinheiro na mesa</strong>. Não em forma de quartos vazios — esses doem e a gente percebe —, mas em forma de quartos vendidos baratos demais quando havia procura para cobrar mais, e caros demais quando o ideal era encher.
+    </p>
+    <p>
+      A boa notícia é que arrumar isso não exige um sistema caro nem um time de analistas. Exige entender o que move o preço de uma hospedagem e aplicar algumas regras simples. É disso que trata o <strong>revenue management</strong> — e este artigo mostra como começar mesmo numa pousada pequena.
+    </p>
+
+    <div class="highlight-box">
+      <p>Uma pesquisa do setor em 2026 (base de cerca de 235 respondentes, de caráter direcional) apontou a precificação como uma das principais dores dos hoteleiros independentes, citada por cerca de 23% deles, enquanto captação e marketing aparecem entre as maiores, perto de 31%. Não é um detalhe técnico: é uma das alavancas que mais separam uma operação que sobrevive de uma que lucra.</p>
+    </div>
+
+    <h2 id="erro-tarifa-fixa">O erro de cobrar o mesmo valor o ano inteiro</h2>
+    <p>
+      A tarifa fixa é confortável. Você define um número que "parece justo", coloca no Booking e no site, e não pensa mais nisso. O problema é que a demanda por hospedagem não é fixa — ela sobe e desce o tempo todo, e o preço congelado ignora isso completamente.
+    </p>
+    <p>
+      Na prática, a tarifa única falha de dois jeitos, e os dois custam caro:
+    </p>
+    <ul>
+      <li><strong>Na alta temporada, você vende barato demais.</strong> Quando todo mundo quer hospedagem na sua região — réveillon, carnaval, alta estação —, há gente disposta a pagar mais. Cobrando o valor de sempre, você esgota os quartos rápido e descobre tarde demais que poderia ter faturado bem mais com a mesma ocupação.</li>
+      <li><strong>Na baixa temporada, você espanta hóspede.</strong> Numa terça-feira de maio, o mesmo preço que parecia justo no feriado afasta quem reservaria por um valor menor. O quarto vazio não volta: a diária não vendida hoje não pode ser estocada para amanhã.</li>
+    </ul>
+    <p>
+      Esse segundo ponto é o que torna a hotelaria diferente do varejo. Camiseta encalhada fica na prateleira para vender depois. <strong>Quarto vazio é receita que evaporou</strong> — aquela noite específica nunca mais será vendida. Por isso, deixar a diária "no automático" é uma das decisões mais caras que uma pousada toma sem perceber.
+    </p>
+
+    <h2 id="o-que-e-rm">Revenue management explicado simples</h2>
+    <p>
+      Revenue management costuma soar como assunto de rede grande, com software importado e equipe dedicada. Mas a ideia, no fundo, cabe em uma frase: <strong>vender o quarto certo, pela tarifa certa, no momento certo, para o hóspede certo.</strong>
+    </p>
+    <p>
+      Traduzindo para o dia a dia de uma pousada: é cobrar mais quando há muita procura e menos quando há pouca, ajustando o preço conforme a demanda em vez de mantê-lo congelado. O objetivo não é "vender caro" nem "vender barato" — é <strong>maximizar a receita total</strong>, encontrando para cada data o ponto em que preço e ocupação juntos rendem mais.
+    </p>
+
+    <div class="highlight-box">
+      <p>Revenue management não é sobre cobrar caro. É sobre cobrar o valor que aquela data específica suporta. Às vezes isso significa subir a diária no feriado; às vezes significa baixá-la numa quarta-feira parada para não dormir com quartos vazios. As duas decisões são revenue management.</p>
+    </div>
+
+    <p>
+      E não, isso não é "só para grandes redes". A lógica é exatamente a mesma para uma pousada de 8 quartos e para um hotel de 300 — muda só a ferramenta. A rede usa software sofisticado porque tem milhares de combinações de datas e tarifas para processar. A pousada pode usar uma planilha e bom senso. O princípio que gera o ganho é idêntico; o que escala é a complexidade da execução, não a ideia.
+    </p>
+
+    <h2 id="fatores">Os fatores que devem mover a sua tarifa</h2>
+    <p>
+      Se o preço vai variar, ele precisa variar com base em algo concreto — não no humor do dia. Estes são os seis fatores que, na prática, justificam mexer na diária:
+    </p>
+    <ul>
+      <li><strong>Ocupação atual.</strong> Quanto mais cheia a data já está, mais você pode (e deve) cobrar pelos últimos quartos. Se restam 2 de 10 quartos para o próximo sábado, eles valem mais que os 10 que estavam disponíveis há um mês.</li>
+      <li><strong>Sazonalidade.</strong> Alta, média e baixa temporada têm patamares de preço diferentes por natureza. É a camada mais óbvia e a primeira a estruturar.</li>
+      <li><strong>Antecedência (lead time).</strong> Quem reserva com muitos meses de antecedência costuma buscar segurança e bom preço; quem reserva em cima da hora geralmente já decidiu e aceita pagar mais. A tarifa pode acompanhar essa curva.</li>
+      <li><strong>Dia da semana.</strong> Em destino de lazer, fim de semana puxa a demanda; em pousada de rota corporativa, pode ser o contrário. Sexta e sábado raramente deveriam custar o mesmo que uma segunda-feira.</li>
+      <li><strong>Eventos locais.</strong> Festa da cidade, show, feira, congresso, casamento na região — qualquer coisa que traga gente para perto da sua pousada empurra a demanda e justifica tarifa de pico.</li>
+      <li><strong>Concorrência.</strong> O que pousadas comparáveis estão cobrando para a mesma data é uma referência de mercado. Não para copiar, mas para não ficar absurdamente acima nem regalar diária abaixo do que a praça aceita.</li>
+    </ul>
+    <p>
+      Você não precisa monitorar os seis com a mesma intensidade desde o início. Sazonalidade, dia da semana e eventos locais você já conhece de cabeça. Comece por eles.
+    </p>
+
+    <h2 id="metodo-inicial">Um método simples para a sua pousada começar</h2>
+    <p>
+      Dá para colher boa parte do ganho do revenue management sem nenhum software pago. O segredo é transformar bom senso em <strong>regras escritas</strong> que você (e sua recepção) seguem sem precisar decidir tudo de novo a cada reserva. Um ponto de partida em três camadas:
+    </p>
+
+    <h3 id="passo-faixas">1. Faixas de tarifa por temporada</h3>
+    <p>
+      Em vez de um único preço, defina <strong>três patamares</strong> — baixa, média e alta temporada — a partir dos seus custos (o piso que cobre despesas e dá lucro) e de uma olhada na concorrência (o teto que a praça aceita). Marque no calendário do ano inteiro qual período é qual. Pronto: você já saiu da tarifa congelada e passou a precificar por demanda na camada mais importante.
+    </p>
+
+    <h3 id="passo-antecedencia">2. Regras de antecedência</h3>
+    <p>
+      Defina como o preço reage ao calendário. Um exemplo de regra simples: oferecer uma <strong>tarifa antecipada</strong> com desconto para quem reserva com bastante antecedência (garante caixa e ocupação base) e <strong>segurar o preço cheio</strong> conforme a data se aproxima e a ocupação sobe. Se faltar pouco e os quartos estiverem acabando, a diária dos últimos pode subir.
+    </p>
+
+    <h3 id="passo-minimo">3. Mínimo de noites em alta</h3>
+    <p>
+      Em feriados e datas de pico, exigir <strong>estadia mínima</strong> (duas, três noites) evita que uma reserva de uma diária bloqueie um fim de semana inteiro que renderia mais. É uma regra de revenue management que não mexe no preço, mas protege a receita da data mais valiosa do mês.
+    </p>
+
+    <div class="highlight-box">
+      <p>Comece pelo básico e com disciplina. Uma planilha com as faixas por temporada, as regras de antecedência e o mínimo de noites já coloca a sua pousada à frente da maioria — afinal, no setor, cerca de um terço dos independentes ainda opera com baixa maturidade tecnológica, muitos só com planilhas e sem regra nenhuma de precificação.</p>
+    </div>
+
+    <h2 id="exemplo">Como a tarifa deveria variar (exemplo ilustrativo)</h2>
+    <p>
+      O quadro abaixo é um <strong>exemplo ilustrativo</strong> — não são dados de pesquisa nem valores reais de mercado. Serve apenas para mostrar o formato: a mesma pousada, o mesmo quarto, com a diária acompanhando a demanda de cada período em vez de ficar congelada.
+    </p>
+
+    <div class="data-block">
+      <h4>Variação ilustrativa da diária por temporada (exemplo, não é dado real)</h4>
+      <div class="db-row">
+        <span class="db-label">Baixa temporada (meio de semana)</span>
+        <div class="db-bar-wrap"><div class="db-bar" style="width:35%"></div></div>
+        <span class="db-val">base</span>
+      </div>
+      <div class="db-row">
+        <span class="db-label">Baixa temporada (fim de semana)</span>
+        <div class="db-bar-wrap"><div class="db-bar" style="width:50%"></div></div>
+        <span class="db-val">+</span>
+      </div>
+      <div class="db-row">
+        <span class="db-label">Média temporada</span>
+        <div class="db-bar-wrap"><div class="db-bar" style="width:68%"></div></div>
+        <span class="db-val">++</span>
+      </div>
+      <div class="db-row">
+        <span class="db-label">Alta temporada</span>
+        <div class="db-bar-wrap"><div class="db-bar" style="width:85%"></div></div>
+        <span class="db-val">+++</span>
+      </div>
+      <div class="db-row">
+        <span class="db-label">Feriado / evento (pico)</span>
+        <div class="db-bar-wrap"><div class="db-bar" style="width:100%"></div></div>
+        <span class="db-val">máx</span>
+      </div>
+    </div>
+
+    <p>
+      Repare que não há números de reais ali de propósito: o que importa é o <strong>formato escalonado</strong>. A diária de pico pode ser facilmente o dobro ou mais da base de baixa temporada, e isso é saudável — desde que cada degrau respeite o seu piso de custo e o teto que o mercado da sua região aceita pagar.
+    </p>
+
+    <h2 id="ia-dinamica">Quando a IA e a precificação dinâmica entram</h2>
+    <p>
+      As faixas e regras manuais levam você longe, mas têm um limite: você não consegue revisar o preço de cada data, todos os dias, considerando ocupação, lead time e concorrência ao mesmo tempo. É aí que a <strong>precificação dinâmica</strong> automatizada faz sentido.
+    </p>
+    <p>
+      Quando a operação amadurece — mais volume de reservas, vários canais, demanda menos previsível —, ferramentas com IA passam a ajustar a tarifa automaticamente, lendo a curva de reservas, a antecedência média, o comportamento da concorrência e a ocupação prevista para sugerir (ou aplicar) o preço ideal de cada noite. O que você fazia com bom senso em uma planilha passa a acontecer em escala, várias vezes ao dia.
+    </p>
+    <p>
+      Mas a ordem importa: <strong>a tecnologia automatiza uma estratégia que já existe — ela não cria estratégia do nada.</strong> Pousada que ainda cobra tarifa fixa não precisa de software de precificação dinâmica; precisa primeiro estruturar as faixas e as regras. A IA acelera quem já sabe para onde está indo, não substitui a decisão de começar.
+    </p>
+
+    <div class="post-cta">
+      <h4>Quer estruturar a precificação da sua pousada?</h4>
+      <p>A Komplexa monta a estratégia de revenue management junto com o funil de reservas diretas — faixas por demanda, regras claras e tecnologia na medida certa para o seu tamanho.</p>
+      <a href="https://form.respondi.app/QnLOVD5g" target="_blank" class="btn btn-primary">Falar com especialista →</a>
+    </div>
+
+    <div class="post-divider"></div>
+
+    <h2 id="revpar">A ligação com o RevPAR: encher barato não é vitória</h2>
+    <p>
+      Há uma armadilha que derruba muita pousada bem-intencionada: confundir <strong>ocupação alta</strong> com <strong>resultado bom</strong>. Baixar a diária até lotar a casa é fácil — e parece sucesso quando o painel mostra 100% de ocupação. Só que receita não se mede em quartos ocupados; se mede em dinheiro no caixa.
+    </p>
+    <p>
+      É por isso que o indicador que importa é o <strong>RevPAR</strong> (receita por quarto disponível), que combina ocupação e diária média numa única conta. Uma pousada com 70% de ocupação a uma boa tarifa pode faturar mais que outra com 95% vendendo barato demais. Encher por encher, regalando margem, não é vencer — é trabalhar muito para ganhar pouco.
+    </p>
+    <p>
+      Revenue management, no fim, é exatamente a disciplina de buscar o melhor RevPAR para cada data: nem quartos vazios por preço alto, nem casa cheia por preço baixo, mas o equilíbrio que rende mais. E quanto mais reservas vierem pelo <strong>canal direto</strong> — sem a comissão da OTA mordendo a diária —, mais cada ponto de RevPAR sobra de fato no seu bolso. Vale lembrar que a comissão preferencial do Booking.com sobe para <strong>18% em julho de 2026</strong>: precificar bem importa ainda mais quando o intermediário fica mais caro, e proteger a margem passa também por <a href="../arquitetura.html">fortalecer a reserva direta</a>.
+    </p>
+
+    <h2 id="faq">Perguntas frequentes</h2>
+    <div class="faq-list">
+      <details class="faq-item">
+        <summary>O que é revenue management na hotelaria?</summary>
+        <div class="faq-answer"><p>Revenue management é a prática de vender o quarto certo, pela tarifa certa, no momento certo, ajustando o preço conforme a demanda. Em vez de uma diária fixa o ano inteiro, a tarifa varia segundo ocupação, sazonalidade, antecedência da reserva, dia da semana e eventos locais. O objetivo é maximizar a receita total, não apenas a taxa de ocupação.</p></div>
+      </details>
+      <details class="faq-item">
+        <summary>Como definir o preço da diária de uma pousada?</summary>
+        <div class="faq-answer"><p>Comece definindo faixas de tarifa por temporada (baixa, média e alta) a partir dos seus custos e da concorrência. Depois aplique regras simples: subir o preço quando a ocupação prevista estiver alta, dar desconto para reservas feitas com muita antecedência e exigir mínimo de noites em datas de pico. Não é preciso software caro para começar — uma planilha e disciplina já mudam o resultado.</p></div>
+      </details>
+      <details class="faq-item">
+        <summary>Pousada pequena precisa de precificação dinâmica?</summary>
+        <div class="faq-answer"><p>Sim, mas em proporção ao seu tamanho. Pousada pequena não precisa de um software sofisticado de início — precisa parar de cobrar o mesmo valor o ano todo. Faixas por temporada e regras de antecedência já capturam boa parte do ganho. A precificação dinâmica automatizada com IA entra depois, quando o volume de reservas e a operação justificam o investimento.</p></div>
+      </details>
+    </div>
+
+  </article>
+
+  <!-- SIDEBAR -->
+  <aside class="post-sidebar">
+
+    <div class="sidebar-card">
+      <h4>Neste artigo</h4>
+      <a href="#erro-tarifa-fixa" class="toc-link active">O erro da tarifa fixa</a>
+      <a href="#o-que-e-rm" class="toc-link">Revenue management simples</a>
+      <a href="#fatores" class="toc-link">Fatores que movem a tarifa</a>
+      <a href="#metodo-inicial" class="toc-link">Método para começar</a>
+      <a href="#exemplo" class="toc-link">Exemplo de variação</a>
+      <a href="#ia-dinamica" class="toc-link">IA e precificação dinâmica</a>
+      <a href="#revpar" class="toc-link">A ligação com o RevPAR</a>
+      <a href="#faq" class="toc-link">Perguntas frequentes</a>
+    </div>
+
+    <div class="cta-sidebar">
+      <h4>Quer esse sistema no seu hotel?</h4>
+      <p>Implementação + gestão contínua. Estratégia personalizada com dados reais.</p>
+      <a href="https://form.respondi.app/QnLOVD5g" target="_blank" class="btn btn-primary" style="width:100%;justify-content:center">Começar agora →</a>
+    </div>
+
+    <div class="sidebar-card" style="margin-top:20px">
+      <h4>Leia também</h4>
+      <a href="post-revpar.html" class="related-post">
+        <div class="rp-icon c1">📊</div>
+        <div class="rp-text">
+          <h5>RevPAR vs. ocupação: qual métrica realmente importa</h5>
+          <span>RevPAR e Receita · 8 min</span>
+        </div>
+      </a>
+      <a href="post-motor-de-reservas.html" class="related-post">
+        <div class="rp-icon c2">🛎️</div>
+        <div class="rp-text">
+          <h5>Motor de reservas para pousada: por que ter o seu próprio</h5>
+          <span>Reservas Diretas · 8 min</span>
+        </div>
+      </a>
+      <a href="post-comissao-booking-18.html" class="related-post">
+        <div class="rp-icon c3">💸</div>
+        <div class="rp-text">
+          <h5>Comissão do Booking sobe para 18% em 2026</h5>
+          <span>OTA e Distribuição · 9 min</span>
+        </div>
+      </a>
+    </div>
+
+  </aside>
+</div>
+
+<!-- RELATED -->
+<section class="related">
+  <div class="container">
+    <h2>Continue lendo</h2>
+    <div class="related-grid">
+      <a href="post-revpar.html" class="rg-card">
+        <span class="rg-tag">RevPAR e Receita</span>
+        <h4>RevPAR vs. ocupação: qual métrica realmente importa</h4>
+        <p>Por que casa cheia não significa caixa cheio — e como a métrica certa muda a sua estratégia de preço.</p>
+      </a>
+      <a href="post-motor-de-reservas.html" class="rg-card">
+        <span class="rg-tag">Reservas Diretas</span>
+        <h4>Motor de reservas para pousada: por que ter o seu próprio</h4>
+        <p>A peça que fecha a reserva no seu site sem fricção — e segura a margem que a OTA levaria.</p>
+      </a>
+      <a href="post-ota.html" class="rg-card">
+        <span class="rg-tag">OTA e Distribuição</span>
+        <h4>Como reduzir a dependência de OTAs e gerar reservas diretas</h4>
+        <p>A estratégia completa para mudar a proporção entre reservas diretas e OTA — sem abrir mão do volume.</p>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <div class="footer-logo">
+          <img src="../assets/logo.svg" alt="Komplexa" />
+          <span class="footer-logo-text">Komplexa Hotéis</span>
+        </div>
+        <p>Arquitetura de crescimento para reservas diretas. Transformamos hotéis em sistemas de receita previsível.</p>
+      </div>
+      <div class="footer-col">
+        <h5>Solução</h5>
+        <ul>
+          <li><a href="../sistema.html">O Sistema</a></li>
+          <li><a href="../ia.html">IA Aplicada</a></li>
+          <li><a href="../arquitetura.html">Arquitetura</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Conteúdo</h5>
+        <ul>
+          <li><a href="index.html">Blog</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Contato</h5>
+        <ul>
+          <li><a href="../contato.html">Falar com a equipe</a></li>
+          <li><a href="https://form.respondi.app/QnLOVD5g" target="_blank">Começar agora</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 Komplexa Hotéis. Todos os direitos reservados.</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+  function toggleMenu() {
+    document.getElementById('mobileNav').classList.toggle('open');
+  }
+</script>
+</body>
+</html>

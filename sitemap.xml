@@ -5,7 +5,7 @@
   <!-- HOME -->
   <url>
     <loc>https://komplexahoteis.com/</loc>
-    <lastmod>2025-04-10</lastmod>
+    <lastmod>2026-06-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
     <xhtml:link rel="alternate" hreflang="pt-BR" href="https://komplexahoteis.com/"/>
@@ -50,19 +50,129 @@
   <!-- BLOG INDEX -->
   <url>
     <loc>https://komplexahoteis.com/blog/</loc>
-    <lastmod>2025-04-10</lastmod>
+    <lastmod>2026-06-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="pt-BR" href="https://komplexahoteis.com/blog/"/>
   </url>
 
-  <!-- BLOG POST: OTA -->
+  <!-- ═══════════ BLOG POSTS ═══════════ -->
+
+  <!-- Comissão Booking 18% (2026) -->
+  <url>
+    <loc>https://komplexahoteis.com/blog/post-comissao-booking-18.html</loc>
+    <lastmod>2026-06-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://komplexahoteis.com/blog/post-comissao-booking-18.html"/>
+  </url>
+
+  <!-- Pousada presa no Booking: reservas diretas -->
+  <url>
+    <loc>https://komplexahoteis.com/blog/post-dependencia-booking-pousada.html</loc>
+    <lastmod>2026-06-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://komplexahoteis.com/blog/post-dependencia-booking-pousada.html"/>
+  </url>
+
+  <!-- Motor de reservas para pousada -->
+  <url>
+    <loc>https://komplexahoteis.com/blog/post-motor-de-reservas.html</loc>
+    <lastmod>2026-06-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://komplexahoteis.com/blog/post-motor-de-reservas.html"/>
+  </url>
+
+  <!-- Precificação para pousada -->
+  <url>
+    <loc>https://komplexahoteis.com/blog/post-precificacao-pousada.html</loc>
+    <lastmod>2026-06-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://komplexahoteis.com/blog/post-precificacao-pousada.html"/>
+  </url>
+
+  <!-- AEO / IA na busca -->
+  <url>
+    <loc>https://komplexahoteis.com/blog/post-aeo-ia-busca.html</loc>
+    <lastmod>2026-06-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://komplexahoteis.com/blog/post-aeo-ia-busca.html"/>
+  </url>
+
+  <!-- Paridade tarifária -->
+  <url>
+    <loc>https://komplexahoteis.com/blog/post-paridade-tarifaria.html</loc>
+    <lastmod>2026-06-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://komplexahoteis.com/blog/post-paridade-tarifaria.html"/>
+  </url>
+
+  <!-- Google Hotel Ads -->
+  <url>
+    <loc>https://komplexahoteis.com/blog/post-google-hotel-ads.html</loc>
+    <lastmod>2026-04-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://komplexahoteis.com/blog/post-google-hotel-ads.html"/>
+  </url>
+
+  <!-- Reduzir dependência de OTAs -->
   <url>
     <loc>https://komplexahoteis.com/blog/post-ota.html</loc>
-    <lastmod>2025-01-01</lastmod>
+    <lastmod>2025-04-10</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="pt-BR" href="https://komplexahoteis.com/blog/post-ota.html"/>
+  </url>
+
+  <!-- IA na hotelaria -->
+  <url>
+    <loc>https://komplexahoteis.com/blog/post-ia.html</loc>
+    <lastmod>2025-02-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://komplexahoteis.com/blog/post-ia.html"/>
+  </url>
+
+  <!-- RevPAR vs ocupação -->
+  <url>
+    <loc>https://komplexahoteis.com/blog/post-revpar.html</loc>
+    <lastmod>2025-03-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://komplexahoteis.com/blog/post-revpar.html"/>
+  </url>
+
+  <!-- Funil / campanhas isoladas -->
+  <url>
+    <loc>https://komplexahoteis.com/blog/post-funil.html</loc>
+    <lastmod>2025-03-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://komplexahoteis.com/blog/post-funil.html"/>
+  </url>
+
+  <!-- Ocupar a semana -->
+  <url>
+    <loc>https://komplexahoteis.com/blog/post-semana.html</loc>
+    <lastmod>2025-04-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://komplexahoteis.com/blog/post-semana.html"/>
+  </url>
+
+  <!-- LTV em hotéis -->
+  <url>
+    <loc>https://komplexahoteis.com/blog/post-ltv.html</loc>
+    <lastmod>2025-04-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://komplexahoteis.com/blog/post-ltv.html"/>
   </url>
 
 </urlset>
