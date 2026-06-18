@@ -9,7 +9,6 @@
 :root{
   --navy:#0E1E35;
   --blue:#1670C3;
-  --cyan:#24D5FF;
   --linen:#F5F1EA;
   --paper:#FAF7F2;
   --soft:rgba(14,30,53,.65);
@@ -20,86 +19,30 @@
 body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;background:#E9ECF1;color:var(--navy);min-height:100vh;padding:60px 24px;-webkit-font-smoothing:antialiased}
 .wrap{max-width:760px;margin:0 auto}
 
-/* Página intro */
-.intro{margin-bottom:40px}
+.intro{margin-bottom:32px}
 .intro .eyebrow{font-size:11px;font-weight:600;letter-spacing:1.8px;text-transform:uppercase;color:var(--blue);margin-bottom:12px;display:inline-block}
-.intro h1{font-family:Georgia,serif;font-weight:400;font-size:36px;line-height:1.1;letter-spacing:-1px;margin-bottom:12px}
+.intro h1{font-family:Georgia,serif;font-weight:400;font-size:34px;line-height:1.1;letter-spacing:-1px;margin-bottom:12px}
 .intro h1 em{font-style:italic;color:var(--blue)}
-.intro p{font-size:15px;color:var(--soft);line-height:1.6;max-width:560px}
+.intro p{font-size:15px;color:var(--soft);line-height:1.6;max-width:580px}
 
-/* Card de preview */
-.preview-frame{background:#fff;border-radius:16px;padding:48px;border:1px solid var(--line);box-shadow:0 14px 40px rgba(14,30,53,.08);margin-bottom:32px}
+.preview-frame{background:#fff;border-radius:16px;padding:40px 32px;border:1px solid var(--line);box-shadow:0 14px 40px rgba(14,30,53,.08);margin-bottom:18px}
 .preview-frame .pf-label{font-size:10.5px;font-weight:600;letter-spacing:1.6px;text-transform:uppercase;color:var(--muted);margin-bottom:24px;display:flex;align-items:center;gap:8px}
 .preview-frame .pf-label::before{content:"";width:14px;height:2px;background:var(--blue)}
 
-/* ════════════════════════════════════════════════
-   A ASSINATURA EM SI (vai ser copiada)
-   ════════════════════════════════════════════════ */
-.signature{
-  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
-  color:#1A2942;
-  max-width:520px;
-}
-.signature table{border-collapse:collapse;border-spacing:0}
+.copy-btn-wrap{margin-bottom:32px;display:flex;align-items:center;gap:14px;flex-wrap:wrap}
+.copy-btn{background:var(--navy);color:var(--linen);padding:14px 24px;border-radius:10px;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;font-weight:600;font-size:14px;border:none;cursor:pointer;display:inline-flex;align-items:center;gap:10px;box-shadow:0 6px 18px rgba(14,30,53,.18);transition:transform .15s}
+.copy-btn:hover{transform:translateY(-1px)}
+.copy-btn .arr{font-size:18px;color:#24D5FF}
+.copy-btn.done{background:#1F9D55}
+.copy-hint{font-size:13px;color:var(--soft)}
+.copy-hint strong{color:var(--navy);font-weight:600}
 
-/* Como copy/paste pra Gmail aceita o table-based, recriamos com table inline */
-/* Aqui visualmente igual, mas semântica diferente — esse div é a versão "limpa" pra ver */
-
-/* Versão visual elegante */
-.sig-card{
-  background:#FFFFFF;
-  border:1px solid #DDE3ED;
-  border-radius:12px;
-  padding:24px 28px;
-  display:flex;
-  gap:20px;
-  align-items:flex-start;
-  font-size:14px;
-  line-height:1.55;
-  position:relative;
-  overflow:hidden;
-}
-.sig-card::before{
-  content:"";
-  position:absolute;
-  top:0;
-  bottom:0;
-  left:0;
-  width:4px;
-  background:linear-gradient(180deg,#1670C3 0%,#1099E9 50%,#24D5FF 100%);
-}
-.sig-photo{
-  width:78px;
-  height:78px;
-  border-radius:50%;
-  flex-shrink:0;
-  background-color:#1670C3;
-  background-image:url('https://komplexahoteis.com/d/komplexa-fechamento/assets/igor-foto-png-proposta.png');
-  background-size:cover;
-  background-position:center top;
-  box-shadow:0 0 0 2px #1670C3;
-}
-.sig-content{flex:1;min-width:0}
-.sig-top{display:flex;justify-content:space-between;align-items:flex-start;gap:16px;margin-bottom:14px;padding-bottom:14px;border-bottom:1px solid #EAEDF3}
-.sig-info{flex:1}
-.sig-name{font-family:Georgia,"Times New Roman",serif;font-weight:600;font-size:19px;color:#0E1E35;letter-spacing:-.4px;line-height:1.15;margin-bottom:4px}
-.sig-role{font-size:13px;color:#5A6678;font-weight:500;letter-spacing:.1px}
-.sig-brand{font-family:Georgia,serif;font-size:17px;font-weight:600;color:#0E1E35;letter-spacing:-.3px;text-align:right;line-height:1.1}
-.sig-brand small{display:block;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;font-size:9.5px;color:#1670C3;font-weight:600;letter-spacing:1.4px;text-transform:uppercase;margin-top:3px;font-style:normal}
-.sig-lines{display:flex;flex-direction:column;gap:7px}
-.sig-line{display:flex;align-items:center;gap:10px;font-size:13px}
-.sig-line .sl-icon{width:18px;height:18px;border-radius:5px;background:#E8F0F9;color:#1670C3;display:flex;align-items:center;justify-content:center;font-size:10px;flex-shrink:0;font-weight:700}
-.sig-line a{color:#0E1E35;text-decoration:none}
-.sig-line a:hover{color:#1670C3}
-.sig-line span{color:#0E1E35}
-
-/* Instruções */
-.steps{background:#fff;border-radius:16px;padding:36px;border:1px solid var(--line);box-shadow:0 10px 30px rgba(14,30,53,.06);margin-bottom:24px}
+.steps{background:#fff;border-radius:16px;padding:32px;border:1px solid var(--line);box-shadow:0 10px 30px rgba(14,30,53,.06);margin-bottom:18px}
 .steps h2{font-family:Georgia,serif;font-weight:400;font-size:22px;letter-spacing:-.5px;margin-bottom:6px}
 .steps h2 em{font-style:italic;color:var(--blue)}
-.steps > p{font-size:13.5px;color:var(--soft);line-height:1.55;margin-bottom:24px;max-width:560px}
+.steps > p{font-size:13.5px;color:var(--soft);line-height:1.55;margin-bottom:22px;max-width:560px}
 .step-list{display:flex;flex-direction:column;gap:0}
-.step{display:grid;grid-template-columns:40px 1fr;gap:18px;padding:18px 0;border-bottom:1px solid var(--line);align-items:start}
+.step{display:grid;grid-template-columns:40px 1fr;gap:18px;padding:16px 0;border-bottom:1px solid var(--line);align-items:start}
 .step:last-child{border-bottom:none;padding-bottom:0}
 .step:first-child{padding-top:0}
 .step-num{width:32px;height:32px;border-radius:8px;background:rgba(22,112,195,.10);color:var(--blue);font-weight:700;font-size:13px;display:flex;align-items:center;justify-content:center;border:1px solid rgba(22,112,195,.20)}
@@ -107,7 +50,10 @@ body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Ar
 .step-info p{font-size:13px;color:var(--soft);line-height:1.55}
 .step-info code{background:var(--linen);border:1px solid var(--line);padding:2px 8px;border-radius:5px;font-family:'SF Mono',Consolas,Monaco,monospace;font-size:11.5px;color:var(--navy)}
 .step-info p strong{color:var(--navy);font-weight:600}
-.step-info p a{color:var(--blue);text-decoration:none;font-weight:600}
+
+.changes{background:#fff;border-radius:16px;padding:24px 28px;border:1px solid var(--line);font-size:13.5px;color:var(--soft);line-height:1.6}
+.changes strong{color:var(--navy);font-weight:600}
+.changes p+p{margin-top:8px}
 
 .warning{background:#FFF8E1;border:1px solid #F5C842;border-left:3px solid #F5C842;border-radius:0 10px 10px 0;padding:14px 18px;font-size:13px;color:#5C4E1E;line-height:1.55;margin-top:18px}
 .warning strong{color:#3D3110;font-weight:700}
@@ -115,13 +61,10 @@ body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Ar
 @media (max-width:680px){
   body{padding:24px 14px}
   .intro h1{font-size:26px}
-  .preview-frame{padding:24px}
-  .sig-card{padding:20px;gap:16px}
-  .sig-photo{width:62px;height:62px}
-  .sig-name{font-size:17px}
-  .sig-top{flex-direction:column;gap:6px}
-  .sig-brand{text-align:left}
-  .steps{padding:24px}
+  .preview-frame{padding:24px 20px}
+  .steps{padding:22px}
+  .copy-btn-wrap{flex-direction:column;align-items:stretch}
+  .copy-btn{justify-content:center}
 }
 </style>
 </head>
@@ -131,62 +74,98 @@ body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Ar
   <div class="intro">
     <span class="eyebrow">Assinatura de e-mail · Komplexa</span>
     <h1>Sua assinatura <em>renderizada.</em></h1>
-    <p>Esta página existe pra você copiar a assinatura abaixo e colar no Gmail. Como o Gmail respeita o que está renderizado (não o código), o método mais confiável é o copy/paste visual.</p>
+    <p>Reescrita 100% em formato <strong>compatível com Gmail</strong> — tabela HTML com inline styles. Foi-se o flex/grid/CSS moderno. O que está aqui agora é o que vai chegar inteiro no Gmail.</p>
   </div>
 
-  <!-- PREVIEW DA ASSINATURA -->
-  <div class="preview-frame">
-    <div class="pf-label">Pré-visualização</div>
+  <!-- COPY BUTTON -->
+  <div class="copy-btn-wrap">
+    <button class="copy-btn" id="copyBtn" onclick="copySignature()">
+      📋 Copiar assinatura <span class="arr">→</span>
+    </button>
+    <span class="copy-hint">ou: <strong>Ctrl + A</strong> dentro da caixa abaixo + <strong>Ctrl + C</strong></span>
+  </div>
 
-    <div class="signature" id="signature">
-      <div class="sig-card">
-        <div class="sig-photo" role="img" aria-label="Igor Salomão"></div>
-        <div class="sig-content">
-          <div class="sig-top">
-            <div class="sig-info">
-              <div class="sig-name">Igor Salomão</div>
-              <div class="sig-role">Sócio-fundador</div>
-            </div>
-            <div class="sig-brand">komplexa<small>hotéis</small></div>
-          </div>
-          <div class="sig-lines">
-            <div class="sig-line">
-              <span class="sl-icon">✉</span>
-              <a href="mailto:igor.salomao@komplexagrowth.com">igor.salomao@komplexagrowth.com</a>
-            </div>
-            <div class="sig-line">
-              <span class="sl-icon">▦</span>
-              <a href="https://komplexahoteis.com" target="_blank">komplexahoteis.com</a>
-            </div>
-            <div class="sig-line">
-              <span class="sl-icon">☎</span>
-              <span>+55 12 98193-5958</span>
-            </div>
-          </div>
-        </div>
-      </div>
+  <!-- ════════════════════════════════════════════════════════════════
+       PREVIEW + HTML REAL DA ASSINATURA
+       (este HTML é o que vai ser copiado e colado no Gmail)
+       ════════════════════════════════════════════════════════════════ -->
+  <div class="preview-frame">
+    <div class="pf-label">Pré-visualização (o que vai pro Gmail)</div>
+
+    <!-- A assinatura em si — TABLE BASED + INLINE STYLES -->
+    <div id="signature">
+
+<table cellpadding="0" cellspacing="0" border="0" style="border-collapse:collapse;font-family:Arial,Helvetica,sans-serif;color:#1A2942;max-width:540px;">
+  <tr>
+    <td style="padding:18px 22px;background-color:#FFFFFF;border:1px solid #DDE3ED;border-left:4px solid #1670C3;border-radius:6px;">
+      <table cellpadding="0" cellspacing="0" border="0" style="border-collapse:collapse;width:100%;">
+        <tr>
+          <td valign="top" style="padding-right:18px;width:78px;">
+            <img src="https://komplexahoteis.com/d/komplexa-fechamento/assets/igor-foto-png-proposta.png" width="72" height="72" alt="Igor Salomão" style="display:block;width:72px;height:72px;border-radius:50%;border:2px solid #1670C3;"/>
+          </td>
+          <td valign="top">
+            <div style="font-family:Georgia,'Times New Roman',serif;font-size:18px;font-weight:bold;color:#0E1E35;line-height:1.2;margin:0 0 3px 0;">Igor Salomão</div>
+            <div style="font-family:Arial,Helvetica,sans-serif;font-size:13px;color:#5A6678;line-height:1.4;margin:0 0 14px 0;">Sócio-fundador &nbsp;·&nbsp; Komplexa Hotéis</div>
+            <table cellpadding="0" cellspacing="0" border="0" style="border-collapse:collapse;border-top:1px solid #EAEDF3;padding-top:10px;font-family:Arial,Helvetica,sans-serif;font-size:13px;line-height:1.7;">
+              <tr>
+                <td style="padding:8px 0 4px 0;" valign="top">
+                  <span style="color:#1670C3;font-weight:bold;font-size:11px;letter-spacing:.5px;text-transform:uppercase;display:inline-block;width:62px;">E-mail</span>
+                  <a href="mailto:igor.salomao@komplexagrowth.com" style="color:#0E1E35;text-decoration:none;font-size:13px;">igor.salomao@komplexagrowth.com</a>
+                </td>
+              </tr>
+              <tr>
+                <td style="padding:4px 0;" valign="top">
+                  <span style="color:#1670C3;font-weight:bold;font-size:11px;letter-spacing:.5px;text-transform:uppercase;display:inline-block;width:62px;">Site</span>
+                  <a href="https://komplexahoteis.com" style="color:#0E1E35;text-decoration:none;font-size:13px;">komplexahoteis.com</a>
+                </td>
+              </tr>
+              <tr>
+                <td style="padding:4px 0 0 0;" valign="top">
+                  <span style="color:#1670C3;font-weight:bold;font-size:11px;letter-spacing:.5px;text-transform:uppercase;display:inline-block;width:62px;">Telefone</span>
+                  <span style="color:#0E1E35;font-size:13px;">+55 12 98193-5958</span>
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+
     </div>
+  </div>
+
+  <!-- O QUE MUDOU -->
+  <div class="changes">
+    <p><strong>O que mudou para sobreviver ao Gmail:</strong></p>
+    <p>· Layout em <strong>tabelas HTML aninhadas</strong> (não flexbox/grid)</p>
+    <p>· Foto com <code>border-radius:50%</code> aplicado direto no <code>&lt;img&gt;</code> (Gmail respeita desde 2019)</p>
+    <p>· Ícones em quadradinhos viraram <strong>labels em texto</strong> ("E-mail", "Site", "Telefone") — mais elegante e à prova de bala</p>
+    <p>· Removida a "marca duplicada" no canto (que estava colando no nome). O cargo "Sócio-fundador · Komplexa Hotéis" já comunica a marca</p>
+    <p>· Borda lateral azul agora é <code>border-left:4px solid</code> na célula da tabela — Gmail respeita</p>
+    <p>· Tipografia <strong>Georgia (serif)</strong> para o nome + <strong>Arial</strong> para corpo — fontes presentes em qualquer sistema</p>
   </div>
 
   <!-- INSTRUÇÕES -->
   <div class="steps">
     <h2>Como subir <em>no Gmail.</em></h2>
-    <p>Método copy-paste visual — o que mais funciona em 100% dos navegadores e em 100% das contas Gmail.</p>
+    <p>Método copy-paste — agora deve chegar inteira porque o HTML é Gmail-compatible.</p>
 
     <div class="step-list">
       <div class="step">
         <div class="step-num">1</div>
         <div class="step-info">
-          <h5>Selecione a assinatura inteira acima</h5>
-          <p>Clique no início (em cima da foto) e arraste até o final do telefone. Ou use <code>Ctrl + A</code> dentro da caixa cinza e depois ajuste. <strong>Copie</strong> com <code>Ctrl + C</code>.</p>
+          <h5>Copie a assinatura</h5>
+          <p>Clique no botão azul <strong>"Copiar assinatura"</strong> acima. Vai aparecer "Copiado!" como confirmação. (Ou selecione manualmente dentro da caixa branca + <code>Ctrl + C</code>.)</p>
         </div>
       </div>
 
       <div class="step">
         <div class="step-num">2</div>
         <div class="step-info">
-          <h5>Abra as configurações do Gmail</h5>
-          <p>No Gmail, clique no <strong>ícone de engrenagem</strong> (canto superior direito) → <strong>Ver todas as configurações</strong> → aba <strong>Geral</strong>. Role até a seção <strong>"Assinatura"</strong>.</p>
+          <h5>Abra Configurações → Geral</h5>
+          <p>No Gmail: <strong>⚙️ (engrenagem) → Ver todas as configurações → aba Geral</strong>. Role até <strong>"Assinatura"</strong>.</p>
         </div>
       </div>
 
@@ -194,32 +173,57 @@ body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Ar
         <div class="step-num">3</div>
         <div class="step-info">
           <h5>Crie uma nova assinatura</h5>
-          <p>Clique em <strong>+ Criar nova</strong>. Dê o nome <strong>"Komplexa"</strong>. Na caixa de texto do editor, <strong>cole</strong> com <code>Ctrl + V</code>. A assinatura aparece renderizada com foto, cores e tudo.</p>
+          <p>Clique em <strong>+ Criar nova</strong>. Nome: <strong>Komplexa</strong>. Dentro da caixa de texto, <strong>cole</strong> com <code>Ctrl + V</code>. A foto, borda azul, nome serif e labels devem aparecer renderizados.</p>
         </div>
       </div>
 
       <div class="step">
         <div class="step-num">4</div>
         <div class="step-info">
-          <h5>Configure como padrão</h5>
-          <p>Logo abaixo, em <strong>"Padrões de assinatura"</strong>, selecione <strong>"Komplexa"</strong> nas duas opções (novos e-mails / respostas e encaminhamentos). Marque também a opção <strong>"Inserir assinatura antes do texto citado"</strong> — fica mais elegante em threads de resposta.</p>
+          <h5>Defina como padrão</h5>
+          <p>Em <strong>"Padrões de assinatura"</strong>, escolha "Komplexa" em ambos os menus (novos e respostas). Marque <strong>"Inserir assinatura antes do texto citado"</strong> — fica mais limpo em threads.</p>
         </div>
       </div>
 
       <div class="step">
         <div class="step-num">5</div>
         <div class="step-info">
-          <h5>Salve no final da página</h5>
-          <p>Role até o final da página de configurações e clique em <strong>Salvar alterações</strong>. Pronto. Crie um e-mail teste pra ver como ficou.</p>
+          <h5>Salve no final</h5>
+          <p>Role até o fim da página e clique <strong>Salvar alterações</strong>. Crie um e-mail teste pra confirmar que ficou redondo.</p>
         </div>
       </div>
     </div>
 
     <div class="warning">
-      <strong>Importante:</strong> a foto carrega de uma URL pública (komplexahoteis.com). Se você esquecer a página da Komplexa ou trocar a foto, a assinatura vai aparecer quebrada nos e-mails antigos. Recomendo manter o caminho da imagem estável.
+      <strong>Se ainda quebrar algo:</strong> abre um chamado comigo com print de como ficou. Cada conta Gmail é levemente diferente (algumas em modo HTML restrito) — pode precisar de ajuste fino.
     </div>
   </div>
 
 </div>
+
+<script>
+function copySignature(){
+  var sig = document.getElementById('signature');
+  var range = document.createRange();
+  range.selectNodeContents(sig);
+  var sel = window.getSelection();
+  sel.removeAllRanges();
+  sel.addRange(range);
+  try {
+    document.execCommand('copy');
+    var btn = document.getElementById('copyBtn');
+    var orig = btn.innerHTML;
+    btn.innerHTML = '✓ Copiado! Agora cole no Gmail';
+    btn.classList.add('done');
+    setTimeout(function(){
+      btn.innerHTML = orig;
+      btn.classList.remove('done');
+    }, 2400);
+  } catch (e) {
+    alert('Use Ctrl+A dentro da caixa branca + Ctrl+C para copiar.');
+  }
+  sel.removeAllRanges();
+}
+</script>
 </body>
 </html>
