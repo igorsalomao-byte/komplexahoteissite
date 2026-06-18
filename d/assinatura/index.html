@@ -1,0 +1,225 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>Assinatura de e-mail · Komplexa</title>
+<style>
+:root{
+  --navy:#0E1E35;
+  --blue:#1670C3;
+  --cyan:#24D5FF;
+  --linen:#F5F1EA;
+  --paper:#FAF7F2;
+  --soft:rgba(14,30,53,.65);
+  --muted:rgba(14,30,53,.42);
+  --line:rgba(14,30,53,.10);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;background:#E9ECF1;color:var(--navy);min-height:100vh;padding:60px 24px;-webkit-font-smoothing:antialiased}
+.wrap{max-width:760px;margin:0 auto}
+
+/* Página intro */
+.intro{margin-bottom:40px}
+.intro .eyebrow{font-size:11px;font-weight:600;letter-spacing:1.8px;text-transform:uppercase;color:var(--blue);margin-bottom:12px;display:inline-block}
+.intro h1{font-family:Georgia,serif;font-weight:400;font-size:36px;line-height:1.1;letter-spacing:-1px;margin-bottom:12px}
+.intro h1 em{font-style:italic;color:var(--blue)}
+.intro p{font-size:15px;color:var(--soft);line-height:1.6;max-width:560px}
+
+/* Card de preview */
+.preview-frame{background:#fff;border-radius:16px;padding:48px;border:1px solid var(--line);box-shadow:0 14px 40px rgba(14,30,53,.08);margin-bottom:32px}
+.preview-frame .pf-label{font-size:10.5px;font-weight:600;letter-spacing:1.6px;text-transform:uppercase;color:var(--muted);margin-bottom:24px;display:flex;align-items:center;gap:8px}
+.preview-frame .pf-label::before{content:"";width:14px;height:2px;background:var(--blue)}
+
+/* ════════════════════════════════════════════════
+   A ASSINATURA EM SI (vai ser copiada)
+   ════════════════════════════════════════════════ */
+.signature{
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  color:#1A2942;
+  max-width:520px;
+}
+.signature table{border-collapse:collapse;border-spacing:0}
+
+/* Como copy/paste pra Gmail aceita o table-based, recriamos com table inline */
+/* Aqui visualmente igual, mas semântica diferente — esse div é a versão "limpa" pra ver */
+
+/* Versão visual elegante */
+.sig-card{
+  background:#FFFFFF;
+  border:1px solid #DDE3ED;
+  border-radius:12px;
+  padding:24px 28px;
+  display:flex;
+  gap:20px;
+  align-items:flex-start;
+  font-size:14px;
+  line-height:1.55;
+  position:relative;
+  overflow:hidden;
+}
+.sig-card::before{
+  content:"";
+  position:absolute;
+  top:0;
+  bottom:0;
+  left:0;
+  width:4px;
+  background:linear-gradient(180deg,#1670C3 0%,#1099E9 50%,#24D5FF 100%);
+}
+.sig-photo{
+  width:78px;
+  height:78px;
+  border-radius:50%;
+  flex-shrink:0;
+  background-color:#1670C3;
+  background-image:url('https://komplexahoteis.com/d/komplexa-fechamento/assets/igor-foto-png-proposta.png');
+  background-size:cover;
+  background-position:center top;
+  box-shadow:0 0 0 2px #1670C3;
+}
+.sig-content{flex:1;min-width:0}
+.sig-top{display:flex;justify-content:space-between;align-items:flex-start;gap:16px;margin-bottom:14px;padding-bottom:14px;border-bottom:1px solid #EAEDF3}
+.sig-info{flex:1}
+.sig-name{font-family:Georgia,"Times New Roman",serif;font-weight:600;font-size:19px;color:#0E1E35;letter-spacing:-.4px;line-height:1.15;margin-bottom:4px}
+.sig-role{font-size:13px;color:#5A6678;font-weight:500;letter-spacing:.1px}
+.sig-brand{font-family:Georgia,serif;font-size:17px;font-weight:600;color:#0E1E35;letter-spacing:-.3px;text-align:right;line-height:1.1}
+.sig-brand small{display:block;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;font-size:9.5px;color:#1670C3;font-weight:600;letter-spacing:1.4px;text-transform:uppercase;margin-top:3px;font-style:normal}
+.sig-lines{display:flex;flex-direction:column;gap:7px}
+.sig-line{display:flex;align-items:center;gap:10px;font-size:13px}
+.sig-line .sl-icon{width:18px;height:18px;border-radius:5px;background:#E8F0F9;color:#1670C3;display:flex;align-items:center;justify-content:center;font-size:10px;flex-shrink:0;font-weight:700}
+.sig-line a{color:#0E1E35;text-decoration:none}
+.sig-line a:hover{color:#1670C3}
+.sig-line span{color:#0E1E35}
+
+/* Instruções */
+.steps{background:#fff;border-radius:16px;padding:36px;border:1px solid var(--line);box-shadow:0 10px 30px rgba(14,30,53,.06);margin-bottom:24px}
+.steps h2{font-family:Georgia,serif;font-weight:400;font-size:22px;letter-spacing:-.5px;margin-bottom:6px}
+.steps h2 em{font-style:italic;color:var(--blue)}
+.steps > p{font-size:13.5px;color:var(--soft);line-height:1.55;margin-bottom:24px;max-width:560px}
+.step-list{display:flex;flex-direction:column;gap:0}
+.step{display:grid;grid-template-columns:40px 1fr;gap:18px;padding:18px 0;border-bottom:1px solid var(--line);align-items:start}
+.step:last-child{border-bottom:none;padding-bottom:0}
+.step:first-child{padding-top:0}
+.step-num{width:32px;height:32px;border-radius:8px;background:rgba(22,112,195,.10);color:var(--blue);font-weight:700;font-size:13px;display:flex;align-items:center;justify-content:center;border:1px solid rgba(22,112,195,.20)}
+.step-info h5{font-family:Georgia,serif;font-weight:500;font-size:15px;color:var(--navy);margin-bottom:4px}
+.step-info p{font-size:13px;color:var(--soft);line-height:1.55}
+.step-info code{background:var(--linen);border:1px solid var(--line);padding:2px 8px;border-radius:5px;font-family:'SF Mono',Consolas,Monaco,monospace;font-size:11.5px;color:var(--navy)}
+.step-info p strong{color:var(--navy);font-weight:600}
+.step-info p a{color:var(--blue);text-decoration:none;font-weight:600}
+
+.warning{background:#FFF8E1;border:1px solid #F5C842;border-left:3px solid #F5C842;border-radius:0 10px 10px 0;padding:14px 18px;font-size:13px;color:#5C4E1E;line-height:1.55;margin-top:18px}
+.warning strong{color:#3D3110;font-weight:700}
+
+@media (max-width:680px){
+  body{padding:24px 14px}
+  .intro h1{font-size:26px}
+  .preview-frame{padding:24px}
+  .sig-card{padding:20px;gap:16px}
+  .sig-photo{width:62px;height:62px}
+  .sig-name{font-size:17px}
+  .sig-top{flex-direction:column;gap:6px}
+  .sig-brand{text-align:left}
+  .steps{padding:24px}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <div class="intro">
+    <span class="eyebrow">Assinatura de e-mail · Komplexa</span>
+    <h1>Sua assinatura <em>renderizada.</em></h1>
+    <p>Esta página existe pra você copiar a assinatura abaixo e colar no Gmail. Como o Gmail respeita o que está renderizado (não o código), o método mais confiável é o copy/paste visual.</p>
+  </div>
+
+  <!-- PREVIEW DA ASSINATURA -->
+  <div class="preview-frame">
+    <div class="pf-label">Pré-visualização</div>
+
+    <div class="signature" id="signature">
+      <div class="sig-card">
+        <div class="sig-photo" role="img" aria-label="Igor Salomão"></div>
+        <div class="sig-content">
+          <div class="sig-top">
+            <div class="sig-info">
+              <div class="sig-name">Igor Salomão</div>
+              <div class="sig-role">Sócio-fundador</div>
+            </div>
+            <div class="sig-brand">komplexa<small>hotéis</small></div>
+          </div>
+          <div class="sig-lines">
+            <div class="sig-line">
+              <span class="sl-icon">✉</span>
+              <a href="mailto:igor.salomao@komplexagrowth.com">igor.salomao@komplexagrowth.com</a>
+            </div>
+            <div class="sig-line">
+              <span class="sl-icon">▦</span>
+              <a href="https://komplexahoteis.com" target="_blank">komplexahoteis.com</a>
+            </div>
+            <div class="sig-line">
+              <span class="sl-icon">☎</span>
+              <span>+55 12 98193-5958</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- INSTRUÇÕES -->
+  <div class="steps">
+    <h2>Como subir <em>no Gmail.</em></h2>
+    <p>Método copy-paste visual — o que mais funciona em 100% dos navegadores e em 100% das contas Gmail.</p>
+
+    <div class="step-list">
+      <div class="step">
+        <div class="step-num">1</div>
+        <div class="step-info">
+          <h5>Selecione a assinatura inteira acima</h5>
+          <p>Clique no início (em cima da foto) e arraste até o final do telefone. Ou use <code>Ctrl + A</code> dentro da caixa cinza e depois ajuste. <strong>Copie</strong> com <code>Ctrl + C</code>.</p>
+        </div>
+      </div>
+
+      <div class="step">
+        <div class="step-num">2</div>
+        <div class="step-info">
+          <h5>Abra as configurações do Gmail</h5>
+          <p>No Gmail, clique no <strong>ícone de engrenagem</strong> (canto superior direito) → <strong>Ver todas as configurações</strong> → aba <strong>Geral</strong>. Role até a seção <strong>"Assinatura"</strong>.</p>
+        </div>
+      </div>
+
+      <div class="step">
+        <div class="step-num">3</div>
+        <div class="step-info">
+          <h5>Crie uma nova assinatura</h5>
+          <p>Clique em <strong>+ Criar nova</strong>. Dê o nome <strong>"Komplexa"</strong>. Na caixa de texto do editor, <strong>cole</strong> com <code>Ctrl + V</code>. A assinatura aparece renderizada com foto, cores e tudo.</p>
+        </div>
+      </div>
+
+      <div class="step">
+        <div class="step-num">4</div>
+        <div class="step-info">
+          <h5>Configure como padrão</h5>
+          <p>Logo abaixo, em <strong>"Padrões de assinatura"</strong>, selecione <strong>"Komplexa"</strong> nas duas opções (novos e-mails / respostas e encaminhamentos). Marque também a opção <strong>"Inserir assinatura antes do texto citado"</strong> — fica mais elegante em threads de resposta.</p>
+        </div>
+      </div>
+
+      <div class="step">
+        <div class="step-num">5</div>
+        <div class="step-info">
+          <h5>Salve no final da página</h5>
+          <p>Role até o final da página de configurações e clique em <strong>Salvar alterações</strong>. Pronto. Crie um e-mail teste pra ver como ficou.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="warning">
+      <strong>Importante:</strong> a foto carrega de uma URL pública (komplexahoteis.com). Se você esquecer a página da Komplexa ou trocar a foto, a assinatura vai aparecer quebrada nos e-mails antigos. Recomendo manter o caminho da imagem estável.
+    </div>
+  </div>
+
+</div>
+</body>
+</html>
