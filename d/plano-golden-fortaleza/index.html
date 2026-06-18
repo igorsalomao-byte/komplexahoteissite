@@ -236,6 +236,39 @@ html,body{font-family:var(--fd);background:var(--page-bg);color:var(--navy);-web
 .crono-legend .ll.f2 .dot{background:var(--g3)}
 .crono-legend .ll.f3 .dot{background:var(--champagne)}
 
+/* ─── AJUSTES DE CABIMENTO (slide 02 + slide 10) ─── */
+.slide-diag .body{padding-top:22px;padding-bottom:14px}
+.slide-diag .title{font-size:36px!important;margin-bottom:10px}
+.slide-diag .lead{font-size:14.5px;line-height:1.5}
+.slide-diag .diag-points{gap:7px;margin-top:10px}
+.slide-diag .dp-row{padding:9px 14px;gap:11px}
+.slide-diag .dp-row .ic{width:22px;height:22px;font-size:10px}
+.slide-diag .dp-row .tx{font-size:12.5px;line-height:1.45}
+.slide-diag .site-mockup .sm-content{min-height:240px;padding:18px;gap:10px}
+.slide-diag .site-mockup .sm-content .sm-section{padding:10px}
+.slide-diag .site-mockup .sm-content .sm-warn{padding:10px 12px;font-size:11px}
+
+.slide-inv .body{padding-top:24px;padding-bottom:14px}
+.slide-inv .title{font-size:40px!important;margin-bottom:10px}
+.slide-inv .lead{font-size:14.5px;line-height:1.5;max-width:880px}
+.slide-inv .proj-grid{margin-top:10px;gap:24px}
+.slide-inv .proj-left h4{font-size:19px;margin-bottom:4px}
+.slide-inv .proj-checklist{gap:5px 16px}
+.slide-inv .proj-checklist li{font-size:11.5px;line-height:1.45;padding-left:18px}
+.slide-inv .proj-checklist li::before{font-size:12px}
+.slide-inv .proj-box{padding:22px 24px}
+.slide-inv .proj-box .pb-badge{padding:5px 13px;font-size:9px}
+.slide-inv .proj-row{padding:8px 0}
+.slide-inv .proj-row .pr-lbl{font-size:12.5px}
+.slide-inv .proj-row .pr-lbl strong{font-size:13px}
+.slide-inv .proj-row .pr-lbl small{font-size:10px}
+.slide-inv .proj-row .pr-val{font-size:17px}
+.slide-inv .proj-row.total{padding-top:12px;margin-top:3px}
+.slide-inv .proj-row.total .pr-val{font-size:36px}
+.slide-inv .proj-period{padding:6px 0 0;font-size:10px}
+.slide-inv .proj-foot{margin-top:14px;padding:11px 22px}
+.slide-inv .proj-foot .pf-tx{font-size:12px;line-height:1.5}
+
 /* ─── 10 · INVESTIMENTO (PROJETO FECHADO 4 MESES) ─── */
 .proj-grid{display:grid;grid-template-columns:1.05fr 1fr;gap:32px;margin-top:14px;flex:1;align-items:stretch}
 .proj-left{display:flex;flex-direction:column;gap:16px;padding:8px 0}
@@ -389,7 +422,7 @@ html,body{font-family:var(--fd);background:var(--page-bg);color:var(--navy);-web
 </section>
 
 <!-- ═══════════════════ 02 · DIAGNÓSTICO ═══════════════════ -->
-<section class="slide dark">
+<section class="slide dark slide-diag">
   <div class="top"><img class="brand" src="assets/logotipo_white.svg" alt="Komplexa"><span class="pg">02 · 12</span></div>
   <div class="body">
     <div class="diag-grid">
@@ -756,12 +789,12 @@ html,body{font-family:var(--fd);background:var(--page-bg);color:var(--navy);-web
 </section>
 
 <!-- ═══════════════════ 10 · INVESTIMENTO (PROJETO FECHADO 4 MESES) ═══════════════════ -->
-<section class="slide dark">
+<section class="slide dark slide-inv">
   <div class="top"><img class="brand" src="assets/logotipo_white.svg" alt="Komplexa"><span class="pg">10 · 12</span></div>
   <div class="body">
     <div class="eyebrow">Investimento</div>
-    <h2 class="title" style="font-size:46px">Projeto fechado em <em>4 meses.</em></h2>
-    <p class="lead">Investimento estruturado em <strong style="color:#fff">setup único + 4 mensalidades de gestão</strong>. Valor total fechado, sem aditivos no meio do caminho, sem surpresas. Você sabe exatamente quanto vai pagar e o que está incluído.</p>
+    <h2 class="title">Projeto fechado em <em>4 meses.</em></h2>
+    <p class="lead"><strong style="color:#fff">Setup único + 4 mensalidades de gestão</strong>. Valor total fechado, sem aditivos no meio do caminho — você sabe exatamente quanto vai pagar e o que está incluído.</p>
 
     <div class="proj-grid">
 
