@@ -236,27 +236,34 @@ html,body{font-family:var(--fd);background:var(--page-bg);color:var(--navy);-web
 .crono-legend .ll.f2 .dot{background:var(--g3)}
 .crono-legend .ll.f3 .dot{background:var(--champagne)}
 
-/* ─── 10 · INVESTIMENTO ─── */
-.inv-grid{display:grid;grid-template-columns:1fr 1fr 1.1fr;gap:14px;margin-top:8px;flex:1}
-.inv-card{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.10);border-radius:18px;padding:26px 24px;display:flex;flex-direction:column;gap:12px;position:relative}
-.inv-card.featured{background:linear-gradient(160deg,rgba(36,213,255,.10),rgba(22,112,195,.05));border:2px solid rgba(36,213,255,.45);box-shadow:0 14px 36px rgba(36,213,255,.18);transform:translateY(-6px)}
-.inv-card.featured .inv-badge{position:absolute;top:-14px;left:50%;transform:translateX(-50%);background:var(--grad);color:#fff;padding:6px 14px;border-radius:100px;font-family:'SF Mono',monospace;font-size:9.5px;font-weight:700;letter-spacing:1.4px;text-transform:uppercase;box-shadow:0 4px 14px rgba(36,213,255,.40)}
-.inv-card .inv-tag{font-family:'SF Mono',monospace;font-size:10px;letter-spacing:1.4px;color:rgba(255,255,255,.55);font-weight:700;text-transform:uppercase}
-.inv-card h3{font-family:'Fraunces',serif;font-style:italic;font-weight:500;font-size:26px;color:#fff;letter-spacing:-.5px;line-height:1.1}
-.inv-card .inv-price{display:flex;align-items:flex-end;gap:6px;padding:8px 0;border-top:1px solid rgba(255,255,255,.08);border-bottom:1px solid rgba(255,255,255,.08)}
-.inv-card .inv-price .pre{font-size:14px;color:rgba(255,255,255,.55);font-weight:600;padding-bottom:6px}
-.inv-card .inv-price .val{font-family:'SF Mono',monospace;font-size:34px;font-weight:700;color:#fff;letter-spacing:-.8px;line-height:1}
-.inv-card .inv-price .per{font-size:11px;color:rgba(255,255,255,.55);font-weight:600;padding-bottom:6px}
-.inv-card.featured .inv-price .val{background:var(--grad);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
-.inv-card ul{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:7px;flex:1}
-.inv-card ul li{font-size:12.5px;color:rgba(255,255,255,.78);line-height:1.5;padding-left:18px;position:relative}
-.inv-card ul li::before{content:"✓";position:absolute;left:0;top:0;color:var(--g3);font-weight:700;font-size:12px}
-.inv-card .inv-note{font-size:10.5px;color:rgba(255,255,255,.45);line-height:1.5;font-style:italic;padding-top:8px;border-top:1px dashed rgba(255,255,255,.10);margin-top:auto}
+/* ─── 10 · INVESTIMENTO (PROJETO FECHADO 4 MESES) ─── */
+.proj-grid{display:grid;grid-template-columns:1.05fr 1fr;gap:32px;margin-top:14px;flex:1;align-items:stretch}
+.proj-left{display:flex;flex-direction:column;gap:16px;padding:8px 0}
+.proj-left h4{font-family:'Fraunces',serif;font-style:italic;font-weight:500;font-size:22px;color:#fff;letter-spacing:-.4px;margin-bottom:6px}
+.proj-checklist{display:grid;grid-template-columns:1fr 1fr;gap:6px 18px;list-style:none;padding:0;margin:0}
+.proj-checklist li{font-size:12.5px;color:rgba(255,255,255,.80);line-height:1.5;padding-left:20px;position:relative;display:flex;align-items:flex-start;gap:6px}
+.proj-checklist li::before{content:"✓";position:absolute;left:0;top:-1px;color:var(--g3);font-weight:700;font-size:13px}
+.proj-checklist li strong{color:#fff;font-weight:600}
 
-.inv-foot{margin-top:18px;padding:14px 24px;background:linear-gradient(90deg,rgba(36,213,255,.10),rgba(22,112,195,.03));border:1px solid rgba(36,213,255,.25);border-radius:12px;display:flex;align-items:center;gap:14px}
-.inv-foot .if-ic{font-size:18px;color:var(--g3)}
-.inv-foot .if-tx{font-size:13px;color:rgba(255,255,255,.85);line-height:1.55}
-.inv-foot .if-tx strong{color:#fff;font-weight:700}
+.proj-right{display:flex;align-items:center}
+.proj-box{background:linear-gradient(160deg,rgba(36,213,255,.10),rgba(22,112,195,.04));border:2px solid rgba(36,213,255,.40);border-radius:18px;padding:28px 28px 26px;display:flex;flex-direction:column;gap:14px;width:100%;position:relative;overflow:hidden;box-shadow:0 14px 36px rgba(36,213,255,.18)}
+.proj-box::before{content:"";position:absolute;inset:0;background:var(--grad-r);opacity:.20;pointer-events:none}
+.proj-box .pb-badge{position:absolute;top:-13px;left:50%;transform:translateX(-50%);background:var(--grad);color:#fff;padding:6px 16px;border-radius:100px;font-family:'SF Mono',monospace;font-size:9.5px;font-weight:700;letter-spacing:1.4px;text-transform:uppercase;box-shadow:0 4px 14px rgba(36,213,255,.40);z-index:1}
+.proj-row{display:grid;grid-template-columns:1fr auto;gap:12px;align-items:baseline;padding:9px 0;border-bottom:1px solid rgba(255,255,255,.10);position:relative;z-index:1}
+.proj-row:last-of-type{border-bottom:none}
+.proj-row.total{padding-top:14px;margin-top:4px;border-top:2px solid var(--g3);border-bottom:none}
+.proj-row .pr-lbl{font-size:13px;color:rgba(255,255,255,.78);font-weight:500}
+.proj-row .pr-lbl strong{color:#fff;font-weight:700;display:block;font-size:13.5px;margin-bottom:1px}
+.proj-row .pr-lbl small{display:block;font-size:10.5px;color:rgba(255,255,255,.50);margin-top:2px;font-weight:400}
+.proj-row .pr-val{font-family:'SF Mono',monospace;font-size:18px;font-weight:700;color:#fff;letter-spacing:-.3px;text-align:right;white-space:nowrap}
+.proj-row.total .pr-lbl{font-family:'SF Mono',monospace;font-size:11px;letter-spacing:1.6px;text-transform:uppercase;color:var(--g3);font-weight:700}
+.proj-row.total .pr-val{font-family:'SF Mono',monospace;font-size:42px;font-weight:700;letter-spacing:-1.2px;background:var(--grad);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;line-height:1}
+.proj-period{position:relative;z-index:1;display:flex;align-items:center;justify-content:space-between;padding:8px 0 0;font-family:'SF Mono',monospace;font-size:10.5px;color:rgba(255,255,255,.55);letter-spacing:.5px;font-weight:600;text-transform:uppercase}
+
+.proj-foot{margin-top:18px;padding:14px 24px;background:linear-gradient(90deg,rgba(36,213,255,.10),rgba(22,112,195,.03));border:1px solid rgba(36,213,255,.25);border-radius:12px;display:flex;align-items:center;gap:14px}
+.proj-foot .pf-ic{font-size:18px;color:var(--g3);flex-shrink:0}
+.proj-foot .pf-tx{font-size:13px;color:rgba(255,255,255,.85);line-height:1.55}
+.proj-foot .pf-tx strong{color:#fff;font-weight:700}
 
 /* ─── 11 · VISÃO LONG-TERM ─── */
 .lt-grid{display:grid;grid-template-columns:1fr 1.1fr;gap:36px;flex:1;align-items:center}
@@ -748,64 +755,67 @@ html,body{font-family:var(--fd);background:var(--page-bg);color:var(--navy);-web
   <div class="bot"><span>komplexahoteis.com</span><span>09 · 12</span></div>
 </section>
 
-<!-- ═══════════════════ 10 · INVESTIMENTO ═══════════════════ -->
+<!-- ═══════════════════ 10 · INVESTIMENTO (PROJETO FECHADO 4 MESES) ═══════════════════ -->
 <section class="slide dark">
   <div class="top"><img class="brand" src="assets/logotipo_white.svg" alt="Komplexa"><span class="pg">10 · 12</span></div>
   <div class="body">
     <div class="eyebrow">Investimento</div>
-    <h2 class="title" style="font-size:46px">Três patamares <em>de parceria.</em></h2>
-    <p class="lead">Operação modular — você escolhe até onde quer ir. Valores referem-se ao <strong style="color:#fff">fee da Komplexa</strong>, à parte do investimento direto em mídia (gerido por você diretamente na plataforma) e dos custos de ferramentas terceiras (Asksuite, Manychat, API WhatsApp) — que a Komplexa intermedia.</p>
-    <div class="inv-grid">
+    <h2 class="title" style="font-size:46px">Projeto fechado em <em>4 meses.</em></h2>
+    <p class="lead">Investimento estruturado em <strong style="color:#fff">setup único + 4 mensalidades de gestão</strong>. Valor total fechado, sem aditivos no meio do caminho, sem surpresas. Você sabe exatamente quanto vai pagar e o que está incluído.</p>
 
-      <div class="inv-card">
-        <span class="inv-tag">Patamar 01</span>
-        <h3>Estruturação</h3>
-        <div class="inv-price"><span class="pre">R$</span><span class="val">1.900</span><span class="per">/mês</span></div>
-        <ul>
-          <li>Site próprio do Golden + motor HSystem</li>
-          <li>Tracking ponta a ponta (GA4 + Pixel + CAPI + UTM)</li>
-          <li>Cadastro no Google Hotel Center</li>
-          <li>Setup de funil e mapeamento de ROI</li>
-          <li>Suporte técnico contínuo</li>
+    <div class="proj-grid">
+
+      <div class="proj-left">
+        <h4>O que está incluído</h4>
+        <ul class="proj-checklist">
+          <li><strong>Site próprio do Golden</strong> com identidade exclusiva</li>
+          <li><strong>Motor HSystem</strong> integrado ao site</li>
+          <li><strong>Tracking completo</strong> (GA4, Pixel, CAPI, UTM)</li>
+          <li><strong>Google Hotel Center</strong> cadastrado e otimizado</li>
+          <li><strong>Gestão Meta Ads</strong> (Facebook + Instagram)</li>
+          <li><strong>Gestão Google Ads</strong> + Hotel Ads</li>
+          <li><strong>Criativos próprios</strong> in-house mensais</li>
+          <li><strong>Segmentação por IA</strong> (lookalike + exclusão)</li>
+          <li><strong>Remarketing</strong> por sinal de intenção</li>
+          <li><strong>Social media ativo</strong> no Instagram (feed)</li>
+          <li><strong>Otimização semanal</strong> por ROAS real</li>
+          <li><strong>Account Manager dedicado</strong> · comunicação contínua</li>
         </ul>
-        <p class="inv-note">Ideal para validar a estrutura digital antes de investir em mídia paga.</p>
       </div>
 
-      <div class="inv-card">
-        <span class="inv-tag">Patamar 02</span>
-        <h3>Aceleração</h3>
-        <div class="inv-price"><span class="pre">R$</span><span class="val">2.658</span><span class="per">/mês</span></div>
-        <ul>
-          <li>Tudo do Patamar 01</li>
-          <li>Gestão de Meta Ads + Google Ads + Hotel Ads</li>
-          <li>Criativos próprios in-house</li>
-          <li>Social media ativo no Instagram (feed)</li>
-          <li>Segmentação por IA + remarketing por intenção</li>
-          <li>Otimização semanal por ROAS real</li>
-        </ul>
-        <p class="inv-note">Para acelerar a captura direta com mídia paga e presença orgânica integrada.</p>
-      </div>
-
-      <div class="inv-card featured">
-        <span class="inv-badge">Operação Completa</span>
-        <span class="inv-tag">Patamar 03</span>
-        <h3>Operação Plena</h3>
-        <div class="inv-price"><span class="pre">R$</span><span class="val">5.890</span><span class="per">/mês*</span></div>
-        <ul>
-          <li>Tudo do Patamar 02</li>
-          <li>WhatsApp com IA via Asksuite</li>
-          <li>Integração IA ↔ motor de reservas</li>
-          <li>Manychat ativo no Instagram (DM auto)</li>
-          <li>Reativação automática de hóspedes anteriores</li>
-          <li>Atendimento 24/7 sem custo de equipe extra</li>
-        </ul>
-        <p class="inv-note">*Inclui fee Komplexa + intermediação de Asksuite/Manychat/WhatsApp Business API. Valor sob validação técnica final.</p>
+      <div class="proj-right">
+        <div class="proj-box">
+          <span class="pb-badge">Projeto Fechado</span>
+          <div class="proj-row">
+            <div class="pr-lbl">
+              <strong>Setup inicial</strong>
+              <small>Site + tracking + Google Hotel Center</small>
+            </div>
+            <span class="pr-val">R$ 1.900</span>
+          </div>
+          <div class="proj-row">
+            <div class="pr-lbl">
+              <strong>Mensalidade de gestão</strong>
+              <small>R$ 2.658 × 4 meses</small>
+            </div>
+            <span class="pr-val">R$ 10.632</span>
+          </div>
+          <div class="proj-row total">
+            <span class="pr-lbl">Total do projeto</span>
+            <span class="pr-val">R$ 12.532</span>
+          </div>
+          <div class="proj-period">
+            <span>Duração</span>
+            <span>4 meses · fechado</span>
+          </div>
+        </div>
       </div>
 
     </div>
-    <div class="inv-foot">
-      <span class="if-ic">✦</span>
-      <span class="if-tx"><strong>Não incluso:</strong> investimento em mídia paga (Meta + Google) é pago diretamente por você nas plataformas — garantindo transparência total sobre a verba. A Komplexa apenas gerencia e otimiza.</span>
+
+    <div class="proj-foot">
+      <span class="pf-ic">✦</span>
+      <span class="pf-tx"><strong>Não incluso:</strong> investimento em mídia paga (Meta + Google) é pago diretamente por você nas plataformas — garantindo <strong>transparência total</strong> sobre a verba aplicada. A Komplexa apenas estrutura, gerencia e otimiza.</span>
     </div>
   </div>
   <div class="bot"><span>komplexahoteis.com</span><span>10 · 12</span></div>
