@@ -1,0 +1,1103 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#0A1424">
+<title>Komplexa Hotéis — Aquisição com IA</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@500;600;700;800&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+
+  :root{
+    --bg:#0A1424;
+    --bg2:#0E1B30;
+    --navy:#14233C;
+    --cyan:#00C6FF;
+    --cyan-deep:#0090C4;
+    --cyan-soft:rgba(0,198,255,.13);
+    --ink:#EAF2FB;
+    --silver:#9FAEC2;
+    --dim:#5C6E89;
+    --line:rgba(255,255,255,.08);
+    --maxw:480px;
+  }
+
+  html{-webkit-text-size-adjust:100%}
+  body{
+    background:var(--bg);
+    color:var(--ink);
+    font-family:'Work Sans',system-ui,sans-serif;
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+    overflow:hidden;
+  }
+
+  /* ----- DECK / SLIDES ----- */
+  .deck{
+    height:100svh;
+    overflow-y:scroll;
+    overflow-x:hidden;
+    scroll-snap-type:y mandatory;
+    scroll-behavior:smooth;
+    scrollbar-width:none;
+  }
+  .deck::-webkit-scrollbar{display:none}
+
+  .slide{
+    position:relative;
+    min-height:100svh;
+    scroll-snap-align:start;
+    scroll-snap-stop:always;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    padding:clamp(28px,7vw,48px) clamp(26px,7vw,46px);
+    overflow:hidden;
+    background:
+      radial-gradient(120% 80% at 50% -10%, var(--bg2) 0%, var(--bg) 55%);
+  }
+  .inner{
+    width:100%;
+    max-width:var(--maxw);
+    margin:0 auto;
+    position:relative;
+    z-index:3;
+  }
+
+  /* ----- TYPE SYSTEM ----- */
+  .eyebrow{
+    font-family:'Exo 2',sans-serif;
+    font-weight:600;
+    font-size:.72rem;
+    letter-spacing:.3em;
+    text-transform:uppercase;
+    color:var(--cyan);
+    display:flex;
+    align-items:center;
+    gap:12px;
+    margin-bottom:22px;
+  }
+  .eyebrow::before{
+    content:"";
+    width:26px;height:1px;
+    background:linear-gradient(90deg,var(--cyan),transparent);
+    flex:none;
+  }
+  h1,h2{
+    font-family:'Exo 2',sans-serif;
+    font-weight:800;
+    line-height:1.02;
+    letter-spacing:-.02em;
+    color:var(--ink);
+  }
+  h1{font-size:clamp(2.4rem,11vw,3.5rem)}
+  h2{font-size:clamp(1.85rem,8.4vw,2.55rem);font-weight:700;letter-spacing:-.015em;line-height:1.06}
+  .lead{
+    margin-top:20px;
+    font-size:1.04rem;
+    color:var(--silver);
+    max-width:33ch;
+  }
+  .lead strong{color:var(--ink);font-weight:600}
+  .cy{color:var(--cyan)}
+
+  .punch{
+    font-family:'Exo 2',sans-serif;
+    font-weight:700;
+    font-size:1.18rem;
+    color:var(--cyan);
+    margin-top:26px;
+    letter-spacing:.01em;
+  }
+
+  /* ----- HERO ----- */
+  .hero-wordmark{
+    font-family:'Exo 2',sans-serif;
+    font-weight:800;
+    font-size:.82rem;
+    letter-spacing:.34em;
+    text-transform:uppercase;
+    color:var(--ink);
+    margin-bottom:26px;
+  }
+  .hero-wordmark span{color:var(--cyan)}
+  .hero-tag{
+    margin-top:8px;
+    font-size:.74rem;
+    letter-spacing:.04em;
+    color:var(--dim);
+    font-weight:500;
+  }
+
+  /* pulse rings */
+  .rings{
+    position:absolute;
+    top:38%;left:50%;
+    width:min(560px,120vw);
+    aspect-ratio:1;
+    transform:translate(-50%,-50%);
+    z-index:1;
+    pointer-events:none;
+  }
+  .rings span{
+    position:absolute;inset:0;
+    border:1px solid rgba(0,198,255,.34);
+    border-radius:50%;
+    opacity:0;
+    transform:scale(.18);
+    animation:pulse 5.2s cubic-bezier(.22,.61,.36,1) infinite;
+  }
+  .rings span:nth-child(2){animation-delay:1.3s}
+  .rings span:nth-child(3){animation-delay:2.6s}
+  .rings span:nth-child(4){animation-delay:3.9s}
+  .rings::after{
+    content:"";
+    position:absolute;
+    top:50%;left:50%;
+    width:11px;height:11px;
+    transform:translate(-50%,-50%);
+    background:var(--cyan);
+    border-radius:50%;
+    box-shadow:0 0 26px 6px rgba(0,198,255,.7);
+  }
+  @keyframes pulse{
+    0%{opacity:0;transform:scale(.18)}
+    14%{opacity:.9}
+    100%{opacity:0;transform:scale(1)}
+  }
+
+  .scroll-hint{
+    position:absolute;
+    left:50%;bottom:30px;
+    transform:translateX(-50%);
+    z-index:5;
+    display:flex;flex-direction:column;align-items:center;gap:8px;
+    font-family:'Exo 2',sans-serif;
+    font-size:.62rem;letter-spacing:.28em;text-transform:uppercase;
+    color:var(--dim);
+    transition:opacity .4s;
+  }
+  .scroll-hint .chev{
+    width:18px;height:18px;
+    border-right:1.5px solid var(--cyan);
+    border-bottom:1.5px solid var(--cyan);
+    transform:rotate(45deg);
+    animation:bob 1.8s ease-in-out infinite;
+  }
+  @keyframes bob{0%,100%{transform:rotate(45deg) translate(0,0);opacity:.5}50%{transform:rotate(45deg) translate(3px,3px);opacity:1}}
+  .deck.scrolled .scroll-hint{opacity:0}
+
+  /* ----- PROBLEM stats ----- */
+  .stat-row{
+    display:flex;
+    gap:14px;
+    margin-top:30px;
+  }
+  .stat{
+    flex:1;
+    border:1px solid var(--line);
+    border-radius:14px;
+    padding:18px 16px;
+    background:rgba(255,255,255,.015);
+  }
+  .stat .num{
+    font-family:'Exo 2',sans-serif;
+    font-weight:800;
+    font-size:1.9rem;
+    color:var(--cyan);
+    line-height:1;
+  }
+  .stat .lab{
+    margin-top:8px;
+    font-size:.78rem;
+    color:var(--silver);
+    line-height:1.4;
+  }
+  .painlist{margin-top:26px;display:flex;flex-direction:column;gap:14px}
+  .painlist li{
+    list-style:none;
+    display:flex;gap:13px;align-items:flex-start;
+    font-size:.96rem;color:var(--silver);
+  }
+  .painlist li::before{
+    content:"";
+    flex:none;margin-top:8px;
+    width:6px;height:6px;border-radius:50%;
+    background:var(--dim);
+  }
+
+  /* ----- RADAR (thesis) ----- */
+  .radar-wrap{
+    position:relative;
+    width:min(300px,72vw);
+    aspect-ratio:1;
+    margin:8px auto 4px;
+  }
+  .radar-grid{
+    position:absolute;inset:0;
+    border-radius:50%;
+    border:1px solid rgba(0,198,255,.2);
+  }
+  .radar-grid::before,.radar-grid::after{
+    content:"";position:absolute;inset:18%;border-radius:50%;
+    border:1px solid rgba(0,198,255,.12);
+  }
+  .radar-grid::after{inset:38%}
+  .sweep{
+    position:absolute;inset:0;border-radius:50%;
+    background:conic-gradient(from 0deg, transparent 0deg, transparent 300deg, rgba(0,198,255,.32) 355deg, rgba(0,198,255,.55) 360deg);
+    opacity:0;
+  }
+  .in-view .sweep{opacity:1;animation:spin 3.4s linear infinite}
+  @keyframes spin{to{transform:rotate(360deg)}}
+  .dot{
+    position:absolute;
+    width:13px;height:13px;border-radius:50%;
+    transform:translate(-50%,-50%) scale(.6);
+    background:var(--dim);opacity:.32;
+    transition:all .5s ease;
+  }
+  .in-view .dot{opacity:.34}
+  .in-view .dot.good{
+    background:var(--cyan);
+    opacity:1;
+    transform:translate(-50%,-50%) scale(1);
+    box-shadow:0 0 16px 3px rgba(0,198,255,.7);
+  }
+  .in-view .dot.bad{opacity:.14;transform:translate(-50%,-50%) scale(.5)}
+  .radar-core{
+    position:absolute;top:50%;left:50%;
+    width:9px;height:9px;border-radius:50%;
+    transform:translate(-50%,-50%);
+    background:var(--cyan);box-shadow:0 0 18px 4px rgba(0,198,255,.6);
+  }
+
+  /* ----- STAGE slides ----- */
+  .stage-num{
+    position:absolute;
+    top:clamp(46px,12vh,90px);
+    right:clamp(14px,5vw,28px);
+    font-family:'Exo 2',sans-serif;
+    font-weight:800;
+    font-size:clamp(7rem,30vw,11rem);
+    line-height:.8;
+    color:transparent;
+    -webkit-text-stroke:1.4px rgba(0,198,255,.16);
+    z-index:1;
+    pointer-events:none;
+  }
+  .stage-kicker{
+    font-family:'Exo 2',sans-serif;
+    font-weight:700;
+    font-size:.72rem;letter-spacing:.26em;text-transform:uppercase;
+    color:var(--dim);
+    margin-bottom:16px;
+  }
+  .stage-kicker b{color:var(--cyan);font-weight:700}
+  .stage-h{
+    font-family:'Exo 2',sans-serif;font-weight:700;
+    font-size:clamp(1.7rem,7.6vw,2.3rem);
+    line-height:1.08;letter-spacing:-.01em;color:var(--ink);
+  }
+  .stage-body{margin-top:18px;font-size:1.02rem;color:var(--silver);max-width:32ch}
+  .stage-tag{
+    display:inline-flex;align-items:center;gap:9px;
+    margin-top:24px;
+    padding:8px 15px;
+    border:1px solid rgba(0,198,255,.28);
+    border-radius:100px;
+    font-family:'Exo 2',sans-serif;font-weight:600;
+    font-size:.74rem;letter-spacing:.04em;color:var(--cyan);
+    background:var(--cyan-soft);
+  }
+  .stage-tag .ico{width:6px;height:6px;border-radius:50%;background:var(--cyan);box-shadow:0 0 10px 2px rgba(0,198,255,.8)}
+
+  /* ----- PROOF ----- */
+  .bignum{
+    font-family:'Exo 2',sans-serif;font-weight:800;
+    font-size:clamp(3.4rem,17vw,5.2rem);
+    line-height:.9;letter-spacing:-.02em;
+    background:linear-gradient(180deg,#fff 0%,var(--cyan) 130%);
+    -webkit-background-clip:text;background-clip:text;
+    -webkit-text-fill-color:transparent;
+  }
+  .proof-list{margin-top:30px;display:flex;flex-direction:column;gap:0}
+  .proof-list li{
+    list-style:none;
+    display:flex;gap:14px;align-items:center;
+    padding:15px 0;
+    border-top:1px solid var(--line);
+    font-size:.98rem;color:var(--silver);
+  }
+  .proof-list li:last-child{border-bottom:1px solid var(--line)}
+  .proof-list .pi{
+    flex:none;width:22px;height:22px;border-radius:50%;
+    border:1px solid rgba(0,198,255,.4);
+    display:grid;place-items:center;
+    color:var(--cyan);font-size:.7rem;font-weight:700;font-family:'Exo 2',sans-serif;
+  }
+
+  /* ----- CTA ----- */
+  .cta-slide{text-align:center;align-items:center}
+  .cta-slide .inner{display:flex;flex-direction:column;align-items:center}
+  .cta-slide .lead{max-width:30ch;text-align:center}
+  .cta-btn{
+    margin-top:34px;
+    display:inline-flex;align-items:center;gap:11px;
+    padding:17px 32px;
+    border-radius:100px;
+    background:var(--cyan);
+    color:#06121F;
+    font-family:'Exo 2',sans-serif;font-weight:700;font-size:1rem;letter-spacing:.01em;
+    text-decoration:none;
+    box-shadow:0 8px 34px -8px rgba(0,198,255,.6);
+    transition:transform .25s ease, box-shadow .25s ease;
+  }
+  .cta-btn:hover,.cta-btn:focus-visible{transform:translateY(-2px);box-shadow:0 14px 40px -8px rgba(0,198,255,.75)}
+  .cta-btn svg{width:18px;height:18px}
+  .cta-foot{
+    margin-top:46px;
+    font-family:'Exo 2',sans-serif;font-weight:800;
+    font-size:.8rem;letter-spacing:.32em;text-transform:uppercase;color:var(--ink);
+  }
+  .cta-foot span{color:var(--cyan)}
+  .cta-sub{margin-top:7px;font-size:.68rem;letter-spacing:.05em;color:var(--dim)}
+
+  /* ===================== VISUALIZAÇÕES INTERATIVAS ===================== */
+  .viz{position:relative;width:100%;z-index:3;margin:20px 0 4px}
+  .scene{position:relative;background:rgba(255,255,255,.02);border:1px solid var(--line);border-radius:16px;overflow:hidden}
+  .viz-btn{
+    margin-top:15px;display:inline-flex;align-items:center;gap:8px;
+    padding:9px 18px;border-radius:100px;
+    border:1px solid rgba(0,198,255,.4);background:var(--cyan-soft);color:var(--cyan);
+    font-family:'Exo 2',sans-serif;font-weight:600;font-size:.75rem;letter-spacing:.03em;
+    cursor:pointer;transition:all .25s ease;
+  }
+  .viz-btn:hover,.viz-btn:focus-visible{background:rgba(0,198,255,.2);box-shadow:0 0 18px -4px rgba(0,198,255,.6);outline:none}
+  .viz-tap{
+    margin-top:11px;font-family:'Exo 2',sans-serif;font-size:.56rem;
+    letter-spacing:.2em;text-transform:uppercase;color:var(--dim);
+    display:flex;align-items:center;gap:7px;
+  }
+  .viz-tap::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--cyan);box-shadow:0 0 8px rgba(0,198,255,.7);animation:tapblink 1.6s ease-in-out infinite}
+  @keyframes tapblink{0%,100%{opacity:.3}50%{opacity:1}}
+
+  /* ocupação (problema) */
+  .occ-chart{position:relative;height:140px;padding-top:14px}
+  .occ-goal{position:absolute;left:0;right:0;top:18px;border-top:1px dashed rgba(0,198,255,.4)}
+  .occ-goal::after{content:"potencial";position:absolute;right:0;top:-14px;font-family:'Exo 2',sans-serif;font-size:.54rem;letter-spacing:.12em;color:var(--cyan);text-transform:uppercase}
+  .occ-bars{display:flex;gap:8px;align-items:flex-end;height:100%}
+  .occ-bar{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:flex-end;height:100%}
+  .occ-bar i{display:block;width:100%;border-radius:5px 5px 0 0;height:0;background:linear-gradient(180deg,#33506f,#1d3047);transition:height .8s cubic-bezier(.22,.61,.36,1),background .5s}
+  .occ.run .occ-bar i{height:var(--h)}
+  .occ.run.filled .occ-bar i{height:var(--hf)}
+  .occ.filled .occ-bar.wd i{background:linear-gradient(180deg,var(--cyan),var(--cyan-deep))}
+  .occ-bar:not(.wd) i{background:linear-gradient(180deg,var(--cyan),var(--cyan-deep))}
+  .occ-bar b{margin-top:7px;font-family:'Exo 2',sans-serif;font-size:.6rem;color:var(--dim);font-weight:600}
+  .occ.filled .occ-bar.wd b{color:var(--cyan)}
+
+  /* fluxo 7 etapas (metodologia) */
+  .flow-track{position:relative;display:flex;justify-content:space-between;align-items:center;height:46px;padding:0 4px}
+  .flow-line{position:absolute;left:8px;right:8px;top:50%;height:2px;background:rgba(255,255,255,.12);transform:translateY(-50%)}
+  .flow-fill{position:absolute;left:8px;top:50%;height:2px;width:0;background:var(--cyan);box-shadow:0 0 8px rgba(0,198,255,.7);transform:translateY(-50%);transition:width 1.5s ease}
+  .flow.run .flow-fill{width:calc(100% - 16px)}
+  .flow-node{position:relative;z-index:2;width:30px;height:30px;border-radius:50%;border:1px solid rgba(0,198,255,.35);background:var(--bg2);color:var(--silver);font-family:'Exo 2',sans-serif;font-weight:700;font-size:.62rem;cursor:pointer;transition:all .3s ease;display:grid;place-items:center}
+  .flow-node.active{background:var(--cyan);color:#06121F;border-color:var(--cyan);box-shadow:0 0 16px -2px rgba(0,198,255,.8);transform:scale(1.14)}
+  .flow-label{margin-top:14px;font-family:'Exo 2',sans-serif;font-weight:600;font-size:.9rem;color:var(--cyan);text-align:center;min-height:1.2em;transition:opacity .2s}
+
+  /* campo de segmentação (etapa 01) */
+  .field .scene{height:172px}
+  .seg-ring{position:absolute;top:50%;left:50%;width:94px;height:94px;border:1px solid rgba(0,198,255,.45);border-radius:50%;transform:translate(-50%,-50%) scale(.35);opacity:0;transition:all .7s ease}
+  .field.run .seg-ring{opacity:1;transform:translate(-50%,-50%) scale(1)}
+  .seg-dot{position:absolute;width:12px;height:12px;border-radius:50%;background:var(--dim);transform:translate(-50%,-50%);transition:all .9s cubic-bezier(.22,.61,.36,1)}
+  .field.run .seg-dot.good{background:var(--cyan);box-shadow:0 0 14px 2px rgba(0,198,255,.7)}
+  .field.run .seg-dot.bad{opacity:.1}
+
+  /* canais (etapa 02) */
+  .channels .scene{height:168px}
+  .ch-node{position:absolute;top:16px;padding:7px 13px;border-radius:10px;border:1px solid var(--line);background:rgba(255,255,255,.04);font-family:'Exo 2',sans-serif;font-weight:600;font-size:.7rem;color:var(--ink);cursor:pointer;transition:all .25s;z-index:2}
+  .ch-node.meta{left:14px}
+  .ch-node.google{right:14px}
+  .ch-node.off{opacity:.4}
+  .ch-node .d{display:inline-block;width:7px;height:7px;border-radius:50%;background:var(--cyan);margin-right:6px;box-shadow:0 0 8px rgba(0,198,255,.7);vertical-align:middle}
+  .ch-node.off .d{background:var(--dim);box-shadow:none}
+  .ch-target{position:absolute;left:50%;bottom:16px;transform:translateX(-50%);z-index:2;width:58px;height:58px;border-radius:50%;border:1px solid rgba(0,198,255,.5);display:grid;place-items:center;font-family:'Exo 2',sans-serif;font-size:.55rem;color:var(--cyan);text-align:center;background:var(--bg2);line-height:1.2}
+  .channels svg{position:absolute;inset:0;width:100%;height:100%;z-index:1}
+  .ch-line{stroke:rgba(0,198,255,.55);stroke-width:1.5;fill:none;stroke-dasharray:5 7}
+  .channels.run .ch-line{animation:dash 1s linear infinite}
+  @keyframes dash{to{stroke-dashoffset:-24}}
+  .ch-line.off{opacity:.1;animation:none}
+
+  /* reservas (etapa 03) */
+  .booking .scene{height:198px;padding:14px}
+  .bk-bar{display:flex;gap:6px;margin-bottom:13px}
+  .bk-bar i{width:8px;height:8px;border-radius:50%;background:var(--dim)}
+  .bk-steps{display:flex;flex-direction:column;gap:9px;margin-bottom:14px}
+  .bk-step{display:flex;align-items:center;gap:9px;font-size:.79rem;color:var(--silver)}
+  .bk-step .bx{width:18px;height:18px;border-radius:5px;border:1px solid var(--line);display:grid;place-items:center;font-size:.6rem;color:transparent;transition:all .3s}
+  .bk-step.done .bx{background:var(--cyan);border-color:var(--cyan);color:#06121F}
+  .bk-step.done{color:var(--ink)}
+  .bk-cta{width:100%;padding:11px;border-radius:9px;border:none;background:var(--cyan);color:#06121F;font-family:'Exo 2',sans-serif;font-weight:700;font-size:.82rem;cursor:pointer;transition:box-shadow .3s}
+  .booking.ready .bk-cta{box-shadow:0 6px 22px -6px rgba(0,198,255,.8)}
+  .bk-done{margin-top:8px;text-align:center;font-family:'Exo 2',sans-serif;font-weight:700;color:var(--cyan);font-size:.86rem;opacity:0;transform:translateY(6px);transition:all .4s}
+  .booking.confirmed .bk-done{opacity:1;transform:none}
+  .booking.confirmed .bk-cta{display:none}
+
+  /* remarketing (etapa 04) */
+  .orbit .scene{height:178px}
+  .orbit-ring{position:absolute;top:50%;left:50%;width:124px;height:124px;border:1px dashed rgba(0,198,255,.35);border-radius:50%;transform:translate(-50%,-50%)}
+  .orbit-core{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:50px;height:50px;border-radius:50%;background:var(--bg2);border:1px solid rgba(0,198,255,.5);display:grid;place-items:center;font-family:'Exo 2',sans-serif;font-size:.55rem;color:var(--cyan);z-index:2}
+  .orbit-sat{position:absolute;top:50%;left:50%;width:124px;height:124px;transform:translate(-50%,-50%)}
+  .orbit.run .orbit-sat{animation:orbspin 7s linear infinite}
+  .orbit-sat i{position:absolute;top:-7px;left:50%;width:15px;height:15px;border-radius:50%;background:var(--cyan);box-shadow:0 0 14px 2px rgba(0,198,255,.8);transform:translateX(-50%)}
+  @keyframes orbspin{to{transform:translate(-50%,-50%) rotate(360deg)}}
+  .orbit-ping{position:absolute;top:50%;left:50%;width:50px;height:50px;border-radius:50%;border:1px solid var(--cyan);transform:translate(-50%,-50%);opacity:0;pointer-events:none}
+  .orbit.pinging .orbit-ping{animation:pingout 1s ease-out}
+  @keyframes pingout{0%{opacity:.9;transform:translate(-50%,-50%) scale(.4)}100%{opacity:0;transform:translate(-50%,-50%) scale(2.6)}}
+
+  /* recuperação de carrinho (etapa 05) */
+  .recover .scene{height:150px;padding:18px;display:flex;flex-direction:column;justify-content:center;gap:13px}
+  .rc-cap{font-family:'Exo 2',sans-serif;font-size:.72rem;letter-spacing:.04em;color:var(--silver);min-height:1.1em;transition:color .3s}
+  .rc-track{height:12px;border-radius:8px;background:rgba(255,255,255,.06);overflow:hidden}
+  .rc-fill{height:100%;width:0;border-radius:8px;background:linear-gradient(90deg,var(--cyan-deep),var(--cyan));transition:width .6s ease}
+  .rc-tags{display:flex;gap:10px}
+  .rc-tag{padding:6px 11px;border-radius:8px;border:1px solid var(--line);font-family:'Exo 2',sans-serif;font-size:.64rem;color:var(--silver);transition:all .3s;opacity:.5}
+  .rc-tag.lit{border-color:var(--cyan);color:var(--cyan);opacity:1;box-shadow:0 0 14px -4px rgba(0,198,255,.6)}
+
+  /* conversão / chat (etapa 06) */
+  .chat .scene{height:198px;padding:14px;display:flex;flex-direction:column;gap:8px;justify-content:flex-end}
+  .bubble{max-width:80%;padding:9px 13px;border-radius:13px;font-size:.78rem;line-height:1.35;opacity:0;transform:translateY(8px);transition:all .4s}
+  .bubble.show{opacity:1;transform:none}
+  .bubble.inb{align-self:flex-start;background:rgba(255,255,255,.06);color:var(--ink);border-bottom-left-radius:4px}
+  .bubble.out{align-self:flex-end;background:rgba(0,198,255,.15);border:1px solid rgba(0,198,255,.3);color:#dff6ff;border-bottom-right-radius:4px}
+  .bubble.fin{align-self:center;background:none;color:var(--cyan);font-family:'Exo 2',sans-serif;font-weight:700;font-size:.83rem;padding:4px}
+
+  /* fidelização (etapa 07) */
+  .loyalty .scene{height:168px;padding:16px 16px 12px;display:flex;align-items:flex-end;justify-content:space-between;gap:12px}
+  .ly-ltv{position:absolute;top:12px;left:14px;font-family:'Exo 2',sans-serif;font-size:.58rem;letter-spacing:.14em;text-transform:uppercase;color:var(--cyan);z-index:2}
+  .ly-bar{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:flex-end;height:100%}
+  .ly-bar i{width:100%;border-radius:6px 6px 0 0;height:0;background:linear-gradient(180deg,var(--cyan),var(--cyan-deep));transition:height .7s cubic-bezier(.22,.61,.36,1);box-shadow:0 0 16px -7px rgba(0,198,255,.8)}
+  .loyalty.run .ly-bar i{height:var(--h)}
+  .ly-bar b{margin-top:8px;font-family:'Exo 2',sans-serif;font-size:.6rem;color:var(--silver)}
+
+  /* sparkline (prova) */
+  .spark{display:flex;align-items:flex-end;gap:6px;height:54px;margin-top:6px}
+  .spark i{flex:1;height:0;border-radius:4px 4px 0 0;background:linear-gradient(180deg,var(--cyan),var(--cyan-deep));transition:height .7s cubic-bezier(.22,.61,.36,1)}
+  .spark-wrap.run .spark i{height:var(--h)}
+
+  /* ----- "IA DECODIFICANDO" — SCRAMBLE / DECODE ----- */
+  .stream{opacity:0}
+  .stream.streaming{opacity:1}
+  .word{display:inline-block;white-space:nowrap}
+  .ch{display:inline-block;text-align:center}
+  .ch.scrambling{
+    color:var(--cyan);
+    font-size:.86em;
+    text-shadow:0 0 8px rgba(0,198,255,.6);
+  }
+
+  /* ----- REVEAL ANIMATION ----- */
+  .reveal{opacity:0;transform:translateY(22px);transition:opacity .7s ease,transform .7s cubic-bezier(.22,.61,.36,1)}
+  .in-view .reveal{opacity:1;transform:none;transition-delay:var(--d,0s)}
+
+  /* ----- PROGRESS RAIL ----- */
+  .rail{
+    position:fixed;
+    right:13px;top:50%;
+    transform:translateY(-50%);
+    z-index:50;
+    display:flex;flex-direction:column;gap:11px;
+    align-items:center;
+  }
+  .rail button{
+    width:7px;height:7px;border-radius:50%;
+    border:none;padding:0;cursor:pointer;
+    background:rgba(255,255,255,.22);
+    transition:all .3s ease;
+  }
+  .rail button.active{
+    background:var(--cyan);
+    height:20px;border-radius:4px;
+    box-shadow:0 0 10px 1px rgba(0,198,255,.6);
+  }
+  .rail button:focus-visible{outline:2px solid var(--cyan);outline-offset:3px}
+
+  /* top progress bar */
+  .topbar{
+    position:fixed;top:0;left:0;height:2px;z-index:60;
+    width:0%;
+    background:linear-gradient(90deg,var(--cyan-deep),var(--cyan));
+    transition:width .25s ease;
+    box-shadow:0 0 8px rgba(0,198,255,.6);
+  }
+
+  /* desktop framing */
+  @media(min-width:620px){
+    body{background:#06101D}
+    .deck{max-width:var(--maxw);margin:0 auto;box-shadow:0 0 80px rgba(0,0,0,.6)}
+    .rail{right:max(13px,calc(50vw - 280px))}
+  }
+
+  @media(prefers-reduced-motion:reduce){
+    .deck{scroll-behavior:auto}
+    .rings span,.sweep,.scroll-hint .chev{animation:none}
+    .rings span{opacity:.4;transform:scale(.7)}
+    .reveal{transition:none;opacity:1;transform:none}
+    .stream{opacity:1}
+    .ch.scrambling{color:inherit;font-size:1em;text-shadow:none}
+    .in-view .dot.good{box-shadow:0 0 12px 2px rgba(0,198,255,.6)}
+  }
+</style>
+</head>
+<body>
+
+<div class="topbar" id="topbar"></div>
+<nav class="rail" id="rail" aria-label="Navegação dos slides"></nav>
+
+<div class="deck" id="deck">
+
+  <!-- 01 HERO -->
+  <section class="slide" data-label="Abertura">
+    <div class="rings" aria-hidden="true"><span></span><span></span><span></span><span></span></div>
+    <div class="inner">
+      <div class="hero-wordmark reveal">KOMPLEXA <span>HOTÉIS</span></div>
+      <h1 class="reveal" style="--d:.08s">Aquisição de hóspedes com <span class="cy">Inteligência Artificial</span>.</h1>
+      <p class="lead reveal" style="--d:.18s">Transformamos os dados dos seus hóspedes em receita direta — do primeiro clique ao retorno.</p>
+      <div class="hero-tag reveal" style="--d:.28s">Um braço especializado da Komplexa Growth</div>
+    </div>
+    <div class="scroll-hint" aria-hidden="true"><span>Deslize</span><span class="chev"></span></div>
+  </section>
+
+  <!-- 02 PROBLEMA -->
+  <section class="slide" data-label="O cenário">
+    <div class="inner">
+      <div class="eyebrow reveal">O cenário</div>
+      <h2 class="reveal" style="--d:.06s">Seu hotel lota no fim de semana. E sangra na semana.</h2>
+      <div class="stat-row reveal" style="--d:.16s">
+        <div class="stat"><div class="num">15–25%</div><div class="lab">de comissão para OTAs corroendo sua margem</div></div>
+        <div class="stat"><div class="num">0</div><div class="lab">previsibilidade sem funil e sem dados</div></div>
+      </div>
+      <div class="viz occ reveal" data-viz="occupancy" style="--d:.24s">
+        <div class="occ-chart">
+          <span class="occ-goal"></span>
+          <div class="occ-bars">
+            <div class="occ-bar wd" style="--h:34%;--hf:80%"><i></i><b>S</b></div>
+            <div class="occ-bar wd" style="--h:30%;--hf:78%"><i></i><b>T</b></div>
+            <div class="occ-bar wd" style="--h:28%;--hf:82%"><i></i><b>Q</b></div>
+            <div class="occ-bar wd" style="--h:32%;--hf:84%"><i></i><b>Q</b></div>
+            <div class="occ-bar wd" style="--h:48%;--hf:88%"><i></i><b>S</b></div>
+            <div class="occ-bar" style="--h:92%;--hf:94%"><i></i><b>S</b></div>
+            <div class="occ-bar" style="--h:96%;--hf:96%"><i></i><b>D</b></div>
+          </div>
+        </div>
+        <button class="viz-btn" data-occ>Com Komplexa</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- 03 TESE / IA -->
+  <section class="slide" data-label="A virada">
+    <div class="inner">
+      <div class="eyebrow reveal">A virada</div>
+      <h2 class="reveal" style="--d:.06s">A IA encontra quem <span class="cy">realmente reserva</span>.</h2>
+      <div class="radar-wrap reveal" style="--d:.16s" id="radar" aria-hidden="true">
+        <div class="radar-grid"></div>
+        <div class="sweep"></div>
+        <div class="radar-core"></div>
+        <!-- dots injected by JS -->
+      </div>
+      <p class="lead reveal" style="--d:.22s">Alimentamos Meta e Google com os sinais dos seus <strong>melhores hóspedes</strong>. O algoritmo encontra pessoas idênticas a eles — e exclui automaticamente quem nunca vai comprar.</p>
+      <div class="punch reveal" style="--d:.3s">Include the best. Exclude the rest.</div>
+    </div>
+  </section>
+
+  <!-- 04 METODOLOGIA -->
+  <section class="slide" data-label="A metodologia">
+    <div class="inner">
+      <div class="eyebrow reveal">A metodologia</div>
+      <h2 class="reveal" style="--d:.06s">Arquitetura de Crescimento Hoteleiro</h2>
+      <p class="lead reveal" style="--d:.16s">Não gerimos campanhas soltas. Construímos um ecossistema completo de aquisição, conversão e retenção — operado com IA, <strong>ponta a ponta</strong>.</p>
+      <div class="punch reveal" style="--d:.26s">7 etapas. Uma máquina de reservas diretas.</div>
+      <div class="viz flow reveal" data-viz="flow" style="--d:.34s">
+        <div class="flow-track">
+          <span class="flow-line"></span><span class="flow-fill"></span>
+        </div>
+        <div class="flow-label">&nbsp;</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 05 ETAPA 01 -->
+  <section class="slide" data-label="01 Segmentação">
+    <div class="stage-num" aria-hidden="true">01</div>
+    <div class="inner">
+      <div class="stage-kicker reveal"><b>01</b> / 07 · Segmentação com IA</div>
+      <div class="stage-h reveal" style="--d:.06s">Mira nos hóspedes certos antes do primeiro real gasto</div>
+      <p class="stage-body reveal" style="--d:.14s">Audiências lookalike construídas a partir dos seus melhores hóspedes. Quem historicamente não converte é excluído de forma automática.</p>
+      <div class="viz field reveal" data-viz="segment" style="--d:.22s">
+        <div class="scene"><span class="seg-ring"></span></div>
+        <div class="viz-tap">Toque para segmentar</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 06 ETAPA 02 -->
+  <section class="slide" data-label="02 Atração">
+    <div class="stage-num" aria-hidden="true">02</div>
+    <div class="inner">
+      <div class="stage-kicker reveal"><b>02</b> / 07 · Atração e primeiro contato</div>
+      <div class="stage-h reveal" style="--d:.06s">A pessoa certa, no momento certo</div>
+      <p class="stage-body reveal" style="--d:.14s">Anúncios de alto impacto em Meta Ads e Google Ads, no mais alto nível técnico disponível nas plataformas.</p>
+      <div class="viz channels reveal" data-viz="channels" style="--d:.22s">
+        <div class="scene">
+          <svg viewBox="0 0 100 100" preserveAspectRatio="none">
+            <path class="ch-line meta" d="M18,26 C30,55 40,60 50,72"/>
+            <path class="ch-line google" d="M82,26 C70,55 60,60 50,72"/>
+          </svg>
+          <div class="ch-node meta"><span class="d"></span>Meta Ads</div>
+          <div class="ch-node google"><span class="d"></span>Google Ads</div>
+          <div class="ch-target">hóspede<br>certo</div>
+        </div>
+        <div class="viz-tap">Toque para ligar/desligar canais</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 07 ETAPA 03 -->
+  <section class="slide" data-label="03 Reservas">
+    <div class="stage-num" aria-hidden="true">03</div>
+    <div class="inner">
+      <div class="stage-kicker reveal"><b>03</b> / 07 · Site e motor de reservas</div>
+      <div class="stage-h reveal" style="--d:.06s">O caminho mais curto até a reserva</div>
+      <p class="stage-body reveal" style="--d:.14s">Tráfego direcionado para um site feito para converter, integrado direto ao motor de reservas. Nenhum passo desnecessário.</p>
+      <div class="viz booking reveal" data-viz="booking" style="--d:.22s">
+        <div class="scene">
+          <div class="bk-bar"><i></i><i></i><i></i></div>
+          <div class="bk-steps">
+            <div class="bk-step"><span class="bx">✓</span>Escolher datas</div>
+            <div class="bk-step"><span class="bx">✓</span>Selecionar quarto</div>
+            <div class="bk-step"><span class="bx">✓</span>Pagamento</div>
+          </div>
+          <button class="bk-cta">Reservar agora</button>
+          <div class="bk-done">✓ Reserva confirmada</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 08 ETAPA 04 -->
+  <section class="slide" data-label="04 Remarketing">
+    <div class="stage-num" aria-hidden="true">04</div>
+    <div class="inner">
+      <div class="stage-kicker reveal"><b>04</b> / 07 · Remarketing inteligente</div>
+      <div class="stage-h reveal" style="--d:.06s">Quem visitou e não reservou, volta</div>
+      <p class="stage-body reveal" style="--d:.14s">Uma sequência estratégica persegue o lead com provas sociais, benefícios de reserva direta e urgência — até a decisão.</p>
+      <div class="viz orbit reveal" data-viz="orbit" style="--d:.22s">
+        <div class="scene">
+          <span class="orbit-ring"></span>
+          <span class="orbit-ping"></span>
+          <div class="orbit-core">seu site</div>
+          <div class="orbit-sat"><i></i></div>
+        </div>
+        <div class="viz-tap">Toque para reimpactar o visitante</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 09 ETAPA 05 -->
+  <section class="slide" data-label="05 Carrinho">
+    <div class="stage-num" aria-hidden="true">05</div>
+    <div class="inner">
+      <div class="stage-kicker reveal"><b>05</b> / 07 · Recuperação de carrinho</div>
+      <div class="stage-h reveal" style="--d:.06s">Reserva iniciada não pode ser reserva perdida</div>
+      <p class="stage-body reveal" style="--d:.14s">Abandonou no meio do caminho? Uma sequência automática por e-mail e WhatsApp recupera a conclusão da reserva.</p>
+      <div class="viz recover reveal" data-viz="recover" style="--d:.22s">
+        <div class="scene">
+          <div class="rc-cap">Reserva iniciada</div>
+          <div class="rc-track"><span class="rc-fill"></span></div>
+          <div class="rc-tags"><span class="rc-tag" data-wpp>WhatsApp</span><span class="rc-tag" data-mail>E-mail</span></div>
+        </div>
+        <div class="viz-tap">Toque para recuperar</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 10 ETAPA 06 -->
+  <section class="slide" data-label="06 Conversão">
+    <div class="stage-num" aria-hidden="true">06</div>
+    <div class="inner">
+      <div class="stage-kicker reveal"><b>06</b> / 07 · Conversão via equipe comercial</div>
+      <div class="stage-h reveal" style="--d:.06s">Interesse vira reserva confirmada</div>
+      <p class="stage-body reveal" style="--d:.14s">Leads no WhatsApp atendidos por equipe treinada pela Komplexa — com playbook, scripts e CRM configurado.</p>
+      <div class="viz chat reveal" data-viz="chat" style="--d:.22s">
+        <div class="scene">
+          <div class="bubble inb">Vi o anúncio, ainda tem vaga?</div>
+          <div class="bubble out">Tem sim! Posso garantir sua reserva agora.</div>
+          <div class="bubble inb">Perfeito, quero reservar</div>
+          <div class="bubble fin">✓ Reserva confirmada</div>
+        </div>
+        <div class="viz-tap">Toque para reproduzir a conversa</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 11 ETAPA 07 -->
+  <section class="slide" data-label="07 Fidelização">
+    <div class="stage-num" aria-hidden="true">07</div>
+    <div class="inner">
+      <div class="stage-kicker reveal"><b>07</b> / 07 · Pós-venda e fidelização</div>
+      <div class="stage-h reveal" style="--d:.06s">Depois da hospedagem, o ciclo não para</div>
+      <p class="stage-body reveal" style="--d:.14s">Reativamos hóspedes anteriores — o público mais quente e barato de converter. Mais LTV, menor custo de aquisição.</p>
+      <div class="viz loyalty reveal" data-viz="loyalty" style="--d:.22s">
+        <div class="scene">
+          <span class="ly-ltv">LTV ↑</span>
+          <div class="ly-bar" style="--h:38%"><i></i><b>1ª</b></div>
+          <div class="ly-bar" style="--h:60%"><i></i><b>2ª</b></div>
+          <div class="ly-bar" style="--h:80%"><i></i><b>3ª</b></div>
+          <div class="ly-bar" style="--h:100%"><i></i><b>4ª</b></div>
+        </div>
+        <div class="viz-tap">Toque para ver o retorno</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 12 PROVA -->
+  <section class="slide" data-label="Prova">
+    <div class="inner">
+      <div class="eyebrow reveal">Prova de valor</div>
+      <div class="bignum reveal" data-count="1000000" style="--d:.06s">+R$ 0</div>
+      <p class="lead reveal" style="--d:.16s">em faturamento direto atribuído à Komplexa em um único hotel boutique.</p>
+      <div class="viz spark-wrap reveal" data-viz="spark" style="--d:.2s">
+        <div class="spark">
+          <i style="--h:30%"></i><i style="--h:44%"></i><i style="--h:56%"></i><i style="--h:70%"></i><i style="--h:85%"></i><i style="--h:100%"></i>
+        </div>
+      </div>
+      <ul class="proof-list">
+        <li class="reveal" style="--d:.22s"><span class="pi">↑</span>Ocupação máxima de forma consistente</li>
+        <li class="reveal" style="--d:.28s"><span class="pi">↑</span>Crescimento de reservas diretas mês a mês</li>
+        <li class="reveal" style="--d:.34s"><span class="pi">↓</span>Menos dependência de OTA, mais margem</li>
+        <li class="reveal" style="--d:.40s"><span class="pi">↑</span>RevPAR em alta com estrutura profissional</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- 13 CTA -->
+  <section class="slide cta-slide" data-label="Vamos conversar">
+    <div class="rings" aria-hidden="true" style="top:50%"><span></span><span></span><span></span></div>
+    <div class="inner">
+      <div class="eyebrow reveal" style="justify-content:center">Próximo passo</div>
+      <h2 class="reveal" style="--d:.06s">Pronto para construir sua máquina de aquisição?</h2>
+      <p class="lead reveal" style="--d:.16s">Estratégia integrada, tecnologia de ponta e método proprietário — desenhados para o seu hotel.</p>
+      <a class="cta-btn reveal" style="--d:.26s" href="#" id="ctaBtn">
+        Falar com a Komplexa
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+      </a>
+      <div class="cta-foot reveal" style="--d:.36s">KOMPLEXA <span>HOTÉIS</span></div>
+      <div class="cta-sub reveal" style="--d:.4s">Marketing · Vendas · Pós-Vendas · IA + Inteligência Humana</div>
+    </div>
+  </section>
+
+</div>
+
+<script>
+(function(){
+  const deck = document.getElementById('deck');
+  const slides = Array.from(deck.querySelectorAll('.slide'));
+  const rail = document.getElementById('rail');
+  const topbar = document.getElementById('topbar');
+
+  /* build radar dots */
+  const radar = document.getElementById('radar');
+  if(radar){
+    const pts = [
+      [50,12,'good'],[78,30,'bad'],[24,28,'good'],[86,58,'bad'],
+      [16,62,'bad'],[68,20,'good'],[38,80,'bad'],[62,74,'good'],
+      [30,52,'bad'],[82,42,'good'],[50,90,'bad'],[12,42,'bad'],
+      [70,55,'good'],[44,38,'bad']
+    ];
+    pts.forEach((p,i)=>{
+      const d=document.createElement('span');
+      d.className='dot '+p[2];
+      d.style.left=p[0]+'%';
+      d.style.top=p[1]+'%';
+      d.style.transitionDelay=(0.25+i*0.07)+'s';
+      radar.appendChild(d);
+    });
+  }
+
+  /* build progress rail */
+  slides.forEach((s,i)=>{
+    const b=document.createElement('button');
+    b.setAttribute('aria-label', (s.dataset.label||('Slide '+(i+1))));
+    b.addEventListener('click',()=>s.scrollIntoView({behavior:'smooth'}));
+    rail.appendChild(b);
+  });
+  const dots = Array.from(rail.children);
+
+  /* ---- "IA decodificando": efeito scramble / decode ---- */
+  const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const STREAM_SEL = '.hero-wordmark, h1, h2, .eyebrow, .stage-kicker, .stage-h, .lead, .stage-body, .punch';
+  const GLYPHS = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789#%&*+=<>/\\|{}[]?$';
+
+  function buildChars(el){
+    const chars = [];
+    (function walk(node){
+      Array.from(node.childNodes).forEach(k=>{
+        if(k.nodeType === 3){
+          const frag = document.createDocumentFragment();
+          k.textContent.split(/(\s+)/).forEach(part=>{
+            if(part === '') return;
+            if(/^\s+$/.test(part)){ frag.appendChild(document.createTextNode(part)); return; }
+            const word = document.createElement('span');
+            word.className = 'word';
+            for(const c of part){
+              const s = document.createElement('span');
+              s.className = 'ch'; s.textContent = c; s.dataset.f = c;
+              word.appendChild(s); chars.push(s);
+            }
+            frag.appendChild(word);
+          });
+          node.replaceChild(frag, k);
+        } else if(k.nodeType === 1){ walk(k); }
+      });
+    })(el);
+    /* trava a largura de cada caractere no glifo final → sem reflow durante o embaralho */
+    const ws = chars.map(s=>s.getBoundingClientRect().width);
+    chars.forEach((s,i)=>{ s.style.width = ws[i] + 'px'; });
+    return chars;
+  }
+
+  function decodeEl(el, step){
+    return new Promise(res=>{
+      if(!el._chars) el._chars = buildChars(el);
+      const chars = el._chars;
+      el.classList.add('streaming');
+      if(reduce || !chars.length){ chars.forEach(s=>s.textContent = s.dataset.f); return res(); }
+      chars.forEach((s,i)=>{ s.classList.add('scrambling'); s._lock = i*step + 45 + Math.random()*80; s._locked = false; });
+      const start = performance.now();
+      let lastRefresh = 0;
+      function frame(now){
+        const t = now - start;
+        const doRefresh = (now - lastRefresh) >= 33;
+        if(doRefresh) lastRefresh = now;
+        let done = true;
+        chars.forEach(s=>{
+          if(s._locked) return;
+          if(t >= s._lock){
+            s.textContent = s.dataset.f;
+            s.classList.remove('scrambling');
+            s._locked = true;
+          } else {
+            done = false;
+            if(doRefresh) s.textContent = GLYPHS[(Math.random()*GLYPHS.length)|0];
+          }
+        });
+        if(done) return res();
+        requestAnimationFrame(frame);
+      }
+      requestAnimationFrame(frame);
+    });
+  }
+
+  async function runSlide(slide){
+    const targets = Array.from(slide.querySelectorAll(STREAM_SEL));
+    targets.forEach(el=>{ el.classList.remove('reveal'); el.classList.add('stream'); });
+    if(reduce){
+      targets.forEach(el=>{ if(!el._chars) el._chars = buildChars(el); el.classList.add('streaming'); el._chars.forEach(s=>s.textContent = s.dataset.f); });
+      slide.classList.add('in-view'); initVizzes(slide); return;
+    }
+    for(const el of targets){
+      const slow = el.matches('h1, h2, .stage-h, .hero-wordmark');
+      await decodeEl(el, slow ? 8 : 3);
+    }
+    slide.classList.add('in-view');
+    initVizzes(slide);
+  }
+
+  /* ============ VISUALIZAÇÕES INTERATIVAS POR SLIDE ============ */
+  function replayClass(el, cls){ el.classList.remove(cls); void el.offsetWidth; el.classList.add(cls); }
+
+  const VIZ = {
+    occupancy(v){
+      v.classList.add('run');
+      const btn = v.querySelector('[data-occ]');
+      btn.addEventListener('click', ()=>{
+        const on = v.classList.toggle('filled');
+        btn.textContent = on ? 'Sem Komplexa' : 'Com Komplexa';
+      });
+    },
+
+    flow(v){
+      const NAMES = ['Segmentação com IA','Atração e 1º contato','Site e motor de reservas','Remarketing inteligente','Recuperação de carrinho','Conversão comercial','Pós-venda e fidelização'];
+      const track = v.querySelector('.flow-track');
+      const label = v.querySelector('.flow-label');
+      const nodes = [];
+      for(let i=0;i<7;i++){
+        const b=document.createElement('button');
+        b.className='flow-node'; b.textContent='0'+(i+1);
+        track.appendChild(b); nodes.push(b);
+        b.addEventListener('click',()=>setActive(i));
+      }
+      function setActive(i){
+        nodes.forEach((n,j)=>n.classList.toggle('active',j===i));
+        label.style.opacity=0;
+        setTimeout(()=>{ label.textContent=NAMES[i]; label.style.opacity=1; },150);
+      }
+      v.classList.add('run');
+      if(reduce){ setActive(6); return; }
+      let i=0;
+      const seq=setInterval(()=>{ setActive(i); i++; if(i>=7) clearInterval(seq); }, 230);
+    },
+
+    segment(v){
+      const scene=v.querySelector('.scene');
+      const pts=[[50,16,'good'],[78,30,'bad'],[24,30,'good'],[86,60,'bad'],[16,64,'bad'],[68,22,'good'],[34,82,'bad'],[64,76,'good'],[30,54,'bad'],[82,44,'good'],[50,90,'bad'],[14,46,'bad'],[70,58,'good'],[44,40,'bad']];
+      pts.forEach(p=>{ const d=document.createElement('span'); d.className='seg-dot '+p[2]; d.style.left=p[0]+'%'; d.style.top=p[1]+'%'; scene.appendChild(d); });
+      const play=()=>replayClass(v,'run');
+      play();
+      scene.addEventListener('click',play);
+      v.querySelector('.viz-tap').addEventListener('click',play);
+    },
+
+    channels(v){
+      v.classList.add('run');
+      v.querySelectorAll('.ch-node').forEach(node=>{
+        node.addEventListener('click',()=>{
+          const which=node.classList.contains('meta')?'meta':'google';
+          const off=node.classList.toggle('off');
+          const line=v.querySelector('.ch-line.'+which);
+          if(line) line.classList.toggle('off',off);
+        });
+      });
+    },
+
+    booking(v){
+      const steps=[...v.querySelectorAll('.bk-step')];
+      const cta=v.querySelector('.bk-cta');
+      const play=()=>{
+        v.classList.remove('confirmed','ready');
+        steps.forEach(s=>s.classList.remove('done'));
+        if(reduce){ steps.forEach(s=>s.classList.add('done')); v.classList.add('ready'); return; }
+        steps.forEach((s,i)=>setTimeout(()=>{ s.classList.add('done'); if(i===steps.length-1) v.classList.add('ready'); }, 350+i*430));
+      };
+      play();
+      cta.addEventListener('click',()=>v.classList.add('confirmed'));
+      v.querySelector('.scene').addEventListener('click',(e)=>{ if(e.target===cta) return; if(v.classList.contains('confirmed')) play(); });
+    },
+
+    orbit(v){
+      v.classList.add('run');
+      const ping=()=>replayClass(v,'pinging');
+      v.querySelector('.scene').addEventListener('click',ping);
+      v.querySelector('.viz-tap').addEventListener('click',ping);
+    },
+
+    recover(v){
+      const fill=v.querySelector('.rc-fill');
+      const cap=v.querySelector('.rc-cap');
+      const wpp=v.querySelector('[data-wpp]');
+      const mail=v.querySelector('[data-mail]');
+      const play=()=>{
+        v.classList.remove('done'); wpp.classList.remove('lit'); mail.classList.remove('lit');
+        if(reduce){ fill.style.width='100%'; cap.textContent='Reserva recuperada'; cap.style.color='var(--cyan)'; wpp.classList.add('lit'); mail.classList.add('lit'); return; }
+        fill.style.width='0%'; cap.textContent='Reserva iniciada'; cap.style.color='';
+        setTimeout(()=>{ fill.style.width='68%'; },300);
+        setTimeout(()=>{ fill.style.width='30%'; cap.textContent='Carrinho abandonado'; },1300);
+        setTimeout(()=>{ wpp.classList.add('lit'); mail.classList.add('lit'); cap.textContent='Recuperando…'; },2100);
+        setTimeout(()=>{ fill.style.width='100%'; cap.textContent='Reserva recuperada'; cap.style.color='var(--cyan)'; },2700);
+      };
+      play();
+      v.querySelector('.viz-tap').addEventListener('click',play);
+      v.querySelector('.scene').addEventListener('click',play);
+    },
+
+    chat(v){
+      const bubbles=[...v.querySelectorAll('.bubble')];
+      const play=()=>{
+        bubbles.forEach(b=>b.classList.remove('show'));
+        if(reduce){ bubbles.forEach(b=>b.classList.add('show')); return; }
+        bubbles.forEach((b,i)=>setTimeout(()=>b.classList.add('show'), 250+i*620));
+      };
+      play();
+      v.querySelector('.viz-tap').addEventListener('click',play);
+      v.querySelector('.scene').addEventListener('click',play);
+    },
+
+    loyalty(v){
+      v.classList.add('run');
+      v.querySelector('.scene').addEventListener('click',()=>replayClass(v,'run'));
+      v.querySelector('.viz-tap').addEventListener('click',()=>replayClass(v,'run'));
+    },
+
+    spark(v){ v.classList.add('run'); }
+  };
+
+  function countUp(el){
+    const to=+el.dataset.count;
+    if(reduce){ el.textContent='+R$ '+to.toLocaleString('pt-BR'); return; }
+    const dur=1500, t0=performance.now();
+    (function f(now){
+      const p=Math.min(1,(now-t0)/dur);
+      const e=1-Math.pow(1-p,3);
+      el.textContent='+R$ '+Math.floor(to*e).toLocaleString('pt-BR');
+      if(p<1) requestAnimationFrame(f);
+    })(performance.now());
+  }
+
+  function initVizzes(slide){
+    slide.querySelectorAll('.viz[data-viz]').forEach(v=>{
+      if(v._vz) return; v._vz=true;
+      const fn=VIZ[v.dataset.viz];
+      if(fn){ try{ fn(v); }catch(e){} }
+    });
+    const big=slide.querySelector('.bignum[data-count]');
+    if(big && !big._cnt){ big._cnt=true; countUp(big); }
+  }
+
+  /* intersection observer: estado ativo + dispara o decode uma vez por slide */
+  let active = 0;
+  const io = new IntersectionObserver((entries)=>{
+    entries.forEach(en=>{
+      if(en.isIntersecting && en.intersectionRatio>=0.5){
+        const idx = slides.indexOf(en.target);
+        if(idx!==active){
+          active=idx;
+          dots.forEach((d,i)=>d.classList.toggle('active',i===idx));
+          topbar.style.width = ((idx)/(slides.length-1))*100 + '%';
+        }
+        if(!en.target._seen){ en.target._seen = true; runSlide(en.target); }
+      }
+    });
+  },{root:deck,threshold:[0.5]});
+
+  /* mede larguras só depois das fontes carregarem (evita reflow) */
+  function startObserving(){ slides.forEach(s=>io.observe(s)); }
+  const fontsReady = (document.fonts && document.fonts.ready) ? document.fonts.ready : Promise.resolve();
+  Promise.race([fontsReady, new Promise(r=>setTimeout(r,1400))]).then(startObserving);
+  dots[0].classList.add('active');
+
+  /* hide scroll hint after first scroll */
+  deck.addEventListener('scroll',()=>{
+    if(deck.scrollTop>40) deck.classList.add('scrolled');
+  },{passive:true});
+
+  /* keyboard navigation */
+  window.addEventListener('keydown',(e)=>{
+    if(['ArrowDown','ArrowRight',' ','PageDown'].includes(e.key)){
+      e.preventDefault();
+      if(active<slides.length-1) slides[active+1].scrollIntoView({behavior:'smooth'});
+    }
+    if(['ArrowUp','ArrowLeft','PageUp'].includes(e.key)){
+      e.preventDefault();
+      if(active>0) slides[active-1].scrollIntoView({behavior:'smooth'});
+    }
+  });
+
+  document.getElementById('ctaBtn').addEventListener('click',(e)=>e.preventDefault());
+})();
+</script>
+</body>
+</html>
