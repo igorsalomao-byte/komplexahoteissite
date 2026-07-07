@@ -47,6 +47,15 @@
     <xhtml:link rel="alternate" hreflang="pt-BR" href="https://komplexahoteis.com/contato.html"/>
   </url>
 
+  <!-- AGÊNCIA DE MARKETING HOTELEIRO (landing de categoria) -->
+  <url>
+    <loc>https://komplexahoteis.com/agencia-marketing-hoteleiro.html</loc>
+    <lastmod>2026-06-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://komplexahoteis.com/agencia-marketing-hoteleiro.html"/>
+  </url>
+
   <!-- BLOG INDEX -->
   <url>
     <loc>https://komplexahoteis.com/blog/</loc>
