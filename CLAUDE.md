@@ -18,7 +18,7 @@ Pure HTML + CSS + vanilla JS. No build system, no framework, no dependencies (on
 ├── sistema.html          # O Sistema (5 etapas do funil)
 ├── ia.html               # IA Aplicada
 ├── arquitetura.html      # Arquitetura de Crescimento Hoteleiro
-├── contato.html          # Contato (all CTAs → form.respondi.app)
+├── contato.html          # Contato (all CTAs → komplexa-pricing.vercel.app/f/komplexaconsultoria)
 ├── blog/
 │   ├── index.html        # Blog listing
 │   └── post-ota.html     # Post template (use as base for new posts)
@@ -36,7 +36,9 @@ Pure HTML + CSS + vanilla JS. No build system, no framework, no dependencies (on
 
 ## Key Conventions
 
-**All CTAs link to:** `https://form.respondi.app/QnLOVD5g` (target="_blank")
+**All CTAs link to:** `https://komplexa-pricing.vercel.app/f/komplexaconsultoria?utm_source=komplexahoteis&utm_medium=site&utm_content={page}` (target="_blank")
+
+`utm_content` varies per page: `home`, `sistema`, `ia`, `arquitetura`, `contato`, `blog-listing`, `blog-{slug}` for each post, `deck-{name}` for each `d/` deck.
 
 **Asset paths:**
 - Root pages: `assets/style.css`, `assets/logo.svg`

@@ -1,0 +1,551 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Blueprint de Aquisição · Scalenza × Komplexa Growth</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Inter:wght@400;500;600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#0B0B0C; --bg-2:#0F0F11; --surface:#141417; --surface-2:#191920;
+    --line:#26262C; --lime:#C6F432; --lime-dim:#9BB733; --ink:#F4F4EF;
+    --muted:#A6A6AD; --muted-2:#6E6E76; --brick:#D9594C;
+    --maxw:920px; --pad-x:clamp(20px,5vw,32px); --sec-y:clamp(56px,10vw,116px);
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+  body{background:var(--bg);color:var(--ink);font-family:'Inter',system-ui,sans-serif;font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 var(--pad-x)}
+  .kicker{font-family:'Space Mono',monospace;font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:var(--lime);display:inline-flex;align-items:center;gap:10px}
+  .kicker::before{content:"";width:22px;height:1px;background:var(--lime);opacity:.7}
+  h1,h2,h3{font-family:'Space Grotesk',sans-serif;font-weight:700;line-height:1.05;letter-spacing:-.02em}
+  .lime{color:var(--lime)} .muted{color:var(--muted)} .mono{font-family:'Space Mono',monospace}
+  section{padding:var(--sec-y) 0;border-top:1px solid var(--line)}
+  .sec-head{margin-bottom:clamp(28px,5vw,48px)}
+  .sec-head h2{font-size:clamp(28px,6vw,46px);margin:18px 0 14px}
+  .sec-head .lead{color:var(--muted);max-width:60ch;font-size:clamp(16px,2.4vw,19px)}
+  .reveal{opacity:0;transform:translateY(22px);transition:opacity .7s cubic-bezier(.2,.7,.2,1),transform .7s cubic-bezier(.2,.7,.2,1)}
+  .reveal.in{opacity:1;transform:none}
+  @media (prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}}
+
+  .progress{position:fixed;top:0;left:0;height:3px;width:0;background:var(--lime);z-index:60;box-shadow:0 0 12px rgba(198,244,50,.6)}
+  .topbar{position:fixed;top:0;left:0;right:0;z-index:50;backdrop-filter:blur(10px);background:rgba(11,11,12,.72);border-bottom:1px solid transparent;transition:border-color .3s}
+  .topbar.solid{border-bottom-color:var(--line)}
+  .topbar .row{display:flex;align-items:center;justify-content:space-between;gap:16px;height:58px}
+  .brand{display:flex;align-items:center;gap:10px;font-family:'Space Grotesk';font-weight:700;font-size:15px;letter-spacing:-.01em}
+  .brand .s{width:26px;height:26px;border-radius:7px;background:var(--lime);color:#0B0B0C;display:grid;place-items:center;font-size:17px;font-weight:700}
+  .brand small{color:var(--muted-2);font-weight:500;font-family:'Space Mono';font-size:11px;letter-spacing:.04em}
+  .nav{display:flex;gap:4px;overflow-x:auto;scrollbar-width:none}
+  .nav::-webkit-scrollbar{display:none}
+  .nav a{font-family:'Space Mono';font-size:11.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);text-decoration:none;padding:7px 11px;border-radius:999px;white-space:nowrap;transition:.2s}
+  .nav a:hover,.nav a.active{color:var(--lime);background:rgba(198,244,50,.08)}
+  @media (max-width:760px){.nav{display:none}}
+
+  .hero{position:relative;min-height:100svh;display:flex;align-items:center;border-top:none;overflow:hidden}
+  .hero .wrap{position:relative;z-index:2;padding-top:90px;padding-bottom:60px}
+  .hero h1{font-size:clamp(38px,8.5vw,82px);margin:22px 0;max-width:14ch}
+  .hero .sub{color:var(--muted);font-size:clamp(17px,2.6vw,21px);max-width:54ch;margin-bottom:34px}
+  .proof{display:inline-flex;flex-wrap:wrap;align-items:center;gap:10px;border:1px solid var(--line);background:var(--surface);border-radius:12px;padding:14px 18px;font-family:'Space Mono';font-size:13px;color:var(--muted)}
+  .proof b{color:var(--ink);font-weight:700} .proof .lime{color:var(--lime)}
+  .proof .dot{width:7px;height:7px;border-radius:50%;background:var(--lime);box-shadow:0 0 10px var(--lime)}
+  .docnote{margin-top:26px;font-family:'Space Mono';font-size:11.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted-2)}
+  .bars{position:absolute;right:-4%;bottom:0;height:78%;display:flex;align-items:flex-end;gap:clamp(8px,2vw,20px);z-index:1;opacity:.5;pointer-events:none}
+  .bars i{display:block;width:clamp(20px,4.4vw,52px);background:linear-gradient(180deg,rgba(198,244,50,.20),rgba(198,244,50,0));border-top:2px solid var(--lime)}
+  .bars i:nth-child(1){height:14%}.bars i:nth-child(2){height:30%}.bars i:nth-child(3){height:48%}.bars i:nth-child(4){height:68%}.bars i:nth-child(5){height:92%}
+  .hero::after{content:"";position:absolute;inset:0;background:radial-gradient(900px 500px at 78% 90%,rgba(198,244,50,.08),transparent 60%);z-index:0;pointer-events:none}
+  @media (max-width:680px){.bars{opacity:.32;right:-12%}}
+
+  .grid{display:grid;gap:14px}
+  .g3{grid-template-columns:repeat(3,1fr)} .g2{grid-template-columns:repeat(2,1fr)}
+  @media (max-width:760px){.g3,.g2{grid-template-columns:1fr}}
+  .card{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:24px}
+  .card .tag{font-family:'Space Mono';font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--lime)}
+  .card h3{font-size:19px;margin:12px 0 8px} .card p{color:var(--muted);font-size:15.5px}
+
+  .puv-box{background:linear-gradient(180deg,var(--surface),var(--bg-2));border:1px solid var(--line);border-left:3px solid var(--lime);border-radius:14px;padding:clamp(26px,5vw,40px);margin-bottom:28px}
+  .puv-box .q{font-family:'Space Grotesk';font-weight:500;font-size:clamp(21px,3.6vw,30px);line-height:1.32;letter-spacing:-.01em}
+  .puv-box .q b{color:var(--lime);font-weight:700}
+  .pillar{display:flex;gap:16px;align-items:flex-start;padding:20px;background:var(--surface);border:1px solid var(--line);border-radius:14px}
+  .pillar .n{font-family:'Space Grotesk';font-weight:700;color:var(--lime);font-size:15px;flex:0 0 auto;line-height:1}
+  .pillar h3{font-size:16px;margin-bottom:6px} .pillar p{color:var(--muted);font-size:14.5px}
+
+  .versus{display:grid;grid-template-columns:1fr 1fr;gap:0;border:1px solid var(--line);border-radius:14px;overflow:hidden}
+  @media (max-width:680px){.versus{grid-template-columns:1fr}}
+  .versus .col{padding:22px clamp(18px,3vw,26px)}
+  .versus .rest{background:var(--surface);border-right:1px solid var(--line)}
+  @media (max-width:680px){.versus .rest{border-right:none;border-bottom:1px solid var(--line)}}
+  .versus .us{background:linear-gradient(180deg,rgba(198,244,50,.06),transparent)}
+  .versus h4{font-family:'Space Mono';font-size:12px;letter-spacing:.14em;text-transform:uppercase;margin-bottom:16px}
+  .versus .rest h4{color:var(--brick)} .versus .us h4{color:var(--lime)}
+  .vrow{padding:11px 0;border-top:1px solid var(--line);font-size:14.5px;color:var(--muted)}
+  .vrow:first-of-type{border-top:none} .versus .us .vrow{color:var(--ink)}
+
+  .statline{display:flex;align-items:baseline;gap:18px;flex-wrap:wrap;background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:26px 28px;margin-top:24px}
+  .statline .big{font-family:'Space Grotesk';font-weight:700;font-size:clamp(44px,11vw,80px);color:var(--lime);line-height:.9;letter-spacing:-.03em}
+  .statline p{color:var(--muted);max-width:42ch;font-size:15px}
+
+  .decision{border:1px solid var(--lime-dim);border-radius:14px;padding:clamp(22px,4vw,30px);margin-bottom:18px;background:rgba(198,244,50,.035)}
+  .decision .lbl{font-family:'Space Mono';font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--lime);display:inline-flex;align-items:center;gap:8px}
+  .decision .lbl::before{content:"\25C6";font-size:9px}
+  .decision h3{font-size:clamp(20px,3.4vw,26px);margin:10px 0 18px}
+  .rec{margin-top:16px;padding:16px 18px;background:var(--surface-2);border-radius:11px;font-size:14.5px;color:var(--ink)} .rec b{color:var(--lime)}
+  .icp-list{list-style:none;display:grid;gap:10px}
+  .icp-list li{display:flex;gap:12px;font-size:15px;color:var(--muted);align-items:flex-start}
+  .icp-list li::before{content:"";flex:0 0 auto;width:7px;height:7px;margin-top:9px;background:var(--lime);border-radius:2px}
+  .icp-list li b{color:var(--ink);font-weight:600}
+  .anti li::before{background:var(--brick)}
+  .field{font-family:'Space Mono';font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted-2);margin-bottom:6px}
+
+  .funnel{display:flex;flex-direction:column;gap:8px;margin-top:8px}
+  .fstage{background:var(--surface);border:1px solid var(--line);border-radius:11px;padding:15px 20px;display:flex;align-items:center;gap:16px;margin:0 auto;width:100%}
+  .fstage .fn{font-family:'Space Mono';color:var(--lime);font-size:13px;flex:0 0 auto;width:22px}
+  .fstage .ft{font-family:'Space Grotesk';font-weight:700;font-size:16px;flex:0 0 auto}
+  .fstage .fo{color:var(--muted);font-size:14px}
+  .fstage:nth-child(1){width:100%}.fstage:nth-child(2){width:92%}.fstage:nth-child(3){width:84%}.fstage:nth-child(4){width:76%}.fstage:nth-child(5){width:68%}
+  .fstage:nth-child(6){width:60%;border-color:var(--lime-dim);background:linear-gradient(90deg,rgba(198,244,50,.08),var(--surface))}
+  @media (max-width:680px){.fstage{width:100%!important;flex-wrap:wrap;gap:6px 12px}.fstage .fo{flex-basis:100%}}
+
+  .mini-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:18px}
+  @media (max-width:760px){.mini-grid{grid-template-columns:1fr}}
+  .mini{background:var(--bg-2);border:1px solid var(--line);border-radius:12px;padding:18px}
+  .mini .mh{font-family:'Space Mono';font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--lime);margin-bottom:12px}
+  .chips{display:flex;flex-wrap:wrap;gap:8px}
+  .chip{font-family:'Space Mono';font-size:12px;border:1px solid var(--line);border-radius:8px;padding:7px 11px;color:var(--ink)}
+  .chip.dim{color:var(--muted)}
+  .flow{display:flex;flex-direction:column;gap:8px;font-family:'Space Grotesk';font-weight:700;font-size:14px}
+  .flow span{background:var(--surface-2);border:1px solid var(--line);border-radius:8px;padding:8px 12px}
+  .flow em{color:var(--lime);font-style:normal}
+
+  .stairs{position:relative;margin-top:8px}
+  .step{position:relative;background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:22px 24px;margin-bottom:14px;border-left:3px solid var(--line)}
+  .step.heart{border-color:var(--lime-dim);border-left-color:var(--lime);background:linear-gradient(180deg,rgba(198,244,50,.06),var(--surface))}
+  .step .head{display:flex;align-items:center;gap:12px;flex-wrap:wrap}
+  .step .pn{font-family:'Space Mono';font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--lime)}
+  .step .core{font-family:'Space Mono';font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:#0B0B0C;background:var(--lime);border-radius:6px;padding:3px 8px}
+  .step .ghost{position:absolute;right:18px;top:6px;font-family:'Space Grotesk';font-weight:700;font-size:clamp(54px,12vw,92px);color:rgba(198,244,50,.06);line-height:1;pointer-events:none}
+  .step h3{font-size:clamp(18px,3vw,23px);margin:6px 0 8px}
+  .step .why{margin:4px 0 0;font-family:'Space Mono';font-size:12.5px;color:var(--lime-dim);display:flex;gap:8px}
+  .step .why::before{content:"\21B3"}
+  .oacts{margin-top:16px;border-top:1px solid var(--line);padding-top:6px}
+  .oact{display:flex;gap:11px;align-items:flex-start;font-family:'Space Mono';font-size:13px;color:var(--ink);padding:8px 0}
+  .oact::before{content:"";flex:0 0 auto;width:6px;height:6px;margin-top:6px;background:var(--lime);border-radius:2px}
+  .stairs .step:nth-child(1){margin-left:0}.stairs .step:nth-child(2){margin-left:3%}.stairs .step:nth-child(3){margin-left:6%}.stairs .step:nth-child(4){margin-left:9%}.stairs .step:nth-child(5){margin-left:12%}
+  @media (max-width:680px){.stairs .step{margin-left:0!important}}
+  .goldrule{margin-top:22px;background:var(--surface-2);border:1px solid var(--lime-dim);border-radius:12px;padding:18px 22px;font-family:'Space Grotesk';font-weight:500;font-size:clamp(16px,2.6vw,19px)}
+  .goldrule b{color:var(--lime);font-weight:700}
+
+  .mcols{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+  @media (max-width:760px){.mcols{grid-template-columns:1fr}}
+  .mcol{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:22px}
+  .mcol h4{font-family:'Space Mono';font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--lime);margin-bottom:14px}
+  .mcol .mi{padding:9px 0;border-top:1px solid var(--line);font-size:14.5px;color:var(--muted);font-family:'Space Mono'}
+  .mcol .mi:first-of-type{border-top:none}
+
+  .checklist{list-style:none;display:grid;gap:12px;margin-top:6px}
+  .checklist li{display:flex;gap:14px;align-items:flex-start;background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:16px 18px;font-size:16px}
+  .checklist .box{flex:0 0 auto;width:20px;height:20px;border:1.6px solid var(--lime-dim);border-radius:6px;margin-top:2px}
+  .signoff{margin-top:38px;font-family:'Space Grotesk';font-weight:700;font-size:clamp(20px,4vw,30px);letter-spacing:-.01em}
+  .signoff .lime{color:var(--lime)}
+  footer{border-top:1px solid var(--line);padding:36px 0 60px}
+  footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;font-family:'Space Mono';font-size:11.5px;letter-spacing:.06em;color:var(--muted-2);text-transform:uppercase}
+  :focus-visible{outline:2px solid var(--lime);outline-offset:3px;border-radius:4px}
+</style>
+</head>
+<body>
+
+<div class="progress" id="progress"></div>
+
+<header class="topbar" id="topbar">
+  <div class="wrap row">
+    <a class="brand" href="#top" style="text-decoration:none;color:inherit">
+      <span class="s">S</span> Scalenza <small>× Komplexa Growth</small>
+    </a>
+    <nav class="nav" id="nav">
+      <a href="#contexto">Contexto</a>
+      <a href="#puv">PUV</a>
+      <a href="#icp">ICP</a>
+      <a href="#processo">Método</a>
+      <a href="#organograma">Ações</a>
+      <a href="#metricas">Métricas</a>
+    </nav>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero" id="top">
+  <div class="bars"><i></i><i></i><i></i><i></i><i></i></div>
+  <div class="wrap">
+    <span class="kicker">Blueprint de Aquisição Inbound</span>
+    <h1 data-scramble>Construir a máquina de aquisição da Scalenza.</h1>
+    <p class="sub">Aplicando a metodologia Komplexa Growth pra transformar autoridade em pipeline previsível — foco em aquisição e marketing, do criativo ao funil comercial.</p>
+    <div class="proof">
+      <span class="dot"></span>
+      Tese: <b class="lime">uma vertical só</b>&nbsp;— CAC menor, autoridade mais rápida, case que se repete.
+    </div>
+    <div class="docnote">Documento de trabalho · alinhamento estratégico</div>
+  </div>
+</section>
+
+<!-- 01 CONTEXTO -->
+<section id="contexto">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="kicker">01 · Onde a Scalenza está</span>
+      <h2>Autoridade nascendo.<br>Aquisição ainda no improviso.</h2>
+      <p class="lead">O método existe e funciona. A presença saiu do zero. O que falta é o sistema que conecta autoridade → lead → reunião → cliente de forma previsível.</p>
+    </div>
+    <div class="grid g3">
+      <div class="card reveal"><span class="tag">Método</span><h3>5 Escadas validado</h3><p>Diagnóstico → Planejamento → Implementação → Treinamento → Acompanhamento. Já gera resultado em cliente.</p></div>
+      <div class="card reveal"><span class="tag">Presença</span><h3>Base em construção</h3><p>Perfil no ar, primeiros 6 posts, ~54 seguidores. A credibilidade mínima começou — falta refinar e ativar.</p></div>
+      <div class="card reveal"><span class="tag">Aquisição</span><h3>Depende de indicação</h3><p>Hoje o cliente vem do boca a boca. Sem funil, sem previsibilidade, sem dado pra escalar.</p></div>
+    </div>
+    <div class="statline reveal">
+      <span class="big">&rarr;</span>
+      <p>A Scalenza <b style="color:var(--ink)">vende previsibilidade</b>. O próximo passo é ter previsibilidade na <b style="color:var(--lime)">própria aquisição</b>.</p>
+    </div>
+  </div>
+</section>
+
+<!-- 02 PUV -->
+<section id="puv">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="kicker">02 · Proposta Única de Valor</span>
+      <h2>Vender sistema, não esforço.</h2>
+      <p class="lead">A PUV é o que faz o lead parar o dedo no anúncio. Tem que ser óbvia, específica e claramente diferente do resto do mercado.</p>
+    </div>
+    <div class="puv-box reveal">
+      <p class="q">Para PMEs B2B que crescem no improviso e dependem de vendedores-estrela, a Scalenza <b>instala um sistema comercial</b> que torna o faturamento <b>previsível em 90 dias</b> — processo que fica na empresa, não na cabeça de uma pessoa.</p>
+    </div>
+    <div class="grid g3" style="margin-bottom:24px">
+      <div class="pillar reveal"><span class="n">01</span><div><h3>Sistema &gt; pessoa</h3><p>Se o melhor vendedor sair amanhã, a operação continua. O processo vira ativo da empresa.</p></div></div>
+      <div class="pillar reveal"><span class="n">02</span><div><h3>Previsibilidade &gt; sorte</h3><p>Métricas, etapas e cadência no lugar do achismo. Dá pra projetar o mês.</p></div></div>
+      <div class="pillar reveal"><span class="n">03</span><div><h3>Implementação &gt; teoria</h3><p>Não é curso nem palestra. A Scalenza opera junto até o sistema rodar sozinho.</p></div></div>
+    </div>
+    <div class="reveal">
+      <div class="field">Scalenza vs o resto</div>
+      <div class="versus">
+        <div class="col rest">
+          <h4>O resto</h4>
+          <div class="vrow">Guru / curso de vendas: ensina e some</div>
+          <div class="vrow">Contratar mais vendedor: custo fixo, mesmo improviso</div>
+          <div class="vrow">Agência de tráfego: leva clique, não estrutura a venda</div>
+        </div>
+        <div class="col us">
+          <h4>Scalenza</h4>
+          <div class="vrow">Instala a operação e acompanha o resultado</div>
+          <div class="vrow">Sistema que escala sem depender de talento individual</div>
+          <div class="vrow">Processo comercial que converte lead em cliente</div>
+        </div>
+      </div>
+    </div>
+    <div class="statline reveal">
+      <span class="big">93%</span>
+      <p>das PMEs brasileiras operam vendas sem nenhum sistema estruturado. <b style="color:var(--ink)">Esse é o mercado</b> — a bandeira que a Scalenza já levanta.</p>
+    </div>
+  </div>
+</section>
+
+<!-- 03 ICP -->
+<section id="icp">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="kicker">03 · Pra quem vender</span>
+      <h2>Uma vertical. CAC menor, autoridade mais rápida.</h2>
+      <p class="lead">Atirar pra todo lado encarece o lead e dilui a mensagem. Focar num nicho derruba o CAC e faz a prova se repetir — foi o caminho da hotelaria na Komplexa.</p>
+    </div>
+
+    <div class="decision reveal">
+      <span class="lbl">Recomendação · foco</span>
+      <h3>Entrar por UMA vertical e dominar.</h3>
+      <div class="field">Por que nichar derruba o CAC</div>
+      <ul class="icp-list" style="margin-top:12px">
+        <li>Criativo e copy falam a <b>língua exata do nicho</b> → mais CTR, menos CPL</li>
+        <li>Segmentação mais precisa no Meta → <b>menos verba desperdiçada</b></li>
+        <li>Autoridade e prova que <b>se repetem</b> — cada case vende o próximo</li>
+        <li>Indicação circula <b>dentro do mesmo mercado</b></li>
+      </ul>
+      <div class="rec"><b>A pergunta da reunião não é "se", é "qual".</b> Escolher a vertical onde a Scalenza já tem case, tem rede de entrada, e onde a dor de "vender no improviso" é clara o bastante pra pagar o CAC.</div>
+    </div>
+
+    <div class="grid g2">
+      <div class="card reveal">
+        <span class="tag">Critérios pra escolher a vertical</span>
+        <ul class="icp-list" style="margin-top:16px">
+          <li>Onde já existe <b>case / resultado real</b></li>
+          <li>Onde a Scalenza tem <b>rede ou entrada</b></li>
+          <li>Dor de processo <b>clara e cara</b> (ticket paga o CAC)</li>
+          <li>Que dê pra <b>repetir</b> — não projeto avulso</li>
+          <li>Concorrência fraca em <b>processo comercial</b></li>
+        </ul>
+      </div>
+      <div class="card reveal">
+        <span class="tag">ICP — o perfil dentro da vertical</span>
+        <div style="margin-top:16px">
+          <div class="field">Empresa</div>
+          <p style="color:var(--ink);font-size:15px;margin-bottom:14px">PME B2B com operação de vendas <b>já existente</b> (não é começar do zero).</p>
+          <div class="field">Time comercial</div>
+          <p style="color:var(--ink);font-size:15px;margin-bottom:14px">2–10 vendedores <b>ou</b> venda ainda conduzida pelo founder.</p>
+          <div class="field">Decisor</div>
+          <p style="color:var(--ink);font-size:15px">Founder, sócio ou diretor comercial.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="grid g2" style="margin-top:14px">
+      <div class="card reveal">
+        <span class="tag">Gatilhos de dor — o que faz comprar</span>
+        <ul class="icp-list" style="margin-top:16px">
+          <li>Depende de <b>1–2 vendedores-estrela</b></li>
+          <li>Sem CRM, processo ou cadência</li>
+          <li>Previsão de vendas que <b>nunca bate</b></li>
+          <li>Cresceu no boca a boca e <b>travou</b></li>
+          <li>Ciclo de venda longo e descontrolado</li>
+        </ul>
+      </div>
+      <div class="card reveal">
+        <span class="tag">Anti-ICP — quem NÃO atacar</span>
+        <ul class="icp-list anti" style="margin-top:16px">
+          <li>Empresa sem time de vendas</li>
+          <li>Ticket muito baixo / volume puro</li>
+          <li>B2C</li>
+          <li>Quem quer "curso", não implementação</li>
+          <li>Fora da vertical escolhida (por enquanto)</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 04 METODO -->
+<section id="processo">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="kicker">04 · O método de aquisição</span>
+      <h2>Do criativo ao cliente — em sistema.</h2>
+      <p class="lead">A metodologia Komplexa Growth aplicada à Scalenza, com o peso na aquisição: anúncio, criativo, captação e o funil que conduz o lead até a venda.</p>
+    </div>
+
+    <div class="grid g3" style="margin-bottom:14px">
+      <div class="card reveal"><span class="tag">Sistema 1</span><h3>Diagnóstico</h3><p>PUV, ICP, vertical e oferta. Boa parte já está neste documento.</p></div>
+      <div class="card reveal" style="border-color:var(--lime-dim)"><span class="tag">Sistema 2 · núcleo</span><h3>Infraestrutura digital</h3><p>Perfil, bio e 6 posts de credibilidade. A Scalenza já começou — refinar e padronizar.</p></div>
+      <div class="card reveal" style="border-color:var(--lime-dim)"><span class="tag">Sistema 3 · núcleo</span><h3>Máquina de aquisição</h3><p>Criativos 3-3-3, copy Hook→Corpo→CTA, formulário de qualificação, campanha Meta + tracking.</p></div>
+      <div class="card reveal"><span class="tag">Sistema 4</span><h3>Processo comercial</h3><p>WhatsApp → ligação → reunião em 3 partes → fechamento → follow-up infinito.</p></div>
+      <div class="card reveal"><span class="tag">Sistema 5</span><h3>Métricas &amp; escala</h3><p>CPM, CPL, taxas de avanço, CAC, LTV, payback → reinvestir.</p></div>
+      <div class="card reveal" style="background:linear-gradient(180deg,rgba(198,244,50,.05),var(--surface))"><span class="tag">Resultado</span><h3>Lead qualificado todo dia</h3><p>Funil ativo gerando reunião e cliente de forma previsível.</p></div>
+    </div>
+
+    <div class="reveal" style="margin-top:30px">
+      <div class="field">O funil — do clique ao contrato</div>
+      <div class="funnel">
+        <div class="fstage"><span class="fn">01</span><span class="ft">Anúncio</span><span class="fo">gera o lead</span></div>
+        <div class="fstage"><span class="fn">02</span><span class="ft">Formulário</span><span class="fo">qualifica e filtra curioso</span></div>
+        <div class="fstage"><span class="fn">03</span><span class="ft">WhatsApp</span><span class="fo">gera interesse</span></div>
+        <div class="fstage"><span class="fn">04</span><span class="ft">Ligação</span><span class="fo">qualifica a fundo</span></div>
+        <div class="fstage"><span class="fn">05</span><span class="ft">Reunião</span><span class="fo">diagnóstico · método · proposta</span></div>
+        <div class="fstage"><span class="fn">06</span><span class="ft">Proposta</span><span class="fo">converte (com escassez real)</span></div>
+      </div>
+    </div>
+
+    <div class="mini-grid reveal">
+      <div class="mini">
+        <div class="mh">Criativos · 3-3-3</div>
+        <div class="chips"><span class="chip">3 vídeos</span><span class="chip">3 motions</span><span class="chip">3 estáticos</span></div>
+        <p class="muted" style="font-size:13.5px;margin-top:12px">Testa formato e ângulo até achar o criativo vencedor.</p>
+      </div>
+      <div class="mini">
+        <div class="mh">Estrutura de copy</div>
+        <div class="flow">
+          <span><em>Hook</em> · dor + ICP do nicho</span>
+          <span><em>Corpo</em> · o que muda</span>
+          <span><em>CTA</em> · formulário</span>
+        </div>
+      </div>
+      <div class="mini">
+        <div class="mh">Captação &amp; campanha</div>
+        <div class="chips"><span class="chip">Formulário de qualificação</span><span class="chip">Campanha Meta</span><span class="chip">Tracking</span></div>
+        <p class="muted" style="font-size:13.5px;margin-top:12px">Filtra curioso e entrega lead pronto pro comercial.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 05 ORGANOGRAMA DE AÇÕES -->
+<section id="organograma">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="kicker">05 · Organograma de ações</span>
+      <h2>A ordem importa mais que o prazo.</h2>
+      <p class="lead">Sem tempo cravado — prioridade de execução. Cada fase abre a próxima, e dentro dela as ações concretas. Pular ordem é queimar verba.</p>
+    </div>
+
+    <div class="stairs">
+      <div class="step reveal">
+        <span class="ghost">1</span>
+        <div class="head"><span class="pn">Prioridade 1</span></div>
+        <h3>Fundação</h3>
+        <div class="why">Sem base, anúncio não converte — leva clique e queima verba.</div>
+        <div class="oacts">
+          <div class="oact">Escolher a vertical de entrada</div>
+          <div class="oact">Travar a PUV final (uma frase que vende)</div>
+          <div class="oact">Definir a oferta dentro do nicho</div>
+          <div class="oact">Refinar perfil + bio</div>
+          <div class="oact">Produzir os 6 posts de credibilidade</div>
+        </div>
+      </div>
+
+      <div class="step heart reveal">
+        <span class="ghost">2</span>
+        <div class="head"><span class="pn">Prioridade 2</span><span class="core">Núcleo · aquisição &amp; marketing</span></div>
+        <h3>Máquina de aquisição</h3>
+        <div class="why">É aqui que o lead começa a entrar todo dia.</div>
+        <div class="oacts">
+          <div class="oact">Definir os ângulos de comunicação do nicho</div>
+          <div class="oact">Roteirizar os criativos 3-3-3</div>
+          <div class="oact">Escrever a copy Hook → Corpo → CTA</div>
+          <div class="oact">Montar o formulário de qualificação</div>
+          <div class="oact">Subir a campanha Meta + configurar tracking e segmentação</div>
+        </div>
+      </div>
+
+      <div class="step reveal">
+        <span class="ghost">3</span>
+        <div class="head"><span class="pn">Prioridade 3</span></div>
+        <h3>Processo comercial</h3>
+        <div class="why">Lead sem processo é dinheiro entrando e vazando.</div>
+        <div class="oacts">
+          <div class="oact">Script de abordagem por WhatsApp</div>
+          <div class="oact">Script de ligação de qualificação</div>
+          <div class="oact">Estrutura da reunião em 3 partes</div>
+          <div class="oact">Fechamento com escassez real</div>
+          <div class="oact">Follow-up infinito</div>
+        </div>
+      </div>
+
+      <div class="step reveal">
+        <span class="ghost">4</span>
+        <div class="head"><span class="pn">Prioridade 4</span></div>
+        <h3>Medição</h3>
+        <div class="why">Sem placar, não dá pra saber o que otimizar.</div>
+        <div class="oacts">
+          <div class="oact">Dashboard de CPM, CPL e taxas de avanço</div>
+          <div class="oact">Benchmarks de taxa boa vs taxa ruim</div>
+          <div class="oact">Identificar os pontos de otimização</div>
+        </div>
+      </div>
+
+      <div class="step reveal">
+        <span class="ghost">5</span>
+        <div class="head"><span class="pn">Prioridade 5</span></div>
+        <h3>Escala</h3>
+        <div class="why">Escalar é multiplicar um sistema que já fecha.</div>
+        <div class="oacts">
+          <div class="oact">Calcular CAC, LTV e payback</div>
+          <div class="oact">Validar os unit economics</div>
+          <div class="oact">Reinvestir e subir o investimento em mídia</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="goldrule reveal">Regra de ouro: <b>não roda anúncio antes da fundação. Não escala antes da medição.</b></div>
+  </div>
+</section>
+
+<!-- 06 METRICAS -->
+<section id="metricas">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="kicker">06 · O placar</span>
+      <h2>Se não tá medindo, tá no improviso.</h2>
+      <p class="lead">Toda etapa do funil é número. É o que separa "máquina previsível" de "deu sorte esse mês".</p>
+    </div>
+    <div class="mcols">
+      <div class="mcol reveal"><h4>Marketing</h4><div class="mi">Investimento</div><div class="mi">CPM</div><div class="mi">CPL · custo por lead</div></div>
+      <div class="mcol reveal"><h4>Comercial · taxas de avanço</h4><div class="mi">Lead → Interesse</div><div class="mi">Interesse → Ligação</div><div class="mi">Ligação → Reunião</div><div class="mi">Reunião → Venda</div></div>
+      <div class="mcol reveal"><h4>Unit economics</h4><div class="mi">CAC</div><div class="mi">LTV</div><div class="mi">Payback</div></div>
+    </div>
+    <div class="statline reveal">
+      <span class="big" style="font-size:clamp(40px,9vw,68px)">&darr; CAC</span>
+      <p>Focar numa vertical é a alavanca nº1 pra <b style="color:var(--ink)">derrubar o custo de aquisição</b>: lead mais barato, payback mais curto e escala mais segura.</p>
+    </div>
+  </div>
+</section>
+
+<!-- NEXT STEPS -->
+<section id="proximos">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="kicker">Próximos passos</span>
+      <h2>O que sai dessa reunião.</h2>
+    </div>
+    <ul class="checklist reveal">
+      <li><span class="box"></span>Escolher a vertical de entrada (onde já tem case, rede e dor clara)</li>
+      <li><span class="box"></span>Travar a PUV final — uma frase que vende sozinha</li>
+      <li><span class="box"></span>Validar o ICP e o anti-ICP dentro da vertical</li>
+      <li><span class="box"></span>Definir os ângulos de comunicação do nicho</li>
+      <li><span class="box"></span>Dar o play na Prioridade 1 — fundação</li>
+    </ul>
+    <p class="signoff reveal">Processo <span class="lime">&gt;</span> improviso.<br>Inclusive na própria aquisição.</p>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <span>Komplexa Growth × Scalenza</span>
+    <span>Blueprint de Aquisição · Documento de trabalho</span>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var rm = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var pb = document.getElementById('progress');
+  var tb = document.getElementById('topbar');
+  function onScroll(){
+    var h = document.documentElement;
+    var sc = h.scrollTop || document.body.scrollTop;
+    var max = h.scrollHeight - h.clientHeight;
+    pb.style.width = (max>0 ? (sc/max*100) : 0) + '%';
+    tb.classList.toggle('solid', sc > 40);
+  }
+  window.addEventListener('scroll', onScroll, {passive:true}); onScroll();
+
+  var io = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
+  }, {threshold:0.12, rootMargin:'0px 0px -8% 0px'});
+  document.querySelectorAll('.reveal').forEach(function(el){ if(rm){ el.classList.add('in'); } else { io.observe(el); } });
+
+  var navLinks = Array.prototype.slice.call(document.querySelectorAll('#nav a'));
+  var secs = navLinks.map(function(a){ return document.querySelector(a.getAttribute('href')); });
+  var navIO = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      if(e.isIntersecting){ var id = '#'+e.target.id;
+        navLinks.forEach(function(a){ a.classList.toggle('active', a.getAttribute('href')===id); }); }
+    });
+  }, {threshold:0.3, rootMargin:'-30% 0px -55% 0px'});
+  secs.forEach(function(s){ if(s) navIO.observe(s); });
+
+  var el = document.querySelector('[data-scramble]');
+  if(el && !rm){
+    var full = el.textContent;
+    var chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789#%&/<>*';
+    var reveal = 0;
+    el.style.minHeight = el.offsetHeight + 'px';
+    function frame(){
+      var out = '';
+      for(var i=0;i<full.length;i++){
+        if(full[i]===' '){ out+=' '; continue; }
+        if(i < reveal){ out += full[i]; } else { out += chars[Math.floor(Math.random()*chars.length)]; }
+      }
+      el.textContent = out; reveal += 0.8;
+      if(reveal < full.length){ requestAnimationFrame(frame); } else { el.textContent = full; el.style.minHeight=''; }
+    }
+    setTimeout(function(){ requestAnimationFrame(frame); }, 250);
+  }
+})();
+</script>
+</body>
+</html>

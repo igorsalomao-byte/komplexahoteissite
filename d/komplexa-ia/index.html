@@ -1,0 +1,1212 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>Inteligência aplicada ao crescimento hoteleiro · Komplexa</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,400;1,9..144,500&family=Inter:wght@300;400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --navy:#0E1E35;--navy-deep:#081525;--ink:#1A2942;
+  --blue:#1670C3;--cyan:#24D5FF;
+  --champagne:#C8A877;--champ-dim:#A89060;
+  --linen:#F5F1EA;--paper:#FAF7F2;
+  --red:#D04545;--green:#1F9D55;
+  --soft:rgba(14,30,53,.65);--muted:rgba(14,30,53,.42);
+  --line:rgba(14,30,53,.10);--line-strong:rgba(14,30,53,.18);
+  --grad:linear-gradient(90deg,#1670C3 0%,#1099E9 48%,#24D5FF 100%);
+  --grad-d:linear-gradient(135deg,#1670C3,#24D5FF);
+  --grad-r:radial-gradient(circle at 70% 50%,rgba(36,213,255,.30) 0%,transparent 65%);
+  --fd:'Inter',system-ui,sans-serif;--fs:'Fraunces',Georgia,serif;--fm:'IBM Plex Mono',ui-monospace,monospace;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--fd);background:var(--linen);color:var(--navy);-webkit-font-smoothing:antialiased;line-height:1.55;overflow-x:hidden}
+::selection{background:var(--cyan);color:var(--navy)}
+.wrap{max-width:1240px;margin:0 auto;padding:0 40px}
+section{padding:104px 0;position:relative}
+.eyebrow{font-family:var(--fm);font-size:11px;font-weight:500;letter-spacing:1.8px;text-transform:uppercase;color:var(--blue);margin-bottom:22px;display:inline-flex;align-items:center;gap:10px}
+.eyebrow::before{content:"";width:18px;height:2px;background:var(--blue)}
+.eyebrow .num{display:inline-block;background:var(--blue);color:#fff;padding:3px 9px;border-radius:5px;letter-spacing:1.4px;font-weight:700;margin-right:4px}
+.section-title{font-family:var(--fs);font-weight:400;font-size:clamp(38px,4.8vw,58px);line-height:1.04;letter-spacing:-1.6px;margin-bottom:18px;font-variation-settings:"opsz" 144}
+.section-title em{font-style:italic;color:var(--blue)}
+.section-lead{font-size:17px;color:var(--soft);max-width:720px;line-height:1.6;margin-bottom:56px}
+.section-lead strong{color:var(--navy);font-weight:600}
+.dark{background:var(--navy);color:var(--linen);position:relative;overflow:hidden}
+.dark .section-title{color:var(--linen)}.dark .section-title em{color:var(--cyan)}
+.dark .section-lead{color:rgba(245,241,234,.7)}.dark .section-lead strong{color:var(--linen)}
+.dark .eyebrow{color:var(--cyan)}.dark .eyebrow::before{background:var(--cyan)}
+.dark .eyebrow .num{background:var(--cyan);color:var(--navy)}
+
+/* HEAD */
+.head{position:sticky;top:0;z-index:100;background:rgba(245,241,234,.92);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border-bottom:1px solid var(--line)}
+.head-inner{max-width:1240px;margin:0 auto;padding:16px 40px;display:flex;justify-content:space-between;align-items:center;gap:18px}
+.head-brand{display:flex;align-items:center;gap:10px;font-family:var(--fs);font-weight:500;font-size:19px;letter-spacing:-.4px;color:var(--navy);font-variation-settings:"opsz" 100}
+.head-brand .dot{width:8px;height:8px;border-radius:50%;background:var(--cyan);box-shadow:0 0 12px rgba(36,213,255,.5);animation:pulse 2.5s infinite}
+@keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.55;transform:scale(.85)}}
+.head-meta{display:flex;gap:14px;font-family:var(--fm);font-size:10.5px;letter-spacing:1.6px;text-transform:uppercase;color:var(--muted);font-weight:500;align-items:center}
+.head-meta .sep{color:var(--line-strong)}
+.head-cta{background:var(--navy);color:var(--linen);padding:9px 18px;border-radius:8px;font-family:var(--fd);font-weight:600;font-size:12.5px;letter-spacing:.2px;text-decoration:none;transition:transform .2s}
+.head-cta:hover{transform:translateY(-1px)}
+
+/* HERO */
+.hero{background:var(--navy);color:var(--linen);padding:140px 0 120px;position:relative;overflow:hidden}
+.hero::before{content:"";position:absolute;top:-200px;right:-160px;width:740px;height:740px;border-radius:50%;background:radial-gradient(circle,rgba(36,213,255,.18) 0%,transparent 60%);pointer-events:none}
+.hero::after{content:"";position:absolute;bottom:-200px;left:-120px;width:540px;height:540px;border-radius:50%;background:radial-gradient(circle,rgba(22,112,195,.16) 0%,transparent 60%);pointer-events:none}
+.hero-content{position:relative;z-index:1}
+.hero-meta{display:flex;justify-content:space-between;align-items:center;font-family:var(--fm);font-size:11px;letter-spacing:1.8px;text-transform:uppercase;margin-bottom:80px;flex-wrap:wrap;gap:18px;color:rgba(245,241,234,.55)}
+.hero-meta .meta-tag{background:var(--cyan);color:var(--navy);padding:5px 14px;border-radius:100px;letter-spacing:1.4px;font-weight:700}
+.hero-display{font-family:var(--fs);font-weight:300;font-size:clamp(54px,8.5vw,118px);line-height:1.01;letter-spacing:-3.8px;color:var(--linen);font-variation-settings:"opsz" 144;margin-bottom:54px}
+.hero-display em{font-style:italic;color:var(--cyan);font-weight:400}
+.hero-sub{font-size:19px;color:rgba(245,241,234,.78);line-height:1.55;max-width:680px;margin-bottom:64px}
+.hero-sub strong{color:var(--linen);font-weight:600}
+.hero-strip{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:rgba(255,255,255,.10);border:1px solid rgba(255,255,255,.12);border-radius:16px;overflow:hidden}
+.hs{background:var(--navy);padding:24px 26px;display:flex;flex-direction:column;gap:6px}
+.hs .hs-lbl{font-family:var(--fm);font-size:10px;letter-spacing:1.6px;text-transform:uppercase;color:rgba(245,241,234,.5);font-weight:600}
+.hs .hs-val{font-family:var(--fs);font-size:24px;font-weight:500;letter-spacing:-.4px;color:var(--linen);line-height:1.1;font-variation-settings:"opsz" 100}
+.hs .hs-val em{font-style:italic;color:var(--cyan)}
+.hs .hs-sub{font-size:11.5px;color:rgba(245,241,234,.45);line-height:1.45}
+
+/* MANIFESTO */
+.manifesto{background:var(--linen)}
+.comp-table{margin-top:32px;display:grid;grid-template-columns:1fr 1fr;gap:24px}
+.comp-card{padding:32px;border-radius:18px;display:flex;flex-direction:column;gap:18px;min-height:480px;position:relative;overflow:hidden}
+.comp-card.bad{background:var(--paper);border:1px solid var(--line)}
+.comp-card.good{background:linear-gradient(160deg,var(--navy) 0%,var(--ink) 100%);color:var(--linen);border:none;box-shadow:0 24px 60px rgba(14,30,53,.20)}
+.comp-card.good::before{content:"";position:absolute;inset:0;background:var(--grad-r);opacity:.35;pointer-events:none}
+.comp-card .cc-tag{font-family:var(--fm);font-size:10.5px;letter-spacing:1.6px;text-transform:uppercase;font-weight:600;display:inline-flex;align-items:center;gap:8px;position:relative;z-index:1}
+.comp-card.bad .cc-tag{color:var(--muted)}.comp-card.good .cc-tag{color:var(--cyan)}
+.comp-card .cc-tag::before{content:"";width:14px;height:2px}
+.comp-card.bad .cc-tag::before{background:var(--muted)}.comp-card.good .cc-tag::before{background:var(--cyan)}
+.comp-card h3{font-family:var(--fs);font-weight:500;font-size:26px;letter-spacing:-.6px;line-height:1.1;position:relative;z-index:1;font-variation-settings:"opsz" 100}
+.comp-card.bad h3{color:var(--navy)}.comp-card.good h3{color:var(--linen)}
+.comp-card h3 em{font-style:italic}
+.comp-card.bad h3 em{color:var(--muted)}.comp-card.good h3 em{color:var(--cyan)}
+.disconnected{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;position:relative;z-index:1}
+.dis-item{background:rgba(14,30,53,.04);border:1px dashed var(--line-strong);border-radius:10px;padding:14px 12px;text-align:center;opacity:.7}
+.dis-item .di-ic{font-size:18px;color:var(--muted);margin-bottom:4px}
+.dis-item .di-lbl{font-size:10.5px;color:var(--soft);font-weight:500}
+.connected{position:relative;z-index:1;display:flex;flex-direction:column;gap:0}
+.conn-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-bottom:14px;position:relative}
+.conn-item{background:rgba(36,213,255,.06);border:1px solid rgba(36,213,255,.30);border-radius:10px;padding:14px 10px;text-align:center;position:relative}
+.conn-item .ci-ic{width:24px;height:24px;border-radius:6px;background:var(--grad-d);color:#fff;display:inline-flex;align-items:center;justify-content:center;font-family:var(--fm);font-size:11px;font-weight:700;margin-bottom:6px}
+.conn-item .ci-lbl{font-size:10.5px;color:var(--linen);font-weight:600}
+.conn-lines{position:absolute;top:60%;left:8%;right:8%;height:2px;background:linear-gradient(90deg,transparent,var(--cyan),transparent);opacity:.5;animation:flow 2.5s ease-in-out infinite}
+@keyframes flow{0%,100%{opacity:.3}50%{opacity:1}}
+.comp-list{display:flex;flex-direction:column;gap:0;position:relative;z-index:1}
+.cl-item{display:grid;grid-template-columns:20px 1fr;gap:12px;padding:11px 0;border-bottom:1px solid var(--line);font-size:14px;line-height:1.5;align-items:start}
+.comp-card.good .cl-item{border-bottom-color:rgba(255,255,255,.08)}
+.cl-item:last-child{border-bottom:none}
+.cl-item .ic{font-family:var(--fm);font-size:13px;font-weight:600;line-height:1.2;padding-top:1px}
+.comp-card.bad .cl-item{color:var(--soft)}.comp-card.bad .cl-item .ic{color:var(--muted)}
+.comp-card.good .cl-item{color:rgba(245,241,234,.85)}.comp-card.good .cl-item .ic{color:var(--cyan)}
+.cl-item strong{color:inherit;font-weight:600}
+.comp-card.good .cl-item strong{color:var(--linen)}
+
+/* TESE */
+.tese{background:var(--navy);color:var(--linen)}
+.tese::before{content:"";position:absolute;inset:0;background:var(--grad-r);opacity:.20;pointer-events:none}
+.tese-grid{display:grid;grid-template-columns:1fr auto 1fr;gap:32px;margin-top:48px;align-items:stretch;position:relative;z-index:1}
+.tese-card{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.10);border-radius:20px;padding:36px;display:flex;flex-direction:column;gap:18px;position:relative;overflow:hidden}
+.tese-card.ia{border:1px solid rgba(36,213,255,.35);background:linear-gradient(180deg,rgba(36,213,255,.06) 0%,rgba(36,213,255,.01) 100%)}
+.tese-card.ia::before{content:"";position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,var(--cyan),transparent);animation:flow 3s ease-in-out infinite}
+.tese-card.human{border:1px solid rgba(200,168,119,.35);background:linear-gradient(180deg,rgba(200,168,119,.06) 0%,rgba(200,168,119,.01) 100%)}
+.tese-card.human::before{content:"";position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,var(--champagne),transparent);animation:flow 3s ease-in-out infinite 1.5s}
+.tese-symbol{display:flex;align-items:center;justify-content:center;width:80px;height:80px;border-radius:20px;flex-shrink:0}
+.tese-symbol.ia{background:linear-gradient(135deg,var(--blue),var(--cyan));box-shadow:0 0 60px rgba(36,213,255,.35);animation:glow 3s ease-in-out infinite}
+.tese-symbol.human{background:linear-gradient(135deg,var(--champagne),var(--champ-dim));box-shadow:0 0 60px rgba(200,168,119,.30)}
+@keyframes glow{0%,100%{box-shadow:0 0 40px rgba(36,213,255,.30)}50%{box-shadow:0 0 80px rgba(36,213,255,.50)}}
+.tese-symbol svg{width:42px;height:42px;color:var(--navy)}
+.tese-card .tc-tag{font-family:var(--fm);font-size:11px;letter-spacing:1.8px;text-transform:uppercase;font-weight:700}
+.tese-card.ia .tc-tag{color:var(--cyan)}.tese-card.human .tc-tag{color:var(--champagne)}
+.tese-card h3{font-family:var(--fs);font-weight:500;font-size:30px;letter-spacing:-.7px;line-height:1.1;color:var(--linen);font-variation-settings:"opsz" 100}
+.tese-card h3 em{font-style:italic}
+.tese-card.ia h3 em{color:var(--cyan)}.tese-card.human h3 em{color:var(--champagne)}
+.tese-list{list-style:none;padding:0;margin:8px 0 0;display:flex;flex-direction:column;gap:11px}
+.tese-list li{font-size:14px;line-height:1.55;padding-left:22px;position:relative;color:rgba(245,241,234,.80)}
+.tese-list li::before{content:"";position:absolute;left:0;top:9px;width:10px;height:1.5px}
+.tese-card.ia .tese-list li::before{background:var(--cyan)}
+.tese-card.human .tese-list li::before{background:var(--champagne)}
+.tese-list li strong{color:var(--linen);font-weight:600}
+.tese-mid{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;padding:0 8px}
+.tese-mid .plus{font-family:var(--fs);font-weight:300;font-size:64px;line-height:1;color:rgba(245,241,234,.30);font-variation-settings:"opsz" 144}
+.tese-equals{margin-top:48px;background:linear-gradient(90deg,rgba(36,213,255,.10),rgba(200,168,119,.10));border:1px solid rgba(36,213,255,.20);border-radius:18px;padding:32px;text-align:center;position:relative;z-index:1;display:flex;align-items:center;justify-content:center;gap:24px;flex-wrap:wrap}
+.tese-equals .equals-sign{font-family:var(--fm);font-size:32px;font-weight:600;color:var(--cyan)}
+.tese-equals h4{font-family:var(--fs);font-weight:400;font-size:34px;letter-spacing:-.8px;color:var(--linen);font-variation-settings:"opsz" 144}
+.tese-equals h4 em{font-style:italic;background:var(--grad);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+
+/* ARQUITETURA - MONEY SLIDE STYLE */
+.arq{background:var(--navy);color:var(--linen);position:relative;overflow:hidden}
+.arq::before{content:"";position:absolute;top:-200px;right:-100px;width:600px;height:600px;border-radius:50%;background:radial-gradient(circle,rgba(36,213,255,.16) 0%,transparent 60%);pointer-events:none}
+.arq::after{content:"";position:absolute;bottom:-200px;left:-100px;width:600px;height:600px;border-radius:50%;background:radial-gradient(circle,rgba(200,168,119,.10) 0%,transparent 60%);pointer-events:none}
+.arq-stage{margin-top:48px;position:relative;background:linear-gradient(180deg,rgba(255,255,255,.03),rgba(255,255,255,.01));border:1px solid rgba(255,255,255,.08);border-radius:24px;padding:40px;overflow:hidden}
+.arq-stage::before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 50% 50%,rgba(36,213,255,.05) 0%,transparent 60%);pointer-events:none}
+.arq-ia{position:relative;z-index:3;display:flex;justify-content:center;margin-bottom:24px}
+.arq-ia-card{background:linear-gradient(135deg,rgba(22,112,195,.30),rgba(36,213,255,.20));border:1px solid rgba(36,213,255,.55);border-radius:14px;padding:16px 24px;display:flex;align-items:center;gap:14px;box-shadow:0 0 50px rgba(36,213,255,.25);max-width:540px}
+.arq-ia-card .ia-ic{width:42px;height:42px;border-radius:11px;background:var(--grad-d);display:flex;align-items:center;justify-content:center;color:#fff;flex-shrink:0;animation:pulseIcon 2.5s ease-in-out infinite}
+@keyframes pulseIcon{0%,100%{box-shadow:0 0 0 0 rgba(36,213,255,.4)}50%{box-shadow:0 0 0 12px rgba(36,213,255,0)}}
+.arq-ia-card .ia-ic svg{width:22px;height:22px}
+.arq-ia-card .ia-tx{flex:1}
+.arq-ia-card .ia-eyebrow{font-family:var(--fm);font-size:9.5px;letter-spacing:1.6px;text-transform:uppercase;color:var(--cyan);font-weight:700;margin-bottom:2px}
+.arq-ia-card .ia-title{font-family:var(--fs);font-weight:500;font-size:18px;color:var(--linen);letter-spacing:-.3px;font-variation-settings:"opsz" 100}
+.arq-ia-card .ia-sub{font-size:11.5px;color:rgba(245,241,234,.6);margin-top:2px}
+.arq-row{position:relative;z-index:3;display:grid;gap:14px;margin-bottom:20px}
+.arq-row.r2{grid-template-columns:1fr 1fr}
+.arq-row.r3{grid-template-columns:1fr 1fr 1fr}
+.arq-step{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.12);border-radius:14px;padding:16px;display:flex;gap:14px;align-items:stretch;backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);transition:transform .2s,border-color .2s;position:relative}
+.arq-step:hover{transform:translateY(-2px);border-color:rgba(36,213,255,.40)}
+.arq-step .as-info{flex:1;display:flex;flex-direction:column;gap:6px;min-width:0}
+.arq-step .as-num{font-family:var(--fm);font-size:9.5px;letter-spacing:1.4px;color:var(--cyan);font-weight:700;background:rgba(36,213,255,.15);padding:3px 8px;border-radius:5px;align-self:flex-start}
+.arq-step .as-title{font-family:var(--fs);font-weight:500;font-size:15px;color:var(--linen);letter-spacing:-.3px;font-variation-settings:"opsz" 100;line-height:1.15}
+.arq-step .as-desc{font-size:11.5px;color:rgba(245,241,234,.6);line-height:1.45;margin-top:auto}
+.arq-step .as-visual{width:90px;flex-shrink:0;border-radius:10px;overflow:hidden;background:#fff;position:relative;min-height:80px}
+
+/* Mini mockups */
+.mock-mini-people{height:100%;background:linear-gradient(135deg,#1E3A5F,#0E1E35);display:grid;grid-template-columns:repeat(4,1fr);gap:3px;padding:8px;align-content:center}
+.mock-mini-people .mmp{aspect-ratio:1;border-radius:50%;background:rgba(255,255,255,.20)}
+.mock-mini-people .mmp.match{background:var(--grad-d);box-shadow:0 0 6px rgba(36,213,255,.6)}
+.mock-mini-ig{height:100%;background:#fff;display:flex;flex-direction:column;padding:6px 5px;font-family:var(--fd)}
+.mock-mini-ig .mig-hdr{display:flex;align-items:center;gap:4px;margin-bottom:3px}
+.mock-mini-ig .mig-av{width:8px;height:8px;border-radius:50%;background:linear-gradient(45deg,#feda75,#d62976)}
+.mock-mini-ig .mig-tx{font-size:5.5px;color:#262626;font-weight:600}
+.mock-mini-ig .mig-img{flex:1;background:linear-gradient(135deg,#1E3A5F,#1670C3);border-radius:2px;min-height:30px}
+.mock-mini-ig .mig-cta{margin-top:3px;background:var(--grad);color:#fff;text-align:center;padding:2px;border-radius:2px;font-size:5px;font-weight:700}
+.mock-mini-site{height:100%;background:#fff;display:flex;flex-direction:column;font-family:var(--fd)}
+.mock-mini-site .ms-bar{background:#f0f0f0;padding:3px;display:flex;gap:2px;align-items:center}
+.mock-mini-site .ms-bar span{width:3px;height:3px;border-radius:50%}
+.mock-mini-site .ms-bar span:nth-child(1){background:#FF5F57}
+.mock-mini-site .ms-bar span:nth-child(2){background:#FEBC2E}
+.mock-mini-site .ms-bar span:nth-child(3){background:#28C840}
+.mock-mini-site .ms-hero{flex:1;background:linear-gradient(135deg,#1E3A5F,#0E1E35);padding:6px;display:flex;flex-direction:column;justify-content:flex-end;color:#fff;position:relative;min-height:30px}
+.mock-mini-site .ms-h1{font-family:var(--fs);font-size:6.5px;font-weight:500;position:relative;z-index:1;letter-spacing:-.1px;line-height:1.1}
+.mock-mini-site .ms-h1 em{font-style:italic;color:var(--cyan)}
+.mock-mini-site .ms-cta{background:var(--grad);color:#fff;font-size:5px;padding:2px 4px;border-radius:2px;margin-top:3px;text-align:center;font-weight:700;align-self:flex-start}
+.mock-mini-remkt{height:100%;background:#fff;display:flex;flex-direction:column;padding:5px 4px;font-family:var(--fd)}
+.mock-mini-remkt .mr-hdr{display:flex;align-items:center;gap:3px;margin-bottom:3px}
+.mock-mini-remkt .mr-av{width:7px;height:7px;border-radius:50%;background:var(--grad-d)}
+.mock-mini-remkt .mr-name{font-size:5px;color:#262626;font-weight:600}
+.mock-mini-remkt .mr-img{flex:1;background:linear-gradient(135deg,#C8A877,#8B5A3C);border-radius:2px;display:flex;align-items:center;justify-content:center;color:#fff;font-size:5px;font-weight:600;text-align:center;padding:3px;min-height:30px}
+.mock-mini-wa{height:100%;background:#ECE5DD;padding:5px 4px;display:flex;flex-direction:column;gap:3px;justify-content:center}
+.mock-mini-wa .mw-msg{padding:3px 4px;border-radius:3px;font-size:4.5px;line-height:1.3;color:#000;max-width:90%;font-family:var(--fd)}
+.mock-mini-wa .mw-msg.in{background:#fff;align-self:flex-start;border-top-left-radius:1px}
+.mock-mini-wa .mw-msg.out{background:#DCF8C6;align-self:flex-end;border-top-right-radius:1px}
+.mock-mini-crm{height:100%;background:#fff;padding:5px;display:flex;flex-direction:column;gap:3px;font-family:var(--fd)}
+.mock-mini-crm .mcr-row{display:grid;grid-template-columns:1fr auto;gap:3px;font-size:5px;padding:2px 3px;background:#f5f5f5;border-radius:2px;align-items:center}
+.mock-mini-crm .mcr-name{font-weight:600;color:#262626}
+.mock-mini-crm .mcr-tag{background:var(--green);color:#fff;padding:0 3px;border-radius:2px;font-size:4px;font-weight:700}
+.mock-mini-crm .mcr-tag.alt{background:var(--blue)}
+.mock-mini-email{height:100%;background:#fff;display:flex;flex-direction:column;font-family:var(--fd)}
+.mock-mini-email .me-hdr{background:var(--navy);padding:4px 5px;color:#fff;font-size:5px;font-weight:600}
+.mock-mini-email .me-grad{height:2px;background:var(--grad)}
+.mock-mini-email .me-body{padding:4px 5px;flex:1;display:flex;flex-direction:column;gap:2px}
+.mock-mini-email .me-ttl{font-family:var(--fs);font-size:5.5px;font-weight:500;color:var(--navy);line-height:1.2}
+.mock-mini-email .me-tx{font-size:4.5px;color:#666;line-height:1.4}
+.mock-mini-email .me-cta{background:var(--blue);color:#fff;font-size:5px;padding:2px 4px;border-radius:2px;text-align:center;margin-top:auto;font-weight:700}
+
+.arq-final{position:relative;z-index:3;display:flex;justify-content:center;margin-top:12px}
+.arq-final-node{background:var(--grad-d);color:#fff;padding:14px 32px;border-radius:100px;display:flex;align-items:center;gap:12px;box-shadow:0 0 60px rgba(36,213,255,.4),0 12px 30px rgba(0,0,0,.3);font-weight:700;letter-spacing:.5px}
+.arq-final-node .afn-ic{font-size:16px}
+.arq-final-node .afn-tx{font-size:14px}
+.arq-final-node .afn-sub{font-size:9.5px;background:rgba(0,0,0,.18);padding:3px 8px;border-radius:100px;letter-spacing:1px;text-transform:uppercase;font-weight:700}
+
+/* IA EM 4 CAMADAS */
+.ia-section{background:var(--linen)}
+.ia-grid{margin-top:48px;display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.ia-card{background:var(--paper);border:1px solid var(--line);border-radius:18px;padding:0;display:flex;flex-direction:column;position:relative;overflow:hidden;transition:transform .25s,box-shadow .25s}
+.ia-card:hover{transform:translateY(-3px);box-shadow:0 14px 36px rgba(14,30,53,.08)}
+.ia-card-visual{height:200px;background:var(--navy);position:relative;overflow:hidden;border-bottom:1px solid var(--line)}
+.ia-card-body{padding:28px 32px 32px;display:flex;flex-direction:column;gap:14px}
+.ia-card-head{display:flex;align-items:center;gap:14px}
+.ia-icon{width:42px;height:42px;border-radius:11px;background:var(--grad-d);color:#fff;display:flex;align-items:center;justify-content:center;font-family:var(--fm);font-size:13px;font-weight:700;box-shadow:0 6px 20px rgba(36,213,255,.30);flex-shrink:0}
+.ia-card-head h3{font-family:var(--fs);font-weight:500;font-size:22px;letter-spacing:-.5px;color:var(--navy);font-variation-settings:"opsz" 100;line-height:1.1}
+.ia-card-head h3 em{font-style:italic;color:var(--blue)}
+.ia-list{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:8px}
+.ia-list li{font-size:13px;color:var(--soft);line-height:1.5;padding-left:18px;position:relative}
+.ia-list li::before{content:"›";position:absolute;left:0;top:-1px;color:var(--blue);font-weight:700;font-size:15px}
+.ia-list li strong{color:var(--navy);font-weight:600}
+.cam-people{padding:24px;display:grid;grid-template-columns:repeat(10,1fr);gap:8px;align-content:center;height:100%;background:radial-gradient(circle at 50% 50%,rgba(36,213,255,.12),transparent 70%)}
+.cam-people .cp{aspect-ratio:1;border-radius:50%;background:rgba(255,255,255,.15);transition:all .35s}
+.cam-people .cp.match{background:var(--grad-d);box-shadow:0 0 12px rgba(36,213,255,.6);animation:matchPulse 2.5s ease-in-out infinite}
+@keyframes matchPulse{0%,100%{transform:scale(1)}50%{transform:scale(1.18)}}
+.cam-people .cp.match:nth-child(odd){animation-delay:.5s}
+.cam-people .cp.match:nth-child(3n){animation-delay:1s}
+.cam-creatives{padding:20px;display:grid;grid-template-columns:repeat(3,1fr);gap:8px;height:100%;align-content:center;background:linear-gradient(135deg,rgba(36,213,255,.04),rgba(14,30,53,.40))}
+.cam-creatives .cc{background:#fff;border-radius:6px;overflow:hidden;display:flex;flex-direction:column;animation:floatUp 3s ease-in-out infinite;box-shadow:0 6px 20px rgba(0,0,0,.20)}
+.cam-creatives .cc:nth-child(2){animation-delay:.5s}
+.cam-creatives .cc:nth-child(3){animation-delay:1s}
+@keyframes floatUp{0%,100%{transform:translateY(0)}50%{transform:translateY(-6px)}}
+.cam-creatives .cc-img{aspect-ratio:1/1.2;background:linear-gradient(135deg,#1E3A5F,#1670C3)}
+.cam-creatives .cc-img.b{background:linear-gradient(135deg,#C8A877,#8B5A3C)}
+.cam-creatives .cc-img.c{background:linear-gradient(135deg,#0E1E35,#24D5FF)}
+.cam-creatives .cc-bar{background:#fff;padding:4px 5px;font-family:var(--fm);font-size:6px;color:#262626;font-weight:600}
+.cam-chart{padding:24px;background:linear-gradient(135deg,rgba(14,30,53,.30),rgba(36,213,255,.06));height:100%;display:flex;flex-direction:column;justify-content:flex-end;gap:8px}
+.cam-chart .cch-bars{display:flex;align-items:flex-end;gap:6px;height:110px}
+.cam-chart .cchb{flex:1;background:var(--grad-d);border-radius:4px 4px 0 0;position:relative;animation:barGrow 1.2s ease-out forwards;transform-origin:bottom;transform:scaleY(0)}
+.cam-chart .cchb:nth-child(1){animation-delay:0s}
+.cam-chart .cchb:nth-child(2){animation-delay:.1s}
+.cam-chart .cchb:nth-child(3){animation-delay:.2s}
+.cam-chart .cchb:nth-child(4){animation-delay:.3s}
+.cam-chart .cchb:nth-child(5){animation-delay:.4s}
+.cam-chart .cchb:nth-child(6){animation-delay:.5s}
+.cam-chart .cchb:nth-child(7){animation-delay:.6s}
+.cam-chart .cchb:nth-child(8){animation-delay:.7s}
+@keyframes barGrow{to{transform:scaleY(1)}}
+.cam-chart .cch-axis{display:flex;justify-content:space-between;font-family:var(--fm);font-size:9px;color:rgba(255,255,255,.5);letter-spacing:1px}
+.cam-wa{padding:20px;background:#ECE5DD;height:100%;display:flex;flex-direction:column;gap:6px;justify-content:center}
+.cam-wa .cwa-msg{padding:8px 12px;border-radius:8px;font-size:11px;line-height:1.45;color:#262626;max-width:80%;opacity:0;animation:msgIn .5s ease-out forwards;font-family:var(--fd)}
+.cam-wa .cwa-msg:nth-child(1){animation-delay:.3s}
+.cam-wa .cwa-msg:nth-child(2){animation-delay:1s}
+.cam-wa .cwa-msg:nth-child(3){animation-delay:1.7s}
+@keyframes msgIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
+.cam-wa .cwa-msg.in{background:#fff;align-self:flex-start;border-top-left-radius:2px}
+.cam-wa .cwa-msg.out{background:#DCF8C6;align-self:flex-end;border-top-right-radius:2px}
+.cam-wa .cwa-msg strong{font-weight:700}
+
+/* 3 PILARES */
+.pilares{background:var(--navy);color:var(--linen)}
+.pilares::before{content:"";position:absolute;top:0;right:0;bottom:0;left:50%;background:radial-gradient(circle at 100% 50%,rgba(36,213,255,.10) 0%,transparent 65%);pointer-events:none}
+.pil-grid{margin-top:48px;display:grid;grid-template-columns:repeat(3,1fr);gap:18px;position:relative;z-index:1}
+.pil-card{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.10);border-radius:18px;overflow:hidden;display:flex;flex-direction:column;transition:transform .25s,border-color .25s}
+.pil-card:hover{transform:translateY(-3px);border-color:rgba(36,213,255,.30)}
+.pil-card .pc-visual{height:130px;background:var(--ink);position:relative;overflow:hidden;border-bottom:1px solid rgba(255,255,255,.06)}
+.pil-card .pc-body{padding:24px;display:flex;flex-direction:column;gap:12px;flex:1}
+.pil-card .pc-num{font-family:var(--fm);font-size:10px;letter-spacing:1.6px;text-transform:uppercase;color:var(--cyan);font-weight:700;background:rgba(36,213,255,.12);padding:3px 9px;border-radius:5px;align-self:flex-start;border:1px solid rgba(36,213,255,.25)}
+.pil-card h3{font-family:var(--fs);font-weight:500;font-size:22px;letter-spacing:-.5px;line-height:1.1;color:var(--linen);font-variation-settings:"opsz" 100}
+.pil-card h3 em{font-style:italic;color:var(--cyan)}
+.pil-card .pc-sub{font-size:12.5px;color:rgba(245,241,234,.65);line-height:1.55;font-style:italic;padding-bottom:12px;border-bottom:1px solid rgba(255,255,255,.08);margin-bottom:2px}
+.pil-list{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:7px;flex:1}
+.pil-list li{font-size:12.5px;color:rgba(245,241,234,.80);line-height:1.5;padding-left:18px;position:relative}
+.pil-list li::before{content:"✓";position:absolute;left:0;top:-1px;color:var(--cyan);font-weight:700;font-size:13px}
+.pmk-mkt{height:100%;background:linear-gradient(135deg,rgba(22,112,195,.20),rgba(14,30,53,.50));display:flex;align-items:center;justify-content:center;gap:6px;padding:14px}
+.pmk-mkt .pmkc{width:50px;height:80px;background:#fff;border-radius:5px;display:flex;flex-direction:column;overflow:hidden;box-shadow:0 6px 18px rgba(0,0,0,.30);animation:floatUp 3s ease-in-out infinite}
+.pmk-mkt .pmkc:nth-child(2){animation-delay:.5s;transform:translateY(-5px)}
+.pmk-mkt .pmkc:nth-child(3){animation-delay:1s}
+.pmk-mkt .pmkc-img{flex:1;background:linear-gradient(135deg,#1E3A5F,#1670C3)}
+.pmk-mkt .pmkc:nth-child(2) .pmkc-img{background:linear-gradient(135deg,#C8A877,#8B5A3C)}
+.pmk-mkt .pmkc:nth-child(3) .pmkc-img{background:linear-gradient(135deg,#0E1E35,#24D5FF)}
+.pmk-mkt .pmkc-bar{height:8px;background:linear-gradient(90deg,#1670C3,#24D5FF)}
+.pmk-vendas{height:100%;background:linear-gradient(135deg,rgba(36,213,255,.06),rgba(14,30,53,.50));padding:14px;display:flex;flex-direction:column;justify-content:center;gap:5px}
+.pmk-vendas .pmv-row{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);border-radius:6px;padding:6px 10px;display:grid;grid-template-columns:1fr auto;gap:8px;align-items:center;font-size:10px}
+.pmk-vendas .pmv-row .pmv-name{color:var(--linen);font-weight:600}
+.pmk-vendas .pmv-row .pmv-tag{font-family:var(--fm);font-size:8px;padding:1px 6px;border-radius:3px;font-weight:700;letter-spacing:.5px;text-transform:uppercase}
+.pmk-vendas .pmv-row .pmv-tag.new{background:rgba(36,213,255,.20);color:var(--cyan);border:1px solid rgba(36,213,255,.40)}
+.pmk-vendas .pmv-row .pmv-tag.hot{background:rgba(200,168,119,.20);color:var(--champagne);border:1px solid rgba(200,168,119,.40)}
+.pmk-vendas .pmv-row .pmv-tag.win{background:rgba(31,157,85,.18);color:var(--green);border:1px solid rgba(31,157,85,.40)}
+.pmk-pos{height:100%;background:linear-gradient(135deg,rgba(200,168,119,.10),rgba(14,30,53,.50));padding:14px;display:flex;align-items:center;justify-content:center;gap:8px}
+.pmk-pos .pmp-mail{background:#fff;border-radius:6px;width:80px;height:90px;display:flex;flex-direction:column;overflow:hidden;box-shadow:0 6px 18px rgba(0,0,0,.30);animation:floatUp 3s ease-in-out infinite;font-family:var(--fd)}
+.pmk-pos .pmp-mail-hdr{background:var(--navy);padding:4px;font-size:6px;color:#fff;font-weight:600}
+.pmk-pos .pmp-mail-grad{height:2px;background:var(--grad)}
+.pmk-pos .pmp-mail-body{padding:5px;flex:1;display:flex;flex-direction:column;gap:3px;font-size:5.5px;color:#666;line-height:1.4}
+.pmk-pos .pmp-mail-body strong{color:var(--navy);font-weight:700;font-size:6.5px}
+.pmk-pos .pmp-mail-body .cta{background:var(--blue);color:#fff;text-align:center;padding:2px;border-radius:2px;font-weight:700;margin-top:auto}
+.pmk-pos .pmp-wa{background:#ECE5DD;border-radius:6px;width:80px;height:90px;padding:5px 4px;display:flex;flex-direction:column;gap:3px;justify-content:center;animation:floatUp 3s ease-in-out infinite .5s;box-shadow:0 6px 18px rgba(0,0,0,.30);font-family:var(--fd)}
+.pmk-pos .pmp-wa-msg{padding:3px 5px;border-radius:3px;font-size:5px;line-height:1.3;color:#262626;max-width:90%}
+.pmk-pos .pmp-wa-msg.in{background:#fff;align-self:flex-start;border-top-left-radius:1px}
+.pmk-pos .pmp-wa-msg.out{background:#DCF8C6;align-self:flex-end;border-top-right-radius:1px}
+
+/* CASES */
+.cases{background:var(--linen)}
+.case-grid{margin-top:48px;display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.case-card{background:var(--paper);border:1px solid var(--line);border-radius:18px;padding:32px;display:flex;flex-direction:column;gap:14px;transition:transform .25s,box-shadow .25s;position:relative;overflow:hidden}
+.case-card:hover{transform:translateY(-3px);box-shadow:0 14px 36px rgba(14,30,53,.10)}
+.case-card::before{content:"";position:absolute;top:0;left:0;right:0;height:3px;background:var(--grad);opacity:.65}
+.case-tag{font-family:var(--fm);font-size:10.5px;letter-spacing:1.6px;text-transform:uppercase;color:var(--blue);font-weight:700}
+.case-name{font-family:var(--fs);font-weight:500;font-size:22px;letter-spacing:-.5px;color:var(--navy);line-height:1.15;font-variation-settings:"opsz" 100}
+.case-name em{font-style:italic;color:var(--blue)}
+.case-big{font-family:var(--fm);font-size:74px;font-weight:600;letter-spacing:-3px;line-height:.95;background:var(--grad);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;font-feature-settings:"tnum" on;margin:8px 0 0}
+.case-result{font-family:var(--fs);font-weight:400;font-size:15px;letter-spacing:-.3px;color:var(--blue);font-variation-settings:"opsz" 100;font-style:italic;margin-bottom:6px}
+.case-desc{font-size:13px;color:var(--soft);line-height:1.6;margin-top:auto;padding-top:14px;border-top:1px solid var(--line)}
+.case-desc strong{color:var(--navy);font-weight:600}
+.case-bar{height:6px;background:var(--line);border-radius:3px;overflow:hidden;margin-top:8px}
+.case-bar .fill{height:100%;background:var(--grad);border-radius:3px;animation:fillBar 1.5s ease-out forwards;transform-origin:left;transform:scaleX(0)}
+@keyframes fillBar{to{transform:scaleX(1)}}
+
+/* DIFERENCIAÇÃO */
+.dif-table{margin-top:48px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.10);border-radius:18px;overflow:hidden;position:relative;z-index:1}
+.dif-row{display:grid;grid-template-columns:1.5fr 1fr 1fr 1.1fr;align-items:center;padding:18px 28px;border-bottom:1px solid rgba(255,255,255,.06)}
+.dif-row:last-child{border-bottom:none}
+.dif-row.header{background:rgba(0,0,0,.20);padding:20px 28px}
+.dif-row.header .dr-cell{font-family:var(--fm);font-size:10.5px;letter-spacing:1.6px;text-transform:uppercase;font-weight:600;color:rgba(245,241,234,.5);text-align:center}
+.dif-row.header .dr-cell.first{text-align:left}
+.dif-row.header .dr-cell.kom{color:var(--cyan)}
+.dif-row .dr-cell.first{font-size:14px;color:var(--linen);font-weight:500;text-align:left}
+.dif-row .dr-cell{font-size:13.5px;text-align:center;font-family:var(--fm);font-feature-settings:"tnum" on}
+.dr-mark{display:inline-flex;align-items:center;justify-content:center;width:26px;height:26px;border-radius:50%;font-weight:700;font-size:13px}
+.dr-mark.no{background:rgba(208,69,69,.12);color:#FF6B6B;border:1px solid rgba(208,69,69,.30)}
+.dr-mark.partial{background:rgba(200,168,119,.15);color:var(--champagne);border:1px solid rgba(200,168,119,.35)}
+.dr-mark.kom{background:var(--grad-d);color:#fff;border:none;font-size:14px;box-shadow:0 4px 12px rgba(36,213,255,.30)}
+
+/* STACK */
+.stack{background:var(--linen)}
+.stack-grid{margin-top:48px;display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.stack-card{background:var(--paper);border:1px solid var(--line);border-radius:14px;padding:24px 22px;display:flex;flex-direction:column;gap:12px;transition:transform .2s,border-color .25s}
+.stack-card:hover{transform:translateY(-2px);border-color:rgba(22,112,195,.30)}
+.stack-card .sc-cat{font-family:var(--fm);font-size:10px;letter-spacing:1.6px;text-transform:uppercase;color:var(--blue);font-weight:700}
+.stack-card h4{font-family:var(--fs);font-weight:500;font-size:17px;letter-spacing:-.3px;color:var(--navy);line-height:1.2;font-variation-settings:"opsz" 100}
+.stack-card p{font-size:12.5px;color:var(--soft);line-height:1.5}
+.partners{margin-top:56px;padding-top:48px;border-top:1px solid var(--line)}
+.partners-label{font-family:var(--fm);font-size:10.5px;letter-spacing:1.8px;text-transform:uppercase;color:var(--champ-dim);font-weight:700;margin-bottom:24px}
+.partners-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:16px}
+.partner{background:var(--paper);border:1px solid var(--line);border-radius:12px;padding:24px;display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:120px;gap:8px;text-align:center;transition:transform .2s,border-color .25s}
+.partner:hover{transform:translateY(-2px);border-color:rgba(200,168,119,.40)}
+.partner-name{font-family:var(--fs);font-weight:500;font-size:16px;letter-spacing:-.3px;color:var(--navy);font-variation-settings:"opsz" 100}
+.partner-cat{font-family:var(--fm);font-size:9.5px;letter-spacing:1.4px;text-transform:uppercase;color:var(--muted);font-weight:600}
+
+/* MODELO */
+.modelo{background:var(--navy);color:var(--linen)}
+.modelo-grid{margin-top:48px;display:grid;grid-template-columns:1fr 1.1fr;gap:32px;position:relative;z-index:1}
+.modelo-card{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.10);border-radius:18px;padding:36px;display:flex;flex-direction:column;gap:18px}
+.modelo-card .mc-tag{font-family:var(--fm);font-size:10.5px;letter-spacing:1.6px;text-transform:uppercase;color:var(--cyan);font-weight:700;display:inline-flex;align-items:center;gap:10px}
+.modelo-card .mc-tag::before{content:"";width:18px;height:2px;background:var(--cyan)}
+.modelo-card h3{font-family:var(--fs);font-weight:500;font-size:26px;letter-spacing:-.6px;line-height:1.15;color:var(--linen);font-variation-settings:"opsz" 100}
+.modelo-card h3 em{font-style:italic;color:var(--cyan)}
+.modelo-list{list-style:none;padding:0;margin:8px 0 0;display:flex;flex-direction:column;gap:14px}
+.modelo-list li{font-size:14px;color:rgba(245,241,234,.85);line-height:1.55;padding-left:26px;position:relative}
+.modelo-list li::before{content:"●";position:absolute;left:0;top:2px;color:var(--cyan);font-size:10px;line-height:1}
+.modelo-list li strong{font-weight:600;color:var(--linen)}
+.processo-steps{display:flex;flex-direction:column;gap:0;margin-top:8px}
+.proc-step{display:grid;grid-template-columns:36px 1fr;gap:16px;padding:14px 0;border-bottom:1px solid rgba(255,255,255,.06);align-items:start}
+.proc-step:last-child{border-bottom:none}
+.proc-step .ps-num{font-family:var(--fm);font-size:11px;font-weight:700;color:var(--cyan);background:rgba(36,213,255,.12);width:30px;height:30px;border-radius:8px;display:flex;align-items:center;justify-content:center;letter-spacing:.5px;border:1px solid rgba(36,213,255,.25)}
+.proc-step .ps-info h5{font-family:var(--fs);font-weight:500;font-size:15px;letter-spacing:-.3px;color:var(--linen);margin-bottom:3px;font-variation-settings:"opsz" 100}
+.proc-step .ps-info p{font-size:12.5px;color:rgba(245,241,234,.6);line-height:1.5}
+.modelo-foot{margin-top:32px;background:rgba(200,168,119,.06);border:1px solid rgba(200,168,119,.18);border-left:4px solid var(--champagne);border-radius:0 14px 14px 0;padding:22px 28px;font-size:13.5px;color:rgba(245,241,234,.75);line-height:1.6;position:relative;z-index:1}
+.modelo-foot strong{color:var(--linen);font-weight:700}
+
+/* CTA */
+.cta-final{background:var(--linen);position:relative;overflow:hidden;padding:120px 0}
+.cta-final::before{content:"";position:absolute;top:-200px;right:-100px;width:700px;height:700px;border-radius:50%;background:radial-gradient(circle,rgba(36,213,255,.10) 0%,transparent 60%);pointer-events:none}
+.cta-grid{display:grid;grid-template-columns:1.1fr 1fr;gap:48px;align-items:start;position:relative;z-index:1}
+.cta-left h2{font-family:var(--fs);font-weight:400;font-size:clamp(38px,5.2vw,62px);line-height:1.04;letter-spacing:-1.8px;color:var(--navy);margin-bottom:24px;font-variation-settings:"opsz" 144}
+.cta-left h2 em{font-style:italic;color:var(--blue)}
+.cta-left p{font-size:17px;color:var(--soft);line-height:1.65;margin-bottom:32px;max-width:520px}
+.cta-left p strong{color:var(--navy);font-weight:600}
+.cta-actions{display:flex;gap:14px;flex-wrap:wrap}
+.cta-btn-primary{background:var(--navy);color:var(--linen);padding:16px 28px;border-radius:12px;font-family:var(--fd);font-weight:600;font-size:14.5px;letter-spacing:.2px;text-decoration:none;display:inline-flex;align-items:center;gap:10px;box-shadow:0 8px 24px rgba(14,30,53,.18);transition:transform .2s}
+.cta-btn-primary:hover{transform:translateY(-2px)}
+.cta-btn-primary .arr{font-family:var(--fm);font-size:18px;color:var(--cyan)}
+.cta-btn-secondary{background:transparent;color:var(--navy);padding:16px 24px;border-radius:12px;border:1px solid var(--line-strong);font-family:var(--fd);font-weight:500;font-size:14.5px;letter-spacing:.2px;text-decoration:none;display:inline-flex;align-items:center;gap:8px;transition:all .2s}
+.cta-btn-secondary:hover{background:var(--paper);border-color:var(--blue)}
+.cta-steps{background:var(--paper);border:1px solid var(--line);border-radius:18px;padding:32px}
+.cta-step{display:grid;grid-template-columns:32px 1fr auto;gap:16px;padding:18px 0;border-bottom:1px solid var(--line);align-items:start}
+.cta-step:last-child{border-bottom:none;padding-bottom:0}
+.cta-step:first-child{padding-top:0}
+.cta-step .cs-num{font-family:var(--fm);font-size:11px;font-weight:700;color:var(--blue);background:rgba(22,112,195,.08);width:28px;height:28px;border-radius:8px;display:flex;align-items:center;justify-content:center;border:1px solid rgba(22,112,195,.20)}
+.cta-step .cs-info h5{font-family:var(--fs);font-weight:500;font-size:16px;letter-spacing:-.3px;color:var(--navy);margin-bottom:4px;font-variation-settings:"opsz" 100}
+.cta-step .cs-info p{font-size:12.5px;color:var(--soft);line-height:1.5}
+.cta-step .cs-meta{font-family:var(--fm);font-size:10.5px;color:var(--blue);font-weight:600;letter-spacing:.5px}
+.contact-card{margin-top:64px;background:var(--paper);border:1px solid var(--line);border-radius:18px;padding:32px;display:flex;align-items:center;gap:24px;flex-wrap:wrap;position:relative;z-index:1}
+.contact-card .cc-photo{width:64px;height:64px;border-radius:50%;background:var(--grad);flex-shrink:0;display:flex;align-items:center;justify-content:center;font-family:var(--fs);font-weight:500;font-size:24px;color:#fff;font-variation-settings:"opsz" 100;box-shadow:0 0 0 2px var(--blue)}
+.contact-card .cc-info{flex:1;min-width:200px}
+.contact-card .cc-info .cc-tag{font-family:var(--fm);font-size:10.5px;letter-spacing:1.6px;text-transform:uppercase;color:var(--blue);font-weight:600;margin-bottom:4px;display:block}
+.contact-card .cc-info h4{font-family:var(--fs);font-weight:500;font-size:20px;letter-spacing:-.4px;color:var(--navy);margin-bottom:2px;font-variation-settings:"opsz" 100}
+.contact-card .cc-info p{font-size:13px;color:var(--soft)}
+.contact-card .cc-lines{display:flex;flex-direction:column;gap:6px;font-family:var(--fm);font-size:12.5px}
+.contact-card .cc-lines a{color:var(--navy);text-decoration:none}
+.contact-card .cc-lines span{color:var(--soft)}
+.foot{background:var(--navy-deep);color:rgba(245,241,234,.5);padding:32px 0;border-top:1px solid rgba(245,241,234,.08)}
+.foot-inner{max-width:1240px;margin:0 auto;padding:0 40px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:18px}
+.foot .sig{font-family:var(--fs);font-weight:500;font-size:18px;letter-spacing:-.4px;color:var(--linen);font-variation-settings:"opsz" 100}
+.foot .meta{font-family:var(--fm);font-size:10.5px;letter-spacing:1.6px;text-transform:uppercase}
+
+/* MOBILE */
+@media (max-width:880px){
+  .wrap{padding:0 22px}
+  section{padding:64px 0}
+  .head-inner{padding:14px 22px}
+  .head-meta{display:none}
+  .head-cta{padding:8px 14px;font-size:11.5px}
+  .section-title{font-size:32px;letter-spacing:-1px}
+  .section-lead{font-size:15px;margin-bottom:36px}
+  .hero{padding:72px 0 56px}
+  .hero-display{font-size:48px;letter-spacing:-1.6px}
+  .hero-sub{font-size:15.5px;margin-bottom:40px}
+  .hero-meta{margin-bottom:48px;flex-direction:column;gap:14px;align-items:flex-start}
+  .hero-strip{grid-template-columns:1fr 1fr}
+  .hs .hs-val{font-size:20px}
+  .comp-table{grid-template-columns:1fr;gap:16px}
+  .comp-card{min-height:auto;padding:24px;gap:14px}
+  .comp-card h3{font-size:22px}
+  .tese-grid{grid-template-columns:1fr;gap:18px;margin-top:32px}
+  .tese-mid .plus{font-size:40px}
+  .tese-mid{padding:6px 0}
+  .tese-card{padding:24px}
+  .tese-card h3{font-size:22px}
+  .tese-symbol{width:60px;height:60px;border-radius:14px}
+  .tese-symbol svg{width:30px;height:30px}
+  .tese-equals{padding:22px;gap:14px;margin-top:32px}
+  .tese-equals h4{font-size:24px;letter-spacing:-.5px}
+  .tese-equals .equals-sign{font-size:24px}
+  .arq-stage{padding:20px;margin-top:32px}
+  .arq-ia-card{padding:12px 16px;gap:10px}
+  .arq-ia-card .ia-title{font-size:15px}
+  .arq-ia-card .ia-sub{font-size:10.5px}
+  .arq-row.r2,.arq-row.r3{grid-template-columns:1fr;gap:10px;margin-bottom:14px}
+  .arq-step{padding:12px;gap:10px}
+  .arq-step .as-visual{width:70px;min-height:70px}
+  .arq-step .as-title{font-size:13.5px}
+  .arq-step .as-desc{font-size:10.5px}
+  .arq-final-node{padding:10px 22px;gap:8px}
+  .arq-final-node .afn-tx{font-size:12px}
+  .arq-final-node .afn-sub{font-size:8.5px}
+  .ia-grid{grid-template-columns:1fr;gap:14px;margin-top:32px}
+  .ia-card-visual{height:170px}
+  .ia-card-body{padding:22px}
+  .ia-card-head h3{font-size:20px}
+  .ia-icon{width:38px;height:38px;border-radius:10px;font-size:12px}
+  .cam-people{grid-template-columns:repeat(8,1fr);padding:16px;gap:5px}
+  .cam-creatives{padding:14px;gap:6px}
+  .cam-chart{padding:18px}
+  .cam-chart .cch-bars{height:90px;gap:4px}
+  .cam-wa{padding:16px}
+  .cam-wa .cwa-msg{font-size:10px;padding:6px 9px}
+  .pil-grid{grid-template-columns:1fr;gap:14px;margin-top:32px}
+  .pil-card .pc-visual{height:120px}
+  .pil-card .pc-body{padding:22px}
+  .pil-card h3{font-size:20px}
+  .case-grid{grid-template-columns:1fr;gap:14px;margin-top:32px}
+  .case-card{padding:24px}
+  .case-big{font-size:60px;letter-spacing:-2px}
+  .case-name{font-size:19px}
+  .dif-table{margin-top:32px}
+  .dif-row{grid-template-columns:1fr;padding:14px 18px;gap:6px}
+  .dif-row.header{display:none}
+  .dif-row .dr-cell{text-align:left;display:flex;justify-content:space-between;align-items:center;font-size:13px}
+  .dif-row .dr-cell::before{content:attr(data-lbl);font-family:var(--fm);font-size:9.5px;letter-spacing:1.4px;text-transform:uppercase;color:rgba(245,241,234,.5);font-weight:500}
+  .dif-row .dr-cell.first{font-weight:600;border-bottom:1px solid rgba(255,255,255,.10);padding-bottom:12px;margin-bottom:6px}
+  .dif-row .dr-cell.first::before{display:none}
+  .stack-grid{grid-template-columns:1fr 1fr;gap:12px;margin-top:32px}
+  .stack-card{padding:20px}
+  .stack-card h4{font-size:15px}
+  .partners-grid{grid-template-columns:1fr 1fr;gap:12px}
+  .partner{padding:18px;min-height:90px}
+  .modelo-grid{grid-template-columns:1fr;gap:18px;margin-top:32px}
+  .modelo-card{padding:26px}
+  .modelo-card h3{font-size:22px}
+  .modelo-foot{padding:18px 22px;font-size:12.5px}
+  .cta-final{padding:64px 0}
+  .cta-grid{grid-template-columns:1fr;gap:32px}
+  .cta-left h2{font-size:34px;letter-spacing:-1px}
+  .cta-left p{font-size:15px}
+  .cta-actions{flex-direction:column;align-items:stretch}
+  .cta-btn-primary,.cta-btn-secondary{justify-content:center;text-align:center;padding:14px 24px}
+  .cta-steps{padding:22px}
+  .cta-step{padding:14px 0}
+  .contact-card{padding:22px;margin-top:40px}
+  .contact-card .cc-photo{width:54px;height:54px;font-size:20px}
+  .contact-card .cc-info h4{font-size:17px}
+  .foot-inner{padding:0 22px;flex-direction:column;align-items:flex-start;gap:12px}
+}
+</style>
+</head>
+<body>
+
+<header class="head">
+  <div class="head-inner">
+    <div class="head-brand"><span class="dot"></span>komplexa</div>
+    <div class="head-meta">
+      <span>Apresentação institucional</span>
+      <span class="sep">·</span>
+      <span>2026</span>
+    </div>
+    <a href="#cta" class="head-cta">Agendar diagnóstico</a>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap hero-content">
+    <div class="hero-meta">
+      <span>Komplexa Hotéis · Apresentação institucional</span>
+      <span class="meta-tag">2026</span>
+      <span>Documento confidencial</span>
+    </div>
+    <h1 class="hero-display">Inteligência aplicada<br>ao crescimento<br><em>hoteleiro.</em></h1>
+    <p class="hero-sub">A operação completa — <strong>marketing, vendas e pós-vendas</strong> — com IA e inteligência humana, dedicada exclusivamente a hotéis e pousadas. Não somos uma agência. Somos a estrutura que faz o seu hotel crescer com previsibilidade.</p>
+    <div class="hero-strip">
+      <div class="hs"><span class="hs-lbl">Foco</span><span class="hs-val"><em>100%</em> hotelaria</span><span class="hs-sub">Setor único, expertise profunda</span></div>
+      <div class="hs"><span class="hs-lbl">Integração</span><span class="hs-val"><em>3</em> frentes</span><span class="hs-sub">Marketing · Vendas · Pós-vendas</span></div>
+      <div class="hs"><span class="hs-lbl">Motor</span><span class="hs-val"><em>IA</em> + humano</span><span class="hs-sub">Escala técnica + estratégia</span></div>
+      <div class="hs"><span class="hs-lbl">Método</span><span class="hs-val"><em>7</em> etapas</span><span class="hs-sub">Arquitetura de Crescimento</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="manifesto">
+  <div class="wrap">
+    <span class="eyebrow"><span class="num">01</span>Posicionamento</span>
+    <h2 class="section-title">Não somos uma agência.<br>Somos uma <em>operação.</em></h2>
+    <p class="section-lead">A diferença não é semântica — é estrutural. Agência entrega execução isolada. Operação roda o sistema inteiro: do primeiro anúncio ao retorno do hóspede recorrente. Tudo conectado, tudo medido, executado por <strong>um time só</strong>.</p>
+
+    <div class="comp-table">
+      <div class="comp-card bad">
+        <span class="cc-tag">Agência tradicional</span>
+        <h3>Serviços <em>desconectados.</em></h3>
+        <div class="disconnected">
+          <div class="dis-item"><div class="di-ic">◯</div><span class="di-lbl">Ads</span></div>
+          <div class="dis-item"><div class="di-ic">◯</div><span class="di-lbl">Site</span></div>
+          <div class="dis-item"><div class="di-ic">◯</div><span class="di-lbl">Social</span></div>
+          <div class="dis-item"><div class="di-ic">◯</div><span class="di-lbl">SEO</span></div>
+          <div class="dis-item"><div class="di-ic">◯</div><span class="di-lbl">WhatsApp</span></div>
+          <div class="dis-item"><div class="di-ic">◯</div><span class="di-lbl">CRM</span></div>
+        </div>
+        <ul class="comp-list">
+          <li><span class="ic">○</span><span>Marketing isolado das vendas</span></li>
+          <li><span class="ic">○</span><span>5 fornecedores diferentes</span></li>
+          <li><span class="ic">○</span><span>Métricas de vaidade</span></li>
+          <li><span class="ic">○</span><span>Sem IA ou IA superficial</span></li>
+          <li><span class="ic">○</span><span>Sem pós-venda</span></li>
+        </ul>
+      </div>
+
+      <div class="comp-card good">
+        <span class="cc-tag">Operação Komplexa</span>
+        <h3>Sistema <em>integrado.</em></h3>
+        <div class="connected">
+          <div class="conn-grid">
+            <div class="conn-item"><div class="ci-ic">1</div><div class="ci-lbl">IA</div></div>
+            <div class="conn-item"><div class="ci-ic">2</div><div class="ci-lbl">Ads</div></div>
+            <div class="conn-item"><div class="ci-ic">3</div><div class="ci-lbl">Site</div></div>
+            <div class="conn-lines"></div>
+          </div>
+          <div class="conn-grid">
+            <div class="conn-item"><div class="ci-ic">4</div><div class="ci-lbl">Remkt</div></div>
+            <div class="conn-item"><div class="ci-ic">5</div><div class="ci-lbl">Comercial</div></div>
+            <div class="conn-item"><div class="ci-ic">6</div><div class="ci-lbl">Pós-venda</div></div>
+            <div class="conn-lines"></div>
+          </div>
+        </div>
+        <ul class="comp-list">
+          <li><span class="ic">✓</span><span><strong>3 pilares</strong> integrados</span></li>
+          <li><span class="ic">✓</span><span><strong>Um time só</strong>, todos os canais</span></li>
+          <li><span class="ic">✓</span><span>Indicadores de <strong>receita real</strong></span></li>
+          <li><span class="ic">✓</span><span>IA na <strong>espinha dorsal</strong></span></li>
+          <li><span class="ic">✓</span><span>Reativação de <strong>hóspedes</strong></span></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="tese">
+  <div class="wrap">
+    <span class="eyebrow"><span class="num">02</span>A tese</span>
+    <h2 class="section-title"><em>IA</em> escala execução.<br><em>Humano</em> conduz estratégia.</h2>
+    <p class="section-lead">Não é hype. É o motor da operação. A IA processa volume e precisão na velocidade que humano não alcança. A inteligência humana define direção e toma decisões que nenhum dado substitui. <strong>Juntas, viram crescimento previsível.</strong></p>
+
+    <div class="tese-grid">
+      <div class="tese-card ia">
+        <div style="display:flex;align-items:center;gap:18px">
+          <div class="tese-symbol ia">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a3 3 0 0 0-3 3v1.4A4 4 0 0 0 5 10v3a4 4 0 0 0 1 2.6V18a3 3 0 0 0 3 3h6a3 3 0 0 0 3-3v-2.4a4 4 0 0 0 1-2.6v-3a4 4 0 0 0-4-3.6V5a3 3 0 0 0-3-3z"/><circle cx="9" cy="11" r="1" fill="currentColor"/><circle cx="15" cy="11" r="1" fill="currentColor"/><path d="M9 16h6"/></svg>
+          </div>
+          <div>
+            <span class="tc-tag">Inteligência artificial</span>
+            <h3>O que a <em>IA</em> faz por você</h3>
+          </div>
+        </div>
+        <ul class="tese-list">
+          <li><strong>Segmentação por lookalike</strong> dos seus melhores hóspedes</li>
+          <li><strong>Exclusão automática</strong> de perfis sem potencial</li>
+          <li><strong>Criação assistida</strong> de criativos e copy</li>
+          <li><strong>Análise de campanha</strong> em tempo real</li>
+          <li><strong>Automações inteligentes</strong> de WhatsApp, e-mail e remarketing</li>
+        </ul>
+      </div>
+
+      <div class="tese-mid"><span class="plus">+</span></div>
+
+      <div class="tese-card human">
+        <div style="display:flex;align-items:center;gap:18px">
+          <div class="tese-symbol human">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+          </div>
+          <div>
+            <span class="tc-tag">Inteligência humana</span>
+            <h3>O que o <em>time</em> faz por você</h3>
+          </div>
+        </div>
+        <ul class="tese-list">
+          <li><strong>Account Manager dedicado</strong> · comunicação quase diária</li>
+          <li><strong>Estratégia de revenue</strong> + posicionamento</li>
+          <li><strong>Treinamento da equipe comercial</strong> do seu hotel</li>
+          <li><strong>Atendimento consultivo</strong> de longo prazo</li>
+          <li><strong>Decisões e ajustes finos</strong> que só expertise humana entrega</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="tese-equals">
+      <span class="equals-sign">=</span>
+      <h4>Crescimento <em>previsível.</em></h4>
+    </div>
+  </div>
+</section>
+
+<section class="arq">
+  <div class="wrap">
+    <span class="eyebrow"><span class="num">03</span>Metodologia</span>
+    <h2 class="section-title"><em>Arquitetura</em> de Crescimento Hoteleiro.</h2>
+    <p class="section-lead">Não é teoria. É o sistema que executamos em cada hotel da carteira. <strong>Sete etapas conectadas</strong> — do primeiro toque com o potencial hóspede ao seu retorno recorrente. IA no topo, alimentando todas as camadas.</p>
+
+    <div class="arq-stage">
+      <div class="arq-ia">
+        <div class="arq-ia-card">
+          <div class="ia-ic">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a3 3 0 0 0-3 3v1.4A4 4 0 0 0 5 10v3a4 4 0 0 0 1 2.6V18a3 3 0 0 0 3 3h6a3 3 0 0 0 3-3v-2.4a4 4 0 0 0 1-2.6v-3a4 4 0 0 0-4-3.6V5a3 3 0 0 0-3-3z"/></svg>
+          </div>
+          <div class="ia-tx">
+            <div class="ia-eyebrow">Camada superior</div>
+            <div class="ia-title">Inteligência Artificial</div>
+            <div class="ia-sub">Alimenta todas as etapas abaixo · seleção e exclusão estratégica de público</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="arq-row r3">
+        <div class="arq-step">
+          <div class="as-info">
+            <span class="as-num">01</span>
+            <span class="as-title">Segmentação</span>
+            <span class="as-desc">Lookalike + exclusão de perfis sem potencial</span>
+          </div>
+          <div class="as-visual">
+            <div class="mock-mini-people">
+              <span class="mmp"></span><span class="mmp match"></span><span class="mmp"></span><span class="mmp"></span>
+              <span class="mmp match"></span><span class="mmp"></span><span class="mmp"></span><span class="mmp match"></span>
+              <span class="mmp"></span><span class="mmp"></span><span class="mmp match"></span><span class="mmp"></span>
+            </div>
+          </div>
+        </div>
+
+        <div class="arq-step">
+          <div class="as-info">
+            <span class="as-num">02</span>
+            <span class="as-title">Atração</span>
+            <span class="as-desc">Anúncios em Meta e Google Ads</span>
+          </div>
+          <div class="as-visual">
+            <div class="mock-mini-ig">
+              <div class="mig-hdr"><div class="mig-av"></div><div class="mig-tx">hotel</div></div>
+              <div class="mig-img"></div>
+              <div class="mig-cta">Reservar</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="arq-step">
+          <div class="as-info">
+            <span class="as-num">03</span>
+            <span class="as-title">Conversão</span>
+            <span class="as-desc">Site + motor de reservas integrado</span>
+          </div>
+          <div class="as-visual">
+            <div class="mock-mini-site">
+              <div class="ms-bar"><span></span><span></span><span></span></div>
+              <div class="ms-hero">
+                <div class="ms-h1">Reserve <em>direto</em></div>
+                <div class="ms-cta">Buscar</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="arq-row r2">
+        <div class="arq-step">
+          <div class="as-info">
+            <span class="as-num">04</span>
+            <span class="as-title">Remarketing</span>
+            <span class="as-desc">Sequência inteligente para quem visitou e não converteu</span>
+          </div>
+          <div class="as-visual">
+            <div class="mock-mini-remkt">
+              <div class="mr-hdr"><div class="mr-av"></div><div class="mr-name">hotel</div></div>
+              <div class="mr-img">Você esteve aqui!</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="arq-step">
+          <div class="as-info">
+            <span class="as-num">05</span>
+            <span class="as-title">Recuperação</span>
+            <span class="as-desc">Carrinho abandonado · WhatsApp + e-mail automatizado</span>
+          </div>
+          <div class="as-visual">
+            <div class="mock-mini-wa">
+              <div class="mw-msg in">Olá! Vi sua reserva...</div>
+              <div class="mw-msg out">Acabei distraindo</div>
+              <div class="mw-msg in">Reservei por 24h</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="arq-row r2">
+        <div class="arq-step">
+          <div class="as-info">
+            <span class="as-num">06</span>
+            <span class="as-title">Conversão comercial</span>
+            <span class="as-desc">Equipe treinada + playbook + CRM configurado</span>
+          </div>
+          <div class="as-visual">
+            <div class="mock-mini-crm">
+              <div class="mcr-row"><span class="mcr-name">Maria</span><span class="mcr-tag">Hot</span></div>
+              <div class="mcr-row"><span class="mcr-name">João</span><span class="mcr-tag alt">New</span></div>
+              <div class="mcr-row"><span class="mcr-name">Ana</span><span class="mcr-tag">Hot</span></div>
+              <div class="mcr-row"><span class="mcr-name">Luis</span><span class="mcr-tag alt">New</span></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="arq-step">
+          <div class="as-info">
+            <span class="as-num">07</span>
+            <span class="as-title">Pós-venda</span>
+            <span class="as-desc">Reativação de hóspedes anteriores · LTV maior</span>
+          </div>
+          <div class="as-visual">
+            <div class="mock-mini-email">
+              <div class="me-hdr">Hotel Boutique</div>
+              <div class="me-grad"></div>
+              <div class="me-body">
+                <div class="me-ttl">Sentimos sua falta</div>
+                <div class="me-tx">Volte com 15% off</div>
+                <div class="me-cta">Reservar</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="arq-final">
+        <div class="arq-final-node">
+          <span class="afn-ic">✦</span>
+          <span class="afn-tx">CRESCIMENTO PREVISÍVEL</span>
+          <span class="afn-sub">com IA</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="ia-section">
+  <div class="wrap">
+    <span class="eyebrow"><span class="num">04</span>Como a IA opera</span>
+    <h2 class="section-title">Quatro camadas <em>de inteligência.</em></h2>
+    <p class="section-lead">A IA não é um produto que vendemos. É <strong>como operamos</strong> — em cada anúncio veiculado, cada mensagem enviada, cada decisão de campanha. Quatro frentes onde a IA carrega o peso técnico.</p>
+
+    <div class="ia-grid">
+      <div class="ia-card">
+        <div class="ia-card-visual">
+          <div class="cam-people">
+            <span class="cp"></span><span class="cp"></span><span class="cp match"></span><span class="cp"></span><span class="cp"></span><span class="cp match"></span><span class="cp"></span><span class="cp"></span><span class="cp"></span><span class="cp match"></span>
+            <span class="cp match"></span><span class="cp"></span><span class="cp"></span><span class="cp"></span><span class="cp match"></span><span class="cp"></span><span class="cp"></span><span class="cp match"></span><span class="cp"></span><span class="cp"></span>
+            <span class="cp"></span><span class="cp match"></span><span class="cp"></span><span class="cp"></span><span class="cp"></span><span class="cp match"></span><span class="cp"></span><span class="cp"></span><span class="cp match"></span><span class="cp"></span>
+            <span class="cp"></span><span class="cp"></span><span class="cp match"></span><span class="cp"></span><span class="cp"></span><span class="cp"></span><span class="cp match"></span><span class="cp"></span><span class="cp"></span><span class="cp match"></span>
+          </div>
+        </div>
+        <div class="ia-card-body">
+          <div class="ia-card-head">
+            <div class="ia-icon">01</div>
+            <h3>Segmentação <em>de público</em></h3>
+          </div>
+          <ul class="ia-list">
+            <li><strong>Lookalike</strong> dos seus melhores hóspedes via PMS</li>
+            <li><strong>Exclusão</strong> de perfis que não convertem</li>
+            <li>Refinamento <strong>contínuo</strong> mês a mês</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="ia-card">
+        <div class="ia-card-visual">
+          <div class="cam-creatives">
+            <div class="cc"><div class="cc-img"></div><div class="cc-bar">Ad 01</div></div>
+            <div class="cc"><div class="cc-img b"></div><div class="cc-bar">Ad 02</div></div>
+            <div class="cc"><div class="cc-img c"></div><div class="cc-bar">Ad 03</div></div>
+          </div>
+        </div>
+        <div class="ia-card-body">
+          <div class="ia-card-head">
+            <div class="ia-icon">02</div>
+            <h3>Criação <em>de criativos</em></h3>
+          </div>
+          <ul class="ia-list">
+            <li><strong>Geração assistida</strong> de estáticos, vídeo e copy</li>
+            <li><strong>Variações otimizadas</strong> por etapa do funil</li>
+            <li>Time opera <strong>10× mais rápido</strong></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="ia-card">
+        <div class="ia-card-visual">
+          <div class="cam-chart">
+            <div class="cch-bars">
+              <div class="cchb" style="height:45%"></div>
+              <div class="cchb" style="height:60%"></div>
+              <div class="cchb" style="height:52%"></div>
+              <div class="cchb" style="height:72%"></div>
+              <div class="cchb" style="height:65%"></div>
+              <div class="cchb" style="height:88%"></div>
+              <div class="cchb" style="height:78%"></div>
+              <div class="cchb" style="height:100%"></div>
+            </div>
+            <div class="cch-axis"><span>JAN</span><span>AGO</span></div>
+          </div>
+        </div>
+        <div class="ia-card-body">
+          <div class="ia-card-head">
+            <div class="ia-icon">03</div>
+            <h3>Análise <em>de dados</em></h3>
+          </div>
+          <ul class="ia-list">
+            <li><strong>Performance em tempo real</strong></li>
+            <li>Identificação automática de <strong>padrões</strong></li>
+            <li><strong>Recomendações</strong> geradas por dado</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="ia-card">
+        <div class="ia-card-visual">
+          <div class="cam-wa">
+            <div class="cwa-msg in">Olá Maria! 👋 Vi que estava reservando.</div>
+            <div class="cwa-msg out">Acabei me distraindo</div>
+            <div class="cwa-msg in">Reservei por <strong>24h</strong> com 10% off.</div>
+          </div>
+        </div>
+        <div class="ia-card-body">
+          <div class="ia-card-head">
+            <div class="ia-icon">04</div>
+            <h3>Automação <em>operacional</em></h3>
+          </div>
+          <ul class="ia-list">
+            <li><strong>WhatsApp</strong> via API oficial com fluxos inteligentes</li>
+            <li><strong>Recuperação</strong> personalizada por etapa</li>
+            <li>Operação <strong>24/7</strong> sem presença humana constante</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="pilares">
+  <div class="wrap">
+    <span class="eyebrow"><span class="num">05</span>Os pilares integrados</span>
+    <h2 class="section-title">Três frentes. <em>Um sistema.</em></h2>
+    <p class="section-lead">O que falta no marketing hoteleiro tradicional: <strong>integração</strong>. Marketing atrai, mas Vendas converte e Pós-Vendas faz o hóspede voltar. A Komplexa entrega os três pilares operando em sincronia — não como serviços separados.</p>
+
+    <div class="pil-grid">
+      <div class="pil-card">
+        <div class="pc-visual">
+          <div class="pmk-mkt">
+            <div class="pmkc"><div class="pmkc-img"></div><div class="pmkc-bar"></div></div>
+            <div class="pmkc"><div class="pmkc-img"></div><div class="pmkc-bar"></div></div>
+            <div class="pmkc"><div class="pmkc-img"></div><div class="pmkc-bar"></div></div>
+          </div>
+        </div>
+        <div class="pc-body">
+          <span class="pc-num">Pilar 01</span>
+          <h3><em>Marketing</em></h3>
+          <p class="pc-sub">Atração qualificada com tráfego pago, conteúdo e SEO — conectado ao motor de reservas.</p>
+          <ul class="pil-list">
+            <li>Meta Ads + Google Ads (alto nível técnico)</li>
+            <li>Gestão de redes sociais</li>
+            <li>Sites de alta conversão</li>
+            <li>SEO orgânico</li>
+            <li>Funis por ocasião</li>
+            <li>Recuperação de carrinho</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="pil-card">
+        <div class="pc-visual">
+          <div class="pmk-vendas">
+            <div class="pmv-row"><span class="pmv-name">Maria Silva · Suíte Premium</span><span class="pmv-tag hot">Hot</span></div>
+            <div class="pmv-row"><span class="pmv-name">João Pedro · 3 noites</span><span class="pmv-tag new">New</span></div>
+            <div class="pmv-row"><span class="pmv-name">Ana Costa · Casamento</span><span class="pmv-tag win">Win</span></div>
+            <div class="pmv-row"><span class="pmv-name">Lucas Oliveira · Família</span><span class="pmv-tag new">New</span></div>
+          </div>
+        </div>
+        <div class="pc-body">
+          <span class="pc-num">Pilar 02</span>
+          <h3><em>Vendas</em></h3>
+          <p class="pc-sub">Conversão profissional — sua equipe treinada, com CRM, playbook e automações de WhatsApp.</p>
+          <ul class="pil-list">
+            <li>WhatsApp Business API oficial</li>
+            <li>Fluxos de qualificação automática</li>
+            <li>Follow-up para leads não respondidos</li>
+            <li>Recuperação de orçamentos</li>
+            <li>Treinamento da sua equipe</li>
+            <li>CRM + Playbook documentado</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="pil-card">
+        <div class="pc-visual">
+          <div class="pmk-pos">
+            <div class="pmp-mail">
+              <div class="pmp-mail-hdr">Hotel Boutique</div>
+              <div class="pmp-mail-grad"></div>
+              <div class="pmp-mail-body">
+                <strong>Sentimos sua falta</strong>
+                Faz 8 meses desde sua última estadia.
+                <span class="cta">15% off</span>
+              </div>
+            </div>
+            <div class="pmp-wa">
+              <div class="pmp-wa-msg in">Olá Maria!</div>
+              <div class="pmp-wa-msg in">Lembra de nós?</div>
+              <div class="pmp-wa-msg out">Claro!</div>
+              <div class="pmp-wa-msg in">15% off só pra você</div>
+            </div>
+          </div>
+        </div>
+        <div class="pc-body">
+          <span class="pc-num">Pilar 03</span>
+          <h3>Pós-vendas <em>& fidelização</em></h3>
+          <p class="pc-sub">Hóspede anterior é o público mais barato de converter — Komplexa reativa esse banco de forma estruturada.</p>
+          <ul class="pil-list">
+            <li>E-mail marketing segmentado</li>
+            <li>WhatsApp personalizado</li>
+            <li>Remarketing para hóspedes</li>
+            <li>Campanhas em datas comemorativas</li>
+            <li>Aniversários de hospedagem</li>
+            <li>Aumento de LTV por hóspede</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="cases">
+  <div class="wrap">
+    <span class="eyebrow"><span class="num">06</span>Provas</span>
+    <h2 class="section-title">Crescimento <em>real, medido.</em></h2>
+    <p class="section-lead">Resultados gerados pela <strong>Arquitetura de Crescimento Hoteleiro</strong>, atribuídos por dado — não por percepção. Casos reais da carteira da Komplexa.</p>
+
+    <div class="case-grid">
+      <div class="case-card">
+        <span class="case-tag">Case · Hotel Boutique</span>
+        <h3 class="case-name">Hotel Boutique<br><em>Bahia Bonita</em></h3>
+        <div class="case-big">19×</div>
+        <span class="case-result">ROI sobre investimento em mídia</span>
+        <div class="case-bar"><div class="fill" style="width:100%"></div></div>
+        <p class="case-desc">Hotel boutique no litoral baiano com dependência crítica de OTAs. Cada R$ 1 em mídia retornou <strong>R$ 19 em receita direta</strong>.</p>
+      </div>
+
+      <div class="case-card">
+        <span class="case-tag">Case · Pousada</span>
+        <h3 class="case-name">Pousada Solar<br><em>Dona Dora</em></h3>
+        <div class="case-big">3,4×</div>
+        <span class="case-result">Faturamento na baixa temporada</span>
+        <div class="case-bar"><div class="fill" style="width:72%"></div></div>
+        <p class="case-desc">Saiu de <strong>R$ 12.403 → R$ 42.513</strong>, mesmo mês de baixa, ano seguinte. +400% reservas, +323% noites.</p>
+      </div>
+
+      <div class="case-card">
+        <span class="case-tag">Case · Alto Padrão</span>
+        <h3 class="case-name">Hotel Boutique<br><em>Premium</em></h3>
+        <div class="case-big">R$ 1MM+</div>
+        <span class="case-result">Faturamento atribuído à Komplexa</span>
+        <div class="case-bar"><div class="fill" style="width:88%"></div></div>
+        <p class="case-desc">Hotel com ocupação máxima consistente e <strong>+R$ 1 milhão</strong> atribuído diretamente às ações da operação Komplexa.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="dif dark">
+  <div class="wrap">
+    <span class="eyebrow"><span class="num">07</span>Por que Komplexa</span>
+    <h2 class="section-title">Não há ninguém <em>fazendo isso.</em></h2>
+    <p class="section-lead">Comparamos com agências genéricas (que não entendem o setor) e com agências hoteleiras tradicionais (que entendem o básico). A Komplexa opera em <strong>patamar técnico e metodológico diferente</strong>.</p>
+
+    <div class="dif-table">
+      <div class="dif-row header">
+        <span class="dr-cell first">Critério</span>
+        <span class="dr-cell">Agência genérica</span>
+        <span class="dr-cell">Agência hoteleira</span>
+        <span class="dr-cell kom">Komplexa</span>
+      </div>
+      <div class="dif-row">
+        <span class="dr-cell first" data-lbl="Critério">Especialização 100% hotelaria</span>
+        <span class="dr-cell" data-lbl="Agência genérica"><span class="dr-mark no">×</span></span>
+        <span class="dr-cell" data-lbl="Agência hoteleira"><span class="dr-mark partial">~</span></span>
+        <span class="dr-cell" data-lbl="Komplexa"><span class="dr-mark kom">✓</span></span>
+      </div>
+      <div class="dif-row">
+        <span class="dr-cell first" data-lbl="Critério">Marketing + Vendas + Pós-vendas integrados</span>
+        <span class="dr-cell" data-lbl="Agência genérica"><span class="dr-mark no">×</span></span>
+        <span class="dr-cell" data-lbl="Agência hoteleira"><span class="dr-mark no">×</span></span>
+        <span class="dr-cell" data-lbl="Komplexa"><span class="dr-mark kom">✓</span></span>
+      </div>
+      <div class="dif-row">
+        <span class="dr-cell first" data-lbl="Critério">IA na espinha dorsal da operação</span>
+        <span class="dr-cell" data-lbl="Agência genérica"><span class="dr-mark no">×</span></span>
+        <span class="dr-cell" data-lbl="Agência hoteleira"><span class="dr-mark partial">~</span></span>
+        <span class="dr-cell" data-lbl="Komplexa"><span class="dr-mark kom">✓</span></span>
+      </div>
+      <div class="dif-row">
+        <span class="dr-cell first" data-lbl="Critério">Funis múltiplos por ocasião</span>
+        <span class="dr-cell" data-lbl="Agência genérica"><span class="dr-mark no">×</span></span>
+        <span class="dr-cell" data-lbl="Agência hoteleira"><span class="dr-mark no">×</span></span>
+        <span class="dr-cell" data-lbl="Komplexa"><span class="dr-mark kom">✓</span></span>
+      </div>
+      <div class="dif-row">
+        <span class="dr-cell first" data-lbl="Critério">Treinamento de equipe + CRM</span>
+        <span class="dr-cell" data-lbl="Agência genérica"><span class="dr-mark no">×</span></span>
+        <span class="dr-cell" data-lbl="Agência hoteleira"><span class="dr-mark no">×</span></span>
+        <span class="dr-cell" data-lbl="Komplexa"><span class="dr-mark kom">✓</span></span>
+      </div>
+      <div class="dif-row">
+        <span class="dr-cell first" data-lbl="Critério">Recuperação e reativação de hóspedes</span>
+        <span class="dr-cell" data-lbl="Agência genérica"><span class="dr-mark no">×</span></span>
+        <span class="dr-cell" data-lbl="Agência hoteleira"><span class="dr-mark no">×</span></span>
+        <span class="dr-cell" data-lbl="Komplexa"><span class="dr-mark kom">✓</span></span>
+      </div>
+      <div class="dif-row">
+        <span class="dr-cell first" data-lbl="Critério">Account Manager dedicado · comunicação diária</span>
+        <span class="dr-cell" data-lbl="Agência genérica"><span class="dr-mark partial">~</span></span>
+        <span class="dr-cell" data-lbl="Agência hoteleira"><span class="dr-mark partial">~</span></span>
+        <span class="dr-cell" data-lbl="Komplexa"><span class="dr-mark kom">✓</span></span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="stack">
+  <div class="wrap">
+    <span class="eyebrow"><span class="num">08</span>Tecnologia</span>
+    <h2 class="section-title">Plataformas oficiais. <em>Integradas.</em></h2>
+    <p class="section-lead">Operamos exclusivamente com <strong>plataformas oficiais</strong> e parceiras-chave do setor. Sem gambiarra, sem comissionamento escondido, sem risco operacional para seu hotel.</p>
+
+    <div class="stack-grid">
+      <div class="stack-card">
+        <span class="sc-cat">Mídia paga</span>
+        <h4>Meta Ads + Google Ads</h4>
+        <p>Facebook, Instagram, Search, Display, YouTube, Performance Max</p>
+      </div>
+      <div class="stack-card">
+        <span class="sc-cat">Analytics</span>
+        <h4>GA4 + Pixel + CAPI</h4>
+        <p>Conversions API para rastreamento preciso</p>
+      </div>
+      <div class="stack-card">
+        <span class="sc-cat">Conversação</span>
+        <h4>WhatsApp Business API</h4>
+        <p>Plataformas oficiais — sem risco de bloqueio da conta</p>
+      </div>
+      <div class="stack-card">
+        <span class="sc-cat">CRM + Automação</span>
+        <h4>CRM customizado</h4>
+        <p>Configuração específica por porte e perfil de cada hotel</p>
+      </div>
+    </div>
+
+    <div class="partners">
+      <div class="partners-label">Parceiros integrados ao seu ecossistema</div>
+      <div class="partners-grid">
+        <div class="partner"><span class="partner-name">Erbon</span><span class="partner-cat">PMS</span></div>
+        <div class="partner"><span class="partner-name">HSystem</span><span class="partner-cat">PMS</span></div>
+        <div class="partner"><span class="partner-name">Omnibees</span><span class="partner-cat">Channel Manager</span></div>
+        <div class="partner"><span class="partner-name">Foco</span><span class="partner-cat">Motor de Reservas</span></div>
+        <div class="partner"><span class="partner-name">Asksuite</span><span class="partner-cat">Atendimento</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="modelo">
+  <div class="wrap">
+    <span class="eyebrow"><span class="num">09</span>A entrega</span>
+    <h2 class="section-title">Como rodamos <em>a sua operação.</em></h2>
+    <p class="section-lead">Modelo de gestão da Komplexa é <strong>proativo</strong>. Você não precisa cobrar — a equipe comunica praticamente todo dia o que está acontecendo. Transparência total, sem zona cinzenta.</p>
+
+    <div class="modelo-grid">
+      <div class="modelo-card">
+        <span class="mc-tag">Cliente ativo</span>
+        <h3>Modelo de <em>gestão diária.</em></h3>
+        <ul class="modelo-list">
+          <li><strong>Account Manager dedicado</strong> · canal direto sempre aberto</li>
+          <li>Comunicação <strong>quase diária</strong> do que foi entregue</li>
+          <li><strong>Reuniões semanais</strong> de performance e estratégia</li>
+          <li>Análises conjuntas de <strong>RevPAR, ocupação, ROAS</strong></li>
+          <li><strong>Dashboards em tempo real</strong> sobre indicadores</li>
+          <li>Reuniões estratégicas para planos de ocupação</li>
+        </ul>
+        <div class="modelo-foot">
+          <strong>Permanência mínima de 3 meses.</strong> Marketing de performance é estratégia de médio prazo — os melhores resultados se constroem com otimização contínua.
+        </div>
+      </div>
+
+      <div class="modelo-card">
+        <span class="mc-tag">Cliente novo</span>
+        <h3>Processo de <em>onboarding.</em></h3>
+        <div class="processo-steps">
+          <div class="proc-step"><span class="ps-num">01</span><div class="ps-info"><h5>Primeiro contato</h5><p>Atendimento inicial · qualificação · entendimento do perfil</p></div></div>
+          <div class="proc-step"><span class="ps-num">02</span><div class="ps-info"><h5>Diagnóstico</h5><p>Análise de presença digital, performance e dependência de OTAs</p></div></div>
+          <div class="proc-step"><span class="ps-num">03</span><div class="ps-info"><h5>Proposta customizada</h5><p>Escopo específico · investimento · projeção de resultados em até 48h</p></div></div>
+          <div class="proc-step"><span class="ps-num">04</span><div class="ps-info"><h5>Apresentação</h5><p>Reunião da metodologia, diferenciais e expectativas</p></div></div>
+          <div class="proc-step"><span class="ps-num">05</span><div class="ps-info"><h5>Fechamento + onboarding</h5><p>Imersão inicial, acessos, briefing, plano de 90 dias</p></div></div>
+          <div class="proc-step"><span class="ps-num">06</span><div class="ps-info"><h5>Implementação</h5><p>Operação rodando · ciclo de aprendizado e otimização contínua</p></div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="cta-final" id="cta">
+  <div class="wrap">
+    <div class="cta-grid">
+      <div class="cta-left">
+        <span class="eyebrow"><span class="num">10</span>Próximos passos</span>
+        <h2>Vamos construir<br>o <em>crescimento</em> do seu hotel?</h2>
+        <p>Próximo passo: <strong>reunião de diagnóstico</strong>. Em 30 minutos, mapeamos sua operação atual e identificamos as principais alavancas de crescimento. Sem custo, sem compromisso — apenas a primeira conversa estratégica.</p>
+        <div class="cta-actions">
+          <a href="https://komplexa-pricing.vercel.app/f/komplexaconsultoria?utm_source=komplexahoteis&utm_medium=site&utm_content=deck-komplexa-ia" target="_blank" class="cta-btn-primary">Agendar diagnóstico <span class="arr">→</span></a>
+          <a href="https://komplexahoteis.com" target="_blank" class="cta-btn-secondary">Conhecer a Komplexa</a>
+        </div>
+      </div>
+
+      <div class="cta-steps">
+        <div class="cta-step"><span class="cs-num">01</span><div class="cs-info"><h5>Reunião de diagnóstico</h5><p>Análise da operação atual e mapeamento de oportunidades</p></div><span class="cs-meta">30 min</span></div>
+        <div class="cta-step"><span class="cs-num">02</span><div class="cs-info"><h5>Proposta customizada</h5><p>Escopo, investimento e projeção de resultados específicos</p></div><span class="cs-meta">em 48h</span></div>
+        <div class="cta-step"><span class="cs-num">03</span><div class="cs-info"><h5>Início da operação</h5><p>Kickoff, onboarding e implementação da metodologia</p></div><span class="cs-meta">15 dias</span></div>
+      </div>
+    </div>
+
+    <div class="contact-card">
+      <div class="cc-photo">IS</div>
+      <div class="cc-info">
+        <span class="cc-tag">Falou com você</span>
+        <h4>Igor Salomão</h4>
+        <p>Sócio-fundador · Komplexa</p>
+      </div>
+      <div class="cc-lines">
+        <a href="mailto:igor.salomao@komplexagrowth.com">igor.salomao@komplexagrowth.com</a>
+        <span>komplexahoteis.com</span>
+        <span>+55 12 98193-5958</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="foot">
+  <div class="foot-inner">
+    <div class="sig">komplexa<span style="color:var(--cyan)">.</span></div>
+    <div class="meta">Apresentação institucional · 2026 · Documento confidencial</div>
+  </div>
+</footer>
+
+</body>
+</html>
