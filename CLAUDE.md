@@ -21,7 +21,8 @@ Pure HTML + CSS + vanilla JS. No build system, no framework, no dependencies (on
 ├── contato.html          # Contato (all CTAs → komplexa-pricing.vercel.app/f/komplexaconsultoria)
 ├── blog/
 │   ├── index.html        # Blog listing
-│   └── post-ota.html     # Post template (use as base for new posts)
+│   ├── _template.html    # Post template (FAQ + schema) — base for new posts
+│   └── post-ota.html     # Example published post
 └── assets/
     ├── style.css         # Shared stylesheet (nav, footer, buttons, layout)
     └── logo.svg          # Brand logo (gradient SVG)
@@ -63,17 +64,18 @@ function toggleMenu() {
 
 ## Adding a New Blog Post
 
-Copy `blog/post-ota.html` as the template. Key elements to update:
-- `<title>` tag
-- `.post-breadcrumb` category label
-- `.post-category-pill` text
-- `<h1>` headline
-- `.post-meta` date and reading time
+Copy `blog/_template.html` as the base (it already includes the full SEO `<head>`, the FAQ section + `FAQPage` schema, and the `.data-block`/`.faq` styles). Replace the `__PLACEHOLDER__` tokens and update:
+- `<title>`, `<meta name="description">`, `<meta name="keywords">`
+- Canonical, Open Graph and Twitter URLs (use the post slug)
+- `BlogPosting` + `BreadcrumbList` + `FAQPage` JSON-LD in the `<head>` (dates, slug, category, keywords)
+- `.post-breadcrumb` category label and `.post-category-pill` text
+- `<h1>` headline and `.post-meta` date + reading time
 - Article body inside `<article class="post-content">`
+- **FAQ:** keep the visible `<details class="faq-item">` questions **identical** to the `FAQPage` schema in the `<head>`
 - Table of contents links in `.sidebar-card` (href="#id")
 - Related posts in sidebar and `.related-grid`
 
-Update `blog/index.html` to add the new post card in `.posts-grid`.
+Then update `blog/index.html` to add the new post card in `.posts-grid`, and add the post URL to `sitemap.xml`.
 
 ## Content Source
 
