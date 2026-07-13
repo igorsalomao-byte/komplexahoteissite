@@ -75,24 +75,25 @@ html,body{font-family:var(--fd);background:var(--page-bg);color:var(--navy);-web
 .branch.bot{animation-delay:.55s}
 @keyframes drawBranch{to{stroke-dashoffset:0}}
 
-/* branch labels (between middle nodes) */
+/* branch labels — pill sits ON the branch line, mid-segment between the two nodes */
 .branch-label{
   position:absolute;
-  left:50%;transform:translateX(-50%);
+  left:45%;transform:translate(-50%,-50%);
+  display:inline-block;width:max-content;
   padding:6px 14px;
-  font-size:10.5px;font-weight:700;letter-spacing:1.8px;text-transform:uppercase;
+  font-size:10px;font-weight:700;letter-spacing:1.8px;text-transform:uppercase;
   color:var(--g3);
-  background:rgba(36,213,255,.08);
-  border:1px solid rgba(36,213,255,.3);
+  background:rgba(10,15,26,.92);
+  border:1px solid rgba(36,213,255,.42);
   border-radius:100px;
   opacity:0;
   animation:fadeIn .6s ease forwards;
-  z-index:2;
+  z-index:4;
   white-space:nowrap;
-  backdrop-filter:blur(2px);
+  box-shadow:0 4px 18px rgba(0,0,0,.4);
 }
-.branch-label.top{top:-4%;animation-delay:1.5s}
-.branch-label.bot{bottom:-4%;animation-delay:1.7s}
+.branch-label.top{top:20%;animation-delay:1.6s}
+.branch-label.bot{top:80%;animation-delay:1.8s}
 @keyframes fadeIn{to{opacity:1}}
 
 /* Nodes (absolute positioned by left/top on parent .metodo-flow) */
