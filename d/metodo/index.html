@@ -75,25 +75,6 @@ html,body{font-family:var(--fd);background:var(--page-bg);color:var(--navy);-web
 .branch.bot{animation-delay:.55s}
 @keyframes drawBranch{to{stroke-dashoffset:0}}
 
-/* branch labels — pill sits ON the branch line, mid-segment between the two nodes */
-.branch-label{
-  position:absolute;
-  left:45%;transform:translate(-50%,-50%);
-  display:inline-block;width:max-content;
-  padding:6px 14px;
-  font-size:10px;font-weight:700;letter-spacing:1.8px;text-transform:uppercase;
-  color:var(--g3);
-  background:rgba(10,15,26,.92);
-  border:1px solid rgba(36,213,255,.42);
-  border-radius:100px;
-  opacity:0;
-  animation:fadeIn .6s ease forwards;
-  z-index:4;
-  white-space:nowrap;
-  box-shadow:0 4px 18px rgba(0,0,0,.4);
-}
-.branch-label.top{top:36%;animation-delay:1.6s}
-.branch-label.bot{top:64%;animation-delay:1.8s}
 @keyframes fadeIn{to{opacity:1}}
 
 /* Nodes (absolute positioned by left/top on parent .metodo-flow) */
@@ -223,46 +204,46 @@ html,body{font-family:var(--fd);background:var(--page-bg);color:var(--navy);-web
 
         <!-- ROUTE A (top · autoatendimento): Criativos → ADS → Site → Motor → Reserva -->
         <path class="branch top" pathLength="1"
-              d="M 50 150 L 170 150 C 240 150, 240 60, 310 60 L 460 60 C 700 60, 750 150, 920 150"
+              d="M 50 150 L 200 150 L 320 60 L 720 60 L 920 150"
               stroke="url(#mainGrad)" stroke-width="2.6" fill="none" opacity=".95"
-              filter="url(#glow)" stroke-linecap="round"/>
+              filter="url(#glow)" stroke-linecap="round" stroke-linejoin="round"/>
 
         <!-- ROUTE B (bot · assistido): Criativos → ADS → Landing → WhatsApp → Treinamento → Remarketing → Reserva -->
         <path class="branch bot" pathLength="1"
-              d="M 50 150 L 170 150 C 240 150, 240 240, 310 240 L 780 240 C 870 240, 880 150, 920 150"
+              d="M 50 150 L 200 150 L 320 240 L 780 240 L 920 150"
               stroke="url(#mainGrad)" stroke-width="2.6" fill="none" opacity=".95"
-              filter="url(#glow)" stroke-linecap="round"/>
+              filter="url(#glow)" stroke-linecap="round" stroke-linejoin="round"/>
 
         <!-- CROSS connector (secondary · dashed): Site → WhatsApp -->
         <path class="branch cross" pathLength="1"
-              d="M 310 60 C 380 60, 380 240, 460 240"
+              d="M 310 60 L 460 240"
               stroke="rgba(255,255,255,.55)" stroke-width="1.5" fill="none"
               stroke-dasharray="4 5" stroke-linecap="round"/>
 
         <!-- Flowing dots — Route A -->
         <circle r="4" fill="#24D5FF" filter="url(#glow)" opacity=".95">
           <animateMotion dur="6.5s" repeatCount="indefinite" begin="2s"
-                         path="M 50 150 L 170 150 C 240 150, 240 60, 310 60 L 460 60 C 700 60, 750 150, 920 150"/>
+                         path="M 50 150 L 200 150 L 320 60 L 720 60 L 920 150"/>
         </circle>
         <circle r="3" fill="#fff" filter="url(#glow)" opacity=".85">
           <animateMotion dur="6.5s" repeatCount="indefinite" begin="4s"
-                         path="M 50 150 L 170 150 C 240 150, 240 60, 310 60 L 460 60 C 700 60, 750 150, 920 150"/>
+                         path="M 50 150 L 200 150 L 320 60 L 720 60 L 920 150"/>
         </circle>
 
         <!-- Flowing dots — Route B -->
         <circle r="4" fill="#24D5FF" filter="url(#glow)" opacity=".95">
           <animateMotion dur="7.5s" repeatCount="indefinite" begin="2.5s"
-                         path="M 50 150 L 170 150 C 240 150, 240 240, 310 240 L 780 240 C 870 240, 880 150, 920 150"/>
+                         path="M 50 150 L 200 150 L 320 240 L 780 240 L 920 150"/>
         </circle>
         <circle r="3" fill="#fff" filter="url(#glow)" opacity=".85">
           <animateMotion dur="7.5s" repeatCount="indefinite" begin="4.5s"
-                         path="M 50 150 L 170 150 C 240 150, 240 240, 310 240 L 780 240 C 870 240, 880 150, 920 150"/>
+                         path="M 50 150 L 200 150 L 320 240 L 780 240 L 920 150"/>
         </circle>
 
         <!-- Small dot on cross connector -->
         <circle r="2.5" fill="#fff" opacity=".7">
           <animateMotion dur="4s" repeatCount="indefinite" begin="3.2s"
-                         path="M 310 60 C 380 60, 380 240, 460 240"/>
+                         path="M 310 60 L 460 240"/>
         </circle>
       </svg>
 
