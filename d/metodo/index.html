@@ -48,13 +48,14 @@ html,body{font-family:var(--fd);background:var(--page-bg);color:var(--navy);-web
 .slide-metodo .body{justify-content:flex-start;gap:0}
 .metodo-head{max-width:920px}
 
+/* container e viewBox compartilham a MESMA proporção (1000×400):
+   nodes em left/top % mapeiam 1:1 nas coordenadas do SVG */
 .metodo-flow{
   width:100%;
-  aspect-ratio:1000/340;
-  margin:18px auto 0;
+  flex:1;
+  margin-top:8px;
   position:relative;
-  flex-shrink:1;
-  max-height:calc(100% - 18px);
+  min-height:0;
 }
 
 .flow-svg{
@@ -77,26 +78,27 @@ html,body{font-family:var(--fd);background:var(--page-bg);color:var(--navy);-web
 
 @keyframes fadeIn{to{opacity:1}}
 
-/* Nodes (absolute positioned by left/top on parent .metodo-flow) */
+/* Nodes — o CENTRO DO ÍCONE ancora no ponto exato da linha;
+   o label fica absoluto (acima ou abaixo), fora do cálculo de centro */
 .node{
   position:absolute;
   transform:translate(-50%,-50%);
   z-index:3;
 }
 .node-inner{
-  display:flex;flex-direction:column;align-items:center;gap:12px;
+  position:relative;
   opacity:0;transform:scale(.7);
   animation:nodeIn .55s cubic-bezier(.34,1.4,.64,1) forwards;
 }
 .node.start .node-inner{animation-delay:.2s}
-.node.ads .node-inner{animation-delay:.35s}
-.node.n3 .node-inner{animation-delay:.55s}
-.node.n4 .node-inner{animation-delay:.55s}
-.node.n5 .node-inner{animation-delay:.75s}
+.node.ads .node-inner{animation-delay:.4s}
+.node.n3 .node-inner{animation-delay:.6s}
+.node.n4 .node-inner{animation-delay:.6s}
+.node.n5 .node-inner{animation-delay:.8s}
 .node.n6 .node-inner{animation-delay:.8s}
-.node.n7 .node-inner{animation-delay:.95s}
-.node.n8 .node-inner{animation-delay:1.15s}
-.node.end .node-inner{animation-delay:1.55s}
+.node.n7 .node-inner{animation-delay:1.0s}
+.node.n8 .node-inner{animation-delay:1.2s}
+.node.end .node-inner{animation-delay:1.5s}
 @keyframes nodeIn{to{opacity:1;transform:scale(1)}}
 
 .node .ico{
@@ -144,13 +146,22 @@ html,body{font-family:var(--fd);background:var(--page-bg);color:var(--navy);-web
   100%{opacity:0;transform:scale(1.55)}
 }
 
+/* label absoluto: não desloca o ícone do ponto da linha */
 .node .lbl{
-  font-size:12px;font-weight:600;color:#fff;
-  text-align:center;letter-spacing:-.05px;line-height:1.2;
-  max-width:130px;
+  position:absolute;
+  top:calc(100% + 10px);
+  left:50%;transform:translateX(-50%);
+  font-size:12.5px;font-weight:600;color:#fff;
+  text-align:center;letter-spacing:-.05px;line-height:1.25;
+  white-space:nowrap;
+}
+/* nós da rota de cima: label ACIMA (área interna do diagrama fica livre) */
+.node.lbl-up .lbl{
+  top:auto;
+  bottom:calc(100% + 10px);
 }
 .node.start .lbl,
-.node.end .lbl{font-size:13px;color:var(--g3)}
+.node.end .lbl{font-size:13.5px;color:var(--g3)}
 
 /* ─── PRESENT MODE ─── */
 .toggle-present{position:fixed;top:14px;right:14px;background:var(--grad);color:#fff;border:none;padding:8px 16px;border-radius:8px;font-family:var(--fd);font-weight:600;font-size:12px;cursor:pointer;z-index:99;letter-spacing:.3px}
@@ -185,11 +196,10 @@ html,body{font-family:var(--fd);background:var(--page-bg);color:var(--navy);-web
     <div class="metodo-head">
       <div class="eyebrow">O método</div>
       <h1 class="title">Do criativo à <em>reserva direta</em>.</h1>
-      <p class="lead">Cada anúncio dispara <strong>múltiplos caminhos</strong> — site com motor de reservas para autoatendimento e WhatsApp com equipe treinada pela Komplexa para conversão assistida. Tudo converge em reserva direta, sem OTA no meio.</p>
     </div>
 
     <div class="metodo-flow">
-      <svg class="flow-svg" viewBox="0 0 1000 300" preserveAspectRatio="none">
+      <svg class="flow-svg" viewBox="0 0 1000 400" preserveAspectRatio="none">
         <defs>
           <linearGradient id="mainGrad" x1="0" y1="0" x2="1" y2="0">
             <stop offset="0" stop-color="#1670C3"/>
@@ -202,53 +212,53 @@ html,body{font-family:var(--fd);background:var(--page-bg);color:var(--navy);-web
           </filter>
         </defs>
 
-        <!-- ROUTE A (top · autoatendimento): Criativos → ADS → Site → Motor → Reserva -->
+        <!-- ROUTE A (topo · autoatendimento): Criativos → ADS → Site → Motor → Reserva -->
         <path class="branch top" pathLength="1"
-              d="M 50 150 L 200 150 L 320 60 L 720 60 L 920 150"
+              d="M 60 200 L 180 200 L 300 90 L 810 90 L 920 200"
               stroke="url(#mainGrad)" stroke-width="2.6" fill="none" opacity=".95"
               filter="url(#glow)" stroke-linecap="round" stroke-linejoin="round"/>
 
-        <!-- ROUTE B (bot · assistido): Criativos → ADS → Landing → WhatsApp → Treinamento → Remarketing → Reserva -->
+        <!-- ROUTE B (base · conversão assistida): Criativos → ADS → Landing → WhatsApp → Treinamento → Remarketing → Reserva -->
         <path class="branch bot" pathLength="1"
-              d="M 50 150 L 200 150 L 320 240 L 780 240 L 920 150"
+              d="M 60 200 L 180 200 L 300 310 L 780 310 L 920 200"
               stroke="url(#mainGrad)" stroke-width="2.6" fill="none" opacity=".95"
               filter="url(#glow)" stroke-linecap="round" stroke-linejoin="round"/>
 
-        <!-- CROSS connector (secondary · dashed): Site → WhatsApp -->
+        <!-- CROSS (tracejada): Site → WhatsApp -->
         <path class="branch cross" pathLength="1"
-              d="M 310 60 L 460 240"
-              stroke="rgba(255,255,255,.55)" stroke-width="1.5" fill="none"
+              d="M 300 90 L 460 310"
+              stroke="rgba(255,255,255,.5)" stroke-width="1.5" fill="none"
               stroke-dasharray="4 5" stroke-linecap="round"/>
 
-        <!-- Flowing dots — Route A -->
+        <!-- Flowing dots — Rota A -->
         <circle r="4" fill="#24D5FF" filter="url(#glow)" opacity=".95">
           <animateMotion dur="6.5s" repeatCount="indefinite" begin="2s"
-                         path="M 50 150 L 200 150 L 320 60 L 720 60 L 920 150"/>
+                         path="M 60 200 L 180 200 L 300 90 L 810 90 L 920 200"/>
         </circle>
         <circle r="3" fill="#fff" filter="url(#glow)" opacity=".85">
           <animateMotion dur="6.5s" repeatCount="indefinite" begin="4s"
-                         path="M 50 150 L 200 150 L 320 60 L 720 60 L 920 150"/>
+                         path="M 60 200 L 180 200 L 300 90 L 810 90 L 920 200"/>
         </circle>
 
-        <!-- Flowing dots — Route B -->
+        <!-- Flowing dots — Rota B -->
         <circle r="4" fill="#24D5FF" filter="url(#glow)" opacity=".95">
           <animateMotion dur="7.5s" repeatCount="indefinite" begin="2.5s"
-                         path="M 50 150 L 200 150 L 320 240 L 780 240 L 920 150"/>
+                         path="M 60 200 L 180 200 L 300 310 L 780 310 L 920 200"/>
         </circle>
         <circle r="3" fill="#fff" filter="url(#glow)" opacity=".85">
           <animateMotion dur="7.5s" repeatCount="indefinite" begin="4.5s"
-                         path="M 50 150 L 200 150 L 320 240 L 780 240 L 920 150"/>
+                         path="M 60 200 L 180 200 L 300 310 L 780 310 L 920 200"/>
         </circle>
 
-        <!-- Small dot on cross connector -->
+        <!-- Dot no cross -->
         <circle r="2.5" fill="#fff" opacity=".7">
           <animateMotion dur="4s" repeatCount="indefinite" begin="3.2s"
-                         path="M 310 60 L 460 240"/>
+                         path="M 300 90 L 460 310"/>
         </circle>
       </svg>
 
-      <!-- 1. Criativos & Ofertas (start) -->
-      <div class="node start" style="left:5%;top:50%">
+      <!-- 1. Criativos & Ofertas (start) · SVG (60,200) -->
+      <div class="node start" style="left:6%;top:50%">
         <div class="node-inner">
           <div class="ico">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
@@ -260,8 +270,8 @@ html,body{font-family:var(--fd);background:var(--page-bg);color:var(--navy);-web
         </div>
       </div>
 
-      <!-- 2. ADS -->
-      <div class="node ads" style="left:17%;top:50%">
+      <!-- 2. ADS · SVG (180,200) -->
+      <div class="node ads" style="left:18%;top:50%">
         <div class="node-inner">
           <div class="ico">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
@@ -274,8 +284,8 @@ html,body{font-family:var(--fd);background:var(--page-bg);color:var(--navy);-web
         </div>
       </div>
 
-      <!-- 3. Site (top branch) -->
-      <div class="node n3" style="left:31%;top:20%">
+      <!-- 3. Site (rota topo) · SVG (300,90) · label acima -->
+      <div class="node n3 lbl-up" style="left:30%;top:22.5%">
         <div class="node-inner">
           <div class="ico">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
@@ -286,12 +296,12 @@ html,body{font-family:var(--fd);background:var(--page-bg);color:var(--navy);-web
               <path d="M8 13h8M8 16h5"/>
             </svg>
           </div>
-          <div class="lbl">Site<br>próprio</div>
+          <div class="lbl">Site próprio</div>
         </div>
       </div>
 
-      <!-- 4. Landing page (bot branch) -->
-      <div class="node n4" style="left:31%;top:80%">
+      <!-- 4. Landing page (rota base) · SVG (300,310) -->
+      <div class="node n4" style="left:30%;top:77.5%">
         <div class="node-inner">
           <div class="ico">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
@@ -300,12 +310,12 @@ html,body{font-family:var(--fd);background:var(--page-bg);color:var(--navy);-web
               <path d="M5 15l7 4 7-4"/>
             </svg>
           </div>
-          <div class="lbl">Landing<br>page</div>
+          <div class="lbl">Landing page</div>
         </div>
       </div>
 
-      <!-- 5. Motor de reservas (top branch) -->
-      <div class="node n5" style="left:46%;top:20%">
+      <!-- 5. Motor de reservas (rota topo) · SVG (540,90) · label acima -->
+      <div class="node n5 lbl-up" style="left:54%;top:22.5%">
         <div class="node-inner">
           <div class="ico">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
@@ -316,12 +326,12 @@ html,body{font-family:var(--fd);background:var(--page-bg);color:var(--navy);-web
               <path d="M8 15l3 3 5-6"/>
             </svg>
           </div>
-          <div class="lbl">Motor de<br>reservas</div>
+          <div class="lbl">Motor de reservas</div>
         </div>
       </div>
 
-      <!-- 6. WhatsApp (bot branch, convergence of Landing + Site cross) -->
-      <div class="node n6" style="left:46%;top:80%">
+      <!-- 6. WhatsApp (rota base · converge Landing + cross do Site) · SVG (460,310) -->
+      <div class="node n6" style="left:46%;top:77.5%">
         <div class="node-inner">
           <div class="ico">
             <svg viewBox="0 0 24 24" fill="currentColor" stroke="none">
@@ -332,8 +342,8 @@ html,body{font-family:var(--fd);background:var(--page-bg);color:var(--navy);-web
         </div>
       </div>
 
-      <!-- 7. Treinamento comercial (bot branch) -->
-      <div class="node n7" style="left:62%;top:80%">
+      <!-- 7. Treinamento comercial (rota base) · SVG (620,310) -->
+      <div class="node n7" style="left:62%;top:77.5%">
         <div class="node-inner">
           <div class="ico">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
@@ -347,8 +357,8 @@ html,body{font-family:var(--fd);background:var(--page-bg);color:var(--navy);-web
         </div>
       </div>
 
-      <!-- 8. Remarketing (bot branch) -->
-      <div class="node n8" style="left:78%;top:80%">
+      <!-- 8. Remarketing (rota base · vértice de subida) · SVG (780,310) -->
+      <div class="node n8" style="left:78%;top:77.5%">
         <div class="node-inner">
           <div class="ico">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
@@ -360,7 +370,7 @@ html,body{font-family:var(--fd);background:var(--page-bg);color:var(--navy);-web
         </div>
       </div>
 
-      <!-- 9. Reserva direta (end) -->
+      <!-- 9. Reserva direta (end) · SVG (920,200) -->
       <div class="node end" style="left:92%;top:50%">
         <div class="node-inner">
           <div class="ico">
