@@ -50,11 +50,11 @@ html,body{font-family:var(--fd);background:var(--page-bg);color:var(--navy);-web
 
 .metodo-flow{
   width:100%;
-  aspect-ratio:1000/300;
-  margin:22px auto 0;
+  aspect-ratio:1000/340;
+  margin:18px auto 0;
   position:relative;
   flex-shrink:1;
-  max-height:calc(100% - 22px);
+  max-height:calc(100% - 18px);
 }
 
 .flow-svg{
@@ -108,62 +108,68 @@ html,body{font-family:var(--fd);background:var(--page-bg);color:var(--navy);-web
   animation:nodeIn .55s cubic-bezier(.34,1.4,.64,1) forwards;
 }
 .node.start .node-inner{animation-delay:.2s}
-.node.n2 .node-inner{animation-delay:.75s}
-.node.n3 .node-inner{animation-delay:1.0s}
-.node.n4 .node-inner{animation-delay:.8s}
-.node.n5 .node-inner{animation-delay:1.05s}
+.node.ads .node-inner{animation-delay:.35s}
+.node.n3 .node-inner{animation-delay:.55s}
+.node.n4 .node-inner{animation-delay:.55s}
+.node.n5 .node-inner{animation-delay:.75s}
+.node.n6 .node-inner{animation-delay:.8s}
+.node.n7 .node-inner{animation-delay:.95s}
+.node.n8 .node-inner{animation-delay:1.15s}
 .node.end .node-inner{animation-delay:1.55s}
 @keyframes nodeIn{to{opacity:1;transform:scale(1)}}
 
 .node .ico{
   position:relative;
-  width:82px;height:82px;border-radius:50%;
+  width:72px;height:72px;border-radius:50%;
   background:radial-gradient(circle at 30% 30%,#1a2a45,var(--navy9));
-  border:1.6px solid rgba(255,255,255,.92);
+  border:1.5px solid rgba(255,255,255,.92);
   display:grid;place-items:center;
   color:#fff;
-  box-shadow:0 6px 28px rgba(0,0,0,.45);
+  box-shadow:0 5px 22px rgba(0,0,0,.45);
 }
-.node .ico svg{width:34px;height:34px}
+.node .ico svg{width:30px;height:30px}
 .node.start .ico,
 .node.end .ico{
-  width:94px;height:94px;
+  width:84px;height:84px;
   border-width:2px;
   border-color:var(--g3);
-  box-shadow:0 6px 32px rgba(36,213,255,.4);
+  box-shadow:0 6px 30px rgba(36,213,255,.4);
 }
 .node.start .ico svg,
-.node.end .ico svg{width:40px;height:40px}
+.node.end .ico svg{width:36px;height:36px}
 .node.end .ico{
   background:radial-gradient(circle at 30% 30%,rgba(36,213,255,.28),rgba(22,112,195,.16));
 }
 
 /* pulse ring */
 .node .ico::before{
-  content:"";position:absolute;inset:-6px;border-radius:50%;
+  content:"";position:absolute;inset:-5px;border-radius:50%;
   border:1.5px solid rgba(36,213,255,.45);
   opacity:0;transform:scale(.9);
-  animation:pulseRing 3.2s ease-out infinite;
+  animation:pulseRing 3.4s ease-out infinite;
 }
 .node.start .ico::before{animation-delay:1.9s}
-.node.n2 .ico::before{animation-delay:2.15s}
-.node.n3 .ico::before{animation-delay:2.4s}
+.node.ads .ico::before{animation-delay:2.05s}
+.node.n3 .ico::before{animation-delay:2.2s}
 .node.n4 .ico::before{animation-delay:2.2s}
-.node.n5 .ico::before{animation-delay:2.45s}
+.node.n5 .ico::before{animation-delay:2.35s}
+.node.n6 .ico::before{animation-delay:2.4s}
+.node.n7 .ico::before{animation-delay:2.55s}
+.node.n8 .ico::before{animation-delay:2.7s}
 .node.end .ico::before{animation-delay:2.9s;border-color:var(--g3)}
 @keyframes pulseRing{
   0%{opacity:0;transform:scale(.9)}
   25%{opacity:1}
-  100%{opacity:0;transform:scale(1.5)}
+  100%{opacity:0;transform:scale(1.55)}
 }
 
 .node .lbl{
-  font-size:13.5px;font-weight:600;color:#fff;
-  text-align:center;letter-spacing:-.1px;line-height:1.2;
-  max-width:140px;
+  font-size:12px;font-weight:600;color:#fff;
+  text-align:center;letter-spacing:-.05px;line-height:1.2;
+  max-width:130px;
 }
 .node.start .lbl,
-.node.end .lbl{font-size:14.5px;color:var(--g3)}
+.node.end .lbl{font-size:13px;color:var(--g3)}
 
 /* ─── PRESENT MODE ─── */
 .toggle-present{position:fixed;top:14px;right:14px;background:var(--grad);color:#fff;border:none;padding:8px 16px;border-radius:8px;font-family:var(--fd);font-weight:600;font-size:12px;cursor:pointer;z-index:99;letter-spacing:.3px}
@@ -198,7 +204,7 @@ html,body{font-family:var(--fd);background:var(--page-bg);color:var(--navy);-web
     <div class="metodo-head">
       <div class="eyebrow">O método</div>
       <h1 class="title">Do criativo à <em>reserva direta</em>.</h1>
-      <p class="lead">Cada criativo abre dois caminhos paralelos — <strong>website com motor de reservas</strong> e <strong>WhatsApp com consultoria comercial</strong>. Ambos convergem em reserva direta, sem OTA no meio.</p>
+      <p class="lead">Cada anúncio dispara <strong>múltiplos caminhos</strong> — site com motor de reservas para autoatendimento e WhatsApp com equipe treinada pela Komplexa para conversão assistida. Tudo converge em reserva direta, sem OTA no meio.</p>
     </div>
 
     <div class="metodo-flow">
@@ -215,45 +221,70 @@ html,body{font-family:var(--fd);background:var(--page-bg);color:var(--navy);-web
           </filter>
         </defs>
 
-        <!-- TOP branch: Criativos → Website → Motor → Reserva -->
+        <!-- ROUTE A (top · autoatendimento): Criativos → ADS → Site → Motor → Reserva -->
         <path class="branch top" pathLength="1"
-              d="M 80 150 C 200 150, 220 60, 340 60 L 560 60 C 680 60, 720 150, 920 150"
+              d="M 50 150 L 170 150 C 240 150, 240 60, 310 60 L 460 60 C 700 60, 750 150, 920 150"
               stroke="url(#mainGrad)" stroke-width="2.6" fill="none" opacity=".95"
               filter="url(#glow)" stroke-linecap="round"/>
 
-        <!-- BOTTOM branch: Criativos → WhatsApp → Consultoria → Reserva -->
+        <!-- ROUTE B (bot · assistido): Criativos → ADS → Landing → WhatsApp → Treinamento → Remarketing → Reserva -->
         <path class="branch bot" pathLength="1"
-              d="M 80 150 C 200 150, 220 240, 340 240 L 560 240 C 680 240, 720 150, 920 150"
+              d="M 50 150 L 170 150 C 240 150, 240 240, 310 240 L 780 240 C 870 240, 880 150, 920 150"
               stroke="url(#mainGrad)" stroke-width="2.6" fill="none" opacity=".95"
               filter="url(#glow)" stroke-linecap="round"/>
 
-        <!-- flowing dots (top branch) -->
+        <!-- CROSS connector (secondary · dashed): Site → WhatsApp -->
+        <path class="branch cross" pathLength="1"
+              d="M 310 60 C 380 60, 380 240, 460 240"
+              stroke="rgba(255,255,255,.55)" stroke-width="1.5" fill="none"
+              stroke-dasharray="4 5" stroke-linecap="round"/>
+
+        <!-- Flowing dots — Route A -->
         <circle r="4" fill="#24D5FF" filter="url(#glow)" opacity=".95">
-          <animateMotion dur="5s" repeatCount="indefinite" begin="2s"
-                         path="M 80 150 C 200 150, 220 60, 340 60 L 560 60 C 680 60, 720 150, 920 150"/>
+          <animateMotion dur="6.5s" repeatCount="indefinite" begin="2s"
+                         path="M 50 150 L 170 150 C 240 150, 240 60, 310 60 L 460 60 C 700 60, 750 150, 920 150"/>
         </circle>
         <circle r="3" fill="#fff" filter="url(#glow)" opacity=".85">
-          <animateMotion dur="5s" repeatCount="indefinite" begin="3.5s"
-                         path="M 80 150 C 200 150, 220 60, 340 60 L 560 60 C 680 60, 720 150, 920 150"/>
+          <animateMotion dur="6.5s" repeatCount="indefinite" begin="4s"
+                         path="M 50 150 L 170 150 C 240 150, 240 60, 310 60 L 460 60 C 700 60, 750 150, 920 150"/>
         </circle>
 
-        <!-- flowing dots (bottom branch) -->
+        <!-- Flowing dots — Route B -->
         <circle r="4" fill="#24D5FF" filter="url(#glow)" opacity=".95">
-          <animateMotion dur="5s" repeatCount="indefinite" begin="2.7s"
-                         path="M 80 150 C 200 150, 220 240, 340 240 L 560 240 C 680 240, 720 150, 920 150"/>
+          <animateMotion dur="7.5s" repeatCount="indefinite" begin="2.5s"
+                         path="M 50 150 L 170 150 C 240 150, 240 240, 310 240 L 780 240 C 870 240, 880 150, 920 150"/>
         </circle>
         <circle r="3" fill="#fff" filter="url(#glow)" opacity=".85">
-          <animateMotion dur="5s" repeatCount="indefinite" begin="4.2s"
-                         path="M 80 150 C 200 150, 220 240, 340 240 L 560 240 C 680 240, 720 150, 920 150"/>
+          <animateMotion dur="7.5s" repeatCount="indefinite" begin="4.5s"
+                         path="M 50 150 L 170 150 C 240 150, 240 240, 310 240 L 780 240 C 870 240, 880 150, 920 150"/>
+        </circle>
+
+        <!-- Small dot on cross connector -->
+        <circle r="2.5" fill="#fff" opacity=".7">
+          <animateMotion dur="4s" repeatCount="indefinite" begin="3.2s"
+                         path="M 310 60 C 380 60, 380 240, 460 240"/>
         </circle>
       </svg>
 
-      <!-- branch labels -->
-      <span class="branch-label top">Reserva online</span>
-      <span class="branch-label bot">Atendimento consultivo</span>
+      <!-- Branch labels -->
+      <span class="branch-label top">Autoatendimento</span>
+      <span class="branch-label bot">Conversão assistida</span>
 
-      <!-- NODE: Criativos (start) -->
-      <div class="node start" style="left:8%;top:50%">
+      <!-- 1. Criativos & Ofertas (start) -->
+      <div class="node start" style="left:5%;top:50%">
+        <div class="node-inner">
+          <div class="ico">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M9 18h6M10 21h4M12 3a6 6 0 016 6c0 2.5-1.5 3.5-2.5 5H8.5C7.5 12.5 6 11.5 6 9a6 6 0 016-6z"/>
+              <path d="M12 8v4"/>
+            </svg>
+          </div>
+          <div class="lbl">Criativos<br>&amp; ofertas</div>
+        </div>
+      </div>
+
+      <!-- 2. ADS -->
+      <div class="node ads" style="left:17%;top:50%">
         <div class="node-inner">
           <div class="ico">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
@@ -262,12 +293,12 @@ html,body{font-family:var(--fd);background:var(--page-bg);color:var(--navy);-web
               <path d="M18.8 5.5a8 8 0 010 13"/>
             </svg>
           </div>
-          <div class="lbl">Criativos<br>&amp; oferta</div>
+          <div class="lbl">ADS</div>
         </div>
       </div>
 
-      <!-- NODE: Website (top branch, step 1) -->
-      <div class="node n2" style="left:34%;top:20%">
+      <!-- 3. Site (top branch) -->
+      <div class="node n3" style="left:31%;top:20%">
         <div class="node-inner">
           <div class="ico">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
@@ -278,12 +309,26 @@ html,body{font-family:var(--fd);background:var(--page-bg);color:var(--navy);-web
               <path d="M8 13h8M8 16h5"/>
             </svg>
           </div>
-          <div class="lbl">Website<br>próprio</div>
+          <div class="lbl">Site<br>próprio</div>
         </div>
       </div>
 
-      <!-- NODE: Motor de reservas (top branch, step 2) -->
-      <div class="node n3" style="left:56%;top:20%">
+      <!-- 4. Landing page (bot branch) -->
+      <div class="node n4" style="left:31%;top:80%">
+        <div class="node-inner">
+          <div class="ico">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 3l7 4-7 4-7-4 7-4z"/>
+              <path d="M5 11l7 4 7-4"/>
+              <path d="M5 15l7 4 7-4"/>
+            </svg>
+          </div>
+          <div class="lbl">Landing<br>page</div>
+        </div>
+      </div>
+
+      <!-- 5. Motor de reservas (top branch) -->
+      <div class="node n5" style="left:46%;top:20%">
         <div class="node-inner">
           <div class="ico">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
@@ -298,20 +343,20 @@ html,body{font-family:var(--fd);background:var(--page-bg);color:var(--navy);-web
         </div>
       </div>
 
-      <!-- NODE: WhatsApp (bottom branch, step 1) -->
-      <div class="node n4" style="left:34%;top:80%">
+      <!-- 6. WhatsApp (bot branch, convergence of Landing + Site cross) -->
+      <div class="node n6" style="left:46%;top:80%">
         <div class="node-inner">
           <div class="ico">
             <svg viewBox="0 0 24 24" fill="currentColor" stroke="none">
               <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413"/>
             </svg>
           </div>
-          <div class="lbl">WhatsApp<br>comercial</div>
+          <div class="lbl">WhatsApp</div>
         </div>
       </div>
 
-      <!-- NODE: Consultoria & Treinamento (bottom branch, step 2) -->
-      <div class="node n5" style="left:56%;top:80%">
+      <!-- 7. Treinamento comercial (bot branch) -->
+      <div class="node n7" style="left:62%;top:80%">
         <div class="node-inner">
           <div class="ico">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
@@ -321,11 +366,24 @@ html,body{font-family:var(--fd);background:var(--page-bg);color:var(--navy);-web
               <path d="M12 21a2 2 0 002-2h-4a2 2 0 002 2z"/>
             </svg>
           </div>
-          <div class="lbl">Consultoria<br>&amp; treinamento</div>
+          <div class="lbl">Treinamento<br>comercial</div>
         </div>
       </div>
 
-      <!-- NODE: Reserva direta (end) -->
+      <!-- 8. Remarketing (bot branch) -->
+      <div class="node n8" style="left:78%;top:80%">
+        <div class="node-inner">
+          <div class="ico">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M21 12a9 9 0 11-3-6.7"/>
+              <polyline points="21 4 21 9 16 9"/>
+            </svg>
+          </div>
+          <div class="lbl">Remarketing</div>
+        </div>
+      </div>
+
+      <!-- 9. Reserva direta (end) -->
       <div class="node end" style="left:92%;top:50%">
         <div class="node-inner">
           <div class="ico">
