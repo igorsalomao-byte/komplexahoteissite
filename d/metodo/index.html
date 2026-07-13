@@ -71,19 +71,21 @@ html,body{font-family:var(--fd);background:var(--page-bg);color:var(--navy);-web
 .flow-labels.bot{align-self:start}
 
 .sub{
-  display:flex;flex-direction:column;align-items:center;gap:6px;
-  font-size:12.5px;font-weight:500;
-  color:rgba(255,255,255,.72);
-  text-align:center;letter-spacing:.15px;
+  display:flex;flex-direction:column;align-items:center;gap:4px;
+  font-size:13px;font-weight:600;
+  color:rgba(255,255,255,.82);
+  text-align:center;letter-spacing:-.05px;line-height:1.2;
   opacity:0;transform:translateY(6px);
   animation:subIn .6s ease forwards;
+  max-width:180px;margin:0 auto;
 }
-.sub small{font-size:10.5px;font-weight:500;color:rgba(255,255,255,.45);letter-spacing:.6px;text-transform:uppercase}
+.sub .txt{display:block}
+.sub small{display:block;font-size:10px;font-weight:600;color:var(--g3);letter-spacing:1.4px;text-transform:uppercase;margin-bottom:2px}
 .sub .stub{
-  width:1px;height:14px;background:linear-gradient(180deg,transparent,rgba(255,255,255,.35));
+  display:block;width:1px;height:16px;
+  background:linear-gradient(180deg,transparent,rgba(36,213,255,.55));
 }
-.flow-labels.bot .sub{flex-direction:column-reverse}
-.flow-labels.bot .sub .stub{background:linear-gradient(0deg,transparent,rgba(255,255,255,.35))}
+.flow-labels.bot .sub .stub{background:linear-gradient(0deg,transparent,rgba(36,213,255,.55))}
 
 /* stagger */
 .sub.d1{animation-delay:.35s}.sub.d2{animation-delay:.55s}.sub.d3{animation-delay:.75s}.sub.d4{animation-delay:.95s}.sub.d5{animation-delay:1.15s}
@@ -241,11 +243,11 @@ html,body{font-family:var(--fd);background:var(--page-bg);color:var(--navy);-web
 
       <!-- TOP LABELS ROW -->
       <div class="flow-labels top">
-        <div class="sub d1"><small>Fonte</small>Lookalike de hóspedes reais<span class="stub"></span></div>
-        <div class="sub d2"><small>Canal</small>Meta Ads<span class="stub"></span></div>
-        <div class="sub d3"><small>Frontend</small>Site próprio<span class="stub"></span></div>
-        <div class="sub d4"><small>Canal</small>Remarketing<span class="stub"></span></div>
-        <div class="sub d5"><small>Trigger</small>Reativação por ocasião<span class="stub"></span></div>
+        <div class="sub d1"><small>Fonte</small><span class="txt">Lookalike de hóspedes reais</span><span class="stub"></span></div>
+        <div class="sub d2"><small>Canal</small><span class="txt">Meta Ads</span><span class="stub"></span></div>
+        <div class="sub d3"><small>Frontend</small><span class="txt">Site próprio</span><span class="stub"></span></div>
+        <div class="sub d4"><small>Canal</small><span class="txt">Remarketing</span><span class="stub"></span></div>
+        <div class="sub d5"><small>Trigger</small><span class="txt">Reativação por ocasião</span><span class="stub"></span></div>
       </div>
 
       <!-- MID: SVG lines + 5 nodes -->
@@ -348,11 +350,11 @@ html,body{font-family:var(--fd);background:var(--page-bg);color:var(--navy);-web
 
       <!-- BOTTOM LABELS ROW -->
       <div class="flow-labels bot">
-        <div class="sub d1"><span class="stub"></span><small>Filtro</small>Exclusão automática</div>
-        <div class="sub d2"><span class="stub"></span><small>Canal</small>Google Ads</div>
-        <div class="sub d3"><span class="stub"></span><small>Booking</small>Motor integrado</div>
-        <div class="sub d4"><span class="stub"></span><small>Follow-up</small>WhatsApp + e-mail</div>
-        <div class="sub d5"><span class="stub"></span><small>Retenção</small>CRM · LTV</div>
+        <div class="sub d1"><span class="stub"></span><span class="txt">Exclusão automática</span><small>Filtro</small></div>
+        <div class="sub d2"><span class="stub"></span><span class="txt">Google Ads</span><small>Canal</small></div>
+        <div class="sub d3"><span class="stub"></span><span class="txt">Motor integrado</span><small>Booking</small></div>
+        <div class="sub d4"><span class="stub"></span><span class="txt">WhatsApp + e-mail</span><small>Follow-up</small></div>
+        <div class="sub d5"><span class="stub"></span><span class="txt">CRM · LTV</span><small>Retenção</small></div>
       </div>
     </div>
   </div>
