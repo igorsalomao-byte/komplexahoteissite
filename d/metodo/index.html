@@ -1,0 +1,373 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow,noarchive,nosnippet">
+<title>Komplexa — O método</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Fraunces:ital,wght@1,400;1,500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --navy:#0E1E35;--navy9:#081525;--white:#fff;
+  --blue:#1670C3;--g1:#1670C3;--g2:#1099E9;--g3:#24D5FF;
+  --grad:linear-gradient(90deg,#1670C3 0%,#1099E9 48%,#24D5FF 100%);
+  --grad-r:radial-gradient(circle at 70% 50%,rgba(36,213,255,.35) 0%,transparent 60%);
+  --txt:#4A5770;--gray:#8896A8;--bdr:#DDE3ED;--bg:#F3F6FA;
+  --fd:'Inter',system-ui,sans-serif;
+  --page-bg:#0a0f1a;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{font-family:var(--fd);background:var(--page-bg);color:var(--navy);-webkit-font-smoothing:antialiased}
+
+/* ─── DECK (stacked doc view) ─── */
+.deck{display:flex;flex-direction:column;align-items:center;gap:32px;padding:64px 24px 96px}
+.slide{
+  width:1280px;height:720px;border-radius:8px;overflow:hidden;
+  box-shadow:0 20px 60px rgba(0,0,0,.4);
+  position:relative;display:flex;flex-direction:column;
+}
+.slide *{font-family:var(--fd)}
+
+.slide.dark{background:var(--navy);color:#fff}
+.slide.dark::before{content:"";position:absolute;inset:0;background:var(--grad-r);opacity:.4;pointer-events:none}
+
+.slide .top{display:flex;justify-content:space-between;align-items:center;padding:36px 56px 0;position:relative;z-index:2}
+.slide .top img.brand{height:32px;width:auto}
+.slide .top .pg{font-size:11px;letter-spacing:1.5px;text-transform:uppercase;font-weight:600;color:rgba(255,255,255,.45)}
+
+.slide .body{flex:1;padding:36px 56px 24px;position:relative;z-index:2;display:flex;flex-direction:column}
+.slide .bot{padding:20px 56px 28px;display:flex;justify-content:space-between;align-items:flex-end;font-size:10px;color:rgba(255,255,255,.4);letter-spacing:.6px;text-transform:uppercase;position:relative;z-index:2}
+
+.eyebrow{display:inline-block;font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:1.8px;margin-bottom:14px;color:var(--g3)}
+.title{font-weight:800;font-size:52px;line-height:1.02;letter-spacing:-1.6px;margin:0 0 14px;color:#fff}
+.title em{font-style:normal;font-family:'Fraunces',Georgia,serif;font-weight:400;letter-spacing:-.5px;background:var(--grad);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+.lead{font-size:16px;line-height:1.55;max-width:720px;color:rgba(255,255,255,.72)}
+.lead strong{color:#fff;font-weight:600}
+
+/* ─── SLIDE · MÉTODO (funnel money slide) ─── */
+.slide-metodo .body{justify-content:flex-start;gap:0}
+
+.metodo-head{max-width:900px}
+
+.metodo-flow{
+  position:relative;
+  width:100%;
+  flex:1;
+  margin-top:28px;
+  min-height:0;
+}
+
+.flow-svg{
+  position:absolute;
+  inset:0;
+  width:100%;
+  height:100%;
+  overflow:visible;
+  pointer-events:none;
+}
+
+.flow-row{
+  position:absolute;
+  inset:0;
+  display:grid;
+  grid-template-columns:repeat(5,1fr);
+}
+
+.node-col{
+  position:relative;
+  height:100%;
+}
+
+.node{
+  position:absolute;
+  top:50%;left:50%;
+  transform:translate(-50%,-50%);
+  display:flex;flex-direction:column;align-items:center;gap:14px;
+  z-index:3;
+}
+.node .ico{
+  position:relative;
+  width:88px;height:88px;border-radius:50%;
+  background:var(--navy9);
+  border:1.6px solid rgba(255,255,255,.92);
+  display:grid;place-items:center;
+  color:#fff;
+  box-shadow:0 4px 24px rgba(0,0,0,.35), inset 0 0 0 4px var(--navy9);
+}
+.node .ico svg{width:36px;height:36px}
+.node .num{
+  position:absolute;
+  top:-6px;right:-6px;
+  width:26px;height:26px;border-radius:50%;
+  background:var(--grad);
+  color:#0a0f1a;
+  font-size:11px;font-weight:800;letter-spacing:.2px;
+  display:grid;place-items:center;
+  border:2px solid var(--navy);
+}
+.node .lbl{
+  font-size:14.5px;font-weight:600;color:#fff;
+  text-align:center;letter-spacing:-.1px;line-height:1.15;
+  max-width:150px;
+}
+
+.node-sub{
+  position:absolute;
+  left:50%;transform:translateX(-50%);
+  font-size:12.5px;font-weight:500;
+  color:rgba(255,255,255,.7);
+  text-align:center;white-space:nowrap;letter-spacing:.15px;
+  z-index:3;
+}
+.node-sub.top{top:6%}
+.node-sub.bot{bottom:6%}
+
+/* endpoint caps (entrada / saída) */
+.flow-cap{
+  position:absolute;
+  top:50%;transform:translateY(-50%);
+  font-size:11px;font-weight:700;
+  text-transform:uppercase;letter-spacing:1.6px;
+  color:rgba(255,255,255,.55);
+  z-index:2;
+  white-space:nowrap;
+}
+.flow-cap.start{left:0}
+.flow-cap.end{right:0;color:var(--g3)}
+.flow-cap .dot{
+  display:inline-block;
+  width:9px;height:9px;border-radius:50%;
+  background:rgba(255,255,255,.6);
+  vertical-align:middle;margin-right:8px;
+}
+.flow-cap.end .dot{background:var(--g3);box-shadow:0 0 12px var(--g3)}
+
+/* ─── PRESENT MODE ─── */
+.toggle-present{position:fixed;top:14px;right:14px;background:var(--grad);color:#fff;border:none;padding:8px 16px;border-radius:8px;font-family:var(--fd);font-weight:600;font-size:12px;cursor:pointer;z-index:99;letter-spacing:.3px}
+.nav-hint{position:fixed;bottom:12px;left:50%;transform:translateX(-50%);font-size:11px;color:rgba(255,255,255,.4);letter-spacing:.5px;z-index:99;display:none;font-family:var(--fd)}
+
+.deck.present{padding:0;gap:0;background:#000;position:fixed;inset:0;overflow:hidden;display:flex;align-items:center;justify-content:center}
+.deck.present .slide{display:none;transform:scale(var(--present-scale,1));transform-origin:center;box-shadow:none;border-radius:0}
+.deck.present .slide.active{display:flex}
+.deck.present ~ .nav-hint{display:block}
+
+@media print{
+  .toggle-present,.nav-hint{display:none!important}
+  .deck{padding:0;gap:0}
+  .slide{box-shadow:none;border-radius:0;page-break-after:always;break-after:page}
+}
+</style>
+</head>
+<body>
+
+<button class="toggle-present" onclick="togglePresent()">▶ Apresentar</button>
+
+<div class="deck" id="deck">
+
+<!-- ═══════════════════ 01 · MÉTODO (money slide) ═══════════════════ -->
+<section class="slide dark active slide-metodo">
+  <div class="top">
+    <img class="brand" src="assets/logotipo_white.svg" alt="Komplexa">
+    <span class="pg">01 · 10</span>
+  </div>
+
+  <div class="body">
+    <div class="metodo-head">
+      <div class="eyebrow">O método</div>
+      <h1 class="title">Aquisição de reservas diretas <em>com IA</em>.</h1>
+      <p class="lead">Cinco etapas conectadas — do primeiro clique ao hóspede recorrente. Cada etapa alimenta a próxima com dados reais e decisões automatizadas.</p>
+    </div>
+
+    <div class="metodo-flow">
+      <!-- endpoints -->
+      <span class="flow-cap start"><span class="dot"></span>Hóspede ideal</span>
+      <span class="flow-cap end">Reserva direta<span class="dot" style="margin:0 0 0 8px"></span></span>
+
+      <!-- connector lines -->
+      <svg class="flow-svg" viewBox="0 0 1000 400" preserveAspectRatio="none">
+        <defs>
+          <linearGradient id="mainGrad" x1="0" y1="0" x2="1" y2="0">
+            <stop offset="0" stop-color="#1670C3"/>
+            <stop offset=".5" stop-color="#1099E9"/>
+            <stop offset="1" stop-color="#24D5FF"/>
+          </linearGradient>
+          <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+            <feGaussianBlur stdDeviation="2.5" result="b"/>
+            <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+          </filter>
+        </defs>
+
+        <!-- main horizontal line (centers of 5 columns at x=100,300,500,700,900) -->
+        <line x1="140" y1="200" x2="860" y2="200"
+              stroke="url(#mainGrad)" stroke-width="2" opacity=".85" filter="url(#glow)"/>
+
+        <!-- vertical stubs at each node (5 nodes) -->
+        <!-- top stubs -->
+        <line x1="100" y1="90"  x2="100" y2="158" stroke="rgba(255,255,255,.28)" stroke-width="1.2"/>
+        <line x1="300" y1="90"  x2="300" y2="158" stroke="rgba(255,255,255,.28)" stroke-width="1.2"/>
+        <line x1="500" y1="90"  x2="500" y2="158" stroke="rgba(255,255,255,.28)" stroke-width="1.2"/>
+        <line x1="700" y1="90"  x2="700" y2="158" stroke="rgba(255,255,255,.28)" stroke-width="1.2"/>
+        <line x1="900" y1="90"  x2="900" y2="158" stroke="rgba(255,255,255,.28)" stroke-width="1.2"/>
+        <!-- bottom stubs -->
+        <line x1="100" y1="242" x2="100" y2="310" stroke="rgba(255,255,255,.28)" stroke-width="1.2"/>
+        <line x1="300" y1="242" x2="300" y2="310" stroke="rgba(255,255,255,.28)" stroke-width="1.2"/>
+        <line x1="500" y1="242" x2="500" y2="310" stroke="rgba(255,255,255,.28)" stroke-width="1.2"/>
+        <line x1="700" y1="242" x2="700" y2="310" stroke="rgba(255,255,255,.28)" stroke-width="1.2"/>
+        <line x1="900" y1="242" x2="900" y2="310" stroke="rgba(255,255,255,.28)" stroke-width="1.2"/>
+
+        <!-- animated flowing dot -->
+        <circle r="4" fill="#24D5FF" filter="url(#glow)">
+          <animateMotion dur="7s" repeatCount="indefinite" path="M140,200 L860,200"/>
+        </circle>
+      </svg>
+
+      <!-- 5 nodes as grid columns -->
+      <div class="flow-row">
+
+        <!-- 01 · SEGMENTAÇÃO -->
+        <div class="node-col">
+          <span class="node-sub top">Lookalike de hóspedes reais</span>
+          <div class="node">
+            <div class="ico">
+              <span class="num">01</span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round" stroke-linecap="round">
+                <path d="M12 3 L13.6 10.4 L21 12 L13.6 13.6 L12 21 L10.4 13.6 L3 12 L10.4 10.4 Z"/>
+                <path d="M19 4.5 L19.7 6.3 L21.5 7 L19.7 7.7 L19 9.5 L18.3 7.7 L16.5 7 L18.3 6.3 Z" opacity=".7"/>
+              </svg>
+            </div>
+            <div class="lbl">Segmentação<br>com IA</div>
+          </div>
+          <span class="node-sub bot">Exclusão automática</span>
+        </div>
+
+        <!-- 02 · AQUISIÇÃO -->
+        <div class="node-col">
+          <span class="node-sub top">Meta Ads</span>
+          <div class="node">
+            <div class="ico">
+              <span class="num">02</span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M3 10.5v3a1 1 0 001 1h2l5 4V4.5l-5 4H4a1 1 0 00-1 1z"/>
+                <path d="M15.8 8.5a4.5 4.5 0 010 7"/>
+                <path d="M18.8 5.5a8 8 0 010 13"/>
+              </svg>
+            </div>
+            <div class="lbl">Aquisição<br>de tráfego</div>
+          </div>
+          <span class="node-sub bot">Google Ads</span>
+        </div>
+
+        <!-- 03 · SITE + MOTOR -->
+        <div class="node-col">
+          <span class="node-sub top">Site próprio</span>
+          <div class="node">
+            <div class="ico">
+              <span class="num">03</span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="3" y="4" width="18" height="16" rx="2"/>
+                <line x1="3" y1="9" x2="21" y2="9"/>
+                <circle cx="6" cy="6.5" r=".9" fill="currentColor" stroke="none"/>
+                <circle cx="8.5" cy="6.5" r=".9" fill="currentColor" stroke="none"/>
+                <path d="M7 14h10M7 17h6"/>
+              </svg>
+            </div>
+            <div class="lbl">Site + motor<br>de reservas</div>
+          </div>
+          <span class="node-sub bot">Motor integrado</span>
+        </div>
+
+        <!-- 04 · RECUPERAÇÃO -->
+        <div class="node-col">
+          <span class="node-sub top">Remarketing</span>
+          <div class="node">
+            <div class="ico">
+              <span class="num">04</span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21 12a9 9 0 11-3-6.7"/>
+                <polyline points="21 4 21 9 16 9"/>
+              </svg>
+            </div>
+            <div class="lbl">Recuperação<br>de demanda</div>
+          </div>
+          <span class="node-sub bot">WhatsApp + e-mail</span>
+        </div>
+
+        <!-- 05 · FIDELIZAÇÃO -->
+        <div class="node-col">
+          <span class="node-sub top">Reativação por ocasião</span>
+          <div class="node">
+            <div class="ico">
+              <span class="num">05</span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M20.8 6a4.5 4.5 0 00-7.6-2L12 5l-1.2-1a4.5 4.5 0 00-7.6 4.7c.7 3 5.5 6.6 8.8 9.3 3.3-2.7 8.1-6.3 8.8-9.3.4-1.7 0-3.4-1-4.7z"/>
+              </svg>
+            </div>
+            <div class="lbl">Pós-venda<br>&amp; fidelização</div>
+          </div>
+          <span class="node-sub bot">CRM + LTV</span>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <div class="bot">
+    <span>komplexahoteis.com</span>
+    <span>01 · 10</span>
+  </div>
+</section>
+
+</div>
+
+<div class="nav-hint">← →  navegar  ·  Esc  sair</div>
+
+<script>
+const deck = document.getElementById('deck');
+const slides = deck.querySelectorAll('.slide');
+let current = 0;
+
+function show(i){
+  slides.forEach((s,idx) => s.classList.toggle('active', idx === i));
+  current = i;
+}
+
+function applyPresentScale(){
+  const w = window.innerWidth, h = window.innerHeight;
+  const fitW = w / 1280, fitH = h / 720;
+  const fillScale = Math.max(fitW, fitH);
+  const fitScale = Math.min(fitW, fitH);
+  const scale = fitScale + (fillScale - fitScale) * 0.7;
+  deck.style.setProperty('--present-scale', scale.toFixed(3));
+}
+
+function togglePresent(){
+  deck.classList.toggle('present');
+  const btn = document.querySelector('.toggle-present');
+  if(deck.classList.contains('present')){
+    btn.textContent = '✕ Sair';
+    show(0);
+    applyPresentScale();
+    if(deck.requestFullscreen){ deck.requestFullscreen().then(applyPresentScale).catch(()=>{}); }
+  } else {
+    btn.textContent = '▶ Apresentar';
+    slides.forEach(s => s.classList.add('active'));
+    deck.style.removeProperty('--present-scale');
+    if(document.fullscreenElement) document.exitFullscreen();
+  }
+}
+
+window.addEventListener('resize', () => { if(deck.classList.contains('present')) applyPresentScale(); });
+
+document.addEventListener('keydown', e => {
+  if(!deck.classList.contains('present')) return;
+  if(e.key === 'ArrowRight' || e.key === ' '){ if(current < slides.length-1) show(current+1); }
+  if(e.key === 'ArrowLeft'){ if(current > 0) show(current-1); }
+  if(e.key === 'Escape'){ togglePresent(); }
+});
+
+document.addEventListener('fullscreenchange', () => {
+  if(!document.fullscreenElement && deck.classList.contains('present')) togglePresent();
+});
+</script>
+</body>
+</html>
