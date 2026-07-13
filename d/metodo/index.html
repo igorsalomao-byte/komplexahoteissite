@@ -124,28 +124,6 @@ html,body{font-family:var(--fd);background:var(--page-bg);color:var(--navy);-web
   background:radial-gradient(circle at 30% 30%,rgba(36,213,255,.28),rgba(22,112,195,.16));
 }
 
-/* pulse ring */
-.node .ico::before{
-  content:"";position:absolute;inset:-5px;border-radius:50%;
-  border:1.5px solid rgba(36,213,255,.45);
-  opacity:0;transform:scale(.9);
-  animation:pulseRing 3.4s ease-out infinite;
-}
-.node.start .ico::before{animation-delay:1.9s}
-.node.ads .ico::before{animation-delay:2.05s}
-.node.n3 .ico::before{animation-delay:2.2s}
-.node.n4 .ico::before{animation-delay:2.2s}
-.node.n5 .ico::before{animation-delay:2.35s}
-.node.n6 .ico::before{animation-delay:2.4s}
-.node.n7 .ico::before{animation-delay:2.55s}
-.node.n8 .ico::before{animation-delay:2.7s}
-.node.end .ico::before{animation-delay:2.9s;border-color:var(--g3)}
-@keyframes pulseRing{
-  0%{opacity:0;transform:scale(.9)}
-  25%{opacity:1}
-  100%{opacity:0;transform:scale(1.55)}
-}
-
 /* label absoluto: não desloca o ícone do ponto da linha */
 .node .lbl{
   position:absolute;
