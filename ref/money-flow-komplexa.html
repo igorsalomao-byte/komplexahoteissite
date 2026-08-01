@@ -1,0 +1,229 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<title>Komplexa — Componente Money Flow (standalone)</title>
+<!--
+  ═══════════════════════════════════════════════════════════════
+  COMPONENTE "MONEY FLOW" — slide 05 do deck institucional
+  https://komplexahoteis.com/d/institucional/
+
+  100% HTML + CSS + SVG inline. Sem JS, sem lib, sem imagem externa
+  obrigatória. As animações das bolinhas são SMIL (<animateMotion>).
+
+  DEPENDÊNCIAS OPCIONAIS (troque ou remova):
+  1. Foto do hero do site  → .site-hero { background-image:url(...) }
+  2. Logo no nav do mockup → <img src="assets/logotipo_white.svg">
+  3. Fontes Inter + Fraunces (Google Fonts) — sem elas cai em fallback
+
+  Pra usar em outra apresentação: copie o bloco <style> (tudo entre
+  os marcadores COMPONENTE) + o bloco <div class="flow-stage"> ... </div>
+  O container pai precisa ter ~700px de largura e fundo escuro (navy).
+  ═══════════════════════════════════════════════════════════════
+-->
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Fraunces:ital,wght@1,400;1,500&display=swap" rel="stylesheet">
+<style>
+/* ── variáveis de marca (necessárias pro componente) ── */
+:root{
+  --navy:#0E1E35;
+  --blue:#1670C3;
+  --g3:#24D5FF;
+  --grad:linear-gradient(90deg,#1670C3 0%,#1099E9 48%,#24D5FF 100%);
+  --grad-r:radial-gradient(circle at 70% 50%,rgba(36,213,255,.35) 0%,transparent 60%);
+  --fd:'Inter',system-ui,sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+
+/* ── wrapper de demo (só pra esse arquivo abrir bonito sozinho) ── */
+body{font-family:var(--fd);background:var(--navy);min-height:100vh;display:flex;align-items:center;justify-content:center;padding:40px}
+body::before{content:"";position:fixed;inset:0;background:var(--grad-r);opacity:.4;pointer-events:none}
+.demo-frame{width:700px;height:660px;position:relative}
+
+/* ══════════ COMPONENTE — INÍCIO ══════════ */
+.flow-stage{position:relative;display:flex;flex-direction:column;align-items:center;justify-content:space-between;padding:0;gap:14px;overflow:visible;height:100%}
+.flow-stage::before{content:"";position:absolute;inset:0;background-image:radial-gradient(circle at 50% 50%,rgba(36,213,255,.18) 0%,transparent 50%),url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><circle cx="1" cy="1" r="1" fill="white" opacity="0.05"/></svg>');background-size:cover,24px 24px;pointer-events:none;z-index:0}
+.flow-svg{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;z-index:1}
+
+/* cards de vidro (glassmorphism) */
+.fcard{position:relative;z-index:3;background:rgba(14,30,53,.70);border:1px solid rgba(36,213,255,.30);border-radius:11px;padding:8px 14px;color:#fff;backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);display:flex;align-items:center;gap:9px;min-width:0;box-shadow:0 6px 24px rgba(0,0,0,.30)}
+.fcard .ic{width:28px;height:28px;border-radius:7px;display:flex;align-items:center;justify-content:center;flex-shrink:0;background:rgba(255,255,255,.06)}
+.fcard .ic svg{width:16px;height:16px}
+.fcard .info .lbl{font-size:8.5px;font-weight:700;letter-spacing:1.1px;text-transform:uppercase;color:var(--g3);margin-bottom:1px;line-height:1}
+.fcard .info .name{font-weight:700;font-size:12.5px;color:#fff;letter-spacing:-.2px;line-height:1.1}
+.fcard .info .sub{font-size:9.5px;color:rgba(255,255,255,.6);margin-top:1px;line-height:1.3}
+
+/* variante destacada (topo do funil / IA) */
+.fcard.ai{background:linear-gradient(135deg,rgba(22,112,195,.30),rgba(36,213,255,.20));border-color:rgba(36,213,255,.55);box-shadow:0 0 40px rgba(36,213,255,.25),0 6px 24px rgba(0,0,0,.30)}
+.fcard.ai .ic{background:var(--grad)}
+.fcard.ai .ic svg{stroke:#fff}
+
+/* ícones de plataforma */
+.fcard .ic.ig{background:linear-gradient(45deg,#feda75,#fa7e1e 35%,#d62976 65%,#962fbf 90%)}
+.fcard .ic.fb{background:#1877F2}
+.fcard .ic.gg{background:#fff;color:var(--blue)}
+.fcard .ic.wa{background:#25D366}
+.fcard .ic.em{background:#EA4335}
+.fcard .ic.rm{background:linear-gradient(45deg,#feda75,#fa7e1e 35%,#d62976 65%,#962fbf 90%)}
+
+.frow{display:flex;gap:18px;justify-content:center;position:relative;z-index:3;width:100%}
+
+/* mockup de navegador */
+.fsite{position:relative;z-index:3;background:#fff;border-radius:10px;overflow:hidden;width:340px;box-shadow:0 12px 40px rgba(0,0,0,.45),0 0 0 1px rgba(255,255,255,.08),0 0 70px rgba(36,213,255,.20)}
+.fsite .browser-bar{background:#F3F4F6;padding:6px 10px;display:flex;align-items:center;gap:7px;border-bottom:1px solid #E5E7EB}
+.fsite .browser-bar .dots{display:flex;gap:4px}
+.fsite .browser-bar .dots span{width:7px;height:7px;border-radius:50%}
+.fsite .browser-bar .dots span:nth-child(1){background:#FF5F57}
+.fsite .browser-bar .dots span:nth-child(2){background:#FEBC2E}
+.fsite .browser-bar .dots span:nth-child(3){background:#28C840}
+.fsite .browser-bar .url{flex:1;background:#fff;border-radius:4px;padding:2px 8px;font-size:9px;color:#6B7280;font-family:'SF Mono',Menlo,monospace;display:flex;align-items:center;gap:5px}
+.fsite .browser-bar .url::before{content:"🔒";font-size:8px;opacity:.6}
+/* hero do site: TROQUE a imagem pela foto do hotel do cliente */
+.fsite .site-hero{height:108px;background:linear-gradient(135deg,#14233C,#1670C3);background-size:cover;background-position:center;position:relative;display:flex;flex-direction:column;justify-content:flex-end;padding:12px 14px;color:#fff;overflow:hidden}
+.fsite .site-hero::before{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(14,30,53,.55) 0%,rgba(14,30,53,.30) 40%,rgba(14,30,53,.85) 100%);pointer-events:none}
+.fsite .site-nav{position:absolute;top:8px;left:14px;right:14px;display:flex;justify-content:space-between;align-items:center;z-index:2}
+.fsite .site-nav .logo-txt{font-size:9px;font-weight:800;letter-spacing:1px;color:#fff}
+.fsite .site-nav .menu{display:flex;gap:10px;font-size:7.5px;color:rgba(255,255,255,.85);font-weight:500}
+.fsite .site-h1{position:relative;z-index:2;font-weight:800;font-size:15px;letter-spacing:-.4px;line-height:1.1;margin-bottom:2px}
+.fsite .site-h1 em{font-style:normal;font-family:'Fraunces',Georgia,serif;font-weight:400;background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.fsite .site-sub{position:relative;z-index:2;font-size:8.5px;color:rgba(255,255,255,.7)}
+.fsite .booking{padding:8px 10px;background:#fff;display:grid;grid-template-columns:1fr 1fr 1fr auto;gap:5px;align-items:center;border-top:1px solid #E5E7EB}
+.fsite .booking .field{padding:3px 5px}
+.fsite .booking .field .lab{font-size:7px;color:#9CA3AF;text-transform:uppercase;letter-spacing:.6px;font-weight:600;display:block}
+.fsite .booking .field .val{font-size:10px;color:#111;font-weight:600;margin-top:1px}
+.fsite .booking .btn{background:var(--grad);color:#fff;font-size:9px;font-weight:700;padding:7px 12px;border-radius:5px;letter-spacing:.2px}
+
+/* badge final */
+.ffinal{position:relative;z-index:3;background:var(--grad);color:#fff;padding:11px 28px;border-radius:100px;display:flex;align-items:center;gap:10px;font-weight:800;letter-spacing:.5px;box-shadow:0 0 50px rgba(36,213,255,.55),0 8px 30px rgba(0,0,0,.3);text-shadow:0 1px 2px rgba(0,0,0,.15)}
+.ffinal .star{font-size:15px;opacity:.95}
+.ffinal .txt{font-size:15px;letter-spacing:1px}
+.ffinal .badge-sub{font-size:8.5px;font-weight:600;background:rgba(0,0,0,.18);padding:3px 8px;border-radius:100px;letter-spacing:.5px;text-transform:uppercase;text-shadow:none}
+/* ══════════ COMPONENTE — FIM ══════════ */
+</style>
+</head>
+<body>
+
+<div class="demo-frame">
+
+<!-- ══════════ COMPONENTE HTML — INÍCIO ══════════ -->
+<div class="flow-stage">
+  <!-- SVG de conexões: curvas + bolinhas animadas.
+       viewBox 700x660 é "esticado" no container (preserveAspectRatio=none),
+       então as coordenadas são relativas à proporção do pai. -->
+  <svg class="flow-svg" viewBox="0 0 700 660" preserveAspectRatio="none">
+    <defs>
+      <linearGradient id="fg" x1="0" x2="0" y1="0" y2="1">
+        <stop offset="0" stop-color="#1670C3" stop-opacity=".75"/>
+        <stop offset=".5" stop-color="#1099E9" stop-opacity=".85"/>
+        <stop offset="1" stop-color="#24D5FF" stop-opacity=".75"/>
+      </linearGradient>
+      <filter id="glow" x="-20%" y="-20%" width="140%" height="140%"><feGaussianBlur stdDeviation="2.5" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+    </defs>
+
+    <!-- IA → 2 ads (abre pros lados) -->
+    <path d="M350 55 C 350 100, 200 100, 180 140" stroke="url(#fg)" stroke-width="1.8" fill="none" filter="url(#glow)"/>
+    <path d="M350 55 C 350 100, 500 100, 520 140" stroke="url(#fg)" stroke-width="1.8" fill="none" filter="url(#glow)"/>
+
+    <!-- 2 ads → site (fecha pro centro) -->
+    <path d="M180 195 C 180 240, 340 245, 350 280" stroke="url(#fg)" stroke-width="1.8" fill="none" filter="url(#glow)"/>
+    <path d="M520 195 C 520 240, 360 245, 350 280" stroke="url(#fg)" stroke-width="1.8" fill="none" filter="url(#glow)"/>
+
+    <!-- site → 3 retenção (abre em S) -->
+    <path d="M270 470 C 270 510, 130 510, 110 540" stroke="url(#fg)" stroke-width="1.8" fill="none" filter="url(#glow)"/>
+    <path d="M350 470 C 350 505, 350 520, 350 540" stroke="url(#fg)" stroke-width="1.8" fill="none" filter="url(#glow)"/>
+    <path d="M430 470 C 430 510, 570 510, 590 540" stroke="url(#fg)" stroke-width="1.8" fill="none" filter="url(#glow)"/>
+
+    <!-- 3 retenção → badge final -->
+    <path d="M110 590 C 110 625, 300 630, 340 645" stroke="url(#fg)" stroke-width="1.8" fill="none" filter="url(#glow)"/>
+    <path d="M350 590 C 350 615, 350 630, 350 645" stroke="url(#fg)" stroke-width="1.8" fill="none" filter="url(#glow)"/>
+    <path d="M590 590 C 590 625, 400 630, 360 645" stroke="url(#fg)" stroke-width="1.8" fill="none" filter="url(#glow)"/>
+
+    <!-- bolinhas fluindo (SMIL, sem JS) -->
+    <circle r="3" fill="#24D5FF" opacity=".85">
+      <animateMotion dur="3s" repeatCount="indefinite" path="M350 55 C 350 100, 200 100, 180 140"/>
+    </circle>
+    <circle r="3" fill="#24D5FF" opacity=".85">
+      <animateMotion dur="3s" repeatCount="indefinite" begin="0.5s" path="M350 55 C 350 100, 500 100, 520 140"/>
+    </circle>
+    <circle r="3" fill="#24D5FF" opacity=".85">
+      <animateMotion dur="2.8s" repeatCount="indefinite" begin="1s" path="M180 195 C 180 240, 340 245, 350 280"/>
+    </circle>
+    <circle r="3" fill="#24D5FF" opacity=".85">
+      <animateMotion dur="2.8s" repeatCount="indefinite" begin="1.5s" path="M520 195 C 520 240, 360 245, 350 280"/>
+    </circle>
+    <circle r="3" fill="#24D5FF" opacity=".85">
+      <animateMotion dur="3s" repeatCount="indefinite" begin="2s" path="M270 470 C 270 510, 130 510, 110 540"/>
+    </circle>
+    <circle r="3" fill="#24D5FF" opacity=".85">
+      <animateMotion dur="3s" repeatCount="indefinite" begin="2.3s" path="M350 470 C 350 505, 350 520, 350 540"/>
+    </circle>
+    <circle r="3" fill="#24D5FF" opacity=".85">
+      <animateMotion dur="3s" repeatCount="indefinite" begin="2.6s" path="M430 470 C 430 510, 570 510, 590 540"/>
+    </circle>
+  </svg>
+
+  <!-- Camada 1: IA -->
+  <div class="fcard ai">
+    <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a3 3 0 0 0-3 3v1.4A4 4 0 0 0 5 10v3a4 4 0 0 0 1 2.6V18a3 3 0 0 0 3 3h6a3 3 0 0 0 3-3v-2.4a4 4 0 0 0 1-2.6v-3a4 4 0 0 0-4-3.6V5a3 3 0 0 0-3-3z"/><circle cx="9" cy="11" r="1" fill="currentColor"/><circle cx="15" cy="11" r="1" fill="currentColor"/><path d="M9 16h6"/></svg></div>
+    <div class="info"><div class="lbl">◇ Topo do funil</div><div class="name">IA · Segmentação avançada</div><div class="sub">Lookalike dos melhores hóspedes</div></div>
+  </div>
+
+  <!-- Camada 2: fontes de mídia -->
+  <div class="frow">
+    <div class="fcard">
+      <div class="ic fb"><svg viewBox="0 0 24 24" fill="#fff"><path d="M22 12c0-5.52-4.48-10-10-10S2 6.48 2 12c0 4.84 3.44 8.87 8 9.8V15H8v-3h2V9.5C10 7.57 11.57 6 13.5 6H16v3h-2c-.55 0-1 .45-1 1v2h3v3h-3v6.95c5.05-.5 9-4.76 9-9.95z"/></svg></div>
+      <div class="ic ig" style="margin-left:-22px"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="#fff" stroke="none"/></svg></div>
+      <div class="info"><div class="lbl">Mídia paga</div><div class="name">Meta Ads</div><div class="sub">Facebook + Instagram</div></div>
+    </div>
+    <div class="fcard">
+      <div class="ic gg"><svg viewBox="0 0 24 24"><path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/><path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/><path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/><path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/></svg></div>
+      <div class="info"><div class="lbl">Mídia paga</div><div class="name">Google Ads</div><div class="sub">Search + Performance Max</div></div>
+    </div>
+  </div>
+
+  <!-- Camada 3: mockup do site (troque a foto e o nome) -->
+  <div class="fsite">
+    <div class="browser-bar">
+      <div class="dots"><span></span><span></span><span></span></div>
+      <div class="url">komplexahoteis.com/cliente</div>
+    </div>
+    <div class="site-hero"><!-- adicione style="background-image:url('SUA-FOTO.jpg')" -->
+      <div class="site-nav"><span class="logo-txt">KOMPLEXA</span><div class="menu"><span>Suítes</span><span>Pacotes</span><span>Reservar</span></div></div>
+      <div class="site-h1">Sua próxima estadia <em>começa aqui</em></div>
+      <div class="site-sub">Reserva direta com benefícios exclusivos</div>
+    </div>
+    <div class="booking">
+      <div class="field"><span class="lab">Check-in</span><div class="val">15 mai</div></div>
+      <div class="field"><span class="lab">Check-out</span><div class="val">17 mai</div></div>
+      <div class="field"><span class="lab">Hóspedes</span><div class="val">2 adultos</div></div>
+      <div class="btn">Buscar →</div>
+    </div>
+  </div>
+
+  <!-- Camada 4: retenção -->
+  <div class="frow">
+    <div class="fcard">
+      <div class="ic rm"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a9 9 0 1 1-3-6.7"/><path d="M21 4v5h-5"/></svg></div>
+      <div class="info"><div class="lbl">Retenção</div><div class="name">Remarketing</div><div class="sub">Redes sociais</div></div>
+    </div>
+    <div class="fcard">
+      <div class="ic wa"><svg viewBox="0 0 24 24" fill="#fff"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413"/></svg></div>
+      <div class="info"><div class="lbl">Atendimento</div><div class="name">WhatsApp</div><div class="sub">Reservas + bot</div></div>
+    </div>
+    <div class="fcard">
+      <div class="ic em"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg></div>
+      <div class="info"><div class="lbl">Recuperação</div><div class="name">E-mail + WhatsApp</div><div class="sub">Carrinho abandonado</div></div>
+    </div>
+  </div>
+
+  <!-- Camada 5: badge final -->
+  <div class="ffinal">
+    <span class="star">✦</span>
+    <span class="txt">RESERVAS DIRETAS</span>
+    <span class="badge-sub">sem comissão de OTA</span>
+  </div>
+</div>
+<!-- ══════════ COMPONENTE HTML — FIM ══════════ -->
+
+</div>
+</body>
+</html>
