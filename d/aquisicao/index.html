@@ -1,0 +1,862 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow,noarchive,nosnippet">
+<title>Komplexa — Aquisição para Hotelaria</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Fraunces:ital,wght@1,400;1,500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --navy:#0E1E35;--navy9:#081525;--white:#fff;
+  --blue:#1670C3;--g1:#1670C3;--g2:#1099E9;--g3:#24D5FF;
+  --grad:linear-gradient(90deg,#1670C3 0%,#1099E9 48%,#24D5FF 100%);
+  --grad-r:radial-gradient(circle at 70% 50%,rgba(36,213,255,.35) 0%,transparent 60%);
+  --txt:#4A5770;--gray:#8896A8;--bdr:#DDE3ED;--bg:#F3F6FA;
+  --tb09:rgba(22,112,195,.09);--tb18:rgba(22,112,195,.18);
+  --ok:#16A34A;--okbg:rgba(22,163,74,.10);
+  --fd:'Inter',system-ui,sans-serif;
+  --page-bg:#0a0f1a;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{font-family:var(--fd);background:var(--page-bg);color:var(--navy);-webkit-font-smoothing:antialiased}
+
+/* ─── DECK ─── */
+.deck{display:flex;flex-direction:column;align-items:center;gap:32px;padding:64px 24px 96px}
+.slide{
+  width:1280px;height:720px;border-radius:8px;overflow:hidden;
+  box-shadow:0 20px 60px rgba(0,0,0,.4);
+  position:relative;display:flex;flex-direction:column;
+}
+.slide *{font-family:var(--fd)}
+.slide.dark{background:var(--navy);color:#fff}
+.slide.dark::before{content:"";position:absolute;inset:0;background:var(--grad-r);opacity:.4;pointer-events:none}
+.slide.light{background:#fff;color:var(--navy)}
+
+.slide .top{display:flex;justify-content:space-between;align-items:center;padding:36px 56px 0;position:relative;z-index:2}
+.slide .top img.brand{height:32px;width:auto}
+.slide .top .pg{font-size:11px;letter-spacing:1.5px;text-transform:uppercase;font-weight:600;color:rgba(255,255,255,.45)}
+.slide.light .top .pg{color:var(--gray)}
+
+.slide .body{flex:1;padding:32px 56px;position:relative;z-index:2;display:flex;flex-direction:column}
+.slide .bot{padding:20px 56px 28px;display:flex;justify-content:space-between;align-items:flex-end;font-size:10px;color:rgba(255,255,255,.4);letter-spacing:.6px;text-transform:uppercase;position:relative;z-index:2}
+.slide.light .bot{color:var(--gray)}
+
+.eyebrow{display:inline-block;font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:1.8px;margin-bottom:16px}
+.dark .eyebrow{color:var(--g3)}
+.light .eyebrow{color:var(--blue)}
+.title{font-weight:800;font-size:50px;line-height:1.05;letter-spacing:-1.5px;margin:0 0 16px}
+.dark .title{color:#fff}
+.light .title{color:var(--navy)}
+.title em{font-style:normal;font-family:'Fraunces',Georgia,serif;font-weight:400;letter-spacing:-.5px;background:var(--grad);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+.lead{font-size:16px;line-height:1.55;max-width:700px}
+.dark .lead{color:rgba(255,255,255,.75)}
+.light .lead{color:var(--txt)}
+.lead strong{font-weight:600}
+.dark .lead strong{color:#fff}
+.light .lead strong{color:var(--navy)}
+
+/* ─── 01 · COVER ─── */
+.cover-mid{flex:1;display:flex;flex-direction:column;justify-content:center}
+.cover-eye{font-size:14px;font-weight:500;color:rgba(255,255,255,.65);letter-spacing:.4px;margin-bottom:10px}
+.cover-title{font-weight:800;font-size:82px;line-height:.98;letter-spacing:-3px;color:#fff;margin:0 0 18px}
+.cover-title .accent{font-style:normal;font-family:'Fraunces',Georgia,serif;font-weight:400;background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.cover-sub{font-size:18px;color:rgba(255,255,255,.72);max-width:600px;line-height:1.5}
+.cover-meta{padding:28px 56px;display:grid;grid-template-columns:1fr 1fr 1fr;gap:32px;border-top:1px solid rgba(255,255,255,.12);position:relative;z-index:2}
+.cover-meta .label{font-size:10.5px;text-transform:uppercase;letter-spacing:1.2px;color:rgba(255,255,255,.55);font-weight:500;margin-bottom:6px}
+.cover-meta .value{font-size:14px;font-weight:600;color:#fff}
+
+/* ─── 02 · AUTORIDADE ─── */
+.auth-grid{display:grid;grid-template-columns:1.1fr 1fr;gap:48px;flex:1;align-items:center}
+.auth-big{display:flex;align-items:baseline;gap:14px;margin:8px 0 6px}
+.auth-big .num{font-weight:800;font-size:120px;line-height:.9;letter-spacing:-5px;background:var(--grad);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+.auth-big .lbl{font-weight:700;font-size:26px;color:var(--navy);letter-spacing:-.6px;line-height:1.1}
+.auth-points{display:flex;flex-direction:column;gap:12px;margin-top:22px}
+.auth-points .ap{display:grid;grid-template-columns:30px 1fr;gap:12px;align-items:start;font-size:14px;color:var(--txt);line-height:1.5}
+.auth-points .ap .ic{width:26px;height:26px;border-radius:7px;background:var(--grad);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:11px;margin-top:1px}
+.auth-points .ap strong{color:var(--navy);font-weight:600}
+.auth-right h4{font-size:11px;font-weight:700;letter-spacing:1.6px;text-transform:uppercase;color:var(--gray);margin-bottom:18px}
+.partner-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.partner{border:1px solid var(--bdr);border-radius:10px;padding:16px 14px;background:#fff;display:flex;align-items:center;justify-content:center;min-height:96px}
+.partner img{max-height:56px;max-width:100%;object-fit:contain}
+.auth-seg{display:flex;gap:8px;margin-top:20px}
+.auth-seg .pill{font-size:12px;font-weight:600;padding:7px 15px;background:var(--tb09);color:var(--blue);border-radius:100px}
+
+/* ─── 03 · MONEY SLIDE HORIZONTAL ─── */
+.slide-money .body{padding:24px 56px 12px;justify-content:flex-start}
+.money-head .title{font-size:38px;margin-bottom:8px}
+.money-flow{width:100%;flex:1;margin-top:4px;position:relative;min-height:0}
+.mf-svg{position:absolute;inset:0;width:100%;height:100%;overflow:visible;pointer-events:none}
+.mf-branch{stroke-dasharray:1;stroke-dashoffset:1;animation:mfDraw 1.6s cubic-bezier(.4,0,.2,1) forwards}
+.mf-branch.b1{animation-delay:.3s}
+.mf-branch.b2{animation-delay:.45s}
+.mf-branch.b3{animation-delay:.9s}
+.mf-branch.b4{animation-delay:1.05s}
+@keyframes mfDraw{to{stroke-dashoffset:0}}
+.mf-loop{stroke-dasharray:5 6;opacity:0;animation:mfFade .8s ease forwards;animation-delay:1.8s}
+@keyframes mfFade{to{opacity:.75}}
+
+.mnode{position:absolute;transform:translate(-50%,-50%);z-index:3}
+.mnode-inner{position:relative;opacity:0;transform:scale(.7);animation:mnIn .5s cubic-bezier(.34,1.4,.64,1) forwards}
+.mnode.p1 .mnode-inner{animation-delay:.2s}
+.mnode.p2 .mnode-inner{animation-delay:.45s}
+.mnode.p3 .mnode-inner{animation-delay:.45s}
+.mnode.p4 .mnode-inner{animation-delay:.75s}
+.mnode.p5 .mnode-inner{animation-delay:1.1s}
+.mnode.p6 .mnode-inner{animation-delay:1.1s}
+.mnode.p7 .mnode-inner{animation-delay:1.45s}
+@keyframes mnIn{to{opacity:1;transform:scale(1)}}
+
+.mnode .ico{
+  position:relative;width:64px;height:64px;border-radius:50%;
+  background:radial-gradient(circle at 30% 30%,#1a2a45,var(--navy9));
+  border:1.5px solid rgba(255,255,255,.92);
+  display:grid;place-items:center;color:#fff;
+  box-shadow:0 5px 22px rgba(0,0,0,.45);
+}
+.mnode .ico svg{width:26px;height:26px}
+.mnode.p1 .ico,.mnode.p7 .ico{width:76px;height:76px;border-width:2px;border-color:var(--g3);box-shadow:0 6px 28px rgba(36,213,255,.4)}
+.mnode.p1 .ico svg,.mnode.p7 .ico svg{width:32px;height:32px}
+.mnode .lbl{
+  position:absolute;top:calc(100% + 8px);left:50%;transform:translateX(-50%);
+  font-size:12px;font-weight:600;color:#fff;text-align:center;line-height:1.25;white-space:nowrap;
+}
+.mnode.lbl-up .lbl{top:auto;bottom:calc(100% + 8px)}
+.mnode.p1 .lbl,.mnode.p7 .lbl{font-size:13px;color:var(--g3)}
+.mnode .ico .badge{position:absolute;top:-5px;right:-8px;background:var(--grad);color:#fff;font-size:8px;font-weight:800;letter-spacing:.4px;padding:3px 7px;border-radius:100px;border:1.5px solid var(--navy);white-space:nowrap}
+
+/* mini site mockup (nó central) */
+.msite{position:absolute;transform:translate(-50%,-50%);z-index:4;width:230px;border-radius:9px;overflow:hidden;background:#fff;box-shadow:0 10px 36px rgba(0,0,0,.5),0 0 60px rgba(36,213,255,.22),0 0 0 1px rgba(255,255,255,.1);opacity:0;animation:mnIn .5s cubic-bezier(.34,1.4,.64,1) forwards;animation-delay:.75s}
+.msite .bbar{background:#F3F4F6;padding:5px 8px;display:flex;align-items:center;gap:5px;border-bottom:1px solid #E5E7EB}
+.msite .bbar i{width:6px;height:6px;border-radius:50%;display:block}
+.msite .bbar i:nth-child(1){background:#FF5F57}
+.msite .bbar i:nth-child(2){background:#FEBC2E}
+.msite .bbar i:nth-child(3){background:#28C840}
+.msite .bbar .url{flex:1;background:#fff;border-radius:3px;padding:1px 7px;font-size:7.5px;color:#6B7280;font-family:Menlo,monospace}
+.msite .hero{height:74px;background-image:url('assets/hotel/hotel-01.jpg');background-size:cover;background-position:center;position:relative;display:flex;flex-direction:column;justify-content:flex-end;padding:8px 10px;color:#fff}
+.msite .hero::before{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(14,30,53,.35),rgba(14,30,53,.8))}
+.msite .hero .h1{position:relative;font-weight:800;font-size:11px;letter-spacing:-.2px}
+.msite .hero .h2{position:relative;font-size:7.5px;color:rgba(255,255,255,.75)}
+.msite .bk{padding:6px 8px;background:#fff;display:grid;grid-template-columns:1fr 1fr auto;gap:4px;align-items:center}
+.msite .bk .f{padding:2px 4px}
+.msite .bk .f .la{font-size:6px;color:#9CA3AF;text-transform:uppercase;letter-spacing:.5px;font-weight:600;display:block}
+.msite .bk .f .va{font-size:8.5px;color:#111;font-weight:600}
+.msite .bk .go{background:var(--grad);color:#fff;font-size:8px;font-weight:700;padding:6px 10px;border-radius:4px}
+.msite .site-lbl{position:absolute;top:calc(100% + 8px);left:50%;transform:translateX(-50%);font-size:12px;font-weight:600;color:#fff;white-space:nowrap;text-align:center}
+
+/* label do loop de remarketing */
+.mf-looplbl{position:absolute;left:37%;top:91%;transform:translate(-50%,-50%);font-size:10px;font-weight:700;letter-spacing:1.2px;text-transform:uppercase;color:rgba(255,255,255,.65);white-space:nowrap;opacity:0;animation:mfFade .8s ease forwards;animation-delay:2s;z-index:3}
+
+/* chips de rodapé do money */
+.money-chips{display:flex;gap:10px;justify-content:center;margin-top:6px;position:relative;z-index:3}
+.mchip{display:flex;align-items:center;gap:8px;background:rgba(255,255,255,.05);border:1px solid rgba(36,213,255,.28);border-radius:100px;padding:8px 16px;font-size:11.5px;font-weight:600;color:rgba(255,255,255,.88)}
+.mchip .d{width:7px;height:7px;border-radius:50%;background:var(--g3);box-shadow:0 0 8px rgba(36,213,255,.7);flex-shrink:0}
+.mchip em{font-style:normal;color:var(--g3)}
+
+/* ─── 04-07 · ETAPAS ─── */
+.etapa-grid{display:grid;grid-template-columns:1fr 1.05fr;gap:48px;flex:1;align-items:center}
+.etapa-points{list-style:none;display:flex;flex-direction:column;gap:13px;margin-top:22px}
+.etapa-points li{display:grid;grid-template-columns:32px 1fr;gap:13px;align-items:start;font-size:14px;line-height:1.55}
+.light .etapa-points li{color:var(--txt)}
+.dark .etapa-points li{color:rgba(255,255,255,.78)}
+.etapa-points li .ic{width:28px;height:28px;border-radius:7px;background:var(--grad);color:#fff;font-weight:700;font-size:11px;display:flex;align-items:center;justify-content:center;margin-top:1px}
+.etapa-points li strong{font-weight:600}
+.light .etapa-points li strong{color:var(--navy)}
+.dark .etapa-points li strong{color:#fff}
+
+.analogy{margin-top:22px;border-left:3px solid var(--g2);background:var(--tb09);border-radius:0 12px 12px 0;padding:16px 20px;font-size:14px;line-height:1.6;color:var(--txt)}
+.analogy .tag-a{display:block;font-size:10px;font-weight:700;letter-spacing:1.4px;text-transform:uppercase;color:var(--blue);margin-bottom:6px}
+.analogy em{font-style:normal;font-weight:600;color:var(--navy)}
+
+.etapa-visual{height:470px;border-radius:14px;border:1px solid var(--bdr);background:var(--bg);display:flex;align-items:center;justify-content:center;overflow:hidden;position:relative}
+.dark .etapa-visual{border-color:rgba(255,255,255,.12);background:rgba(255,255,255,.03)}
+
+/* visual: fundação (instagram + site) */
+.fund-vis{display:flex;gap:18px;align-items:center;padding:24px}
+.ig-mock{width:172px;border-radius:14px;overflow:hidden;background:#fff;box-shadow:0 10px 30px rgba(20,35,60,.18);border:1px solid var(--bdr)}
+.ig-mock .ighead{display:flex;align-items:center;gap:7px;padding:8px 10px}
+.ig-mock .ighead .av{width:22px;height:22px;border-radius:50%;background:var(--grad)}
+.ig-mock .ighead .nm{font-size:9px;font-weight:700;color:#111}
+.ig-mock .ighead .nm small{display:block;font-weight:400;color:#9CA3AF;font-size:7.5px}
+.ig-mock .igimg{height:150px;background-image:url('assets/hotel/hotel-02.jpg');background-size:cover;background-position:center}
+.ig-mock .igact{display:flex;gap:8px;padding:7px 10px;font-size:11px}
+.ig-mock .igcap{padding:0 10px 10px;font-size:8px;color:#374151;line-height:1.4}
+.ig-mock .igcap b{color:#111}
+.site-mock2{width:250px;border-radius:10px;overflow:hidden;background:#fff;box-shadow:0 12px 36px rgba(20,35,60,.2);border:1px solid var(--bdr)}
+.site-mock2 .bbar{background:#F3F4F6;padding:6px 9px;display:flex;gap:5px;align-items:center;border-bottom:1px solid #E5E7EB}
+.site-mock2 .bbar i{width:6px;height:6px;border-radius:50%;display:block}
+.site-mock2 .bbar i:nth-child(1){background:#FF5F57}
+.site-mock2 .bbar i:nth-child(2){background:#FEBC2E}
+.site-mock2 .bbar i:nth-child(3){background:#28C840}
+.site-mock2 .bbar .url{flex:1;background:#fff;border-radius:3px;padding:2px 7px;font-size:8px;color:#6B7280;font-family:Menlo,monospace}
+.site-mock2 .hero2{height:104px;background-image:url('assets/hotel/hotel-03.jpg');background-size:cover;background-position:center;position:relative;display:flex;flex-direction:column;justify-content:flex-end;padding:10px 12px;color:#fff}
+.site-mock2 .hero2::before{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(14,30,53,.3),rgba(14,30,53,.85))}
+.site-mock2 .hero2 .h1{position:relative;font-weight:800;font-size:13px}
+.site-mock2 .hero2 .h2{position:relative;font-size:8px;color:rgba(255,255,255,.75)}
+.site-mock2 .bk2{padding:7px 9px;display:grid;grid-template-columns:1fr 1fr auto;gap:4px;align-items:center;border-top:1px solid #E5E7EB}
+.site-mock2 .bk2 .f .la{font-size:6.5px;color:#9CA3AF;text-transform:uppercase;font-weight:600;display:block}
+.site-mock2 .bk2 .f .va{font-size:9px;color:#111;font-weight:600}
+.site-mock2 .bk2 .go{background:var(--grad);color:#fff;font-size:8.5px;font-weight:700;padding:6px 11px;border-radius:4px}
+.site-mock2 .trk{display:flex;gap:5px;padding:7px 9px;background:#F9FAFB;border-top:1px solid #E5E7EB;flex-wrap:wrap}
+.site-mock2 .trk span{font-size:7px;font-weight:700;color:var(--blue);background:var(--tb09);padding:3px 7px;border-radius:100px;letter-spacing:.3px}
+.fund-link{display:flex;flex-direction:column;align-items:center;gap:4px;color:var(--gray)}
+.fund-link .arr{font-size:18px;color:var(--g2)}
+.fund-link .t{font-size:8.5px;font-weight:700;text-transform:uppercase;letter-spacing:.8px}
+
+/* visual: criativos */
+.cria-vis{display:flex;gap:16px;align-items:center;justify-content:center;padding:20px}
+.ad-card{width:190px;border-radius:14px;overflow:hidden;background:#fff;box-shadow:0 12px 32px rgba(20,35,60,.18);border:1px solid var(--bdr);position:relative}
+.ad-card.back{transform:rotate(-4deg) scale(.92);opacity:.75}
+.ad-card.front{z-index:2}
+.ad-card .adimg{height:200px;background-size:cover;background-position:center;position:relative;display:flex;flex-direction:column;justify-content:flex-end;padding:12px;color:#fff}
+.ad-card .adimg::before{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 30%,rgba(14,30,53,.9))}
+.ad-card .adimg .off{position:absolute;top:10px;right:10px;background:var(--grad);font-size:11px;font-weight:800;padding:5px 10px;border-radius:100px;letter-spacing:.3px}
+.ad-card .adimg .t1{position:relative;font-weight:800;font-size:14px;line-height:1.15;letter-spacing:-.3px}
+.ad-card .adimg .t2{position:relative;font-size:9px;color:rgba(255,255,255,.8);margin-top:3px}
+.ad-card .adcta{display:flex;justify-content:space-between;align-items:center;padding:9px 12px;font-size:9.5px;font-weight:700;color:var(--blue)}
+.ad-card .adcta .b{background:var(--tb09);padding:5px 11px;border-radius:6px}
+.cria-stats{display:flex;flex-direction:column;gap:10px}
+.cria-stat{background:#fff;border:1px solid var(--bdr);border-radius:11px;padding:12px 16px;min-width:150px}
+.cria-stat .v{font-weight:800;font-size:20px;background:var(--grad);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+.cria-stat .l{font-size:10px;color:var(--gray);margin-top:2px;line-height:1.35}
+
+/* ─── 06 · JORNADAS ─── */
+.jornadas{display:flex;flex-direction:column;gap:14px;margin-top:26px}
+.jrow{display:flex;align-items:center;gap:14px;background:#fff;border:1px solid var(--bdr);border-radius:14px;padding:16px 20px}
+.jrow .jtag{flex-shrink:0;width:150px}
+.jrow .jtag .jt1{font-size:12.5px;font-weight:700;color:var(--navy);letter-spacing:-.2px}
+.jrow .jtag .jt2{font-size:10px;color:var(--gray);margin-top:2px;line-height:1.3}
+.jsteps{display:flex;align-items:center;gap:8px;flex-wrap:wrap;flex:1}
+.jstep{display:flex;align-items:center;gap:7px;background:var(--bg);border:1px solid var(--bdr);border-radius:100px;padding:6px 13px;font-size:11.5px;font-weight:600;color:var(--navy);white-space:nowrap}
+.jstep .je{font-size:12px}
+.jstep.hot{background:var(--tb09);border-color:var(--tb18);color:var(--blue)}
+.jstep.win{background:var(--okbg);border-color:rgba(22,163,74,.25);color:var(--ok)}
+.jarr{color:var(--gray);font-size:13px;flex-shrink:0}
+
+/* ─── 07 · COMERCIAL ─── */
+.com-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin-top:26px}
+.com-card{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.1);border-radius:14px;padding:22px 24px}
+.com-card .ch{display:flex;align-items:center;gap:12px;margin-bottom:10px}
+.com-card .ch .ic{width:34px;height:34px;border-radius:9px;background:var(--grad);display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.com-card .ch .ic svg{width:17px;height:17px;stroke:#fff}
+.com-card .ch h3{font-size:16px;font-weight:700;color:#fff;letter-spacing:-.3px}
+.com-card p{font-size:13px;line-height:1.55;color:rgba(255,255,255,.7)}
+.com-card p strong{color:#fff;font-weight:600}
+.com-punch{margin-top:20px;display:flex;align-items:center;gap:12px;background:rgba(36,213,255,.08);border:1px solid rgba(36,213,255,.3);border-radius:12px;padding:16px 22px;font-size:15px;font-weight:600;color:#fff}
+.com-punch .st{font-size:18px;color:var(--g3)}
+.com-punch em{font-style:normal;color:var(--g3)}
+
+/* ─── 08 · CASE ─── */
+.case-grid{display:grid;grid-template-columns:1.05fr 1fr;gap:44px;flex:1;align-items:center}
+.case-img{height:250px;border-radius:14px;background-size:cover;background-position:center;position:relative;overflow:hidden}
+.case-img .tag-i{position:absolute;left:14px;bottom:14px;background:rgba(14,30,53,.85);color:#fff;font-size:11px;font-weight:600;padding:6px 13px;border-radius:100px;backdrop-filter:blur(6px)}
+.case-cmp{margin-top:22px;border:1px solid var(--bdr);border-radius:12px;overflow:hidden}
+.ccm{display:grid;grid-template-columns:1.3fr 1fr 1fr;padding:11px 16px;font-size:13px;align-items:center}
+.ccm.hd{background:var(--bg);font-size:10.5px;font-weight:700;text-transform:uppercase;letter-spacing:.8px;color:var(--gray)}
+.ccm.hd .gr{color:var(--ok)}
+.ccm+.ccm{border-top:1px solid var(--bdr)}
+.ccm .nm{color:var(--txt);font-weight:500}
+.ccm .v{font-weight:700;color:var(--navy)}
+.ccm .v.gr{color:var(--ok)}
+.case-bigs{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:16px}
+.case-big{background:#fff;border:1px solid var(--bdr);border-radius:12px;padding:14px 12px;text-align:center}
+.case-big .n{font-weight:800;font-size:24px;background:var(--grad);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+.case-big .l{font-size:9.5px;color:var(--gray);margin-top:3px;line-height:1.3}
+
+/* ─── 09 · ENTREGÁVEIS ─── */
+.entr-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:24px}
+.entr-col{border:1px solid var(--bdr);border-radius:16px;padding:24px 26px;background:#fff}
+.entr-col.mk{border-top:3px solid var(--g2)}
+.entr-col.vd{border-top:3px solid var(--ok)}
+.entr-col h3{font-size:12px;font-weight:700;letter-spacing:1.6px;text-transform:uppercase;margin-bottom:16px}
+.entr-col.mk h3{color:var(--blue)}
+.entr-col.vd h3{color:var(--ok)}
+.entr-col ul{list-style:none;display:flex;flex-direction:column;gap:11px}
+.entr-col li{display:grid;grid-template-columns:22px 1fr;gap:10px;font-size:13.5px;color:var(--txt);line-height:1.45;align-items:start}
+.entr-col li .ck{width:18px;height:18px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:10px;color:#fff;font-weight:700;margin-top:1px}
+.entr-col.mk li .ck{background:var(--grad)}
+.entr-col.vd li .ck{background:var(--ok)}
+.entr-col li strong{color:var(--navy);font-weight:600}
+.entr-note{margin-top:16px;display:flex;align-items:center;gap:10px;background:var(--bg);border:1px solid var(--bdr);border-radius:12px;padding:14px 20px;font-size:13px;color:var(--txt)}
+.entr-note .st{color:var(--blue);font-size:15px}
+.entr-note strong{color:var(--navy);font-weight:600}
+
+/* ─── 10 · NEXT ─── */
+.next-grid{display:grid;grid-template-columns:1.2fr 1fr;gap:40px;flex:1;align-items:center}
+.next-steps{display:flex;flex-direction:column;gap:12px;margin-top:24px}
+.next-step{display:grid;grid-template-columns:34px 1fr;gap:14px;align-items:start}
+.next-step .n{width:30px;height:30px;border-radius:50%;background:var(--grad);color:#fff;font-weight:700;font-size:12px;display:flex;align-items:center;justify-content:center}
+.next-step .t{font-size:14.5px;color:rgba(255,255,255,.85);line-height:1.5;padding-top:4px}
+.next-step .t strong{color:#fff;font-weight:600}
+.next-card{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.12);border-radius:16px;padding:28px;text-align:center}
+.next-card .ph{width:84px;height:84px;border-radius:50%;background-image:url('assets/igor-foto-png-proposta.png');background-size:cover;background-position:top center;margin:0 auto 14px;border:2px solid rgba(36,213,255,.5)}
+.next-card .nm{font-weight:700;font-size:17px;color:#fff}
+.next-card .rl{font-size:11.5px;color:rgba(255,255,255,.6);margin:3px 0 16px}
+.next-card .ct{display:inline-block;background:var(--grad);color:#fff;font-weight:700;font-size:13px;padding:11px 26px;border-radius:100px;letter-spacing:.2px}
+
+/* ─── PRESENT MODE ─── */
+.toggle-present{position:fixed;top:14px;right:14px;background:var(--grad);color:#fff;border:none;padding:8px 16px;border-radius:8px;font-family:var(--fd);font-weight:600;font-size:12px;cursor:pointer;z-index:99;letter-spacing:.3px}
+.nav-hint{position:fixed;bottom:12px;left:50%;transform:translateX(-50%);font-size:11px;color:rgba(255,255,255,.4);letter-spacing:.5px;z-index:99;display:none;font-family:var(--fd)}
+.deck.present{padding:0;gap:0;background:#000;position:fixed;inset:0;overflow:hidden;display:flex;align-items:center;justify-content:center}
+.deck.present .slide{display:none;transform:scale(var(--present-scale,1));transform-origin:center;box-shadow:none;border-radius:0}
+.deck.present .slide.active{display:flex}
+.deck.present ~ .nav-hint{display:block}
+@media print{
+  .toggle-present,.nav-hint{display:none!important}
+  .deck{padding:0;gap:0}
+  .slide{box-shadow:none;border-radius:0;page-break-after:always;break-after:page}
+}
+</style>
+</head>
+<body>
+
+<button class="toggle-present" onclick="togglePresent()">▶ Apresentar</button>
+
+<div class="deck" id="deck">
+
+<!-- ═══════════════ 01 · COVER ═══════════════ -->
+<section class="slide dark active">
+  <div class="top"><img class="brand" src="assets/logotipo_white.svg" alt="Komplexa"><span class="pg">Komplexa · 2026</span></div>
+  <div class="body">
+    <div class="cover-mid">
+      <div class="cover-eye">Apresentação · Método Komplexa</div>
+      <h1 class="cover-title">Aquisição para hotelaria<br><span class="accent">com método</span></h1>
+      <p class="cover-sub">Marketing e vendas integrados para hotéis, pousadas e resorts aumentarem reservas diretas — do criativo à reserva efetuada.</p>
+    </div>
+  </div>
+  <div class="cover-meta">
+    <div><div class="label">Especialidade</div><div class="value">Hotéis · Pousadas · Resorts</div></div>
+    <div><div class="label">Presença</div><div class="value">14 estados do Brasil</div></div>
+    <div><div class="label">Frente de atuação</div><div class="value">Marketing + Vendas</div></div>
+  </div>
+</section>
+
+<!-- ═══════════════ 02 · AUTORIDADE ═══════════════ -->
+<section class="slide light">
+  <div class="top"><img class="brand" src="assets/logotipo_blue.svg" alt="Komplexa"><span class="pg">02 · 10</span></div>
+  <div class="body">
+    <div class="auth-grid">
+      <div>
+        <div class="eyebrow">Quem somos</div>
+        <h2 class="title" style="font-size:40px">Especialistas em <em>aquisição hoteleira</em>.</h2>
+        <div class="auth-big">
+          <span class="num">14</span>
+          <span class="lbl">estados<br>do Brasil</span>
+        </div>
+        <div class="auth-points">
+          <div class="ap"><span class="ic">✦</span><span><strong>Foco único em hotelaria.</strong> Não atendemos outros setores — todo o método foi construído em hotéis, pousadas e resorts.</span></div>
+          <div class="ap"><span class="ic">◆</span><span><strong>Marketing e vendas na mesma operação.</strong> Da campanha ao treinamento do comercial, um time só responde pelo resultado.</span></div>
+          <div class="ap"><span class="ic">◇</span><span><strong>Método validado em diversos projetos</strong> — criativos, campanhas e processos testados e replicados.</span></div>
+        </div>
+        <div class="auth-seg">
+          <span class="pill">Hotéis</span><span class="pill">Pousadas</span><span class="pill">Resorts</span>
+        </div>
+      </div>
+      <div class="auth-right">
+        <h4>Integrações e parceiros de tecnologia</h4>
+        <div class="partner-grid">
+          <div class="partner"><img src="assets/partners/omnibees.png" alt="Omnibees"></div>
+          <div class="partner"><img src="assets/partners/hsystem.png" alt="HSystem"></div>
+          <div class="partner"><img src="assets/partners/asksuite.jpeg" alt="Asksuite"></div>
+          <div class="partner"><img src="assets/partners/erbon.png" alt="Erbon"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="bot"><span>komplexahoteis.com</span><span>02 · 10</span></div>
+</section>
+
+<!-- ═══════════════ 03 · MONEY SLIDE HORIZONTAL ═══════════════ -->
+<section class="slide dark slide-money">
+  <div class="top"><img class="brand" src="assets/logotipo_white.svg" alt="Komplexa"><span class="pg">03 · 10</span></div>
+  <div class="body">
+    <div class="money-head">
+      <div class="eyebrow">O método</div>
+      <h2 class="title">Do criativo à <em>reserva efetuada</em>.</h2>
+    </div>
+
+    <div class="money-flow">
+      <svg class="mf-svg" viewBox="0 0 1000 400" preserveAspectRatio="none">
+        <defs>
+          <linearGradient id="mg" x1="0" y1="0" x2="1" y2="0">
+            <stop offset="0" stop-color="#1670C3"/>
+            <stop offset=".5" stop-color="#1099E9"/>
+            <stop offset="1" stop-color="#24D5FF"/>
+          </linearGradient>
+          <filter id="gl" x="-20%" y="-20%" width="140%" height="140%">
+            <feGaussianBlur stdDeviation="3" result="b"/>
+            <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+          </filter>
+        </defs>
+
+        <!-- entrada: Criativos → Google (cima) e Meta (baixo) -->
+        <path class="mf-branch b1" pathLength="1" d="M 65 200 L 150 200 L 250 110 L 385 190"
+              stroke="url(#mg)" stroke-width="2.4" fill="none" opacity=".95" filter="url(#gl)" stroke-linecap="round" stroke-linejoin="round"/>
+        <path class="mf-branch b2" pathLength="1" d="M 65 200 L 150 200 L 250 290 L 385 210"
+              stroke="url(#mg)" stroke-width="2.4" fill="none" opacity=".95" filter="url(#gl)" stroke-linecap="round" stroke-linejoin="round"/>
+
+        <!-- saída: Site → Motor (cima) e WhatsApp (baixo) → Reserva -->
+        <path class="mf-branch b3" pathLength="1" d="M 600 190 L 730 110 L 915 200"
+              stroke="url(#mg)" stroke-width="2.4" fill="none" opacity=".95" filter="url(#gl)" stroke-linecap="round" stroke-linejoin="round"/>
+        <path class="mf-branch b4" pathLength="1" d="M 600 210 L 730 290 L 915 200"
+              stroke="url(#mg)" stroke-width="2.4" fill="none" opacity=".95" filter="url(#gl)" stroke-linecap="round" stroke-linejoin="round"/>
+
+        <!-- loop de remarketing: site → volta pros anúncios (tracejado) -->
+        <path class="mf-loop" d="M 490 272 C 460 372, 300 372, 252 318"
+              stroke="rgba(255,255,255,.6)" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+
+        <!-- dots -->
+        <circle r="3.5" fill="#24D5FF" filter="url(#gl)" opacity=".95">
+          <animateMotion dur="6s" repeatCount="indefinite" begin="2s" path="M 65 200 L 150 200 L 250 110 L 385 190"/>
+        </circle>
+        <circle r="3.5" fill="#24D5FF" filter="url(#gl)" opacity=".95">
+          <animateMotion dur="6s" repeatCount="indefinite" begin="3.4s" path="M 65 200 L 150 200 L 250 290 L 385 210"/>
+        </circle>
+        <circle r="3.5" fill="#24D5FF" filter="url(#gl)" opacity=".95">
+          <animateMotion dur="5s" repeatCount="indefinite" begin="2.6s" path="M 600 190 L 730 110 L 915 200"/>
+        </circle>
+        <circle r="3.5" fill="#24D5FF" filter="url(#gl)" opacity=".95">
+          <animateMotion dur="5s" repeatCount="indefinite" begin="4.1s" path="M 600 210 L 730 290 L 915 200"/>
+        </circle>
+        <circle r="2.5" fill="#fff" opacity=".75">
+          <animateMotion dur="4.5s" repeatCount="indefinite" begin="3s" path="M 490 272 C 460 372, 300 372, 252 318"/>
+        </circle>
+      </svg>
+
+      <!-- Criativos (start) · SVG (65,200) -->
+      <div class="mnode p1" style="left:6.5%;top:50%">
+        <div class="mnode-inner">
+          <div class="ico">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M9 18h6M10 21h4M12 3a6 6 0 016 6c0 2.5-1.5 3.5-2.5 5H8.5C7.5 12.5 6 11.5 6 9a6 6 0 016-6z"/>
+              <path d="M12 8v4"/>
+            </svg>
+          </div>
+          <div class="lbl">Criativos<br>validados</div>
+        </div>
+      </div>
+
+      <!-- Google Ads · SVG (250,110) · label acima -->
+      <div class="mnode p2 lbl-up" style="left:25%;top:27.5%">
+        <div class="mnode-inner">
+          <div class="ico">
+            <svg viewBox="0 0 24 24"><path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/><path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/><path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/><path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/></svg>
+          </div>
+          <div class="lbl">Google Ads</div>
+        </div>
+      </div>
+
+      <!-- Meta Ads · SVG (250,290) -->
+      <div class="mnode p3" style="left:25%;top:72.5%">
+        <div class="mnode-inner">
+          <div class="ico">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M6.5 7C4 7 2.5 9.8 2.5 12.5S4 18 6.3 18c1.8 0 3-1.6 4.2-3.7L12 11.6l1.5 2.7c1.2 2.1 2.4 3.7 4.2 3.7 2.3 0 3.8-2.8 3.8-5.5S20 7 17.5 7c-1.9 0-3.2 1.5-4.4 3.5L12 12.4l-1.1-1.9C9.7 8.5 8.4 7 6.5 7z"/>
+            </svg>
+          </div>
+          <div class="lbl">Meta Ads</div>
+        </div>
+      </div>
+
+      <!-- Site + Motor (mockup central) · SVG (490,200) -->
+      <div class="msite" style="left:49%;top:47%">
+        <div class="bbar"><i></i><i></i><i></i><span class="url">seuhotel.com.br</span></div>
+        <div class="hero">
+          <div class="h1">Reserve direto</div>
+          <div class="h2">Melhor tarifa garantida</div>
+        </div>
+        <div class="bk">
+          <div class="f"><span class="la">Check-in</span><span class="va">15 mai</span></div>
+          <div class="f"><span class="la">Check-out</span><span class="va">17 mai</span></div>
+          <span class="go">Reservar</span>
+        </div>
+        <span class="site-lbl">Site + motor integrado<br><span style="font-size:10px;color:rgba(255,255,255,.55)">tracking completo</span></span>
+      </div>
+
+      <!-- Motor checkout · SVG (730,110) · label acima -->
+      <div class="mnode p5 lbl-up" style="left:73%;top:27.5%">
+        <div class="mnode-inner">
+          <div class="ico">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="3" y="5" width="18" height="16" rx="2"/>
+              <line x1="3" y1="10" x2="21" y2="10"/>
+              <line x1="8" y1="3" x2="8" y2="7"/>
+              <line x1="16" y1="3" x2="16" y2="7"/>
+              <path d="M8 15l3 3 5-6"/>
+            </svg>
+          </div>
+          <div class="lbl">Checkout<br>no motor</div>
+        </div>
+      </div>
+
+      <!-- WhatsApp + CRM · SVG (730,290) -->
+      <div class="mnode p6" style="left:73%;top:72.5%">
+        <div class="mnode-inner">
+          <div class="ico">
+            <span class="badge">CRM</span>
+            <svg viewBox="0 0 24 24" fill="currentColor" stroke="none">
+              <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413"/>
+            </svg>
+          </div>
+          <div class="lbl">WhatsApp +<br>comercial treinado</div>
+        </div>
+      </div>
+
+      <!-- Reserva efetuada (end) · SVG (915,200) -->
+      <div class="mnode p7" style="left:91.5%;top:50%">
+        <div class="mnode-inner">
+          <div class="ico">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="9"/>
+              <path d="M8 12l3 3 5-6"/>
+            </svg>
+          </div>
+          <div class="lbl">Reserva<br>efetuada</div>
+        </div>
+      </div>
+
+      <span class="mf-looplbl">↺ Remarketing · quem saiu sem reservar volta a ser impactado</span>
+    </div>
+
+    <div class="money-chips">
+      <span class="mchip"><span class="d"></span>Tracking de ponta a ponta</span>
+      <span class="mchip"><span class="d"></span>Criativo por etapa do funil · <em>ex.: 10% off no checkout</em></span>
+      <span class="mchip"><span class="d"></span>Dados do hóspede viram audiência</span>
+    </div>
+  </div>
+  <div class="bot"><span>komplexahoteis.com</span><span>03 · 10</span></div>
+</section>
+
+<!-- ═══════════════ 04 · FUNDAÇÃO ═══════════════ -->
+<section class="slide light">
+  <div class="top"><img class="brand" src="assets/logotipo_blue.svg" alt="Komplexa"><span class="pg">04 · 10</span></div>
+  <div class="body">
+    <div class="etapa-grid">
+      <div>
+        <div class="eyebrow">Marketing · Fundação</div>
+        <h2 class="title" style="font-size:38px">Instagram estruturado.<br>Site que <em>coleta dados</em>.</h2>
+        <ul class="etapa-points">
+          <li><span class="ic">01</span><span><strong>Estruturamos o Instagram do hotel</strong> — perfil, destaques e conteúdo que sustentam a credibilidade de quem chega pelo anúncio.</span></li>
+          <li><span class="ic">02</span><span><strong>Criamos o site novo integrado ao motor de reservas</strong> — caminho curto até a reserva, sem etapa desnecessária.</span></li>
+          <li><span class="ic">03</span><span><strong>Configuramos todo o rastreamento</strong> — cada visita, clique e reserva vira dado que alimenta as campanhas.</span></li>
+        </ul>
+        <div class="analogy">
+          <span class="tag-a">Por que refazer o site?</span>
+          Um site sem rastreamento é como uma <em>recepção sem livro de registros</em>: gente entra e sai o dia inteiro, e você não sabe quem veio, de onde veio, nem por que não reservou. O site novo registra tudo — <em>e é esse registro que faz o anúncio ficar mais barato com o tempo</em>.
+        </div>
+      </div>
+      <div class="etapa-visual">
+        <div class="fund-vis">
+          <div class="ig-mock">
+            <div class="ighead"><span class="av"></span><span class="nm">@seuhotel<small>Patrocinado</small></span></div>
+            <div class="igimg"></div>
+            <div class="igact"><span>♥</span><span>💬</span><span>↗</span></div>
+            <div class="igcap"><b>seuhotel</b> Sua próxima estadia começa aqui ✨</div>
+          </div>
+          <div class="fund-link">
+            <span class="arr">→</span>
+            <span class="t">Integrado</span>
+          </div>
+          <div class="site-mock2">
+            <div class="bbar"><i></i><i></i><i></i><span class="url">seuhotel.com.br</span></div>
+            <div class="hero2">
+              <div class="h1">Reserve direto</div>
+              <div class="h2">Melhor tarifa garantida</div>
+            </div>
+            <div class="bk2">
+              <div class="f"><span class="la">Check-in</span><span class="va">15 mai</span></div>
+              <div class="f"><span class="la">Check-out</span><span class="va">17 mai</span></div>
+              <span class="go">Reservar</span>
+            </div>
+            <div class="trk"><span>Pixel Meta</span><span>Google Tag</span><span>Motor conectado</span><span>Dados do hóspede</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="bot"><span>komplexahoteis.com</span><span>04 · 10</span></div>
+</section>
+
+<!-- ═══════════════ 05 · CRIATIVOS ═══════════════ -->
+<section class="slide light">
+  <div class="top"><img class="brand" src="assets/logotipo_blue.svg" alt="Komplexa"><span class="pg">05 · 10</span></div>
+  <div class="body">
+    <div class="etapa-grid">
+      <div>
+        <div class="eyebrow">Marketing · Criativos</div>
+        <h2 class="title" style="font-size:38px">Criativos <em>validados</em> de alta conversão.</h2>
+        <ul class="etapa-points">
+          <li><span class="ic">01</span><span><strong>Modelos testados em diversos projetos</strong> de hotelaria — não começamos do zero no seu hotel.</span></li>
+          <li><span class="ic">02</span><span><strong>Produção completa</strong> — vídeo, estático e motion, adaptados à identidade do hotel.</span></li>
+          <li><span class="ic">03</span><span><strong>Criativo certo para cada etapa do funil</strong> — quem nunca viu o hotel recebe uma mensagem; quem abandonou o checkout recebe outra.</span></li>
+        </ul>
+      </div>
+      <div class="etapa-visual">
+        <div class="cria-vis">
+          <div style="position:relative;display:flex;align-items:center">
+            <div class="ad-card back" style="position:absolute;left:-30px">
+              <div class="adimg" style="background-image:url('assets/hotel/hotel-04.jpg')">
+                <div class="t1">Fim de semana a dois</div>
+              </div>
+            </div>
+            <div class="ad-card front">
+              <div class="adimg" style="background-image:url('assets/hotel/hotel-05.jpg')">
+                <span class="off">10% OFF</span>
+                <div class="t1">Suas datas ainda estão disponíveis</div>
+                <div class="t2">Finalize sua reserva com desconto</div>
+              </div>
+              <div class="adcta"><span>Reserva direta</span><span class="b">Reservar →</span></div>
+            </div>
+          </div>
+          <div class="cria-stats">
+            <div class="cria-stat"><div class="v">9+</div><div class="l">formatos por campanha<br>vídeo · motion · estático</div></div>
+            <div class="cria-stat"><div class="v">Funil</div><div class="l">mensagem específica<br>por etapa da jornada</div></div>
+            <div class="cria-stat"><div class="v">A/B</div><div class="l">teste contínuo até achar<br>o criativo vencedor</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="bot"><span>komplexahoteis.com</span><span>05 · 10</span></div>
+</section>
+
+<!-- ═══════════════ 06 · CAMPANHAS & JORNADAS ═══════════════ -->
+<section class="slide light">
+  <div class="top"><img class="brand" src="assets/logotipo_blue.svg" alt="Komplexa"><span class="pg">06 · 10</span></div>
+  <div class="body">
+    <div class="eyebrow">Marketing · Campanhas integradas</div>
+    <h2 class="title" style="font-size:38px">Uma estratégia, <em>várias jornadas</em> de compra.</h2>
+    <p class="lead">Google Ads e Meta Ads trabalham juntos, direcionando para o motor de reservas. Quem não reserva não é perdido — é reimpactado com a mensagem certa.</p>
+
+    <div class="jornadas">
+      <div class="jrow">
+        <div class="jtag"><div class="jt1">Alta intenção</div><div class="jt2">pesquisou e reservou</div></div>
+        <div class="jsteps">
+          <span class="jstep"><span class="je">🔍</span>Pesquisa no Google</span><span class="jarr">→</span>
+          <span class="jstep">Acessa o site</span><span class="jarr">→</span>
+          <span class="jstep">Motor de reservas</span><span class="jarr">→</span>
+          <span class="jstep win">✓ Reserva efetuada</span>
+        </div>
+      </div>
+      <div class="jrow">
+        <div class="jtag"><div class="jt1">Saiu sem reservar</div><div class="jt2">remarketing cross-canal</div></div>
+        <div class="jsteps">
+          <span class="jstep"><span class="je">🔍</span>Google</span><span class="jarr">→</span>
+          <span class="jstep">Acessa o site</span><span class="jarr">→</span>
+          <span class="jstep">Fecha sem reservar</span><span class="jarr">→</span>
+          <span class="jstep hot">Remarketing no Instagram</span><span class="jarr">→</span>
+          <span class="jstep win">✓ Reserva</span>
+        </div>
+      </div>
+      <div class="jrow">
+        <div class="jtag"><div class="jt1">Abandonou o checkout</div><div class="jt2">criativo por etapa do funil</div></div>
+        <div class="jsteps">
+          <span class="jstep">Escolheu as datas</span><span class="jarr">→</span>
+          <span class="jstep">Abandonou o checkout</span><span class="jarr">→</span>
+          <span class="jstep hot">Criativo com 10% off</span><span class="jarr">→</span>
+          <span class="jstep win">✓ Reserva</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="entr-note" style="margin-top:18px">
+      <span class="st">✦</span>
+      <span><strong>Tudo mapeado:</strong> cada jornada é rastreada de ponta a ponta, e os dados do hóspede alimentam a publicidade do hotel — as campanhas ficam mais precisas a cada mês.</span>
+    </div>
+  </div>
+  <div class="bot"><span>komplexahoteis.com</span><span>06 · 10</span></div>
+</section>
+
+<!-- ═══════════════ 07 · COMERCIAL ═══════════════ -->
+<section class="slide dark">
+  <div class="top"><img class="brand" src="assets/logotipo_white.svg" alt="Komplexa"><span class="pg">07 · 10</span></div>
+  <div class="body">
+    <div class="eyebrow">Vendas · Consultoria comercial</div>
+    <h2 class="title" style="font-size:38px">O marketing não termina no clique.<br>Vai até a <em>reserva efetuada</em>.</h2>
+
+    <div class="com-grid">
+      <div class="com-card">
+        <div class="ch">
+          <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 9h18M8 14h3M8 17h6"/></svg></span>
+          <h3>CRM incluso na verba</h3>
+        </div>
+        <p>Dentro da verba de anúncios está inclusa a contratação do CRM — <strong>nenhum lead se perde</strong> em conversa de WhatsApp esquecida.</p>
+      </div>
+      <div class="com-card">
+        <div class="ch">
+          <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19V6a2 2 0 012-2h12a2 2 0 012 2v13"/><path d="M8 9h8M8 13h5"/><path d="M2 19h20"/></svg></span>
+          <h3>Script e processo de vendas</h3>
+        </div>
+        <p>Estruturamos o passo a passo do atendimento — <strong>da primeira resposta ao fechamento</strong> — com script testado em hotelaria.</p>
+      </div>
+      <div class="com-card">
+        <div class="ch">
+          <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 00-4-4H6a4 4 0 00-4 4v2"/><circle cx="9.5" cy="7" r="4"/><path d="M22 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg></span>
+          <h3>Treinamento do time</h3>
+        </div>
+        <p>Treinamos a equipe do hotel para converter os leads que o marketing gera — <strong>consultoria contínua</strong>, não palestra avulsa.</p>
+      </div>
+      <div class="com-card">
+        <div class="ch">
+          <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="M7 14l4-4 3 3 5-6"/></svg></span>
+          <h3>Acompanhamento até a reserva</h3>
+        </div>
+        <p>Monitoramos o comercial de perto e medimos <strong>até a reserva efetuada</strong> — sabemos exatamente onde cada venda nasce e onde trava.</p>
+      </div>
+    </div>
+
+    <div class="com-punch">
+      <span class="st">✦</span>
+      <span>Agência de tráfego entrega clique. A Komplexa acompanha até a <em>reserva no PMS</em>.</span>
+    </div>
+  </div>
+  <div class="bot"><span>komplexahoteis.com</span><span>07 · 10</span></div>
+</section>
+
+<!-- ═══════════════ 08 · CASE ═══════════════ -->
+<section class="slide light">
+  <div class="top"><img class="brand" src="assets/logotipo_blue.svg" alt="Komplexa"><span class="pg">08 · 10</span></div>
+  <div class="body">
+    <div class="case-grid">
+      <div>
+        <div class="eyebrow">Case real · Cliente Komplexa</div>
+        <h2 class="title" style="font-size:36px">Pousada Solar<br><em>Dona Dora</em></h2>
+        <p class="lead" style="font-size:14.5px">Baixa temporada é o pior mês do ano em hotelaria. Antes da Komplexa: R$ 12.403 de faturamento. Depois: <strong>R$ 42.513</strong> — no mesmo mês de baixa, no ano seguinte.</p>
+        <div class="case-cmp">
+          <div class="ccm hd"><span></span><span>Antes</span><span class="gr">Com Komplexa</span></div>
+          <div class="ccm"><span class="nm">Faturamento (baixa)</span><span class="v">R$ 12.403</span><span class="v gr">R$ 42.513</span></div>
+          <div class="ccm"><span class="nm">Reservas no mês</span><span class="v">12</span><span class="v gr">60</span></div>
+          <div class="ccm"><span class="nm">Noites vendidas</span><span class="v">26</span><span class="v gr">110</span></div>
+        </div>
+      </div>
+      <div>
+        <div class="case-img" style="background-image:url('assets/hotel/solar-dona-dora.jpg')">
+          <span class="tag-i">Pousada Solar Dona Dora</span>
+        </div>
+        <div class="case-bigs">
+          <div class="case-big"><div class="n">3,4x</div><div class="l">faturamento<br>na baixa</div></div>
+          <div class="case-big"><div class="n">+400%</div><div class="l">reservas</div></div>
+          <div class="case-big"><div class="n">+323%</div><div class="l">noites<br>vendidas</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="bot"><span>komplexahoteis.com</span><span>08 · 10</span></div>
+</section>
+
+<!-- ═══════════════ 09 · ENTREGÁVEIS ═══════════════ -->
+<section class="slide light">
+  <div class="top"><img class="brand" src="assets/logotipo_blue.svg" alt="Komplexa"><span class="pg">09 · 10</span></div>
+  <div class="body">
+    <div class="eyebrow">O que está incluso</div>
+    <h2 class="title" style="font-size:38px">Marketing e vendas. <em>Uma operação só</em>.</h2>
+
+    <div class="entr-grid">
+      <div class="entr-col mk">
+        <h3>Marketing</h3>
+        <ul>
+          <li><span class="ck">✓</span><span><strong>Instagram estruturado</strong> — perfil, destaques e presença que sustenta o anúncio</span></li>
+          <li><span class="ck">✓</span><span><strong>Website novo integrado ao motor</strong> com rastreamento completo de dados</span></li>
+          <li><span class="ck">✓</span><span><strong>Criativos validados</strong> de alta conversão — vídeo, motion e estático</span></li>
+          <li><span class="ck">✓</span><span><strong>Campanhas Google Ads + Meta Ads</strong> de venda, direcionadas ao motor</span></li>
+          <li><span class="ck">✓</span><span><strong>Remarketing por jornada</strong> — criativo específico por etapa do funil</span></li>
+        </ul>
+      </div>
+      <div class="entr-col vd">
+        <h3>Vendas</h3>
+        <ul>
+          <li><span class="ck">✓</span><span><strong>CRM contratado e configurado</strong> — incluso na verba de anúncios</span></li>
+          <li><span class="ck">✓</span><span><strong>Script e processo comercial</strong> estruturados para hotelaria</span></li>
+          <li><span class="ck">✓</span><span><strong>Treinamento do time</strong> — consultoria contínua com o comercial</span></li>
+          <li><span class="ck">✓</span><span><strong>Acompanhamento até a reserva efetuada</strong> — medição de ponta a ponta</span></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="entr-note">
+      <span class="st">✦</span>
+      <span><strong>Metodologia aplicada em hotéis, pousadas e resorts em 14 estados do Brasil</strong> — o mesmo método, adaptado à realidade de cada operação.</span>
+    </div>
+  </div>
+  <div class="bot"><span>komplexahoteis.com</span><span>09 · 10</span></div>
+</section>
+
+<!-- ═══════════════ 10 · PRÓXIMOS PASSOS ═══════════════ -->
+<section class="slide dark">
+  <div class="top"><img class="brand" src="assets/logotipo_white.svg" alt="Komplexa"><span class="pg">10 · 10</span></div>
+  <div class="body">
+    <div class="next-grid">
+      <div>
+        <div class="eyebrow">Próximos passos</div>
+        <h2 class="title" style="font-size:40px">Vamos colocar isso <em>em prática</em>.</h2>
+        <div class="next-steps">
+          <div class="next-step"><span class="n">01</span><span class="t"><strong>Diagnóstico do hotel</strong> — canais atuais, site, presença e dependência de OTA.</span></div>
+          <div class="next-step"><span class="n">02</span><span class="t"><strong>Plano de aquisição sob medida</strong> — campanhas, criativos e jornadas para a sua operação.</span></div>
+          <div class="next-step"><span class="n">03</span><span class="t"><strong>Implementação e acompanhamento</strong> — do site novo à primeira reserva rastreada.</span></div>
+        </div>
+      </div>
+      <div class="next-card">
+        <div class="ph"></div>
+        <div class="nm">Igor Salomão</div>
+        <div class="rl">Komplexa · Aquisição para Hotelaria</div>
+        <span class="ct">Agendar conversa</span>
+      </div>
+    </div>
+  </div>
+  <div class="bot"><span>komplexahoteis.com</span><span>10 · 10</span></div>
+</section>
+
+</div>
+
+<div class="nav-hint">← →  navegar  ·  Esc  sair</div>
+
+<script>
+const deck = document.getElementById('deck');
+const slides = deck.querySelectorAll('.slide');
+let current = 0;
+
+function show(i){
+  slides.forEach((s,idx) => s.classList.toggle('active', idx === i));
+  current = i;
+}
+
+function applyPresentScale(){
+  const w = window.innerWidth, h = window.innerHeight;
+  const fitW = w / 1280, fitH = h / 720;
+  const fillScale = Math.max(fitW, fitH);
+  const fitScale = Math.min(fitW, fitH);
+  const scale = fitScale + (fillScale - fitScale) * 0.7;
+  deck.style.setProperty('--present-scale', scale.toFixed(3));
+}
+
+function togglePresent(){
+  deck.classList.toggle('present');
+  const btn = document.querySelector('.toggle-present');
+  if(deck.classList.contains('present')){
+    btn.textContent = '✕ Sair';
+    show(0);
+    applyPresentScale();
+    if(deck.requestFullscreen){ deck.requestFullscreen().then(applyPresentScale).catch(()=>{}); }
+  } else {
+    btn.textContent = '▶ Apresentar';
+    slides.forEach(s => s.classList.add('active'));
+    deck.style.removeProperty('--present-scale');
+    if(document.fullscreenElement) document.exitFullscreen();
+  }
+}
+
+window.addEventListener('resize', () => { if(deck.classList.contains('present')) applyPresentScale(); });
+
+document.addEventListener('keydown', e => {
+  if(!deck.classList.contains('present')) return;
+  if(e.key === 'ArrowRight' || e.key === ' '){ if(current < slides.length-1) show(current+1); }
+  if(e.key === 'ArrowLeft'){ if(current > 0) show(current-1); }
+  if(e.key === 'Escape'){ togglePresent(); }
+});
+
+document.addEventListener('fullscreenchange', () => {
+  if(!document.fullscreenElement && deck.classList.contains('present')) togglePresent();
+});
+</script>
+</body>
+</html>
