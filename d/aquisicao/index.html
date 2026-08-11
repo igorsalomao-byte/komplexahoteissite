@@ -203,17 +203,38 @@ html,body{font-family:var(--fd);background:var(--page-bg);color:var(--navy);-web
 .mpop-demo{margin-top:16px;border-top:1px solid rgba(255,255,255,.12);padding-top:13px}
 .mpop-demo .dlab{font-size:9px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:rgba(255,255,255,.4);margin-bottom:10px}
 
-/* CRM · funil kanban (whatsapp) */
-.dm-crm{position:relative;display:grid;grid-template-columns:repeat(4,1fr);gap:6px;height:116px}
+/* CRM · funil kanban (whatsapp) — 3 etapas + confete na venda */
+.dm-crm{position:relative;display:grid;grid-template-columns:repeat(3,1fr);gap:6px;height:116px}
 .dm-crm .col{background:rgba(255,255,255,.04);border:1px dashed rgba(255,255,255,.16);border-radius:9px;padding:7px 5px}
-.dm-crm .col .h{font-size:7.5px;font-weight:700;letter-spacing:.5px;text-transform:uppercase;color:rgba(255,255,255,.5);text-align:center;line-height:1.2}
+.dm-crm .col .h{font-size:8px;font-weight:700;letter-spacing:.5px;text-transform:uppercase;color:rgba(255,255,255,.5);text-align:center;line-height:1.2}
 .dm-crm .col.win{border-color:rgba(74,222,128,.45);background:rgba(34,197,94,.06)}
 .dm-crm .col.win .h{color:#4ade80}
-.dm-lead{position:absolute;top:32px;left:1%;width:23%;background:#fff;border-radius:8px;padding:7px 8px;font-size:8.5px;font-weight:600;color:#0E1E35;box-shadow:0 8px 20px rgba(0,0,0,.45);animation:crmMove 7s cubic-bezier(.5,0,.3,1) infinite,crmWin 7s linear infinite;z-index:2}
+.dm-lead{position:absolute;top:32px;left:2%;width:29%;background:#fff;border-radius:8px;padding:7px 9px;font-size:8.5px;font-weight:600;color:#0E1E35;box-shadow:0 8px 20px rgba(0,0,0,.45);animation:crmMove 6.5s cubic-bezier(.5,0,.3,1) infinite,crmWin 6.5s linear infinite;z-index:2}
 .dm-lead b{display:block;font-size:12px;margin-top:3px;color:#1670C3}
 .dm-lead small{display:block;font-size:7px;font-weight:600;color:#8896A8;margin-top:3px;letter-spacing:.3px;text-transform:uppercase}
-@keyframes crmMove{0%,10%{left:1%}22%,34%{left:26%}46%,60%{left:51%}72%,100%{left:76%}}
-@keyframes crmWin{0%,66%{box-shadow:0 8px 20px rgba(0,0,0,.45)}74%,100%{box-shadow:0 0 0 2px #22c55e,0 8px 24px rgba(34,197,94,.4)}}
+@keyframes crmMove{0%,14%{left:2%}30%,48%{left:35.5%}64%,100%{left:69%}}
+@keyframes crmWin{0%,60%{box-shadow:0 8px 20px rgba(0,0,0,.45)}66%,100%{box-shadow:0 0 0 2px #22c55e,0 8px 24px rgba(34,197,94,.4)}}
+/* confete — explode quando o card chega na coluna de venda (64% do loop) */
+.dm-crm .confetti{position:absolute;top:44px;left:83.5%;width:0;height:0;z-index:3;pointer-events:none}
+.dm-crm .confetti i{position:absolute;width:6px;height:9px;border-radius:2px;opacity:0;animation:cfBurst 6.5s cubic-bezier(.2,.6,.4,1) infinite}
+.dm-crm .confetti i:nth-child(1){background:#24D5FF;--tx:-44px;--ty:-52px;--rz:220deg}
+.dm-crm .confetti i:nth-child(2){background:#4ade80;--tx:38px;--ty:-58px;--rz:-260deg}
+.dm-crm .confetti i:nth-child(3){background:#FBBF24;--tx:-58px;--ty:-18px;--rz:180deg}
+.dm-crm .confetti i:nth-child(4){background:#fff;--tx:54px;--ty:-24px;--rz:-200deg}
+.dm-crm .confetti i:nth-child(5){background:#1099E9;--tx:-30px;--ty:-66px;--rz:300deg}
+.dm-crm .confetti i:nth-child(6){background:#F472B6;--tx:24px;--ty:-70px;--rz:-320deg}
+.dm-crm .confetti i:nth-child(7){background:#4ade80;--tx:-52px;--ty:22px;--rz:240deg}
+.dm-crm .confetti i:nth-child(8){background:#24D5FF;--tx:48px;--ty:16px;--rz:-180deg}
+.dm-crm .confetti i:nth-child(9){background:#FBBF24;--tx:12px;--ty:-48px;--rz:260deg}
+.dm-crm .confetti i:nth-child(10){background:#fff;--tx:-16px;--ty:-38px;--rz:-240deg}
+.dm-crm .confetti i:nth-child(11){background:#F472B6;--tx:60px;--ty:-42px;--rz:200deg}
+.dm-crm .confetti i:nth-child(12){background:#1099E9;--tx:-64px;--ty:-40px;--rz:-220deg}
+@keyframes cfBurst{
+  0%,63%{opacity:0;transform:translate(0,0) rotate(0) scale(.6)}
+  66%{opacity:1;transform:translate(calc(var(--tx)*.55),calc(var(--ty)*.55)) rotate(calc(var(--rz)*.5)) scale(1.1)}
+  82%{opacity:1;transform:translate(var(--tx),var(--ty)) rotate(var(--rz)) scale(1)}
+  96%,100%{opacity:0;transform:translate(calc(var(--tx)*1.1),calc(var(--ty)*1.1 + 26px)) rotate(calc(var(--rz)*1.2)) scale(.85)}
+}
 
 /* eventos de tracking (site) */
 .dm-ev{display:flex;flex-direction:column;gap:7px}
@@ -1101,7 +1122,7 @@ const POPS = {
       'Consultoria contínua com acompanhamento do time'
     ],
     ico: '<svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z"/></svg>',
-    demo: '<div class="dm-crm"><div class="col"><div class="h">Novo lead</div></div><div class="col"><div class="h">Atendimento</div></div><div class="col"><div class="h">Proposta</div></div><div class="col win"><div class="h">Venda efetuada</div></div><div class="dm-lead">Casal · 3 noites<b>R$ 2.450</b><small>via WhatsApp</small></div></div>'
+    demo: '<div class="dm-crm"><div class="col"><div class="h">Novo lead</div></div><div class="col"><div class="h">Proposta</div></div><div class="col win"><div class="h">Venda efetuada</div></div><div class="dm-lead">Casal · 3 noites<b>R$ 2.450</b><small>via WhatsApp</small></div><div class="confetti"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div></div>'
   },
   reserva: {
     tag: 'Resultado',
