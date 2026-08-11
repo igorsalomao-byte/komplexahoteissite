@@ -146,8 +146,10 @@ html,body{font-family:var(--fd);background:var(--page-bg);color:var(--navy);-web
 .mnode .ico .badge{position:absolute;top:-5px;right:-8px;background:var(--grad);color:#fff;font-size:8px;font-weight:800;letter-spacing:.4px;padding:3px 7px;border-radius:100px;border:1.5px solid var(--navy);white-space:nowrap}
 
 /* mini site mockup (nó central) */
-.msite{position:absolute;transform:translate(-50%,-50%);z-index:4;width:230px;border-radius:9px;overflow:hidden;background:#fff;box-shadow:0 10px 36px rgba(0,0,0,.5),0 0 60px rgba(36,213,255,.22),0 0 0 1px rgba(255,255,255,.1);opacity:0;animation:mnIn .5s cubic-bezier(.34,1.4,.64,1) forwards;animation-delay:.75s}
-.msite .bbar{background:#F3F4F6;padding:5px 8px;display:flex;align-items:center;gap:5px;border-bottom:1px solid #E5E7EB}
+.msite{position:absolute;transform:translate(-50%,-50%) scale(.7);z-index:4;width:230px;border-radius:9px;background:#fff;box-shadow:0 10px 36px rgba(0,0,0,.5),0 0 60px rgba(36,213,255,.22),0 0 0 1px rgba(255,255,255,.1);opacity:0;animation:msIn .5s cubic-bezier(.34,1.4,.64,1) forwards;animation-delay:.75s}
+@keyframes msIn{to{opacity:1;transform:translate(-50%,-50%) scale(1)}}
+.msite .bbar{background:#F3F4F6;padding:5px 8px;display:flex;align-items:center;gap:5px;border-bottom:1px solid #E5E7EB;border-radius:9px 9px 0 0}
+.msite .bk{border-radius:0 0 9px 9px}
 .msite .bbar i{width:6px;height:6px;border-radius:50%;display:block}
 .msite .bbar i:nth-child(1){background:#FF5F57}
 .msite .bbar i:nth-child(2){background:#FEBC2E}
