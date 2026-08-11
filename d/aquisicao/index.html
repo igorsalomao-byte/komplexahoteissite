@@ -62,45 +62,39 @@ html,body{font-family:var(--fd);background:var(--page-bg);color:var(--navy);-web
 .cover-title{font-weight:800;font-size:82px;line-height:.98;letter-spacing:-3px;color:#fff;margin:0 0 18px}
 .cover-title .accent{font-style:normal;font-family:'Fraunces',Georgia,serif;font-weight:400;background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
 .cover-sub{font-size:18px;color:rgba(255,255,255,.72);max-width:600px;line-height:1.5}
-/* ─── 02 · AUTORIDADE ─── */
-.auth-grid{display:grid;grid-template-columns:1.05fr 1fr;gap:44px;flex:1;align-items:center;min-height:0}
-.auth-big{display:flex;align-items:baseline;gap:14px;margin:6px 0 4px}
-.auth-big .num{font-weight:800;font-size:104px;line-height:.9;letter-spacing:-4px;background:var(--grad);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
-.auth-big .lbl{font-weight:700;font-size:24px;color:var(--navy);letter-spacing:-.6px;line-height:1.1}
-.auth-points{display:flex;flex-direction:column;gap:11px;margin-top:18px}
-.auth-points .ap{display:grid;grid-template-columns:30px 1fr;gap:12px;align-items:start;font-size:13.5px;color:var(--txt);line-height:1.5}
-.auth-points .ap .ic{width:26px;height:26px;border-radius:7px;background:var(--grad);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:11px;margin-top:1px}
-.auth-points .ap strong{color:var(--navy);font-weight:600}
-.auth-seg{display:flex;gap:8px;margin-top:18px}
-.auth-seg .pill{font-size:12px;font-weight:600;padding:7px 15px;background:var(--tb09);color:var(--blue);border-radius:100px}
-.partners-inline{margin-top:20px;padding-top:16px;border-top:1px solid var(--bdr)}
-.partners-inline .pl{font-size:10px;font-weight:700;letter-spacing:1.4px;text-transform:uppercase;color:var(--gray);margin-bottom:10px}
-.partners-inline .row{display:flex;align-items:center;gap:22px}
-.partners-inline img{height:26px;max-width:86px;object-fit:contain;filter:grayscale(1);opacity:.65}
+/* ─── 02 · AUTORIDADE (dark · mapa integrado) ─── */
+.auth-grid{display:grid;grid-template-columns:1fr 1.05fr;gap:36px;flex:1;align-items:center;min-height:0}
+.auth-big{display:flex;align-items:center;gap:16px;margin:10px 0 6px}
+.auth-big .num{font-weight:800;font-size:92px;line-height:.9;letter-spacing:-4px;background:var(--grad);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+.auth-big .lbl{font-weight:700;font-size:22px;color:#fff;letter-spacing:-.5px;line-height:1.15}
+.auth-big .lbl small{display:block;font-weight:500;font-size:12px;color:rgba(255,255,255,.55);letter-spacing:.2px;margin-top:3px}
+.auth-points{display:flex;flex-direction:column;gap:9px;margin-top:16px}
+.auth-points .ap{display:grid;grid-template-columns:34px 1fr;gap:12px;align-items:center;font-size:12.5px;color:rgba(255,255,255,.78);line-height:1.5;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:11px;padding:11px 14px}
+.auth-points .ap .ic{width:28px;height:28px;border-radius:8px;background:var(--grad);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:12px}
+.auth-points .ap strong{color:#fff;font-weight:600}
+.partners-inline{margin-top:18px}
+.partners-inline .pl{font-size:9.5px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:rgba(255,255,255,.45);margin-bottom:9px}
+.partners-inline .row{display:flex;align-items:center;gap:8px}
+.partners-inline .chip{background:#fff;border-radius:8px;height:38px;padding:0 14px;display:flex;align-items:center;justify-content:center}
+.partners-inline img{height:20px;max-width:82px;object-fit:contain;display:block}
 
-/* painel do mapa Brasil 3D */
-.brmap-panel{
-  position:relative;height:470px;border-radius:16px;overflow:hidden;
-  background:var(--navy);
-  display:flex;align-items:center;justify-content:center;
-}
-.brmap-panel::before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 55% 40%,rgba(36,213,255,.25) 0%,transparent 60%)}
+/* mapa Brasil 3D integrado no slide */
+.auth-map{position:relative;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;height:100%}
 .brmap-wrap{
-  position:relative;z-index:2;width:78%;
-  transform:perspective(1100px) rotateX(24deg) rotateZ(-7deg);
+  position:relative;z-index:2;width:88%;
+  transform:perspective(1100px) rotateX(22deg) rotateZ(-7deg);
   animation:brFloat 7s ease-in-out infinite;
-  filter:drop-shadow(0 30px 40px rgba(0,0,0,.5));
+  filter:drop-shadow(0 34px 44px rgba(0,0,0,.55)) drop-shadow(0 0 60px rgba(36,213,255,.12));
 }
 @keyframes brFloat{
-  0%,100%{transform:perspective(1100px) rotateX(24deg) rotateZ(-7deg) translateY(0)}
-  50%{transform:perspective(1100px) rotateX(24deg) rotateZ(-7deg) translateY(-10px)}
+  0%,100%{transform:perspective(1100px) rotateX(22deg) rotateZ(-7deg) translateY(0)}
+  50%{transform:perspective(1100px) rotateX(22deg) rotateZ(-7deg) translateY(-10px)}
 }
 .brmap-wrap svg{width:100%;height:auto;overflow:visible}
 .br-dot{animation:brPulse 2.6s ease-in-out infinite}
 @keyframes brPulse{0%,100%{opacity:.75}50%{opacity:1}}
-.brmap-cap{position:absolute;left:0;right:0;bottom:20px;text-align:center;z-index:3}
-.brmap-cap .b1{font-size:13px;font-weight:700;color:#fff;letter-spacing:-.2px}
-.brmap-cap .b2{font-size:10.5px;color:rgba(255,255,255,.55);margin-top:2px;letter-spacing:.3px}
+.auth-seg{display:flex;gap:8px;justify-content:center;position:relative;z-index:3}
+.auth-seg .pill{font-size:11.5px;font-weight:600;padding:7px 16px;background:rgba(36,213,255,.1);border:1px solid rgba(36,213,255,.3);color:var(--g3);border-radius:100px}
 
 /* ─── 03 · MONEY SLIDE HORIZONTAL ─── */
 .slide-money .body{padding:24px 56px 12px;justify-content:flex-start}
@@ -384,37 +378,34 @@ html,body{font-family:var(--fd);background:var(--page-bg);color:var(--navy);-web
 </section>
 
 <!-- ═══════════════ 02 · AUTORIDADE ═══════════════ -->
-<section class="slide light">
-  <div class="top"><img class="brand" src="assets/logotipo_blue.svg" alt="Komplexa"><span class="pg">02 · 10</span></div>
+<section class="slide dark">
+  <div class="top"><img class="brand" src="assets/logotipo_white.svg" alt="Komplexa"><span class="pg">02 · 10</span></div>
   <div class="body">
     <div class="auth-grid">
       <div>
         <div class="eyebrow">Quem somos</div>
-        <h2 class="title" style="font-size:38px">Especialistas em <em>aquisição hoteleira</em>.</h2>
+        <h2 class="title" style="font-size:42px">Especialistas em<br><em>aquisição hoteleira</em>.</h2>
         <div class="auth-big">
           <span class="num">14</span>
-          <span class="lbl">estados<br>do Brasil</span>
+          <span class="lbl">estados do Brasil<small>com o método Komplexa rodando</small></span>
         </div>
         <div class="auth-points">
-          <div class="ap"><span class="ic">✦</span><span><strong>Foco único em hotelaria.</strong> Não atendemos outros setores — todo o método foi construído em hotéis, pousadas e resorts.</span></div>
-          <div class="ap"><span class="ic">◆</span><span><strong>Marketing e vendas na mesma operação.</strong> Da campanha ao treinamento do comercial, um time só responde pelo resultado.</span></div>
-          <div class="ap"><span class="ic">◇</span><span><strong>Método validado em diversos projetos</strong> — criativos, campanhas e processos testados e replicados.</span></div>
-        </div>
-        <div class="auth-seg">
-          <span class="pill">Hotéis</span><span class="pill">Pousadas</span><span class="pill">Resorts</span>
+          <div class="ap"><span class="ic">✦</span><span><strong>Foco único em hotelaria</strong> — todo o método foi construído em hotéis, pousadas e resorts.</span></div>
+          <div class="ap"><span class="ic">◆</span><span><strong>Marketing e vendas na mesma operação</strong> — um time só responde pelo resultado.</span></div>
+          <div class="ap"><span class="ic">◇</span><span><strong>Método validado em diversos projetos</strong> — criativos, campanhas e processos replicados.</span></div>
         </div>
         <div class="partners-inline">
           <div class="pl">Integrações e parceiros de tecnologia</div>
           <div class="row">
-            <img src="assets/partners/omnibees.png" alt="Omnibees">
-            <img src="assets/partners/hsystem.png" alt="HSystem">
-            <img src="assets/partners/asksuite.jpeg" alt="Asksuite">
-            <img src="assets/partners/erbon.png" alt="Erbon">
+            <span class="chip"><img src="assets/partners/omnibees.png" alt="Omnibees"></span>
+            <span class="chip"><img src="assets/partners/hsystem.png" alt="HSystem"></span>
+            <span class="chip"><img src="assets/partners/asksuite.jpeg" alt="Asksuite"></span>
+            <span class="chip"><img src="assets/partners/erbon.png" alt="Erbon"></span>
           </div>
         </div>
       </div>
 
-      <div class="brmap-panel">
+      <div class="auth-map">
         <div class="brmap-wrap">
           <svg viewBox="-73.9833 -5.2718 39.1806 39.015699999999995">
             <defs>
@@ -436,9 +427,8 @@ html,body{font-family:var(--fd);background:var(--page-bg);color:var(--navy);-web
             <g fill="#EAFBFF" filter="url(#brGlow)"><circle class="br-dot" cx="-63.54" cy="3.30" r="0.42"/><circle class="br-dot" cx="-39.55" cy="5.47" r="0.42"/><circle class="br-dot" cx="-36.81" cy="6.10" r="0.42"/><circle class="br-dot" cx="-37.85" cy="8.27" r="0.42"/><circle class="br-dot" cx="-41.77" cy="12.59" r="0.42"/><circle class="br-dot" cx="-45.19" cy="18.98" r="0.42"/><circle class="br-dot" cx="-40.98" cy="19.64" r="0.42"/><circle class="br-dot" cx="-43.18" cy="22.27" r="0.42"/><circle class="br-dot" cx="-48.40" cy="22.30" r="0.42"/><circle class="br-dot" cx="-51.50" cy="24.56" r="0.42"/><circle class="br-dot" cx="-50.97" cy="27.26" r="0.42"/><circle class="br-dot" cx="-52.85" cy="29.87" r="0.42"/><circle class="br-dot" cx="-55.48" cy="13.39" r="0.42"/><circle class="br-dot" cx="-49.24" cy="15.91" r="0.42"/></g>
           </svg>
         </div>
-        <div class="brmap-cap">
-          <div class="b1">Presença em 14 estados</div>
-          <div class="b2">Hotéis · Pousadas · Resorts</div>
+        <div class="auth-seg">
+          <span class="pill">Hotéis</span><span class="pill">Pousadas</span><span class="pill">Resorts</span>
         </div>
       </div>
     </div>
