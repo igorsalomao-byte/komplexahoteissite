@@ -282,6 +282,16 @@ html,body{font-family:var(--fd);background:var(--page-bg);color:var(--navy);-web
 .dm-chk .cs.win{border-color:rgba(74,222,128,.45);color:#4ade80}
 .dm-chk .c1{animation-delay:.1s}.dm-chk .a1{animation-delay:.35s}.dm-chk .c2{animation-delay:.55s}.dm-chk .a2{animation-delay:.8s}.dm-chk .c3{animation-delay:1s}.dm-chk .a3{animation-delay:1.25s}.dm-chk .c4{animation-delay:1.45s}
 
+/* criativos · mídias reais validadas */
+.dm-media{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+.dm-media .md{position:relative;border-radius:10px;overflow:hidden;aspect-ratio:4/5;background:#0a1626;opacity:0;transform:scale(.88);animation:fmtIn .45s cubic-bezier(.34,1.4,.64,1) forwards}
+.dm-media .md:nth-child(1){animation-delay:.1s}
+.dm-media .md:nth-child(2){animation-delay:.28s}
+.dm-media .md:nth-child(3){animation-delay:.46s}
+.dm-media .md video,.dm-media .md img{width:100%;height:100%;object-fit:cover;display:block}
+.dm-media .md .tag{position:absolute;left:6px;bottom:6px;background:rgba(8,21,37,.85);color:#fff;font-size:8px;font-weight:700;letter-spacing:.6px;text-transform:uppercase;padding:3px 8px;border-radius:100px}
+.dm-media .md.vid .tag{color:var(--g3);border:1px solid rgba(36,213,255,.4)}
+
 /* criativos · formatos */
 .dm-cria{display:flex;gap:8px;align-items:stretch}
 .dm-cria .fmt{flex:1;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.12);border-radius:10px;padding:13px 8px;text-align:center;font-size:11px;font-weight:700;color:#fff;opacity:0;transform:scale(.8);animation:fmtIn .45s cubic-bezier(.34,1.4,.64,1) forwards}
@@ -1187,7 +1197,7 @@ const POPS = {
       'Teste A/B contínuo até achar o criativo vencedor'
     ],
     ico: '<svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18h6M10 21h4M12 3a6 6 0 016 6c0 2.5-1.5 3.5-2.5 5H8.5C7.5 12.5 6 11.5 6 9a6 6 0 016-6z"/><path d="M12 8v4"/></svg>',
-    demo: '<div class="dm-cria"><div class="fmt f1 winr">▶ Vídeo<small>vencedor · escala</small></div><div class="fmt f2">✦ Motion<small>em teste</small></div><div class="fmt f3">▣ Estático<small>em teste</small></div></div>'
+    demo: '<div class="dm-media"><div class="md vid"><video src="assets/criativos/criativo-video.mp4" autoplay muted loop playsinline></video><span class="tag">▶ Vídeo</span></div><div class="md"><img src="assets/criativos/criativo-01.jpg" alt="Criativo pacote romântico"><span class="tag">Estático</span></div><div class="md"><img src="assets/criativos/criativo-02.jpg" alt="Criativo oferta especial"><span class="tag">Estático</span></div></div>'
   },
   google: {
     tag: 'Marketing · Alta intenção',
