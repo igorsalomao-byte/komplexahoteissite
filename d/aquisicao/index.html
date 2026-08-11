@@ -708,11 +708,15 @@ html,body{font-family:var(--fd);background:var(--page-bg);color:var(--navy);-web
   /* 05 marketing / 08 frentes */
   .mkt-grid{grid-template-columns:1fr;gap:24px}
   /* 08 frentes full-bleed */
-  .slide-wed{min-height:640px}
-  .slide-wed .body{justify-content:flex-start;padding-top:80px}
-  .wed-copy .title{font-size:32px}
-  .wed-phone{position:static;transform:none;width:220px;margin:22px auto 0;animation:none;opacity:1}
-  .wnote{display:none}
+  .slide-wed{min-height:0;padding-bottom:8px}
+  .slide-wed .wed-bg{background-position:70% center}
+  .wed-bg::after{background:linear-gradient(180deg,rgba(7,14,26,.97) 0%,rgba(7,14,26,.9) 36%,rgba(7,14,26,.5) 62%,rgba(7,14,26,.72) 100%)!important}
+  .slide-wed .body{justify-content:flex-start;padding-top:74px}
+  .wed-copy .title{font-size:30px}
+  .wed-copy .lead{font-size:14px}
+  .wed-phone{position:static;transform:none;width:218px;margin:20px auto 0;animation:none;opacity:1}
+  .wnote{position:static;left:auto;right:auto;top:auto;bottom:auto;opacity:1;animation:wFloat 5.5s ease-in-out infinite;margin:10px auto 0;width:max-content;max-width:92%}
+  .wnote.n2{animation-delay:.8s;margin-bottom:6px}
   .mkt-panel{height:360px}
   /* 06 banco de criativos */
   .banco-grid{grid-template-columns:1fr 1fr;grid-template-rows:auto;margin-top:14px}
