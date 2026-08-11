@@ -62,25 +62,45 @@ html,body{font-family:var(--fd);background:var(--page-bg);color:var(--navy);-web
 .cover-title{font-weight:800;font-size:82px;line-height:.98;letter-spacing:-3px;color:#fff;margin:0 0 18px}
 .cover-title .accent{font-style:normal;font-family:'Fraunces',Georgia,serif;font-weight:400;background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
 .cover-sub{font-size:18px;color:rgba(255,255,255,.72);max-width:600px;line-height:1.5}
-.cover-meta{padding:28px 56px;display:grid;grid-template-columns:1fr 1fr 1fr;gap:32px;border-top:1px solid rgba(255,255,255,.12);position:relative;z-index:2}
-.cover-meta .label{font-size:10.5px;text-transform:uppercase;letter-spacing:1.2px;color:rgba(255,255,255,.55);font-weight:500;margin-bottom:6px}
-.cover-meta .value{font-size:14px;font-weight:600;color:#fff}
-
 /* ─── 02 · AUTORIDADE ─── */
-.auth-grid{display:grid;grid-template-columns:1.1fr 1fr;gap:48px;flex:1;align-items:center}
-.auth-big{display:flex;align-items:baseline;gap:14px;margin:8px 0 6px}
-.auth-big .num{font-weight:800;font-size:120px;line-height:.9;letter-spacing:-5px;background:var(--grad);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
-.auth-big .lbl{font-weight:700;font-size:26px;color:var(--navy);letter-spacing:-.6px;line-height:1.1}
-.auth-points{display:flex;flex-direction:column;gap:12px;margin-top:22px}
-.auth-points .ap{display:grid;grid-template-columns:30px 1fr;gap:12px;align-items:start;font-size:14px;color:var(--txt);line-height:1.5}
+.auth-grid{display:grid;grid-template-columns:1.05fr 1fr;gap:44px;flex:1;align-items:center;min-height:0}
+.auth-big{display:flex;align-items:baseline;gap:14px;margin:6px 0 4px}
+.auth-big .num{font-weight:800;font-size:104px;line-height:.9;letter-spacing:-4px;background:var(--grad);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+.auth-big .lbl{font-weight:700;font-size:24px;color:var(--navy);letter-spacing:-.6px;line-height:1.1}
+.auth-points{display:flex;flex-direction:column;gap:11px;margin-top:18px}
+.auth-points .ap{display:grid;grid-template-columns:30px 1fr;gap:12px;align-items:start;font-size:13.5px;color:var(--txt);line-height:1.5}
 .auth-points .ap .ic{width:26px;height:26px;border-radius:7px;background:var(--grad);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:11px;margin-top:1px}
 .auth-points .ap strong{color:var(--navy);font-weight:600}
-.auth-right h4{font-size:11px;font-weight:700;letter-spacing:1.6px;text-transform:uppercase;color:var(--gray);margin-bottom:18px}
-.partner-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
-.partner{border:1px solid var(--bdr);border-radius:10px;padding:16px 14px;background:#fff;display:flex;align-items:center;justify-content:center;min-height:96px}
-.partner img{max-height:56px;max-width:100%;object-fit:contain}
-.auth-seg{display:flex;gap:8px;margin-top:20px}
+.auth-seg{display:flex;gap:8px;margin-top:18px}
 .auth-seg .pill{font-size:12px;font-weight:600;padding:7px 15px;background:var(--tb09);color:var(--blue);border-radius:100px}
+.partners-inline{margin-top:20px;padding-top:16px;border-top:1px solid var(--bdr)}
+.partners-inline .pl{font-size:10px;font-weight:700;letter-spacing:1.4px;text-transform:uppercase;color:var(--gray);margin-bottom:10px}
+.partners-inline .row{display:flex;align-items:center;gap:22px}
+.partners-inline img{height:26px;max-width:86px;object-fit:contain;filter:grayscale(1);opacity:.65}
+
+/* painel do mapa Brasil 3D */
+.brmap-panel{
+  position:relative;height:470px;border-radius:16px;overflow:hidden;
+  background:var(--navy);
+  display:flex;align-items:center;justify-content:center;
+}
+.brmap-panel::before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 55% 40%,rgba(36,213,255,.25) 0%,transparent 60%)}
+.brmap-wrap{
+  position:relative;z-index:2;width:78%;
+  transform:perspective(1100px) rotateX(24deg) rotateZ(-7deg);
+  animation:brFloat 7s ease-in-out infinite;
+  filter:drop-shadow(0 30px 40px rgba(0,0,0,.5));
+}
+@keyframes brFloat{
+  0%,100%{transform:perspective(1100px) rotateX(24deg) rotateZ(-7deg) translateY(0)}
+  50%{transform:perspective(1100px) rotateX(24deg) rotateZ(-7deg) translateY(-10px)}
+}
+.brmap-wrap svg{width:100%;height:auto;overflow:visible}
+.br-dot{animation:brPulse 2.6s ease-in-out infinite}
+@keyframes brPulse{0%,100%{opacity:.75}50%{opacity:1}}
+.brmap-cap{position:absolute;left:0;right:0;bottom:20px;text-align:center;z-index:3}
+.brmap-cap .b1{font-size:13px;font-weight:700;color:#fff;letter-spacing:-.2px}
+.brmap-cap .b2{font-size:10.5px;color:rgba(255,255,255,.55);margin-top:2px;letter-spacing:.3px}
 
 /* ─── 03 · MONEY SLIDE HORIZONTAL ─── */
 .slide-money .body{padding:24px 56px 12px;justify-content:flex-start}
@@ -146,6 +166,41 @@ html,body{font-family:var(--fd);background:var(--page-bg);color:var(--navy);-web
 
 /* label do loop de remarketing */
 .mf-looplbl{position:absolute;left:37%;top:91%;transform:translate(-50%,-50%);font-size:10px;font-weight:700;letter-spacing:1.2px;text-transform:uppercase;color:rgba(255,255,255,.65);white-space:nowrap;opacity:0;animation:mfFade .8s ease forwards;animation-delay:2s;z-index:3}
+
+/* nós clicáveis → pop-up */
+.mnode[data-pop],.msite[data-pop]{cursor:pointer}
+.mnode[data-pop] .ico{transition:transform .25s ease,box-shadow .25s ease}
+.mnode[data-pop]:hover .ico{transform:scale(1.1);box-shadow:0 0 34px rgba(36,213,255,.55)}
+.msite[data-pop]{transition:transform .25s ease}
+.msite[data-pop]:hover{transform:translate(-50%,-50%) scale(1.04)}
+.money-hint{display:inline-flex;align-items:center;gap:8px;margin-top:4px;font-size:11px;font-weight:600;letter-spacing:.6px;text-transform:uppercase;color:rgba(255,255,255,.5)}
+.money-hint .d{width:7px;height:7px;border-radius:50%;background:var(--g3);box-shadow:0 0 8px rgba(36,213,255,.8);animation:brPulse 1.8s ease-in-out infinite}
+
+/* pop-up dos widgets */
+.mpop{position:absolute;inset:0;z-index:20;display:none;align-items:center;justify-content:center;background:rgba(8,21,37,.78);backdrop-filter:blur(5px);-webkit-backdrop-filter:blur(5px)}
+.mpop.open{display:flex}
+.mpop-card{
+  position:relative;width:480px;max-width:88%;
+  background:linear-gradient(160deg,#13294a,var(--navy9));
+  border:1px solid rgba(36,213,255,.4);border-radius:18px;
+  padding:30px 32px;
+  box-shadow:0 30px 80px rgba(0,0,0,.6),0 0 60px rgba(36,213,255,.18);
+  animation:popIn .3s cubic-bezier(.34,1.4,.64,1);
+}
+@keyframes popIn{from{opacity:0;transform:scale(.85) translateY(12px)}to{opacity:1;transform:scale(1) translateY(0)}}
+.mpop-x{position:absolute;top:14px;right:14px;width:30px;height:30px;border-radius:50%;border:1px solid rgba(255,255,255,.2);background:rgba(255,255,255,.06);color:#fff;font-size:13px;cursor:pointer;display:grid;place-items:center;transition:background .2s}
+.mpop-x:hover{background:rgba(255,255,255,.15)}
+.mpop-head{display:flex;align-items:center;gap:14px;margin-bottom:14px}
+.mpop-ico{width:52px;height:52px;border-radius:14px;background:var(--grad);display:grid;place-items:center;flex-shrink:0;box-shadow:0 6px 20px rgba(36,213,255,.4)}
+.mpop-ico svg{width:26px;height:26px;stroke:#fff}
+.mpop-ico.raw svg{stroke:none}
+.mpop-tag{font-size:9.5px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--g3);margin-bottom:3px}
+.mpop-title{font-size:20px;font-weight:800;color:#fff;letter-spacing:-.4px;line-height:1.1}
+.mpop-desc{font-size:13.5px;line-height:1.6;color:rgba(255,255,255,.75);margin-bottom:14px}
+.mpop-desc strong{color:#fff;font-weight:600}
+.mpop-list{list-style:none;display:flex;flex-direction:column;gap:8px}
+.mpop-list li{display:grid;grid-template-columns:20px 1fr;gap:9px;font-size:12.5px;color:rgba(255,255,255,.8);line-height:1.45;align-items:start}
+.mpop-list li .k{width:16px;height:16px;border-radius:50%;background:var(--grad);color:#fff;font-size:9px;font-weight:700;display:grid;place-items:center;margin-top:2px}
 
 /* chips de rodapé do money */
 .money-chips{display:flex;gap:10px;justify-content:center;margin-top:6px;position:relative;z-index:3}
@@ -324,11 +379,6 @@ html,body{font-family:var(--fd);background:var(--page-bg);color:var(--navy);-web
       <p class="cover-sub">Marketing e vendas integrados para hotéis, pousadas e resorts aumentarem reservas diretas — do criativo à reserva efetuada.</p>
     </div>
   </div>
-  <div class="cover-meta">
-    <div><div class="label">Especialidade</div><div class="value">Hotéis · Pousadas · Resorts</div></div>
-    <div><div class="label">Presença</div><div class="value">14 estados do Brasil</div></div>
-    <div><div class="label">Frente de atuação</div><div class="value">Marketing + Vendas</div></div>
-  </div>
 </section>
 
 <!-- ═══════════════ 02 · AUTORIDADE ═══════════════ -->
@@ -338,7 +388,7 @@ html,body{font-family:var(--fd);background:var(--page-bg);color:var(--navy);-web
     <div class="auth-grid">
       <div>
         <div class="eyebrow">Quem somos</div>
-        <h2 class="title" style="font-size:40px">Especialistas em <em>aquisição hoteleira</em>.</h2>
+        <h2 class="title" style="font-size:38px">Especialistas em <em>aquisição hoteleira</em>.</h2>
         <div class="auth-big">
           <span class="num">14</span>
           <span class="lbl">estados<br>do Brasil</span>
@@ -351,14 +401,72 @@ html,body{font-family:var(--fd);background:var(--page-bg);color:var(--navy);-web
         <div class="auth-seg">
           <span class="pill">Hotéis</span><span class="pill">Pousadas</span><span class="pill">Resorts</span>
         </div>
+        <div class="partners-inline">
+          <div class="pl">Integrações e parceiros de tecnologia</div>
+          <div class="row">
+            <img src="assets/partners/omnibees.png" alt="Omnibees">
+            <img src="assets/partners/hsystem.png" alt="HSystem">
+            <img src="assets/partners/asksuite.jpeg" alt="Asksuite">
+            <img src="assets/partners/erbon.png" alt="Erbon">
+          </div>
+        </div>
       </div>
-      <div class="auth-right">
-        <h4>Integrações e parceiros de tecnologia</h4>
-        <div class="partner-grid">
-          <div class="partner"><img src="assets/partners/omnibees.png" alt="Omnibees"></div>
-          <div class="partner"><img src="assets/partners/hsystem.png" alt="HSystem"></div>
-          <div class="partner"><img src="assets/partners/asksuite.jpeg" alt="Asksuite"></div>
-          <div class="partner"><img src="assets/partners/erbon.png" alt="Erbon"></div>
+
+      <div class="brmap-panel">
+        <div class="brmap-wrap">
+          <svg viewBox="0 0 420 440">
+            <defs>
+              <linearGradient id="brFill" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0" stop-color="#24D5FF"/>
+                <stop offset=".55" stop-color="#1099E9"/>
+                <stop offset="1" stop-color="#1670C3"/>
+              </linearGradient>
+              <filter id="brGlow" x="-30%" y="-30%" width="160%" height="160%">
+                <feGaussianBlur stdDeviation="4" result="b"/>
+                <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+              </filter>
+            </defs>
+
+            <!-- extrusão (profundidade 3D) -->
+            <path d="M 96 102 C 120 76, 158 62, 190 70 C 205 74, 214 66, 228 72 C 246 80, 262 92, 286 106 C 314 122, 338 132, 352 154 C 366 172, 368 192, 356 210 C 344 230, 330 242, 322 262 C 312 286, 296 306, 276 320 C 258 332, 244 344, 236 364 C 228 386, 220 406, 206 418 C 196 426, 186 422, 184 410 C 180 394, 172 382, 162 370 C 150 354, 146 336, 138 320 C 128 302, 116 290, 110 272 C 102 252, 96 234, 88 216 C 78 196, 70 178, 68 158 C 66 138, 78 116, 96 102 Z"
+                  fill="#08182e" opacity=".9"/>
+
+            <!-- mapa principal -->
+            <path d="M 96 88 C 120 62, 158 48, 190 56 C 205 60, 214 52, 228 58 C 246 66, 262 78, 286 92 C 314 108, 338 118, 352 140 C 366 158, 368 178, 356 196 C 344 216, 330 228, 322 248 C 312 272, 296 292, 276 306 C 258 318, 244 330, 236 350 C 228 372, 220 392, 206 404 C 196 412, 186 408, 184 396 C 180 380, 172 368, 162 356 C 150 340, 146 322, 138 306 C 128 288, 116 276, 110 258 C 102 238, 96 220, 88 202 C 78 182, 70 164, 68 144 C 66 124, 78 102, 96 88 Z"
+                  fill="url(#brFill)" opacity=".92"/>
+
+            <!-- divisões internas sugeridas -->
+            <g stroke="rgba(255,255,255,.16)" stroke-width="1" fill="none">
+              <path d="M 80 160 C 150 168, 250 158, 348 158"/>
+              <path d="M 196 58 C 202 140, 206 230, 198 310"/>
+              <path d="M 108 244 C 170 236, 240 246, 318 254"/>
+              <path d="M 240 130 C 262 178, 300 200, 350 198"/>
+              <path d="M 140 100 C 160 150, 150 210, 130 260"/>
+              <path d="M 270 220 C 262 262, 248 300, 236 340"/>
+            </g>
+
+            <!-- 14 pontos de presença -->
+            <g fill="#DFF6FF" filter="url(#brGlow)">
+              <circle class="br-dot" cx="344" cy="158" r="4.5"/>
+              <circle class="br-dot" cx="352" cy="184" r="4.5" style="animation-delay:.3s"/>
+              <circle class="br-dot" cx="330" cy="216" r="4.5" style="animation-delay:.6s"/>
+              <circle class="br-dot" cx="300" cy="150" r="4.5" style="animation-delay:.9s"/>
+              <circle class="br-dot" cx="316" cy="256" r="4.5" style="animation-delay:1.2s"/>
+              <circle class="br-dot" cx="290 " cy="292" r="4.5" style="animation-delay:1.5s"/>
+              <circle class="br-dot" cx="262" cy="312" r="4.5" style="animation-delay:1.8s"/>
+              <circle class="br-dot" cx="252" cy="272" r="4.5" style="animation-delay:2.1s"/>
+              <circle class="br-dot" cx="238" cy="348" r="4.5" style="animation-delay:2.4s"/>
+              <circle class="br-dot" cx="206" cy="396" r="4.5" style="animation-delay:2.7s"/>
+              <circle class="br-dot" cx="176" cy="120" r="4.5" style="animation-delay:3s"/>
+              <circle class="br-dot" cx="248" cy="92" r="4.5" style="animation-delay:3.3s"/>
+              <circle class="br-dot" cx="150 " cy="230" r="4.5" style="animation-delay:3.6s"/>
+              <circle class="br-dot" cx="222" cy="200" r="4.5" style="animation-delay:3.9s"/>
+            </g>
+          </svg>
+        </div>
+        <div class="brmap-cap">
+          <div class="b1">Presença em 14 estados</div>
+          <div class="b2">Hotéis · Pousadas · Resorts</div>
         </div>
       </div>
     </div>
@@ -373,6 +481,7 @@ html,body{font-family:var(--fd);background:var(--page-bg);color:var(--navy);-web
     <div class="money-head">
       <div class="eyebrow">O método</div>
       <h2 class="title">Do criativo à <em>reserva efetuada</em>.</h2>
+      <span class="money-hint"><span class="d"></span>Clique nos elementos para detalhar</span>
     </div>
 
     <div class="money-flow">
@@ -389,42 +498,42 @@ html,body{font-family:var(--fd);background:var(--page-bg);color:var(--navy);-web
           </filter>
         </defs>
 
-        <!-- entrada: Criativos → Google (cima) e Meta (baixo) -->
-        <path class="mf-branch b1" pathLength="1" d="M 65 200 L 150 200 L 250 110 L 385 190"
+        <!-- entrada: Criativos → Google (cima) e Meta (baixo) → borda esquerda do site (500,200) -->
+        <path class="mf-branch b1" pathLength="1" d="M 65 200 L 150 200 L 250 110 L 398 192"
               stroke="url(#mg)" stroke-width="2.4" fill="none" opacity=".95" filter="url(#gl)" stroke-linecap="round" stroke-linejoin="round"/>
-        <path class="mf-branch b2" pathLength="1" d="M 65 200 L 150 200 L 250 290 L 385 210"
+        <path class="mf-branch b2" pathLength="1" d="M 65 200 L 150 200 L 250 290 L 398 208"
               stroke="url(#mg)" stroke-width="2.4" fill="none" opacity=".95" filter="url(#gl)" stroke-linecap="round" stroke-linejoin="round"/>
 
-        <!-- saída: Site → Motor (cima) e WhatsApp (baixo) → Reserva -->
-        <path class="mf-branch b3" pathLength="1" d="M 600 190 L 730 110 L 915 200"
+        <!-- saída: borda direita do site → Motor (cima) e WhatsApp (baixo) → Reserva -->
+        <path class="mf-branch b3" pathLength="1" d="M 602 192 L 730 110 L 915 200"
               stroke="url(#mg)" stroke-width="2.4" fill="none" opacity=".95" filter="url(#gl)" stroke-linecap="round" stroke-linejoin="round"/>
-        <path class="mf-branch b4" pathLength="1" d="M 600 210 L 730 290 L 915 200"
+        <path class="mf-branch b4" pathLength="1" d="M 602 208 L 730 290 L 915 200"
               stroke="url(#mg)" stroke-width="2.4" fill="none" opacity=".95" filter="url(#gl)" stroke-linecap="round" stroke-linejoin="round"/>
 
         <!-- loop de remarketing: site → volta pros anúncios (tracejado) -->
-        <path class="mf-loop" d="M 490 272 C 460 372, 300 372, 252 318"
+        <path class="mf-loop" d="M 500 272 C 465 372, 300 372, 252 318"
               stroke="rgba(255,255,255,.6)" stroke-width="1.5" fill="none" stroke-linecap="round"/>
 
         <!-- dots -->
         <circle r="3.5" fill="#24D5FF" filter="url(#gl)" opacity=".95">
-          <animateMotion dur="6s" repeatCount="indefinite" begin="2s" path="M 65 200 L 150 200 L 250 110 L 385 190"/>
+          <animateMotion dur="6s" repeatCount="indefinite" begin="2s" path="M 65 200 L 150 200 L 250 110 L 398 192"/>
         </circle>
         <circle r="3.5" fill="#24D5FF" filter="url(#gl)" opacity=".95">
-          <animateMotion dur="6s" repeatCount="indefinite" begin="3.4s" path="M 65 200 L 150 200 L 250 290 L 385 210"/>
+          <animateMotion dur="6s" repeatCount="indefinite" begin="3.4s" path="M 65 200 L 150 200 L 250 290 L 398 208"/>
         </circle>
         <circle r="3.5" fill="#24D5FF" filter="url(#gl)" opacity=".95">
-          <animateMotion dur="5s" repeatCount="indefinite" begin="2.6s" path="M 600 190 L 730 110 L 915 200"/>
+          <animateMotion dur="5s" repeatCount="indefinite" begin="2.6s" path="M 602 192 L 730 110 L 915 200"/>
         </circle>
         <circle r="3.5" fill="#24D5FF" filter="url(#gl)" opacity=".95">
-          <animateMotion dur="5s" repeatCount="indefinite" begin="4.1s" path="M 600 210 L 730 290 L 915 200"/>
+          <animateMotion dur="5s" repeatCount="indefinite" begin="4.1s" path="M 602 208 L 730 290 L 915 200"/>
         </circle>
         <circle r="2.5" fill="#fff" opacity=".75">
-          <animateMotion dur="4.5s" repeatCount="indefinite" begin="3s" path="M 490 272 C 460 372, 300 372, 252 318"/>
+          <animateMotion dur="4.5s" repeatCount="indefinite" begin="3s" path="M 500 272 C 465 372, 300 372, 252 318"/>
         </circle>
       </svg>
 
       <!-- Criativos (start) · SVG (65,200) -->
-      <div class="mnode p1" style="left:6.5%;top:50%">
+      <div class="mnode p1" data-pop="criativos" style="left:6.5%;top:50%">
         <div class="mnode-inner">
           <div class="ico">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
@@ -437,7 +546,7 @@ html,body{font-family:var(--fd);background:var(--page-bg);color:var(--navy);-web
       </div>
 
       <!-- Google Ads · SVG (250,110) · label acima -->
-      <div class="mnode p2 lbl-up" style="left:25%;top:27.5%">
+      <div class="mnode p2 lbl-up" data-pop="google" style="left:25%;top:27.5%">
         <div class="mnode-inner">
           <div class="ico">
             <svg viewBox="0 0 24 24"><path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/><path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/><path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/><path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/></svg>
@@ -447,7 +556,7 @@ html,body{font-family:var(--fd);background:var(--page-bg);color:var(--navy);-web
       </div>
 
       <!-- Meta Ads · SVG (250,290) -->
-      <div class="mnode p3" style="left:25%;top:72.5%">
+      <div class="mnode p3" data-pop="meta" style="left:25%;top:72.5%">
         <div class="mnode-inner">
           <div class="ico">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
@@ -458,8 +567,8 @@ html,body{font-family:var(--fd);background:var(--page-bg);color:var(--navy);-web
         </div>
       </div>
 
-      <!-- Site + Motor (mockup central) · SVG (490,200) -->
-      <div class="msite" style="left:49%;top:47%">
+      <!-- Site + Motor (mockup central) · SVG (500,200) -->
+      <div class="msite" data-pop="site" style="left:50%;top:50%">
         <div class="bbar"><i></i><i></i><i></i><span class="url">seuhotel.com.br</span></div>
         <div class="hero">
           <div class="h1">Reserve direto</div>
@@ -474,7 +583,7 @@ html,body{font-family:var(--fd);background:var(--page-bg);color:var(--navy);-web
       </div>
 
       <!-- Motor checkout · SVG (730,110) · label acima -->
-      <div class="mnode p5 lbl-up" style="left:73%;top:27.5%">
+      <div class="mnode p5 lbl-up" data-pop="checkout" style="left:73%;top:27.5%">
         <div class="mnode-inner">
           <div class="ico">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
@@ -490,7 +599,7 @@ html,body{font-family:var(--fd);background:var(--page-bg);color:var(--navy);-web
       </div>
 
       <!-- WhatsApp + CRM · SVG (730,290) -->
-      <div class="mnode p6" style="left:73%;top:72.5%">
+      <div class="mnode p6" data-pop="whatsapp" style="left:73%;top:72.5%">
         <div class="mnode-inner">
           <div class="ico">
             <span class="badge">CRM</span>
@@ -503,7 +612,7 @@ html,body{font-family:var(--fd);background:var(--page-bg);color:var(--navy);-web
       </div>
 
       <!-- Reserva efetuada (end) · SVG (915,200) -->
-      <div class="mnode p7" style="left:91.5%;top:50%">
+      <div class="mnode p7" data-pop="reserva" style="left:91.5%;top:50%">
         <div class="mnode-inner">
           <div class="ico">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
@@ -525,6 +634,22 @@ html,body{font-family:var(--fd);background:var(--page-bg);color:var(--navy);-web
     </div>
   </div>
   <div class="bot"><span>komplexahoteis.com</span><span>03 · 10</span></div>
+
+  <!-- pop-up dos widgets -->
+  <div class="mpop" id="mpop">
+    <div class="mpop-card">
+      <button class="mpop-x" onclick="closePop()">✕</button>
+      <div class="mpop-head">
+        <div class="mpop-ico" id="mpopIco"></div>
+        <div>
+          <div class="mpop-tag" id="mpopTag"></div>
+          <div class="mpop-title" id="mpopTitle"></div>
+        </div>
+      </div>
+      <p class="mpop-desc" id="mpopDesc"></p>
+      <ul class="mpop-list" id="mpopList"></ul>
+    </div>
+  </div>
 </section>
 
 <!-- ═══════════════ 04 · FUNDAÇÃO ═══════════════ -->
@@ -848,6 +973,7 @@ function togglePresent(){
 window.addEventListener('resize', () => { if(deck.classList.contains('present')) applyPresentScale(); });
 
 document.addEventListener('keydown', e => {
+  if(e.key === 'Escape' && mpop.classList.contains('open')){ closePop(); return; }
   if(!deck.classList.contains('present')) return;
   if(e.key === 'ArrowRight' || e.key === ' '){ if(current < slides.length-1) show(current+1); }
   if(e.key === 'ArrowLeft'){ if(current > 0) show(current-1); }
@@ -857,6 +983,111 @@ document.addEventListener('keydown', e => {
 document.addEventListener('fullscreenchange', () => {
   if(!document.fullscreenElement && deck.classList.contains('present')) togglePresent();
 });
+
+/* ─── POP-UPS DO MONEY SLIDE ─── */
+const POPS = {
+  criativos: {
+    tag: 'Marketing · Ponto de partida',
+    title: 'Criativos validados',
+    desc: 'Anúncios com modelos <strong>testados em diversos projetos de hotelaria</strong> — não começamos do zero no seu hotel.',
+    list: [
+      'Vídeo, motion e estático adaptados à identidade do hotel',
+      'Mensagem específica para cada etapa do funil',
+      'Teste A/B contínuo até achar o criativo vencedor'
+    ],
+    ico: '<svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18h6M10 21h4M12 3a6 6 0 016 6c0 2.5-1.5 3.5-2.5 5H8.5C7.5 12.5 6 11.5 6 9a6 6 0 016-6z"/><path d="M12 8v4"/></svg>'
+  },
+  google: {
+    tag: 'Marketing · Alta intenção',
+    title: 'Google Ads',
+    desc: 'Capturamos quem <strong>já está procurando hospedagem no seu destino</strong> — a demanda mais quente que existe.',
+    list: [
+      'Campanhas de venda direcionadas ao motor de reservas',
+      'Search + Performance Max no nível técnico máximo',
+      'Quem pesquisa e não reserva entra no remarketing'
+    ],
+    ico: '<svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.35-4.35"/></svg>'
+  },
+  meta: {
+    tag: 'Marketing · Desejo',
+    title: 'Meta Ads',
+    desc: 'Instagram e Facebook <strong>despertam a vontade de viajar</strong> em quem tem o perfil dos seus melhores hóspedes.',
+    list: [
+      'Segmentação pelo perfil real de quem já reservou',
+      'Remarketing cross-canal: viu no Google, é impactado no Instagram',
+      'Dados do hóspede alimentam a segmentação continuamente'
+    ],
+    ico: '<svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6.5 7C4 7 2.5 9.8 2.5 12.5S4 18 6.3 18c1.8 0 3-1.6 4.2-3.7L12 11.6l1.5 2.7c1.2 2.1 2.4 3.7 4.2 3.7 2.3 0 3.8-2.8 3.8-5.5S20 7 17.5 7c-1.9 0-3.2 1.5-4.4 3.5L12 12.4l-1.1-1.9C9.7 8.5 8.4 7 6.5 7z"/></svg>'
+  },
+  site: {
+    tag: 'Marketing · Conversão',
+    title: 'Site + motor integrado',
+    desc: 'Site novo do hotel, <strong>integrado ao motor de reservas e com rastreamento completo</strong> — cada visita, clique e reserva vira dado.',
+    list: [
+      'Caminho curto: da home ao checkout sem etapa desnecessária',
+      'Pixel Meta + Google Tag configurados de ponta a ponta',
+      'É o registro de dados que faz o anúncio ficar mais barato com o tempo'
+    ],
+    ico: '<svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="16" rx="2"/><line x1="3" y1="9" x2="21" y2="9"/><path d="M8 14h8M8 17h5"/></svg>'
+  },
+  checkout: {
+    tag: 'Conversão · Autoatendimento',
+    title: 'Checkout no motor',
+    desc: 'Quem prefere resolver sozinho <strong>reserva direto no motor</strong> — e quem abandona o checkout não é perdido.',
+    list: [
+      'Reserva self-service 24h, sem depender de atendimento',
+      'Abandonou com datas escolhidas? Recebe criativo com 10% off',
+      'Cada reserva rastreada até a origem da campanha'
+    ],
+    ico: '<svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="16" rx="2"/><line x1="3" y1="10" x2="21" y2="10"/><line x1="8" y1="3" x2="8" y2="7"/><line x1="16" y1="3" x2="16" y2="7"/><path d="M8 15l3 3 5-6"/></svg>'
+  },
+  whatsapp: {
+    tag: 'Vendas · Conversão assistida',
+    title: 'WhatsApp + comercial treinado',
+    desc: 'Quem prefere falar com gente cai num time <strong>treinado pela Komplexa, com CRM e script</strong> — nenhum lead se perde.',
+    list: [
+      'CRM contratado e configurado — incluso na verba de anúncios',
+      'Script e processo de vendas estruturados para hotelaria',
+      'Consultoria contínua com acompanhamento do time'
+    ],
+    ico: '<svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z"/></svg>'
+  },
+  reserva: {
+    tag: 'Resultado',
+    title: 'Reserva efetuada',
+    desc: 'O marketing não termina no clique — <strong>medimos até a reserva no PMS</strong> e sabemos onde cada venda nasce.',
+    list: [
+      'Receita por canal: Google, Meta, remarketing, comercial',
+      'Custo por reserva e retorno sobre o investimento em mídia',
+      'Dados do hóspede voltam pro início: as campanhas melhoram todo mês'
+    ],
+    ico: '<svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M8 12l3 3 5-6"/></svg>'
+  }
+};
+
+const mpop = document.getElementById('mpop');
+const mpopIco = document.getElementById('mpopIco');
+const mpopTag = document.getElementById('mpopTag');
+const mpopTitle = document.getElementById('mpopTitle');
+const mpopDesc = document.getElementById('mpopDesc');
+const mpopList = document.getElementById('mpopList');
+
+function openPop(key){
+  const p = POPS[key];
+  if(!p) return;
+  mpopIco.innerHTML = p.ico;
+  mpopTag.textContent = p.tag;
+  mpopTitle.textContent = p.title;
+  mpopDesc.innerHTML = p.desc;
+  mpopList.innerHTML = p.list.map(t => `<li><span class="k">✓</span><span>${t}</span></li>`).join('');
+  mpop.classList.add('open');
+}
+function closePop(){ mpop.classList.remove('open'); }
+
+document.querySelectorAll('[data-pop]').forEach(el => {
+  el.addEventListener('click', e => { e.stopPropagation(); openPop(el.dataset.pop); });
+});
+mpop.addEventListener('click', e => { if(e.target === mpop) closePop(); });
 </script>
 </body>
 </html>
