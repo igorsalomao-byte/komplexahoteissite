@@ -177,7 +177,7 @@ html,body{font-family:var(--fd);background:var(--page-bg);color:var(--navy);-web
 .mpop{position:absolute;inset:0;z-index:20;display:none;align-items:center;justify-content:center;background:rgba(8,21,37,.78);backdrop-filter:blur(5px);-webkit-backdrop-filter:blur(5px)}
 .mpop.open{display:flex}
 .mpop-card{
-  position:relative;width:480px;max-width:88%;
+  position:relative;width:530px;max-width:90%;
   background:linear-gradient(160deg,#13294a,var(--navy9));
   border:1px solid rgba(36,213,255,.4);border-radius:18px;
   padding:30px 32px;
@@ -198,6 +198,86 @@ html,body{font-family:var(--fd);background:var(--page-bg);color:var(--navy);-web
 .mpop-list{list-style:none;display:flex;flex-direction:column;gap:8px}
 .mpop-list li{display:grid;grid-template-columns:20px 1fr;gap:9px;font-size:12.5px;color:rgba(255,255,255,.8);line-height:1.45;align-items:start}
 .mpop-list li .k{width:16px;height:16px;border-radius:50%;background:var(--grad);color:#fff;font-size:9px;font-weight:700;display:grid;place-items:center;margin-top:2px}
+
+/* ─── demos visuais dos pop-ups ─── */
+.mpop-demo{margin-top:16px;border-top:1px solid rgba(255,255,255,.12);padding-top:13px}
+.mpop-demo .dlab{font-size:9px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:rgba(255,255,255,.4);margin-bottom:10px}
+
+/* CRM · funil kanban (whatsapp) */
+.dm-crm{position:relative;display:grid;grid-template-columns:repeat(4,1fr);gap:6px;height:116px}
+.dm-crm .col{background:rgba(255,255,255,.04);border:1px dashed rgba(255,255,255,.16);border-radius:9px;padding:7px 5px}
+.dm-crm .col .h{font-size:7.5px;font-weight:700;letter-spacing:.5px;text-transform:uppercase;color:rgba(255,255,255,.5);text-align:center;line-height:1.2}
+.dm-crm .col.win{border-color:rgba(74,222,128,.45);background:rgba(34,197,94,.06)}
+.dm-crm .col.win .h{color:#4ade80}
+.dm-lead{position:absolute;top:32px;left:1%;width:23%;background:#fff;border-radius:8px;padding:7px 8px;font-size:8.5px;font-weight:600;color:#0E1E35;box-shadow:0 8px 20px rgba(0,0,0,.45);animation:crmMove 7s cubic-bezier(.5,0,.3,1) infinite,crmWin 7s linear infinite;z-index:2}
+.dm-lead b{display:block;font-size:12px;margin-top:3px;color:#1670C3}
+.dm-lead small{display:block;font-size:7px;font-weight:600;color:#8896A8;margin-top:3px;letter-spacing:.3px;text-transform:uppercase}
+@keyframes crmMove{0%,10%{left:1%}22%,34%{left:26%}46%,60%{left:51%}72%,100%{left:76%}}
+@keyframes crmWin{0%,66%{box-shadow:0 8px 20px rgba(0,0,0,.45)}74%,100%{box-shadow:0 0 0 2px #22c55e,0 8px 24px rgba(34,197,94,.4)}}
+
+/* eventos de tracking (site) */
+.dm-ev{display:flex;flex-direction:column;gap:7px}
+.dm-ev .ev{display:flex;align-items:center;gap:9px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-radius:8px;padding:8px 12px;font-size:11px;font-weight:600;color:#fff;opacity:0;transform:translateX(-8px);animation:evIn .45s ease forwards}
+.dm-ev .ev small{font-weight:500;color:rgba(255,255,255,.55);font-size:10px}
+.dm-ev .ev .d{width:7px;height:7px;border-radius:50%;background:var(--g3);box-shadow:0 0 8px rgba(36,213,255,.8);flex-shrink:0}
+.dm-ev .ev.win{border-color:rgba(74,222,128,.4)}
+.dm-ev .ev.win .d{background:#4ade80;box-shadow:0 0 8px rgba(74,222,128,.8)}
+.dm-ev .e1{animation-delay:.15s}.dm-ev .e2{animation-delay:.55s}.dm-ev .e3{animation-delay:.95s}.dm-ev .e4{animation-delay:1.35s}
+@keyframes evIn{to{opacity:1;transform:none}}
+
+/* busca google */
+.dm-gg .gsr{display:flex;align-items:center;gap:8px;background:#fff;border-radius:100px;padding:9px 14px;font-size:11.5px;color:#111;font-weight:500}
+.dm-gg .gres{margin-top:9px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-radius:9px;padding:9px 12px;opacity:0;animation:evIn .5s ease forwards}
+.dm-gg .gres.ad{animation-delay:.4s;border-color:rgba(36,213,255,.45);box-shadow:0 0 22px -6px rgba(36,213,255,.45)}
+.dm-gg .gres.oth{animation-delay:.75s}
+.dm-gg .tagad{font-size:8px;font-weight:800;letter-spacing:.6px;color:var(--g3);text-transform:uppercase}
+.dm-gg .gres b{display:block;font-size:11.5px;color:#fff;margin-top:2px}
+.dm-gg .gres small{display:block;font-size:9.5px;color:rgba(255,255,255,.5);margin-top:1px}
+.dm-gg .gres.oth b{color:rgba(255,255,255,.35)}
+
+/* anúncio meta */
+.dm-ig{display:flex;gap:14px;align-items:center}
+.dm-ig .igc{width:170px;border-radius:12px;overflow:hidden;background:#fff;flex-shrink:0}
+.dm-ig .igh{display:flex;align-items:center;gap:6px;padding:6px 9px;font-size:8.5px;font-weight:700;color:#111}
+.dm-ig .igh .av{width:16px;height:16px;border-radius:50%;background:var(--grad)}
+.dm-ig .igh em{font-style:normal;font-weight:400;color:#9CA3AF;font-size:7.5px;margin-left:auto}
+.dm-ig .igi{height:76px;background-image:url('assets/hotel/hotel-02.jpg');background-size:cover;background-position:center}
+.dm-ig .igf{display:flex;align-items:center;justify-content:space-between;padding:7px 9px;font-size:9px;font-weight:700}
+.dm-ig .igf .hrt{color:#EF4444;animation:hrtPop 1.6s ease-in-out infinite}
+.dm-ig .igf .cta{color:#1670C3}
+@keyframes hrtPop{0%,100%{transform:scale(1)}25%{transform:scale(1.35)}}
+.dm-ig .note{font-size:11px;color:rgba(255,255,255,.7);line-height:1.5}
+.dm-ig .note b{color:#fff}
+
+/* fluxo checkout */
+.dm-chk{display:flex;align-items:center;gap:6px;flex-wrap:wrap}
+.dm-chk .cs{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.12);border-radius:100px;padding:7px 12px;font-size:10px;font-weight:600;color:#fff;opacity:0;animation:evIn .4s ease forwards}
+.dm-chk .arr{color:rgba(255,255,255,.35);font-size:11px;opacity:0;animation:evIn .3s ease forwards}
+.dm-chk .cs.bad{border-color:rgba(239,68,68,.45);color:#FCA5A5}
+.dm-chk .cs.off{border-color:rgba(36,213,255,.5);color:var(--g3);box-shadow:0 0 18px -6px rgba(36,213,255,.5)}
+.dm-chk .cs.win{border-color:rgba(74,222,128,.45);color:#4ade80}
+.dm-chk .c1{animation-delay:.1s}.dm-chk .a1{animation-delay:.35s}.dm-chk .c2{animation-delay:.55s}.dm-chk .a2{animation-delay:.8s}.dm-chk .c3{animation-delay:1s}.dm-chk .a3{animation-delay:1.25s}.dm-chk .c4{animation-delay:1.45s}
+
+/* criativos · formatos */
+.dm-cria{display:flex;gap:8px;align-items:stretch}
+.dm-cria .fmt{flex:1;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.12);border-radius:10px;padding:13px 8px;text-align:center;font-size:11px;font-weight:700;color:#fff;opacity:0;transform:scale(.8);animation:fmtIn .45s cubic-bezier(.34,1.4,.64,1) forwards}
+.dm-cria .fmt small{display:block;font-weight:500;font-size:9px;color:rgba(255,255,255,.5);margin-top:4px}
+.dm-cria .f1{animation-delay:.1s}.dm-cria .f2{animation-delay:.3s}.dm-cria .f3{animation-delay:.5s}
+.dm-cria .fmt.winr{border-color:rgba(36,213,255,.55);box-shadow:0 0 24px -6px rgba(36,213,255,.5)}
+.dm-cria .fmt.winr small{color:var(--g3)}
+@keyframes fmtIn{to{opacity:1;transform:scale(1)}}
+
+/* receita por canal (reserva) */
+.dm-rev{display:flex;flex-direction:column;gap:8px}
+.dm-rev .rrow{display:grid;grid-template-columns:88px 1fr 62px;gap:10px;align-items:center;font-size:10.5px;color:rgba(255,255,255,.75)}
+.dm-rev .track{height:10px;border-radius:6px;background:rgba(255,255,255,.07);overflow:hidden}
+.dm-rev .bar{height:100%;border-radius:6px;background:var(--grad);width:0;animation:barGrow 1s cubic-bezier(.4,0,.2,1) forwards}
+.dm-rev b{color:#fff;font-size:10.5px;text-align:right}
+.dm-rev .r1 .bar{animation-delay:.15s;--w:92%}
+.dm-rev .r2 .bar{animation-delay:.35s;--w:64%}
+.dm-rev .r3 .bar{animation-delay:.55s;--w:50%}
+.dm-rev .r4 .bar{animation-delay:.75s;--w:38%}
+@keyframes barGrow{to{width:var(--w)}}
 
 /* chips de rodapé do money */
 .money-chips{display:flex;gap:10px;justify-content:center;margin-top:6px;position:relative;z-index:3}
@@ -612,6 +692,7 @@ html,body{font-family:var(--fd);background:var(--page-bg);color:var(--navy);-web
       </div>
       <p class="mpop-desc" id="mpopDesc"></p>
       <ul class="mpop-list" id="mpopList"></ul>
+      <div class="mpop-demo" id="mpopDemo"></div>
     </div>
   </div>
 </section>
@@ -959,7 +1040,8 @@ const POPS = {
       'Mensagem específica para cada etapa do funil',
       'Teste A/B contínuo até achar o criativo vencedor'
     ],
-    ico: '<svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18h6M10 21h4M12 3a6 6 0 016 6c0 2.5-1.5 3.5-2.5 5H8.5C7.5 12.5 6 11.5 6 9a6 6 0 016-6z"/><path d="M12 8v4"/></svg>'
+    ico: '<svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18h6M10 21h4M12 3a6 6 0 016 6c0 2.5-1.5 3.5-2.5 5H8.5C7.5 12.5 6 11.5 6 9a6 6 0 016-6z"/><path d="M12 8v4"/></svg>',
+    demo: '<div class="dm-cria"><div class="fmt f1 winr">▶ Vídeo<small>vencedor · escala</small></div><div class="fmt f2">✦ Motion<small>em teste</small></div><div class="fmt f3">▣ Estático<small>em teste</small></div></div>'
   },
   google: {
     tag: 'Marketing · Alta intenção',
@@ -970,7 +1052,8 @@ const POPS = {
       'Search + Performance Max no nível técnico máximo',
       'Quem pesquisa e não reserva entra no remarketing'
     ],
-    ico: '<svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.35-4.35"/></svg>'
+    ico: '<svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.35-4.35"/></svg>',
+    demo: '<div class="dm-gg"><div class="gsr">🔍 pousada em búzios</div><div class="gres ad"><span class="tagad">Patrocinado</span><b>Seu Hotel · Reserve direto com a melhor tarifa</b><small>seuhotel.com.br</small></div><div class="gres oth"><b>OTAs e concorrentes…</b><small>resultado orgânico</small></div></div>'
   },
   meta: {
     tag: 'Marketing · Desejo',
@@ -981,7 +1064,8 @@ const POPS = {
       'Remarketing cross-canal: viu no Google, é impactado no Instagram',
       'Dados do hóspede alimentam a segmentação continuamente'
     ],
-    ico: '<svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6.5 7C4 7 2.5 9.8 2.5 12.5S4 18 6.3 18c1.8 0 3-1.6 4.2-3.7L12 11.6l1.5 2.7c1.2 2.1 2.4 3.7 4.2 3.7 2.3 0 3.8-2.8 3.8-5.5S20 7 17.5 7c-1.9 0-3.2 1.5-4.4 3.5L12 12.4l-1.1-1.9C9.7 8.5 8.4 7 6.5 7z"/></svg>'
+    ico: '<svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6.5 7C4 7 2.5 9.8 2.5 12.5S4 18 6.3 18c1.8 0 3-1.6 4.2-3.7L12 11.6l1.5 2.7c1.2 2.1 2.4 3.7 4.2 3.7 2.3 0 3.8-2.8 3.8-5.5S20 7 17.5 7c-1.9 0-3.2 1.5-4.4 3.5L12 12.4l-1.1-1.9C9.7 8.5 8.4 7 6.5 7z"/></svg>',
+    demo: '<div class="dm-ig"><div class="igc"><div class="igh"><span class="av"></span>seuhotel<em>Patrocinado</em></div><div class="igi"></div><div class="igf"><span class="hrt">♥</span><span class="cta">Reservar agora →</span></div></div><div class="note"><b>Quem tem o perfil dos seus melhores hóspedes</b> vê o hotel no feed — e quem visitou o site sem reservar é reimpactado aqui.</div></div>'
   },
   site: {
     tag: 'Marketing · Conversão',
@@ -992,7 +1076,8 @@ const POPS = {
       'Pixel Meta + Google Tag configurados de ponta a ponta',
       'É o registro de dados que faz o anúncio ficar mais barato com o tempo'
     ],
-    ico: '<svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="16" rx="2"/><line x1="3" y1="9" x2="21" y2="9"/><path d="M8 14h8M8 17h5"/></svg>'
+    ico: '<svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="16" rx="2"/><line x1="3" y1="9" x2="21" y2="9"/><path d="M8 14h8M8 17h5"/></svg>',
+    demo: '<div class="dm-ev"><div class="ev e1"><span class="d"></span>PageView<small>· visitou o site</small></div><div class="ev e2"><span class="d"></span>ViewContent<small>· viu a suíte master</small></div><div class="ev e3"><span class="d"></span>InitiateCheckout<small>· escolheu as datas</small></div><div class="ev e4 win"><span class="d"></span>Purchase<small>· reserva de R$ 2.450</small></div></div>'
   },
   checkout: {
     tag: 'Conversão · Autoatendimento',
@@ -1003,7 +1088,8 @@ const POPS = {
       'Abandonou com datas escolhidas? Recebe criativo com 10% off',
       'Cada reserva rastreada até a origem da campanha'
     ],
-    ico: '<svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="16" rx="2"/><line x1="3" y1="10" x2="21" y2="10"/><line x1="8" y1="3" x2="8" y2="7"/><line x1="16" y1="3" x2="16" y2="7"/><path d="M8 15l3 3 5-6"/></svg>'
+    ico: '<svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="16" rx="2"/><line x1="3" y1="10" x2="21" y2="10"/><line x1="8" y1="3" x2="8" y2="7"/><line x1="16" y1="3" x2="16" y2="7"/><path d="M8 15l3 3 5-6"/></svg>',
+    demo: '<div class="dm-chk"><span class="cs c1">Escolheu as datas</span><span class="arr a1">→</span><span class="cs bad c2">Abandonou o checkout</span><span class="arr a2">→</span><span class="cs off c3">Criativo 10% OFF</span><span class="arr a3">→</span><span class="cs win c4">✓ Reserva concluída</span></div>'
   },
   whatsapp: {
     tag: 'Vendas · Conversão assistida',
@@ -1014,7 +1100,8 @@ const POPS = {
       'Script e processo de vendas estruturados para hotelaria',
       'Consultoria contínua com acompanhamento do time'
     ],
-    ico: '<svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z"/></svg>'
+    ico: '<svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z"/></svg>',
+    demo: '<div class="dm-crm"><div class="col"><div class="h">Novo lead</div></div><div class="col"><div class="h">Atendimento</div></div><div class="col"><div class="h">Proposta</div></div><div class="col win"><div class="h">Venda efetuada</div></div><div class="dm-lead">Casal · 3 noites<b>R$ 2.450</b><small>via WhatsApp</small></div></div>'
   },
   reserva: {
     tag: 'Resultado',
@@ -1025,7 +1112,8 @@ const POPS = {
       'Custo por reserva e retorno sobre o investimento em mídia',
       'Dados do hóspede voltam pro início: as campanhas melhoram todo mês'
     ],
-    ico: '<svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M8 12l3 3 5-6"/></svg>'
+    ico: '<svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M8 12l3 3 5-6"/></svg>',
+    demo: '<div class="dm-rev"><div class="rrow r1"><span>Google Ads</span><div class="track"><div class="bar"></div></div><b>R$ 18,2 mil</b></div><div class="rrow r2"><span>Meta Ads</span><div class="track"><div class="bar"></div></div><b>R$ 12,4 mil</b></div><div class="rrow r3"><span>Comercial</span><div class="track"><div class="bar"></div></div><b>R$ 9,1 mil</b></div><div class="rrow r4"><span>Remarketing</span><div class="track"><div class="bar"></div></div><b>R$ 6,8 mil</b></div></div>'
   }
 };
 
@@ -1044,6 +1132,7 @@ function openPop(key){
   mpopTitle.textContent = p.title;
   mpopDesc.innerHTML = p.desc;
   mpopList.innerHTML = p.list.map(t => `<li><span class="k">✓</span><span>${t}</span></li>`).join('');
+  document.getElementById('mpopDemo').innerHTML = p.demo ? '<div class="dlab">Na prática</div>' + p.demo : '';
   mpop.classList.add('open');
 }
 function closePop(){ mpop.classList.remove('open'); }
@@ -1052,6 +1141,9 @@ document.querySelectorAll('[data-pop]').forEach(el => {
   el.addEventListener('click', e => { e.stopPropagation(); openPop(el.dataset.pop); });
 });
 mpop.addEventListener('click', e => { if(e.target === mpop) closePop(); });
+
+/* deep-link: index.html#pop-whatsapp abre o pop-up direto */
+if(location.hash.startsWith('#pop-')) openPop(location.hash.slice(5));
 </script>
 </body>
 </html>
