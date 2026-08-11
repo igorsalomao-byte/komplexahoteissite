@@ -164,6 +164,9 @@ html,body{font-family:var(--fd);background:var(--page-bg);color:var(--navy);-web
 /* label do loop de remarketing */
 .mf-looplbl{position:absolute;left:37%;top:91%;transform:translate(-50%,-50%);font-size:10px;font-weight:700;letter-spacing:1.2px;text-transform:uppercase;color:rgba(255,255,255,.65);white-space:nowrap;opacity:0;animation:mfFade .8s ease forwards;animation-delay:2s;z-index:3}
 
+/* conectores do fluxo mobile — invisíveis no desktop */
+.mob-conn{display:none}
+
 /* nós clicáveis → pop-up */
 .mnode[data-pop],.msite[data-pop]{cursor:pointer}
 .mnode[data-pop] .ico{transition:transform .25s ease,box-shadow .25s ease}
@@ -481,17 +484,38 @@ html,body{font-family:var(--fd);background:var(--page-bg);color:var(--navy);-web
   .partners-inline .row{flex-wrap:wrap;gap:8px}
   .auth-map{gap:14px;padding-bottom:6px}
 
-  /* 03 money — fluxo vira vertical */
+  /* 03 money — funil bifurcado vertical */
   .slide-money .body{padding:22px 22px 20px}
   .money-head .title{font-size:29px}
-  .money-flow{aspect-ratio:auto;max-height:none;flex:none;display:flex;flex-direction:column;align-items:center;gap:4px;margin-top:16px}
+  .money-flow{
+    aspect-ratio:auto;max-height:none;flex:none;
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    grid-template-areas:
+      "p1 p1"
+      "c1 c1"
+      "p2 p3"
+      "c2 c2"
+      "site site"
+      "c3 c3"
+      "p5 p6"
+      "c4 c4"
+      "p7 p7";
+    align-items:center;justify-items:center;
+    row-gap:4px;column-gap:12px;
+    margin-top:16px;
+  }
   .mf-svg,.mf-looplbl{display:none}
   .mnode{position:static;transform:none}
+  .mnode.p1{grid-area:p1}.mnode.p2{grid-area:p2}.mnode.p3{grid-area:p3}
+  .mnode.p5{grid-area:p5}.mnode.p6{grid-area:p6}.mnode.p7{grid-area:p7}
   .mnode-inner{display:flex;flex-direction:column;align-items:center}
   .mnode .lbl,.mnode.lbl-up .lbl{position:static;transform:none;margin-top:8px;bottom:auto}
-  .mnode:not(.p1)::before,.msite::before{content:"↓";display:block;text-align:center;color:rgba(36,213,255,.6);font-size:17px;margin:6px 0}
-  .msite{position:static;transform:none;animation:mnMobIn .5s ease forwards;opacity:0;margin-top:6px}
-  .msite .site-lbl{position:static;transform:none;display:block;margin-top:8px}
+  .msite{grid-area:site;position:static;transform:none;animation:mnMobIn .5s ease forwards;opacity:0}
+  .msite .site-lbl{display:none}
+  .mob-conn{display:block;width:100%;height:42px}
+  .mob-conn.c1{grid-area:c1}.mob-conn.c2{grid-area:c2}.mob-conn.c3{grid-area:c3}.mob-conn.c4{grid-area:c4}
+  .mob-conn svg{width:100%;height:100%;display:block}
   .money-chips{flex-direction:column;align-items:stretch;gap:8px;margin-top:18px}
   .mchip{justify-content:center;text-align:center;font-size:11px}
 
@@ -675,6 +699,28 @@ html,body{font-family:var(--fd);background:var(--page-bg);color:var(--navy);-web
           <animateMotion dur="4.5s" repeatCount="indefinite" begin="3s" path="M 500 272 C 465 372, 300 372, 252 318"/>
         </circle>
       </svg>
+
+      <!-- conectores do fluxo vertical (mobile) -->
+      <div class="mob-conn c1"><svg viewBox="0 0 200 40" preserveAspectRatio="none">
+        <path d="M100 0 L100 8 C100 24, 50 18, 50 40 M100 8 C100 24, 150 18, 150 40" stroke="#1099E9" stroke-width="2" fill="none" stroke-linecap="round" opacity=".85"/>
+        <circle r="3" fill="#24D5FF"><animateMotion dur="2.4s" repeatCount="indefinite" path="M100 0 L100 8 C100 24, 50 18, 50 40"/></circle>
+        <circle r="3" fill="#24D5FF"><animateMotion dur="2.4s" begin="1.2s" repeatCount="indefinite" path="M100 0 L100 8 C100 24, 150 18, 150 40"/></circle>
+      </svg></div>
+      <div class="mob-conn c2"><svg viewBox="0 0 200 40" preserveAspectRatio="none">
+        <path d="M50 0 C50 20, 100 14, 100 30 L100 40 M150 0 C150 20, 100 14, 100 30" stroke="#1099E9" stroke-width="2" fill="none" stroke-linecap="round" opacity=".85"/>
+        <circle r="3" fill="#24D5FF"><animateMotion dur="2.4s" repeatCount="indefinite" path="M50 0 C50 20, 100 14, 100 30 L100 40"/></circle>
+        <circle r="3" fill="#24D5FF"><animateMotion dur="2.4s" begin="1.2s" repeatCount="indefinite" path="M150 0 C150 20, 100 14, 100 30 L100 40"/></circle>
+      </svg></div>
+      <div class="mob-conn c3"><svg viewBox="0 0 200 40" preserveAspectRatio="none">
+        <path d="M100 0 L100 8 C100 24, 50 18, 50 40 M100 8 C100 24, 150 18, 150 40" stroke="#1099E9" stroke-width="2" fill="none" stroke-linecap="round" opacity=".85"/>
+        <circle r="3" fill="#24D5FF"><animateMotion dur="2.4s" begin=".6s" repeatCount="indefinite" path="M100 0 L100 8 C100 24, 50 18, 50 40"/></circle>
+        <circle r="3" fill="#24D5FF"><animateMotion dur="2.4s" begin="1.8s" repeatCount="indefinite" path="M100 0 L100 8 C100 24, 150 18, 150 40"/></circle>
+      </svg></div>
+      <div class="mob-conn c4"><svg viewBox="0 0 200 40" preserveAspectRatio="none">
+        <path d="M50 0 C50 20, 100 14, 100 30 L100 40 M150 0 C150 20, 100 14, 100 30" stroke="#1099E9" stroke-width="2" fill="none" stroke-linecap="round" opacity=".85"/>
+        <circle r="3" fill="#24D5FF"><animateMotion dur="2.4s" begin=".6s" repeatCount="indefinite" path="M50 0 C50 20, 100 14, 100 30 L100 40"/></circle>
+        <circle r="3" fill="#24D5FF"><animateMotion dur="2.4s" begin="1.8s" repeatCount="indefinite" path="M150 0 C150 20, 100 14, 100 30 L100 40"/></circle>
+      </svg></div>
 
       <!-- Criativos (start) · SVG (65,200) -->
       <div class="mnode p1" data-pop="criativos" style="left:6.5%;top:50%">
