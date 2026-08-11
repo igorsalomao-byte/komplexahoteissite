@@ -591,29 +591,41 @@ html,body{font-family:var(--fd);background:var(--page-bg);color:var(--navy);-web
 .com-chip .h .ic svg{width:13px;height:13px;stroke:#fff}
 .com-chip p{font-size:11.5px;color:rgba(255,255,255,.68);line-height:1.45}
 
-/* ─── 08 · OUTRAS FRENTES ─── */
-.fr-grid{display:grid;grid-template-columns:1.05fr 1fr;gap:40px;flex:1;align-items:center;min-height:0}
-.fr-list{display:flex;flex-direction:column;gap:11px;margin-top:16px}
-.fr-list .fp{display:grid;grid-template-columns:36px 1fr;gap:13px;align-items:center;font-size:14.5px;color:var(--txt);line-height:1.45}
-.fr-list .fp .ic{width:31px;height:31px;border-radius:9px;background:var(--tb09);color:var(--blue);display:grid;place-items:center;font-weight:700;font-size:12px}
-.fr-list .fp strong{color:var(--navy);font-weight:600}
-.fr-chips{display:flex;gap:8px;flex-wrap:wrap;margin-top:18px}
-.fr-chip{font-size:12.5px;font-weight:600;padding:8px 17px;border-radius:100px;background:var(--tb09);color:var(--blue)}
-.fr-chip.hero{background:var(--grad);color:#fff;box-shadow:0 4px 16px rgba(16,153,233,.3)}
-.wed-mock{width:min(430px,100%);margin:0 auto;border-radius:12px;overflow:hidden;background:#fff;box-shadow:0 18px 50px rgba(20,35,60,.22);border:1px solid var(--bdr);opacity:0;transform:translateY(14px);animation:ccIn .6s cubic-bezier(.34,1.4,.64,1) forwards;animation-delay:.3s}
-.wed-mock .bbar{background:#F3F4F6;padding:7px 10px;display:flex;gap:5px;align-items:center;border-bottom:1px solid #E5E7EB}
-.wed-mock .bbar i{width:7px;height:7px;border-radius:50%;display:block}
-.wed-mock .bbar i:nth-child(1){background:#FF5F57}.wed-mock .bbar i:nth-child(2){background:#FEBC2E}.wed-mock .bbar i:nth-child(3){background:#28C840}
-.wed-mock .bbar .url{flex:1;background:#fff;border-radius:4px;padding:2px 8px;font-size:9px;color:#6B7280;font-family:Menlo,monospace}
-.wed-hero{height:148px;background-image:url('assets/hotel/karanda.jpg');background-size:cover;background-position:center 70%;position:relative;display:flex;flex-direction:column;justify-content:flex-end;padding:14px 16px;color:#fff}
-.wed-hero::before{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(14,30,53,.12),rgba(14,30,53,.82))}
-.wed-hero .k{position:relative;font-size:8.5px;font-weight:700;letter-spacing:1.8px;text-transform:uppercase;color:#F5D9A8}
-.wed-hero .h{position:relative;font-family:'Fraunces',Georgia,serif;font-size:20px;font-style:italic;font-weight:400}
-.wed-form{padding:12px 14px;display:flex;flex-direction:column;gap:7px}
-.wed-form .wf{border:1px solid #E5E7EB;border-radius:7px;padding:8px 12px;font-size:10.5px;color:#9CA3AF;display:flex;justify-content:space-between;align-items:center}
-.wed-form .wf b{color:#111;font-weight:600;font-size:10.5px}
-.wed-form .go{background:var(--grad);color:#fff;text-align:center;font-weight:700;font-size:12px;padding:11px;border-radius:8px;letter-spacing:.2px}
-.wed-badge{display:flex;justify-content:center;gap:16px;padding:9px;background:#F9FAFB;border-top:1px solid #E5E7EB;font-size:8.5px;color:#6B7280;font-weight:600;letter-spacing:.5px;text-transform:uppercase}
+/* ─── 08 · OUTRAS FRENTES (dark · champagne) ─── */
+.slide-wed .eyebrow{color:#F5D9A8}
+.slide-wed .title em{background:linear-gradient(90deg,#D9B379,#F5D9A8);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+.wed-grid{display:grid;grid-template-columns:1fr 1.15fr;gap:38px;flex:1;align-items:center;min-height:0}
+.wed-steps{display:flex;flex-direction:column;gap:9px;margin-top:16px}
+.wstep{display:grid;grid-template-columns:38px 1fr;gap:13px;align-items:center;background:rgba(255,255,255,.04);border:1px solid rgba(245,217,168,.28);border-radius:12px;padding:12px 15px;font-size:13.5px;color:rgba(255,255,255,.8);line-height:1.45;opacity:0;transform:translateY(10px);animation:evIn .5s ease forwards}
+.wstep:nth-child(1){animation-delay:.2s}.wstep:nth-child(2){animation-delay:.35s}.wstep:nth-child(3){animation-delay:.5s}
+.wstep .n{width:31px;height:31px;border-radius:9px;background:linear-gradient(135deg,#D9B379,#F5D9A8);color:#3A2C12;font-weight:800;font-size:12px;display:grid;place-items:center}
+.wstep strong{color:#fff;font-weight:600}
+.slide-wed .fr-chips{display:flex;gap:8px;flex-wrap:wrap;margin-top:18px}
+.slide-wed .fr-chip{font-size:12.5px;font-weight:600;padding:8px 17px;border-radius:100px;background:rgba(255,255,255,.06);color:rgba(255,255,255,.85);border:1px solid rgba(255,255,255,.16)}
+.slide-wed .fr-chip.hero{background:linear-gradient(90deg,#D9B379,#F5D9A8);color:#3A2C12;border:none;box-shadow:0 4px 18px rgba(217,179,121,.35)}
+
+.wed-scene{position:relative;height:478px;min-height:0}
+.ws-photo{position:absolute;inset:0;border-radius:20px;overflow:hidden;background-image:url('assets/hotel/karanda.jpg');background-size:cover;background-position:center}
+.ws-photo::after{content:"";position:absolute;inset:0;background:linear-gradient(160deg,rgba(58,36,12,.25),rgba(14,30,53,.5) 55%,rgba(8,21,37,.78))}
+.wed-phone{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:214px;background:#0A1322;border-radius:28px;padding:9px;box-shadow:0 30px 70px rgba(0,0,0,.6),0 0 0 1px rgba(255,255,255,.12);opacity:0;animation:phIn .7s cubic-bezier(.34,1.3,.64,1) forwards;animation-delay:.35s;z-index:2}
+@keyframes phIn{from{opacity:0;transform:translate(-50%,-44%) scale(.9)}to{opacity:1;transform:translate(-50%,-50%) scale(1)}}
+.wp-notch{display:flex;justify-content:center;padding:2px 0 6px}
+.wp-notch i{width:54px;height:5px;border-radius:100px;background:rgba(255,255,255,.18)}
+.wp-screen{border-radius:20px;overflow:hidden;background:#fff}
+.wp-hero{height:126px;background-image:url('assets/hotel/karanda.jpg');background-size:cover;background-position:center 78%;position:relative;display:flex;flex-direction:column;justify-content:flex-end;padding:12px 13px;color:#fff}
+.wp-hero::before{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(14,30,53,.05),rgba(24,18,8,.8))}
+.wp-hero .k{position:relative;font-size:7.5px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#F5D9A8}
+.wp-hero .h{position:relative;font-family:'Fraunces',Georgia,serif;font-size:17px;font-style:italic;font-weight:400}
+.wp-form{padding:10px 11px 12px;display:flex;flex-direction:column;gap:6px}
+.wp-form .wf{border:1px solid #E8E3D9;border-radius:7px;padding:7px 10px;font-size:9.5px;color:#9CA3AF;display:flex;justify-content:space-between;align-items:center}
+.wp-form .wf b{color:#111;font-weight:600;font-size:9.5px}
+.wgo{background:linear-gradient(90deg,#D9B379,#F5D9A8);color:#3A2C12;text-align:center;font-weight:800;font-size:10.5px;padding:9px;border-radius:8px;letter-spacing:.3px}
+.wnote{position:absolute;z-index:3;background:rgba(8,21,37,.88);border:1px solid rgba(245,217,168,.45);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);border-radius:13px;padding:11px 15px;color:#fff;box-shadow:0 12px 34px rgba(0,0,0,.45);opacity:0}
+.wnote .t{display:block;font-size:12.5px;font-weight:700}
+.wnote small{display:block;font-size:10.5px;color:rgba(255,255,255,.68);margin-top:2px}
+.wnote.n1{left:4%;top:11%;animation:evIn .6s ease forwards,wFloat 5.5s ease-in-out infinite;animation-delay:.9s,1.6s}
+.wnote.n2{right:3%;bottom:12%;animation:evIn .6s ease forwards,wFloat 6s ease-in-out infinite;animation-delay:1.5s,2.4s}
+@keyframes wFloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-7px)}}
 
 /* ═══════════════ MOBILE ═══════════════ */
 @media (max-width:760px){
@@ -688,7 +700,10 @@ html,body{font-family:var(--fd);background:var(--page-bg);color:var(--navy);-web
   .case-card .num{font-size:54px}
 
   /* 05 marketing / 08 frentes */
-  .mkt-grid,.fr-grid{grid-template-columns:1fr;gap:24px}
+  .mkt-grid,.wed-grid{grid-template-columns:1fr;gap:24px}
+  .wed-scene{height:430px}
+  .wnote.n1{left:2%;top:4%}
+  .wnote.n2{right:2%;bottom:4%}
   .mkt-panel{height:360px}
   /* 06 banco de criativos */
   .banco-grid{grid-template-columns:1fr 1fr;grid-template-rows:auto;margin-top:14px}
@@ -1170,19 +1185,18 @@ html,body{font-family:var(--fd);background:var(--page-bg);color:var(--navy);-web
 </section>
 
 <!-- ═══════════════ 08 · OUTRAS FRENTES ═══════════════ -->
-<section class="slide light">
-  <div class="top"><img class="brand" src="assets/logotipo_blue.svg" alt="Komplexa"><span class="pg">08 · 10</span></div>
+<section class="slide dark slide-wed">
+  <div class="top"><img class="brand" src="assets/logotipo_white.svg" alt="Komplexa"><span class="pg">08 · 10</span></div>
   <div class="body">
-    <div class="fr-grid">
+    <div class="wed-grid">
       <div>
         <div class="eyebrow">Outras frentes de receita</div>
-        <h2 class="title" style="font-size:38px">Cada frente tem sua <em>linha de produção</em>.</h2>
-        <p class="lead" style="font-size:15px">Um hotel que realiza casamentos não vende só diária. A mesma máquina de aquisição é apontada para cada frente — com página, captação e campanha próprias.</p>
-        <div class="fr-list">
-          <div class="fp"><span class="ic">01</span><span><strong>Landing exclusiva da frente</strong> — página desenhada pra vender o evento, não o quarto.</span></div>
-          <div class="fp"><span class="ic">02</span><span><strong>Formulário de captação qualificado</strong> — data, nº de convidados, orçamento: o lead já chega filtrado.</span></div>
-          <div class="fp"><span class="ic">03</span><span><strong>Campanha segmentada</strong> no Google e Meta para o público daquela frente.</span></div>
-          <div class="fp"><span class="ic">04</span><span><strong>Comercial preparado para o ticket</strong> — proposta e follow-up à altura do evento.</span></div>
+        <h2 class="title" style="font-size:36px">Cada frente tem sua<br><em>linha de produção</em>.</h2>
+        <p class="lead" style="font-size:14.5px">Casamentos, eventos, day use: a mesma máquina de aquisição, apontada para a receita além da diária.</p>
+        <div class="wed-steps">
+          <div class="wstep"><span class="n">01</span><span><strong>Página da frente</strong> — desenhada pra vender o evento, não o quarto.</span></div>
+          <div class="wstep"><span class="n">02</span><span><strong>Captação qualificada</strong> — data, convidados e orçamento: o lead chega filtrado.</span></div>
+          <div class="wstep"><span class="n">03</span><span><strong>Campanha + comercial no ticket</strong> — anúncio dedicado e proposta à altura do evento.</span></div>
         </div>
         <div class="fr-chips">
           <span class="fr-chip hero">Casamentos</span>
@@ -1191,21 +1205,25 @@ html,body{font-family:var(--fd);background:var(--page-bg);color:var(--navy);-web
           <span class="fr-chip">Réveillon &amp; datas</span>
         </div>
       </div>
-      <div>
-        <div class="wed-mock">
-          <div class="bbar"><i></i><i></i><i></i><span class="url">seuhotel.com.br/casamentos</span></div>
-          <div class="wed-hero">
-            <span class="k">Casamentos</span>
-            <span class="h">O sim, no jardim.</span>
+      <div class="wed-scene">
+        <div class="ws-photo"></div>
+        <div class="wed-phone">
+          <div class="wp-notch"><i></i></div>
+          <div class="wp-screen">
+            <div class="wp-hero">
+              <span class="k">Casamentos</span>
+              <span class="h">O sim, no jardim.</span>
+            </div>
+            <div class="wp-form">
+              <div class="wf"><span>Nomes</span><b>Ana &amp; Pedro</b></div>
+              <div class="wf"><span>Data prevista</span><b>Setembro 2027</b></div>
+              <div class="wf"><span>Convidados</span><b>120</b></div>
+              <div class="wgo">Receber proposta</div>
+            </div>
           </div>
-          <div class="wed-form">
-            <div class="wf"><span>Nomes</span><b>Ana &amp; Pedro</b></div>
-            <div class="wf"><span>Data prevista</span><b>Setembro 2027</b></div>
-            <div class="wf"><span>Convidados</span><b>120</b></div>
-            <div class="go">Receber proposta</div>
-          </div>
-          <div class="wed-badge"><span>Captação qualificada</span><span>·</span><span>Campanha dedicada</span></div>
         </div>
+        <div class="wnote n1"><span class="t">💍 Novo lead · Ana &amp; Pedro</span><small>120 convidados · Setembro 2027</small></div>
+        <div class="wnote n2"><span class="t">✓ Lead qualificado</span><small>direto no CRM do hotel</small></div>
       </div>
     </div>
   </div>
