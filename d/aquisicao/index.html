@@ -321,31 +321,35 @@ html,body{font-family:var(--fd);background:var(--page-bg);color:var(--navy);-web
 .mchip .d{width:7px;height:7px;border-radius:50%;background:var(--g3);box-shadow:0 0 8px rgba(36,213,255,.7);flex-shrink:0}
 .mchip em{font-style:normal;color:var(--g3)}
 
-/* ─── 04 · CASES ─── */
-.slide-cases .body{padding:26px 56px 16px}
-.cases-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:20px;flex:1;align-items:stretch;min-height:0}
-.case-card{position:relative;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.1);border-radius:16px;overflow:hidden;cursor:pointer;opacity:0;transform:translateY(18px);animation:ccIn .55s cubic-bezier(.34,1.4,.64,1) forwards;transition:transform .25s,box-shadow .25s,border-color .25s;display:flex;flex-direction:column}
+/* ─── 04 · CASES (foto full-bleed + número gigante) ─── */
+.slide-cases .body{padding:24px 56px 16px}
+.cases-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:18px;flex:1;align-items:stretch;min-height:0}
+.case-card{position:relative;border-radius:18px;overflow:hidden;cursor:pointer;min-height:360px;opacity:0;transform:translateY(20px);animation:ccIn .6s cubic-bezier(.34,1.4,.64,1) forwards;transition:transform .3s,box-shadow .3s;box-shadow:0 10px 34px rgba(0,0,0,.4)}
 .case-card:nth-child(1){animation-delay:.15s}
 .case-card:nth-child(2){animation-delay:.35s}
 .case-card:nth-child(3){animation-delay:.55s}
 @keyframes ccIn{to{opacity:1;transform:none}}
-.case-card:hover{transform:translateY(-4px);border-color:rgba(36,213,255,.45);box-shadow:0 14px 44px rgba(0,0,0,.45),0 0 34px rgba(36,213,255,.18)}
-.case-card .ph{height:128px;background-size:cover;background-position:center;position:relative;flex-shrink:0}
-.case-card .ph::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(14,30,53,.05),rgba(14,30,53,.94))}
-.case-card .ph .nm{position:absolute;left:15px;bottom:10px;z-index:2;font-size:14px;font-weight:700;color:#fff;letter-spacing:-.2px}
-.case-card .ph .tp{position:absolute;left:15px;top:10px;z-index:2;font-size:9px;font-weight:700;letter-spacing:1.2px;text-transform:uppercase;color:var(--g3);background:rgba(8,21,37,.8);padding:4px 10px;border-radius:100px}
-.case-card .bd{padding:15px 18px 14px;display:flex;flex-direction:column;gap:7px;flex:1}
-.case-card .num{font-weight:800;font-size:42px;line-height:1;letter-spacing:-1.5px;background:var(--grad);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
-.case-card .nl{font-size:12.5px;color:rgba(255,255,255,.75);line-height:1.45}
+.case-card:hover{transform:translateY(-5px);box-shadow:0 20px 54px rgba(0,0,0,.55),0 0 40px rgba(36,213,255,.22)}
+.case-card .cbg{position:absolute;inset:0;background-size:cover;background-position:center;transition:transform .6s cubic-bezier(.2,.6,.3,1)}
+.case-card:hover .cbg{transform:scale(1.07)}
+.case-card .cov{position:absolute;inset:0;background:linear-gradient(180deg,rgba(14,30,53,.18) 0%,rgba(14,30,53,.42) 42%,rgba(8,21,37,.97) 100%)}
+.case-card::after{content:"";position:absolute;inset:0;border-radius:18px;border:1px solid rgba(255,255,255,.14);pointer-events:none;transition:border-color .3s}
+.case-card:hover::after{border-color:rgba(36,213,255,.55)}
+.case-card .tp{position:absolute;top:14px;left:16px;z-index:2;font-size:9.5px;font-weight:700;letter-spacing:1.3px;text-transform:uppercase;color:var(--g3);background:rgba(8,21,37,.82);padding:5px 12px;border-radius:100px;backdrop-filter:blur(4px)}
+.case-card .cc{position:absolute;left:0;right:0;bottom:0;z-index:2;padding:18px 20px 16px;display:flex;flex-direction:column;gap:7px}
+.case-card .nm{font-size:16.5px;font-weight:700;color:#fff;letter-spacing:-.3px}
+.case-card .num{font-weight:800;font-size:64px;line-height:.95;letter-spacing:-2.5px;background:var(--grad);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;filter:drop-shadow(0 3px 16px rgba(36,213,255,.3))}
+.case-card .nl{font-size:13.5px;color:rgba(255,255,255,.85);line-height:1.45}
 .case-card .nl strong{color:#fff;font-weight:600}
-.case-viz{margin-top:auto;padding-top:8px;display:flex;flex-direction:column;gap:6px}
-.cv-row{display:grid;grid-template-columns:44px 1fr 56px;gap:8px;align-items:center;font-size:9.5px;color:rgba(255,255,255,.55)}
-.cv-row b{color:#fff;font-size:10px;text-align:right;white-space:nowrap}
-.cv-track{height:9px;border-radius:5px;background:rgba(255,255,255,.07);overflow:hidden}
-.cv-fill{height:100%;border-radius:5px;width:0;animation:barGrow 1.1s cubic-bezier(.4,0,.2,1) forwards}
-.cv-fill.dim{background:rgba(255,255,255,.3)}
+.case-viz{margin-top:6px;display:flex;flex-direction:column;gap:6px}
+.cv-row{display:grid;grid-template-columns:48px 1fr 62px;gap:9px;align-items:center;font-size:10.5px;color:rgba(255,255,255,.6)}
+.cv-row b{color:#fff;font-size:11px;text-align:right;white-space:nowrap}
+.cv-track{height:10px;border-radius:6px;background:rgba(255,255,255,.12);overflow:hidden}
+.cv-fill{height:100%;border-radius:6px;width:0;animation:barGrow 1.1s cubic-bezier(.4,0,.2,1) forwards}
+.cv-fill.dim{background:rgba(255,255,255,.35)}
 .cv-fill.lit{background:var(--grad)}
-.case-card .cta2{margin-top:9px;font-size:9.5px;font-weight:700;letter-spacing:1.2px;text-transform:uppercase;color:var(--g3)}
+.case-card .cta2{margin-top:8px;font-size:10px;font-weight:700;letter-spacing:1.3px;text-transform:uppercase;color:var(--g3);display:flex;align-items:center;gap:7px}
+.case-card .cta2::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--g3);box-shadow:0 0 8px rgba(36,213,255,.8);animation:brPulse 1.8s ease-in-out infinite}
 
 /* comparativo no pop-up dos cases */
 .dm-cmp{display:flex;flex-direction:column;gap:0;border:1px solid rgba(255,255,255,.12);border-radius:11px;overflow:hidden}
@@ -574,7 +578,8 @@ html,body{font-family:var(--fd);background:var(--page-bg);color:var(--navy);-web
 
   /* 04 cases */
   .cases-grid{grid-template-columns:1fr;gap:12px;margin-top:16px}
-  .case-card .ph{height:110px}
+  .case-card{min-height:330px}
+  .case-card .num{font-size:54px}
 
   /* 05-08 etapas */
   .etapa-grid{grid-template-columns:1fr;gap:22px}
@@ -889,52 +894,52 @@ html,body{font-family:var(--fd);background:var(--page-bg);color:var(--navy);-web
     <div class="cases-grid">
       <!-- Solar Dona Dora -->
       <div class="case-card" data-pop="case-solar">
-        <div class="ph" style="background-image:url('assets/hotel/solar-dona-dora.jpg')">
-          <span class="tp">Pousada</span>
+        <div class="cbg" style="background-image:url('assets/hotel/solar-dona-dora.jpg')"></div>
+        <div class="cov"></div>
+        <span class="tp">Pousada</span>
+        <div class="cc">
           <span class="nm">Solar Dona Dora</span>
-        </div>
-        <div class="bd">
           <span class="num" data-cnt="3.4" data-dec="1" data-suf="x">0x</span>
           <span class="nl"><strong>de faturamento na baixa temporada</strong> — o pior mês do ano virou recorde</span>
           <div class="case-viz">
             <div class="cv-row"><span>Antes</span><div class="cv-track"><div class="cv-fill dim" style="--w:29%;animation-delay:.8s"></div></div><b>R$ 12,4 mil</b></div>
             <div class="cv-row"><span>Depois</span><div class="cv-track"><div class="cv-fill lit" style="--w:100%;animation-delay:1s"></div></div><b>R$ 42,5 mil</b></div>
           </div>
-          <span class="cta2">Ver números completos →</span>
+          <span class="cta2">Ver números completos</span>
         </div>
       </div>
 
       <!-- Sunsmart -->
       <div class="case-card" data-pop="case-sunsmart">
-        <div class="ph" style="background-image:url('assets/hotel/hotel-04.jpg')">
-          <span class="tp">Hotel</span>
+        <div class="cbg" style="background-image:url('assets/hotel/hotel-04.jpg')"></div>
+        <div class="cov"></div>
+        <span class="tp">Hotel</span>
+        <div class="cc">
           <span class="nm">Sunsmart</span>
-        </div>
-        <div class="bd">
           <span class="num" data-cnt="60" data-from="30" data-suf="%+">30%</span>
           <span class="nl"><strong>das reservas agora são diretas</strong> — antes da Komplexa eram 30%</span>
           <div class="case-viz">
             <div class="cv-row"><span>Antes</span><div class="cv-track"><div class="cv-fill dim" style="--w:30%;animation-delay:.9s"></div></div><b>30%</b></div>
             <div class="cv-row"><span>Agora</span><div class="cv-track"><div class="cv-fill lit" style="--w:62%;animation-delay:1.1s"></div></div><b>60%+</b></div>
           </div>
-          <span class="cta2">Ver a virada →</span>
+          <span class="cta2">Ver a virada</span>
         </div>
       </div>
 
       <!-- Bahia Bonita -->
       <div class="case-card" data-pop="case-bahia">
-        <div class="ph" style="background-image:url('assets/hotel/hotel-01.jpg')">
-          <span class="tp">Hotel Boutique</span>
+        <div class="cbg" style="background-image:url('assets/hotel/hotel-01.jpg')"></div>
+        <div class="cov"></div>
+        <span class="tp">Hotel Boutique</span>
+        <div class="cc">
           <span class="nm">Bahia Bonita</span>
-        </div>
-        <div class="bd">
           <span class="num" data-cnt="19" data-suf="x">0x</span>
           <span class="nl"><strong>de retorno sobre o investimento</strong> em mídia, medido no PMS</span>
           <div class="case-viz">
             <div class="cv-row"><span>Investe</span><div class="cv-track"><div class="cv-fill dim" style="--w:6%;animation-delay:1s"></div></div><b>R$ 1</b></div>
             <div class="cv-row"><span>Retorna</span><div class="cv-track"><div class="cv-fill lit" style="--w:100%;animation-delay:1.2s"></div></div><b>R$ 19</b></div>
           </div>
-          <span class="cta2">Ver o retorno →</span>
+          <span class="cta2">Ver o retorno</span>
         </div>
       </div>
     </div>
