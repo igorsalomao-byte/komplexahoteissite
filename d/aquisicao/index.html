@@ -559,9 +559,10 @@ html,body{font-family:var(--fd);background:var(--page-bg);color:var(--navy);-web
 
 /* ─── 06 · BANCO DE CRIATIVOS ─── */
 .slide-banco .body{padding:24px 56px 16px}
-.banco-grid{display:grid;grid-template-columns:1.05fr 1fr 1fr;grid-template-rows:1fr 1fr;gap:14px;flex:1;min-height:0;margin-top:16px}
+.banco-grid{display:grid;grid-template-columns:250px 1fr 1fr .95fr;grid-template-rows:1fr 1fr;gap:14px;flex:1;min-height:0;margin-top:16px}
 .bk-item{position:relative;border-radius:14px;overflow:hidden;opacity:0;transform:scale(.92);animation:fmtIn .5s cubic-bezier(.34,1.4,.64,1) forwards;min-height:0}
 .bk-item.video{grid-row:1/3}
+.bk-item.tall{grid-row:1/3}
 .bk-item video,.bk-item img{width:100%;height:100%;object-fit:cover;display:block;position:absolute;inset:0}
 .bk-item .tagv{position:absolute;left:10px;bottom:10px;z-index:2;background:rgba(8,21,37,.85);color:var(--g3);font-size:9px;font-weight:700;letter-spacing:1px;text-transform:uppercase;padding:4px 11px;border-radius:100px;border:1px solid rgba(36,213,255,.35)}
 .bk-item .snd2{position:absolute;top:10px;right:10px;z-index:2;width:38px;height:38px;border-radius:50%;border:1px solid rgba(36,213,255,.5);background:rgba(8,21,37,.85);font-size:16px;cursor:pointer;display:grid;place-items:center;transition:transform .2s}
@@ -571,6 +572,7 @@ html,body{font-family:var(--fd);background:var(--page-bg);color:var(--navy);-web
 .bk-tile .v{font-weight:800;font-size:30px;line-height:1;background:var(--grad);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
 .bk-tile .l{font-size:12.5px;color:rgba(255,255,255,.75);line-height:1.45}
 .bk-tile .l strong{color:#fff;font-weight:600}
+.vbadge{display:inline-flex;align-items:center;gap:7px;font-size:11px;font-weight:700;letter-spacing:.8px;text-transform:uppercase;color:#4ade80;background:rgba(34,197,94,.1);border:1px solid rgba(74,222,128,.4);border-radius:100px;padding:6px 14px}
 
 /* ─── 07 · COMERCIAL (kanban vivo) ─── */
 .slide-com .body{padding:24px 56px 16px}
@@ -690,9 +692,9 @@ html,body{font-family:var(--fd);background:var(--page-bg);color:var(--navy);-web
   .mkt-panel{height:360px}
   /* 06 banco de criativos */
   .banco-grid{grid-template-columns:1fr 1fr;grid-template-rows:auto;margin-top:14px}
-  .bk-item.video{grid-column:1/3;grid-row:auto;height:330px}
-  .bk-item{height:190px}
-  .bk-tile{min-height:130px}
+  .bk-item.video{grid-column:1/3;grid-row:auto;height:360px}
+  .bk-item.tall{grid-row:auto;height:280px}
+  .bk-tile{min-height:120px}
   /* 07 comercial */
   .com-chips{grid-template-columns:1fr 1fr}
   .crm-live .dm-lead{width:27%}
@@ -1092,28 +1094,31 @@ html,body{font-family:var(--fd);background:var(--page-bg);color:var(--navy);-web
   <div class="body">
     <div class="eyebrow">Produto · Criativos</div>
     <h2 class="title" style="font-size:38px">Banco de criativos <em>validados</em>.</h2>
-    <span class="money-hint"><span class="d"></span>Vídeo real de campanha — clique no som</span>
+    <div style="display:flex;align-items:center;gap:14px;flex-wrap:wrap">
+      <span class="money-hint"><span class="d"></span>Vídeo real de campanha — clique no som</span>
+      <span class="vbadge">✓ Validados em dezenas de hotéis</span>
+    </div>
     <div class="banco-grid">
       <div class="bk-item video b1">
         <video src="assets/criativos/criativo-video.mp4?v=2" autoplay muted loop playsinline></video>
         <span class="tagv">▶ Vídeo · campanha real</span>
         <button class="snd2" onclick="var v=this.parentNode.querySelector('video');v.muted=!v.muted;this.textContent=v.muted?'🔇':'🔊'">🔇</button>
       </div>
-      <div class="bk-item b2">
-        <img src="assets/criativos/criativo-01.jpg" alt="Criativo oferta especial">
+      <div class="bk-item tall b2">
+        <img src="assets/criativos/criativo-01.jpg?v=2" alt="Criativo oferta 10% off">
         <span class="tagv">Estático · oferta</span>
       </div>
-      <div class="bk-tile b3">
-        <span class="v">Validados</span>
-        <span class="l"><strong>Modelos testados em diversos projetos</strong> de hotelaria — não começamos do zero no seu hotel.</span>
+      <div class="bk-item tall b3">
+        <img src="assets/criativos/criativo-02.jpg?v=2" alt="Criativo pacote romântico">
+        <span class="tagv">Estático · pacote</span>
       </div>
       <div class="bk-tile b4">
-        <span class="v">Funil</span>
-        <span class="l"><strong>Mensagem certa por etapa</strong> — ex.: 10% off pra quem abandonou o checkout com datas escolhidas.</span>
+        <span class="v">Dezenas</span>
+        <span class="l"><strong>de hotéis já rodaram estes modelos</strong> — validados em campanha real, não em teoria.</span>
       </div>
-      <div class="bk-item b5">
-        <img src="assets/criativos/criativo-02.jpg" alt="Criativo pacote romântico">
-        <span class="tagv">Estático · pacote</span>
+      <div class="bk-tile b5">
+        <span class="v">Funil</span>
+        <span class="l"><strong>Mensagem certa por etapa</strong> — ex.: 10% off pra quem abandonou o checkout.</span>
       </div>
     </div>
   </div>
@@ -1352,7 +1357,7 @@ const POPS = {
       'Teste A/B contínuo até achar o criativo vencedor'
     ],
     ico: '<svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18h6M10 21h4M12 3a6 6 0 016 6c0 2.5-1.5 3.5-2.5 5H8.5C7.5 12.5 6 11.5 6 9a6 6 0 016-6z"/><path d="M12 8v4"/></svg>',
-    demo: '<div class="dm-media"><div class="md vid"><video src="assets/criativos/criativo-video.mp4?v=2" autoplay muted loop playsinline></video><span class="tag">▶ Vídeo</span><button class="snd" onclick="var v=this.parentNode.querySelector(\'video\');v.muted=!v.muted;this.textContent=v.muted?\'🔇\':\'🔊\'">🔇</button></div><div class="md"><img src="assets/criativos/criativo-01.jpg" alt="Criativo pacote romântico"><span class="tag">Estático</span></div><div class="md"><img src="assets/criativos/criativo-02.jpg" alt="Criativo oferta especial"><span class="tag">Estático</span></div></div>'
+    demo: '<div class="dm-media"><div class="md vid"><video src="assets/criativos/criativo-video.mp4?v=2" autoplay muted loop playsinline></video><span class="tag">▶ Vídeo</span><button class="snd" onclick="var v=this.parentNode.querySelector(\'video\');v.muted=!v.muted;this.textContent=v.muted?\'🔇\':\'🔊\'">🔇</button></div><div class="md"><img src="assets/criativos/criativo-01.jpg?v=2" alt="Criativo pacote romântico"><span class="tag">Estático</span></div><div class="md"><img src="assets/criativos/criativo-02.jpg?v=2" alt="Criativo oferta especial"><span class="tag">Estático</span></div></div>'
   },
   google: {
     tag: 'Marketing · Alta intenção',
