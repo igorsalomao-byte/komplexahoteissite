@@ -202,6 +202,24 @@ html,body{font-family:var(--fd);background:var(--page-bg);color:var(--navy);-web
 .mpop-list li{display:grid;grid-template-columns:20px 1fr;gap:9px;font-size:12.5px;color:rgba(255,255,255,.8);line-height:1.45;align-items:start}
 .mpop-list li .k{width:16px;height:16px;border-radius:50%;background:var(--grad);color:#fff;font-size:9px;font-weight:700;display:grid;place-items:center;margin-top:2px}
 
+/* número-herói no cabeçalho do pop-up */
+.mpop-big{margin-left:auto;margin-right:32px;font-weight:800;font-size:46px;line-height:1;letter-spacing:-1.8px;background:var(--grad);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;filter:drop-shadow(0 2px 12px rgba(36,213,255,.35));flex-shrink:0}
+
+/* pop-up de CASE — tipografia ampliada pra destacar os números */
+.mpop-card.case{width:580px}
+.mpop-card.case .mpop-title{font-size:24px}
+.mpop-card.case .mpop-tag{font-size:10.5px}
+.mpop-card.case .mpop-desc{font-size:15.5px;line-height:1.6}
+.mpop-card.case .mpop-list li{font-size:14.5px;line-height:1.5}
+.mpop-card.case .mpop-list li .k{width:18px;height:18px;font-size:10px;margin-top:3px}
+.mpop-card.case .dm-cmp .cr{font-size:14px;padding:12px 16px}
+.mpop-card.case .dm-cmp .cr b{font-size:16.5px}
+.mpop-card.case .dm-cmp .cr.h{font-size:10.5px}
+.mpop-card.case .dm-rev .rrow{font-size:13.5px;grid-template-columns:115px 1fr 82px}
+.mpop-card.case .dm-rev b{font-size:16px}
+.mpop-card.case .dm-rev .track{height:13px}
+.mpop-card.case .mpop-demo p.mpop-desc{font-size:13px!important}
+
 /* ─── demos visuais dos pop-ups ─── */
 .mpop-demo{margin-top:16px;border-top:1px solid rgba(255,255,255,.12);padding-top:13px}
 .mpop-demo .dlab{font-size:9px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:rgba(255,255,255,.4);margin-bottom:10px}
@@ -1223,6 +1241,7 @@ html,body{font-family:var(--fd);background:var(--page-bg);color:var(--navy);-web
         <div class="mpop-tag" id="mpopTag"></div>
         <div class="mpop-title" id="mpopTitle"></div>
       </div>
+      <span class="mpop-big" id="mpopBig" style="display:none"></span>
     </div>
     <p class="mpop-desc" id="mpopDesc"></p>
     <ul class="mpop-list" id="mpopList"></ul>
@@ -1372,6 +1391,7 @@ const POPS = {
   'case-solar': {
     tag: 'Case real · Pousada',
     title: 'Solar Dona Dora',
+    big: '3,4x',
     desc: 'Baixa temporada é o pior mês do ano em hotelaria. Com o método rodando, o mesmo mês de baixa saltou de <strong>R$ 12.403 para R$ 42.513</strong> — um ano depois.',
     list: [
       '3,4x de faturamento no mesmo mês de baixa',
@@ -1384,6 +1404,7 @@ const POPS = {
   'case-sunsmart': {
     tag: 'Case real · Hotel',
     title: 'Sunsmart',
+    big: '60%+',
     desc: 'A operação dependia de OTA: só 30% das reservas eram diretas. Hoje <strong>mais de 60% das reservas entram pelo canal direto</strong> — margem de comissão de volta pro caixa.',
     list: [
       'Participação direta mais que dobrou (30% → 60%+)',
@@ -1396,6 +1417,7 @@ const POPS = {
   'case-bahia': {
     tag: 'Case real · Hotel Boutique',
     title: 'Bahia Bonita',
+    big: '19x',
     desc: 'Cada <strong>R$ 1 investido em mídia voltou como R$ 19</strong> em receita de reservas — medido direto no PMS, não em métrica de vaidade.',
     list: [
       '19x de retorno sobre o investimento em mídia',
@@ -1408,6 +1430,7 @@ const POPS = {
   'case-karanda': {
     tag: 'Case real · Pousada',
     title: 'Karandá',
+    big: '6,5x',
     desc: 'Cada <strong>R$ 1 investido em mídia voltou como R$ 6,50</strong> em receita de reservas — aquisição ativa pagando a própria operação.',
     list: [
       '6,5x de retorno sobre o investimento em mídia paga',
@@ -1435,6 +1458,10 @@ function openPop(key){
   mpopDesc.innerHTML = p.desc;
   mpopList.innerHTML = p.list.map(t => `<li><span class="k">✓</span><span>${t}</span></li>`).join('');
   document.getElementById('mpopDemo').innerHTML = p.demo ? '<div class="dlab">Na prática</div>' + p.demo : '';
+  const bigEl = document.getElementById('mpopBig');
+  bigEl.textContent = p.big || '';
+  bigEl.style.display = p.big ? '' : 'none';
+  document.querySelector('.mpop-card').classList.toggle('case', !!p.big);
   mpop.classList.add('open');
 }
 function closePop(){ mpop.classList.remove('open'); }
