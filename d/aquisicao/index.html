@@ -176,8 +176,8 @@ html,body{font-family:var(--fd);background:var(--page-bg);color:var(--navy);-web
 .money-hint{display:inline-flex;align-items:center;gap:8px;margin-top:4px;font-size:11px;font-weight:600;letter-spacing:.6px;text-transform:uppercase;color:rgba(255,255,255,.5)}
 .money-hint .d{width:7px;height:7px;border-radius:50%;background:var(--g3);box-shadow:0 0 8px rgba(36,213,255,.8);animation:brPulse 1.8s ease-in-out infinite}
 
-/* pop-up dos widgets */
-.mpop{position:absolute;inset:0;z-index:20;display:none;align-items:center;justify-content:center;background:rgba(8,21,37,.78);backdrop-filter:blur(5px);-webkit-backdrop-filter:blur(5px)}
+/* pop-up dos widgets e cases */
+.mpop{position:fixed;inset:0;z-index:20;display:none;align-items:center;justify-content:center;background:rgba(8,21,37,.78);backdrop-filter:blur(5px);-webkit-backdrop-filter:blur(5px)}
 .mpop.open{display:flex}
 .mpop-card{
   position:relative;width:530px;max-width:90%;
@@ -321,6 +321,42 @@ html,body{font-family:var(--fd);background:var(--page-bg);color:var(--navy);-web
 .mchip .d{width:7px;height:7px;border-radius:50%;background:var(--g3);box-shadow:0 0 8px rgba(36,213,255,.7);flex-shrink:0}
 .mchip em{font-style:normal;color:var(--g3)}
 
+/* ─── 04 · CASES ─── */
+.slide-cases .body{padding:26px 56px 16px}
+.cases-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:20px;flex:1;align-items:stretch;min-height:0}
+.case-card{position:relative;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.1);border-radius:16px;overflow:hidden;cursor:pointer;opacity:0;transform:translateY(18px);animation:ccIn .55s cubic-bezier(.34,1.4,.64,1) forwards;transition:transform .25s,box-shadow .25s,border-color .25s;display:flex;flex-direction:column}
+.case-card:nth-child(1){animation-delay:.15s}
+.case-card:nth-child(2){animation-delay:.35s}
+.case-card:nth-child(3){animation-delay:.55s}
+@keyframes ccIn{to{opacity:1;transform:none}}
+.case-card:hover{transform:translateY(-4px);border-color:rgba(36,213,255,.45);box-shadow:0 14px 44px rgba(0,0,0,.45),0 0 34px rgba(36,213,255,.18)}
+.case-card .ph{height:128px;background-size:cover;background-position:center;position:relative;flex-shrink:0}
+.case-card .ph::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(14,30,53,.05),rgba(14,30,53,.94))}
+.case-card .ph .nm{position:absolute;left:15px;bottom:10px;z-index:2;font-size:14px;font-weight:700;color:#fff;letter-spacing:-.2px}
+.case-card .ph .tp{position:absolute;left:15px;top:10px;z-index:2;font-size:9px;font-weight:700;letter-spacing:1.2px;text-transform:uppercase;color:var(--g3);background:rgba(8,21,37,.8);padding:4px 10px;border-radius:100px}
+.case-card .bd{padding:15px 18px 14px;display:flex;flex-direction:column;gap:7px;flex:1}
+.case-card .num{font-weight:800;font-size:42px;line-height:1;letter-spacing:-1.5px;background:var(--grad);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+.case-card .nl{font-size:12.5px;color:rgba(255,255,255,.75);line-height:1.45}
+.case-card .nl strong{color:#fff;font-weight:600}
+.case-viz{margin-top:auto;padding-top:8px;display:flex;flex-direction:column;gap:6px}
+.cv-row{display:grid;grid-template-columns:44px 1fr 56px;gap:8px;align-items:center;font-size:9.5px;color:rgba(255,255,255,.55)}
+.cv-row b{color:#fff;font-size:10px;text-align:right;white-space:nowrap}
+.cv-track{height:9px;border-radius:5px;background:rgba(255,255,255,.07);overflow:hidden}
+.cv-fill{height:100%;border-radius:5px;width:0;animation:barGrow 1.1s cubic-bezier(.4,0,.2,1) forwards}
+.cv-fill.dim{background:rgba(255,255,255,.3)}
+.cv-fill.lit{background:var(--grad)}
+.case-card .cta2{margin-top:9px;font-size:9.5px;font-weight:700;letter-spacing:1.2px;text-transform:uppercase;color:var(--g3)}
+
+/* comparativo no pop-up dos cases */
+.dm-cmp{display:flex;flex-direction:column;gap:0;border:1px solid rgba(255,255,255,.12);border-radius:11px;overflow:hidden}
+.dm-cmp .cr{display:grid;grid-template-columns:1.2fr .9fr .9fr;padding:9px 13px;font-size:11.5px;align-items:center;color:rgba(255,255,255,.7);opacity:0;animation:evIn .45s ease forwards}
+.dm-cmp .cr+.cr{border-top:1px solid rgba(255,255,255,.09)}
+.dm-cmp .cr.h{background:rgba(255,255,255,.05);font-size:9px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:rgba(255,255,255,.5);animation-delay:.1s}
+.dm-cmp .cr.h .g{color:#4ade80}
+.dm-cmp .cr b{color:#fff;font-weight:700;font-size:12px}
+.dm-cmp .cr b.g{color:#4ade80}
+.dm-cmp .e1{animation-delay:.3s}.dm-cmp .e2{animation-delay:.5s}.dm-cmp .e3{animation-delay:.7s}
+
 /* ─── 04-07 · ETAPAS ─── */
 .etapa-grid{display:grid;grid-template-columns:1fr 1.05fr;gap:48px;flex:1;align-items:center}
 .etapa-points{list-style:none;display:flex;flex-direction:column;gap:13px;margin-top:22px}
@@ -401,7 +437,7 @@ html,body{font-family:var(--fd);background:var(--page-bg);color:var(--navy);-web
 .jstep.win{background:var(--okbg);border-color:rgba(22,163,74,.25);color:var(--ok)}
 .jarr{color:var(--gray);font-size:13px;flex-shrink:0}
 
-/* ─── 07 · COMERCIAL ─── */
+/* ─── 08 · COMERCIAL ─── */
 .com-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin-top:26px}
 .com-card{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.1);border-radius:14px;padding:22px 24px}
 .com-card .ch{display:flex;align-items:center;gap:12px;margin-bottom:10px}
@@ -536,7 +572,11 @@ html,body{font-family:var(--fd);background:var(--page-bg);color:var(--navy);-web
   .mpop-card{width:92%;padding:22px 20px;max-height:86svh;overflow-y:auto}
   .mpop-title{font-size:17px}
 
-  /* 04-07 etapas */
+  /* 04 cases */
+  .cases-grid{grid-template-columns:1fr;gap:12px;margin-top:16px}
+  .case-card .ph{height:110px}
+
+  /* 05-08 etapas */
   .etapa-grid{grid-template-columns:1fr;gap:22px}
   .etapa-visual{height:auto;padding:20px 12px}
   .fund-vis{flex-direction:column;gap:14px;padding:0}
@@ -836,28 +876,75 @@ html,body{font-family:var(--fd);background:var(--page-bg);color:var(--navy);-web
     </div>
   </div>
   <div class="bot"><span>komplexahoteis.com</span><span>03 · 10</span></div>
-
-  <!-- pop-up dos widgets -->
-  <div class="mpop" id="mpop">
-    <div class="mpop-card">
-      <button class="mpop-x" onclick="closePop()">✕</button>
-      <div class="mpop-head">
-        <div class="mpop-ico" id="mpopIco"></div>
-        <div>
-          <div class="mpop-tag" id="mpopTag"></div>
-          <div class="mpop-title" id="mpopTitle"></div>
-        </div>
-      </div>
-      <p class="mpop-desc" id="mpopDesc"></p>
-      <ul class="mpop-list" id="mpopList"></ul>
-      <div class="mpop-demo" id="mpopDemo"></div>
-    </div>
-  </div>
 </section>
 
-<!-- ═══════════════ 04 · FUNDAÇÃO ═══════════════ -->
+<!-- ═══════════════ 04 · CASES ═══════════════ -->
+<section class="slide dark slide-cases">
+  <div class="top"><img class="brand" src="assets/logotipo_white.svg" alt="Komplexa"><span class="pg">04 · 10</span></div>
+  <div class="body">
+    <div class="eyebrow">Cases reais · Clientes Komplexa</div>
+    <h2 class="title" style="font-size:38px">Resultados que <em>se repetem</em>.</h2>
+    <span class="money-hint"><span class="d"></span>Clique nos cases para ver os números</span>
+
+    <div class="cases-grid">
+      <!-- Solar Dona Dora -->
+      <div class="case-card" data-pop="case-solar">
+        <div class="ph" style="background-image:url('assets/hotel/solar-dona-dora.jpg')">
+          <span class="tp">Pousada</span>
+          <span class="nm">Solar Dona Dora</span>
+        </div>
+        <div class="bd">
+          <span class="num" data-cnt="3.4" data-dec="1" data-suf="x">0x</span>
+          <span class="nl"><strong>de faturamento na baixa temporada</strong> — o pior mês do ano virou recorde</span>
+          <div class="case-viz">
+            <div class="cv-row"><span>Antes</span><div class="cv-track"><div class="cv-fill dim" style="--w:29%;animation-delay:.8s"></div></div><b>R$ 12,4 mil</b></div>
+            <div class="cv-row"><span>Depois</span><div class="cv-track"><div class="cv-fill lit" style="--w:100%;animation-delay:1s"></div></div><b>R$ 42,5 mil</b></div>
+          </div>
+          <span class="cta2">Ver números completos →</span>
+        </div>
+      </div>
+
+      <!-- Sunsmart -->
+      <div class="case-card" data-pop="case-sunsmart">
+        <div class="ph" style="background-image:url('assets/hotel/hotel-04.jpg')">
+          <span class="tp">Hotel</span>
+          <span class="nm">Sunsmart</span>
+        </div>
+        <div class="bd">
+          <span class="num" data-cnt="60" data-from="30" data-suf="%+">30%</span>
+          <span class="nl"><strong>das reservas agora são diretas</strong> — antes da Komplexa eram 30%</span>
+          <div class="case-viz">
+            <div class="cv-row"><span>Antes</span><div class="cv-track"><div class="cv-fill dim" style="--w:30%;animation-delay:.9s"></div></div><b>30%</b></div>
+            <div class="cv-row"><span>Agora</span><div class="cv-track"><div class="cv-fill lit" style="--w:62%;animation-delay:1.1s"></div></div><b>60%+</b></div>
+          </div>
+          <span class="cta2">Ver a virada →</span>
+        </div>
+      </div>
+
+      <!-- Bahia Bonita -->
+      <div class="case-card" data-pop="case-bahia">
+        <div class="ph" style="background-image:url('assets/hotel/hotel-01.jpg')">
+          <span class="tp">Hotel Boutique</span>
+          <span class="nm">Bahia Bonita</span>
+        </div>
+        <div class="bd">
+          <span class="num" data-cnt="19" data-suf="x">0x</span>
+          <span class="nl"><strong>de retorno sobre o investimento</strong> em mídia, medido no PMS</span>
+          <div class="case-viz">
+            <div class="cv-row"><span>Investe</span><div class="cv-track"><div class="cv-fill dim" style="--w:6%;animation-delay:1s"></div></div><b>R$ 1</b></div>
+            <div class="cv-row"><span>Retorna</span><div class="cv-track"><div class="cv-fill lit" style="--w:100%;animation-delay:1.2s"></div></div><b>R$ 19</b></div>
+          </div>
+          <span class="cta2">Ver o retorno →</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="bot"><span>komplexahoteis.com</span><span>04 · 10</span></div>
+</section>
+
+<!-- ═══════════════ 05 · FUNDAÇÃO ═══════════════ -->
 <section class="slide light">
-  <div class="top"><img class="brand" src="assets/logotipo_blue.svg" alt="Komplexa"><span class="pg">04 · 10</span></div>
+  <div class="top"><img class="brand" src="assets/logotipo_blue.svg" alt="Komplexa"><span class="pg">05 · 10</span></div>
   <div class="body">
     <div class="etapa-grid">
       <div>
@@ -902,12 +989,12 @@ html,body{font-family:var(--fd);background:var(--page-bg);color:var(--navy);-web
       </div>
     </div>
   </div>
-  <div class="bot"><span>komplexahoteis.com</span><span>04 · 10</span></div>
+  <div class="bot"><span>komplexahoteis.com</span><span>05 · 10</span></div>
 </section>
 
-<!-- ═══════════════ 05 · CRIATIVOS ═══════════════ -->
+<!-- ═══════════════ 06 · CRIATIVOS ═══════════════ -->
 <section class="slide light">
-  <div class="top"><img class="brand" src="assets/logotipo_blue.svg" alt="Komplexa"><span class="pg">05 · 10</span></div>
+  <div class="top"><img class="brand" src="assets/logotipo_blue.svg" alt="Komplexa"><span class="pg">06 · 10</span></div>
   <div class="body">
     <div class="etapa-grid">
       <div>
@@ -945,12 +1032,12 @@ html,body{font-family:var(--fd);background:var(--page-bg);color:var(--navy);-web
       </div>
     </div>
   </div>
-  <div class="bot"><span>komplexahoteis.com</span><span>05 · 10</span></div>
+  <div class="bot"><span>komplexahoteis.com</span><span>06 · 10</span></div>
 </section>
 
-<!-- ═══════════════ 06 · CAMPANHAS & JORNADAS ═══════════════ -->
+<!-- ═══════════════ 07 · CAMPANHAS & JORNADAS ═══════════════ -->
 <section class="slide light">
-  <div class="top"><img class="brand" src="assets/logotipo_blue.svg" alt="Komplexa"><span class="pg">06 · 10</span></div>
+  <div class="top"><img class="brand" src="assets/logotipo_blue.svg" alt="Komplexa"><span class="pg">07 · 10</span></div>
   <div class="body">
     <div class="eyebrow">Marketing · Campanhas integradas</div>
     <h2 class="title" style="font-size:38px">Uma estratégia, <em>várias jornadas</em> de compra.</h2>
@@ -992,12 +1079,12 @@ html,body{font-family:var(--fd);background:var(--page-bg);color:var(--navy);-web
       <span><strong>Tudo mapeado:</strong> cada jornada é rastreada de ponta a ponta, e os dados do hóspede alimentam a publicidade do hotel — as campanhas ficam mais precisas a cada mês.</span>
     </div>
   </div>
-  <div class="bot"><span>komplexahoteis.com</span><span>06 · 10</span></div>
+  <div class="bot"><span>komplexahoteis.com</span><span>07 · 10</span></div>
 </section>
 
-<!-- ═══════════════ 07 · COMERCIAL ═══════════════ -->
+<!-- ═══════════════ 08 · COMERCIAL ═══════════════ -->
 <section class="slide dark">
-  <div class="top"><img class="brand" src="assets/logotipo_white.svg" alt="Komplexa"><span class="pg">07 · 10</span></div>
+  <div class="top"><img class="brand" src="assets/logotipo_white.svg" alt="Komplexa"><span class="pg">08 · 10</span></div>
   <div class="body">
     <div class="eyebrow">Vendas · Consultoria comercial</div>
     <h2 class="title" style="font-size:38px">O marketing não termina no clique.<br>Vai até a <em>reserva efetuada</em>.</h2>
@@ -1036,37 +1123,6 @@ html,body{font-family:var(--fd);background:var(--page-bg);color:var(--navy);-web
     <div class="com-punch">
       <span class="st">✦</span>
       <span>Agência de tráfego entrega clique. A Komplexa acompanha até a <em>reserva no PMS</em>.</span>
-    </div>
-  </div>
-  <div class="bot"><span>komplexahoteis.com</span><span>07 · 10</span></div>
-</section>
-
-<!-- ═══════════════ 08 · CASE ═══════════════ -->
-<section class="slide light">
-  <div class="top"><img class="brand" src="assets/logotipo_blue.svg" alt="Komplexa"><span class="pg">08 · 10</span></div>
-  <div class="body">
-    <div class="case-grid">
-      <div>
-        <div class="eyebrow">Case real · Cliente Komplexa</div>
-        <h2 class="title" style="font-size:36px">Pousada Solar<br><em>Dona Dora</em></h2>
-        <p class="lead" style="font-size:14.5px">Baixa temporada é o pior mês do ano em hotelaria. Antes da Komplexa: R$ 12.403 de faturamento. Depois: <strong>R$ 42.513</strong> — no mesmo mês de baixa, no ano seguinte.</p>
-        <div class="case-cmp">
-          <div class="ccm hd"><span></span><span>Antes</span><span class="gr">Com Komplexa</span></div>
-          <div class="ccm"><span class="nm">Faturamento (baixa)</span><span class="v">R$ 12.403</span><span class="v gr">R$ 42.513</span></div>
-          <div class="ccm"><span class="nm">Reservas no mês</span><span class="v">12</span><span class="v gr">60</span></div>
-          <div class="ccm"><span class="nm">Noites vendidas</span><span class="v">26</span><span class="v gr">110</span></div>
-        </div>
-      </div>
-      <div>
-        <div class="case-img" style="background-image:url('assets/hotel/solar-dona-dora.jpg')">
-          <span class="tag-i">Pousada Solar Dona Dora</span>
-        </div>
-        <div class="case-bigs">
-          <div class="case-big"><div class="n">3,4x</div><div class="l">faturamento<br>na baixa</div></div>
-          <div class="case-big"><div class="n">+400%</div><div class="l">reservas</div></div>
-          <div class="case-big"><div class="n">+323%</div><div class="l">noites<br>vendidas</div></div>
-        </div>
-      </div>
     </div>
   </div>
   <div class="bot"><span>komplexahoteis.com</span><span>08 · 10</span></div>
@@ -1133,6 +1189,23 @@ html,body{font-family:var(--fd);background:var(--page-bg);color:var(--navy);-web
   </div>
   <div class="bot"><span>komplexahoteis.com</span><span>10 · 10</span></div>
 </section>
+
+<!-- pop-up dos widgets e cases (filho do deck: funciona em doc view e fullscreen) -->
+<div class="mpop" id="mpop">
+  <div class="mpop-card">
+    <button class="mpop-x" onclick="closePop()">✕</button>
+    <div class="mpop-head">
+      <div class="mpop-ico" id="mpopIco"></div>
+      <div>
+        <div class="mpop-tag" id="mpopTag"></div>
+        <div class="mpop-title" id="mpopTitle"></div>
+      </div>
+    </div>
+    <p class="mpop-desc" id="mpopDesc"></p>
+    <ul class="mpop-list" id="mpopList"></ul>
+    <div class="mpop-demo" id="mpopDemo"></div>
+  </div>
+</div>
 
 </div>
 
@@ -1272,6 +1345,42 @@ const POPS = {
     ],
     ico: '<svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M8 12l3 3 5-6"/></svg>',
     demo: '<div class="dm-rev"><div class="rrow r1"><span>Google Ads</span><div class="track"><div class="bar"></div></div><b>R$ 18,2 mil</b></div><div class="rrow r2"><span>Meta Ads</span><div class="track"><div class="bar"></div></div><b>R$ 12,4 mil</b></div><div class="rrow r3"><span>Comercial</span><div class="track"><div class="bar"></div></div><b>R$ 9,1 mil</b></div><div class="rrow r4"><span>Remarketing</span><div class="track"><div class="bar"></div></div><b>R$ 6,8 mil</b></div></div>'
+  },
+  'case-solar': {
+    tag: 'Case real · Pousada',
+    title: 'Solar Dona Dora',
+    desc: 'Baixa temporada é o pior mês do ano em hotelaria. Com o método rodando, o mesmo mês de baixa saltou de <strong>R$ 12.403 para R$ 42.513</strong> — um ano depois.',
+    list: [
+      '3,4x de faturamento no mesmo mês de baixa',
+      '+400% de reservas no mês (12 → 60)',
+      '+323% de noites vendidas (26 → 110)'
+    ],
+    ico: '<svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18M5 21V8l7-5 7 5v13"/><path d="M9 21v-6h6v6"/></svg>',
+    demo: '<div class="dm-cmp"><div class="cr h"><span></span><b>Antes</b><b class="g">Com Komplexa</b></div><div class="cr e1"><span>Faturamento (baixa)</span><b>R$ 12.403</b><b class="g">R$ 42.513</b></div><div class="cr e2"><span>Reservas no mês</span><b>12</b><b class="g">60</b></div><div class="cr e3"><span>Noites vendidas</span><b>26</b><b class="g">110</b></div></div>'
+  },
+  'case-sunsmart': {
+    tag: 'Case real · Hotel',
+    title: 'Sunsmart',
+    desc: 'A operação dependia de OTA: só 30% das reservas eram diretas. Hoje <strong>mais de 60% das reservas entram pelo canal direto</strong> — margem de comissão de volta pro caixa.',
+    list: [
+      'Participação direta mais que dobrou (30% → 60%+)',
+      'Dependência de OTA caiu junto com a comissão paga',
+      'Base própria de hóspedes para remarketing e reativação'
+    ],
+    ico: '<svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="7" cy="7" r="3"/><circle cx="17" cy="17" r="3"/><path d="M19 5L5 19"/></svg>',
+    demo: '<div class="dm-rev"><div class="rrow r1"><span>Antes</span><div class="track"><div class="bar" style="--w:30%;background:rgba(255,255,255,.3)"></div></div><b>30%</b></div><div class="rrow r2"><span>Com Komplexa</span><div class="track"><div class="bar" style="--w:62%"></div></div><b>60%+</b></div></div><p class="mpop-desc" style="margin:12px 0 0;font-size:11.5px">Participação das <strong>reservas diretas</strong> no total de vendas do hotel.</p>'
+  },
+  'case-bahia': {
+    tag: 'Case real · Hotel Boutique',
+    title: 'Bahia Bonita',
+    desc: 'Cada <strong>R$ 1 investido em mídia voltou como R$ 19</strong> em receita de reservas — medido direto no PMS, não em métrica de vaidade.',
+    list: [
+      '19x de retorno sobre o investimento em mídia',
+      'Ocupação estabilizada mês após mês',
+      'Aquisição ativa no lugar da espera passiva'
+    ],
+    ico: '<svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 17l6-6 4 4 8-8"/><path d="M21 7v6h-6"/></svg>',
+    demo: '<div class="dm-rev"><div class="rrow r1"><span>Investimento</span><div class="track"><div class="bar" style="--w:6%;background:rgba(255,255,255,.3)"></div></div><b>R$ 1</b></div><div class="rrow r2"><span>Receita gerada</span><div class="track"><div class="bar" style="--w:100%"></div></div><b>R$ 19</b></div></div><p class="mpop-desc" style="margin:12px 0 0;font-size:11.5px">Retorno <strong>medido no PMS</strong> — receita real de reservas atribuída às campanhas.</p>'
   }
 };
 
@@ -1302,6 +1411,32 @@ mpop.addEventListener('click', e => { if(e.target === mpop) closePop(); });
 
 /* deep-link: index.html#pop-whatsapp abre o pop-up direto */
 if(location.hash.startsWith('#pop-')) openPop(location.hash.slice(5));
+
+/* ─── CONTADORES DOS CASES ─── */
+function runCounter(el){
+  const to = parseFloat(el.dataset.cnt);
+  const from = parseFloat(el.dataset.from || 0);
+  const dec = parseInt(el.dataset.dec || 0);
+  const suf = el.dataset.suf || '';
+  const dur = 1500, t0 = performance.now();
+  (function f(now){
+    const p = Math.min(1, (now - t0) / dur);
+    const e = 1 - Math.pow(1 - p, 3);
+    const v = from + (to - from) * e;
+    el.textContent = v.toLocaleString('pt-BR', {minimumFractionDigits: dec, maximumFractionDigits: dec}) + suf;
+    if(p < 1) requestAnimationFrame(f);
+  })(t0);
+}
+const cntIO = new IntersectionObserver(entries => {
+  entries.forEach(en => {
+    if(en.isIntersecting && !en.target._c){
+      en.target._c = true;
+      setTimeout(() => runCounter(en.target), 350);
+      cntIO.unobserve(en.target);
+    }
+  });
+}, {threshold:.4});
+document.querySelectorAll('[data-cnt]').forEach(el => cntIO.observe(el));
 </script>
 </body>
 </html>
