@@ -1,0 +1,588 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow,noarchive,nosnippet">
+<title>Komplexa × Hotel Minas Real — Cronograma de Implementação</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Fraunces:ital,wght@1,400;1,500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --navy:#0E1E35;--navy9:#081525;--white:#fff;
+  --blue:#1670C3;--g1:#1670C3;--g2:#1099E9;--g3:#24D5FF;
+  --grad:linear-gradient(90deg,#1670C3 0%,#1099E9 48%,#24D5FF 100%);
+  --grad-r:radial-gradient(circle at 70% 50%,rgba(36,213,255,.35) 0%,transparent 60%);
+  --txt:#4A5770;--gray:#8896A8;--bdr:#DDE3ED;--bg:#F3F6FA;
+  --tb09:rgba(22,112,195,.09);--tb18:rgba(22,112,195,.18);
+  --ok:#16A34A;--okbg:rgba(22,163,74,.10);
+  --fd:'Inter',system-ui,sans-serif;
+  --page-bg:#0a0f1a;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{font-family:var(--fd);background:var(--page-bg);color:var(--navy);-webkit-font-smoothing:antialiased}
+
+.deck{display:flex;flex-direction:column;align-items:center;gap:32px;padding:64px 24px 96px}
+.slide{width:1280px;height:720px;border-radius:8px;overflow:hidden;box-shadow:0 20px 60px rgba(0,0,0,.4);position:relative;display:flex;flex-direction:column}
+.slide *{font-family:var(--fd)}
+.slide.dark{background:var(--navy);color:#fff}
+.slide.dark::before{content:"";position:absolute;inset:0;background:var(--grad-r);opacity:.4;pointer-events:none}
+.slide.light{background:#fff;color:var(--navy)}
+
+.slide .top{display:flex;justify-content:space-between;align-items:center;padding:32px 56px 0;position:relative;z-index:2}
+.slide .top img.brand{height:30px;width:auto}
+.slide .top .pg{font-size:11px;letter-spacing:1.5px;text-transform:uppercase;font-weight:600;color:rgba(255,255,255,.45)}
+.slide.light .top .pg{color:var(--gray)}
+.slide .body{flex:1;padding:26px 56px;position:relative;z-index:2;display:flex;flex-direction:column;min-height:0}
+.slide .bot{padding:16px 56px 24px;display:flex;justify-content:space-between;align-items:flex-end;font-size:10px;color:rgba(255,255,255,.4);letter-spacing:.6px;text-transform:uppercase;position:relative;z-index:2}
+.slide.light .bot{color:var(--gray)}
+
+.eyebrow{display:inline-block;font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:1.8px;margin-bottom:12px}
+.dark .eyebrow{color:var(--g3)}
+.light .eyebrow{color:var(--blue)}
+.title{font-weight:800;font-size:38px;line-height:1.05;letter-spacing:-1.3px;margin:0 0 12px}
+.dark .title{color:#fff}
+.light .title{color:var(--navy)}
+.title em{font-style:normal;font-family:'Fraunces',Georgia,serif;font-weight:400;letter-spacing:-.5px;background:var(--grad);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+.lead{font-size:15px;line-height:1.55;max-width:760px}
+.dark .lead{color:rgba(255,255,255,.75)}
+.light .lead{color:var(--txt)}
+.lead strong{font-weight:600}
+.dark .lead strong{color:#fff}
+.light .lead strong{color:var(--navy)}
+
+/* 01 COVER */
+.cover-mid{flex:1;display:flex;flex-direction:column;justify-content:center}
+.cover-eye{font-size:13.5px;font-weight:500;color:rgba(255,255,255,.65);letter-spacing:.4px;margin-bottom:10px}
+.cover-title{font-weight:800;font-size:70px;line-height:1;letter-spacing:-2.6px;color:#fff;margin:0 0 16px}
+.cover-title .accent{font-style:normal;font-family:'Fraunces',Georgia,serif;font-weight:400;background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.cover-sub{font-size:17px;color:rgba(255,255,255,.72);max-width:600px;line-height:1.5}
+.cover-meta{padding:24px 56px;display:grid;grid-template-columns:repeat(3,1fr);gap:28px;border-top:1px solid rgba(255,255,255,.12);position:relative;z-index:2}
+.cover-meta .label{font-size:10px;text-transform:uppercase;letter-spacing:1.2px;color:rgba(255,255,255,.5);font-weight:600;margin-bottom:5px}
+.cover-meta .value{font-size:14px;font-weight:600;color:#fff}
+
+/* 02 VISÃO GERAL — timeline */
+.tl{position:relative;flex:1;margin-top:14px;display:flex;flex-direction:column;justify-content:center;min-height:0}
+.tl-track{position:relative;height:3px;background:rgba(255,255,255,.12);border-radius:3px;margin:0 40px}
+.tl-fill{position:absolute;left:0;top:0;height:100%;width:0;background:var(--grad);border-radius:3px;box-shadow:0 0 14px rgba(36,213,255,.55);animation:tlGrow 1.6s cubic-bezier(.4,0,.2,1) forwards;animation-delay:.3s}
+@keyframes tlGrow{to{width:100%}}
+.tl-nodes{display:grid;grid-template-columns:repeat(5,1fr);margin:0 40px;position:relative;margin-top:-11px}
+.tl-node{display:flex;flex-direction:column;align-items:center;opacity:0;transform:translateY(12px);animation:nIn .5s cubic-bezier(.34,1.4,.64,1) forwards}
+.tl-node:nth-child(1){animation-delay:.4s}.tl-node:nth-child(2){animation-delay:.65s}.tl-node:nth-child(3){animation-delay:.9s}.tl-node:nth-child(4){animation-delay:1.15s}.tl-node:nth-child(5){animation-delay:1.4s}
+@keyframes nIn{to{opacity:1;transform:none}}
+.tl-dot{width:19px;height:19px;border-radius:50%;background:var(--navy);border:2.5px solid var(--g3);box-shadow:0 0 16px rgba(36,213,255,.5);position:relative;z-index:2}
+.tl-node.fin .tl-dot{background:var(--grad);border-color:#fff;width:23px;height:23px;margin-top:-2px}
+.tl-wk{margin-top:12px;font-size:10px;font-weight:700;letter-spacing:1.4px;text-transform:uppercase;color:var(--g3)}
+.tl-ti{margin-top:5px;font-size:14.5px;font-weight:700;color:#fff;text-align:center;line-height:1.25}
+.tl-de{margin-top:5px;font-size:11.5px;color:rgba(255,255,255,.6);text-align:center;line-height:1.4;max-width:170px}
+.tl-phases{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:34px}
+.tl-ph{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.1);border-radius:14px;padding:18px 22px;opacity:0;animation:nIn .5s ease forwards}
+.tl-ph:nth-child(1){animation-delay:1.6s}.tl-ph:nth-child(2){animation-delay:1.75s}
+.tl-ph.op{border-color:rgba(36,213,255,.35);background:linear-gradient(135deg,rgba(36,213,255,.09),rgba(255,255,255,.03))}
+.tl-ph .h{display:flex;align-items:center;gap:10px;font-size:15px;font-weight:700;color:#fff;margin-bottom:6px}
+.tl-ph .h .b{font-size:9.5px;font-weight:800;letter-spacing:1px;text-transform:uppercase;padding:4px 10px;border-radius:100px;background:var(--grad);color:#06121F}
+.tl-ph p{font-size:12.5px;color:rgba(255,255,255,.7);line-height:1.5}
+
+/* SEMANAS — layout comum */
+.wk-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px;flex:1;min-height:0;margin-top:14px}
+.wk-card{background:#fff;border:1px solid var(--bdr);border-radius:14px;padding:20px 22px;box-shadow:0 5px 18px rgba(20,35,60,.05);opacity:0;transform:translateY(14px);animation:nIn .5s ease forwards;display:flex;flex-direction:column}
+.dark .wk-card{background:rgba(255,255,255,.04);border-color:rgba(255,255,255,.1);box-shadow:none}
+.wk-card:nth-child(1){animation-delay:.2s}.wk-card:nth-child(2){animation-delay:.35s}.wk-card:nth-child(3){animation-delay:.5s}.wk-card:nth-child(4){animation-delay:.65s}
+.wk-card h3{font-size:16px;font-weight:700;color:var(--navy);display:flex;align-items:center;gap:11px;margin-bottom:12px}
+.dark .wk-card h3{color:#fff}
+.wk-card h3 .ic{width:32px;height:32px;border-radius:9px;background:var(--grad);display:grid;place-items:center;flex-shrink:0}
+.wk-card h3 .ic svg{width:16px;height:16px;stroke:#fff;fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.wk-list{list-style:none;display:flex;flex-direction:column;gap:8px}
+.wk-list li{display:grid;grid-template-columns:17px 1fr;gap:10px;font-size:13.5px;color:var(--txt);line-height:1.5;align-items:start}
+.dark .wk-list li{color:rgba(255,255,255,.75)}
+.wk-list li::before{content:"";width:6px;height:6px;border-radius:2px;background:var(--g2);margin-top:7px}
+.wk-list li strong{color:var(--navy);font-weight:600}
+.dark .wk-list li strong{color:#fff}
+.wk-tag{display:inline-flex;align-items:center;gap:7px;font-size:10px;font-weight:700;letter-spacing:1.2px;text-transform:uppercase;color:var(--blue);background:var(--tb09);border-radius:100px;padding:5px 12px;margin-bottom:12px;width:max-content}
+.dark .wk-tag{color:var(--g3);background:rgba(36,213,255,.12)}
+
+/* caixa do link do diretório */
+.link-box{margin-top:auto;padding-top:12px}
+.link-slot{display:flex;align-items:center;gap:12px;border:1.5px dashed var(--tb18);background:var(--tb09);border-radius:12px;padding:13px 16px}
+.link-slot .ic{width:34px;height:34px;border-radius:9px;background:var(--grad);display:grid;place-items:center;flex-shrink:0}
+.link-slot .ic svg{width:16px;height:16px;stroke:#fff;fill:none;stroke-width:1.9;stroke-linecap:round;stroke-linejoin:round}
+.link-slot .tx{flex:1}
+.link-slot .lb{display:block;font-size:10px;font-weight:700;letter-spacing:1.2px;text-transform:uppercase;color:var(--blue);margin-bottom:2px}
+.link-slot a,.link-slot .ph{display:block;font-size:13.5px;font-weight:600;color:var(--navy);text-decoration:none;word-break:break-all}
+.link-slot .ph{color:var(--gray);font-weight:500;font-style:italic}
+.link-slot a:hover{color:var(--blue);text-decoration:underline}
+
+/* faixa de destaque */
+.hl{display:flex;align-items:center;gap:12px;background:var(--bg);border:1px solid var(--bdr);border-radius:12px;padding:14px 20px;font-size:13.5px;color:var(--txt);line-height:1.5;margin-top:14px}
+.dark .hl{background:rgba(36,213,255,.08);border-color:rgba(36,213,255,.3);color:rgba(255,255,255,.85)}
+.hl .st{color:var(--blue);font-size:15px;flex-shrink:0}
+.dark .hl .st{color:var(--g3)}
+.hl strong{color:var(--navy);font-weight:600}
+.dark .hl strong{color:#fff}
+
+/* ENTREGA MÊS 1 */
+.deliv{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:18px}
+.dv{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.1);border-radius:14px;padding:20px 18px;text-align:center;opacity:0;transform:scale(.9);animation:dvIn .5s cubic-bezier(.34,1.4,.64,1) forwards}
+.dv:nth-child(1){animation-delay:.25s}.dv:nth-child(2){animation-delay:.4s}.dv:nth-child(3){animation-delay:.55s}.dv:nth-child(4){animation-delay:.7s}
+@keyframes dvIn{to{opacity:1;transform:scale(1)}}
+.dv .ic{width:46px;height:46px;border-radius:13px;background:var(--grad);display:grid;place-items:center;margin:0 auto 12px}
+.dv .ic svg{width:22px;height:22px;stroke:#fff;fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.dv .t{font-size:14.5px;font-weight:700;color:#fff;margin-bottom:5px}
+.dv .d{font-size:11.5px;color:rgba(255,255,255,.65);line-height:1.45}
+
+/* ROTINA — semana */
+.routine{display:grid;grid-template-columns:repeat(5,1fr);gap:11px;margin-top:16px}
+.rt{background:#fff;border:1px solid var(--bdr);border-radius:13px;padding:16px 14px;opacity:0;transform:translateY(12px);animation:nIn .45s ease forwards;display:flex;flex-direction:column;gap:7px}
+.rt:nth-child(1){animation-delay:.2s}.rt:nth-child(2){animation-delay:.32s}.rt:nth-child(3){animation-delay:.44s}.rt:nth-child(4){animation-delay:.56s}.rt:nth-child(5){animation-delay:.68s}
+.rt .day{font-size:10px;font-weight:800;letter-spacing:1.3px;text-transform:uppercase;color:var(--gray)}
+.rt.on{border-color:var(--tb18);background:linear-gradient(160deg,var(--tb09),#fff)}
+.rt.on .day{color:var(--blue)}
+.rt .ttl{font-size:14px;font-weight:700;color:var(--navy);line-height:1.25}
+.rt .ds{font-size:11.5px;color:var(--txt);line-height:1.45}
+.rt .none{font-size:11.5px;color:var(--gray);font-style:italic}
+.mo-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:16px}
+.mo{background:#fff;border:1px solid var(--bdr);border-radius:14px;padding:18px 20px;opacity:0;transform:translateY(12px);animation:nIn .5s ease forwards}
+.mo:nth-child(1){animation-delay:.8s}.mo:nth-child(2){animation-delay:.92s}.mo:nth-child(3){animation-delay:1.04s}
+.mo h4{font-size:14.5px;font-weight:700;color:var(--navy);display:flex;align-items:center;gap:10px;margin-bottom:7px}
+.mo h4 .ic{width:29px;height:29px;border-radius:8px;background:var(--grad);display:grid;place-items:center;flex-shrink:0}
+.mo h4 .ic svg{width:14px;height:14px;stroke:#fff;fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.mo p{font-size:12.5px;color:var(--txt);line-height:1.5}
+.mo p strong{color:var(--navy);font-weight:600}
+
+/* CORRESPONSABILIDADE */
+.you-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:18px}
+.you{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.1);border-radius:14px;padding:20px 22px;opacity:0;transform:translateY(12px);animation:nIn .5s ease forwards}
+.you:nth-child(1){animation-delay:.2s}.you:nth-child(2){animation-delay:.35s}
+.you h4{font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;margin-bottom:13px}
+.you.k h4{color:var(--g3)}
+.you.c h4{color:#F5D9A8}
+.you ul{list-style:none;display:flex;flex-direction:column;gap:9px}
+.you li{display:grid;grid-template-columns:20px 1fr;gap:10px;font-size:13.5px;color:rgba(255,255,255,.78);line-height:1.5;align-items:start}
+.you li .ck{width:17px;height:17px;border-radius:50%;display:grid;place-items:center;font-size:9px;font-weight:700;color:#06121F;margin-top:2px}
+.you.k li .ck{background:var(--grad)}
+.you.c li .ck{background:linear-gradient(135deg,#D9B379,#F5D9A8)}
+.you li strong{color:#fff;font-weight:600}
+.close-punch{margin-top:16px;display:flex;align-items:center;gap:12px;background:rgba(36,213,255,.08);border:1px solid rgba(36,213,255,.3);border-radius:12px;padding:15px 22px;font-size:15px;font-weight:600;color:#fff}
+.close-punch .st{font-size:17px;color:var(--g3)}
+.close-punch em{font-style:normal;color:var(--g3)}
+
+/* PRESENT MODE */
+.toggle-present{position:fixed;top:14px;right:14px;background:var(--grad);color:#fff;border:none;padding:8px 16px;border-radius:8px;font-family:var(--fd);font-weight:600;font-size:12px;cursor:pointer;z-index:99;letter-spacing:.3px}
+.nav-hint{position:fixed;bottom:12px;left:50%;transform:translateX(-50%);font-size:11px;color:rgba(255,255,255,.4);letter-spacing:.5px;z-index:99;display:none;font-family:var(--fd)}
+.deck.present{padding:0;gap:0;background:#000;position:fixed;inset:0;overflow:hidden;display:flex;align-items:center;justify-content:center}
+.deck.present .slide{display:none;transform:scale(var(--present-scale,1));transform-origin:center;box-shadow:none;border-radius:0}
+.deck.present .slide.active{display:flex}
+.deck.present ~ .nav-hint{display:block}
+
+@media (max-width:760px){
+  .deck{padding:0;gap:0}
+  .slide{width:100%;height:auto;min-height:0;border-radius:0;box-shadow:none}
+  .slide .top{padding:20px 22px 0}
+  .slide .body{padding:20px 22px}
+  .slide .bot{padding:12px 22px 20px}
+  .toggle-present,.nav-hint{display:none!important}
+  .title{font-size:27px!important}
+  .cover-title{font-size:40px}
+  .cover-meta{grid-template-columns:1fr;gap:14px;padding:20px 22px}
+  .tl-nodes{grid-template-columns:1fr;gap:20px;margin:20px 0 0}
+  .tl-track{display:none}
+  .tl-de{max-width:none}
+  .tl-phases{grid-template-columns:1fr}
+  .wk-grid,.you-grid,.mo-grid{grid-template-columns:1fr}
+  .deliv{grid-template-columns:1fr 1fr}
+  .routine{grid-template-columns:1fr 1fr}
+}
+@media print{
+  .toggle-present,.nav-hint{display:none!important}
+  .deck{padding:0;gap:0}
+  .slide{box-shadow:none;border-radius:0;page-break-after:always;break-after:page}
+}
+</style>
+</head>
+<body>
+
+<button class="toggle-present" onclick="togglePresent()">▶ Apresentar</button>
+
+<div class="deck" id="deck">
+
+<!-- ═══════════ 01 · COVER ═══════════ -->
+<section class="slide dark active">
+  <div class="top"><img class="brand" src="assets/logotipo_white.svg" alt="Komplexa"><span class="pg">Komplexa × Minas Real</span></div>
+  <div class="body">
+    <div class="cover-mid">
+      <div class="cover-eye">Cronograma de implementação</div>
+      <h1 class="cover-title">Hotel Minas Real<br><span class="accent">primeiros 60 dias</span></h1>
+      <p class="cover-sub">Do briefing à operação rodando: o que acontece em cada semana, quem faz o quê e quando cada entrega fica pronta.</p>
+    </div>
+  </div>
+  <div class="cover-meta">
+    <div><div class="label">Mês 1</div><div class="value">Implementação completa</div></div>
+    <div><div class="label">Mês 2 em diante</div><div class="value">Operação e otimização</div></div>
+    <div><div class="label">Frentes</div><div class="value">Site · Criativos · Campanhas · Comercial</div></div>
+  </div>
+</section>
+
+<!-- ═══════════ 02 · VISÃO GERAL ═══════════ -->
+<section class="slide dark">
+  <div class="top"><img class="brand" src="assets/logotipo_white.svg" alt="Komplexa"><span class="pg">02 · 08</span></div>
+  <div class="body">
+    <div class="eyebrow">Visão geral</div>
+    <h2 class="title">Um mês para <em>montar a máquina</em>.</h2>
+
+    <div class="tl">
+      <div class="tl-track"><div class="tl-fill"></div></div>
+      <div class="tl-nodes">
+        <div class="tl-node">
+          <span class="tl-dot"></span>
+          <span class="tl-wk">Semana 1</span>
+          <span class="tl-ti">Briefing<br>&amp; acessos</span>
+          <span class="tl-de">Entender a operação e auditar o que já existe</span>
+        </div>
+        <div class="tl-node">
+          <span class="tl-dot"></span>
+          <span class="tl-wk">Semana 2</span>
+          <span class="tl-ti">Website<br>&amp; integrações</span>
+          <span class="tl-de">Produção do site, motor e Asksuite</span>
+        </div>
+        <div class="tl-node">
+          <span class="tl-dot"></span>
+          <span class="tl-wk">Semana 3</span>
+          <span class="tl-ti">Criativos<br>&amp; conteúdo</span>
+          <span class="tl-de">Produção e referências pro social media</span>
+        </div>
+        <div class="tl-node">
+          <span class="tl-dot"></span>
+          <span class="tl-wk">Semana 4</span>
+          <span class="tl-ti">Campanhas<br>no ar</span>
+          <span class="tl-de">Estrutura, tracking validado e verba rodando</span>
+        </div>
+        <div class="tl-node fin">
+          <span class="tl-dot"></span>
+          <span class="tl-wk">Mês 2+</span>
+          <span class="tl-ti">Operação<br>contínua</span>
+          <span class="tl-de">Otimização semanal e relatório mensal</span>
+        </div>
+      </div>
+
+      <div class="tl-phases">
+        <div class="tl-ph">
+          <div class="h"><span class="b">Mês 1</span> Implementação</div>
+          <p>Toda a estrutura montada: site integrado ao motor, tracking completo, criativos produzidos e campanhas ativas. Ao fim do mês, a máquina está entregue e rodando.</p>
+        </div>
+        <div class="tl-ph op">
+          <div class="h"><span class="b">Mês 2+</span> Operação</div>
+          <p>Otimização semanal das campanhas (segunda Meta, terça Google), revisão de criativos e apresentação mensal do relatório de vendas com definição de ações em conjunto.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="bot"><span>komplexahoteis.com</span><span>02 · 08</span></div>
+</section>
+
+<!-- ═══════════ 03 · SEMANA 1 ═══════════ -->
+<section class="slide light">
+  <div class="top"><img class="brand" src="assets/logotipo_blue.svg" alt="Komplexa"><span class="pg">03 · 08</span></div>
+  <div class="body">
+    <div class="eyebrow">Semana 1 · Fundação</div>
+    <h2 class="title">Briefing, acessos e <em>auditoria</em>.</h2>
+    <p class="lead">Tudo que vem depois — site, criativo, campanha — nasce daqui. Quanto mais rico o briefing, mais preciso o material.</p>
+
+    <div class="wk-grid">
+      <div class="wk-card">
+        <span class="wk-tag">Etapa 01</span>
+        <h3><span class="ic"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><path d="M14 2v6h6"/><path d="M8 13h8M8 17h5"/></svg></span>Briefing completo</h3>
+        <ul class="wk-list">
+          <li><span><strong>Estrutura e acomodações</strong> — tipos de UH, capacidade, diferenciais de cada categoria</span></li>
+          <li><span><strong>Serviços e experiências</strong> — gastronomia, lazer, spa, passeios, o que está incluso</span></li>
+          <li><span><strong>Públicos e sazonalidade</strong> — quem já hospeda, alta e baixa, datas fortes</span></li>
+          <li><span><strong>Tarifário e políticas</strong> — diárias, pacotes, cancelamento, benefícios do direto</span></li>
+          <li><span><strong>Acervo</strong> — fotos, vídeos e materiais existentes do hotel</span></li>
+        </ul>
+      </div>
+
+      <div class="wk-card">
+        <span class="wk-tag">Etapa 02</span>
+        <h3><span class="ic"><svg viewBox="0 0 24 24"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg></span>Coleta de acessos</h3>
+        <ul class="wk-list">
+          <li><span><strong>Meta Business</strong> — página, gerenciador de anúncios e pixel</span></li>
+          <li><span><strong>Google Ads e Analytics</strong> — contas, tags e conversões</span></li>
+          <li><span><strong>Motor de reservas e PMS</strong> — para integração e medição de receita</span></li>
+          <li><span><strong>Domínio e hospedagem</strong> — publicação do novo site</span></li>
+          <li><span><strong>Instagram do hotel</strong> — para vincular às campanhas</span></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="hl">
+      <span class="st">✦</span>
+      <span><strong>Auditoria completa da conta:</strong> revisamos tudo que já existe — campanhas anteriores, públicos, pixel, tags e conversões — para aproveitar a inteligência acumulada e corrigir o que estiver medindo errado antes de investir o primeiro real.</span>
+    </div>
+  </div>
+  <div class="bot"><span>komplexahoteis.com</span><span>03 · 08</span></div>
+</section>
+
+<!-- ═══════════ 04 · SEMANA 2 ═══════════ -->
+<section class="slide light">
+  <div class="top"><img class="brand" src="assets/logotipo_blue.svg" alt="Komplexa"><span class="pg">04 · 08</span></div>
+  <div class="body">
+    <div class="eyebrow">Semana 2 · Produção</div>
+    <h2 class="title">Website, motor e <em>Asksuite</em>.</h2>
+    <p class="lead">O site é o destino de toda a mídia. Ele começa a ser produzido assim que o modelo for escolhido e o briefing estiver fechado.</p>
+
+    <div class="wk-grid">
+      <div class="wk-card">
+        <span class="wk-tag">Etapa 03</span>
+        <h3><span class="ic"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 9h18"/><path d="M8 14h8M8 17h5"/></svg></span>Produção do website</h3>
+        <ul class="wk-list">
+          <li><span><strong>Escolha do modelo</strong> no nosso diretório de sites hoteleiros</span></li>
+          <li><span><strong>Aplicação do briefing</strong> — textos, fotos e estrutura do Minas Real</span></li>
+          <li><span><strong>Integração com o motor</strong> de reservas, do banner à confirmação</span></li>
+          <li><span><strong>Tracking completo</strong> — pixel, tags e eventos de conversão</span></li>
+        </ul>
+        <div class="link-box">
+          <div class="link-slot">
+            <span class="ic"><svg viewBox="0 0 24 24"><path d="M10 13a5 5 0 007.5.5l3-3a5 5 0 00-7-7l-1.7 1.7"/><path d="M14 11a5 5 0 00-7.5-.5l-3 3a5 5 0 007 7l1.7-1.7"/></svg></span>
+            <span class="tx">
+              <span class="lb">Diretório de modelos de site</span>
+              <span class="ph">[inserir link do diretório aqui]</span>
+            </span>
+          </div>
+        </div>
+      </div>
+
+      <div class="wk-card">
+        <span class="wk-tag">Etapa 04</span>
+        <h3><span class="ic"><svg viewBox="0 0 24 24"><path d="M21 11.5a8.4 8.4 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.4 8.4 0 01-3.8-.9L3 21l1.9-5.7a8.4 8.4 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.4 8.4 0 013.8-.9h.5a8.5 8.5 0 018 8v.5z"/></svg></span>Asksuite · implementação</h3>
+        <ul class="wk-list">
+          <li><span><strong>Participação no onboarding</strong> junto com o time da Asksuite</span></li>
+          <li><span><strong>Entendimento do fluxo proposto</strong> — como o bot qualifica e encaminha</span></li>
+          <li><span><strong>Alinhamento com as campanhas</strong> — o lead do anúncio cai no fluxo certo</span></li>
+          <li><span><strong>Ajuste do handoff</strong> — quando o bot passa para o time do hotel</span></li>
+        </ul>
+        <div class="hl" style="margin-top:auto">
+          <span class="st">✦</span>
+          <span>O atendimento precisa estar conectado à campanha. Participamos da implementação para garantir que <strong>o lead que vem do anúncio seja atendido no fluxo desenhado para vender</strong>.</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="bot"><span>komplexahoteis.com</span><span>04 · 08</span></div>
+</section>
+
+<!-- ═══════════ 05 · SEMANA 3 ═══════════ -->
+<section class="slide light">
+  <div class="top"><img class="brand" src="assets/logotipo_blue.svg" alt="Komplexa"><span class="pg">05 · 08</span></div>
+  <div class="body">
+    <div class="eyebrow">Semana 3 · Criativos</div>
+    <h2 class="title">Produção e <em>direção de conteúdo</em>.</h2>
+    <p class="lead">Criativos de campanha produzidos pela Komplexa — e direção para o social media do hotel produzir no mesmo padrão do que performa.</p>
+
+    <div class="wk-grid">
+      <div class="wk-card">
+        <span class="wk-tag">Etapa 05</span>
+        <h3><span class="ic"><svg viewBox="0 0 24 24"><polygon points="10 8 16 12 10 16 10 8"/><circle cx="12" cy="12" r="9"/></svg></span>Criativos de campanha</h3>
+        <ul class="wk-list">
+          <li><span><strong>Modelos validados</strong> adaptados à identidade do Minas Real</span></li>
+          <li><span><strong>Vídeo, motion e estático</strong> para as diferentes etapas do funil</span></li>
+          <li><span><strong>Copy por ângulo</strong> — experiência, oferta, urgência e remarketing</span></li>
+          <li><span><strong>Variações para teste</strong> até identificar o criativo vencedor</span></li>
+        </ul>
+      </div>
+
+      <div class="wk-card">
+        <span class="wk-tag">Etapa 06</span>
+        <h3><span class="ic"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="#fff" stroke="none"/></svg></span>Direção para o social media</h3>
+        <ul class="wk-list">
+          <li><span><strong>Referências dos criativos que mais performam</strong> na nossa base de hotéis</span></li>
+          <li><span><strong>Formatos e ângulos recomendados</strong> para a produção local</span></li>
+          <li><span><strong>Orientação de captação</strong> — o que fotografar e filmar no hotel</span></li>
+          <li><span><strong>Alinhamento de linguagem</strong> entre o conteúdo orgânico e a campanha</span></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="hl">
+      <span class="st">✦</span>
+      <span>O social media do hotel conhece a operação como ninguém. Nós entramos com <strong>a inteligência do que converte</strong> — assim o conteúdo local ganha direção comercial sem perder autenticidade.</span>
+    </div>
+  </div>
+  <div class="bot"><span>komplexahoteis.com</span><span>05 · 08</span></div>
+</section>
+
+<!-- ═══════════ 06 · SEMANA 4 + ENTREGA ═══════════ -->
+<section class="slide dark">
+  <div class="top"><img class="brand" src="assets/logotipo_white.svg" alt="Komplexa"><span class="pg">06 · 08</span></div>
+  <div class="body">
+    <div class="eyebrow">Semana 4 · Campanhas no ar</div>
+    <h2 class="title">Fim do mês 1: <em>tudo entregue</em>.</h2>
+    <p class="lead">Estrutura de campanha montada em Google e Meta, tracking validado ponta a ponta e verba rodando com foco em reserva.</p>
+
+    <div class="deliv">
+      <div class="dv">
+        <span class="ic"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 9h18"/><path d="M8 14h8"/></svg></span>
+        <div class="t">Website</div>
+        <div class="d">No ar, integrado ao motor e com tracking completo</div>
+      </div>
+      <div class="dv">
+        <span class="ic"><svg viewBox="0 0 24 24"><polygon points="10 8 16 12 10 16 10 8"/><circle cx="12" cy="12" r="9"/></svg></span>
+        <div class="t">Criativos</div>
+        <div class="d">Produzidos, aprovados e publicados nas campanhas</div>
+      </div>
+      <div class="dv">
+        <span class="ic"><svg viewBox="0 0 24 24"><path d="M3 11l18-7-7 18-2.5-7.5L3 11z"/></svg></span>
+        <div class="t">Campanhas</div>
+        <div class="d">Google e Meta ativos, direcionando para o motor</div>
+      </div>
+      <div class="dv">
+        <span class="ic"><svg viewBox="0 0 24 24"><path d="M3 3v18h18"/><path d="M7 14l4-4 3 3 5-6"/></svg></span>
+        <div class="t">Medição</div>
+        <div class="d">Conversões e receita medidas de ponta a ponta</div>
+      </div>
+    </div>
+
+    <div class="hl" style="margin-top:20px">
+      <span class="st">✦</span>
+      <span><strong>Estrutura de campanha:</strong> segmentação por IA baseada no perfil dos melhores hóspedes, campanhas de venda apontando para o motor de reservas e remarketing configurado para quem visita o site e não conclui a reserva.</span>
+    </div>
+  </div>
+  <div class="bot"><span>komplexahoteis.com</span><span>06 · 08</span></div>
+</section>
+
+<!-- ═══════════ 07 · ROTINA MÊS 2+ ═══════════ -->
+<section class="slide light">
+  <div class="top"><img class="brand" src="assets/logotipo_blue.svg" alt="Komplexa"><span class="pg">07 · 08</span></div>
+  <div class="body">
+    <div class="eyebrow">Mês 2 em diante · Operação</div>
+    <h2 class="title">A rotina que <em>faz a receita crescer</em>.</h2>
+    <p class="lead">Campanha viva exige otimização constante. Esta é a nossa cadência de trabalho — e o que você recebe de comunicação a cada ciclo.</p>
+
+    <div class="routine">
+      <div class="rt on">
+        <span class="day">Segunda</span>
+        <span class="ttl">Otimização Meta Ads</span>
+        <span class="ds">Ajuste de públicos, verba e criativos + comunicação das vendas do período</span>
+      </div>
+      <div class="rt on">
+        <span class="day">Terça</span>
+        <span class="ttl">Otimização Google Ads</span>
+        <span class="ds">Revisão de termos, lances e campanhas + comunicação das vendas do período</span>
+      </div>
+      <div class="rt">
+        <span class="day">Quarta</span>
+        <span class="ttl">Acompanhamento</span>
+        <span class="ds">Monitoria de resultados e ajustes pontuais conforme a demanda</span>
+      </div>
+      <div class="rt">
+        <span class="day">Quinta</span>
+        <span class="ttl">Acompanhamento</span>
+        <span class="ds">Monitoria de resultados e ajustes pontuais conforme a demanda</span>
+      </div>
+      <div class="rt on">
+        <span class="day">Sexta</span>
+        <span class="ttl">Revisão de criativos</span>
+        <span class="ds">Análise do que performou, planejamento de novas peças e ângulos</span>
+      </div>
+    </div>
+
+    <div class="mo-grid">
+      <div class="mo">
+        <h4><span class="ic"><svg viewBox="0 0 24 24"><path d="M3 3v18h18"/><path d="M7 14l4-4 3 3 5-6"/></svg></span>Relatório mensal</h4>
+        <p>Apresentação do <strong>relatório de vendas</strong>: investimento, reservas geradas, receita e retorno por canal.</p>
+      </div>
+      <div class="mo">
+        <h4><span class="ic"><svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 00-4-4H6a4 4 0 00-4 4v2"/><circle cx="9.5" cy="7" r="4"/><path d="M22 21v-2a4 4 0 00-3-3.9"/></svg></span>Reunião estratégica</h4>
+        <p>Encontro mensal para <strong>definir as ações do próximo ciclo</strong> em conjunto com a direção do hotel.</p>
+      </div>
+      <div class="mo">
+        <h4><span class="ic"><svg viewBox="0 0 24 24"><path d="M12 3l2.5 5.5L20 9l-4 4 1 6-5-3-5 3 1-6-4-4 5.5-.5z"/></svg></span>Calendário comercial</h4>
+        <p>Campanhas por <strong>datas e sazonalidade</strong> — feriados, baixa temporada e pacotes especiais.</p>
+      </div>
+    </div>
+  </div>
+  <div class="bot"><span>komplexahoteis.com</span><span>07 · 08</span></div>
+</section>
+
+<!-- ═══════════ 08 · CORRESPONSABILIDADE ═══════════ -->
+<section class="slide dark">
+  <div class="top"><img class="brand" src="assets/logotipo_white.svg" alt="Komplexa"><span class="pg">08 · 08</span></div>
+  <div class="body">
+    <div class="eyebrow">Para o cronograma acontecer</div>
+    <h2 class="title">O que cada lado <em>coloca na mesa</em>.</h2>
+
+    <div class="you-grid">
+      <div class="you k">
+        <h4>Komplexa entrega</h4>
+        <ul>
+          <li><span class="ck">✓</span><span><strong>Website integrado ao motor</strong> com rastreamento completo</span></li>
+          <li><span class="ck">✓</span><span><strong>Criativos validados</strong> e direção para o social media do hotel</span></li>
+          <li><span class="ck">✓</span><span><strong>Campanhas em Google e Meta</strong> com auditoria e otimização semanal</span></li>
+          <li><span class="ck">✓</span><span><strong>Participação na implementação da Asksuite</strong> e alinhamento do fluxo</span></li>
+          <li><span class="ck">✓</span><span><strong>Relatório mensal de vendas</strong> e reunião estratégica</span></li>
+        </ul>
+      </div>
+      <div class="you c">
+        <h4>Hotel Minas Real</h4>
+        <ul>
+          <li><span class="ck">✓</span><span><strong>Briefing respondido</strong> com riqueza de detalhes na semana 1</span></li>
+          <li><span class="ck">✓</span><span><strong>Acessos liberados</strong> — contas de anúncio, motor, domínio e redes</span></li>
+          <li><span class="ck">✓</span><span><strong>Acervo de fotos e vídeos</strong> do hotel e das acomodações</span></li>
+          <li><span class="ck">✓</span><span><strong>Aprovações no prazo</strong> — site e criativos, para não travar o cronograma</span></li>
+          <li><span class="ck">✓</span><span><strong>Presença nas reuniões mensais</strong> para decidirmos as ações juntos</span></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="close-punch">
+      <span class="st">✦</span>
+      <span>Este cronograma funciona porque as duas pontas caminham juntas — <em>estratégia definida em conjunto, execução por nossa conta</em>.</span>
+    </div>
+  </div>
+  <div class="bot"><span>komplexahoteis.com</span><span>08 · 08</span></div>
+</section>
+
+</div>
+
+<div class="nav-hint">← →  navegar  ·  Esc  sair</div>
+
+<script>
+const deck = document.getElementById('deck');
+const slides = deck.querySelectorAll('.slide');
+let current = 0;
+
+function show(i){
+  slides.forEach((s,idx) => s.classList.toggle('active', idx === i));
+  current = i;
+}
+function applyPresentScale(){
+  const w = window.innerWidth, h = window.innerHeight;
+  const fitW = w / 1280, fitH = h / 720;
+  const fill = Math.max(fitW, fitH), fit = Math.min(fitW, fitH);
+  deck.style.setProperty('--present-scale', (fit + (fill - fit) * 0.7).toFixed(3));
+}
+function togglePresent(){
+  deck.classList.toggle('present');
+  const btn = document.querySelector('.toggle-present');
+  if(deck.classList.contains('present')){
+    btn.textContent = '✕ Sair';
+    show(0);
+    applyPresentScale();
+    if(deck.requestFullscreen){ deck.requestFullscreen().then(applyPresentScale).catch(()=>{}); }
+  } else {
+    btn.textContent = '▶ Apresentar';
+    slides.forEach(s => s.classList.add('active'));
+    deck.style.removeProperty('--present-scale');
+    if(document.fullscreenElement) document.exitFullscreen();
+  }
+}
+window.addEventListener('resize', () => { if(deck.classList.contains('present')) applyPresentScale(); });
+document.addEventListener('keydown', e => {
+  if(!deck.classList.contains('present')) return;
+  if(e.key === 'ArrowRight' || e.key === ' '){ if(current < slides.length-1) show(current+1); }
+  if(e.key === 'ArrowLeft'){ if(current > 0) show(current-1); }
+  if(e.key === 'Escape'){ togglePresent(); }
+});
+document.addEventListener('fullscreenchange', () => {
+  if(!document.fullscreenElement && deck.classList.contains('present')) togglePresent();
+});
+</script>
+</body>
+</html>
