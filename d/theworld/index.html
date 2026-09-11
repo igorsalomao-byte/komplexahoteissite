@@ -135,15 +135,20 @@ html,body{font-family:var(--fd);background:var(--page-bg);color:#fff;-webkit-fon
 .tblwrap{margin-top:11px;background:var(--panel);border:1px solid var(--bdr);border-radius:12px;padding:16px 20px;flex:1;min-height:0;display:flex;flex-direction:column;justify-content:center}
 .tblwrap .ct{font-size:12.5px;font-weight:700;color:#fff;margin-bottom:8px}
 table.tb{width:100%;border-collapse:collapse}
-.tb th{font-size:10px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--tx2);text-align:left;padding:6px 10px;border-bottom:1px solid var(--bdr)}
-.tb td{font-size:12.5px;color:var(--tx);padding:7px 10px;border-bottom:1px solid rgba(255,255,255,.05);line-height:1.35}
+.tb th{font-size:10px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--tx2);text-align:left;padding:5px 10px;border-bottom:1px solid var(--bdr)}
+.tb td{font-size:12.5px;color:var(--tx);padding:5px 10px;border-bottom:1px solid rgba(255,255,255,.05);line-height:1.35}
 .tb td b{color:#fff;font-weight:700}
 .tb td.g{color:var(--cy);font-weight:700}
 .tb td.warn{color:#E8A33D;font-weight:600}
 .tb tr:last-child td{border-bottom:none}
-.tbnote{font-size:10.5px;color:var(--tx2);margin-top:8px;line-height:1.45}
+.tbnote{font-size:10px;color:var(--tx2);margin-top:7px;line-height:1.45}
 
 /* DIAGNÓSTICO */
+.s9fill{flex:1;min-height:0;display:flex;flex-direction:column;justify-content:space-evenly}
+.s9fill .dpath .mbox{min-height:112px}
+.s9fill .dleak{padding:18px 24px}
+.s9fill .dleak .c{font-size:12.5px}
+.s9fill .lac{padding:15px 16px;font-size:12.5px}
 .dpath{display:grid;grid-template-columns:1fr 24px 1fr 24px 1fr 24px 1fr;gap:0;align-items:center;margin-top:12px}
 .dleak{margin-top:13px;background:rgba(196,132,26,.08);border:1px solid rgba(196,132,26,.4);border-radius:12px;padding:14px 21px}
 .dleak .h{font-size:13.5px;font-weight:700;color:#E8A33D;margin-bottom:8px}
@@ -175,7 +180,7 @@ table.tb{width:100%;border-collapse:collapse}
 .f5 .fc5 p{font-size:11px;color:var(--tx);line-height:1.45}
 
 /* GOVERNANÇA */
-.gov{margin-top:8px;flex:1;min-height:0;background:var(--panel);border:1px solid var(--bdr);border-radius:12px;padding:8px 18px;overflow:hidden}
+.gov{margin-top:8px;flex:1;min-height:0;background:var(--panel);border:1px solid var(--bdr);border-radius:12px;padding:8px 18px;overflow:hidden;display:flex;flex-direction:column;justify-content:center}
 .gov table{width:100%;border-collapse:collapse}
 .gov th{font-size:10.5px;font-weight:700;letter-spacing:1.1px;text-transform:uppercase;color:var(--cy);text-align:left;padding:10px 12px;border-bottom:1px solid var(--bdr)}
 .gov td{font-size:12px;color:var(--tx);padding:9px 12px;border-bottom:1px solid rgba(255,255,255,.05);line-height:1.45;vertical-align:top}
@@ -230,7 +235,8 @@ table.tb{width:100%;border-collapse:collapse}
 .m3c .ve b{color:var(--cy);font-weight:700;font-size:9px;letter-spacing:1.1px;text-transform:uppercase;display:block;margin-bottom:2px}
 
 /* DECISÃO / LISTAS */
-.dec2{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:8px}
+.dec2{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:8px;flex:1;min-height:0}
+.dec2 .dcol{display:flex;flex-direction:column;justify-content:center}
 .dcol{background:var(--panel);border:1px solid var(--bdr);border-radius:12px;padding:17px 21px}
 .dcol .ct{font-size:10.5px;font-weight:700;letter-spacing:1.4px;text-transform:uppercase;color:var(--cy);margin-bottom:10px}
 .dcol ul{list-style:none;display:flex;flex-direction:column;gap:9px}
@@ -287,6 +293,14 @@ table.tb{width:100%;border-collapse:collapse}
   .twsite .slb small{color:#6B7280}
 }
 
+.s18 .tb td{font-size:14px;padding:13px 12px}
+.s18 .tb th{font-size:11px;padding:8px 12px}
+.s18 .ct{font-size:15px;margin-bottom:10px}
+.s18 .tbnote{font-size:11px;margin-top:14px}
+.s18row .sc{padding:20px 22px}
+.s18row .sc .sv{font-size:28px}
+.s18row .sc .sl{font-size:11px}
+.s18row .sc .sd{font-size:12px;margin-top:6px}
 /* PRESENT */
 .toggle-present{position:fixed;top:14px;right:14px;background:linear-gradient(90deg,var(--cyd),var(--cy));color:#06121F;border:none;padding:8px 16px;border-radius:8px;font-family:var(--fd);font-weight:700;font-size:12px;cursor:pointer;z-index:99}
 .nav-hint{position:fixed;bottom:12px;left:50%;transform:translateX(-50%);font-size:11px;color:rgba(255,255,255,.4);z-index:99;display:none;font-family:var(--fd)}
@@ -597,6 +611,7 @@ table.tb{width:100%;border-collapse:collapse}
     <div class="eyebrow">06 · Diagnóstico do canal direto</div>
     <h2 class="title">O que falta não é produto. <em>É aquisição estruturada.</em></h2>
     <p class="lead">Quatro lacunas explicam por que a demanda chega pelo intermediário mesmo com motor próprio e boa reputação. Nenhuma delas é de operação hoteleira; todas são de marketing e dados, e a trilha de medição da seção anterior fecha as quatro.</p>
+    <div class="s9fill">
     <div class="dpath">
       <div class="mbox"><div class="h">Hóspede procura</div><div class="d">hotel na Vila Olímpia</div></div>
       <div class="marr">›</div>
@@ -619,6 +634,7 @@ table.tb{width:100%;border-collapse:collapse}
       <div class="lac"><span class="n">2</span>Quem busca o nome do hotel é levado ao intermediário</div>
       <div class="lac"><span class="n">3</span>Quem visitou e não reservou é perdido</div>
       <div class="lac"><span class="n">4</span>A mídia anterior foi medida em clique</div>
+    </div>
     </div>
   </div>
   <div class="bot"><span>Komplexa Hotéis · komplexahoteis.com</span><span>09 · 20</span></div>
@@ -869,26 +885,22 @@ table.tb{width:100%;border-collapse:collapse}
   <div class="top"><img class="brand" src="assets/logotipo_white.svg" alt="Komplexa"><span class="pg">18 · 20</span></div>
   <div class="body">
     <div class="eyebrow">11 · Proposta comercial · Quando a proposta se paga</div>
-    <h2 class="title">A conta com os <em>números do hotel</em>.</h2>
-    <p class="lead">Usa as premissas da calculadora da seção 04; ajuste a verba abaixo. O resultado mostra quantos pontos percentuais de reserva precisam migrar do intermediário para o direto para cobrir assessoria e mídia. Cenário, não promessa: a receita nova gerada pelas campanhas não está na conta.</p>
-    <div class="calc" style="grid-template-columns:300px 1fr">
-      <div class="calc-in">
-        <div class="ct">Verba de mídia</div>
-        <div class="fld"><label>Verba mensal (em reais)</label><input type="number" id="cVer" value="8000" step="500" oninput="recalc()"></div>
-        <div class="res hi" style="padding:11px 14px"><div><div class="rl">Comissão paga hoje</div></div><div class="rv" id="pCom" style="font-size:19px">R$ 117.810</div></div>
-        <div class="res" style="padding:11px 14px"><div><div class="rl">Custo mensal da proposta</div><div class="rd">R$ 3.500 + verba de mídia</div></div><div class="rv" id="pCusto" style="font-size:19px">R$ 11.500</div></div>
-        <div class="res cy" style="padding:11px 14px"><div><div class="rl">Migração que cobre</div><div class="rd">cada ponto retém <b id="pPonto" style="color:var(--cy)">R$ 2.356</b>/mês</div></div><div class="rv" id="pMig" style="font-size:19px">4,9 pontos</div></div>
-      </div>
-      <div class="tblwrap" style="margin-top:0">
-        <div class="ct">Saldo mensal por cenário de migração</div>
-        <table class="tb">
-          <tr><th>Cenário</th><th>Migração</th><th>Comissão retida</th><th>Custo da proposta</th><th>Saldo mensal</th><th>Saldo em 12 meses</th></tr>
-          <tr><td><b>Conservador</b></td><td>10 pontos</td><td id="t10r">R$ 23.562</td><td id="t10c">R$ 11.500</td><td class="g" id="t10s">R$ 12.062</td><td class="g" id="t10a">R$ 144.744</td></tr>
-          <tr><td><b>Base</b></td><td>20 pontos</td><td id="t20r">R$ 47.124</td><td id="t20c">R$ 11.500</td><td class="g" id="t20s">R$ 35.624</td><td class="g" id="t20a">R$ 427.488</td></tr>
-          <tr><td><b>Otimista</b></td><td>30 pontos</td><td id="t30r">R$ 70.686</td><td id="t30c">R$ 11.500</td><td class="g" id="t30s">R$ 59.186</td><td class="g" id="t30a">R$ 710.232</td></tr>
-        </table>
-        <div class="tbnote">Saldo positivo significa que a comissão que deixou de ser paga já cobre assessoria e mídia. Tudo o que as campanhas gerarem de reserva nova, além da migração, é ganho por cima.</div>
-      </div>
+    <h2 class="title">A conta com a <em>verba recomendada</em>.</h2>
+    <p class="lead">Com as premissas informadas pelo hotel e a verba recomendada de R$ 8.000 por mês: quantos pontos de reserva precisam migrar do intermediário para o direto para a proposta se pagar. Cenário, não promessa.</p>
+    <div class="scn s18row" style="margin-top:10px">
+      <div class="sc" style="border-color:rgba(196,132,26,.5);background:linear-gradient(160deg,rgba(196,132,26,.1),var(--panel))"><div class="sl">Comissão paga hoje</div><div class="sv" style="color:#E8A33D">R$ 117.810</div><div class="sd">por mês, aos intermediários</div></div>
+      <div class="sc"><div class="sl">Custo mensal da proposta</div><div class="sv" style="color:#fff">R$ 11.500</div><div class="sd">R$ 3.500 de assessoria + R$ 8.000 de verba recomendada</div></div>
+      <div class="sc base"><div class="sl">Migração que cobre a proposta</div><div class="sv">4,9 pontos</div><div class="sd">cada ponto migrado retém R$ 2.356 por mês</div></div>
+    </div>
+    <div class="tblwrap s18">
+      <div class="ct">Saldo mensal por cenário de migração</div>
+      <table class="tb">
+        <tr><th>Cenário</th><th>Migração</th><th>Comissão retida</th><th>Custo da proposta</th><th>Saldo mensal</th><th>Saldo em 12 meses</th></tr>
+        <tr><td><b>Conservador</b></td><td>10 pontos</td><td>R$ 23.562</td><td>R$ 11.500</td><td class="g">R$ 12.062</td><td class="g">R$ 144.744</td></tr>
+        <tr><td><b>Base</b></td><td>20 pontos</td><td>R$ 47.124</td><td>R$ 11.500</td><td class="g">R$ 35.624</td><td class="g">R$ 427.488</td></tr>
+        <tr><td><b>Otimista</b></td><td>30 pontos</td><td>R$ 70.686</td><td>R$ 11.500</td><td class="g">R$ 59.186</td><td class="g">R$ 710.232</td></tr>
+      </table>
+      <div class="tbnote">Saldo positivo: a comissão que deixou de ser paga já cobre assessoria e mídia; reserva nova gerada pelas campanhas é ganho por cima. Premissas: 160 apartamentos, diária R$ 425, ocupação 70%, 50% via intermediários, comissão 16,5%.</div>
     </div>
   </div>
   <div class="bot"><span>Komplexa Hotéis · komplexahoteis.com</span><span>18 · 20</span></div>
@@ -990,23 +1002,6 @@ function recalc(){
   set('g2b1','g2b2','g2bv',10);
   set('g2c1','g2c2','g2cv',20);
   set('g2d1','g2d2','g2dv',30);
-  // proposta
-  const custo = 3500 + ver;
-  const mig = ponto > 0 ? custo / ponto : 0;
-  document.getElementById('pCom').textContent = fmt(rCom);
-  document.getElementById('pCusto').textContent = fmt(custo);
-  document.getElementById('pPonto').textContent = fmt(ponto);
-  document.getElementById('pMig').textContent = fmt1(mig) + ' pontos';
-  [[10,'t10'],[20,'t20'],[30,'t30']].forEach(([p, id]) => {
-    const ret = ponto * p, saldo = ret - custo;
-    document.getElementById(id+'r').textContent = fmt(ret);
-    document.getElementById(id+'c').textContent = fmt(custo);
-    document.getElementById(id+'s').textContent = fmt(saldo);
-    document.getElementById(id+'a').textContent = fmt(saldo * 12);
-    const g = saldo >= 0;
-    document.getElementById(id+'s').className = g ? 'g' : 'warn';
-    document.getElementById(id+'a').className = g ? 'g' : 'warn';
-  });
 }
 recalc();
 
