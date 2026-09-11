@@ -11,7 +11,7 @@
   --bg:#0B1526;--panel:#111F38;--panel2:#0E1A30;
   --cy:#22D3EE;--cyd:#0EA5C9;--pur:#9A7BEA;--amb:#C4841A;
   --bdr:rgba(255,255,255,.09);--bdr2:rgba(34,211,238,.28);
-  --tx:rgba(255,255,255,.72);--tx2:rgba(255,255,255,.55);
+  --tx:rgba(255,255,255,.74);--tx2:rgba(255,255,255,.55);
   --fd:'Inter',system-ui,sans-serif;
   --page-bg:#060d18;
 }
@@ -22,228 +22,226 @@ html,body{font-family:var(--fd);background:var(--page-bg);color:#fff;-webkit-fon
 .slide{width:1280px;height:720px;border-radius:6px;overflow:hidden;box-shadow:0 18px 54px rgba(0,0,0,.5);position:relative;display:flex;flex-direction:column;background:var(--bg)}
 .slide::before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 78% 12%,rgba(34,211,238,.07) 0%,transparent 55%);pointer-events:none}
 .slide *{font-family:var(--fd)}
-.slide .top{display:flex;justify-content:space-between;align-items:center;padding:26px 52px 0;position:relative;z-index:2}
+.slide .top{display:flex;justify-content:space-between;align-items:center;padding:24px 52px 0;position:relative;z-index:2}
 .slide .top img.brand{height:26px;width:auto;opacity:.95}
 .slide .top .pg{font-size:10px;letter-spacing:1.6px;text-transform:uppercase;font-weight:600;color:rgba(255,255,255,.4)}
-.slide .body{flex:1;padding:20px 52px 8px;position:relative;z-index:2;display:flex;flex-direction:column;min-height:0}
-.slide .bot{padding:10px 52px 18px;display:flex;justify-content:space-between;align-items:flex-end;font-size:9px;color:rgba(255,255,255,.35);letter-spacing:.5px;text-transform:uppercase;position:relative;z-index:2;gap:30px}
+.slide .body{flex:1;padding:16px 52px 6px;position:relative;z-index:2;display:flex;flex-direction:column;min-height:0}
+.slide .bot{padding:8px 52px 16px;display:flex;justify-content:space-between;align-items:flex-end;font-size:9.5px;color:rgba(255,255,255,.35);letter-spacing:.5px;text-transform:uppercase;position:relative;z-index:2;gap:30px}
 
-.eyebrow{display:inline-block;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:1.8px;margin-bottom:9px;color:var(--cy)}
-.title{font-weight:800;font-size:30px;line-height:1.08;letter-spacing:-.9px;margin:0 0 8px;color:#fff}
+.eyebrow{display:inline-block;font-size:11.5px;font-weight:700;text-transform:uppercase;letter-spacing:1.8px;margin-bottom:8px;color:var(--cy)}
+.title{font-weight:800;font-size:32px;line-height:1.08;letter-spacing:-1px;margin:0 0 8px;color:#fff}
 .title em{font-style:italic;font-family:'Fraunces',Georgia,serif;font-weight:400;letter-spacing:-.3px;color:var(--cy)}
-.lead{font-size:13px;line-height:1.5;max-width:920px;color:var(--tx)}
+.lead{font-size:14px;line-height:1.5;max-width:960px;color:var(--tx)}
 .lead strong{color:#fff;font-weight:600}
-
-.panel{background:var(--panel);border:1px solid var(--bdr);border-radius:12px}
-.kv .n{font-weight:800;letter-spacing:-1.5px;line-height:1;color:var(--cy)}
-.kv .l{color:var(--tx);line-height:1.4}
-.src{font-size:9.5px;color:rgba(255,255,255,.38);letter-spacing:.2px}
-.tagc{display:inline-block;font-size:9px;font-weight:700;letter-spacing:1.4px;text-transform:uppercase;color:var(--cy);margin-bottom:7px}
+.src{font-size:10.5px;color:rgba(255,255,255,.38);letter-spacing:.2px}
+.tagc{display:inline-block;font-size:9.5px;font-weight:700;letter-spacing:1.4px;text-transform:uppercase;color:var(--cy);margin-bottom:7px}
 
 /* COVER */
 .cov-grid{display:grid;grid-template-columns:1.5fr .9fr;gap:40px;flex:1;min-height:0;align-items:center}
-.selo{display:inline-block;font-size:10px;font-weight:700;letter-spacing:1.6px;text-transform:uppercase;color:var(--cy);border:1px solid var(--bdr2);border-radius:100px;padding:6px 16px;margin-bottom:20px}
+.selo{display:inline-block;font-size:10.5px;font-weight:700;letter-spacing:1.6px;text-transform:uppercase;color:var(--cy);border:1px solid var(--bdr2);border-radius:100px;padding:7px 17px;margin-bottom:20px}
 .cov-title{font-weight:800;font-size:44px;line-height:1.06;letter-spacing:-1.6px;color:#fff;margin-bottom:16px}
 .cov-title em{font-style:italic;font-family:'Fraunces',Georgia,serif;font-weight:400;color:var(--cy)}
-.cov-sub{font-size:14px;color:var(--tx);line-height:1.55;max-width:600px;margin-bottom:18px}
+.cov-sub{font-size:15.5px;color:var(--tx);line-height:1.55;max-width:620px;margin-bottom:18px}
 .cov-tags{display:flex;gap:8px;flex-wrap:wrap}
-.cov-tags span{font-size:10.5px;font-weight:600;color:rgba(255,255,255,.85);background:var(--panel);border:1px solid var(--bdr);border-radius:100px;padding:7px 14px}
+.cov-tags span{font-size:11.5px;font-weight:600;color:rgba(255,255,255,.85);background:var(--panel);border:1px solid var(--bdr);border-radius:100px;padding:8px 15px}
 .cov-side{display:flex;flex-direction:column;gap:10px}
 .cov-side .it{background:var(--panel);border:1px solid var(--bdr);border-radius:12px;padding:14px 18px}
-.cov-side .n{font-size:23px;font-weight:800;letter-spacing:-.8px;color:var(--cy);line-height:1.1}
-.cov-side .l{font-size:11px;color:var(--tx);line-height:1.4;margin-top:3px}
+.cov-side .n{font-size:25px;font-weight:800;letter-spacing:-.9px;color:var(--cy);line-height:1.1}
+.cov-side .l{font-size:12px;color:var(--tx);line-height:1.4;margin-top:3px}
 
-/* GRIDS de blocos */
-.blk2{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:10px;flex:1;min-height:0}
-.blk{background:var(--panel);border:1px solid var(--bdr);border-radius:12px;padding:17px 20px}
-.blk .bt{font-size:10px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--cy);margin-bottom:7px}
-.blk p{font-size:12.5px;color:var(--tx);line-height:1.55}
+/* BLOCOS */
+.blk2{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:8px;flex:1;min-height:0}
+.blk{background:var(--panel);border:1px solid var(--bdr);border-radius:12px;padding:18px 22px}
+.blk .bt{font-size:10.5px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--cy);margin-bottom:8px}
+.blk p{font-size:14px;color:var(--tx);line-height:1.55}
 .blk p strong{color:#fff;font-weight:600}
 
-/* CARDS mercado */
-.mkt3{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:12px;flex:1;min-height:0}
-.mc{background:var(--panel);border:1px solid var(--bdr);border-radius:12px;padding:19px 21px;display:flex;flex-direction:column}
-.mc .n{font-size:34px;font-weight:800;letter-spacing:-1.4px;color:var(--cy);line-height:1;margin-bottom:5px}
-.mc .st{font-size:13px;font-weight:700;color:#fff;line-height:1.35;margin-bottom:8px}
-.mc p{font-size:11.5px;color:var(--tx);line-height:1.55;flex:1}
+/* CARDS mercado / investimento */
+.mkt3{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:10px;flex:1;min-height:0}
+.mc{background:var(--panel);border:1px solid var(--bdr);border-radius:12px;padding:20px 22px;display:flex;flex-direction:column}
+.mc .n{font-size:38px;font-weight:800;letter-spacing:-1.6px;color:var(--cy);line-height:1;margin-bottom:6px}
+.mc .st{font-size:14.5px;font-weight:700;color:#fff;line-height:1.35;margin-bottom:8px}
+.mc p{font-size:12.5px;color:var(--tx);line-height:1.55;flex:1}
 .mc .src{margin-top:10px}
 
 /* PONTO DE PARTIDA */
-.kvrow{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:12px}
+.kvrow{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:10px}
 .kvrow .it{background:var(--panel);border:1px solid var(--bdr);border-radius:11px;padding:13px 16px}
-.kvrow .n{font-size:22px;font-weight:800;letter-spacing:-.8px;color:var(--cy)}
-.kvrow .l{font-size:10.5px;color:var(--tx);line-height:1.4;margin-top:3px}
+.kvrow .n{font-size:23px;font-weight:800;letter-spacing:-.8px;color:var(--cy)}
+.kvrow .l{font-size:11.5px;color:var(--tx);line-height:1.4;margin-top:3px}
 .p3{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:12px;flex:1;min-height:0}
-.pc{background:var(--panel);border:1px solid var(--bdr);border-radius:12px;padding:16px 19px}
-.pc .h{font-size:12.5px;font-weight:700;color:#fff;margin-bottom:6px;line-height:1.3}
-.pc p{font-size:11.5px;color:var(--tx);line-height:1.5}
+.pc{background:var(--panel);border:1px solid var(--bdr);border-radius:12px;padding:17px 20px}
+.pc .h{font-size:13.5px;font-weight:700;color:#fff;margin-bottom:6px;line-height:1.3}
+.pc p{font-size:12.5px;color:var(--tx);line-height:1.5}
 
 /* CALCULADORA */
-.calc{display:grid;grid-template-columns:330px 1fr;gap:20px;margin-top:10px;flex:1;min-height:0}
-.calc-in{background:var(--panel);border:1px solid var(--bdr);border-radius:12px;padding:16px 18px;display:flex;flex-direction:column;gap:9px}
-.calc-in .ct{font-size:10px;font-weight:700;letter-spacing:1.4px;text-transform:uppercase;color:var(--cy);margin-bottom:2px}
+.calc{display:grid;grid-template-columns:340px 1fr;gap:18px;margin-top:8px;flex:1;min-height:0}
+.calc-in{background:var(--panel);border:1px solid var(--bdr);border-radius:12px;padding:16px 18px;display:flex;flex-direction:column;gap:10px}
+.calc-in .ct{font-size:10.5px;font-weight:700;letter-spacing:1.4px;text-transform:uppercase;color:var(--cy);margin-bottom:2px}
 .fld{display:flex;align-items:center;justify-content:space-between;gap:10px}
-.fld label{font-size:11px;color:var(--tx);line-height:1.3;flex:1}
-.fld input{width:92px;background:var(--panel2);border:1px solid var(--bdr2);border-radius:8px;color:#fff;font-family:var(--fd);font-weight:700;font-size:14px;padding:8px 10px;text-align:right}
+.fld label{font-size:12px;color:var(--tx);line-height:1.3;flex:1}
+.fld input{width:96px;background:var(--panel2);border:1px solid var(--bdr2);border-radius:8px;color:#fff;font-family:var(--fd);font-weight:700;font-size:15px;padding:9px 11px;text-align:right}
 .fld input:focus{outline:none;border-color:var(--cy)}
 .calc-out{display:flex;flex-direction:column;gap:10px;min-height:0}
-.res{background:var(--panel);border:1px solid var(--bdr);border-radius:11px;padding:12px 18px;display:flex;align-items:baseline;justify-content:space-between;gap:14px}
-.res .rl{font-size:10.5px;font-weight:700;letter-spacing:1.2px;text-transform:uppercase;color:var(--tx2)}
-.res .rv{font-size:22px;font-weight:800;letter-spacing:-.8px;color:#fff;white-space:nowrap}
-.res .rd{font-size:10px;color:var(--tx2);line-height:1.35}
+.res{background:var(--panel);border:1px solid var(--bdr);border-radius:11px;padding:13px 18px;display:flex;align-items:baseline;justify-content:space-between;gap:14px}
+.res .rl{font-size:11px;font-weight:700;letter-spacing:1.2px;text-transform:uppercase;color:var(--tx2)}
+.res .rv{font-size:24px;font-weight:800;letter-spacing:-.9px;color:#fff;white-space:nowrap}
+.res .rd{font-size:11px;color:var(--tx2);line-height:1.4}
 .res.hi{border-color:rgba(196,132,26,.5);background:linear-gradient(160deg,rgba(196,132,26,.1),var(--panel))}
 .res.hi .rv{color:#E8A33D}
+.res.cy{border-color:var(--bdr2);background:linear-gradient(160deg,rgba(34,211,238,.08),var(--panel))}
+.res.cy .rv{color:var(--cy)}
 .scn{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
-.sc{background:var(--panel);border:1px solid var(--bdr);border-radius:11px;padding:13px 16px}
+.sc{background:var(--panel);border:1px solid var(--bdr);border-radius:11px;padding:14px 17px}
 .sc.base{border-color:var(--bdr2);background:linear-gradient(160deg,rgba(34,211,238,.08),var(--panel))}
-.sc .sl{font-size:9.5px;font-weight:700;letter-spacing:1.2px;text-transform:uppercase;color:var(--tx2);margin-bottom:5px}
-.sc .sv{font-size:21px;font-weight:800;letter-spacing:-.8px;color:var(--cy)}
-.sc .sd{font-size:10px;color:var(--tx);line-height:1.35;margin-top:4px}
+.sc .sl{font-size:10px;font-weight:700;letter-spacing:1.2px;text-transform:uppercase;color:var(--tx2);margin-bottom:5px}
+.sc .sv{font-size:23px;font-weight:800;letter-spacing:-.9px;color:var(--cy)}
+.sc .sd{font-size:11px;color:var(--tx);line-height:1.4;margin-top:4px}
 
 /* GRÁFICOS */
-.ch2{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:12px;flex:1;min-height:0}
-.chart{background:var(--panel);border:1px solid var(--bdr);border-radius:12px;padding:17px 20px;display:flex;flex-direction:column}
-.chart .ct{font-size:12.5px;font-weight:700;color:#fff;margin-bottom:12px}
-.brow{display:grid;grid-template-columns:150px 1fr 92px;gap:10px;align-items:center;margin-bottom:11px}
-.brow .bl{font-size:10.5px;color:var(--tx);line-height:1.3}
-.brow .tr{height:20px;border-radius:5px;background:rgba(255,255,255,.05);overflow:hidden;display:flex}
+.ch2{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:10px;flex:1;min-height:0}
+.chart{background:var(--panel);border:1px solid var(--bdr);border-radius:12px;padding:18px 21px;display:flex;flex-direction:column}
+.chart .ct{font-size:13.5px;font-weight:700;color:#fff;margin-bottom:13px}
+.brow{display:grid;grid-template-columns:165px 1fr 96px;gap:10px;align-items:center;margin-bottom:13px}
+.brow .bl{font-size:12px;color:var(--tx);line-height:1.3}
+.brow .tr{height:22px;border-radius:5px;background:rgba(255,255,255,.05);overflow:hidden;display:flex}
 .brow .seg{height:100%}
-.brow .bv{font-size:11px;font-weight:700;color:#fff;text-align:right;white-space:nowrap}
+.brow .bv{font-size:12px;font-weight:700;color:#fff;text-align:right;white-space:nowrap}
 .leg{display:flex;gap:14px;margin-top:auto;padding-top:8px;flex-wrap:wrap}
-.leg span{display:inline-flex;align-items:center;gap:6px;font-size:9.5px;color:var(--tx2)}
+.leg span{display:inline-flex;align-items:center;gap:6px;font-size:10.5px;color:var(--tx2)}
 .leg i{width:9px;height:9px;border-radius:3px;display:inline-block}
 
 /* MÉTODO fluxo */
-.mflow{display:grid;grid-template-columns:1fr 26px 1fr 26px 1fr 26px 1.15fr 26px 1fr 26px 1fr;gap:0;align-items:center;margin-top:14px}
-.mbox{background:var(--panel);border:1px solid var(--bdr);border-radius:11px;padding:12px 12px;text-align:center;min-height:86px;display:flex;flex-direction:column;justify-content:center}
-.mbox .h{font-size:11.5px;font-weight:700;color:#fff;line-height:1.25}
-.mbox .d{font-size:9.5px;color:var(--tx2);line-height:1.3;margin-top:3px}
+.mflow{display:grid;grid-template-columns:1fr 24px 1fr 24px 1fr 24px 1.15fr 24px 1fr 24px 1fr;gap:0;align-items:center;margin-top:14px}
+.mbox{background:var(--panel);border:1px solid var(--bdr);border-radius:11px;padding:13px 12px;text-align:center;min-height:92px;display:flex;flex-direction:column;justify-content:center}
+.mbox .h{font-size:13px;font-weight:700;color:#fff;line-height:1.25}
+.mbox .d{font-size:10.5px;color:var(--tx2);line-height:1.3;margin-top:3px}
 .mbox.cy{border-color:var(--bdr2)}
 .mbox.win{border-color:rgba(34,211,238,.55);background:linear-gradient(160deg,rgba(34,211,238,.1),var(--panel))}
 .mstack{display:flex;flex-direction:column;gap:8px}
-.mstack .mbox{min-height:0;padding:9px 10px}
-.marr{color:var(--cy);font-size:13px;text-align:center}
-.mmeas{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:12px}
-.mmeas .it{border:1px dashed var(--bdr2);border-radius:9px;padding:7px 12px;font-size:9.5px;color:var(--cy);letter-spacing:.6px;text-transform:uppercase;font-weight:600;text-align:center}
-.mret{margin-top:12px;border:1px dashed rgba(255,255,255,.25);border-radius:10px;padding:10px 16px;font-size:11px;color:var(--tx);text-align:center}
+.mstack .mbox{min-height:0;padding:10px 10px}
+.marr{color:var(--cy);font-size:14px;text-align:center}
+.mmeas{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:14px}
+.mmeas .it{border:1px dashed var(--bdr2);border-radius:9px;padding:9px 12px;font-size:10.5px;color:var(--cy);letter-spacing:.6px;text-transform:uppercase;font-weight:600;text-align:center}
+.mret{margin-top:13px;border:1px dashed rgba(255,255,255,.25);border-radius:10px;padding:12px 16px;font-size:12.5px;color:var(--tx);text-align:center}
 .mret strong{color:#fff;font-weight:600}
 
 /* etapas registradas */
-.steps7{display:grid;grid-template-columns:repeat(7,1fr);gap:8px;margin-top:10px}
-.s7{background:var(--panel);border:1px solid var(--bdr);border-radius:10px;padding:10px 10px}
-.s7 .n{font-size:10px;font-weight:800;color:var(--cy);margin-bottom:3px}
-.s7 .h{font-size:10.5px;font-weight:700;color:#fff;line-height:1.25;margin-bottom:3px}
-.s7 .d{font-size:8.5px;color:var(--tx2);line-height:1.3}
-.tblwrap{margin-top:12px;background:var(--panel);border:1px solid var(--bdr);border-radius:12px;padding:14px 18px;flex:1;min-height:0;display:flex;flex-direction:column}
-.tblwrap .ct{font-size:12px;font-weight:700;color:#fff;margin-bottom:9px}
+.steps7{display:grid;grid-template-columns:repeat(4,1fr);gap:9px;margin-top:8px}
+.s7{background:var(--panel);border:1px solid var(--bdr);border-radius:10px;padding:11px 13px}
+.s7 .n{font-size:10.5px;font-weight:800;color:var(--cy);margin-bottom:2px}
+.s7 .h{font-size:12.5px;font-weight:700;color:#fff;line-height:1.25;margin-bottom:2px}
+.s7 .d{font-size:10.5px;color:var(--tx2);line-height:1.35}
+.tblwrap{margin-top:11px;background:var(--panel);border:1px solid var(--bdr);border-radius:12px;padding:14px 18px;flex:1;min-height:0;display:flex;flex-direction:column}
+.tblwrap .ct{font-size:12.5px;font-weight:700;color:#fff;margin-bottom:8px}
 table.tb{width:100%;border-collapse:collapse}
-.tb th{font-size:9px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--tx2);text-align:left;padding:6px 10px;border-bottom:1px solid var(--bdr)}
-.tb td{font-size:11px;color:var(--tx);padding:7px 10px;border-bottom:1px solid rgba(255,255,255,.05);line-height:1.35}
+.tb th{font-size:10px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--tx2);text-align:left;padding:6px 10px;border-bottom:1px solid var(--bdr)}
+.tb td{font-size:12.5px;color:var(--tx);padding:7px 10px;border-bottom:1px solid rgba(255,255,255,.05);line-height:1.35}
 .tb td b{color:#fff;font-weight:700}
 .tb td.g{color:var(--cy);font-weight:700}
 .tb td.warn{color:#E8A33D;font-weight:600}
 .tb tr:last-child td{border-bottom:none}
-.tbnote{font-size:9.5px;color:var(--tx2);margin-top:8px;line-height:1.45}
+.tbnote{font-size:10.5px;color:var(--tx2);margin-top:8px;line-height:1.45}
 
-/* DIAGNÓSTICO caminho */
-.dpath{display:grid;grid-template-columns:1fr 26px 1fr 26px 1fr 26px 1fr;gap:0;align-items:center;margin-top:14px}
-.dleak{margin-top:14px;background:rgba(196,132,26,.08);border:1px solid rgba(196,132,26,.4);border-radius:12px;padding:13px 20px}
-.dleak .h{font-size:12px;font-weight:700;color:#E8A33D;margin-bottom:7px}
+/* DIAGNÓSTICO */
+.dpath{display:grid;grid-template-columns:1fr 24px 1fr 24px 1fr 24px 1fr;gap:0;align-items:center;margin-top:12px}
+.dleak{margin-top:13px;background:rgba(196,132,26,.08);border:1px solid rgba(196,132,26,.4);border-radius:12px;padding:14px 21px}
+.dleak .h{font-size:13.5px;font-weight:700;color:#E8A33D;margin-bottom:8px}
 .dleak .row{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
-.dleak .c{font-size:10.5px;color:var(--tx);line-height:1.4}
+.dleak .c{font-size:12px;color:var(--tx);line-height:1.45}
 .dleak .c b{color:#fff;font-weight:600}
-.lac4{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-top:14px}
-.lac{display:flex;align-items:center;gap:10px;background:var(--panel);border:1px solid var(--bdr);border-radius:10px;padding:11px 14px;font-size:11px;font-weight:600;color:#fff;line-height:1.3}
-.lac .n{width:24px;height:24px;border-radius:8px;background:var(--cy);color:#06121F;font-weight:800;font-size:11px;display:grid;place-items:center;flex-shrink:0}
+.lac4{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-top:13px}
+.lac{display:flex;align-items:center;gap:10px;background:var(--panel);border:1px solid var(--bdr);border-radius:10px;padding:12px 14px;font-size:12px;font-weight:600;color:#fff;line-height:1.3}
+.lac .n{width:26px;height:26px;border-radius:8px;background:var(--cy);color:#06121F;font-weight:800;font-size:12px;display:grid;place-items:center;flex-shrink:0}
 
 /* lacunas hoje/passa a */
-.gap4{display:grid;grid-template-columns:1fr 1fr;gap:11px;margin-top:10px;flex:1;min-height:0}
-.gp{background:var(--panel);border:1px solid var(--bdr);border-radius:12px;padding:14px 18px}
-.gp .h{font-size:12.5px;font-weight:700;color:#fff;margin-bottom:7px;display:flex;gap:9px;align-items:baseline}
+.gap4{display:grid;grid-template-columns:1fr 1fr;gap:11px;margin-top:8px;flex:1;min-height:0}
+.gp{background:var(--panel);border:1px solid var(--bdr);border-radius:12px;padding:15px 19px}
+.gp .h{font-size:13.5px;font-weight:700;color:#fff;margin-bottom:7px;display:flex;gap:9px;align-items:baseline;line-height:1.3}
 .gp .h .n{color:var(--cy);font-weight:800}
-.gp .hj{font-size:10.5px;color:var(--tx);line-height:1.45;margin-bottom:6px}
-.gp .hj b{color:#E8A33D;font-weight:700;font-size:9px;letter-spacing:1px;text-transform:uppercase;display:block;margin-bottom:2px}
-.gp .pa{font-size:10.5px;color:var(--tx);line-height:1.45}
-.gp .pa b{color:var(--cy);font-weight:700;font-size:9px;letter-spacing:1px;text-transform:uppercase;display:block;margin-bottom:2px}
+.gp .hj{font-size:12px;color:var(--tx);line-height:1.45;margin-bottom:7px}
+.gp .hj b{color:#E8A33D;font-weight:700;font-size:9.5px;letter-spacing:1px;text-transform:uppercase;display:block;margin-bottom:2px}
+.gp .pa{font-size:12px;color:var(--tx);line-height:1.45}
+.gp .pa b{color:var(--cy);font-weight:700;font-size:9.5px;letter-spacing:1px;text-transform:uppercase;display:block;margin-bottom:2px}
 
-/* ESTRUTURA 5 frentes */
-.estr{display:grid;grid-template-columns:230px 26px 1fr 26px 230px;gap:0;align-items:center;margin-top:12px}
+/* ESTRUTURA */
+.estr{display:grid;grid-template-columns:235px 24px 1fr 24px 235px;gap:0;align-items:center;margin-top:10px}
 .estack{display:flex;flex-direction:column;gap:7px}
-.estack .mbox{min-height:0;padding:8px 10px}
-.f5{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:13px}
-.f5 .fc5{background:var(--panel);border:1px solid var(--bdr);border-radius:11px;padding:12px 15px}
-.f5 .fc5 .h{font-size:11.5px;font-weight:700;color:#fff;margin-bottom:4px;line-height:1.3}
-.f5 .fc5 p{font-size:10px;color:var(--tx);line-height:1.45}
+.estack .mbox{min-height:0;padding:9px 10px}
+.f5{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:12px}
+.f5 .fc5{background:var(--panel);border:1px solid var(--bdr);border-radius:11px;padding:13px 16px}
+.f5 .fc5 .h{font-size:12.5px;font-weight:700;color:#fff;margin-bottom:4px;line-height:1.3}
+.f5 .fc5 p{font-size:11px;color:var(--tx);line-height:1.45}
 
-/* GOVERNANÇA tabela */
-.gov{margin-top:10px;flex:1;min-height:0;background:var(--panel);border:1px solid var(--bdr);border-radius:12px;padding:8px 16px;overflow:hidden}
+/* GOVERNANÇA */
+.gov{margin-top:8px;flex:1;min-height:0;background:var(--panel);border:1px solid var(--bdr);border-radius:12px;padding:8px 18px;overflow:hidden}
 .gov table{width:100%;border-collapse:collapse}
-.gov th{font-size:9.5px;font-weight:700;letter-spacing:1.1px;text-transform:uppercase;color:var(--cy);text-align:left;padding:9px 12px;border-bottom:1px solid var(--bdr)}
-.gov td{font-size:10.5px;color:var(--tx);padding:8px 12px;border-bottom:1px solid rgba(255,255,255,.05);line-height:1.4;vertical-align:top}
+.gov th{font-size:10.5px;font-weight:700;letter-spacing:1.1px;text-transform:uppercase;color:var(--cy);text-align:left;padding:10px 12px;border-bottom:1px solid var(--bdr)}
+.gov td{font-size:12px;color:var(--tx);padding:9px 12px;border-bottom:1px solid rgba(255,255,255,.05);line-height:1.45;vertical-align:top}
 .gov td.f{font-weight:700;color:#fff;white-space:nowrap}
 .gov tr:last-child td{border-bottom:none}
 
 /* MÉTRICAS */
-.met4{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-top:10px}
-.mt{background:var(--panel);border:1px solid var(--bdr);border-radius:11px;padding:12px 15px}
-.mt .tg{font-size:8.5px;font-weight:700;letter-spacing:1.2px;text-transform:uppercase;color:var(--cy);margin-bottom:4px}
-.mt .h{font-size:12px;font-weight:700;color:#fff;margin-bottom:4px;line-height:1.3}
-.mt p{font-size:9.5px;color:var(--tx);line-height:1.4}
-.mixrow{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:12px}
-.mix{background:var(--panel);border:1px solid var(--bdr);border-radius:12px;padding:14px 18px;display:flex;align-items:center;gap:18px}
-.pie{width:86px;height:86px;border-radius:50%;flex-shrink:0;position:relative}
-.pie::after{content:"";position:absolute;inset:22px;border-radius:50%;background:var(--panel)}
+.met4{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-top:8px}
+.mt{background:var(--panel);border:1px solid var(--bdr);border-radius:11px;padding:13px 16px}
+.mt .tg{font-size:9px;font-weight:700;letter-spacing:1.2px;text-transform:uppercase;color:var(--cy);margin-bottom:4px}
+.mt .h{font-size:13px;font-weight:700;color:#fff;margin-bottom:4px;line-height:1.3}
+.mt p{font-size:10.5px;color:var(--tx);line-height:1.45}
+.mixrow{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:11px}
+.mix{background:var(--panel);border:1px solid var(--bdr);border-radius:12px;padding:14px 19px;display:flex;align-items:center;gap:18px}
+.pie{width:88px;height:88px;border-radius:50%;flex-shrink:0;position:relative}
+.pie::after{content:"";position:absolute;inset:23px;border-radius:50%;background:var(--panel)}
 .mix .tx1{flex:1}
-.mix .h{font-size:12px;font-weight:700;color:#fff;margin-bottom:4px;line-height:1.3}
-.mix p{font-size:10px;color:var(--tx);line-height:1.4}
+.mix .h{font-size:13px;font-weight:700;color:#fff;margin-bottom:4px;line-height:1.3}
+.mix p{font-size:11px;color:var(--tx);line-height:1.4}
 .mix .lg{display:flex;flex-direction:column;gap:4px;margin-top:6px}
-.mix .lg span{display:inline-flex;align-items:center;gap:6px;font-size:9.5px;color:var(--tx2)}
+.mix .lg span{display:inline-flex;align-items:center;gap:6px;font-size:10.5px;color:var(--tx2)}
 .mix .lg i{width:8px;height:8px;border-radius:3px}
-.metfoot{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:12px}
-.mf{background:var(--panel);border:1px solid var(--bdr);border-radius:11px;padding:12px 16px}
-.mf .tg{font-size:8.5px;font-weight:700;letter-spacing:1.2px;text-transform:uppercase;color:var(--cy);margin-bottom:4px}
-.mf p{font-size:10.5px;color:var(--tx);line-height:1.45}
+.metfoot{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:11px}
+.mf{background:var(--panel);border:1px solid var(--bdr);border-radius:11px;padding:13px 17px}
+.mf .tg{font-size:9px;font-weight:700;letter-spacing:1.2px;text-transform:uppercase;color:var(--cy);margin-bottom:4px}
+.mf p{font-size:12px;color:var(--tx);line-height:1.45}
 .mf p b{color:#fff;font-weight:600}
 
 /* GANTT */
-.gantt{margin-top:12px;background:var(--panel);border:1px solid var(--bdr);border-radius:12px;padding:16px 20px;flex:1;min-height:0;display:flex;flex-direction:column}
-.g-ph{display:grid;grid-template-columns:250px repeat(12,1fr);gap:3px;margin-bottom:6px}
-.g-ph .ph{grid-column:span 4;text-align:center;font-size:10px;font-weight:700;letter-spacing:1.2px;text-transform:uppercase;color:var(--cy);background:rgba(34,211,238,.07);border:1px solid var(--bdr2);border-radius:7px;padding:6px 0}
-.g-wk{display:grid;grid-template-columns:250px repeat(12,1fr);gap:3px;margin-bottom:8px}
-.g-wk span{text-align:center;font-size:8px;color:var(--tx2);font-weight:600}
-.g-row{display:grid;grid-template-columns:250px repeat(12,1fr);gap:3px;align-items:center;margin-bottom:7px}
-.g-row .gl{font-size:10.5px;color:var(--tx);line-height:1.25;padding-right:12px}
+.gantt{margin-top:10px;background:var(--panel);border:1px solid var(--bdr);border-radius:12px;padding:18px 22px;flex:1;min-height:0;display:flex;flex-direction:column;justify-content:center}
+.g-ph{display:grid;grid-template-columns:265px repeat(12,1fr);gap:3px;margin-bottom:6px}
+.g-ph .ph{grid-column:span 4;text-align:center;font-size:11px;font-weight:700;letter-spacing:1.2px;text-transform:uppercase;color:var(--cy);background:rgba(34,211,238,.07);border:1px solid var(--bdr2);border-radius:7px;padding:7px 0}
+.g-wk{display:grid;grid-template-columns:265px repeat(12,1fr);gap:3px;margin-bottom:9px}
+.g-wk span{text-align:center;font-size:9px;color:var(--tx2);font-weight:600}
+.g-row{display:grid;grid-template-columns:265px repeat(12,1fr);gap:3px;align-items:center;margin-bottom:9px}
+.g-row .gl{font-size:12px;color:var(--tx);line-height:1.3;padding-right:12px}
 .g-row .gl b{color:#fff;font-weight:600}
-.g-cell{height:16px;border-radius:4px;background:rgba(255,255,255,.04)}
+.g-cell{height:18px;border-radius:4px;background:rgba(255,255,255,.04)}
 .g-cell.on{background:linear-gradient(90deg,var(--cyd),var(--cy));box-shadow:0 0 8px rgba(34,211,238,.25)}
 .g-cell.dot{background:rgba(255,255,255,.04);position:relative}
 .g-cell.dot::after{content:"";position:absolute;inset:3px 34%;background:var(--cy);border-radius:4px}
 
 /* 90 dias entregas */
-.m3{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:10px;flex:1;min-height:0}
-.m3c{background:var(--panel);border:1px solid var(--bdr);border-radius:12px;padding:15px 18px;display:flex;flex-direction:column}
-.m3c .h{font-size:13px;font-weight:800;color:#fff;margin-bottom:9px}
-.m3c .h small{display:block;font-size:9.5px;font-weight:700;letter-spacing:1.3px;text-transform:uppercase;color:var(--cy);margin-bottom:3px}
-.m3c ul{list-style:none;display:flex;flex-direction:column;gap:6px;flex:1}
-.m3c li{display:grid;grid-template-columns:14px 1fr;gap:8px;font-size:10.5px;color:var(--tx);line-height:1.45}
-.m3c li::before{content:"";width:5px;height:5px;border-radius:2px;background:var(--cy);margin-top:5px}
-.m3c .ve{margin-top:10px;border-top:1px solid var(--bdr);padding-top:8px;font-size:10px;color:var(--tx);line-height:1.4}
-.m3c .ve b{color:var(--cy);font-weight:700;font-size:8.5px;letter-spacing:1.1px;text-transform:uppercase;display:block;margin-bottom:2px}
+.m3{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:8px;flex:1;min-height:0}
+.m3c{background:var(--panel);border:1px solid var(--bdr);border-radius:12px;padding:17px 20px;display:flex;flex-direction:column}
+.m3c .h{font-size:15px;font-weight:800;color:#fff;margin-bottom:10px}
+.m3c .h small{display:block;font-size:10px;font-weight:700;letter-spacing:1.3px;text-transform:uppercase;color:var(--cy);margin-bottom:3px}
+.m3c ul{list-style:none;display:flex;flex-direction:column;gap:8px;flex:1}
+.m3c li{display:grid;grid-template-columns:14px 1fr;gap:8px;font-size:12px;color:var(--tx);line-height:1.45}
+.m3c li::before{content:"";width:5px;height:5px;border-radius:2px;background:var(--cy);margin-top:6px}
+.m3c .ve{margin-top:10px;border-top:1px solid var(--bdr);padding-top:9px;font-size:11.5px;color:var(--tx);line-height:1.4}
+.m3c .ve b{color:var(--cy);font-weight:700;font-size:9px;letter-spacing:1.1px;text-transform:uppercase;display:block;margin-bottom:2px}
 
-/* INVESTIMENTO/DECISÃO */
-.dec2{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:10px}
-.dcol{background:var(--panel);border:1px solid var(--bdr);border-radius:12px;padding:15px 19px}
-.dcol .ct{font-size:10px;font-weight:700;letter-spacing:1.4px;text-transform:uppercase;color:var(--cy);margin-bottom:9px}
-.dcol ul{list-style:none;display:flex;flex-direction:column;gap:8px}
-.dcol li{display:grid;grid-template-columns:17px 1fr;gap:9px;font-size:11px;color:var(--tx);line-height:1.5}
-.dcol li .k{width:14px;height:14px;border-radius:50%;background:var(--cy);color:#06121F;font-size:8px;font-weight:800;display:grid;place-items:center;margin-top:2px}
+/* DECISÃO / LISTAS */
+.dec2{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:8px}
+.dcol{background:var(--panel);border:1px solid var(--bdr);border-radius:12px;padding:17px 21px}
+.dcol .ct{font-size:10.5px;font-weight:700;letter-spacing:1.4px;text-transform:uppercase;color:var(--cy);margin-bottom:10px}
+.dcol ul{list-style:none;display:flex;flex-direction:column;gap:9px}
+.dcol li{display:grid;grid-template-columns:18px 1fr;gap:10px;font-size:12.5px;color:var(--tx);line-height:1.5}
+.dcol li .k{width:15px;height:15px;border-radius:50%;background:var(--cy);color:#06121F;font-size:8.5px;font-weight:800;display:grid;place-items:center;margin-top:2px}
 .dcol li b{color:#fff;font-weight:600}
-.dcol ol{list-style:none;display:flex;flex-direction:column;gap:8px;counter-reset:st}
-.dcol ol li{display:grid;grid-template-columns:20px 1fr;gap:9px;font-size:11px;color:var(--tx);line-height:1.5}
-.dcol ol li::before{counter-increment:st;content:counter(st);width:17px;height:17px;border-radius:6px;background:var(--cy);color:#06121F;font-size:9.5px;font-weight:800;display:grid;place-items:center;margin-top:1px}
-.disc{margin-top:12px;border:1px dashed rgba(255,255,255,.22);border-radius:10px;padding:10px 16px;font-size:9.5px;color:var(--tx2);line-height:1.5}
+.dcol ol{list-style:none;display:flex;flex-direction:column;gap:10px;counter-reset:st}
+.dcol ol li{display:grid;grid-template-columns:22px 1fr;gap:10px;font-size:12.5px;color:var(--tx);line-height:1.5}
+.dcol ol li::before{counter-increment:st;content:counter(st);width:19px;height:19px;border-radius:6px;background:var(--cy);color:#06121F;font-size:10.5px;font-weight:800;display:grid;place-items:center;margin-top:1px}
+.disc{margin-top:11px;border:1px dashed rgba(255,255,255,.22);border-radius:10px;padding:11px 16px;font-size:11px;color:var(--tx2);line-height:1.5}
 .disc b{color:var(--tx);font-weight:600}
-.fontes{margin-top:8px;font-size:8.5px;color:rgba(255,255,255,.35);line-height:1.5}
+.fontes{margin-top:8px;font-size:9.5px;color:rgba(255,255,255,.35);line-height:1.5}
 
 /* PRESENT */
 .toggle-present{position:fixed;top:14px;right:14px;background:linear-gradient(90deg,var(--cyd),var(--cy));color:#06121F;border:none;padding:8px 16px;border-radius:8px;font-family:var(--fd);font-weight:700;font-size:12px;cursor:pointer;z-index:99}
@@ -260,16 +258,15 @@ table.tb{width:100%;border-collapse:collapse}
   .slide .body{padding:16px 20px}
   .slide .bot{padding:10px 20px 16px}
   .toggle-present,.nav-hint{display:none!important}
-  .title{font-size:22px!important}
-  .cov-grid,.blk2,.mkt3,.p3,.calc,.ch2,.gap4,.f5,.m3,.dec2,.mixrow,.metfoot,.dleak .row{grid-template-columns:1fr}
-  .kvrow,.met4,.lac4{grid-template-columns:1fr 1fr}
+  .title{font-size:23px!important}
+  .cov-grid,.blk2,.mkt3,.p3,.calc,.ch2,.gap4,.f5,.m3,.dec2,.mixrow,.metfoot,.dleak .row{grid-template-columns:1fr!important}
+  .kvrow,.met4,.lac4,.steps7{grid-template-columns:1fr 1fr}
   .cov-title{font-size:30px}
-  .steps7{grid-template-columns:repeat(2,1fr)}
   .mflow,.dpath,.estr{display:flex;flex-direction:column;gap:8px}
   .marr{transform:rotate(90deg)}
   .mmeas{grid-template-columns:1fr}
   .gantt{overflow-x:auto}
-  .g-ph,.g-wk,.g-row{min-width:720px}
+  .g-ph,.g-wk,.g-row{min-width:760px}
   .tblwrap{overflow-x:auto}
   table.tb{min-width:640px}
   .gov{overflow-x:auto}
@@ -290,7 +287,7 @@ table.tb{width:100%;border-collapse:collapse}
   <div class="body">
     <div class="cov-grid">
       <div>
-        <span class="selo">Apresentação para a diretoria · setembro de 2026</span>
+        <span class="selo">Apresentação e proposta comercial · setembro de 2026</span>
         <h1 class="cov-title">Aquisição pelo canal direto: <em>estrutura, governança e retorno</em></h1>
         <p class="cov-sub">Uma proposta para reduzir a dependência de intermediários no The World Vila Olímpia, com cada reserva medida da impressão do anúncio até a receita no PMS, dados nas contas do próprio hotel e prestação de contas mensal.</p>
         <div class="cov-tags">
@@ -307,12 +304,12 @@ table.tb{width:100%;border-collapse:collapse}
       </div>
     </div>
   </div>
-  <div class="bot"><span style="text-transform:none;letter-spacing:.2px;max-width:900px">Preparado pela Komplexa Hotéis para a área de Reservas e Revenue Management, como apoio à apresentação à diretoria. Documento de apoio à decisão; valores comerciais na proposta comercial que o acompanha.</span><span>01 · 16</span></div>
+  <div class="bot"><span style="text-transform:none;letter-spacing:.2px;max-width:920px">Preparado pela Komplexa Hotéis para a área de Reservas e Revenue Management, como apoio à apresentação à diretoria. Documento único: apresentação e proposta comercial. Validade da proposta: 15 dias a partir do envio.</span><span>01 · 20</span></div>
 </section>
 
 <!-- 02 SUMÁRIO EXECUTIVO -->
 <section class="slide">
-  <div class="top"><img class="brand" src="assets/logotipo_white.svg" alt="Komplexa"><span class="pg">02 · 16</span></div>
+  <div class="top"><img class="brand" src="assets/logotipo_white.svg" alt="Komplexa"><span class="pg">02 · 20</span></div>
   <div class="body">
     <div class="eyebrow">01 · Sumário executivo</div>
     <h2 class="title">A decisão em <em>uma página</em>.</h2>
@@ -320,15 +317,15 @@ table.tb{width:100%;border-collapse:collapse}
       <div class="blk"><div class="bt">Situação</div><p>O hotel opera com ocupação saudável, diária média entre R$ 400 e R$ 450 e reputação consistente nos principais canais. <strong>Cerca de metade das reservas chega por intermediários</strong>, que cobram entre 15% e 18% de comissão sobre cada diária vendida.</p></div>
       <div class="blk"><div class="bt">Proposta</div><p>Estruturar a aquisição direta como uma operação contínua: captura da demanda que já procura o hotel, recuperação de quem visitou e não reservou, site e Instagram preparados para converter, e <strong>rastreamento ponta a ponta até a reserva no motor</strong>. Tudo nas contas do próprio hotel.</p></div>
       <div class="blk"><div class="bt">O que muda</div><p>Pela primeira vez o hotel enxerga o caminho inteiro: <strong>qual anúncio gerou qual reserva e quanto de receita</strong>, campanha por campanha. A mídia passa a ser decidida por retorno, não por clique. E cada ponto percentual migrado do intermediário para o canal direto fica no caixa, na forma de comissão não paga.</p></div>
-      <div class="blk" style="border-color:var(--bdr2)"><div class="bt">Decisão pedida</div><p>Aprovar a estruturação do canal direto por um <strong>ciclo inicial de 90 dias, sem fidelidade</strong>, com verba de mídia definida pela diretoria e avaliação mensal dos resultados. Valores na proposta comercial que acompanha este documento.</p></div>
+      <div class="blk" style="border-color:var(--bdr2)"><div class="bt">Decisão pedida</div><p>Aprovar a estruturação do canal direto por um <strong>ciclo inicial de 90 dias, sem fidelidade</strong>, com verba de mídia definida pela diretoria e avaliação mensal dos resultados. Investimento: R$ 3.500 por mês, com os detalhes na seção final deste documento.</p></div>
     </div>
   </div>
-  <div class="bot"><span>Komplexa Hotéis · komplexahoteis.com</span><span>02 · 16</span></div>
+  <div class="bot"><span>Komplexa Hotéis · komplexahoteis.com</span><span>02 · 20</span></div>
 </section>
 
 <!-- 03 CONTEXTO DE MERCADO -->
 <section class="slide">
-  <div class="top"><img class="brand" src="assets/logotipo_white.svg" alt="Komplexa"><span class="pg">03 · 16</span></div>
+  <div class="top"><img class="brand" src="assets/logotipo_white.svg" alt="Komplexa"><span class="pg">03 · 20</span></div>
   <div class="body">
     <div class="eyebrow">02 · Contexto de mercado</div>
     <h2 class="title">Três movimentos de 2026 que <em>pesam na decisão</em>.</h2>
@@ -357,12 +354,12 @@ table.tb{width:100%;border-collapse:collapse}
       </div>
     </div>
   </div>
-  <div class="bot"><span>Komplexa Hotéis · komplexahoteis.com</span><span>03 · 16</span></div>
+  <div class="bot"><span>Komplexa Hotéis · komplexahoteis.com</span><span>03 · 20</span></div>
 </section>
 
 <!-- 04 PONTO DE PARTIDA -->
 <section class="slide">
-  <div class="top"><img class="brand" src="assets/logotipo_white.svg" alt="Komplexa"><span class="pg">04 · 16</span></div>
+  <div class="top"><img class="brand" src="assets/logotipo_white.svg" alt="Komplexa"><span class="pg">04 · 20</span></div>
   <div class="body">
     <div class="eyebrow">03 · Ponto de partida</div>
     <h2 class="title">Um hotel que já vende bem. <em>A questão é por onde.</em></h2>
@@ -379,12 +376,12 @@ table.tb{width:100%;border-collapse:collapse}
       <div class="pc"><span class="tagc">Infraestrutura digital</span><div class="h">Motor Omnibees ativo, site institucional, Instagram com 3,6 mil seguidores</div><p>O caminho técnico para a reserva direta existe. O que não existe é a operação que leva o hóspede até ele e mede o que acontece depois.</p></div>
     </div>
   </div>
-  <div class="bot"><span>Komplexa Hotéis · komplexahoteis.com</span><span>04 · 16</span></div>
+  <div class="bot"><span>Komplexa Hotéis · komplexahoteis.com</span><span>04 · 20</span></div>
 </section>
 
-<!-- 05 CUSTO DA INTERMEDIAÇÃO · CALCULADORA -->
+<!-- 05 CUSTO · CALCULADORA -->
 <section class="slide">
-  <div class="top"><img class="brand" src="assets/logotipo_white.svg" alt="Komplexa"><span class="pg">05 · 16</span></div>
+  <div class="top"><img class="brand" src="assets/logotipo_white.svg" alt="Komplexa"><span class="pg">05 · 20</span></div>
   <div class="body">
     <div class="eyebrow">04 · O custo da intermediação</div>
     <h2 class="title">Quanto o hotel paga hoje para <em>ser vendido por terceiros</em>.</h2>
@@ -410,16 +407,16 @@ table.tb{width:100%;border-collapse:collapse}
       </div>
     </div>
   </div>
-  <div class="bot"><span>Komplexa Hotéis · komplexahoteis.com</span><span>05 · 16</span></div>
+  <div class="bot"><span>Komplexa Hotéis · komplexahoteis.com</span><span>05 · 20</span></div>
 </section>
 
 <!-- 06 GRÁFICOS -->
 <section class="slide">
-  <div class="top"><img class="brand" src="assets/logotipo_white.svg" alt="Komplexa"><span class="pg">06 · 16</span></div>
+  <div class="top"><img class="brand" src="assets/logotipo_white.svg" alt="Komplexa"><span class="pg">06 · 20</span></div>
   <div class="body">
     <div class="eyebrow">04 · O custo da intermediação</div>
     <h2 class="title">Como a receita se divide, e o que <em>muda em cada cenário</em>.</h2>
-    <p class="lead">Os cenários mostram a comissão que deixa de ser paga quando parte das reservas passa a entrar pelo canal direto, mantidos os mesmos volume e diária. Não incluem a verba de mídia nem a assessoria, que entram na proposta comercial para a comparação final.</p>
+    <p class="lead">Os cenários mostram a comissão que deixa de ser paga quando parte das reservas passa a entrar pelo canal direto, mantidos os mesmos volume e diária. Não incluem a verba de mídia nem a assessoria, que entram na seção de investimento para a comparação final.</p>
     <div class="ch2">
       <div class="chart">
         <div class="ct">Para onde vai a receita de um mês</div>
@@ -438,12 +435,12 @@ table.tb{width:100%;border-collapse:collapse}
       </div>
     </div>
   </div>
-  <div class="bot"><span>Komplexa Hotéis · komplexahoteis.com</span><span>06 · 16</span></div>
+  <div class="bot"><span>Komplexa Hotéis · komplexahoteis.com</span><span>06 · 20</span></div>
 </section>
 
 <!-- 07 MÉTODO · FLUXO -->
 <section class="slide">
-  <div class="top"><img class="brand" src="assets/logotipo_white.svg" alt="Komplexa"><span class="pg">07 · 16</span></div>
+  <div class="top"><img class="brand" src="assets/logotipo_white.svg" alt="Komplexa"><span class="pg">07 · 20</span></div>
   <div class="body">
     <div class="eyebrow">05 · O método</div>
     <h2 class="title">Do dado do PMS à reserva efetuada, <em>com cada etapa medida</em>.</h2>
@@ -474,23 +471,23 @@ table.tb{width:100%;border-collapse:collapse}
     </div>
     <div class="mret">A reserva volta ao PMS com <strong>origem, campanha e valor</strong>: é isso que fecha a conta de retorno por campanha.</div>
   </div>
-  <div class="bot"><span>Komplexa Hotéis · komplexahoteis.com</span><span>07 · 16</span></div>
+  <div class="bot"><span>Komplexa Hotéis · komplexahoteis.com</span><span>07 · 20</span></div>
 </section>
 
 <!-- 08 MÉTODO · REGISTROS + TABELA -->
 <section class="slide">
-  <div class="top"><img class="brand" src="assets/logotipo_white.svg" alt="Komplexa"><span class="pg">08 · 16</span></div>
+  <div class="top"><img class="brand" src="assets/logotipo_white.svg" alt="Komplexa"><span class="pg">08 · 20</span></div>
   <div class="body">
     <div class="eyebrow">05 · O método</div>
-    <h2 class="title">O que fica registrado em cada etapa, e o que <em>a gerência passa a ver</em>.</h2>
+    <h2 class="title">O que fica registrado, e o que <em>a gerência passa a ver</em>.</h2>
     <div class="steps7">
-      <div class="s7"><div class="n">1</div><div class="h">Impressão</div><div class="d">O anúncio foi exibido. Google Ads e Meta Ads</div></div>
-      <div class="s7"><div class="n">2</div><div class="h">Clique</div><div class="d">Campanha, público e anúncio na URL. UTM padronizada</div></div>
-      <div class="s7"><div class="n">3</div><div class="h">Visita ao site</div><div class="d">Origem preservada na sessão. GA4 e Tag Manager</div></div>
-      <div class="s7"><div class="n">4</div><div class="h">Consulta de datas</div><div class="d">O hóspede abriu o motor e pesquisou. Eventos do Omnibees</div></div>
-      <div class="s7"><div class="n">5</div><div class="h">Início da reserva</div><div class="d">Dados preenchidos, pagamento iniciado. Omnibees e pixel</div></div>
-      <div class="s7"><div class="n">6</div><div class="h">Reserva confirmada</div><div class="d">Valor, datas e categoria. Evento de compra com valor</div></div>
-      <div class="s7"><div class="n">7</div><div class="h">Conciliação no PMS</div><div class="d">Receita real, cancelamentos e no-show descontados. Relatório mensal</div></div>
+      <div class="s7"><div class="n">1 · Google Ads e Meta Ads</div><div class="h">Impressão</div><div class="d">O anúncio foi exibido.</div></div>
+      <div class="s7"><div class="n">2 · UTM padronizada</div><div class="h">Clique</div><div class="d">Campanha, público e anúncio identificados na URL.</div></div>
+      <div class="s7"><div class="n">3 · GA4 e Tag Manager</div><div class="h">Visita ao site</div><div class="d">Origem preservada na sessão.</div></div>
+      <div class="s7"><div class="n">4 · Eventos do Omnibees</div><div class="h">Consulta de datas</div><div class="d">O hóspede abriu o motor e pesquisou.</div></div>
+      <div class="s7"><div class="n">5 · Omnibees e pixel</div><div class="h">Início da reserva</div><div class="d">Dados preenchidos, pagamento iniciado.</div></div>
+      <div class="s7"><div class="n">6 · Evento de compra</div><div class="h">Reserva confirmada</div><div class="d">Com valor, datas e categoria.</div></div>
+      <div class="s7"><div class="n">7 · Relatório mensal</div><div class="h">Conciliação no PMS</div><div class="d">Receita real, cancelamentos e no-show descontados.</div></div>
     </div>
     <div class="tblwrap">
       <div class="ct">Como a gerência passa a ver a mídia: retorno por campanha (exemplo ilustrativo)</div>
@@ -504,12 +501,12 @@ table.tb{width:100%;border-collapse:collapse}
       <div class="tbnote">Retorno é a receita direta gerada dividida pela verba da campanha. A comissão que deixou de ser paga ao intermediário entra na leitura como ganho adicional, não está no retorno acima.</div>
     </div>
   </div>
-  <div class="bot"><span>Komplexa Hotéis · komplexahoteis.com</span><span>08 · 16</span></div>
+  <div class="bot"><span>Komplexa Hotéis · komplexahoteis.com</span><span>08 · 20</span></div>
 </section>
 
 <!-- 09 DIAGNÓSTICO · CAMINHO -->
 <section class="slide">
-  <div class="top"><img class="brand" src="assets/logotipo_white.svg" alt="Komplexa"><span class="pg">09 · 16</span></div>
+  <div class="top"><img class="brand" src="assets/logotipo_white.svg" alt="Komplexa"><span class="pg">09 · 20</span></div>
   <div class="body">
     <div class="eyebrow">06 · Diagnóstico do canal direto</div>
     <h2 class="title">O que falta não é produto. <em>É aquisição estruturada.</em></h2>
@@ -538,12 +535,12 @@ table.tb{width:100%;border-collapse:collapse}
       <div class="lac"><span class="n">4</span>A mídia anterior foi medida em clique</div>
     </div>
   </div>
-  <div class="bot"><span>Komplexa Hotéis · komplexahoteis.com</span><span>09 · 16</span></div>
+  <div class="bot"><span>Komplexa Hotéis · komplexahoteis.com</span><span>09 · 20</span></div>
 </section>
 
 <!-- 10 DIAGNÓSTICO · HOJE/PASSA A -->
 <section class="slide">
-  <div class="top"><img class="brand" src="assets/logotipo_white.svg" alt="Komplexa"><span class="pg">10 · 16</span></div>
+  <div class="top"><img class="brand" src="assets/logotipo_white.svg" alt="Komplexa"><span class="pg">10 · 20</span></div>
   <div class="body">
     <div class="eyebrow">06 · Diagnóstico do canal direto</div>
     <h2 class="title">Quatro lacunas: como é hoje e <em>o que passa a acontecer</em>.</h2>
@@ -570,12 +567,12 @@ table.tb{width:100%;border-collapse:collapse}
       </div>
     </div>
   </div>
-  <div class="bot"><span>Komplexa Hotéis · komplexahoteis.com</span><span>10 · 16</span></div>
+  <div class="bot"><span>Komplexa Hotéis · komplexahoteis.com</span><span>10 · 20</span></div>
 </section>
 
-<!-- 11 ESTRUTURA PROPOSTA -->
+<!-- 11 ESTRUTURA -->
 <section class="slide">
-  <div class="top"><img class="brand" src="assets/logotipo_white.svg" alt="Komplexa"><span class="pg">11 · 16</span></div>
+  <div class="top"><img class="brand" src="assets/logotipo_white.svg" alt="Komplexa"><span class="pg">11 · 20</span></div>
   <div class="body">
     <div class="eyebrow">07 · Estrutura proposta</div>
     <h2 class="title">Cinco frentes, <em>uma operação contínua</em>.</h2>
@@ -588,7 +585,7 @@ table.tb{width:100%;border-collapse:collapse}
         <div class="mbox"><div class="h">Equipe de reservas do hotel</div></div>
       </div>
       <div class="marr">›</div>
-      <div class="mbox cy" style="min-height:120px"><div class="h">Motor Omnibees</div><div class="d">reserva com origem, campanha e valor rastreados</div></div>
+      <div class="mbox cy" style="min-height:130px"><div class="h">Motor Omnibees</div><div class="d">reserva com origem, campanha e valor rastreados</div></div>
       <div class="marr">›</div>
       <div class="estack">
         <div class="mbox win"><div class="h">Relatório mensal</div><div class="d">reservas e receita por canal</div></div>
@@ -596,28 +593,28 @@ table.tb{width:100%;border-collapse:collapse}
       </div>
     </div>
     <div class="f5">
-      <div class="fc5"><div class="h">Google: proteção de marca e busca de destino</div><p>Campanhas para quem pesquisa o nome do hotel e para quem pesquisa hospedagem na Vila Olímpia, Itaim e Berrini, com rastreamento de reserva e lances por retorno, não por clique.</p></div>
-      <div class="fc5"><div class="h">Remarketing em Meta e Google</div><p>Sequências para quem visitou o site, consultou o motor ou abandonou a reserva. Públicos construídos nas contas do hotel e criativos produzidos pela Komplexa, com aprovação do hotel.</p></div>
-      <div class="fc5"><div class="h">Site e Instagram como pontos de conversão</div><p>Ajustes no site para levar ao motor com menos atrito, perfil do Instagram estruturado para reserva direta e materiais para a equipe de reservas responder com padrão. Sem produção continuada de conteúdo, salvo se contratada.</p></div>
-      <div class="fc5"><div class="h">Rastreamento ponta a ponta</div><p>Google Analytics, Tag Manager, pixel da Meta e eventos de reserva do Omnibees configurados e validados. Origem, campanha e valor de cada reserva direta disponíveis para o hotel a qualquer momento.</p></div>
-      <div class="fc5"><div class="h">Prestação de contas mensal</div><p>Relatório até o quinto dia útil com investimento, reservas e receita por canal, e reunião mensal com a área de Reservas e RM para leitura e decisão do mês seguinte. A diretoria recebe o resumo em uma página.</p></div>
+      <div class="fc5"><div class="h">Google: proteção de marca e busca de destino</div><p>Campanhas para quem pesquisa o nome do hotel e para quem pesquisa hospedagem na Vila Olímpia, Itaim e Berrini, com lances por retorno, não por clique.</p></div>
+      <div class="fc5"><div class="h">Remarketing em Meta e Google</div><p>Sequências para quem visitou o site, consultou o motor ou abandonou a reserva. Públicos nas contas do hotel e criativos com aprovação do hotel.</p></div>
+      <div class="fc5"><div class="h">Site e Instagram como pontos de conversão</div><p>Ajustes no site para levar ao motor com menos atrito, perfil estruturado para reserva direta e materiais para a equipe responder com padrão.</p></div>
+      <div class="fc5"><div class="h">Rastreamento ponta a ponta</div><p>Google Analytics, Tag Manager, pixel da Meta e eventos do Omnibees configurados e validados. Origem, campanha e valor disponíveis a qualquer momento.</p></div>
+      <div class="fc5"><div class="h">Prestação de contas mensal</div><p>Relatório até o quinto dia útil com investimento, reservas e receita por canal, e reunião mensal com Reservas e RM. A diretoria recebe o resumo em uma página.</p></div>
     </div>
   </div>
-  <div class="bot"><span>Komplexa Hotéis · komplexahoteis.com</span><span>11 · 16</span></div>
+  <div class="bot"><span>Komplexa Hotéis · komplexahoteis.com</span><span>11 · 20</span></div>
 </section>
 
 <!-- 12 GOVERNANÇA -->
 <section class="slide">
-  <div class="top"><img class="brand" src="assets/logotipo_white.svg" alt="Komplexa"><span class="pg">12 · 16</span></div>
+  <div class="top"><img class="brand" src="assets/logotipo_white.svg" alt="Komplexa"><span class="pg">12 · 20</span></div>
   <div class="body">
     <div class="eyebrow">08 · Governança e responsabilidades</div>
     <h2 class="title">Quem faz <em>o quê</em>.</h2>
     <p class="lead">A estrutura funciona quando cada parte cuida do que domina. A Komplexa opera aquisição e dados; o hotel mantém o controle comercial e a relação com o hóspede.</p>
     <div class="gov">
       <table>
-        <tr><th style="width:170px">Frente</th><th>Komplexa Hotéis</th><th>The World Vila Olímpia</th></tr>
+        <tr><th style="width:185px">Frente</th><th>Komplexa Hotéis</th><th>The World Vila Olímpia</th></tr>
         <tr><td class="f">Mídia paga</td><td>Planejamento, operação diária, otimização e criativos das campanhas em Google e Meta</td><td>Aprovação de peças e de ofertas; verba paga diretamente às plataformas, nas contas do hotel</td></tr>
-        <tr><td class="f">Política comercial do canal direto</td><td>Recomendações a partir dos dados de conversão</td><td>Tarifas, ofertas e condições do canal direto definidas pela área de Reservas e RM</td></tr>
+        <tr><td class="f">Política comercial</td><td>Recomendações a partir dos dados de conversão</td><td>Tarifas, ofertas e condições do canal direto definidas pela área de Reservas e RM</td></tr>
         <tr><td class="f">Dados e rastreamento</td><td>Implantação, validação e manutenção do rastreamento até a reserva; relatório mensal</td><td>Acessos ao motor, ao site e às contas; dados de reservas para conciliação</td></tr>
         <tr><td class="f">Site e Instagram</td><td>Ajustes de conversão, estrutura do perfil e materiais de apoio</td><td>Conteúdo institucional, fotos e informações do hotel</td></tr>
         <tr><td class="f">Atendimento ao hóspede</td><td>Padrões e materiais para resposta a cotações, quando solicitado</td><td>Operação do atendimento por WhatsApp, telefone e e-mail; conversão das cotações</td></tr>
@@ -625,12 +622,12 @@ table.tb{width:100%;border-collapse:collapse}
       </table>
     </div>
   </div>
-  <div class="bot"><span>Komplexa Hotéis · komplexahoteis.com</span><span>12 · 16</span></div>
+  <div class="bot"><span>Komplexa Hotéis · komplexahoteis.com</span><span>12 · 20</span></div>
 </section>
 
 <!-- 13 MÉTRICAS -->
 <section class="slide">
-  <div class="top"><img class="brand" src="assets/logotipo_white.svg" alt="Komplexa"><span class="pg">13 · 16</span></div>
+  <div class="top"><img class="brand" src="assets/logotipo_white.svg" alt="Komplexa"><span class="pg">13 · 20</span></div>
   <div class="body">
     <div class="eyebrow">09 · Métricas e prestação de contas</div>
     <h2 class="title">O que a diretoria <em>vai acompanhar</em>.</h2>
@@ -638,7 +635,7 @@ table.tb{width:100%;border-collapse:collapse}
     <div class="met4">
       <div class="mt"><div class="tg">Volume</div><div class="h">Reservas diretas rastreadas</div><p>Quantidade de reservas no motor com origem identificada, por mês e por canal.</p></div>
       <div class="mt"><div class="tg">Receita</div><div class="h">Receita do canal direto</div><p>Valor das reservas diretas, comparado mês a mês e com a receita via intermediários.</p></div>
-      <div class="mt"><div class="tg">Eficiência</div><div class="h">Custo por reserva</div><p>Verba de mídia dividida pelas reservas geradas. É o número que decide onde a verba cresce ou para.</p></div>
+      <div class="mt"><div class="tg">Eficiência</div><div class="h">Custo por reserva</div><p>Verba de mídia dividida pelas reservas geradas. Decide onde a verba cresce ou para.</p></div>
       <div class="mt"><div class="tg">Retorno</div><div class="h">Retorno sobre a mídia</div><p>Receita direta gerada para cada real investido em anúncios.</p></div>
     </div>
     <div class="mixrow">
@@ -660,12 +657,12 @@ table.tb{width:100%;border-collapse:collapse}
       <div class="mf"><div class="tg">Rotina</div><p><b>Relatório até o 5º dia útil e reunião mensal.</b> Leitura dos indicadores com a área de Reservas e RM, decisão sobre verba e prioridades. Resumo executivo de uma página para a diretoria.</p></div>
     </div>
   </div>
-  <div class="bot"><span>Komplexa Hotéis · komplexahoteis.com</span><span>13 · 16</span></div>
+  <div class="bot"><span>Komplexa Hotéis · komplexahoteis.com</span><span>13 · 20</span></div>
 </section>
 
-<!-- 14 PLANO 90 DIAS · GANTT -->
+<!-- 14 GANTT -->
 <section class="slide">
-  <div class="top"><img class="brand" src="assets/logotipo_white.svg" alt="Komplexa"><span class="pg">14 · 16</span></div>
+  <div class="top"><img class="brand" src="assets/logotipo_white.svg" alt="Komplexa"><span class="pg">14 · 20</span></div>
   <div class="body">
     <div class="eyebrow">10 · Plano de 90 dias</div>
     <h2 class="title">Três fases, com <em>entregas visíveis a cada mês</em>.</h2>
@@ -682,12 +679,12 @@ table.tb{width:100%;border-collapse:collapse}
       <div class="g-row"><span class="gl"><b>Relatório e reunião mensal</b> leitura e decisão</span><span class="g-cell"></span><span class="g-cell"></span><span class="g-cell"></span><span class="g-cell dot"></span><span class="g-cell"></span><span class="g-cell"></span><span class="g-cell"></span><span class="g-cell dot"></span><span class="g-cell"></span><span class="g-cell"></span><span class="g-cell"></span><span class="g-cell dot"></span></div>
     </div>
   </div>
-  <div class="bot"><span>Komplexa Hotéis · komplexahoteis.com</span><span>14 · 16</span></div>
+  <div class="bot"><span>Komplexa Hotéis · komplexahoteis.com</span><span>14 · 20</span></div>
 </section>
 
-<!-- 15 PLANO 90 DIAS · ENTREGAS -->
+<!-- 15 ENTREGAS POR MÊS -->
 <section class="slide">
-  <div class="top"><img class="brand" src="assets/logotipo_white.svg" alt="Komplexa"><span class="pg">15 · 16</span></div>
+  <div class="top"><img class="brand" src="assets/logotipo_white.svg" alt="Komplexa"><span class="pg">15 · 20</span></div>
   <div class="body">
     <div class="eyebrow">10 · Plano de 90 dias</div>
     <h2 class="title">O que cada mês entrega, e o que <em>a diretoria vê</em>.</h2>
@@ -724,40 +721,142 @@ table.tb{width:100%;border-collapse:collapse}
       </div>
     </div>
   </div>
-  <div class="bot"><span>Komplexa Hotéis · komplexahoteis.com</span><span>15 · 16</span></div>
+  <div class="bot"><span>Komplexa Hotéis · komplexahoteis.com</span><span>15 · 20</span></div>
 </section>
 
-<!-- 16 INVESTIMENTO E DECISÃO -->
+<!-- 16 PROPOSTA · O QUE ESTÁ INCLUÍDO -->
 <section class="slide">
-  <div class="top"><img class="brand" src="assets/logotipo_white.svg" alt="Komplexa"><span class="pg">16 · 16</span></div>
+  <div class="top"><img class="brand" src="assets/logotipo_white.svg" alt="Komplexa"><span class="pg">16 · 20</span></div>
   <div class="body">
-    <div class="eyebrow">11 · Investimento e decisão</div>
-    <h2 class="title">Como o investimento <em>é estruturado</em>.</h2>
-    <p class="lead">Os valores estão na proposta comercial que acompanha esta apresentação: R$ 3.500 por mês com implantação e consultoria comercial inclusas, verba de mídia sugerida de R$ 6 a 10 mil por mês. Aqui, a estrutura do que a diretoria aprova.</p>
-    <div class="dec2">
-      <div class="dcol">
-        <div class="ct">Composição</div>
-        <ul>
-          <li><span class="k">✓</span><span><b>Assessoria em Marketing &amp; Vendas:</b> mensalidade fixa pela operação das cinco frentes, com equipe dedicada e responsável pela conta.</span></li>
-          <li><span class="k">✓</span><span><b>Verba de mídia:</b> definida pela diretoria, paga pelo hotel diretamente ao Google e à Meta, nas contas do próprio hotel. Sem taxa ou percentual da Komplexa sobre ela.</span></li>
-          <li><span class="k">✓</span><span><b>Sem fidelidade:</b> contrato por prazo indeterminado, encerrável por qualquer das partes com aviso de 30 dias, sem multa.</span></li>
-          <li><span class="k">✓</span><span><b>Ativos do hotel:</b> campanhas, públicos, pixels, dados e ajustes de site permanecem com o The World ao término, sem taxa de migração.</span></li>
-        </ul>
+    <div class="eyebrow">11 · Proposta comercial · O que está incluído</div>
+    <h2 class="title">Quatro semanas de implantação, <em>depois operação contínua</em>.</h2>
+    <p class="lead">A implantação entrega a base medida. A operação faz a base render, mês após mês. Tudo dentro da mensalidade, sem taxa de implantação.</p>
+    <div class="p3" style="grid-template-columns:repeat(4,1fr);flex:0 0 auto;margin-top:10px">
+      <div class="pc"><span class="tagc">Semanas 1 a 4</span><div class="h">Rastreamento ponta a ponta</div><p>GA4, Tag Manager, pixel da Meta e eventos do Omnibees configurados e validados. Cada reserva com origem, campanha e valor.</p></div>
+      <div class="pc"><span class="tagc">Semanas 1 a 4</span><div class="h">Campanhas no ar</div><p>Proteção de marca e busca de destino no Google, remarketing em Meta e Google, nas contas do hotel.</p></div>
+      <div class="pc"><span class="tagc">Semanas 1 a 4</span><div class="h">Criativos e Instagram</div><p>Peças da campanha de implantação (mínimo de 4) aprovadas pelo hotel e perfil estruturado para reserva direta.</p></div>
+      <div class="pc"><span class="tagc">Semanas 1 a 4</span><div class="h">Site pronto para converter</div><p>Ajustes no site atual para levar ao motor com menos atrito. Sem novo site: o do hotel já existe e permanece dele.</p></div>
+    </div>
+    <div class="p3" style="flex:0 0 auto">
+      <div class="pc" style="border-color:var(--bdr2)"><span class="tagc">Contínuo</span><div class="h">Mídia paga e performance</div><p>Gestão diária, testes de público e peça, ajuste de verba por custo por reserva, novos criativos ao longo do ano.</p></div>
+      <div class="pc" style="border-color:var(--bdr2)"><span class="tagc">Contínuo</span><div class="h">Consultoria comercial</div><p>Diagnóstico do atendimento, cadências com roteiros para WhatsApp, telefone e e-mail, treinamento inicial e reciclagem trimestral, acompanhamento mensal.</p></div>
+      <div class="pc" style="border-color:var(--bdr2)"><span class="tagc">Contínuo</span><div class="h">Relatório e reunião mensal</div><p>Relatório até o quinto dia útil com investimento, reservas e receita por canal, e reunião mensal com Reservas e RM. Manutenção pontual do site inclusa.</p></div>
+    </div>
+    <div class="disc"><b>Fora do escopo:</b> verba de mídia (paga pelo hotel às plataformas), produção continuada de conteúdo para redes sociais, novo website, produção fotográfica presencial, operação do atendimento e licenças de ferramentas de terceiros. Qualquer item fora do escopo é orçado antes e só executado com aprovação escrita.</div>
+  </div>
+  <div class="bot"><span>Komplexa Hotéis · komplexahoteis.com</span><span>16 · 20</span></div>
+</section>
+
+<!-- 17 PROPOSTA · INVESTIMENTO -->
+<section class="slide">
+  <div class="top"><img class="brand" src="assets/logotipo_white.svg" alt="Komplexa"><span class="pg">17 · 20</span></div>
+  <div class="body">
+    <div class="eyebrow">11 · Proposta comercial · Investimento</div>
+    <h2 class="title">Um valor fixo, e a mídia <em>nas mãos do hotel</em>.</h2>
+    <div class="mkt3" style="flex:0 0 auto">
+      <div class="mc">
+        <span class="tagc">Assessoria</span>
+        <div class="n">R$ 3.500</div>
+        <div class="st">por mês, fixos</div>
+        <p>Implantação garantida, operação contínua, consultoria comercial, relatório e reunião mensais. Vencimento no dia 20, por PIX, boleto ou cartão. Reajuste anual pelo IPCA.</p>
       </div>
-      <div class="dcol">
-        <div class="ct">Próximos passos</div>
-        <ol>
-          <li><span>Aprovação da diretoria para o ciclo inicial de 90 dias e definição da verba de mídia mensal, na faixa sugerida de R$ 6 a 10 mil.</span></li>
-          <li><span>Assinatura da proposta e do contrato, com os acessos listados no anexo entregues em até 72 horas úteis.</span></li>
-          <li><span>Reunião de abertura com a área de Reservas e RM: metas, ofertas do canal direto e calendário do mês 1.</span></li>
-          <li><span>Primeiro relatório ao fim do mês 1 e leitura mensal a partir daí.</span></li>
-        </ol>
+      <div class="mc">
+        <span class="tagc">Verba de mídia sugerida</span>
+        <div class="n">R$ 6 a 10 mil</div>
+        <div class="st">por mês, direto às plataformas</div>
+        <p>Paga pelo hotel ao Google e à Meta, nas contas do hotel. Sem trânsito pelo caixa da Komplexa e sem percentual. A faixa é uma sugestão para 160 apartamentos em Vila Olímpia; a diretoria define o valor.</p>
+      </div>
+      <div class="mc" style="border-color:var(--bdr2);background:linear-gradient(160deg,rgba(34,211,238,.08),var(--panel))">
+        <span class="tagc">Custo total mensal</span>
+        <div class="n">R$ 9,5 a 13,5 mil</div>
+        <div class="st">assessoria mais mídia</div>
+        <p>É esse o número a comparar com a comissão paga hoje aos intermediários e com a receita direta gerada. O próximo slide faz essa conta com os números do hotel.</p>
       </div>
     </div>
-    <div class="disc"><b>Esta apresentação não promete volume de reservas nem receita.</b> Os resultados dependem de tarifa, sazonalidade, concorrência, verba e atendimento, além da execução da Komplexa. O compromisso contratual é de execução e de transparência: entregas definidas, dados nas contas do hotel e relatório mensal.</div>
+    <div class="disc" style="margin-top:14px">Não há cobrança de implantação, de setup ou de criação de contas. O que o hotel paga à Komplexa é a mensalidade; o que paga às plataformas é a mídia, na conta dele, com o histórico ficando com ele.</div>
+  </div>
+  <div class="bot"><span>Komplexa Hotéis · komplexahoteis.com</span><span>17 · 20</span></div>
+</section>
+
+<!-- 18 PROPOSTA · QUANDO SE PAGA -->
+<section class="slide">
+  <div class="top"><img class="brand" src="assets/logotipo_white.svg" alt="Komplexa"><span class="pg">18 · 20</span></div>
+  <div class="body">
+    <div class="eyebrow">11 · Proposta comercial · Quando a proposta se paga</div>
+    <h2 class="title">A conta com os <em>números do hotel</em>.</h2>
+    <p class="lead">Usa as premissas da calculadora da seção 04; ajuste a verba abaixo. O resultado mostra quantos pontos percentuais de reserva precisam migrar do intermediário para o direto para cobrir assessoria e mídia. Cenário, não promessa: a receita nova gerada pelas campanhas não está na conta.</p>
+    <div class="calc" style="grid-template-columns:300px 1fr">
+      <div class="calc-in">
+        <div class="ct">Verba de mídia</div>
+        <div class="fld"><label>Verba mensal (em reais)</label><input type="number" id="cVer" value="8000" step="500" oninput="recalc()"></div>
+        <div class="res hi" style="padding:11px 14px"><div><div class="rl">Comissão paga hoje</div></div><div class="rv" id="pCom" style="font-size:19px">R$ 117.810</div></div>
+        <div class="res" style="padding:11px 14px"><div><div class="rl">Custo mensal da proposta</div><div class="rd">R$ 3.500 + verba de mídia</div></div><div class="rv" id="pCusto" style="font-size:19px">R$ 11.500</div></div>
+        <div class="res cy" style="padding:11px 14px"><div><div class="rl">Migração que cobre</div><div class="rd">cada ponto retém <b id="pPonto" style="color:var(--cy)">R$ 2.356</b>/mês</div></div><div class="rv" id="pMig" style="font-size:19px">4,9 pontos</div></div>
+      </div>
+      <div class="tblwrap" style="margin-top:0">
+        <div class="ct">Saldo mensal por cenário de migração</div>
+        <table class="tb">
+          <tr><th>Cenário</th><th>Migração</th><th>Comissão retida</th><th>Custo da proposta</th><th>Saldo mensal</th><th>Saldo em 12 meses</th></tr>
+          <tr><td><b>Conservador</b></td><td>10 pontos</td><td id="t10r">R$ 23.562</td><td id="t10c">R$ 11.500</td><td class="g" id="t10s">R$ 12.062</td><td class="g" id="t10a">R$ 144.744</td></tr>
+          <tr><td><b>Base</b></td><td>20 pontos</td><td id="t20r">R$ 47.124</td><td id="t20c">R$ 11.500</td><td class="g" id="t20s">R$ 35.624</td><td class="g" id="t20a">R$ 427.488</td></tr>
+          <tr><td><b>Otimista</b></td><td>30 pontos</td><td id="t30r">R$ 70.686</td><td id="t30c">R$ 11.500</td><td class="g" id="t30s">R$ 59.186</td><td class="g" id="t30a">R$ 710.232</td></tr>
+        </table>
+        <div class="tbnote">Saldo positivo significa que a comissão que deixou de ser paga já cobre assessoria e mídia. Tudo o que as campanhas gerarem de reserva nova, além da migração, é ganho por cima.</div>
+      </div>
+    </div>
+  </div>
+  <div class="bot"><span>Komplexa Hotéis · komplexahoteis.com</span><span>18 · 20</span></div>
+</section>
+
+<!-- 19 PROPOSTA · CONDIÇÕES -->
+<section class="slide">
+  <div class="top"><img class="brand" src="assets/logotipo_white.svg" alt="Komplexa"><span class="pg">19 · 20</span></div>
+  <div class="body">
+    <div class="eyebrow">11 · Proposta comercial · Condições</div>
+    <h2 class="title">Sem fidelidade, com garantia, <em>tudo do hotel</em>.</h2>
+    <div class="gap4" style="grid-template-columns:1fr 1fr 1fr">
+      <div class="gp"><div class="h">Prazo</div><div class="pa">Indeterminado, a partir do primeiro dia útil após a assinatura. Sem período mínimo, sem renovação a formalizar.</div></div>
+      <div class="gp"><div class="h">Encerramento</div><div class="pa">Por qualquer das partes, a qualquer tempo, com aviso escrito de 30 dias. Sem multa, sem cobrança de mensalidades futuras.</div></div>
+      <div class="gp" style="border-color:var(--bdr2)"><div class="h">Garantia das 4 primeiras semanas</div><div class="pa">Rastreamento, campanhas, criativos e Instagram no ar em até 28 dias contados da entrega dos acessos. Se não estiverem, por responsabilidade da Komplexa, devolução de 100% das mensalidades pagas.</div></div>
+      <div class="gp"><div class="h">Pagamento</div><div class="pa">Mensalidade de R$ 3.500,00 com vencimento no dia 20, por PIX, boleto ou cartão, contra nota fiscal. Reajuste anual pelo IPCA.</div></div>
+      <div class="gp"><div class="h">Propriedade dos ativos</div><div class="pa">Contas de anúncio, públicos, pixels, criativos, cadências, materiais de treinamento e dados são do hotel. Sem taxa de migração ou retenção.</div></div>
+      <div class="gp"><div class="h">Dados e sigilo</div><div class="pa">Komplexa como operadora dos dados do hotel, uso exclusivo para o objeto, sigilo por 5 anos após o término, acessos nominais devolvidos em 5 dias úteis.</div></div>
+    </div>
+    <div class="disc">As condições completas estão no contrato de Assessoria em Marketing &amp; Vendas, que acompanha esta proposta e segue o mesmo texto para todos os clientes da Komplexa. Validade da proposta: 15 dias a partir do envio.</div>
+  </div>
+  <div class="bot"><span>Komplexa Hotéis · komplexahoteis.com</span><span>19 · 20</span></div>
+</section>
+
+<!-- 20 PRÓXIMOS PASSOS -->
+<section class="slide">
+  <div class="top"><img class="brand" src="assets/logotipo_white.svg" alt="Komplexa"><span class="pg">20 · 20</span></div>
+  <div class="body">
+    <div class="eyebrow">12 · Próximos passos</div>
+    <h2 class="title">Do aceite ao <em>primeiro relatório</em>.</h2>
+    <div class="dec2">
+      <div class="dcol">
+        <div class="ct">Sequência</div>
+        <ol>
+          <li><span>Aprovação da diretoria para o ciclo inicial de 90 dias e definição da verba de mídia mensal, na faixa sugerida de R$ 6 a 10 mil.</span></li>
+          <li><span>Assinatura da proposta e do contrato, com os acessos entregues em até 72 horas úteis: Gerenciador de Anúncios e Google Ads, Google Analytics e Tag Manager, Perfil da Empresa no Google, site, motor Omnibees e registro do atendimento.</span></li>
+          <li><span>Reunião de abertura com Reservas e RM: metas, ofertas do canal direto e calendário das quatro primeiras semanas.</span></li>
+          <li><span>Primeiro relatório ao fim do mês 1, com as reservas diretas de origem identificada, e reunião mensal a partir daí.</span></li>
+        </ol>
+      </div>
+      <div class="dcol">
+        <div class="ct">O que a diretoria aprova</div>
+        <ul>
+          <li><span class="k">✓</span><span><b>Assessoria em Marketing &amp; Vendas:</b> R$ 3.500 por mês, fixos, com implantação e consultoria comercial inclusas.</span></li>
+          <li><span class="k">✓</span><span><b>Verba de mídia:</b> definida pela diretoria, paga pelo hotel direto ao Google e à Meta, sem percentual da Komplexa.</span></li>
+          <li><span class="k">✓</span><span><b>Sem fidelidade:</b> prazo indeterminado, encerrável por qualquer das partes com aviso de 30 dias, sem multa.</span></li>
+          <li><span class="k">✓</span><span><b>Ativos do hotel:</b> campanhas, públicos, pixels, dados e ajustes de site permanecem com o The World ao término.</span></li>
+        </ul>
+      </div>
+    </div>
+    <div class="disc"><b>Este documento não promete volume de reservas nem receita.</b> Os resultados dependem de tarifa, sazonalidade, concorrência, verba e atendimento, além da execução da Komplexa. O compromisso contratual é de execução e de transparência: entregas definidas, dados nas contas do hotel e relatório mensal.</div>
     <div class="fontes">Premissas e fontes. Números do hotel (apartamentos, diária média, ocupação e participação de intermediários) informados pela área de Reservas; os demais são públicos. Mercado paulista: ABIH-SP, maio de 2026 e FOHB via Panrotas. Comissão da Booking.com: Panrotas, julho de 2026 e Hotelier News. Reputação: Booking.com, Trip.com e Google, consulta em setembro de 2026. Inventário do edifício em outras bandeiras: listagens públicas em Booking.com, Hotels.com, Trivago e Decolar.</div>
   </div>
-  <div class="bot"><span>Komplexa Growth Ltda · CNPJ 63.097.480/0001-70 · komplexahoteis.com · contato@komplexagrowth.com · (12) 98708-4407 · Igor Salomão Dantas</span><span>16 · 16</span></div>
+  <div class="bot"><span>Komplexa Growth Ltda · CNPJ 63.097.480/0001-70 · komplexahoteis.com · contato@komplexagrowth.com · (12) 98708-4407 · Igor Salomão Dantas</span><span>20 · 20</span></div>
 </section>
 
 </div>
@@ -766,12 +865,14 @@ table.tb{width:100%;border-collapse:collapse}
 
 <script>
 const fmt = v => 'R$ ' + Math.round(v).toLocaleString('pt-BR');
+const fmt1 = v => v.toLocaleString('pt-BR', {minimumFractionDigits:1, maximumFractionDigits:1});
 function recalc(){
   const apt = +document.getElementById('cApt').value || 0;
   const dia = +document.getElementById('cDia').value || 0;
   const occ = (+document.getElementById('cOcc').value || 0) / 100;
   const ota = (+document.getElementById('cOta').value || 0) / 100;
   const com = (+document.getElementById('cCom').value || 0) / 100;
+  const ver = +document.getElementById('cVer').value || 0;
   const rec = apt * dia * 30 * occ;
   const rOta = rec * ota;
   const rCom = rOta * com;
@@ -783,7 +884,6 @@ function recalc(){
   document.getElementById('s10').textContent = fmt(ponto * 10);
   document.getElementById('s20').textContent = fmt(ponto * 20);
   document.getElementById('s30').textContent = fmt(ponto * 30);
-  // gráfico 1
   const direto = rec - rOta, liq = rOta - rCom;
   const mx = Math.max(direto, rOta, 1);
   document.getElementById('g1a').style.width = (direto / mx * 100) + '%';
@@ -792,7 +892,6 @@ function recalc(){
   document.getElementById('g1bv').textContent = fmt(liq);
   document.getElementById('g1c').style.width = (rCom / mx * 100) + '%';
   document.getElementById('g1cv').textContent = fmt(rCom);
-  // gráfico 2 (barras com total fixo = comissão hoje)
   const set = (idPaga, idRet, idVal, pontos) => {
     const ret = ponto * pontos, paga = rCom - ret;
     const pPaga = rCom > 0 ? Math.max(paga / rCom * 100, 0) : 0;
@@ -805,6 +904,23 @@ function recalc(){
   set('g2b1','g2b2','g2bv',10);
   set('g2c1','g2c2','g2cv',20);
   set('g2d1','g2d2','g2dv',30);
+  // proposta
+  const custo = 3500 + ver;
+  const mig = ponto > 0 ? custo / ponto : 0;
+  document.getElementById('pCom').textContent = fmt(rCom);
+  document.getElementById('pCusto').textContent = fmt(custo);
+  document.getElementById('pPonto').textContent = fmt(ponto);
+  document.getElementById('pMig').textContent = fmt1(mig) + ' pontos';
+  [[10,'t10'],[20,'t20'],[30,'t30']].forEach(([p, id]) => {
+    const ret = ponto * p, saldo = ret - custo;
+    document.getElementById(id+'r').textContent = fmt(ret);
+    document.getElementById(id+'c').textContent = fmt(custo);
+    document.getElementById(id+'s').textContent = fmt(saldo);
+    document.getElementById(id+'a').textContent = fmt(saldo * 12);
+    const g = saldo >= 0;
+    document.getElementById(id+'s').className = g ? 'g' : 'warn';
+    document.getElementById(id+'a').className = g ? 'g' : 'warn';
+  });
 }
 recalc();
 
