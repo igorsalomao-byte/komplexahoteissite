@@ -1,0 +1,848 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow,noarchive,nosnippet">
+<title>The World Vila Olímpia × Komplexa — Aquisição pelo canal direto</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Fraunces:ital,wght@1,400;1,500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#0B1526;--panel:#111F38;--panel2:#0E1A30;
+  --cy:#22D3EE;--cyd:#0EA5C9;--pur:#9A7BEA;--amb:#C4841A;
+  --bdr:rgba(255,255,255,.09);--bdr2:rgba(34,211,238,.28);
+  --tx:rgba(255,255,255,.72);--tx2:rgba(255,255,255,.55);
+  --fd:'Inter',system-ui,sans-serif;
+  --page-bg:#060d18;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{font-family:var(--fd);background:var(--page-bg);color:#fff;-webkit-font-smoothing:antialiased}
+
+.deck{display:flex;flex-direction:column;align-items:center;gap:30px;padding:56px 24px 90px}
+.slide{width:1280px;height:720px;border-radius:6px;overflow:hidden;box-shadow:0 18px 54px rgba(0,0,0,.5);position:relative;display:flex;flex-direction:column;background:var(--bg)}
+.slide::before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 78% 12%,rgba(34,211,238,.07) 0%,transparent 55%);pointer-events:none}
+.slide *{font-family:var(--fd)}
+.slide .top{display:flex;justify-content:space-between;align-items:center;padding:26px 52px 0;position:relative;z-index:2}
+.slide .top img.brand{height:26px;width:auto;opacity:.95}
+.slide .top .pg{font-size:10px;letter-spacing:1.6px;text-transform:uppercase;font-weight:600;color:rgba(255,255,255,.4)}
+.slide .body{flex:1;padding:20px 52px 8px;position:relative;z-index:2;display:flex;flex-direction:column;min-height:0}
+.slide .bot{padding:10px 52px 18px;display:flex;justify-content:space-between;align-items:flex-end;font-size:9px;color:rgba(255,255,255,.35);letter-spacing:.5px;text-transform:uppercase;position:relative;z-index:2;gap:30px}
+
+.eyebrow{display:inline-block;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:1.8px;margin-bottom:9px;color:var(--cy)}
+.title{font-weight:800;font-size:30px;line-height:1.08;letter-spacing:-.9px;margin:0 0 8px;color:#fff}
+.title em{font-style:italic;font-family:'Fraunces',Georgia,serif;font-weight:400;letter-spacing:-.3px;color:var(--cy)}
+.lead{font-size:13px;line-height:1.5;max-width:920px;color:var(--tx)}
+.lead strong{color:#fff;font-weight:600}
+
+.panel{background:var(--panel);border:1px solid var(--bdr);border-radius:12px}
+.kv .n{font-weight:800;letter-spacing:-1.5px;line-height:1;color:var(--cy)}
+.kv .l{color:var(--tx);line-height:1.4}
+.src{font-size:9.5px;color:rgba(255,255,255,.38);letter-spacing:.2px}
+.tagc{display:inline-block;font-size:9px;font-weight:700;letter-spacing:1.4px;text-transform:uppercase;color:var(--cy);margin-bottom:7px}
+
+/* COVER */
+.cov-grid{display:grid;grid-template-columns:1.5fr .9fr;gap:40px;flex:1;min-height:0;align-items:center}
+.selo{display:inline-block;font-size:10px;font-weight:700;letter-spacing:1.6px;text-transform:uppercase;color:var(--cy);border:1px solid var(--bdr2);border-radius:100px;padding:6px 16px;margin-bottom:20px}
+.cov-title{font-weight:800;font-size:44px;line-height:1.06;letter-spacing:-1.6px;color:#fff;margin-bottom:16px}
+.cov-title em{font-style:italic;font-family:'Fraunces',Georgia,serif;font-weight:400;color:var(--cy)}
+.cov-sub{font-size:14px;color:var(--tx);line-height:1.55;max-width:600px;margin-bottom:18px}
+.cov-tags{display:flex;gap:8px;flex-wrap:wrap}
+.cov-tags span{font-size:10.5px;font-weight:600;color:rgba(255,255,255,.85);background:var(--panel);border:1px solid var(--bdr);border-radius:100px;padding:7px 14px}
+.cov-side{display:flex;flex-direction:column;gap:10px}
+.cov-side .it{background:var(--panel);border:1px solid var(--bdr);border-radius:12px;padding:14px 18px}
+.cov-side .n{font-size:23px;font-weight:800;letter-spacing:-.8px;color:var(--cy);line-height:1.1}
+.cov-side .l{font-size:11px;color:var(--tx);line-height:1.4;margin-top:3px}
+
+/* GRIDS de blocos */
+.blk2{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:10px;flex:1;min-height:0}
+.blk{background:var(--panel);border:1px solid var(--bdr);border-radius:12px;padding:17px 20px}
+.blk .bt{font-size:10px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--cy);margin-bottom:7px}
+.blk p{font-size:12.5px;color:var(--tx);line-height:1.55}
+.blk p strong{color:#fff;font-weight:600}
+
+/* CARDS mercado */
+.mkt3{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:12px;flex:1;min-height:0}
+.mc{background:var(--panel);border:1px solid var(--bdr);border-radius:12px;padding:19px 21px;display:flex;flex-direction:column}
+.mc .n{font-size:34px;font-weight:800;letter-spacing:-1.4px;color:var(--cy);line-height:1;margin-bottom:5px}
+.mc .st{font-size:13px;font-weight:700;color:#fff;line-height:1.35;margin-bottom:8px}
+.mc p{font-size:11.5px;color:var(--tx);line-height:1.55;flex:1}
+.mc .src{margin-top:10px}
+
+/* PONTO DE PARTIDA */
+.kvrow{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:12px}
+.kvrow .it{background:var(--panel);border:1px solid var(--bdr);border-radius:11px;padding:13px 16px}
+.kvrow .n{font-size:22px;font-weight:800;letter-spacing:-.8px;color:var(--cy)}
+.kvrow .l{font-size:10.5px;color:var(--tx);line-height:1.4;margin-top:3px}
+.p3{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:12px;flex:1;min-height:0}
+.pc{background:var(--panel);border:1px solid var(--bdr);border-radius:12px;padding:16px 19px}
+.pc .h{font-size:12.5px;font-weight:700;color:#fff;margin-bottom:6px;line-height:1.3}
+.pc p{font-size:11.5px;color:var(--tx);line-height:1.5}
+
+/* CALCULADORA */
+.calc{display:grid;grid-template-columns:330px 1fr;gap:20px;margin-top:10px;flex:1;min-height:0}
+.calc-in{background:var(--panel);border:1px solid var(--bdr);border-radius:12px;padding:16px 18px;display:flex;flex-direction:column;gap:9px}
+.calc-in .ct{font-size:10px;font-weight:700;letter-spacing:1.4px;text-transform:uppercase;color:var(--cy);margin-bottom:2px}
+.fld{display:flex;align-items:center;justify-content:space-between;gap:10px}
+.fld label{font-size:11px;color:var(--tx);line-height:1.3;flex:1}
+.fld input{width:92px;background:var(--panel2);border:1px solid var(--bdr2);border-radius:8px;color:#fff;font-family:var(--fd);font-weight:700;font-size:14px;padding:8px 10px;text-align:right}
+.fld input:focus{outline:none;border-color:var(--cy)}
+.calc-out{display:flex;flex-direction:column;gap:10px;min-height:0}
+.res{background:var(--panel);border:1px solid var(--bdr);border-radius:11px;padding:12px 18px;display:flex;align-items:baseline;justify-content:space-between;gap:14px}
+.res .rl{font-size:10.5px;font-weight:700;letter-spacing:1.2px;text-transform:uppercase;color:var(--tx2)}
+.res .rv{font-size:22px;font-weight:800;letter-spacing:-.8px;color:#fff;white-space:nowrap}
+.res .rd{font-size:10px;color:var(--tx2);line-height:1.35}
+.res.hi{border-color:rgba(196,132,26,.5);background:linear-gradient(160deg,rgba(196,132,26,.1),var(--panel))}
+.res.hi .rv{color:#E8A33D}
+.scn{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.sc{background:var(--panel);border:1px solid var(--bdr);border-radius:11px;padding:13px 16px}
+.sc.base{border-color:var(--bdr2);background:linear-gradient(160deg,rgba(34,211,238,.08),var(--panel))}
+.sc .sl{font-size:9.5px;font-weight:700;letter-spacing:1.2px;text-transform:uppercase;color:var(--tx2);margin-bottom:5px}
+.sc .sv{font-size:21px;font-weight:800;letter-spacing:-.8px;color:var(--cy)}
+.sc .sd{font-size:10px;color:var(--tx);line-height:1.35;margin-top:4px}
+
+/* GRÁFICOS */
+.ch2{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:12px;flex:1;min-height:0}
+.chart{background:var(--panel);border:1px solid var(--bdr);border-radius:12px;padding:17px 20px;display:flex;flex-direction:column}
+.chart .ct{font-size:12.5px;font-weight:700;color:#fff;margin-bottom:12px}
+.brow{display:grid;grid-template-columns:150px 1fr 92px;gap:10px;align-items:center;margin-bottom:11px}
+.brow .bl{font-size:10.5px;color:var(--tx);line-height:1.3}
+.brow .tr{height:20px;border-radius:5px;background:rgba(255,255,255,.05);overflow:hidden;display:flex}
+.brow .seg{height:100%}
+.brow .bv{font-size:11px;font-weight:700;color:#fff;text-align:right;white-space:nowrap}
+.leg{display:flex;gap:14px;margin-top:auto;padding-top:8px;flex-wrap:wrap}
+.leg span{display:inline-flex;align-items:center;gap:6px;font-size:9.5px;color:var(--tx2)}
+.leg i{width:9px;height:9px;border-radius:3px;display:inline-block}
+
+/* MÉTODO fluxo */
+.mflow{display:grid;grid-template-columns:1fr 26px 1fr 26px 1fr 26px 1.15fr 26px 1fr 26px 1fr;gap:0;align-items:center;margin-top:14px}
+.mbox{background:var(--panel);border:1px solid var(--bdr);border-radius:11px;padding:12px 12px;text-align:center;min-height:86px;display:flex;flex-direction:column;justify-content:center}
+.mbox .h{font-size:11.5px;font-weight:700;color:#fff;line-height:1.25}
+.mbox .d{font-size:9.5px;color:var(--tx2);line-height:1.3;margin-top:3px}
+.mbox.cy{border-color:var(--bdr2)}
+.mbox.win{border-color:rgba(34,211,238,.55);background:linear-gradient(160deg,rgba(34,211,238,.1),var(--panel))}
+.mstack{display:flex;flex-direction:column;gap:8px}
+.mstack .mbox{min-height:0;padding:9px 10px}
+.marr{color:var(--cy);font-size:13px;text-align:center}
+.mmeas{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:12px}
+.mmeas .it{border:1px dashed var(--bdr2);border-radius:9px;padding:7px 12px;font-size:9.5px;color:var(--cy);letter-spacing:.6px;text-transform:uppercase;font-weight:600;text-align:center}
+.mret{margin-top:12px;border:1px dashed rgba(255,255,255,.25);border-radius:10px;padding:10px 16px;font-size:11px;color:var(--tx);text-align:center}
+.mret strong{color:#fff;font-weight:600}
+
+/* etapas registradas */
+.steps7{display:grid;grid-template-columns:repeat(7,1fr);gap:8px;margin-top:10px}
+.s7{background:var(--panel);border:1px solid var(--bdr);border-radius:10px;padding:10px 10px}
+.s7 .n{font-size:10px;font-weight:800;color:var(--cy);margin-bottom:3px}
+.s7 .h{font-size:10.5px;font-weight:700;color:#fff;line-height:1.25;margin-bottom:3px}
+.s7 .d{font-size:8.5px;color:var(--tx2);line-height:1.3}
+.tblwrap{margin-top:12px;background:var(--panel);border:1px solid var(--bdr);border-radius:12px;padding:14px 18px;flex:1;min-height:0;display:flex;flex-direction:column}
+.tblwrap .ct{font-size:12px;font-weight:700;color:#fff;margin-bottom:9px}
+table.tb{width:100%;border-collapse:collapse}
+.tb th{font-size:9px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--tx2);text-align:left;padding:6px 10px;border-bottom:1px solid var(--bdr)}
+.tb td{font-size:11px;color:var(--tx);padding:7px 10px;border-bottom:1px solid rgba(255,255,255,.05);line-height:1.35}
+.tb td b{color:#fff;font-weight:700}
+.tb td.g{color:var(--cy);font-weight:700}
+.tb td.warn{color:#E8A33D;font-weight:600}
+.tb tr:last-child td{border-bottom:none}
+.tbnote{font-size:9.5px;color:var(--tx2);margin-top:8px;line-height:1.45}
+
+/* DIAGNÓSTICO caminho */
+.dpath{display:grid;grid-template-columns:1fr 26px 1fr 26px 1fr 26px 1fr;gap:0;align-items:center;margin-top:14px}
+.dleak{margin-top:14px;background:rgba(196,132,26,.08);border:1px solid rgba(196,132,26,.4);border-radius:12px;padding:13px 20px}
+.dleak .h{font-size:12px;font-weight:700;color:#E8A33D;margin-bottom:7px}
+.dleak .row{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.dleak .c{font-size:10.5px;color:var(--tx);line-height:1.4}
+.dleak .c b{color:#fff;font-weight:600}
+.lac4{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-top:14px}
+.lac{display:flex;align-items:center;gap:10px;background:var(--panel);border:1px solid var(--bdr);border-radius:10px;padding:11px 14px;font-size:11px;font-weight:600;color:#fff;line-height:1.3}
+.lac .n{width:24px;height:24px;border-radius:8px;background:var(--cy);color:#06121F;font-weight:800;font-size:11px;display:grid;place-items:center;flex-shrink:0}
+
+/* lacunas hoje/passa a */
+.gap4{display:grid;grid-template-columns:1fr 1fr;gap:11px;margin-top:10px;flex:1;min-height:0}
+.gp{background:var(--panel);border:1px solid var(--bdr);border-radius:12px;padding:14px 18px}
+.gp .h{font-size:12.5px;font-weight:700;color:#fff;margin-bottom:7px;display:flex;gap:9px;align-items:baseline}
+.gp .h .n{color:var(--cy);font-weight:800}
+.gp .hj{font-size:10.5px;color:var(--tx);line-height:1.45;margin-bottom:6px}
+.gp .hj b{color:#E8A33D;font-weight:700;font-size:9px;letter-spacing:1px;text-transform:uppercase;display:block;margin-bottom:2px}
+.gp .pa{font-size:10.5px;color:var(--tx);line-height:1.45}
+.gp .pa b{color:var(--cy);font-weight:700;font-size:9px;letter-spacing:1px;text-transform:uppercase;display:block;margin-bottom:2px}
+
+/* ESTRUTURA 5 frentes */
+.estr{display:grid;grid-template-columns:230px 26px 1fr 26px 230px;gap:0;align-items:center;margin-top:12px}
+.estack{display:flex;flex-direction:column;gap:7px}
+.estack .mbox{min-height:0;padding:8px 10px}
+.f5{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:13px}
+.f5 .fc5{background:var(--panel);border:1px solid var(--bdr);border-radius:11px;padding:12px 15px}
+.f5 .fc5 .h{font-size:11.5px;font-weight:700;color:#fff;margin-bottom:4px;line-height:1.3}
+.f5 .fc5 p{font-size:10px;color:var(--tx);line-height:1.45}
+
+/* GOVERNANÇA tabela */
+.gov{margin-top:10px;flex:1;min-height:0;background:var(--panel);border:1px solid var(--bdr);border-radius:12px;padding:8px 16px;overflow:hidden}
+.gov table{width:100%;border-collapse:collapse}
+.gov th{font-size:9.5px;font-weight:700;letter-spacing:1.1px;text-transform:uppercase;color:var(--cy);text-align:left;padding:9px 12px;border-bottom:1px solid var(--bdr)}
+.gov td{font-size:10.5px;color:var(--tx);padding:8px 12px;border-bottom:1px solid rgba(255,255,255,.05);line-height:1.4;vertical-align:top}
+.gov td.f{font-weight:700;color:#fff;white-space:nowrap}
+.gov tr:last-child td{border-bottom:none}
+
+/* MÉTRICAS */
+.met4{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-top:10px}
+.mt{background:var(--panel);border:1px solid var(--bdr);border-radius:11px;padding:12px 15px}
+.mt .tg{font-size:8.5px;font-weight:700;letter-spacing:1.2px;text-transform:uppercase;color:var(--cy);margin-bottom:4px}
+.mt .h{font-size:12px;font-weight:700;color:#fff;margin-bottom:4px;line-height:1.3}
+.mt p{font-size:9.5px;color:var(--tx);line-height:1.4}
+.mixrow{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:12px}
+.mix{background:var(--panel);border:1px solid var(--bdr);border-radius:12px;padding:14px 18px;display:flex;align-items:center;gap:18px}
+.pie{width:86px;height:86px;border-radius:50%;flex-shrink:0;position:relative}
+.pie::after{content:"";position:absolute;inset:22px;border-radius:50%;background:var(--panel)}
+.mix .tx1{flex:1}
+.mix .h{font-size:12px;font-weight:700;color:#fff;margin-bottom:4px;line-height:1.3}
+.mix p{font-size:10px;color:var(--tx);line-height:1.4}
+.mix .lg{display:flex;flex-direction:column;gap:4px;margin-top:6px}
+.mix .lg span{display:inline-flex;align-items:center;gap:6px;font-size:9.5px;color:var(--tx2)}
+.mix .lg i{width:8px;height:8px;border-radius:3px}
+.metfoot{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:12px}
+.mf{background:var(--panel);border:1px solid var(--bdr);border-radius:11px;padding:12px 16px}
+.mf .tg{font-size:8.5px;font-weight:700;letter-spacing:1.2px;text-transform:uppercase;color:var(--cy);margin-bottom:4px}
+.mf p{font-size:10.5px;color:var(--tx);line-height:1.45}
+.mf p b{color:#fff;font-weight:600}
+
+/* GANTT */
+.gantt{margin-top:12px;background:var(--panel);border:1px solid var(--bdr);border-radius:12px;padding:16px 20px;flex:1;min-height:0;display:flex;flex-direction:column}
+.g-ph{display:grid;grid-template-columns:250px repeat(12,1fr);gap:3px;margin-bottom:6px}
+.g-ph .ph{grid-column:span 4;text-align:center;font-size:10px;font-weight:700;letter-spacing:1.2px;text-transform:uppercase;color:var(--cy);background:rgba(34,211,238,.07);border:1px solid var(--bdr2);border-radius:7px;padding:6px 0}
+.g-wk{display:grid;grid-template-columns:250px repeat(12,1fr);gap:3px;margin-bottom:8px}
+.g-wk span{text-align:center;font-size:8px;color:var(--tx2);font-weight:600}
+.g-row{display:grid;grid-template-columns:250px repeat(12,1fr);gap:3px;align-items:center;margin-bottom:7px}
+.g-row .gl{font-size:10.5px;color:var(--tx);line-height:1.25;padding-right:12px}
+.g-row .gl b{color:#fff;font-weight:600}
+.g-cell{height:16px;border-radius:4px;background:rgba(255,255,255,.04)}
+.g-cell.on{background:linear-gradient(90deg,var(--cyd),var(--cy));box-shadow:0 0 8px rgba(34,211,238,.25)}
+.g-cell.dot{background:rgba(255,255,255,.04);position:relative}
+.g-cell.dot::after{content:"";position:absolute;inset:3px 34%;background:var(--cy);border-radius:4px}
+
+/* 90 dias entregas */
+.m3{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:10px;flex:1;min-height:0}
+.m3c{background:var(--panel);border:1px solid var(--bdr);border-radius:12px;padding:15px 18px;display:flex;flex-direction:column}
+.m3c .h{font-size:13px;font-weight:800;color:#fff;margin-bottom:9px}
+.m3c .h small{display:block;font-size:9.5px;font-weight:700;letter-spacing:1.3px;text-transform:uppercase;color:var(--cy);margin-bottom:3px}
+.m3c ul{list-style:none;display:flex;flex-direction:column;gap:6px;flex:1}
+.m3c li{display:grid;grid-template-columns:14px 1fr;gap:8px;font-size:10.5px;color:var(--tx);line-height:1.45}
+.m3c li::before{content:"";width:5px;height:5px;border-radius:2px;background:var(--cy);margin-top:5px}
+.m3c .ve{margin-top:10px;border-top:1px solid var(--bdr);padding-top:8px;font-size:10px;color:var(--tx);line-height:1.4}
+.m3c .ve b{color:var(--cy);font-weight:700;font-size:8.5px;letter-spacing:1.1px;text-transform:uppercase;display:block;margin-bottom:2px}
+
+/* INVESTIMENTO/DECISÃO */
+.dec2{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:10px}
+.dcol{background:var(--panel);border:1px solid var(--bdr);border-radius:12px;padding:15px 19px}
+.dcol .ct{font-size:10px;font-weight:700;letter-spacing:1.4px;text-transform:uppercase;color:var(--cy);margin-bottom:9px}
+.dcol ul{list-style:none;display:flex;flex-direction:column;gap:8px}
+.dcol li{display:grid;grid-template-columns:17px 1fr;gap:9px;font-size:11px;color:var(--tx);line-height:1.5}
+.dcol li .k{width:14px;height:14px;border-radius:50%;background:var(--cy);color:#06121F;font-size:8px;font-weight:800;display:grid;place-items:center;margin-top:2px}
+.dcol li b{color:#fff;font-weight:600}
+.dcol ol{list-style:none;display:flex;flex-direction:column;gap:8px;counter-reset:st}
+.dcol ol li{display:grid;grid-template-columns:20px 1fr;gap:9px;font-size:11px;color:var(--tx);line-height:1.5}
+.dcol ol li::before{counter-increment:st;content:counter(st);width:17px;height:17px;border-radius:6px;background:var(--cy);color:#06121F;font-size:9.5px;font-weight:800;display:grid;place-items:center;margin-top:1px}
+.disc{margin-top:12px;border:1px dashed rgba(255,255,255,.22);border-radius:10px;padding:10px 16px;font-size:9.5px;color:var(--tx2);line-height:1.5}
+.disc b{color:var(--tx);font-weight:600}
+.fontes{margin-top:8px;font-size:8.5px;color:rgba(255,255,255,.35);line-height:1.5}
+
+/* PRESENT */
+.toggle-present{position:fixed;top:14px;right:14px;background:linear-gradient(90deg,var(--cyd),var(--cy));color:#06121F;border:none;padding:8px 16px;border-radius:8px;font-family:var(--fd);font-weight:700;font-size:12px;cursor:pointer;z-index:99}
+.nav-hint{position:fixed;bottom:12px;left:50%;transform:translateX(-50%);font-size:11px;color:rgba(255,255,255,.4);z-index:99;display:none;font-family:var(--fd)}
+.deck.present{padding:0;gap:0;background:#000;position:fixed;inset:0;overflow:hidden;display:flex;align-items:center;justify-content:center}
+.deck.present .slide{display:none;transform:scale(var(--present-scale,1));transform-origin:center;box-shadow:none;border-radius:0}
+.deck.present .slide.active{display:flex}
+.deck.present ~ .nav-hint{display:block}
+
+@media (max-width:760px){
+  .deck{padding:0;gap:0}
+  .slide{width:100%;height:auto;min-height:0;border-radius:0}
+  .slide .top{padding:18px 20px 0}
+  .slide .body{padding:16px 20px}
+  .slide .bot{padding:10px 20px 16px}
+  .toggle-present,.nav-hint{display:none!important}
+  .title{font-size:22px!important}
+  .cov-grid,.blk2,.mkt3,.p3,.calc,.ch2,.gap4,.f5,.m3,.dec2,.mixrow,.metfoot,.dleak .row{grid-template-columns:1fr}
+  .kvrow,.met4,.lac4{grid-template-columns:1fr 1fr}
+  .cov-title{font-size:30px}
+  .steps7{grid-template-columns:repeat(2,1fr)}
+  .mflow,.dpath,.estr{display:flex;flex-direction:column;gap:8px}
+  .marr{transform:rotate(90deg)}
+  .mmeas{grid-template-columns:1fr}
+  .gantt{overflow-x:auto}
+  .g-ph,.g-wk,.g-row{min-width:720px}
+  .tblwrap{overflow-x:auto}
+  table.tb{min-width:640px}
+  .gov{overflow-x:auto}
+  .gov table{min-width:640px}
+}
+@media print{.toggle-present,.nav-hint{display:none!important}.deck{padding:0;gap:0}.slide{box-shadow:none;border-radius:0;page-break-after:always;break-after:page}}
+</style>
+</head>
+<body>
+
+<button class="toggle-present" onclick="togglePresent()">Apresentar</button>
+
+<div class="deck" id="deck">
+
+<!-- 01 CAPA -->
+<section class="slide active">
+  <div class="top"><img class="brand" src="assets/logotipo_white.svg" alt="Komplexa"><span class="pg">Komplexa Hotéis · The World Vila Olímpia</span></div>
+  <div class="body">
+    <div class="cov-grid">
+      <div>
+        <span class="selo">Apresentação para a diretoria · setembro de 2026</span>
+        <h1 class="cov-title">Aquisição pelo canal direto: <em>estrutura, governança e retorno</em></h1>
+        <p class="cov-sub">Uma proposta para reduzir a dependência de intermediários no The World Vila Olímpia, com cada reserva medida da impressão do anúncio até a receita no PMS, dados nas contas do próprio hotel e prestação de contas mensal.</p>
+        <div class="cov-tags">
+          <span>Cada reserva medida até o PMS</span>
+          <span>Dados nas contas do hotel</span>
+          <span>Prestação de contas mensal</span>
+        </div>
+      </div>
+      <div class="cov-side">
+        <div class="it"><div class="n">160</div><div class="l">apartamentos em duas categorias, Vila Olímpia, São Paulo</div></div>
+        <div class="it"><div class="n">R$ 400 a 450</div><div class="l">diária média praticada</div></div>
+        <div class="it"><div class="n">~50%</div><div class="l">das reservas via intermediários, com 15% a 18% de comissão</div></div>
+        <div class="it"><div class="n">8,7 · 9,1</div><div class="l">reputação na Booking.com e no Trip.com; motor de reservas próprio</div></div>
+      </div>
+    </div>
+  </div>
+  <div class="bot"><span style="text-transform:none;letter-spacing:.2px;max-width:900px">Preparado pela Komplexa Hotéis para a área de Reservas e Revenue Management, como apoio à apresentação à diretoria. Documento de apoio à decisão; valores comerciais na proposta comercial que o acompanha.</span><span>01 · 16</span></div>
+</section>
+
+<!-- 02 SUMÁRIO EXECUTIVO -->
+<section class="slide">
+  <div class="top"><img class="brand" src="assets/logotipo_white.svg" alt="Komplexa"><span class="pg">02 · 16</span></div>
+  <div class="body">
+    <div class="eyebrow">01 · Sumário executivo</div>
+    <h2 class="title">A decisão em <em>uma página</em>.</h2>
+    <div class="blk2">
+      <div class="blk"><div class="bt">Situação</div><p>O hotel opera com ocupação saudável, diária média entre R$ 400 e R$ 450 e reputação consistente nos principais canais. <strong>Cerca de metade das reservas chega por intermediários</strong>, que cobram entre 15% e 18% de comissão sobre cada diária vendida.</p></div>
+      <div class="blk"><div class="bt">Proposta</div><p>Estruturar a aquisição direta como uma operação contínua: captura da demanda que já procura o hotel, recuperação de quem visitou e não reservou, site e Instagram preparados para converter, e <strong>rastreamento ponta a ponta até a reserva no motor</strong>. Tudo nas contas do próprio hotel.</p></div>
+      <div class="blk"><div class="bt">O que muda</div><p>Pela primeira vez o hotel enxerga o caminho inteiro: <strong>qual anúncio gerou qual reserva e quanto de receita</strong>, campanha por campanha. A mídia passa a ser decidida por retorno, não por clique. E cada ponto percentual migrado do intermediário para o canal direto fica no caixa, na forma de comissão não paga.</p></div>
+      <div class="blk" style="border-color:var(--bdr2)"><div class="bt">Decisão pedida</div><p>Aprovar a estruturação do canal direto por um <strong>ciclo inicial de 90 dias, sem fidelidade</strong>, com verba de mídia definida pela diretoria e avaliação mensal dos resultados. Valores na proposta comercial que acompanha este documento.</p></div>
+    </div>
+  </div>
+  <div class="bot"><span>Komplexa Hotéis · komplexahoteis.com</span><span>02 · 16</span></div>
+</section>
+
+<!-- 03 CONTEXTO DE MERCADO -->
+<section class="slide">
+  <div class="top"><img class="brand" src="assets/logotipo_white.svg" alt="Komplexa"><span class="pg">03 · 16</span></div>
+  <div class="body">
+    <div class="eyebrow">02 · Contexto de mercado</div>
+    <h2 class="title">Três movimentos de 2026 que <em>pesam na decisão</em>.</h2>
+    <p class="lead">Dados públicos do setor, sem relação com números internos do hotel.</p>
+    <div class="mkt3">
+      <div class="mc">
+        <span class="tagc">Hotelaria paulista</span>
+        <div class="n">59,7%</div>
+        <div class="st">ocupação no estado de SP em maio de 2026</div>
+        <p>Diária média de R$ 567 e RevPAR de R$ 338, com retomada gradual do corporativo e lazer em desaceleração. O mercado cresce em receita por apartamento, não em volume.</p>
+        <div class="src">Fonte: ABIH-SP e FOHB, maio de 2026</div>
+      </div>
+      <div class="mc">
+        <span class="tagc">Intermediários</span>
+        <div class="n">18%</div>
+        <div class="st">nova comissão da Booking.com no programa Preferred</div>
+        <p>Em vigor desde 1º de julho de 2026 para hotéis brasileiros, ante 15% da tarifa padrão. A hotelaria acionou o CADE. O custo de vender por intermediário subiu no mesmo ano em que a diária cresce.</p>
+        <div class="src">Fonte: Panrotas e Hotelier News, julho de 2026</div>
+      </div>
+      <div class="mc">
+        <span class="tagc">Marketplace</span>
+        <div class="n">+1</div>
+        <div class="st">operador vendendo unidades do mesmo edifício</div>
+        <p>Flats do endereço do hotel aparecem nas OTAs sob outra bandeira, com as mesmas áreas comuns. No marketplace, o hotel disputa atenção e preço com anúncios do próprio prédio. No canal direto, a oferta é só dele.</p>
+        <div class="src">Fonte: Booking, Hotels.com, Trivago e Decolar, setembro de 2026</div>
+      </div>
+    </div>
+  </div>
+  <div class="bot"><span>Komplexa Hotéis · komplexahoteis.com</span><span>03 · 16</span></div>
+</section>
+
+<!-- 04 PONTO DE PARTIDA -->
+<section class="slide">
+  <div class="top"><img class="brand" src="assets/logotipo_white.svg" alt="Komplexa"><span class="pg">04 · 16</span></div>
+  <div class="body">
+    <div class="eyebrow">03 · Ponto de partida</div>
+    <h2 class="title">Um hotel que já vende bem. <em>A questão é por onde.</em></h2>
+    <p class="lead">O The World tem produto, localização, reputação e motor de reservas em operação. A estrutura de aquisição direta é a peça que falta para que essa base trabalhe a favor da margem.</p>
+    <div class="kvrow">
+      <div class="it"><div class="n">160</div><div class="l">apartamentos de 32 m², dois ambientes, em duas categorias</div></div>
+      <div class="it"><div class="n">R$ 400 a 450</div><div class="l">diária média praticada</div></div>
+      <div class="it"><div class="n">~50%</div><div class="l">das reservas via intermediários (OTAs)</div></div>
+      <div class="it"><div class="n">8,7 · 9,1 · 4,4</div><div class="l">Booking (789 avaliações), Trip.com (137) e Google (mais de 1.800)</div></div>
+    </div>
+    <div class="p3">
+      <div class="pc"><span class="tagc">Produto</span><div class="h">Apart-hotel corporativo com lazer</div><p>Cozinha americana, estação de trabalho, piscina com jacuzzi, sauna, academia, restaurante, duas salas de eventos para até 60 pessoas. Café da manhã elogiado em todos os canais.</p></div>
+      <div class="pc"><span class="tagc">Localização</span><div class="h">Vila Olímpia, a 5 minutos da Berrini</div><p>Shopping Vila Olímpia, JK Iguatemi, Faria Lima e Ibirapuera no raio de poucos minutos. Demanda corporativa durante a semana e lazer urbano no fim de semana.</p></div>
+      <div class="pc"><span class="tagc">Infraestrutura digital</span><div class="h">Motor Omnibees ativo, site institucional, Instagram com 3,6 mil seguidores</div><p>O caminho técnico para a reserva direta existe. O que não existe é a operação que leva o hóspede até ele e mede o que acontece depois.</p></div>
+    </div>
+  </div>
+  <div class="bot"><span>Komplexa Hotéis · komplexahoteis.com</span><span>04 · 16</span></div>
+</section>
+
+<!-- 05 CUSTO DA INTERMEDIAÇÃO · CALCULADORA -->
+<section class="slide">
+  <div class="top"><img class="brand" src="assets/logotipo_white.svg" alt="Komplexa"><span class="pg">05 · 16</span></div>
+  <div class="body">
+    <div class="eyebrow">04 · O custo da intermediação</div>
+    <h2 class="title">Quanto o hotel paga hoje para <em>ser vendido por terceiros</em>.</h2>
+    <p class="lead">A calculadora usa os números do próprio hotel. Todos os campos podem ser ajustados durante a reunião; os resultados recalculam na hora. Não é projeção de resultado: é a leitura do que a estrutura atual custa.</p>
+    <div class="calc">
+      <div class="calc-in">
+        <div class="ct">Premissas do hotel</div>
+        <div class="fld"><label>Apartamentos (inventário vendável)</label><input type="number" id="cApt" value="160" oninput="recalc()"></div>
+        <div class="fld"><label>Diária média (em reais)</label><input type="number" id="cDia" value="425" oninput="recalc()"></div>
+        <div class="fld"><label>Ocupação média (% do mês)</label><input type="number" id="cOcc" value="70" oninput="recalc()"></div>
+        <div class="fld"><label>Reservas por intermediários (% da receita)</label><input type="number" id="cOta" value="50" oninput="recalc()"></div>
+        <div class="fld"><label>Comissão média (% sobre a diária)</label><input type="number" id="cCom" value="16.5" step="0.5" oninput="recalc()"></div>
+      </div>
+      <div class="calc-out">
+        <div class="res"><div><div class="rl">Receita mensal de hospedagem</div><div class="rd">apartamentos × diária × 30 dias × ocupação</div></div><div class="rv" id="rRec">R$ 1.428.000</div></div>
+        <div class="res"><div><div class="rl">Receita via intermediários</div><div class="rd">parcela que passa por OTA antes de chegar ao hotel</div></div><div class="rv" id="rOta">R$ 714.000</div></div>
+        <div class="res hi"><div><div class="rl">Comissão paga por mês</div><div class="rd">Custo recorrente da estrutura atual. Por ano: <b id="rComAno" style="color:#E8A33D">R$ 1.413.720</b>.</div></div><div class="rv" id="rCom">R$ 117.810</div></div>
+        <div class="scn">
+          <div class="sc"><div class="sl">Cenário conservador</div><div class="sv" id="s10">R$ 23.562</div><div class="sd">10 pontos migrados para o direto, por mês</div></div>
+          <div class="sc base"><div class="sl">Cenário base</div><div class="sv" id="s20">R$ 47.124</div><div class="sd">20 pontos migrados para o direto, por mês</div></div>
+          <div class="sc"><div class="sl">Cenário otimista</div><div class="sv" id="s30">R$ 70.686</div><div class="sd">30 pontos migrados para o direto, por mês</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="bot"><span>Komplexa Hotéis · komplexahoteis.com</span><span>05 · 16</span></div>
+</section>
+
+<!-- 06 GRÁFICOS -->
+<section class="slide">
+  <div class="top"><img class="brand" src="assets/logotipo_white.svg" alt="Komplexa"><span class="pg">06 · 16</span></div>
+  <div class="body">
+    <div class="eyebrow">04 · O custo da intermediação</div>
+    <h2 class="title">Como a receita se divide, e o que <em>muda em cada cenário</em>.</h2>
+    <p class="lead">Os cenários mostram a comissão que deixa de ser paga quando parte das reservas passa a entrar pelo canal direto, mantidos os mesmos volume e diária. Não incluem a verba de mídia nem a assessoria, que entram na proposta comercial para a comparação final.</p>
+    <div class="ch2">
+      <div class="chart">
+        <div class="ct">Para onde vai a receita de um mês</div>
+        <div class="brow"><span class="bl">Reservas diretas</span><span class="tr"><span class="seg" id="g1a" style="background:#0EA5C9;width:100%"></span></span><span class="bv" id="g1av">R$ 714.000</span></div>
+        <div class="brow"><span class="bl">Via intermediários, líquido para o hotel</span><span class="tr"><span class="seg" id="g1b" style="background:#9A7BEA;width:83%"></span></span><span class="bv" id="g1bv">R$ 596.190</span></div>
+        <div class="brow"><span class="bl">Comissão paga ao intermediário</span><span class="tr"><span class="seg" id="g1c" style="background:#C4841A;width:17%"></span></span><span class="bv" id="g1cv">R$ 117.810</span></div>
+        <div class="leg"><span><i style="background:#0EA5C9"></i>Reservas diretas</span><span><i style="background:#9A7BEA"></i>Via intermediários, líquido</span><span><i style="background:#C4841A"></i>Comissão paga</span></div>
+      </div>
+      <div class="chart">
+        <div class="ct">Comissão mensal em cada cenário</div>
+        <div class="brow"><span class="bl">Hoje</span><span class="tr"><span class="seg" id="g2a1" style="background:#C4841A;width:100%"></span></span><span class="bv" id="g2av">R$ 117.810</span></div>
+        <div class="brow"><span class="bl">Conservador: 10 pontos</span><span class="tr"><span class="seg" id="g2b1" style="background:#C4841A;width:80%"></span><span class="seg" id="g2b2" style="background:#0EA5C9;width:20%"></span></span><span class="bv" id="g2bv">R$ 94.248</span></div>
+        <div class="brow"><span class="bl">Base: 20 pontos</span><span class="tr"><span class="seg" id="g2c1" style="background:#C4841A;width:60%"></span><span class="seg" id="g2c2" style="background:#0EA5C9;width:40%"></span></span><span class="bv" id="g2cv">R$ 70.686</span></div>
+        <div class="brow"><span class="bl">Otimista: 30 pontos</span><span class="tr"><span class="seg" id="g2d1" style="background:#C4841A;width:40%"></span><span class="seg" id="g2d2" style="background:#0EA5C9;width:60%"></span></span><span class="bv" id="g2dv">R$ 47.124</span></div>
+        <div class="leg"><span><i style="background:#C4841A"></i>Comissão paga</span><span><i style="background:#0EA5C9"></i>Comissão retida pelo hotel</span></div>
+      </div>
+    </div>
+  </div>
+  <div class="bot"><span>Komplexa Hotéis · komplexahoteis.com</span><span>06 · 16</span></div>
+</section>
+
+<!-- 07 MÉTODO · FLUXO -->
+<section class="slide">
+  <div class="top"><img class="brand" src="assets/logotipo_white.svg" alt="Komplexa"><span class="pg">07 · 16</span></div>
+  <div class="body">
+    <div class="eyebrow">05 · O método</div>
+    <h2 class="title">Do dado do PMS à reserva efetuada, <em>com cada etapa medida</em>.</h2>
+    <p class="lead">Esta é a mudança que a gerência e a diretoria vão sentir primeiro. Hoje a mídia termina no clique. Na estrutura proposta, o dado do hotel alimenta os anúncios, o anúncio leva ao motor, a reserva volta ao PMS com a origem gravada, e o relatório diz qual campanha pagou a própria verba e qual não pagou.</p>
+    <div class="mflow">
+      <div class="mbox"><div class="h">Dados do PMS e do motor</div><div class="d">hóspedes, reservas, tarifas</div></div>
+      <div class="marr">›</div>
+      <div class="mbox"><div class="h">Públicos e criativos</div><div class="d">aprovados pelo hotel</div></div>
+      <div class="marr">›</div>
+      <div class="mstack">
+        <div class="mbox cy"><div class="h">Google Ads</div><div class="d">marca e destino</div></div>
+        <div class="mbox cy"><div class="h">Meta Ads</div><div class="d">remarketing e públicos</div></div>
+      </div>
+      <div class="marr">›</div>
+      <div class="mbox cy"><div class="h">Site + motor Omnibees</div><div class="d">rastreamento completo</div></div>
+      <div class="marr">›</div>
+      <div class="mstack">
+        <div class="mbox"><div class="h">Checkout no motor</div></div>
+        <div class="mbox"><div class="h">WhatsApp + equipe de reservas</div></div>
+      </div>
+      <div class="marr">›</div>
+      <div class="mbox win"><div class="h">Reserva efetuada</div></div>
+    </div>
+    <div class="mmeas">
+      <div class="it">medido: impressão e clique</div>
+      <div class="it">medido: visita e consulta de datas</div>
+      <div class="it">medido: início e conclusão da reserva</div>
+    </div>
+    <div class="mret">A reserva volta ao PMS com <strong>origem, campanha e valor</strong>: é isso que fecha a conta de retorno por campanha.</div>
+  </div>
+  <div class="bot"><span>Komplexa Hotéis · komplexahoteis.com</span><span>07 · 16</span></div>
+</section>
+
+<!-- 08 MÉTODO · REGISTROS + TABELA -->
+<section class="slide">
+  <div class="top"><img class="brand" src="assets/logotipo_white.svg" alt="Komplexa"><span class="pg">08 · 16</span></div>
+  <div class="body">
+    <div class="eyebrow">05 · O método</div>
+    <h2 class="title">O que fica registrado em cada etapa, e o que <em>a gerência passa a ver</em>.</h2>
+    <div class="steps7">
+      <div class="s7"><div class="n">1</div><div class="h">Impressão</div><div class="d">O anúncio foi exibido. Google Ads e Meta Ads</div></div>
+      <div class="s7"><div class="n">2</div><div class="h">Clique</div><div class="d">Campanha, público e anúncio na URL. UTM padronizada</div></div>
+      <div class="s7"><div class="n">3</div><div class="h">Visita ao site</div><div class="d">Origem preservada na sessão. GA4 e Tag Manager</div></div>
+      <div class="s7"><div class="n">4</div><div class="h">Consulta de datas</div><div class="d">O hóspede abriu o motor e pesquisou. Eventos do Omnibees</div></div>
+      <div class="s7"><div class="n">5</div><div class="h">Início da reserva</div><div class="d">Dados preenchidos, pagamento iniciado. Omnibees e pixel</div></div>
+      <div class="s7"><div class="n">6</div><div class="h">Reserva confirmada</div><div class="d">Valor, datas e categoria. Evento de compra com valor</div></div>
+      <div class="s7"><div class="n">7</div><div class="h">Conciliação no PMS</div><div class="d">Receita real, cancelamentos e no-show descontados. Relatório mensal</div></div>
+    </div>
+    <div class="tblwrap">
+      <div class="ct">Como a gerência passa a ver a mídia: retorno por campanha (exemplo ilustrativo)</div>
+      <table class="tb">
+        <tr><th>Campanha</th><th>Investimento</th><th>Reservas</th><th>Receita</th><th>Custo por reserva</th><th>Retorno</th><th>Decisão</th></tr>
+        <tr><td><b>Busca pelo nome do hotel</b></td><td>R$ 1.200</td><td>18</td><td>R$ 21.600</td><td>R$ 67</td><td class="g">18,0×</td><td class="g">escalar</td></tr>
+        <tr><td><b>Remarketing, visitou e não reservou</b></td><td>R$ 2.100</td><td>14</td><td>R$ 16.800</td><td>R$ 150</td><td class="g">8,0×</td><td class="g">escalar</td></tr>
+        <tr><td><b>Destino: hospedagem na Vila Olímpia</b></td><td>R$ 3.400</td><td>9</td><td>R$ 11.700</td><td>R$ 378</td><td>3,4×</td><td>manter</td></tr>
+        <tr><td><b>Lazer fim de semana, interesse</b></td><td>R$ 1.800</td><td>2</td><td>R$ 1.900</td><td>R$ 900</td><td class="warn">1,1×</td><td class="warn">revisar ou pausar</td></tr>
+      </table>
+      <div class="tbnote">Retorno é a receita direta gerada dividida pela verba da campanha. A comissão que deixou de ser paga ao intermediário entra na leitura como ganho adicional, não está no retorno acima.</div>
+    </div>
+  </div>
+  <div class="bot"><span>Komplexa Hotéis · komplexahoteis.com</span><span>08 · 16</span></div>
+</section>
+
+<!-- 09 DIAGNÓSTICO · CAMINHO -->
+<section class="slide">
+  <div class="top"><img class="brand" src="assets/logotipo_white.svg" alt="Komplexa"><span class="pg">09 · 16</span></div>
+  <div class="body">
+    <div class="eyebrow">06 · Diagnóstico do canal direto</div>
+    <h2 class="title">O que falta não é produto. <em>É aquisição estruturada.</em></h2>
+    <p class="lead">Quatro lacunas explicam por que a demanda chega pelo intermediário mesmo com motor próprio e boa reputação. Nenhuma delas é de operação hoteleira; todas são de marketing e dados, e a trilha de medição da seção anterior fecha as quatro.</p>
+    <div class="dpath">
+      <div class="mbox"><div class="h">Hóspede procura</div><div class="d">hotel na Vila Olímpia</div></div>
+      <div class="marr">›</div>
+      <div class="mbox"><div class="h">Encontra o hotel</div><div class="d">busca, anúncio, indicação</div></div>
+      <div class="marr">›</div>
+      <div class="mbox"><div class="h">Visita o site</div><div class="d">e consulta datas no motor</div></div>
+      <div class="marr">›</div>
+      <div class="mbox win"><div class="h">Reserva direta</div><div class="d">no Omnibees do hotel</div></div>
+    </div>
+    <div class="dleak">
+      <div class="h">Reserva pelo intermediário: 15% a 18% da diária pagos em comissão</div>
+      <div class="row">
+        <div class="c"><b>Sem proteção de marca,</b> a OTA aparece primeiro</div>
+        <div class="c"><b>Sem remarketing,</b> quem sai não volta</div>
+        <div class="c"><b>Sem rastreamento,</b> a reserva não tem origem</div>
+      </div>
+    </div>
+    <div class="lac4">
+      <div class="lac"><span class="n">1</span>A reserva não é rastreada até o fim</div>
+      <div class="lac"><span class="n">2</span>Quem busca o nome do hotel é levado ao intermediário</div>
+      <div class="lac"><span class="n">3</span>Quem visitou e não reservou é perdido</div>
+      <div class="lac"><span class="n">4</span>A mídia anterior foi medida em clique</div>
+    </div>
+  </div>
+  <div class="bot"><span>Komplexa Hotéis · komplexahoteis.com</span><span>09 · 16</span></div>
+</section>
+
+<!-- 10 DIAGNÓSTICO · HOJE/PASSA A -->
+<section class="slide">
+  <div class="top"><img class="brand" src="assets/logotipo_white.svg" alt="Komplexa"><span class="pg">10 · 16</span></div>
+  <div class="body">
+    <div class="eyebrow">06 · Diagnóstico do canal direto</div>
+    <h2 class="title">Quatro lacunas: como é hoje e <em>o que passa a acontecer</em>.</h2>
+    <div class="gap4">
+      <div class="gp">
+        <div class="h"><span class="n">1</span>A reserva não é rastreada até o fim</div>
+        <div class="hj"><b>Hoje</b>Não há como saber de qual anúncio, busca ou visita veio uma reserva feita no motor. Sem isso, toda decisão de mídia é opinião.</div>
+        <div class="pa"><b>Passa a</b>Cada reserva no Omnibees registrada com origem, campanha e valor. A diretoria vê receita direta por canal, não cliques.</div>
+      </div>
+      <div class="gp">
+        <div class="h"><span class="n">2</span>Quem busca o nome do hotel é levado ao intermediário</div>
+        <div class="hj"><b>Hoje</b>A busca por "The World Vila Olímpia" mostra OTAs e um site espelho de terceiro antes do site oficial. Demanda que já era do hotel é comissionada.</div>
+        <div class="pa"><b>Passa a</b>Campanha de proteção de marca no Google: quem procura o hotel encontra o site e o motor em primeiro lugar, ao menor custo por reserva de todo o plano.</div>
+      </div>
+      <div class="gp">
+        <div class="h"><span class="n">3</span>Quem visitou e não reservou é perdido</div>
+        <div class="hj"><b>Hoje</b>A maioria das visitas ao site e ao motor não converte na primeira vez. Sem remarketing, esse hóspede fecha depois na OTA, que o persegue por semanas.</div>
+        <div class="pa"><b>Passa a</b>Remarketing em Meta e Google para quem abriu o site, consultou datas ou abandonou a reserva, com a oferta do canal direto definida pelo RM.</div>
+      </div>
+      <div class="gp">
+        <div class="h"><span class="n">4</span>A mídia anterior foi medida em clique</div>
+        <div class="hj"><b>Hoje</b>As experiências com agências entregaram relatórios de cliques e impressões. Clique não paga diária, e a diretoria não conseguia relacionar verba a receita.</div>
+        <div class="pa"><b>Passa a</b>Métrica única de sucesso: reservas e receita geradas por real investido. Campanha que não gera reserva rastreada é pausada, não defendida.</div>
+      </div>
+    </div>
+  </div>
+  <div class="bot"><span>Komplexa Hotéis · komplexahoteis.com</span><span>10 · 16</span></div>
+</section>
+
+<!-- 11 ESTRUTURA PROPOSTA -->
+<section class="slide">
+  <div class="top"><img class="brand" src="assets/logotipo_white.svg" alt="Komplexa"><span class="pg">11 · 16</span></div>
+  <div class="body">
+    <div class="eyebrow">07 · Estrutura proposta</div>
+    <h2 class="title">Cinco frentes, <em>uma operação contínua</em>.</h2>
+    <p class="lead">Tudo é implantado nas contas de titularidade do hotel. Se a parceria terminar, campanhas, públicos, pixels, dados e site continuam com o The World.</p>
+    <div class="estr">
+      <div class="estack">
+        <div class="mbox"><div class="h">Google: marca e destino</div></div>
+        <div class="mbox"><div class="h">Remarketing Meta e Google</div></div>
+        <div class="mbox"><div class="h">Site e Instagram</div></div>
+        <div class="mbox"><div class="h">Equipe de reservas do hotel</div></div>
+      </div>
+      <div class="marr">›</div>
+      <div class="mbox cy" style="min-height:120px"><div class="h">Motor Omnibees</div><div class="d">reserva com origem, campanha e valor rastreados</div></div>
+      <div class="marr">›</div>
+      <div class="estack">
+        <div class="mbox win"><div class="h">Relatório mensal</div><div class="d">reservas e receita por canal</div></div>
+        <div class="mbox win"><div class="h">Decisão da diretoria</div><div class="d">verba e prioridades do mês</div></div>
+      </div>
+    </div>
+    <div class="f5">
+      <div class="fc5"><div class="h">Google: proteção de marca e busca de destino</div><p>Campanhas para quem pesquisa o nome do hotel e para quem pesquisa hospedagem na Vila Olímpia, Itaim e Berrini, com rastreamento de reserva e lances por retorno, não por clique.</p></div>
+      <div class="fc5"><div class="h">Remarketing em Meta e Google</div><p>Sequências para quem visitou o site, consultou o motor ou abandonou a reserva. Públicos construídos nas contas do hotel e criativos produzidos pela Komplexa, com aprovação do hotel.</p></div>
+      <div class="fc5"><div class="h">Site e Instagram como pontos de conversão</div><p>Ajustes no site para levar ao motor com menos atrito, perfil do Instagram estruturado para reserva direta e materiais para a equipe de reservas responder com padrão. Sem produção continuada de conteúdo, salvo se contratada.</p></div>
+      <div class="fc5"><div class="h">Rastreamento ponta a ponta</div><p>Google Analytics, Tag Manager, pixel da Meta e eventos de reserva do Omnibees configurados e validados. Origem, campanha e valor de cada reserva direta disponíveis para o hotel a qualquer momento.</p></div>
+      <div class="fc5"><div class="h">Prestação de contas mensal</div><p>Relatório até o quinto dia útil com investimento, reservas e receita por canal, e reunião mensal com a área de Reservas e RM para leitura e decisão do mês seguinte. A diretoria recebe o resumo em uma página.</p></div>
+    </div>
+  </div>
+  <div class="bot"><span>Komplexa Hotéis · komplexahoteis.com</span><span>11 · 16</span></div>
+</section>
+
+<!-- 12 GOVERNANÇA -->
+<section class="slide">
+  <div class="top"><img class="brand" src="assets/logotipo_white.svg" alt="Komplexa"><span class="pg">12 · 16</span></div>
+  <div class="body">
+    <div class="eyebrow">08 · Governança e responsabilidades</div>
+    <h2 class="title">Quem faz <em>o quê</em>.</h2>
+    <p class="lead">A estrutura funciona quando cada parte cuida do que domina. A Komplexa opera aquisição e dados; o hotel mantém o controle comercial e a relação com o hóspede.</p>
+    <div class="gov">
+      <table>
+        <tr><th style="width:170px">Frente</th><th>Komplexa Hotéis</th><th>The World Vila Olímpia</th></tr>
+        <tr><td class="f">Mídia paga</td><td>Planejamento, operação diária, otimização e criativos das campanhas em Google e Meta</td><td>Aprovação de peças e de ofertas; verba paga diretamente às plataformas, nas contas do hotel</td></tr>
+        <tr><td class="f">Política comercial do canal direto</td><td>Recomendações a partir dos dados de conversão</td><td>Tarifas, ofertas e condições do canal direto definidas pela área de Reservas e RM</td></tr>
+        <tr><td class="f">Dados e rastreamento</td><td>Implantação, validação e manutenção do rastreamento até a reserva; relatório mensal</td><td>Acessos ao motor, ao site e às contas; dados de reservas para conciliação</td></tr>
+        <tr><td class="f">Site e Instagram</td><td>Ajustes de conversão, estrutura do perfil e materiais de apoio</td><td>Conteúdo institucional, fotos e informações do hotel</td></tr>
+        <tr><td class="f">Atendimento ao hóspede</td><td>Padrões e materiais para resposta a cotações, quando solicitado</td><td>Operação do atendimento por WhatsApp, telefone e e-mail; conversão das cotações</td></tr>
+        <tr><td class="f">Decisão</td><td>Reunião mensal com leitura de resultados e plano do mês seguinte</td><td>Aprovação de verba, prioridades e continuidade, mês a mês</td></tr>
+      </table>
+    </div>
+  </div>
+  <div class="bot"><span>Komplexa Hotéis · komplexahoteis.com</span><span>12 · 16</span></div>
+</section>
+
+<!-- 13 MÉTRICAS -->
+<section class="slide">
+  <div class="top"><img class="brand" src="assets/logotipo_white.svg" alt="Komplexa"><span class="pg">13 · 16</span></div>
+  <div class="body">
+    <div class="eyebrow">09 · Métricas e prestação de contas</div>
+    <h2 class="title">O que a diretoria <em>vai acompanhar</em>.</h2>
+    <p class="lead">Cinco indicadores, todos extraídos do motor de reservas e das contas de anúncio do hotel. Nenhum depende de relatório da agência para ser conferido.</p>
+    <div class="met4">
+      <div class="mt"><div class="tg">Volume</div><div class="h">Reservas diretas rastreadas</div><p>Quantidade de reservas no motor com origem identificada, por mês e por canal.</p></div>
+      <div class="mt"><div class="tg">Receita</div><div class="h">Receita do canal direto</div><p>Valor das reservas diretas, comparado mês a mês e com a receita via intermediários.</p></div>
+      <div class="mt"><div class="tg">Eficiência</div><div class="h">Custo por reserva</div><p>Verba de mídia dividida pelas reservas geradas. É o número que decide onde a verba cresce ou para.</p></div>
+      <div class="mt"><div class="tg">Retorno</div><div class="h">Retorno sobre a mídia</div><p>Receita direta gerada para cada real investido em anúncios.</p></div>
+    </div>
+    <div class="mixrow">
+      <div class="mix">
+        <div class="pie" style="background:conic-gradient(#0EA5C9 0 50%,#9A7BEA 50% 100%)"></div>
+        <div class="tx1"><div class="h">Mix de canais hoje (50% direto)</div><p>Com as premissas da calculadora.</p>
+          <div class="lg"><span><i style="background:#0EA5C9"></i>Canal direto e outros 50%</span><span><i style="background:#9A7BEA"></i>Intermediários 50%</span></div>
+        </div>
+      </div>
+      <div class="mix" style="border-color:var(--bdr2)">
+        <div class="pie" style="background:conic-gradient(#0EA5C9 0 70%,#9A7BEA 70% 100%)"></div>
+        <div class="tx1"><div class="h">Cenário base após o ciclo (70% direto)</div><p>20 pontos migrados para o canal direto.</p>
+          <div class="lg"><span><i style="background:#0EA5C9"></i>Canal direto e outros 70%</span><span><i style="background:#9A7BEA"></i>Intermediários 30%</span></div>
+        </div>
+      </div>
+    </div>
+    <div class="metfoot">
+      <div class="mf"><div class="tg">Indicador de resultado</div><p><b>Participação do canal direto na receita.</b> Hoje em torno de 50% via intermediários. A meta é definida pela diretoria e revisada a cada trimestre com base no custo por reserva observado.</p></div>
+      <div class="mf"><div class="tg">Rotina</div><p><b>Relatório até o 5º dia útil e reunião mensal.</b> Leitura dos indicadores com a área de Reservas e RM, decisão sobre verba e prioridades. Resumo executivo de uma página para a diretoria.</p></div>
+    </div>
+  </div>
+  <div class="bot"><span>Komplexa Hotéis · komplexahoteis.com</span><span>13 · 16</span></div>
+</section>
+
+<!-- 14 PLANO 90 DIAS · GANTT -->
+<section class="slide">
+  <div class="top"><img class="brand" src="assets/logotipo_white.svg" alt="Komplexa"><span class="pg">14 · 16</span></div>
+  <div class="body">
+    <div class="eyebrow">10 · Plano de 90 dias</div>
+    <h2 class="title">Três fases, com <em>entregas visíveis a cada mês</em>.</h2>
+    <div class="gantt">
+      <div class="g-ph"><span></span><span class="ph">Mês 1 · Fundação</span><span class="ph">Mês 2 · Tração</span><span class="ph">Mês 3 · Escala</span></div>
+      <div class="g-wk"><span></span><span>s1</span><span>s2</span><span>s3</span><span>s4</span><span>s5</span><span>s6</span><span>s7</span><span>s8</span><span>s9</span><span>s10</span><span>s11</span><span>s12</span></div>
+      <div class="g-row"><span class="gl"><b>Acessos e rastreamento</b> contas, GA4, pixel, eventos do motor</span><span class="g-cell on"></span><span class="g-cell on"></span><span class="g-cell on"></span><span class="g-cell"></span><span class="g-cell"></span><span class="g-cell"></span><span class="g-cell"></span><span class="g-cell"></span><span class="g-cell"></span><span class="g-cell"></span><span class="g-cell"></span><span class="g-cell"></span></div>
+      <div class="g-row"><span class="gl"><b>Proteção de marca no Google</b> quem procura o hotel</span><span class="g-cell"></span><span class="g-cell on"></span><span class="g-cell on"></span><span class="g-cell on"></span><span class="g-cell on"></span><span class="g-cell on"></span><span class="g-cell on"></span><span class="g-cell on"></span><span class="g-cell on"></span><span class="g-cell on"></span><span class="g-cell on"></span><span class="g-cell"></span></div>
+      <div class="g-row"><span class="gl"><b>Site e Instagram</b> ajustes de conversão</span><span class="g-cell"></span><span class="g-cell on"></span><span class="g-cell on"></span><span class="g-cell on"></span><span class="g-cell on"></span><span class="g-cell"></span><span class="g-cell"></span><span class="g-cell"></span><span class="g-cell"></span><span class="g-cell"></span><span class="g-cell"></span><span class="g-cell"></span></div>
+      <div class="g-row"><span class="gl"><b>Remarketing</b> visitantes do site e do motor</span><span class="g-cell"></span><span class="g-cell"></span><span class="g-cell"></span><span class="g-cell"></span><span class="g-cell on"></span><span class="g-cell on"></span><span class="g-cell on"></span><span class="g-cell on"></span><span class="g-cell on"></span><span class="g-cell on"></span><span class="g-cell on"></span><span class="g-cell"></span></div>
+      <div class="g-row"><span class="gl"><b>Campanhas de destino</b> Vila Olímpia, Itaim, Berrini</span><span class="g-cell"></span><span class="g-cell"></span><span class="g-cell"></span><span class="g-cell"></span><span class="g-cell"></span><span class="g-cell on"></span><span class="g-cell on"></span><span class="g-cell on"></span><span class="g-cell on"></span><span class="g-cell on"></span><span class="g-cell on"></span><span class="g-cell"></span></div>
+      <div class="g-row"><span class="gl"><b>Ofertas do canal direto nas peças</b> definidas pelo RM</span><span class="g-cell"></span><span class="g-cell"></span><span class="g-cell"></span><span class="g-cell"></span><span class="g-cell"></span><span class="g-cell"></span><span class="g-cell on"></span><span class="g-cell on"></span><span class="g-cell on"></span><span class="g-cell on"></span><span class="g-cell on"></span><span class="g-cell"></span></div>
+      <div class="g-row"><span class="gl"><b>Segmentação corporativo e lazer</b> verba por retorno observado</span><span class="g-cell"></span><span class="g-cell"></span><span class="g-cell"></span><span class="g-cell"></span><span class="g-cell"></span><span class="g-cell"></span><span class="g-cell"></span><span class="g-cell"></span><span class="g-cell on"></span><span class="g-cell on"></span><span class="g-cell on"></span><span class="g-cell"></span></div>
+      <div class="g-row"><span class="gl"><b>Relatório e reunião mensal</b> leitura e decisão</span><span class="g-cell"></span><span class="g-cell"></span><span class="g-cell"></span><span class="g-cell dot"></span><span class="g-cell"></span><span class="g-cell"></span><span class="g-cell"></span><span class="g-cell dot"></span><span class="g-cell"></span><span class="g-cell"></span><span class="g-cell"></span><span class="g-cell dot"></span></div>
+    </div>
+  </div>
+  <div class="bot"><span>Komplexa Hotéis · komplexahoteis.com</span><span>14 · 16</span></div>
+</section>
+
+<!-- 15 PLANO 90 DIAS · ENTREGAS -->
+<section class="slide">
+  <div class="top"><img class="brand" src="assets/logotipo_white.svg" alt="Komplexa"><span class="pg">15 · 16</span></div>
+  <div class="body">
+    <div class="eyebrow">10 · Plano de 90 dias</div>
+    <h2 class="title">O que cada mês entrega, e o que <em>a diretoria vê</em>.</h2>
+    <div class="m3">
+      <div class="m3c">
+        <div class="h"><small>Mês 1</small>Fundação</div>
+        <ul>
+          <li>Acessos, contas de anúncio e rastreamento até a reserva no Omnibees</li>
+          <li>Campanha de proteção de marca no Google no ar</li>
+          <li>Ajustes de conversão no site e estrutura do Instagram</li>
+          <li>Primeiros criativos aprovados</li>
+        </ul>
+        <div class="ve"><b>A diretoria vê</b>o primeiro relatório com reservas diretas de origem identificada</div>
+      </div>
+      <div class="m3c">
+        <div class="h"><small>Mês 2</small>Tração</div>
+        <ul>
+          <li>Remarketing ativo para visitantes do site e do motor</li>
+          <li>Campanhas de destino (Vila Olímpia, Itaim, Berrini)</li>
+          <li>Ajuste de verba por custo por reserva observado</li>
+          <li>Ofertas do canal direto definidas pelo RM entram nas peças</li>
+        </ul>
+        <div class="ve"><b>A diretoria vê</b>custo por reserva e retorno por canal, com comparação ao mês anterior</div>
+      </div>
+      <div class="m3c">
+        <div class="h"><small>Mês 3</small>Escala</div>
+        <ul>
+          <li>Concentração de verba nos canais com melhor retorno</li>
+          <li>Segmentação corporativa e de fim de semana separadas</li>
+          <li>Leitura do mix de canais: quanto migrou do intermediário</li>
+          <li>Plano do trimestre seguinte</li>
+        </ul>
+        <div class="ve"><b>A diretoria vê</b>participação do canal direto na receita e a proposta de meta para o próximo ciclo</div>
+      </div>
+    </div>
+  </div>
+  <div class="bot"><span>Komplexa Hotéis · komplexahoteis.com</span><span>15 · 16</span></div>
+</section>
+
+<!-- 16 INVESTIMENTO E DECISÃO -->
+<section class="slide">
+  <div class="top"><img class="brand" src="assets/logotipo_white.svg" alt="Komplexa"><span class="pg">16 · 16</span></div>
+  <div class="body">
+    <div class="eyebrow">11 · Investimento e decisão</div>
+    <h2 class="title">Como o investimento <em>é estruturado</em>.</h2>
+    <p class="lead">Os valores estão na proposta comercial que acompanha esta apresentação: R$ 3.500 por mês com implantação e consultoria comercial inclusas, verba de mídia sugerida de R$ 6 a 10 mil por mês. Aqui, a estrutura do que a diretoria aprova.</p>
+    <div class="dec2">
+      <div class="dcol">
+        <div class="ct">Composição</div>
+        <ul>
+          <li><span class="k">✓</span><span><b>Assessoria em Marketing &amp; Vendas:</b> mensalidade fixa pela operação das cinco frentes, com equipe dedicada e responsável pela conta.</span></li>
+          <li><span class="k">✓</span><span><b>Verba de mídia:</b> definida pela diretoria, paga pelo hotel diretamente ao Google e à Meta, nas contas do próprio hotel. Sem taxa ou percentual da Komplexa sobre ela.</span></li>
+          <li><span class="k">✓</span><span><b>Sem fidelidade:</b> contrato por prazo indeterminado, encerrável por qualquer das partes com aviso de 30 dias, sem multa.</span></li>
+          <li><span class="k">✓</span><span><b>Ativos do hotel:</b> campanhas, públicos, pixels, dados e ajustes de site permanecem com o The World ao término, sem taxa de migração.</span></li>
+        </ul>
+      </div>
+      <div class="dcol">
+        <div class="ct">Próximos passos</div>
+        <ol>
+          <li><span>Aprovação da diretoria para o ciclo inicial de 90 dias e definição da verba de mídia mensal, na faixa sugerida de R$ 6 a 10 mil.</span></li>
+          <li><span>Assinatura da proposta e do contrato, com os acessos listados no anexo entregues em até 72 horas úteis.</span></li>
+          <li><span>Reunião de abertura com a área de Reservas e RM: metas, ofertas do canal direto e calendário do mês 1.</span></li>
+          <li><span>Primeiro relatório ao fim do mês 1 e leitura mensal a partir daí.</span></li>
+        </ol>
+      </div>
+    </div>
+    <div class="disc"><b>Esta apresentação não promete volume de reservas nem receita.</b> Os resultados dependem de tarifa, sazonalidade, concorrência, verba e atendimento, além da execução da Komplexa. O compromisso contratual é de execução e de transparência: entregas definidas, dados nas contas do hotel e relatório mensal.</div>
+    <div class="fontes">Premissas e fontes. Números do hotel (apartamentos, diária média, ocupação e participação de intermediários) informados pela área de Reservas; os demais são públicos. Mercado paulista: ABIH-SP, maio de 2026 e FOHB via Panrotas. Comissão da Booking.com: Panrotas, julho de 2026 e Hotelier News. Reputação: Booking.com, Trip.com e Google, consulta em setembro de 2026. Inventário do edifício em outras bandeiras: listagens públicas em Booking.com, Hotels.com, Trivago e Decolar.</div>
+  </div>
+  <div class="bot"><span>Komplexa Growth Ltda · CNPJ 63.097.480/0001-70 · komplexahoteis.com · contato@komplexagrowth.com · (12) 98708-4407 · Igor Salomão Dantas</span><span>16 · 16</span></div>
+</section>
+
+</div>
+
+<div class="nav-hint">setas para navegar · Esc para sair</div>
+
+<script>
+const fmt = v => 'R$ ' + Math.round(v).toLocaleString('pt-BR');
+function recalc(){
+  const apt = +document.getElementById('cApt').value || 0;
+  const dia = +document.getElementById('cDia').value || 0;
+  const occ = (+document.getElementById('cOcc').value || 0) / 100;
+  const ota = (+document.getElementById('cOta').value || 0) / 100;
+  const com = (+document.getElementById('cCom').value || 0) / 100;
+  const rec = apt * dia * 30 * occ;
+  const rOta = rec * ota;
+  const rCom = rOta * com;
+  const ponto = rec * 0.01 * com;
+  document.getElementById('rRec').textContent = fmt(rec);
+  document.getElementById('rOta').textContent = fmt(rOta);
+  document.getElementById('rCom').textContent = fmt(rCom);
+  document.getElementById('rComAno').textContent = fmt(rCom * 12);
+  document.getElementById('s10').textContent = fmt(ponto * 10);
+  document.getElementById('s20').textContent = fmt(ponto * 20);
+  document.getElementById('s30').textContent = fmt(ponto * 30);
+  // gráfico 1
+  const direto = rec - rOta, liq = rOta - rCom;
+  const mx = Math.max(direto, rOta, 1);
+  document.getElementById('g1a').style.width = (direto / mx * 100) + '%';
+  document.getElementById('g1av').textContent = fmt(direto);
+  document.getElementById('g1b').style.width = (liq / mx * 100) + '%';
+  document.getElementById('g1bv').textContent = fmt(liq);
+  document.getElementById('g1c').style.width = (rCom / mx * 100) + '%';
+  document.getElementById('g1cv').textContent = fmt(rCom);
+  // gráfico 2 (barras com total fixo = comissão hoje)
+  const set = (idPaga, idRet, idVal, pontos) => {
+    const ret = ponto * pontos, paga = rCom - ret;
+    const pPaga = rCom > 0 ? Math.max(paga / rCom * 100, 0) : 0;
+    document.getElementById(idPaga).style.width = pPaga + '%';
+    if(idRet) document.getElementById(idRet).style.width = (100 - pPaga) + '%';
+    document.getElementById(idVal).textContent = fmt(Math.max(paga, 0));
+  };
+  document.getElementById('g2a1').style.width = '100%';
+  document.getElementById('g2av').textContent = fmt(rCom);
+  set('g2b1','g2b2','g2bv',10);
+  set('g2c1','g2c2','g2cv',20);
+  set('g2d1','g2d2','g2dv',30);
+}
+recalc();
+
+const deck = document.getElementById('deck');
+const slides = deck.querySelectorAll('.slide');
+let current = 0;
+function show(i){ slides.forEach((s,idx) => s.classList.toggle('active', idx === i)); current = i; }
+function applyPresentScale(){
+  const w = window.innerWidth, h = window.innerHeight;
+  const fitW = w / 1280, fitH = h / 720;
+  const fill = Math.max(fitW, fitH), fit = Math.min(fitW, fitH);
+  deck.style.setProperty('--present-scale', (fit + (fill - fit) * 0.7).toFixed(3));
+}
+function togglePresent(){
+  deck.classList.toggle('present');
+  const btn = document.querySelector('.toggle-present');
+  if(deck.classList.contains('present')){
+    btn.textContent = 'Sair';
+    show(0); applyPresentScale();
+    if(deck.requestFullscreen){ deck.requestFullscreen().then(applyPresentScale).catch(()=>{}); }
+  } else {
+    btn.textContent = 'Apresentar';
+    slides.forEach(s => s.classList.add('active'));
+    deck.style.removeProperty('--present-scale');
+    if(document.fullscreenElement) document.exitFullscreen();
+  }
+}
+window.addEventListener('resize', () => { if(deck.classList.contains('present')) applyPresentScale(); });
+document.addEventListener('keydown', e => {
+  if(!deck.classList.contains('present')) return;
+  if(e.target.tagName === 'INPUT') return;
+  if(e.key === 'ArrowRight' || e.key === ' '){ if(current < slides.length-1) show(current+1); }
+  if(e.key === 'ArrowLeft'){ if(current > 0) show(current-1); }
+  if(e.key === 'Escape'){ togglePresent(); }
+});
+document.addEventListener('fullscreenchange', () => {
+  if(!document.fullscreenElement && deck.classList.contains('present')) togglePresent();
+});
+</script>
+</body>
+</html>
