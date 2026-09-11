@@ -458,9 +458,9 @@ table.tb{width:100%;border-collapse:collapse}
         <div class="res"><div><div class="rl">Receita via intermediários</div><div class="rd">parcela que passa por OTA antes de chegar ao hotel</div></div><div class="rv" id="rOta">R$ 714.000</div></div>
         <div class="res hi"><div><div class="rl">Comissão paga por mês</div><div class="rd">Custo recorrente da estrutura atual. Por ano: <b id="rComAno" style="color:#E8A33D">R$ 1.413.720</b>.</div></div><div class="rv" id="rCom">R$ 117.810</div></div>
         <div class="scn">
-          <div class="sc"><div class="sl">Cenário conservador</div><div class="sv" id="s10">R$ 23.562</div><div class="sd">10 pontos migrados para o direto, por mês</div></div>
-          <div class="sc base"><div class="sl">Cenário base</div><div class="sv" id="s20">R$ 47.124</div><div class="sd">20 pontos migrados para o direto, por mês</div></div>
-          <div class="sc"><div class="sl">Cenário otimista</div><div class="sv" id="s30">R$ 70.686</div><div class="sd">30 pontos migrados para o direto, por mês</div></div>
+          <div class="sc"><div class="sl">Se 10 pontos migrarem</div><div class="sv" id="s10">R$ 23.562</div><div class="sd">comissão que deixaria de ser paga, por mês</div></div>
+          <div class="sc base"><div class="sl">Se 20 pontos migrarem</div><div class="sv" id="s20">R$ 47.124</div><div class="sd">comissão que deixaria de ser paga, por mês</div></div>
+          <div class="sc"><div class="sl">Se 30 pontos migrarem</div><div class="sv" id="s30">R$ 70.686</div><div class="sd">comissão que deixaria de ser paga, por mês</div></div>
         </div>
       </div>
     </div>
@@ -474,7 +474,7 @@ table.tb{width:100%;border-collapse:collapse}
   <div class="body">
     <div class="eyebrow">04 · O custo da intermediação</div>
     <h2 class="title">Como a receita se divide, e o que <em>muda em cada cenário</em>.</h2>
-    <p class="lead">Os cenários mostram a comissão que deixa de ser paga quando parte das reservas passa a entrar pelo canal direto, mantidos os mesmos volume e diária. Não incluem a verba de mídia nem a assessoria, que entram na seção de investimento para a comparação final.</p>
+    <p class="lead">Simulações aritméticas: a comissão que deixaria de ser paga se parte das reservas entrasse pelo canal direto, mantidos os mesmos volume e diária. Não são projeções, e não incluem verba de mídia nem assessoria, que entram na seção de investimento.</p>
     <div class="ch2">
       <div class="chart">
         <div class="ct">Para onde vai a receita de um mês</div>
@@ -484,11 +484,11 @@ table.tb{width:100%;border-collapse:collapse}
         <div class="leg"><span><i style="background:#0EA5C9"></i>Reservas diretas</span><span><i style="background:#9A7BEA"></i>Via intermediários, líquido</span><span><i style="background:#C4841A"></i>Comissão paga</span></div>
       </div>
       <div class="chart">
-        <div class="ct">Comissão mensal em cada cenário</div>
+        <div class="ct">Comissão mensal em cada simulação</div>
         <div class="brow"><span class="bl">Hoje</span><span class="tr"><span class="seg" id="g2a1" style="background:#C4841A;width:100%"></span></span><span class="bv" id="g2av">R$ 117.810</span></div>
-        <div class="brow"><span class="bl">Conservador: 10 pontos</span><span class="tr"><span class="seg" id="g2b1" style="background:#C4841A;width:80%"></span><span class="seg" id="g2b2" style="background:#0EA5C9;width:20%"></span></span><span class="bv" id="g2bv">R$ 94.248</span></div>
-        <div class="brow"><span class="bl">Base: 20 pontos</span><span class="tr"><span class="seg" id="g2c1" style="background:#C4841A;width:60%"></span><span class="seg" id="g2c2" style="background:#0EA5C9;width:40%"></span></span><span class="bv" id="g2cv">R$ 70.686</span></div>
-        <div class="brow"><span class="bl">Otimista: 30 pontos</span><span class="tr"><span class="seg" id="g2d1" style="background:#C4841A;width:40%"></span><span class="seg" id="g2d2" style="background:#0EA5C9;width:60%"></span></span><span class="bv" id="g2dv">R$ 47.124</span></div>
+        <div class="brow"><span class="bl">Se 10 pontos migrarem</span><span class="tr"><span class="seg" id="g2b1" style="background:#C4841A;width:80%"></span><span class="seg" id="g2b2" style="background:#0EA5C9;width:20%"></span></span><span class="bv" id="g2bv">R$ 94.248</span></div>
+        <div class="brow"><span class="bl">Se 20 pontos migrarem</span><span class="tr"><span class="seg" id="g2c1" style="background:#C4841A;width:60%"></span><span class="seg" id="g2c2" style="background:#0EA5C9;width:40%"></span></span><span class="bv" id="g2cv">R$ 70.686</span></div>
+        <div class="brow"><span class="bl">Se 30 pontos migrarem</span><span class="tr"><span class="seg" id="g2d1" style="background:#C4841A;width:40%"></span><span class="seg" id="g2d2" style="background:#0EA5C9;width:60%"></span></span><span class="bv" id="g2dv">R$ 47.124</span></div>
         <div class="leg"><span><i style="background:#C4841A"></i>Comissão paga</span><span><i style="background:#0EA5C9"></i>Comissão retida pelo hotel</span></div>
       </div>
     </div>
@@ -749,7 +749,7 @@ table.tb{width:100%;border-collapse:collapse}
       </div>
       <div class="mix" style="border-color:var(--bdr2)">
         <div class="pie" style="background:conic-gradient(#0EA5C9 0 70%,#9A7BEA 70% 100%)"></div>
-        <div class="tx1"><div class="h">Cenário base após o ciclo (70% direto)</div><p>20 pontos migrados para o canal direto.</p>
+        <div class="tx1"><div class="h">Exemplo de leitura: 20 pontos migrados</div><p>Simulação aritmética de mix, não meta nem projeção.</p>
           <div class="lg"><span><i style="background:#0EA5C9"></i>Canal direto e outros 70%</span><span><i style="background:#9A7BEA"></i>Intermediários 30%</span></div>
         </div>
       </div>
@@ -885,22 +885,22 @@ table.tb{width:100%;border-collapse:collapse}
   <div class="top"><img class="brand" src="assets/logotipo_white.svg" alt="Komplexa"><span class="pg">18 · 20</span></div>
   <div class="body">
     <div class="eyebrow">11 · Proposta comercial · Quando a proposta se paga</div>
-    <h2 class="title">A conta com a <em>verba recomendada</em>.</h2>
-    <p class="lead">Com as premissas informadas pelo hotel e a verba recomendada de R$ 8.000 por mês: quantos pontos de reserva precisam migrar do intermediário para o direto para a proposta se pagar. Cenário, não promessa.</p>
+    <h2 class="title">O ponto de equilíbrio <em>da proposta</em>.</h2>
+    <p class="lead">Com as premissas informadas pelo hotel e a verba recomendada de R$ 8.000 por mês, a leitura é de ponto de equilíbrio: quantos pontos de reserva precisariam migrar do intermediário para o direto para cobrir assessoria e mídia. É aritmética sobre a comissão atual, não projeção de resultado.</p>
     <div class="scn s18row" style="margin-top:10px">
       <div class="sc" style="border-color:rgba(196,132,26,.5);background:linear-gradient(160deg,rgba(196,132,26,.1),var(--panel))"><div class="sl">Comissão paga hoje</div><div class="sv" style="color:#E8A33D">R$ 117.810</div><div class="sd">por mês, aos intermediários</div></div>
       <div class="sc"><div class="sl">Custo mensal da proposta</div><div class="sv" style="color:#fff">R$ 11.500</div><div class="sd">R$ 3.500 de assessoria + R$ 8.000 de verba recomendada</div></div>
       <div class="sc base"><div class="sl">Migração que cobre a proposta</div><div class="sv">4,9 pontos</div><div class="sd">cada ponto migrado retém R$ 2.356 por mês</div></div>
     </div>
     <div class="tblwrap s18">
-      <div class="ct">Saldo mensal por cenário de migração</div>
+      <div class="ct">Simulação aritmética sobre a comissão atual</div>
       <table class="tb">
-        <tr><th>Cenário</th><th>Migração</th><th>Comissão retida</th><th>Custo da proposta</th><th>Saldo mensal</th><th>Saldo em 12 meses</th></tr>
-        <tr><td><b>Conservador</b></td><td>10 pontos</td><td>R$ 23.562</td><td>R$ 11.500</td><td class="g">R$ 12.062</td><td class="g">R$ 144.744</td></tr>
-        <tr><td><b>Base</b></td><td>20 pontos</td><td>R$ 47.124</td><td>R$ 11.500</td><td class="g">R$ 35.624</td><td class="g">R$ 427.488</td></tr>
-        <tr><td><b>Otimista</b></td><td>30 pontos</td><td>R$ 70.686</td><td>R$ 11.500</td><td class="g">R$ 59.186</td><td class="g">R$ 710.232</td></tr>
+        <tr><th>Simulação</th><th>Comissão que deixaria de ser paga</th><th>Custo da proposta</th><th>Diferença no mês</th></tr>
+        <tr><td><b>Se 5 pontos migrarem</b></td><td>R$ 11.781</td><td>R$ 11.500</td><td class="g">R$ 281 · cobre o custo</td></tr>
+        <tr><td><b>Se 10 pontos migrarem</b></td><td>R$ 23.562</td><td>R$ 11.500</td><td class="g">R$ 12.062</td></tr>
+        <tr><td><b>Se 20 pontos migrarem</b></td><td>R$ 47.124</td><td>R$ 11.500</td><td class="g">R$ 35.624</td></tr>
       </table>
-      <div class="tbnote">Saldo positivo: a comissão que deixou de ser paga já cobre assessoria e mídia; reserva nova gerada pelas campanhas é ganho por cima. Premissas: 160 apartamentos, diária R$ 425, ocupação 70%, 50% via intermediários, comissão 16,5%.</div>
+      <div class="tbnote">Simulação aritmética sobre a comissão paga hoje; não é projeção, meta nem compromisso de resultado. Quanto de fato migra depende de tarifa, sazonalidade, concorrência, verba e atendimento, além da execução da Komplexa. Premissas: 160 apartamentos, diária R$ 425, ocupação 70%, 50% via intermediários, comissão 16,5%.</div>
     </div>
   </div>
   <div class="bot"><span>Komplexa Hotéis · komplexahoteis.com</span><span>18 · 20</span></div>
