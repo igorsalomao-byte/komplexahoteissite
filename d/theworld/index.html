@@ -51,18 +51,18 @@ html,body{font-family:var(--fd);background:var(--page-bg);color:#fff;-webkit-fon
 
 /* BLOCOS */
 .blk2{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:8px;flex:1;min-height:0}
-.blk{background:var(--panel);border:1px solid var(--bdr);border-radius:12px;padding:18px 22px}
+.blk{background:var(--panel);border:1px solid var(--bdr);border-radius:12px;padding:18px 26px;display:flex;flex-direction:column;justify-content:center}
 .blk .bt{font-size:10.5px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--cy);margin-bottom:8px}
 .blk p{font-size:14px;color:var(--tx);line-height:1.55}
 .blk p strong{color:#fff;font-weight:600}
 
 /* CARDS mercado / investimento */
 .mkt3{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:10px;flex:1;min-height:0}
-.mc{background:var(--panel);border:1px solid var(--bdr);border-radius:12px;padding:20px 22px;display:flex;flex-direction:column}
-.mc .n{font-size:38px;font-weight:800;letter-spacing:-1.6px;color:var(--cy);line-height:1;margin-bottom:6px}
+.mc{background:var(--panel);border:1px solid var(--bdr);border-radius:12px;padding:22px 24px;display:flex;flex-direction:column;justify-content:center}
+.mc .n{font-size:56px;font-weight:800;letter-spacing:-2.4px;color:var(--cy);line-height:1;margin-bottom:8px;text-shadow:0 0 30px rgba(34,211,238,.35)}
 .mc .st{font-size:14.5px;font-weight:700;color:#fff;line-height:1.35;margin-bottom:8px}
-.mc p{font-size:12.5px;color:var(--tx);line-height:1.55;flex:1}
-.mc .src{margin-top:10px}
+.mc p{font-size:13px;color:var(--tx);line-height:1.6}
+.mc .src{margin-top:14px}
 
 /* PONTO DE PARTIDA */
 .kvrow{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:10px}
@@ -70,19 +70,19 @@ html,body{font-family:var(--fd);background:var(--page-bg);color:#fff;-webkit-fon
 .kvrow .n{font-size:23px;font-weight:800;letter-spacing:-.8px;color:var(--cy)}
 .kvrow .l{font-size:11.5px;color:var(--tx);line-height:1.4;margin-top:3px}
 .p3{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:12px;flex:1;min-height:0}
-.pc{background:var(--panel);border:1px solid var(--bdr);border-radius:12px;padding:17px 20px}
+.pc{background:var(--panel);border:1px solid var(--bdr);border-radius:12px;padding:17px 20px;display:flex;flex-direction:column;justify-content:center}
 .pc .h{font-size:13.5px;font-weight:700;color:#fff;margin-bottom:6px;line-height:1.3}
 .pc p{font-size:12.5px;color:var(--tx);line-height:1.5}
 
 /* CALCULADORA */
 .calc{display:grid;grid-template-columns:340px 1fr;gap:18px;margin-top:8px;flex:1;min-height:0}
-.calc-in{background:var(--panel);border:1px solid var(--bdr);border-radius:12px;padding:16px 18px;display:flex;flex-direction:column;gap:10px}
+.calc-in{background:var(--panel);border:1px solid var(--bdr);border-radius:12px;padding:18px 20px;display:flex;flex-direction:column;gap:12px;justify-content:center}
 .calc-in .ct{font-size:10.5px;font-weight:700;letter-spacing:1.4px;text-transform:uppercase;color:var(--cy);margin-bottom:2px}
 .fld{display:flex;align-items:center;justify-content:space-between;gap:10px}
 .fld label{font-size:12px;color:var(--tx);line-height:1.3;flex:1}
 .fld input{width:96px;background:var(--panel2);border:1px solid var(--bdr2);border-radius:8px;color:#fff;font-family:var(--fd);font-weight:700;font-size:15px;padding:9px 11px;text-align:right}
 .fld input:focus{outline:none;border-color:var(--cy)}
-.calc-out{display:flex;flex-direction:column;gap:10px;min-height:0}
+.calc-out{display:flex;flex-direction:column;gap:10px;min-height:0;justify-content:center}
 .res{background:var(--panel);border:1px solid var(--bdr);border-radius:11px;padding:13px 18px;display:flex;align-items:baseline;justify-content:space-between;gap:14px}
 .res .rl{font-size:11px;font-weight:700;letter-spacing:1.2px;text-transform:uppercase;color:var(--tx2)}
 .res .rv{font-size:24px;font-weight:800;letter-spacing:-.9px;color:#fff;white-space:nowrap}
@@ -100,27 +100,27 @@ html,body{font-family:var(--fd);background:var(--page-bg);color:#fff;-webkit-fon
 
 /* GRÁFICOS */
 .ch2{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:10px;flex:1;min-height:0}
-.chart{background:var(--panel);border:1px solid var(--bdr);border-radius:12px;padding:18px 21px;display:flex;flex-direction:column}
+.chart{background:var(--panel);border:1px solid var(--bdr);border-radius:12px;padding:20px 23px;display:flex;flex-direction:column;justify-content:center}
 .chart .ct{font-size:13.5px;font-weight:700;color:#fff;margin-bottom:13px}
 .brow{display:grid;grid-template-columns:165px 1fr 96px;gap:10px;align-items:center;margin-bottom:13px}
 .brow .bl{font-size:12px;color:var(--tx);line-height:1.3}
 .brow .tr{height:22px;border-radius:5px;background:rgba(255,255,255,.05);overflow:hidden;display:flex}
 .brow .seg{height:100%}
 .brow .bv{font-size:12px;font-weight:700;color:#fff;text-align:right;white-space:nowrap}
-.leg{display:flex;gap:14px;margin-top:auto;padding-top:8px;flex-wrap:wrap}
+.leg{display:flex;gap:14px;margin-top:14px;flex-wrap:wrap}
 .leg span{display:inline-flex;align-items:center;gap:6px;font-size:10.5px;color:var(--tx2)}
 .leg i{width:9px;height:9px;border-radius:3px;display:inline-block}
 
 /* MÉTODO fluxo */
 .mflow{display:grid;grid-template-columns:1fr 24px 1fr 24px 1fr 24px 1.15fr 24px 1fr 24px 1fr;gap:0;align-items:center;margin-top:14px}
-.mbox{background:var(--panel);border:1px solid var(--bdr);border-radius:11px;padding:13px 12px;text-align:center;min-height:92px;display:flex;flex-direction:column;justify-content:center}
+.mbox{background:var(--panel);border:1px solid var(--bdr);border-radius:11px;padding:14px 12px;text-align:center;min-height:100px;display:flex;flex-direction:column;justify-content:center}
 .mbox .h{font-size:13px;font-weight:700;color:#fff;line-height:1.25}
 .mbox .d{font-size:10.5px;color:var(--tx2);line-height:1.3;margin-top:3px}
 .mbox.cy{border-color:var(--bdr2)}
 .mbox.win{border-color:rgba(34,211,238,.55);background:linear-gradient(160deg,rgba(34,211,238,.1),var(--panel))}
 .mstack{display:flex;flex-direction:column;gap:8px}
 .mstack .mbox{min-height:0;padding:10px 10px}
-.marr{color:var(--cy);font-size:14px;text-align:center}
+.marr{color:var(--cy);font-size:17px;text-align:center;text-shadow:0 0 12px rgba(34,211,238,.9)}
 .mmeas{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:14px}
 .mmeas .it{border:1px dashed var(--bdr2);border-radius:9px;padding:9px 12px;font-size:10.5px;color:var(--cy);letter-spacing:.6px;text-transform:uppercase;font-weight:600;text-align:center}
 .mret{margin-top:13px;border:1px dashed rgba(255,255,255,.25);border-radius:10px;padding:12px 16px;font-size:12.5px;color:var(--tx);text-align:center}
@@ -132,7 +132,7 @@ html,body{font-family:var(--fd);background:var(--page-bg);color:#fff;-webkit-fon
 .s7 .n{font-size:10.5px;font-weight:800;color:var(--cy);margin-bottom:2px}
 .s7 .h{font-size:12.5px;font-weight:700;color:#fff;line-height:1.25;margin-bottom:2px}
 .s7 .d{font-size:10.5px;color:var(--tx2);line-height:1.35}
-.tblwrap{margin-top:11px;background:var(--panel);border:1px solid var(--bdr);border-radius:12px;padding:14px 18px;flex:1;min-height:0;display:flex;flex-direction:column}
+.tblwrap{margin-top:11px;background:var(--panel);border:1px solid var(--bdr);border-radius:12px;padding:16px 20px;flex:1;min-height:0;display:flex;flex-direction:column;justify-content:center}
 .tblwrap .ct{font-size:12.5px;font-weight:700;color:#fff;margin-bottom:8px}
 table.tb{width:100%;border-collapse:collapse}
 .tb th{font-size:10px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--tx2);text-align:left;padding:6px 10px;border-bottom:1px solid var(--bdr)}
@@ -156,7 +156,7 @@ table.tb{width:100%;border-collapse:collapse}
 
 /* lacunas hoje/passa a */
 .gap4{display:grid;grid-template-columns:1fr 1fr;gap:11px;margin-top:8px;flex:1;min-height:0}
-.gp{background:var(--panel);border:1px solid var(--bdr);border-radius:12px;padding:15px 19px}
+.gp{background:var(--panel);border:1px solid var(--bdr);border-radius:12px;padding:15px 19px;display:flex;flex-direction:column;justify-content:center}
 .gp .h{font-size:13.5px;font-weight:700;color:#fff;margin-bottom:7px;display:flex;gap:9px;align-items:baseline;line-height:1.3}
 .gp .h .n{color:var(--cy);font-weight:800}
 .gp .hj{font-size:12px;color:var(--tx);line-height:1.45;margin-bottom:7px}
@@ -168,8 +168,9 @@ table.tb{width:100%;border-collapse:collapse}
 .estr{display:grid;grid-template-columns:235px 24px 1fr 24px 235px;gap:0;align-items:center;margin-top:10px}
 .estack{display:flex;flex-direction:column;gap:7px}
 .estack .mbox{min-height:0;padding:9px 10px}
-.f5{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:12px}
-.f5 .fc5{background:var(--panel);border:1px solid var(--bdr);border-radius:11px;padding:13px 16px}
+.f5{display:grid;grid-template-columns:repeat(6,1fr);grid-auto-rows:1fr;gap:10px;margin-top:12px;flex:1;min-height:0}
+.f5 .fc5{background:var(--panel);border:1px solid var(--bdr);border-radius:11px;padding:14px 18px;grid-column:span 2;display:flex;flex-direction:column;justify-content:center}
+.f5 .fc5:nth-child(4),.f5 .fc5:nth-child(5){grid-column:span 3}
 .f5 .fc5 .h{font-size:12.5px;font-weight:700;color:#fff;margin-bottom:4px;line-height:1.3}
 .f5 .fc5 p{font-size:11px;color:var(--tx);line-height:1.45}
 
@@ -187,10 +188,10 @@ table.tb{width:100%;border-collapse:collapse}
 .mt .tg{font-size:9px;font-weight:700;letter-spacing:1.2px;text-transform:uppercase;color:var(--cy);margin-bottom:4px}
 .mt .h{font-size:13px;font-weight:700;color:#fff;margin-bottom:4px;line-height:1.3}
 .mt p{font-size:10.5px;color:var(--tx);line-height:1.45}
-.mixrow{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:11px}
+.mixrow{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:11px;flex:1;min-height:0}
 .mix{background:var(--panel);border:1px solid var(--bdr);border-radius:12px;padding:14px 19px;display:flex;align-items:center;gap:18px}
-.pie{width:88px;height:88px;border-radius:50%;flex-shrink:0;position:relative}
-.pie::after{content:"";position:absolute;inset:23px;border-radius:50%;background:var(--panel)}
+.pie{width:106px;height:106px;border-radius:50%;flex-shrink:0;position:relative;box-shadow:0 0 26px rgba(34,211,238,.18)}
+.pie::after{content:"";position:absolute;inset:28px;border-radius:50%;background:var(--panel)}
 .mix .tx1{flex:1}
 .mix .h{font-size:13px;font-weight:700;color:#fff;margin-bottom:4px;line-height:1.3}
 .mix p{font-size:11px;color:var(--tx);line-height:1.4}
@@ -242,6 +243,49 @@ table.tb{width:100%;border-collapse:collapse}
 .disc{margin-top:11px;border:1px dashed rgba(255,255,255,.22);border-radius:10px;padding:11px 16px;font-size:11px;color:var(--tx2);line-height:1.5}
 .disc b{color:var(--tx);font-weight:600}
 .fontes{margin-top:8px;font-size:9.5px;color:rgba(255,255,255,.35);line-height:1.5}
+
+
+/* FLUXO twflow (money slide corporativo) */
+.twflow{position:relative;width:100%;aspect-ratio:1000/330;margin-top:14px}
+.twflow svg.fl{position:absolute;inset:0;width:100%;height:100%;overflow:visible;pointer-events:none}
+.twn{position:absolute;transform:translate(-50%,-50%);z-index:3;display:flex;flex-direction:column;align-items:center}
+.twn .ico{width:60px;height:60px;border-radius:50%;background:radial-gradient(circle at 30% 30%,#1b2c4d,#0B1526);border:1.5px solid rgba(255,255,255,.9);display:grid;place-items:center;box-shadow:0 5px 20px rgba(0,0,0,.5)}
+.twn .ico svg{width:25px;height:25px;stroke:#fff;fill:none;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
+.twn.big .ico{width:74px;height:74px;border-width:2px;border-color:var(--cy);box-shadow:0 6px 28px rgba(34,211,238,.45)}
+.twn.big .ico svg{width:31px;height:31px}
+.twn .lb{margin-top:8px;font-size:12px;font-weight:700;color:#fff;text-align:center;line-height:1.25;white-space:nowrap}
+.twn .lb small{display:block;font-weight:500;font-size:10px;color:var(--tx2);margin-top:2px}
+.twn.up .lb{order:-1;margin:0 0 8px}
+.twn.big .lb{color:var(--cy);font-size:13px}
+.twsite{position:absolute;left:54%;top:47%;transform:translate(-50%,-50%);z-index:4;width:212px;border-radius:9px;background:#fff;box-shadow:0 12px 40px rgba(0,0,0,.55),0 0 60px rgba(34,211,238,.25),0 0 0 1px rgba(255,255,255,.12)}
+.twsite .bb{background:#F3F4F6;padding:5px 9px;display:flex;align-items:center;gap:5px;border-bottom:1px solid #E5E7EB;border-radius:9px 9px 0 0}
+.twsite .bb i{width:6px;height:6px;border-radius:50%;display:block}
+.twsite .bb i:nth-child(1){background:#FF5F57}
+.twsite .bb i:nth-child(2){background:#FEBC2E}
+.twsite .bb i:nth-child(3){background:#28C840}
+.twsite .bb .u{flex:1;background:#fff;border-radius:3px;padding:1px 7px;font-size:7.5px;color:#6B7280;font-family:Menlo,monospace}
+.twsite .hh{height:64px;background:linear-gradient(135deg,#0B1526,#14294a 60%,#0EA5C9);display:flex;flex-direction:column;justify-content:flex-end;padding:8px 11px;color:#fff}
+.twsite .hh .a{font-weight:800;font-size:11px;letter-spacing:-.2px}
+.twsite .hh .b2{font-size:7.5px;color:rgba(255,255,255,.75)}
+.twsite .bk{padding:7px 9px;background:#fff;display:grid;grid-template-columns:1fr 1fr auto;gap:4px;align-items:center;border-radius:0 0 9px 9px}
+.twsite .bk .f{padding:2px 5px;border:1px solid #E5E7EB;border-radius:5px}
+.twsite .bk .f .la{font-size:6px;color:#9CA3AF;text-transform:uppercase;letter-spacing:.4px;font-weight:600;display:block}
+.twsite .bk .f .va{font-size:8.5px;color:#111;font-weight:600}
+.twsite .bk .go{background:linear-gradient(90deg,#0EA5C9,#22D3EE);color:#06121F;font-size:8px;font-weight:800;padding:6px 9px;border-radius:5px}
+.twsite .slb{position:absolute;top:calc(100% + 7px);left:50%;transform:translateX(-50%);font-size:12px;font-weight:700;color:#fff;white-space:nowrap;text-align:center}
+.twsite .slb small{display:block;font-weight:500;font-size:10px;color:var(--tx2);margin-top:1px}
+.twloop-lb{position:absolute;left:50%;top:102%;transform:translate(-50%,-50%);font-size:10.5px;font-weight:600;letter-spacing:.8px;text-transform:uppercase;color:rgba(255,255,255,.6);white-space:nowrap;z-index:3}
+.twloop-lb b{color:var(--cy)}
+@media (max-width:760px){
+  .twflow{aspect-ratio:auto;display:flex;flex-direction:column;gap:10px;align-items:center}
+  .twflow svg.fl,.twloop-lb{display:none}
+  .twn{position:static;transform:none}
+  .twn .lb{white-space:normal}
+  .twn.up .lb{order:0;margin:8px 0 0}
+  .twsite{position:static;transform:none;margin:4px auto}
+  .twsite .slb{position:static;transform:none;margin-top:7px;color:#0B1526}
+  .twsite .slb small{color:#6B7280}
+}
 
 /* PRESENT */
 .toggle-present{position:fixed;top:14px;right:14px;background:linear-gradient(90deg,var(--cyd),var(--cy));color:#06121F;border:none;padding:8px 16px;border-radius:8px;font-family:var(--fd);font-weight:700;font-size:12px;cursor:pointer;z-index:99}
@@ -444,32 +488,74 @@ table.tb{width:100%;border-collapse:collapse}
   <div class="body">
     <div class="eyebrow">05 · O método</div>
     <h2 class="title">Do dado do PMS à reserva efetuada, <em>com cada etapa medida</em>.</h2>
-    <p class="lead">Esta é a mudança que a gerência e a diretoria vão sentir primeiro. Hoje a mídia termina no clique. Na estrutura proposta, o dado do hotel alimenta os anúncios, o anúncio leva ao motor, a reserva volta ao PMS com a origem gravada, e o relatório diz qual campanha pagou a própria verba e qual não pagou.</p>
-    <div class="mflow">
-      <div class="mbox"><div class="h">Dados do PMS e do motor</div><div class="d">hóspedes, reservas, tarifas</div></div>
-      <div class="marr">›</div>
-      <div class="mbox"><div class="h">Públicos e criativos</div><div class="d">aprovados pelo hotel</div></div>
-      <div class="marr">›</div>
-      <div class="mstack">
-        <div class="mbox cy"><div class="h">Google Ads</div><div class="d">marca e destino</div></div>
-        <div class="mbox cy"><div class="h">Meta Ads</div><div class="d">remarketing e públicos</div></div>
+    <p class="lead">Hoje a mídia termina no clique. Na estrutura proposta, o dado do hotel alimenta os anúncios, o anúncio leva ao motor e a reserva volta ao PMS com a origem gravada: o relatório diz qual campanha pagou a própria verba.</p>
+    <div class="twflow">
+      <svg class="fl" viewBox="0 0 1000 330" preserveAspectRatio="none">
+        <defs>
+          <linearGradient id="flg" x1="0" y1="0" x2="1" y2="0">
+            <stop offset="0" stop-color="#0EA5C9"/><stop offset="1" stop-color="#22D3EE"/>
+          </linearGradient>
+          <filter id="flgl" x="-20%" y="-20%" width="140%" height="140%">
+            <feGaussianBlur stdDeviation="3" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+          </filter>
+        </defs>
+        <path d="M 55 155 L 205 155" stroke="url(#flg)" stroke-width="2.2" fill="none" opacity=".95" filter="url(#flgl)" stroke-linecap="round"/>
+        <path d="M 240 155 L 380 68 L 505 143" stroke="url(#flg)" stroke-width="2.2" fill="none" opacity=".95" filter="url(#flgl)" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M 240 155 L 380 242 L 505 167" stroke="url(#flg)" stroke-width="2.2" fill="none" opacity=".95" filter="url(#flgl)" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M 585 143 L 705 68 L 872 155" stroke="url(#flg)" stroke-width="2.2" fill="none" opacity=".95" filter="url(#flgl)" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M 585 167 L 705 242 L 872 155" stroke="url(#flg)" stroke-width="2.2" fill="none" opacity=".95" filter="url(#flgl)" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M 893 205 C 745 350, 255 350, 80 200" stroke="rgba(255,255,255,.5)" stroke-width="1.4" fill="none" stroke-dasharray="5 6" stroke-linecap="round"/>
+        <circle r="3.3" fill="#22D3EE" filter="url(#flgl)"><animateMotion dur="5.5s" repeatCount="indefinite" begin="0s" path="M 55 155 L 205 155 M 240 155 L 380 68 L 505 143"/></circle>
+        <circle r="3.3" fill="#22D3EE" filter="url(#flgl)"><animateMotion dur="5.5s" repeatCount="indefinite" begin="2.7s" path="M 240 155 L 380 242 L 505 167"/></circle>
+        <circle r="3.3" fill="#22D3EE" filter="url(#flgl)"><animateMotion dur="4.6s" repeatCount="indefinite" begin="1.2s" path="M 585 143 L 705 68 L 872 155"/></circle>
+        <circle r="3.3" fill="#22D3EE" filter="url(#flgl)"><animateMotion dur="4.6s" repeatCount="indefinite" begin="3.4s" path="M 585 167 L 705 242 L 872 155"/></circle>
+        <circle r="2.4" fill="#fff" opacity=".7"><animateMotion dur="6s" repeatCount="indefinite" begin="1s" path="M 893 205 C 745 350, 255 350, 80 200"/></circle>
+      </svg>
+      <div class="twn" style="left:5.5%;top:47%">
+        <div class="ico"><svg viewBox="0 0 24 24"><ellipse cx="12" cy="5" rx="8" ry="3"/><path d="M4 5v6c0 1.7 3.6 3 8 3s8-1.3 8-3V5"/><path d="M4 11v6c0 1.7 3.6 3 8 3s8-1.3 8-3v-6"/></svg></div>
+        <div class="lb">Dados do PMS<br>e do motor<small>hóspedes, reservas, tarifas</small></div>
       </div>
-      <div class="marr">›</div>
-      <div class="mbox cy"><div class="h">Site + motor Omnibees</div><div class="d">rastreamento completo</div></div>
-      <div class="marr">›</div>
-      <div class="mstack">
-        <div class="mbox"><div class="h">Checkout no motor</div></div>
-        <div class="mbox"><div class="h">WhatsApp + equipe de reservas</div></div>
+      <div class="twn" style="left:22.5%;top:47%">
+        <div class="ico"><svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 00-4-4H6a4 4 0 00-4 4v2"/><circle cx="9.5" cy="7" r="4"/><path d="M22 21v-2a4 4 0 00-3-3.9"/><path d="M16 3.1a4 4 0 010 7.8"/></svg></div>
+        <div class="lb">Públicos e criativos<small>aprovados pelo hotel</small></div>
       </div>
-      <div class="marr">›</div>
-      <div class="mbox win"><div class="h">Reserva efetuada</div></div>
+      <div class="twn up" style="left:38%;top:20.5%">
+        <div class="ico"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.35-4.35"/></svg></div>
+        <div class="lb">Google Ads<small>marca e destino</small></div>
+      </div>
+      <div class="twn" style="left:38%;top:73.5%">
+        <div class="ico"><svg viewBox="0 0 24 24"><path d="M6.5 7C4 7 2.5 9.8 2.5 12.5S4 18 6.3 18c1.8 0 3-1.6 4.2-3.7L12 11.6l1.5 2.7c1.2 2.1 2.4 3.7 4.2 3.7 2.3 0 3.8-2.8 3.8-5.5S20 7 17.5 7c-1.9 0-3.2 1.5-4.4 3.5L12 12.4l-1.1-1.9C9.7 8.5 8.4 7 6.5 7z"/></svg></div>
+        <div class="lb">Meta Ads<small>remarketing e públicos</small></div>
+      </div>
+      <div class="twsite">
+        <div class="bb"><i></i><i></i><i></i><span class="u">theworldvilaolimpia.com.br</span></div>
+        <div class="hh"><span class="a">The World Vila Olímpia</span><span class="b2">Reserve direto · melhor tarifa</span></div>
+        <div class="bk">
+          <div class="f"><span class="la">Check-in</span><span class="va">12 out</span></div>
+          <div class="f"><span class="la">Check-out</span><span class="va">15 out</span></div>
+          <span class="go">Reservar</span>
+        </div>
+        <span class="slb">Site + motor Omnibees<small>rastreamento completo</small></span>
+      </div>
+      <div class="twn up" style="left:70.5%;top:20.5%">
+        <div class="ico"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="16" rx="2"/><line x1="3" y1="10" x2="21" y2="10"/><line x1="8" y1="3" x2="8" y2="7"/><line x1="16" y1="3" x2="16" y2="7"/><path d="M8 15l3 3 5-6"/></svg></div>
+        <div class="lb">Checkout no motor</div>
+      </div>
+      <div class="twn" style="left:70.5%;top:73.5%">
+        <div class="ico"><svg viewBox="0 0 24 24"><path d="M21 11.5a8.4 8.4 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.4 8.4 0 01-3.8-.9L3 21l1.9-5.7a8.4 8.4 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.4 8.4 0 013.8-.9h.5a8.5 8.5 0 018 8v.5z"/></svg></div>
+        <div class="lb">WhatsApp +<br>equipe de reservas</div>
+      </div>
+      <div class="twn big" style="left:90%;top:47%">
+        <div class="ico"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M8 12l3 3 5-6"/></svg></div>
+        <div class="lb">Reserva efetuada</div>
+      </div>
+      <span class="twloop-lb">a reserva volta ao PMS com <b>origem, campanha e valor</b>: é isso que fecha a conta de retorno por campanha</span>
     </div>
     <div class="mmeas">
       <div class="it">medido: impressão e clique</div>
       <div class="it">medido: visita e consulta de datas</div>
       <div class="it">medido: início e conclusão da reserva</div>
     </div>
-    <div class="mret">A reserva volta ao PMS com <strong>origem, campanha e valor</strong>: é isso que fecha a conta de retorno por campanha.</div>
   </div>
   <div class="bot"><span>Komplexa Hotéis · komplexahoteis.com</span><span>07 · 20</span></div>
 </section>
@@ -731,13 +817,13 @@ table.tb{width:100%;border-collapse:collapse}
     <div class="eyebrow">11 · Proposta comercial · O que está incluído</div>
     <h2 class="title">Quatro semanas de implantação, <em>depois operação contínua</em>.</h2>
     <p class="lead">A implantação entrega a base medida. A operação faz a base render, mês após mês. Tudo dentro da mensalidade, sem taxa de implantação.</p>
-    <div class="p3" style="grid-template-columns:repeat(4,1fr);flex:0 0 auto;margin-top:10px">
+    <div class="p3" style="grid-template-columns:repeat(4,1fr);margin-top:10px">
       <div class="pc"><span class="tagc">Semanas 1 a 4</span><div class="h">Rastreamento ponta a ponta</div><p>GA4, Tag Manager, pixel da Meta e eventos do Omnibees configurados e validados. Cada reserva com origem, campanha e valor.</p></div>
       <div class="pc"><span class="tagc">Semanas 1 a 4</span><div class="h">Campanhas no ar</div><p>Proteção de marca e busca de destino no Google, remarketing em Meta e Google, nas contas do hotel.</p></div>
       <div class="pc"><span class="tagc">Semanas 1 a 4</span><div class="h">Criativos e Instagram</div><p>Peças da campanha de implantação (mínimo de 4) aprovadas pelo hotel e perfil estruturado para reserva direta.</p></div>
       <div class="pc"><span class="tagc">Semanas 1 a 4</span><div class="h">Site pronto para converter</div><p>Ajustes no site atual para levar ao motor com menos atrito. Sem novo site: o do hotel já existe e permanece dele.</p></div>
     </div>
-    <div class="p3" style="flex:0 0 auto">
+    <div class="p3">
       <div class="pc" style="border-color:var(--bdr2)"><span class="tagc">Contínuo</span><div class="h">Mídia paga e performance</div><p>Gestão diária, testes de público e peça, ajuste de verba por custo por reserva, novos criativos ao longo do ano.</p></div>
       <div class="pc" style="border-color:var(--bdr2)"><span class="tagc">Contínuo</span><div class="h">Consultoria comercial</div><p>Diagnóstico do atendimento, cadências com roteiros para WhatsApp, telefone e e-mail, treinamento inicial e reciclagem trimestral, acompanhamento mensal.</p></div>
       <div class="pc" style="border-color:var(--bdr2)"><span class="tagc">Contínuo</span><div class="h">Relatório e reunião mensal</div><p>Relatório até o quinto dia útil com investimento, reservas e receita por canal, e reunião mensal com Reservas e RM. Manutenção pontual do site inclusa.</p></div>
@@ -753,7 +839,7 @@ table.tb{width:100%;border-collapse:collapse}
   <div class="body">
     <div class="eyebrow">11 · Proposta comercial · Investimento</div>
     <h2 class="title">Um valor fixo, e a mídia <em>nas mãos do hotel</em>.</h2>
-    <div class="mkt3" style="flex:0 0 auto">
+    <div class="mkt3">
       <div class="mc">
         <span class="tagc">Assessoria</span>
         <div class="n">R$ 3.500</div>
