@@ -1,703 +1,492 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8" />
-  <link rel="icon" type="image/svg+xml" href="assets/logo.svg" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>O Sistema de Reservas Diretas em 5 Etapas — Komplexa Hotéis</title>
-  <meta name="description" content="5 etapas integradas: atração qualificada com IA, conversão direta, recuperação de demanda, conversão assistida e pós-venda. Reservas diretas previsíveis para hotéis." />
-  <meta name="robots" content="index, follow" />
-  <link rel="canonical" href="https://komplexahoteis.com/sistema.html" />
-
-  <!-- Open Graph -->
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://komplexahoteis.com/sistema.html" />
-  <meta property="og:title" content="O Sistema de Reservas Diretas em 5 Etapas — Komplexa Hotéis" />
-  <meta property="og:description" content="5 etapas integradas: atração qualificada com IA, conversão direta, recuperação de demanda, conversão assistida e pós-venda. Reservas diretas previsíveis para hotéis." />
-  <meta property="og:image" content="https://komplexahoteis.com/assets/og-image.jpg" />
-  <meta property="og:locale" content="pt_BR" />
-  <meta property="og:site_name" content="Komplexa Hotéis" />
-
-  <!-- Twitter Card -->
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="O Sistema de Reservas Diretas em 5 Etapas — Komplexa Hotéis" />
-  <meta name="twitter:description" content="5 etapas integradas: atração qualificada com IA, conversão direta, recuperação de demanda, conversão assistida e pós-venda." />
-  <meta name="twitter:image" content="https://komplexahoteis.com/assets/og-image.jpg" />
-
-  <!-- Schema.org -->
-  <script type="application/ld+json">
-  [
-    {
-      "@context": "https://schema.org",
-      "@type": "Organization",
-      "name": "Komplexa Hotéis",
-      "url": "https://komplexahoteis.com",
-      "logo": "https://komplexahoteis.com/assets/logo.svg"
-    },
-    {
-      "@context": "https://schema.org",
-      "@type": "BreadcrumbList",
-      "itemListElement": [
-        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://komplexahoteis.com/" },
-        { "@type": "ListItem", "position": 2, "name": "O Sistema", "item": "https://komplexahoteis.com/sistema.html" }
-      ]
-    }
-  ]
-  </script>
-
-  <link rel="stylesheet" href="assets/style.css" />
-  <style>
-    /* ─── PAGE HERO ─────────────────────────── */
-    .page-hero { padding: 130px 0 80px; }
-    .hero-tag-pill {
-      display: inline-flex; align-items: center; gap: 8px;
-      background: rgba(0,198,255,0.07); border: 1px solid rgba(0,198,255,0.18);
-      border-radius: 100px; padding: 6px 16px;
-      font-size: 0.76rem; font-weight: 700; color: #0099CC;
-      letter-spacing: 0.6px; text-transform: uppercase;
-      margin-bottom: 20px; font-family: 'Exo 2', sans-serif;
-    }
-    .hero-tag-pill span { width: 6px; height: 6px; border-radius: 50%; background: var(--blue); display: block; }
-    .page-hero h1 {
-      font-size: clamp(2.2rem, 4vw, 3.4rem);
-      font-weight: 800; letter-spacing: -1px;
-      color: var(--navy); margin-bottom: 18px; max-width: 680px;
-    }
-    .page-hero p { font-size: 1.05rem; color: var(--text); max-width: 560px; line-height: 1.75; }
-
-    /* ─── STAGES NAV ─────────────────────────── */
-    .stages-nav {
-      background: var(--bg); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);
-      padding: 0;
-      position: sticky; top: 68px; z-index: 10;
-    }
-    .sn-inner {
-      max-width: 1160px; margin: 0 auto; padding: 0 5%;
-      display: flex; gap: 0; overflow-x: auto;
-    }
-    .sn-inner::-webkit-scrollbar { height: 0; }
-    .sn-link {
-      display: flex; align-items: center; gap: 10px;
-      padding: 16px 24px; font-size: 0.85rem; font-weight: 600;
-      color: var(--gray); border-bottom: 2px solid transparent;
-      white-space: nowrap; font-family: 'Exo 2', sans-serif;
-      transition: all 0.2s; text-decoration: none;
-    }
-    .sn-link:hover { color: var(--navy); border-bottom-color: var(--border); }
-    .sn-link.active { color: var(--navy); border-bottom-color: var(--blue); }
-    .sn-num {
-      width: 24px; height: 24px; border-radius: 50%;
-      background: var(--border); color: var(--gray);
-      display: flex; align-items: center; justify-content: center;
-      font-size: 0.72rem; font-weight: 700;
-    }
-    .sn-link.active .sn-num { background: var(--blue); color: #fff; }
-
-    /* ─── STAGE SECTION ─────────────────────── */
-    .stage { padding: 80px 0; }
-    .stage:nth-child(even) { background: var(--bg); }
-
-    .stage-inner {
-      max-width: 1160px; margin: 0 auto; padding: 0 5%;
-      display: grid; grid-template-columns: 1fr 1fr;
-      gap: 80px; align-items: start;
-    }
-    .stage-inner.reverse { direction: rtl; }
-    .stage-inner.reverse > * { direction: ltr; }
-
-    .stage-badge {
-      display: inline-flex; align-items: center; gap: 10px;
-      margin-bottom: 16px;
-    }
-    .stage-num {
-      width: 32px; height: 32px; border-radius: 50%;
-      background: var(--grad); color: #fff;
-      display: flex; align-items: center; justify-content: center;
-      font-family: 'Exo 2', sans-serif; font-weight: 700; font-size: 0.85rem;
-    }
-    .stage-label {
-      font-family: 'Exo 2', sans-serif; font-size: 0.75rem; font-weight: 700;
-      text-transform: uppercase; letter-spacing: 1px; color: var(--blue);
-    }
-    .stage h2 {
-      font-size: clamp(1.6rem, 2.5vw, 2.1rem); font-weight: 800;
-      color: var(--navy); letter-spacing: -0.5px; margin-bottom: 14px;
-    }
-    .stage > .stage-inner > div > p,
-    .stage-desc {
-      font-size: 0.95rem; color: var(--text); line-height: 1.75; margin-bottom: 24px;
-    }
-
-    .stage-tools {
-      display: flex; flex-direction: column; gap: 10px;
-    }
-    .stage-tool {
-      display: flex; align-items: flex-start; gap: 12px;
-      padding: 14px 16px;
-      background: var(--white); border: 1px solid var(--border);
-      border-radius: 10px;
-    }
-    .stage:nth-child(even) .stage-tool { background: var(--white); }
-    .stage-tool-icon {
-      width: 32px; height: 32px; border-radius: 8px;
-      background: rgba(0,198,255,0.09);
-      display: flex; align-items: center; justify-content: center;
-      font-size: 0.95rem; flex-shrink: 0;
-    }
-    .stage-tool h5 {
-      font-family: 'Exo 2', sans-serif; font-size: 0.85rem; font-weight: 700;
-      color: var(--navy); margin-bottom: 2px;
-    }
-    .stage-tool p { font-size: 0.78rem; color: var(--text); }
-
-    /* Visual card for each stage */
-    .stage-visual {
-      background: var(--white); border: 1px solid var(--border);
-      border-radius: 20px; padding: 28px;
-      box-shadow: 0 8px 32px rgba(20,35,60,0.07);
-    }
-    .stage:nth-child(even) .stage-visual {
-      background: var(--white);
-    }
-    .sv-title {
-      font-family: 'Exo 2', sans-serif; font-size: 0.72rem; font-weight: 700;
-      text-transform: uppercase; letter-spacing: 1px; color: var(--gray);
-      margin-bottom: 20px;
-    }
-    .sv-metric {
-      background: var(--bg); border-radius: 12px; padding: 20px;
-      margin-bottom: 12px;
-      display: flex; align-items: center; justify-content: space-between;
-    }
-    .sv-metric-label { font-size: 0.82rem; color: var(--text); }
-    .sv-metric-val {
-      font-family: 'Exo 2', sans-serif; font-weight: 800; font-size: 1.3rem;
-      background: var(--grad);
-      -webkit-background-clip: text; -webkit-text-fill-color: transparent;
-      background-clip: text;
-    }
-    .sv-list { list-style: none; display: flex; flex-direction: column; gap: 10px; }
-    .sv-list li {
-      display: flex; align-items: center; gap: 10px;
-      font-size: 0.85rem; color: var(--text);
-    }
-    .sv-list li::before {
-      content: '→'; color: var(--blue); font-weight: 700; flex-shrink: 0;
-    }
-
-    /* ─── OCCASIONS ─────────────────────────── */
-    .occasions { background: var(--navy); padding: 80px 0; }
-    .occasions .tag { color: rgba(0,198,255,0.8); }
-    .occasions .section-title { color: #fff; }
-    .occasions .section-sub { color: rgba(255,255,255,0.5); }
-    .occ-grid {
-      display: grid; grid-template-columns: repeat(4, 1fr);
-      gap: 16px; margin-top: 48px;
-    }
-    .occ-card {
-      background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.07);
-      border-radius: 14px; padding: 24px;
-      transition: background 0.2s;
-    }
-    .occ-card:hover { background: rgba(255,255,255,0.09); }
-    .occ-icon { font-size: 1.8rem; margin-bottom: 14px; }
-    .occ-card h4 { font-size: 0.95rem; font-weight: 700; color: #fff; margin-bottom: 8px; }
-    .occ-card p { font-size: 0.82rem; color: rgba(255,255,255,0.5); line-height: 1.6; }
-    .occ-tag {
-      display: inline-block; margin-top: 14px;
-      font-size: 0.68rem; font-weight: 700;
-      padding: 3px 12px; border-radius: 100px;
-      background: rgba(0,198,255,0.12); color: var(--blue);
-      font-family: 'Exo 2', sans-serif; text-transform: uppercase;
-    }
-
-    /* ─── PROOF ─────────────────────────────── */
-    .proof { background: var(--bg); padding: 80px 0; }
-    .proof-grid {
-      display: grid; grid-template-columns: repeat(3, 1fr);
-      gap: 16px; margin-top: 48px;
-    }
-    .proof-card {
-      background: var(--white); border: 1px solid var(--border);
-      border-radius: 14px; padding: 28px;
-    }
-    .proof-icon { font-size: 1.5rem; margin-bottom: 12px; }
-    .proof-card h4 { font-size: 0.95rem; font-weight: 700; color: var(--navy); margin-bottom: 6px; }
-    .proof-card p { font-size: 0.83rem; color: var(--text); line-height: 1.6; }
-
-    /* ─── RESPONSIVE ─────────────────────────── */
-    @media (max-width: 1024px) {
-      .occ-grid { grid-template-columns: 1fr 1fr; }
-    }
-    @media (max-width: 768px) {
-      .stage-inner { grid-template-columns: 1fr; gap: 40px; }
-      .stage-inner.reverse { direction: ltr; }
-      .occ-grid { grid-template-columns: 1fr 1fr; }
-      .proof-grid { grid-template-columns: 1fr; }
-    }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>O Sistema de Reservas Diretas em 5 Etapas — Komplexa Hotéis</title>
+<meta name="description" content="5 etapas integradas para reservas diretas em hotéis: atração qualificada com IA, conversão no site e motor, recuperação de demanda, conversão assistida e pós-venda — tudo medido no PMS.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://komplexahoteis.com/sistema.html">
+<link rel="icon" type="image/svg+xml" href="assets/img/favicon.svg">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://komplexahoteis.com/sistema.html">
+<meta property="og:title" content="O Sistema de Reservas Diretas em 5 Etapas — Komplexa Hotéis">
+<meta property="og:description" content="5 etapas integradas para reservas diretas em hotéis: atração qualificada com IA, conversão no site e motor, recuperação de demanda, conversão assistida e pós-venda — tudo medido no PMS.">
+<meta property="og:image" content="https://komplexahoteis.com/assets/og-home.jpg">
+<meta property="og:locale" content="pt_BR">
+<meta property="og:site_name" content="Komplexa Hotéis">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="O Sistema de Reservas Diretas em 5 Etapas — Komplexa Hotéis">
+<meta name="twitter:description" content="5 etapas integradas para reservas diretas em hotéis: atração qualificada com IA, conversão no site e motor, recuperação de demanda, conversão assistida e pós-venda — tudo medido no PMS.">
+<meta name="twitter:image" content="https://komplexahoteis.com/assets/og-home.jpg">
+<script type="application/ld+json">
+[{"@context": "https://schema.org", "@type": "Organization", "name": "Komplexa Hotéis", "url": "https://komplexahoteis.com", "logo": "https://komplexahoteis.com/assets/logo.svg"}, {"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://komplexahoteis.com/"}, {"@type": "ListItem", "position": 2, "name": "O Sistema", "item": "https://komplexahoteis.com/sistema.html"}]}, {"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Em quanto tempo o sistema começa a gerar reservas diretas?", "acceptedAnswer": {"@type": "Answer", "text": "Depende do ponto de partida. Um hotel que já tem site integrado ao motor começa pelas campanhas e pelo remarketing nas primeiras semanas; um hotel sem site passa antes pela etapa de conversão. O plano de implementação, com prazo por etapa, é definido na primeira conversa."}}, {"@type": "Question", "name": "Preciso trocar meu motor de reservas ou meu PMS?", "acceptedAnswer": {"@type": "Answer", "text": "Não. O sistema se conecta ao motor e ao PMS que o hotel já usa — Omnibees, HSystem, Erbon e outros. A troca só entra em pauta quando a ferramenta atual impede rastrear a reserva da campanha até o checkout."}}, {"@type": "Question", "name": "O sistema funciona para pousada pequena?", "acceptedAnswer": {"@type": "Answer", "text": "Sim. Solar Dona Dora e Karandá são pousadas; Bahia Bonita é hotel boutique; Lagamar é resort. As cinco etapas são as mesmas — o que muda é o volume de mídia e o tamanho do time comercial."}}, {"@type": "Question", "name": "Vocês substituem o Booking e o Airbnb?", "acceptedAnswer": {"@type": "Answer", "text": "Não. As OTAs continuam como vitrine. O objetivo é que o hóspede que já conhece o hotel reserve direto e que a participação das OTAs caia sem cair a ocupação. No Sunsmart, as reservas diretas passaram de 30% para mais de 60%."}}, {"@type": "Question", "name": "Como o resultado é medido?", "acceptedAnswer": {"@type": "Answer", "text": "No PMS do hotel. Cada reserva vinda de campanha, remarketing, WhatsApp ou reativação chega ao motor com origem rastreada e é conferida no sistema do hotel — não no painel do anúncio."}}]}]
+</script>
+<style>
+/* ---- O Sistema: etapas ---- */
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(1.2rem,3vw,2.6rem);max-width:1000px;margin:clamp(2.4rem,5vh,3.6rem) auto 0}
+.stats .stat{padding-top:1.2rem;border-top:1px solid var(--border)}
+.stats .stat em{max-width:26ch}
+.stats-link{display:block;text-align:center;margin-top:2rem;font-size:.72rem;letter-spacing:.22em;text-transform:uppercase;color:var(--ink)}
+.stats-link span{border-bottom:1px solid rgba(14,30,53,.35);padding-bottom:.2rem}
+.stats-link:hover span{border-color:var(--ink)}
+.et-index{display:flex;flex-wrap:wrap;gap:.7rem 1.8rem;justify-content:center;max-width:1000px;margin:clamp(2.4rem,5vh,3.6rem) auto 0;padding-top:1.6rem;border-top:1px solid var(--border)}
+.et-index a{display:inline-flex;align-items:baseline;gap:.45rem;font-size:.68rem;letter-spacing:.22em;text-transform:uppercase;color:var(--muted);transition:color .3s}
+.et-index a b{font-family:var(--display);font-style:italic;font-weight:500;font-size:1.05rem;letter-spacing:0;text-transform:none;color:#1670C3}
+.et-index a:hover{color:var(--ink)}
+.et{padding-top:0}
+.et + .et .wrap{border-top:1px solid var(--border);padding-top:clamp(3.2rem,6vh,5.2rem)}
+.et-head{display:grid;grid-template-columns:auto 1fr;gap:clamp(1.2rem,3vw,3rem);align-items:start;max-width:1120px;margin-bottom:clamp(2.2rem,4.5vh,3.4rem)}
+.et-num{font-family:var(--display);font-style:italic;font-weight:500;font-size:clamp(3.6rem,7vw,6.6rem);line-height:.85;
+  background:var(--grad);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;color:#1099E9}
+.et-head .overline{margin-bottom:1rem}
+.et-head h2{font-size:clamp(2rem,4vw,3.4rem);max-width:19ch}
+.et-head p{margin:1.2rem 0 0;max-width:58ch;font-size:clamp(1.06rem,1.3vw,1.28rem);line-height:1.75}
+.et-body{display:grid;grid-template-columns:1.15fr 1fr;gap:clamp(2rem,5vw,5rem);align-items:start}
+.et-tool{padding:1.5rem 0;border-top:1px solid var(--border)}
+.et-tool:last-of-type{border-bottom:1px solid var(--border)}
+.et-tool h3{font-family:var(--display);font-weight:500;font-size:clamp(1.35rem,2vw,1.75rem);line-height:1.2;margin:0 0 .5rem}
+.et-tool p{font-size:1rem;color:var(--muted);margin:0;max-width:54ch;line-height:1.7}
+.et-side .ph{border-radius:var(--radius);aspect-ratio:4/5;overflow:hidden}
+.et-side .ph img{width:100%;height:100%;object-fit:cover}
+.ph-cap{font-size:.86rem;color:var(--muted);margin:.9rem 0 0;line-height:1.6}
+.ph-cap b{font-weight:500;color:var(--ink)}
+.et-side .data-block{margin:0}
+.db-note{font-size:.86rem;color:var(--muted);margin:1.1rem 0 0;line-height:1.6}
+.et-more{margin:1.6rem 0 0;font-size:.95rem;color:var(--muted)}
+.et-more a,.metrics-out a{color:#1670C3;border-bottom:1px solid rgba(16,153,233,.5)}
+.et-more a:hover,.metrics-out a:hover{border-color:#1670C3}
+/* ---- ocasiões ---- */
+.occ-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(1rem,2vw,1.8rem);max-width:1120px;margin:0 auto}
+.occ-grid .card-soft h3{margin-top:.3rem}
+.occ-proof{max-width:1120px;margin:clamp(1.6rem,3vh,2.4rem) auto 0}
+.occ-proof .data-block{margin:0}
+/* ---- métricas ---- */
+.metrics{list-style:none;padding:0;display:grid;grid-template-columns:1fr 1fr;gap:0 clamp(2rem,5vw,4rem);max-width:900px;margin:0 auto}
+.metrics li{display:flex;justify-content:space-between;align-items:baseline;gap:1rem;padding:.95rem 0;border-bottom:1px solid var(--border);font-size:1.04rem;color:var(--ink)}
+.metrics li span{font-size:.76rem;letter-spacing:.06em;color:var(--muted);text-align:right;white-space:nowrap}
+.metrics-out{max-width:900px;margin:1.8rem auto 0;font-size:.95rem;color:var(--muted);text-align:center}
+.metrics-out b{font-weight:500;color:var(--ink)}
+@media (max-width:1024px){.et-head h2{max-width:none}}
+@media (max-width:900px){
+  .et-body{grid-template-columns:1fr;gap:2.2rem}
+  .et-side .ph{aspect-ratio:16/10}
+  .stats{grid-template-columns:1fr;gap:1.4rem}
+  .occ-grid,.metrics{grid-template-columns:1fr}
+  .metrics li span{white-space:normal}
+}
+@media (max-width:640px){
+  .et-head{grid-template-columns:1fr;gap:.8rem}
+  .et-num{font-size:3.2rem}
+}
+</style>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/style.css">
 </head>
-<body>
+<body class="pg-int">
+<!-- ============ FIXOS ============ -->
+<header class="hdr">
+  <button class="menu-btn" id="menuBtn" aria-label="Menu">
+    <span class="lines"><span></span><span></span><span></span></span>
+  </button>
+  <div class="hdr-right">
+    <a href="https://komplexa-pricing.vercel.app/f/komplexaconsultoria?utm_source=komplexahoteis&amp;utm_medium=site&amp;utm_content=sistema-header" target="_blank" rel="noopener" class="hdr-book">Agendar<span class="hb-x"> conversa</span></a>
+  </div>
+</header>
 
-<!-- NAV -->
-<nav>
-  <div class="nav-inner">
-    <a href="index.html" class="nav-logo">
-      <img src="assets/logo.svg" alt="Komplexa" />
-      <span class="nav-logo-text">Komplexa Hotéis</span>
-    </a>
-    <ul class="nav-links">
-      <li><a href="sistema.html" class="active">O Sistema</a></li>
-      <li><a href="ia.html">IA Aplicada</a></li>
-      <li><a href="arquitetura.html">Arquitetura</a></li>
-      <li><a href="blog/index.html">Blog</a></li>
-      <li><a href="contato.html">Contato</a></li>
-    </ul>
-    <a href="https://komplexa-pricing.vercel.app/f/komplexaconsultoria?utm_source=komplexahoteis&utm_medium=site&utm_content=sistema" target="_blank" class="btn btn-primary">Começar agora →</a>
-    <div class="nav-hamburger" onclick="toggleMenu()">
-      <span></span><span></span><span></span>
+<a href="index.html" class="logo-fix" id="logoFix" aria-label="Komplexa Hotéis">
+  <svg viewBox="0 0 100 97" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+    <path d="M45.8247 36.6514C47.5271 36.6514 49.1676 37.1817 50.5604 38.211L89.22 66.5651C90.9533 67.844 92.0985 69.7156 92.439 71.8679C92.7795 74.0202 92.2533 76.1413 90.9843 77.8881C89.4366 80.0092 87.0842 81.2257 84.4533 81.2257C81.8223 81.2257 81.1104 80.6954 79.7176 79.6661L41.0581 51.3119C39.3247 50.033 38.1795 48.1615 37.839 46.0092C37.4985 43.8569 38.0247 41.7358 39.2938 39.989C40.8414 37.8679 43.1938 36.6514 45.8247 36.6514ZM45.8247 29.1651C41.0581 29.1651 36.3223 31.3798 33.289 35.5908C28.2747 42.5468 29.7914 52.3101 36.6938 57.3633L75.3533 85.7174C78.1081 87.745 81.2962 88.7119 84.4533 88.7119C89.22 88.7119 93.9557 86.4973 96.989 82.2862C102.003 75.3303 100.487 65.567 93.5842 60.5138L54.9247 32.1596C52.17 30.1321 48.9819 29.1651 45.8247 29.1651Z"/>
+    <path d="M69.1938 7.48624C70.8961 7.48624 72.5366 8.01651 73.9295 9.04587L79.47 13.1009C83.0604 15.7211 83.8652 20.8055 81.2342 24.4239L76.4985 30.9743L64.4581 22.1468C60.8676 19.5266 60.0628 14.4422 62.6938 10.8239C64.2414 8.70275 66.5938 7.48624 69.2247 7.48624M69.1938 0C64.4271 0 59.6914 2.21468 56.658 6.42569C51.6438 13.3816 53.1604 23.145 60.0628 28.1982L78.108 41.4239L87.2081 28.822C92.2223 21.8661 90.7057 12.1027 83.8033 7.04954L78.2628 2.99449C75.508 0.966969 72.32 0 69.1628 0H69.1938Z"/>
+    <path d="M15.4914 14.4422C17.1938 14.4422 18.8342 14.9725 20.2271 16.0018C21.9604 17.2807 23.1057 19.1523 23.4462 21.3046C23.7866 23.4569 23.2604 25.578 21.9914 27.3248C20.4438 29.4459 18.0914 30.6624 15.4604 30.6624C12.8295 30.6624 12.1176 30.1321 10.7247 29.1028C8.9914 27.8239 7.84615 25.9523 7.50568 23.8C7.1652 21.6477 7.69139 19.5266 8.96044 17.7798C10.5081 15.6587 12.8604 14.4422 15.4914 14.4422ZM15.4914 6.95597C10.7247 6.95597 5.98901 9.17064 2.95567 13.3817C-2.05861 20.3376 -0.541946 30.1009 6.36043 35.1541C9.1152 37.1817 12.3033 38.1486 15.4604 38.1486C20.2271 38.1486 24.9628 35.9339 27.9962 31.7229C33.0104 24.767 31.4938 15.0037 24.5914 9.95046C21.8366 7.92294 18.6485 6.95597 15.4914 6.95597Z"/>
+    <path d="M23.3533 65.3174L35.3937 74.145C38.9842 76.7652 39.789 81.8495 37.158 85.4679C35.6104 87.589 33.258 88.8055 30.6271 88.8055C27.9961 88.8055 27.2842 88.2752 25.8914 87.2459L20.3509 83.1908C16.7604 80.5706 15.9557 75.4863 18.5866 71.8679L23.3223 65.3174M21.7128 54.8367L12.6128 67.4385C7.59851 74.3945 9.11518 84.1578 16.0176 89.211L21.558 93.2661C24.3128 95.2936 27.5009 96.2606 30.658 96.2606C35.4247 96.2606 40.1604 94.0459 43.1937 89.8349C48.208 82.8789 46.6914 73.1156 39.789 68.0624L21.7438 54.8367H21.7128Z"/>
+  </svg>
+</a>
+
+<div class="concierge">
+  <div class="conc-bubble" id="concBubble">
+    <button class="conc-close" onclick="closeConcierge(event)" aria-label="Fechar">×</button>
+    Oi! Sou o Igor, fundador<br>da Komplexa. Quer o plano<br>do seu hotel?
+  </div>
+  <button class="conc-avatar" onclick="openConcierge()" aria-label="Falar com a Komplexa">
+    <img src="assets/img/igor.png" alt="Igor Salomão, fundador da Komplexa"><span class="conc-dot"></span>
+  </button>
+</div>
+
+<!-- ============ MENU OVERLAY ============ -->
+<nav class="menu" id="menu">
+  <div class="menu-grid">
+    <div class="menu-img">
+      <div class="ph ph-metodo on" data-ph="ph-metodo"><img src="assets/img/karanda-full.webp" alt="Pousada Karandá" loading="lazy"></div>
+      <div class="ph ph-cases" data-ph="ph-cases"><img src="assets/img/solar-dona-dora.webp" alt="Pousada Solar Dona Dora" loading="lazy"></div>
+      <div class="ph ph-criativos" data-ph="ph-criativos"><img src="assets/img/dominguez-creative.webp" alt="Produção de criativo para hotel" loading="lazy"></div>
+      <div class="ph ph-sistema" data-ph="ph-sistema"><img src="assets/img/hotel-03.webp" alt="Hotel atendido pela Komplexa" loading="lazy"></div>
+      <div class="ph ph-frentes" data-ph="ph-frentes"><img src="assets/img/casamento-bg.webp" alt="Cerimônia de casamento em hotel" loading="lazy"></div>
+      <div class="ph ph-ia" data-ph="ph-ia"><img src="assets/img/hotel-02.webp" alt="Hotel atendido pela Komplexa" loading="lazy"></div>
+      <div class="ph ph-quem" data-ph="ph-quem"><img src="assets/img/sunsmart.webp" alt="Hotel Sunsmart" loading="lazy"></div>
+      <div class="ph ph-contato" data-ph="ph-contato"><img src="assets/img/hotel-cafe.webp" alt="Café da manhã de hotel" loading="lazy"></div>
+    </div>
+    <div class="menu-list" data-lenis-prevent>
+      <a href="index.html#metodo" data-img="ph-metodo" class="active">O método</a>
+      <a href="index.html#cases" data-img="ph-cases">Cases</a>
+      <a href="index.html#site" data-img="ph-criativos">O site entregue</a>
+      <a href="index.html#sistema" data-img="ph-sistema">O sistema</a>
+      <a href="index.html#frentes" data-img="ph-frentes">Frentes de receita</a>
+      <a href="index.html#presenca" data-img="ph-quem">Quem somos</a>
+      <a href="index.html#contato" data-img="ph-contato">Falar com a Komplexa</a>
+    </div>
+  </div>
+  <div class="menu-foot">
+    <div class="menu-foot-links">
+      <a href="blog/index.html">Blog</a>
+      <a href="sistema.html">O Sistema em detalhe</a>
+      <a href="contato.html">Contato</a>
+      <a href="https://komplexa-pricing.vercel.app/f/komplexaconsultoria?utm_source=komplexahoteis&amp;utm_medium=site&amp;utm_content=sistema-menu" target="_blank" rel="noopener">Agendar conversa <span class="ext">↗</span></a>
+    </div>
+    <div class="menu-foot-social">
+      <a href="https://www.instagram.com/komplexa.hoteis/" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.2" cy="6.8" r=".9" fill="currentColor" stroke="none"/></svg></a>
     </div>
   </div>
 </nav>
-<div class="mobile-nav" id="mobileNav">
-  <a href="sistema.html">O Sistema</a>
-  <a href="ia.html">IA Aplicada</a>
-  <a href="arquitetura.html">Arquitetura</a>
-  <a href="blog/index.html">Blog</a>
-  <a href="contato.html">Contato</a>
-  <a href="https://komplexa-pricing.vercel.app/f/komplexaconsultoria?utm_source=komplexahoteis&utm_medium=site&utm_content=sistema" target="_blank" class="btn btn-primary" style="width:fit-content">Começar agora →</a>
-</div>
 
-<!-- PAGE HERO -->
-<section class="page-hero">
-  <div class="container">
-    <div class="hero-tag-pill"><span></span>O Sistema Completo</div>
-    <h1>Cinco etapas. Uma máquina de <span class="serif-accent">reservas diretas</span>.</h1>
-    <p>Não gerenciamos marketing isolado. Estruturamos toda a jornada do hóspede — da atração ao pós-venda — em um sistema integrado de geração de receita direta.</p>
+
+<!-- ============ HERO ============ -->
+<section class="hero-int" style="padding:0">
+  <div class="media ph"><img src="assets/img/hotel-03.webp" alt="Hotel atendido pela Komplexa, vista da paisagem"></div>
+  <div class="hero-int-body">
+    <span class="overline">O Sistema · cinco etapas do funil</span>
+    <h1 class="t-display">Cinco etapas entre o anúncio e a <em class="gi">reserva no PMS</em></h1>
+    <p>Não gerenciamos campanha isolada. Atração, conversão, recuperação, atendimento e pós-venda operam como uma linha só — e cada etapa responde pelo que registra no motor e no PMS do hotel.</p>
+    <a href="https://komplexa-pricing.vercel.app/f/komplexaconsultoria?utm_source=komplexahoteis&amp;utm_medium=site&amp;utm_content=sistema-hero" target="_blank" rel="noopener" class="btn-sage">Agendar conversa</a>
   </div>
 </section>
 
-<!-- STAGES NAV -->
-<div class="stages-nav">
-  <div class="sn-inner">
-    <a href="#atracao" class="sn-link active"><span class="sn-num">1</span>Atração</a>
-    <a href="#conversao" class="sn-link"><span class="sn-num">2</span>Conversão</a>
-    <a href="#recuperacao" class="sn-link"><span class="sn-num">3</span>Recuperação</a>
-    <a href="#assistida" class="sn-link"><span class="sn-num">4</span>Conv. Assistida</a>
-    <a href="#posvenda" class="sn-link"><span class="sn-num">5</span>Pós-venda</a>
+<!-- ============ POR QUE UM SISTEMA ============ -->
+<section id="porque">
+  <div class="wrap">
+    <div class="head-center">
+      <span class="overline rv">Por que um sistema</span>
+      <h2 class="t-display rv">Tráfego sem etapa seguinte vira <em class="gi">comissão de OTA</em></h2>
+    </div>
+    <div class="narrow prose rv">
+      <p>A maioria dos hotéis compra tráfego e torce. O anúncio leva o visitante a um site que não integra o motor, ninguém volta a falar com quem abandonou o checkout, o WhatsApp responde no dia seguinte e o hóspede que já se hospedou nunca mais recebe uma mensagem. Cada ponta solta é uma reserva que termina no Booking, com 15% a 25% de comissão.</p>
+      <p>O sistema Komplexa fecha essas pontas em sequência. São cinco etapas, cada uma com ferramenta, responsável e métrica próprios, ligadas por uma regra: o resultado só conta quando aparece no PMS do hotel.</p>
+      <div class="highlight-box"><p>Não medimos alcance nem clique. Medimos reserva registrada no sistema do hotel.</p></div>
+    </div>
+    <div class="stats">
+      <div class="stat rv"><b>19x</b><em>de retorno sobre mídia · Bahia Bonita, hotel boutique</em></div>
+      <div class="stat rv"><b>60%+</b><em>das reservas são diretas · Sunsmart (eram 30%)</em></div>
+      <div class="stat rv"><b>3,4x</b><em>de faturamento na baixa temporada · Solar Dona Dora</em></div>
+    </div>
+    <a href="index.html#cases" class="stats-link rv"><span>Ver os cinco cases medidos no PMS</span></a>
+    <nav class="et-index rv" aria-label="Etapas do sistema">
+      <a href="#atracao"><b>01</b>Atração</a>
+      <a href="#conversao"><b>02</b>Conversão</a>
+      <a href="#recuperacao"><b>03</b>Recuperação</a>
+      <a href="#assistida"><b>04</b>Conversão assistida</a>
+      <a href="#posvenda"><b>05</b>Pós-venda</a>
+    </nav>
   </div>
-</div>
+</section>
 
-<!-- STAGE 1: ATRAÇÃO -->
-<div class="stage" id="atracao">
-  <div class="stage-inner">
-    <div>
-      <div class="stage-badge">
-        <div class="stage-num">1</div>
-        <span class="stage-label">Atração Qualificada</span>
-      </div>
-      <h2>Atrai apenas quem tem perfil real de reserva</h2>
-      <p class="stage-desc">
-        A maioria dos hotéis investe em tráfego amplo e torce para que alguma parcela converta. Na Komplexa, começamos de onde deveríamos: do perfil real dos seus melhores hóspedes. A IA aprende com eles e encontra pessoas com comportamento semelhante — excluindo automaticamente quem não tem potencial de reserva.
-      </p>
-      <div class="stage-tools">
-        <div class="stage-tool">
-          <div class="stage-tool-icon">📣</div>
-          <div>
-            <h5>Meta Ads + Google Ads</h5>
-            <p>Campanhas nas plataformas certas, com configuração orientada a conversão, não apenas a alcance.</p>
-          </div>
-        </div>
-        <div class="stage-tool">
-          <div class="stage-tool-icon">🧠</div>
-          <div>
-            <h5>Segmentação com IA</h5>
-            <p>Públicos criados com base nos hóspedes reais do hotel. Lookalike construído com dados de quem já comprou.</p>
-          </div>
-        </div>
-        <div class="stage-tool">
-          <div class="stage-tool-icon">🚫</div>
-          <div>
-            <h5>Exclusão de público sem potencial</h5>
-            <p>Quem demonstra comportamento fora do perfil é excluído automaticamente, reduzindo desperdício de verba.</p>
-          </div>
-        </div>
+<!-- ============ ETAPAS ============ -->
+<section class="et" id="atracao">
+  <div class="wrap">
+    <div class="et-head rv">
+      <span class="et-num" aria-hidden="true">01</span>
+      <div>
+        <span class="overline">Etapa 01 · Atração qualificada</span>
+        <h2 class="t-display">Anúncio entregue a quem tem <em class="gi">perfil de reserva</em></h2>
+        <p class="p-muted">O ponto de partida não é o público amplo: são os hóspedes que já reservaram no hotel. A IA aprende com eles, encontra quem se comporta parecido e tira da entrega quem não tem chance de fechar.</p>
       </div>
     </div>
-    <div class="stage-visual">
-      <div class="sv-title">Resultado desta etapa</div>
-      <div class="sv-metric">
-        <span class="sv-metric-label">Custo por clique qualificado</span>
-        <span class="sv-metric-val">↓ Menor</span>
+    <div class="et-body">
+      <div class="et-tools rv">
+      <div class="et-tool"><h3>Google Ads e Meta Ads</h3><p>Busca para quem já procura hotel na região; feed e reels para quem ainda não decidiu o destino. Cada campanha é configurada para reserva, não para alcance.</p></div>
+      <div class="et-tool"><h3>Segmentação a partir do PMS</h3><p>Público construído com os dados de quem já comprou: origem, tempo de estadia, ocasião da viagem. Lookalike de hóspede real, não de seguidor.</p></div>
+      <div class="et-tool"><h3>Exclusão de quem não reserva</h3><p>Comportamento fora do perfil sai da entrega automaticamente. A verba para de pagar clique de quem não vai fechar.</p></div>
+      <p class="et-more">Como a segmentação funciona por dentro: <a href="ia.html">IA aplicada à aquisição</a>.</p>
       </div>
-      <div class="sv-metric">
-        <span class="sv-metric-label">Qualidade do tráfego</span>
-        <span class="sv-metric-val">↑ Maior</span>
+      <div class="et-side rv">
+        <div class="ph"><img src="assets/img/hotel-01.webp" alt="Hotel boutique Bahia Bonita, cliente Komplexa" loading="lazy"></div>
+        <p class="ph-cap"><b>Bahia Bonita</b> · cada R$ 1 investido em mídia voltou como R$ 19 em reservas, conferido no PMS.</p>
       </div>
-      <ul class="sv-list" style="margin-top:16px">
-        <li>Menos desperdício de verba publicitária</li>
-        <li>Visitantes com maior intenção de compra</li>
-        <li>Base de dados enriquecida para remarketing</li>
-        <li>Redução gradual do CAC ao longo do tempo</li>
-      </ul>
     </div>
   </div>
-</div>
+</section>
 
-<!-- STAGE 2: CONVERSÃO -->
-<div class="stage" id="conversao">
-  <div class="stage-inner reverse">
-    <div>
-      <div class="stage-badge">
-        <div class="stage-num">2</div>
-        <span class="stage-label">Conversão Direta</span>
-      </div>
-      <h2>Transforma tráfego em reservas pelo caminho mais curto</h2>
-      <p class="stage-desc">
-        Trazer tráfego qualificado é só metade do trabalho. A outra metade é garantir que esse tráfego encontre o menor caminho possível até a reserva. Site otimizado, integração com o motor de reservas e uma experiência que elimina fricção no momento de compra.
-      </p>
-      <div class="stage-tools">
-        <div class="stage-tool">
-          <div class="stage-tool-icon">🌐</div>
-          <div>
-            <h5>Site otimizado para conversão</h5>
-            <p>Estrutura de página pensada para guiar o visitante à reserva, não apenas apresentar o hotel.</p>
-          </div>
-        </div>
-        <div class="stage-tool">
-          <div class="stage-tool-icon">🔗</div>
-          <div>
-            <h5>Integração com motor de reservas</h5>
-            <p>Conexão direta entre o tráfego pago e o sistema de reservas, sem etapas desnecessárias.</p>
-          </div>
-        </div>
-        <div class="stage-tool">
-          <div class="stage-tool-icon">⚡</div>
-          <div>
-            <h5>Caminho curto ao fechamento</h5>
-            <p>Menos cliques, menos distrações, menos abandono. Cada elemento da página serve à conversão.</p>
-          </div>
-        </div>
+<section class="et" id="conversao">
+  <div class="wrap">
+    <div class="et-head rv">
+      <span class="et-num" aria-hidden="true">02</span>
+      <div>
+        <span class="overline">Etapa 02 · Conversão direta</span>
+        <h2 class="t-display">O caminho mais curto entre o clique e o <em class="gi">checkout do motor</em></h2>
+        <p class="p-muted">Tráfego qualificado é metade do trabalho. A outra metade é o site: carregar rápido no celular, mostrar tarifa e disponibilidade sem sair da página e levar ao motor em poucos cliques.</p>
       </div>
     </div>
-    <div class="stage-visual">
-      <div class="sv-title">Resultado desta etapa</div>
-      <div class="sv-metric">
-        <span class="sv-metric-label">Taxa de conversão do site</span>
-        <span class="sv-metric-val">↑ Maior</span>
+    <div class="et-body">
+      <div class="et-tools rv">
+      <div class="et-tool"><h3>Site feito para reservar</h3><p>Cada dobra leva ao botão de reserva. Foto, tarifa, benefício do direto e disponibilidade na mesma tela — o hóspede não precisa procurar.</p></div>
+      <div class="et-tool"><h3>Motor integrado e rastreado</h3><p>Omnibees, HSystem, Erbon e outros motores conectados ao site com rastreamento de ponta a ponta: visualização, início de checkout e compra gravados por campanha.</p></div>
+      <div class="et-tool"><h3>Vantagem do canal direto</h3><p>Tarifa ou benefício exclusivo no site, para o hóspede que compara com a OTA fechar aqui — e não na aba ao lado.</p></div>
+      <p class="et-more">O site entregue à Pousada Lagoa Caraíva está no ar: <a href="index.html#site">faça o caminho do hóspede</a>.</p>
       </div>
-      <div class="sv-metric">
-        <span class="sv-metric-label">Reservas diretas</span>
-        <span class="sv-metric-val">+Volume</span>
+      <div class="et-side rv">
+        <div class="data-block">
+          <h4>Sunsmart · participação das reservas diretas</h4>
+          <div class="db-row"><span class="db-label">Antes</span><div class="db-bar-wrap"><div class="db-bar" style="width:30%"></div></div><span class="db-val">30%</span></div>
+          <div class="db-row"><span class="db-label">Com o sistema</span><div class="db-bar-wrap"><div class="db-bar" style="width:100%"></div></div><span class="db-val">60%+</span></div>
+        </div>
+        <p class="db-note">Hotel Sunsmart: de 30% para mais de 60% de reservas diretas. Medido no PMS do hotel.</p>
       </div>
-      <ul class="sv-list" style="margin-top:16px">
-        <li>Mais reservas com o mesmo volume de tráfego</li>
-        <li>Redução de abandono no processo de compra</li>
-        <li>Aumento do share de reservas diretas vs. OTA</li>
-        <li>Dados de comportamento para otimização contínua</li>
-      </ul>
     </div>
   </div>
-</div>
+</section>
 
-<!-- STAGE 3: RECUPERAÇÃO -->
-<div class="stage" id="recuperacao">
-  <div class="stage-inner">
-    <div>
-      <div class="stage-badge">
-        <div class="stage-num">3</div>
-        <span class="stage-label">Recuperação de Demanda</span>
-      </div>
-      <h2>Recupera quem quase reservou antes de ir embora</h2>
-      <p class="stage-desc">
-        A maior parte das pessoas que pesquisa seu hotel não reserva na primeira visita. Sem um sistema de recuperação, esse interesse some — e provavelmente termina numa OTA. O remarketing inteligente mantém o hotel presente na jornada de decisão até o momento certo.
-      </p>
-      <div class="stage-tools">
-        <div class="stage-tool">
-          <div class="stage-tool-icon">🔁</div>
-          <div>
-            <h5>Remarketing inteligente</h5>
-            <p>Anúncios segmentados exibidos para quem visitou o site mas não concluiu a reserva.</p>
-          </div>
-        </div>
-        <div class="stage-tool">
-          <div class="stage-tool-icon">📱</div>
-          <div>
-            <h5>Recuperação de carrinho (WhatsApp + e-mail)</h5>
-            <p>Sequência automatizada de mensagens para quem iniciou o processo e não finalizou.</p>
-          </div>
-        </div>
-        <div class="stage-tool">
-          <div class="stage-tool-icon">🎯</div>
-          <div>
-            <h5>Sequência de estímulos até a decisão</h5>
-            <p>Múltiplos pontos de contato coordenados para manter o hotel relevante durante a decisão de compra.</p>
-          </div>
-        </div>
+<section class="et" id="recuperacao">
+  <div class="wrap">
+    <div class="et-head rv">
+      <span class="et-num" aria-hidden="true">03</span>
+      <div>
+        <span class="overline">Etapa 03 · Recuperação de demanda</span>
+        <h2 class="t-display">Quem saiu sem reservar <em class="gi">volta a ser impactado</em></h2>
+        <p class="p-muted">A maior parte de quem pesquisa o hotel não fecha na primeira visita. Sem recuperação, esse interesse termina numa OTA dias depois. Aqui o hotel continua presente até a decisão.</p>
       </div>
     </div>
-    <div class="stage-visual">
-      <div class="sv-title">Resultado desta etapa</div>
-      <div class="sv-metric">
-        <span class="sv-metric-label">Taxa de recuperação de carrinho</span>
-        <span class="sv-metric-val">↑ Maior</span>
+    <div class="et-body">
+      <div class="et-tools rv">
+      <div class="et-tool"><h3>Remarketing por etapa</h3><p>Quem viu o quarto recebe o quarto; quem abriu o motor recebe a oferta. Anúncio diferente para cada ponto em que a pessoa parou.</p></div>
+      <div class="et-tool"><h3>Carrinho abandonado por WhatsApp e e-mail</h3><p>Sequência automática para quem escolheu datas e não concluiu — com as datas, o quarto e um caminho de volta ao checkout.</p></div>
+      <div class="et-tool"><h3>Cadência até a decisão</h3><p>Pontos de contato coordenados ao longo de dias, não uma mensagem só. Termina quando a reserva entra ou quando as datas passam.</p></div>
       </div>
-      <div class="sv-metric">
-        <span class="sv-metric-label">Reservas recuperadas</span>
-        <span class="sv-metric-val">+Volume</span>
+      <div class="et-side rv">
+        <div class="ph"><img src="assets/img/criativo-02.webp" alt="Criativo de pacote romântico do Lagamar Resort e Hotel" loading="lazy"></div>
+        <p class="ph-cap"><b>Lagamar Resort e Hotel</b> · peça real de oferta usada em campanha e remarketing. Retorno de 7x+ sobre a mídia paga.</p>
       </div>
-      <ul class="sv-list" style="margin-top:16px">
-        <li>Aproveitamento de demanda que já existia</li>
-        <li>Redução de perda para OTAs no momento de decisão</li>
-        <li>Custo de recuperação muito menor que nova aquisição</li>
-        <li>Aumento geral da taxa de conversão do funil</li>
-      </ul>
     </div>
   </div>
-</div>
+</section>
 
-<!-- STAGE 4: CONVERSÃO ASSISTIDA -->
-<div class="stage" id="assistida">
-  <div class="stage-inner reverse">
-    <div>
-      <div class="stage-badge">
-        <div class="stage-num">4</div>
-        <span class="stage-label">Conversão Assistida</span>
-      </div>
-      <h2>Aumenta taxa de fechamento com automação e equipe treinada</h2>
-      <p class="stage-desc">
-        Leads qualificados precisam de assistência no momento certo. A automação de WhatsApp entra no momento certo, com a mensagem certa. O CRM estruturado garante que nenhuma oportunidade seja perdida por falta de acompanhamento. A equipe opera com um playbook claro.
-      </p>
-      <div class="stage-tools">
-        <div class="stage-tool">
-          <div class="stage-tool-icon">💬</div>
-          <div>
-            <h5>Automação de WhatsApp</h5>
-            <p>Fluxos de atendimento automatizados que respondem, qualificam e encaminham para fechamento.</p>
-          </div>
-        </div>
-        <div class="stage-tool">
-          <div class="stage-tool-icon">📋</div>
-          <div>
-            <h5>CRM estruturado</h5>
-            <p>Visibilidade total do pipeline de leads. Nenhum contato cai no esquecimento.</p>
-          </div>
-        </div>
-        <div class="stage-tool">
-          <div class="stage-tool-icon">📖</div>
-          <div>
-            <h5>Equipe treinada com playbook</h5>
-            <p>Processos documentados para que a equipe de vendas opere com consistência e eficiência.</p>
-          </div>
-        </div>
+<section class="et" id="assistida">
+  <div class="wrap">
+    <div class="et-head rv">
+      <span class="et-num" aria-hidden="true">04</span>
+      <div>
+        <span class="overline">Etapa 04 · Conversão assistida</span>
+        <h2 class="t-display">Resposta em minutos, com <em class="gi">CRM e playbook</em></h2>
+        <p class="p-muted">Parte dos hóspedes prefere perguntar antes de pagar. Se a resposta demora, a reserva vai para quem respondeu primeiro. A quarta etapa coloca automação, CRM e time treinado na mesma conversa.</p>
       </div>
     </div>
-    <div class="stage-visual">
-      <div class="sv-title">Resultado desta etapa</div>
-      <div class="sv-metric">
-        <span class="sv-metric-label">Taxa de fechamento</span>
-        <span class="sv-metric-val">↑ Maior</span>
+    <div class="et-body">
+      <div class="et-tools rv">
+      <div class="et-tool"><h3>Automação de WhatsApp</h3><p>Primeira resposta imediata, com disponibilidade e tarifa. O fluxo qualifica datas, número de pessoas e ocasião e entrega o lead pronto ao atendente.</p></div>
+      <div class="et-tool"><h3>CRM com pipeline de reservas</h3><p>Cada conversa vira um card com etapa, valor e prazo. Nenhum contato fica sem dono nem sem próximo passo.</p></div>
+      <div class="et-tool"><h3>Time treinado com playbook</h3><p>Abordagem, diagnóstico, oferta ancorada no direto, contorno da objeção e fechamento — roteiro treinado com a equipe do hotel até virar rotina.</p></div>
       </div>
-      <div class="sv-metric">
-        <span class="sv-metric-label">Tempo de resposta</span>
-        <span class="sv-metric-val">↓ Menor</span>
+      <div class="et-side rv">
+        <div class="ph"><img src="assets/img/hotel-05.webp" alt="Rede e piscina vistas da porta de um bangalô, hotel atendido pela Komplexa" loading="lazy"></div>
+        <p class="ph-cap">Hotel atendido pela Komplexa. O atendimento fecha a reserva; o PMS registra a origem.</p>
       </div>
-      <ul class="sv-list" style="margin-top:16px">
-        <li>Mais leads convertidos em reservas confirmadas</li>
-        <li>Redução de abandono por falta de atendimento</li>
-        <li>Equipe alinhada e operando por dados</li>
-        <li>Histórico de interações centralizado no CRM</li>
-      </ul>
     </div>
   </div>
-</div>
+</section>
 
-<!-- STAGE 5: PÓS-VENDA -->
-<div class="stage" id="posvenda">
-  <div class="stage-inner">
-    <div>
-      <div class="stage-badge">
-        <div class="stage-num">5</div>
-        <span class="stage-label">Pós-venda e Reativação</span>
-      </div>
-      <h2>Monetiza quem já comprou e aumenta o valor por hóspede</h2>
-      <p class="stage-desc">
-        O hóspede que já ficou é seu lead mais qualificado. Ele conhece o hotel, teve uma experiência e, se foi boa, tem altíssima propensão a voltar. A maioria dos hotéis ignora esse ativo. Nós estruturamos campanhas específicas para reativar essa base e aumentar o LTV.
-      </p>
-      <div class="stage-tools">
-        <div class="stage-tool">
-          <div class="stage-tool-icon">🔔</div>
-          <div>
-            <h5>Reativação de hóspedes antigos</h5>
-            <p>Campanhas direcionadas para quem já ficou no hotel e tem alta probabilidade de retorno.</p>
-          </div>
-        </div>
-        <div class="stage-tool">
-          <div class="stage-tool-icon">🗓️</div>
-          <div>
-            <h5>Campanhas por datas e ocasiões</h5>
-            <p>Comunicação segmentada em aniversários, feriados e datas estratégicas para cada perfil de hóspede.</p>
-          </div>
-        </div>
-        <div class="stage-tool">
-          <div class="stage-tool-icon">📈</div>
-          <div>
-            <h5>Aumento de LTV</h5>
-            <p>Estratégias para elevar o valor total gerado por hóspede ao longo do tempo.</p>
-          </div>
-        </div>
+<section class="et" id="posvenda">
+  <div class="wrap">
+    <div class="et-head rv">
+      <span class="et-num" aria-hidden="true">05</span>
+      <div>
+        <span class="overline">Etapa 05 · Pós-venda e reativação</span>
+        <h2 class="t-display">O hóspede que já ficou é o lead <em class="gi">mais barato do hotel</em></h2>
+        <p class="p-muted">Ele conhece o quarto, o café e o caminho até a porta. A maioria dos hotéis nunca mais fala com ele. A quinta etapa transforma a base do PMS em campanha recorrente.</p>
       </div>
     </div>
-    <div class="stage-visual">
-      <div class="sv-title">Resultado desta etapa</div>
-      <div class="sv-metric">
-        <span class="sv-metric-label">Lifetime Value por hóspede</span>
-        <span class="sv-metric-val">↑ LTV</span>
+    <div class="et-body">
+      <div class="et-tools rv">
+      <div class="et-tool"><h3>Reativação da base</h3><p>Hóspedes dos últimos anos recebem oferta por e-mail, WhatsApp e anúncio segmentado — sem custo de aquisição novo.</p></div>
+      <div class="et-tool"><h3>Campanhas por data e ocasião</h3><p>Aniversário da estadia, feriado em que ele já veio, pacote que combina com o perfil. Mensagem por segmento, não disparo em massa.</p></div>
+      <div class="et-tool"><h3>Receita por hóspede, não por diária</h3><p>Segunda e terceira estadia, upgrade de quarto, experiência adicional. A meta é o valor que cada hóspede gera ao longo dos anos.</p></div>
       </div>
-      <div class="sv-metric">
-        <span class="sv-metric-label">Taxa de retorno</span>
-        <span class="sv-metric-val">↑ Maior</span>
+      <div class="et-side rv">
+        <div class="ph"><img src="assets/img/karanda.webp" alt="Pousada Karandá, cliente Komplexa" loading="lazy"></div>
+        <p class="ph-cap"><b>Pousada Karandá</b> · 6,5x de retorno sobre o investimento em mídia paga, conferido no PMS.</p>
       </div>
-      <ul class="sv-list" style="margin-top:16px">
-        <li>Mais receita sem custo de nova aquisição</li>
-        <li>Base de hóspedes fiéis e recorrentes</li>
-        <li>Redução do custo médio por reserva ao longo do tempo</li>
-        <li>Ocupação mais distribuída e previsível</li>
-      </ul>
     </div>
   </div>
-</div>
+</section>
 
-<!-- OCCASIONS -->
-<section class="occasions">
-  <div class="container">
-    <div class="tag">Estratégia por Ocasião</div>
-    <h2 class="section-title" style="color:#fff">Múltiplos funis rodando<br /><span class="serif-accent">ao mesmo tempo</span></h2>
-    <p class="section-sub" style="color:rgba(255,255,255,0.5)">Não existe "uma campanha". Criamos estratégias específicas por ocasião para garantir ocupação distribuída e receita estável.</p>
+
+<!-- ============ ESTRATÉGIA POR OCASIÃO ============ -->
+<section id="ocasioes">
+  <div class="wrap">
+    <div class="head-center">
+      <span class="overline rv">Estratégia por ocasião</span>
+      <h2 class="t-display rv">Vários funis rodando <em class="gi">ao mesmo tempo</em></h2>
+      <p class="p-muted rv">Não existe "a campanha do hotel". Existem campanhas por motivo de viagem, cada uma com criativo, público e oferta próprios — é assim que a ocupação deixa de depender do fim de semana.</p>
+    </div>
     <div class="occ-grid">
-      <div class="occ-card">
-        <div class="occ-icon">📅</div>
-        <h4>Datas Comemorativas</h4>
-        <p>Campanhas planejadas com antecedência para capturar toda a demanda nos momentos de alta conversão.</p>
-        <span class="occ-tag">Alta conversão</span>
+      <div class="card-soft rv"><span class="n">Alta conversão</span><h3>Datas comemorativas</h3><p>Réveillon, Carnaval, Páscoa, Dia dos Namorados: campanha planejada com antecedência, quando a busca é maior e a decisão é mais rápida.</p></div>
+      <div class="card-soft rv"><span class="n">Ocupação da semana</span><h3>Baixa temporada e meio de semana</h3><p>Oferta específica para as datas que não vendem sozinhas: pacote de domingo a quinta, day use, público de raio curto.</p></div>
+      <div class="card-soft rv"><span class="n">Motivo de viagem</span><h3>Pacotes e experiências</h3><p>Romântico, família, evento local, gastronomia: página e anúncio próprios para cada motivo de viagem.</p></div>
+      <div class="card-soft rv"><span class="n">Contínuo</span><h3>Always-on</h3><p>Captação e remarketing rodando o ano inteiro. É a campanha que mantém o funil cheio entre uma data e outra.</p></div>
+    </div>
+    <div class="occ-proof rv">
+      <div class="data-block">
+        <h4>Solar Dona Dora · faturamento no pior mês do ano</h4>
+        <div class="db-row"><span class="db-label">Antes</span><div class="db-bar-wrap"><div class="db-bar" style="width:29%"></div></div><span class="db-val">R$ 12,4 mil</span></div>
+        <div class="db-row"><span class="db-label">Com o funil de baixa temporada</span><div class="db-bar-wrap"><div class="db-bar" style="width:100%"></div></div><span class="db-val">R$ 42,5 mil</span></div>
       </div>
-      <div class="occ-card">
-        <div class="occ-icon">📆</div>
-        <h4>Baixa Temporada</h4>
-        <p>Estratégia específica para ocupação da semana e períodos de menor demanda espontânea.</p>
-        <span class="occ-tag">Midweek</span>
-      </div>
-      <div class="occ-card">
-        <div class="occ-icon">🎁</div>
-        <h4>Pacotes Específicos</h4>
-        <p>Funis dedicados para experiências: pacotes românticos, eventos locais, experiências temáticas.</p>
-        <span class="occ-tag">Experiências</span>
-      </div>
-      <div class="occ-card">
-        <div class="occ-icon">🔁</div>
-        <h4>Always-On</h4>
-        <p>Campanhas contínuas de captação que alimentam o funil de remarketing ao longo do ano inteiro.</p>
-        <span class="occ-tag">Contínuo</span>
-      </div>
+      <p class="db-note">Pousada Solar Dona Dora: 3,4x de faturamento na baixa temporada — o pior mês do ano virou recorde. Medido no PMS.</p>
     </div>
   </div>
 </section>
 
-<!-- PROOF -->
-<section class="proof">
-  <div class="container">
-    <div class="tag">Prova Simples</div>
-    <h2 class="section-title">Quando o sistema está<br /><span class="serif-accent">bem implementado</span></h2>
-    <p class="section-sub">O hotel enche com previsibilidade. A semana deixa de ser problema. O custo por reserva cai e o lucro aumenta.</p>
-    <div class="proof-grid">
-      <div class="proof-card">
-        <div class="proof-icon">🏨</div>
-        <h4>O hotel enche com previsibilidade</h4>
-        <p>Múltiplos funis rodando geram ocupação distribuída. Menos dependência de pico de fim de semana.</p>
-      </div>
-      <div class="proof-card">
-        <div class="proof-icon">📉</div>
-        <h4>O custo por reserva cai</h4>
-        <p>Com otimização contínua da IA e reaproveitamento da base existente, o CAC diminui ao longo do tempo.</p>
-      </div>
-      <div class="proof-card">
-        <div class="proof-icon">💰</div>
-        <h4>O lucro aumenta</h4>
-        <p>Mais reservas diretas significa menos comissões pagas para OTAs. Margem que fica no hotel.</p>
-      </div>
+<!-- ============ MÉTRICAS ============ -->
+<section id="metricas" style="padding-top:0">
+  <div class="wrap">
+    <div class="head-center">
+      <span class="overline rv">O que medimos</span>
+      <h2 class="t-display rv">O que entra no relatório <em class="gi">e o que fica de fora</em></h2>
+      <p class="p-muted rv">Alcance, impressão e seguidor não pagam diária. O relatório do sistema traz os números que o dono do hotel já acompanha.</p>
+    </div>
+    <ul class="metrics rv">
+      <li>Receita direta<span>PMS</span></li>
+      <li>Reservas diretas<span>PMS</span></li>
+      <li>Retorno sobre mídia (ROAS)<span>Receita no PMS ÷ mídia</span></li>
+      <li>Custo por reserva<span>Por campanha</span></li>
+      <li>Taxa de conversão do site<span>Visita → checkout</span></li>
+      <li>Recuperação de carrinho<span>Abandono → reserva</span></li>
+      <li>Taxa de ocupação<span>Semana e fim de semana</span></li>
+      <li>RevPAR<span>Receita por quarto disponível</span></li>
+      <li>Participação das OTAs<span>Direto × intermediado</span></li>
+      <li>Receita por hóspede<span>Base reativada</span></li>
+    </ul>
+    <p class="metrics-out rv"><b>Fora do relatório:</b> alcance, impressões, curtidas e seguidores. Como o método se organiza por trás dessas etapas está em <a href="arquitetura.html">Arquitetura de Crescimento</a>.</p>
+  </div>
+</section>
+
+<!-- ============ FAQ ============ -->
+<section id="faq" style="padding-top:0">
+  <div class="wrap">
+    <div class="faq-wrap">
+      <span class="overline rv">Perguntas frequentes</span>
+      <h2 class="t-display rv" style="margin-top:1rem">Antes de <em class="gi">agendar</em></h2>
+      <details class="faq-item rv">
+        <summary>Em quanto tempo o sistema começa a gerar reservas diretas?</summary>
+        <div class="faq-answer"><p>Depende do ponto de partida. Um hotel que já tem site integrado ao motor começa pelas campanhas e pelo remarketing nas primeiras semanas; um hotel sem site passa antes pela etapa de conversão. O plano de implementação, com prazo por etapa, é definido na primeira conversa.</p></div>
+      </details>
+      <details class="faq-item rv">
+        <summary>Preciso trocar meu motor de reservas ou meu PMS?</summary>
+        <div class="faq-answer"><p>Não. O sistema se conecta ao motor e ao PMS que o hotel já usa — Omnibees, HSystem, Erbon e outros. A troca só entra em pauta quando a ferramenta atual impede rastrear a reserva da campanha até o checkout.</p></div>
+      </details>
+      <details class="faq-item rv">
+        <summary>O sistema funciona para pousada pequena?</summary>
+        <div class="faq-answer"><p>Sim. Solar Dona Dora e Karandá são pousadas; Bahia Bonita é hotel boutique; Lagamar é resort. As cinco etapas são as mesmas — o que muda é o volume de mídia e o tamanho do time comercial.</p></div>
+      </details>
+      <details class="faq-item rv">
+        <summary>Vocês substituem o Booking e o Airbnb?</summary>
+        <div class="faq-answer"><p>Não. As OTAs continuam como vitrine. O objetivo é que o hóspede que já conhece o hotel reserve direto e que a participação das OTAs caia sem cair a ocupação. No Sunsmart, as reservas diretas passaram de 30% para mais de 60%.</p></div>
+      </details>
+      <details class="faq-item rv">
+        <summary>Como o resultado é medido?</summary>
+        <div class="faq-answer"><p>No PMS do hotel. Cada reserva vinda de campanha, remarketing, WhatsApp ou reativação chega ao motor com origem rastreada e é conferida no sistema do hotel — não no painel do anúncio.</p></div>
+      </details>
     </div>
   </div>
 </section>
 
-<!-- CTA -->
-<div class="cta-banner">
-  <div class="container">
-    <div class="tag" style="color:rgba(0,198,255,0.8)">Próximo passo</div>
-    <h2 class="section-title" style="color:#fff">Pronto para estruturar<br /><span class="serif-accent">seu sistema de reservas?</span></h2>
-    <p class="section-sub" style="color:rgba(255,255,255,0.5);margin:16px auto 36px;">Estratégia personalizada para o seu hotel. Implementação + gestão contínua com dados reais.</p>
-    <div class="actions">
-      <a href="https://komplexa-pricing.vercel.app/f/komplexaconsultoria?utm_source=komplexahoteis&utm_medium=site&utm_content=sistema" target="_blank" class="btn btn-primary">Falar com especialista →</a>
-      <a href="ia.html" class="btn btn-ghost">Ver IA Aplicada</a>
+<!-- ============ 11. FECHAMENTO: CARTA DO FUNDADOR ============ -->
+<section id="contato" style="padding-top:0">
+  <div class="wrap">
+    <div class="news-box">
+      <span class="overline rv">Carta do fundador</span>
+      <h2 class="t-display rv">Um convite para conhecer <em class="gi">o nosso time.</em></h2>
+      <img class="carta-foto rv" src="assets/img/igor.png" alt="Igor Salomão, fundador da Komplexa">
+      <div class="carta rv">
+        <p>Sou o Igor Salomão, fundador da Komplexa. Se você chegou até aqui, quero te fazer um convite: uma conversa comigo e com o time sobre o seu hotel.</p>
+        <p>Nela, queremos entender de verdade como a sua operação funciona hoje: de onde vêm as reservas, como o hóspede chega até você e onde você sente que dá para crescer.</p>
+        <p>Com isso em mãos, montamos um plano de ação para o seu hotel e te mostramos, na prática, o que podemos fazer por ele. Sem pacote pronto: o plano nasce da sua operação.</p>
+        <div class="carta-ass">Igor Salomão</div>
+        <div class="carta-cargo">Fundador · Komplexa Hotéis</div>
+      </div>
+      <a href="https://komplexa-pricing.vercel.app/f/komplexaconsultoria?utm_source=komplexahoteis&amp;utm_medium=site&amp;utm_content=sistema-final" target="_blank" rel="noopener" class="btn-sage rv">Agendar conversa</a>
+      <p class="carta-ps rv">P.S. Foi assim que começamos com todos os que hoje são cases de sucesso.</p>
     </div>
   </div>
-</div>
+</section>
 
-<!-- FOOTER -->
+<!-- ============ 12. FOOTER ============ -->
 <footer>
-  <div class="footer-inner">
-    <div class="footer-top">
-      <div class="footer-brand">
-        <div class="footer-logo">
-          <img src="assets/logo.svg" alt="Komplexa" />
-          <span class="footer-logo-text">Komplexa Hotéis</span>
-        </div>
-        <p>Arquitetura de crescimento para reservas diretas. Transformamos hotéis em sistemas de receita previsível.</p>
+  <div class="wrap">
+    <div class="ft-grid">
+      <div class="ft-brand">
+        <svg viewBox="0 0 100 97" fill="currentColor" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <path d="M45.8247 36.6514C47.5271 36.6514 49.1676 37.1817 50.5604 38.211L89.22 66.5651C90.9533 67.844 92.0985 69.7156 92.439 71.8679C92.7795 74.0202 92.2533 76.1413 90.9843 77.8881C89.4366 80.0092 87.0842 81.2257 84.4533 81.2257C81.8223 81.2257 81.1104 80.6954 79.7176 79.6661L41.0581 51.3119C39.3247 50.033 38.1795 48.1615 37.839 46.0092C37.4985 43.8569 38.0247 41.7358 39.2938 39.989C40.8414 37.8679 43.1938 36.6514 45.8247 36.6514ZM45.8247 29.1651C41.0581 29.1651 36.3223 31.3798 33.289 35.5908C28.2747 42.5468 29.7914 52.3101 36.6938 57.3633L75.3533 85.7174C78.1081 87.745 81.2962 88.7119 84.4533 88.7119C89.22 88.7119 93.9557 86.4973 96.989 82.2862C102.003 75.3303 100.487 65.567 93.5842 60.5138L54.9247 32.1596C52.17 30.1321 48.9819 29.1651 45.8247 29.1651Z"/>
+          <path d="M69.1938 7.48624C70.8961 7.48624 72.5366 8.01651 73.9295 9.04587L79.47 13.1009C83.0604 15.7211 83.8652 20.8055 81.2342 24.4239L76.4985 30.9743L64.4581 22.1468C60.8676 19.5266 60.0628 14.4422 62.6938 10.8239C64.2414 8.70275 66.5938 7.48624 69.2247 7.48624M69.1938 0C64.4271 0 59.6914 2.21468 56.658 6.42569C51.6438 13.3816 53.1604 23.145 60.0628 28.1982L78.108 41.4239L87.2081 28.822C92.2223 21.8661 90.7057 12.1027 83.8033 7.04954L78.2628 2.99449C75.508 0.966969 72.32 0 69.1628 0H69.1938Z"/>
+          <path d="M15.4914 14.4422C17.1938 14.4422 18.8342 14.9725 20.2271 16.0018C21.9604 17.2807 23.1057 19.1523 23.4462 21.3046C23.7866 23.4569 23.2604 25.578 21.9914 27.3248C20.4438 29.4459 18.0914 30.6624 15.4604 30.6624C12.8295 30.6624 12.1176 30.1321 10.7247 29.1028C8.9914 27.8239 7.84615 25.9523 7.50568 23.8C7.1652 21.6477 7.69139 19.5266 8.96044 17.7798C10.5081 15.6587 12.8604 14.4422 15.4914 14.4422ZM15.4914 6.95597C10.7247 6.95597 5.98901 9.17064 2.95567 13.3817C-2.05861 20.3376 -0.541946 30.1009 6.36043 35.1541C9.1152 37.1817 12.3033 38.1486 15.4604 38.1486C20.2271 38.1486 24.9628 35.9339 27.9962 31.7229C33.0104 24.767 31.4938 15.0037 24.5914 9.95046C21.8366 7.92294 18.6485 6.95597 15.4914 6.95597Z"/>
+          <path d="M23.3533 65.3174L35.3937 74.145C38.9842 76.7652 39.789 81.8495 37.158 85.4679C35.6104 87.589 33.258 88.8055 30.6271 88.8055C27.9961 88.8055 27.2842 88.2752 25.8914 87.2459L20.3509 83.1908C16.7604 80.5706 15.9557 75.4863 18.5866 71.8679L23.3223 65.3174M21.7128 54.8367L12.6128 67.4385C7.59851 74.3945 9.11518 84.1578 16.0176 89.211L21.558 93.2661C24.3128 95.2936 27.5009 96.2606 30.658 96.2606C35.4247 96.2606 40.1604 94.0459 43.1937 89.8349C48.208 82.8789 46.6914 73.1156 39.789 68.0624L21.7438 54.8367H21.7128Z"/>
+        </svg>
+        <div class="name">Komplexa Hotéis</div>
+        <p>Arquitetura de crescimento para reservas diretas.<br>
+        Aquisição para hotelaria em 14 estados do Brasil.<br>
+        <a href="https://www.instagram.com/komplexa.hoteis/" target="_blank" rel="noopener">@komplexa.hoteis</a></p>
       </div>
-      <div class="footer-col">
-        <h5>Solução</h5>
-        <ul>
-          <li><a href="sistema.html">O Sistema</a></li>
-          <li><a href="ia.html">IA Aplicada</a></li>
-          <li><a href="arquitetura.html">Arquitetura</a></li>
-        </ul>
+      <div class="ft-col">
+        <h4>A solução</h4>
+        <a href="index.html#metodo">O método</a>
+        <a href="index.html#cases">Cases</a>
+        <a href="index.html#sistema">O sistema</a>
+        <a href="index.html#ia">IA aplicada</a>
+        <a href="index.html#frentes">Frentes de receita</a>
       </div>
-      <div class="footer-col">
-        <h5>Conteúdo</h5>
-        <ul>
-          <li><a href="blog/index.html">Blog</a></li>
-        </ul>
+      <div class="ft-col">
+        <h4>Páginas</h4>
+        <a href="sistema.html">O Sistema em 5 etapas</a>
+        <a href="ia.html">IA Aplicada</a>
+        <a href="arquitetura.html">Arquitetura de Crescimento</a>
+        <a href="contato.html">Contato</a>
       </div>
-      <div class="footer-col">
-        <h5>Contato</h5>
-        <ul>
-          <li><a href="contato.html">Falar com a equipe</a></li>
-          <li><a href="https://komplexa-pricing.vercel.app/f/komplexaconsultoria?utm_source=komplexahoteis&utm_medium=site&utm_content=sistema" target="_blank">Começar agora</a></li>
-        </ul>
+      <div class="ft-col">
+        <h4>Conteúdo</h4>
+        <a href="blog/index.html">Blog</a>
+        <a href="blog/post-comissao-booking-18.html">Booking a 18%</a>
+        <a href="blog/post-motor-de-reservas.html">Motor de reservas</a>
+        <a href="blog/post-google-hotel-ads.html">Google Hotel Ads</a>
+      </div>
+      <div class="ft-col">
+        <h4>Contato</h4>
+        <a href="https://komplexa-pricing.vercel.app/f/komplexaconsultoria?utm_source=komplexahoteis&amp;utm_medium=site&amp;utm_content=sistema-footer" target="_blank" rel="noopener">Agendar conversa</a>
+        <a href="https://www.instagram.com/komplexa.hoteis/" target="_blank" rel="noopener">Instagram</a>
       </div>
     </div>
-    <div class="footer-bottom">
-      <p>© 2026 Komplexa Hotéis. Todos os direitos reservados.</p>
+    <div class="selos" aria-label="Integrações e parceiros de tecnologia">
+      <div class="selos-track">
+        <!-- lista repetida 2x para o loop contínuo do marquee -->
+        <div class="selo"><img src="assets/img/omnibees.png" alt="Omnibees"></div>
+        <div class="selo"><img src="assets/img/hsystem.png" alt="HSystem"></div>
+        <div class="selo"><img src="assets/img/asksuite.jpeg" alt="Asksuite"></div>
+        <div class="selo"><img src="assets/img/erbon.png" alt="Erbon"></div>
+        <div class="selo"><img src="assets/img/bitz.png" alt="Bitz"></div>
+        <div class="selo"><img src="assets/img/foco.png" alt="Foco"></div>
+        <div class="selo"><img src="assets/img/omnibees.png" alt="Omnibees"></div>
+        <div class="selo"><img src="assets/img/hsystem.png" alt="HSystem"></div>
+        <div class="selo"><img src="assets/img/asksuite.jpeg" alt="Asksuite"></div>
+        <div class="selo"><img src="assets/img/erbon.png" alt="Erbon"></div>
+        <div class="selo"><img src="assets/img/bitz.png" alt="Bitz"></div>
+        <div class="selo"><img src="assets/img/foco.png" alt="Foco"></div>
+      </div>
     </div>
+    <div class="ft-credit">© 2026 Komplexa Hotéis · Arquitetura de crescimento para reservas diretas · komplexahoteis.com</div>
   </div>
 </footer>
 
-<script>
-  function toggleMenu() {
-    document.getElementById('mobileNav').classList.toggle('open');
-  }
-  // Active link on scroll
-  const sections = document.querySelectorAll('[id]');
-  const navLinks = document.querySelectorAll('.sn-link');
-  window.addEventListener('scroll', () => {
-    let current = '';
-    sections.forEach(s => {
-      if (window.scrollY >= s.offsetTop - 140) current = s.id;
-    });
-    navLinks.forEach(l => {
-      l.classList.remove('active');
-      if (l.getAttribute('href') === '#' + current) l.classList.add('active');
-    });
-  });
-</script>
+<script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.42/dist/lenis.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="assets/js/main.js"></script>
+
 </body>
 </html>

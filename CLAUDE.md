@@ -4,79 +4,99 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project
 
-Website institucional da **Komplexa Hotéis** — agência de arquitetura de crescimento para reservas diretas em hotelaria.
+Website institucional da **Komplexa Hotéis** — agência de aquisição para hotelaria (marketing e vendas
+integrados para hotéis, pousadas e resorts crescerem o canal direto). Publicado pelo GitHub Pages a partir
+do `main` em `komplexahoteis.com` (CNAME na raiz).
+
+## ⚠️ Estado do trabalho (set/2026)
+
+O site inteiro foi migrado para o visual novo (Template 6 "Autoral" com a paleta Komplexa) na branch
+**`site-novo`**: home, 13 posts + índice do blog, `sistema`, `ia`, `arquitetura`, `contato`,
+`agencia-marketing-hoteleiro` e `404`. O `main` ainda tem o site antigo até o Igor aprovar o merge.
+
+Regras:
+- **Não fazer merge em `main` nem push sem aprovação explícita do Igor** (publica em produção).
+- `novo-site/` (excluído do git) era a proposta original da home; a fonte de verdade agora é a raiz da
+  branch `site-novo`. Não editar `novo-site/`.
+- Originais das fotos e vídeos antes da compressão: `_extraidos/novo-site-originais/` (fora do git).
+- Vídeo do hero (`assets/video/hero.mp4`) é placeholder do template; será trocado quando houver material.
+- Critério de qualidade de copy e layout: `_extraidos/site-hotel-boutique/SKILL.md` (sem clichê,
+  prova social só real, hierarquia rótulo/título/parágrafo, ênfase com `<em class="gi">`).
+
+Revisão local: `python -m http.server 8765` na raiz → `http://localhost:8765/`.
+Prints sem navegador: Chrome headless (`--headless=new --screenshot`); elementos `.rv` ficam invisíveis
+no headless, use um wrapper com iframe injetando `.rv{opacity:1!important;transform:none!important}`.
 
 ## Tech Stack
 
-Pure HTML + CSS + vanilla JS. No build system, no framework, no dependencies (only Google Fonts via CDN). Open `index.html` directly in the browser.
+HTML + CSS + JS puro, sem build. Dependências via CDN: Google Fonts (Cormorant + Jost), Lenis e GSAP +
+ScrollTrigger (efeitos de scroll, menu overlay, reveals `.rv`).
 
 ## File Structure
 
 ```
 /
-├── index.html            # Home
-├── sistema.html          # O Sistema (5 etapas do funil)
-├── ia.html               # IA Aplicada
-├── arquitetura.html      # Arquitetura de Crescimento Hoteleiro
-├── contato.html          # Contato (all CTAs → komplexa-pricing.vercel.app/f/komplexaconsultoria)
+├── index.html                  # Home (hero em vídeo, método, cases, site entregue, entregáveis, frentes, quem somos, blog, carta)
+├── sistema.html, ia.html, arquitetura.html, contato.html, agencia-marketing-hoteleiro.html, 404.html
 ├── blog/
-│   ├── index.html        # Blog listing
-│   ├── _template.html    # Post template (FAQ + schema) — base for new posts
-│   └── post-ota.html     # Example published post
-└── assets/
-    ├── style.css         # Shared stylesheet (nav, footer, buttons, layout)
-    └── logo.svg          # Brand logo (gradient SVG)
+│   ├── index.html              # Índice com filtro por tema (JS inline)
+│   ├── _template.html          # Base para post novo (tokens __X__, FAQ + schema)
+│   └── post-*.html             # 13 posts
+├── assets/
+│   ├── css/style.css           # Único stylesheet (home + bloco "PÁGINAS INTERNAS + BLOG" no fim)
+│   ├── js/main.js              # Lenis, GSAP, menu, concierge, cases, funil, reveals
+│   ├── img/*.webp, *.png       # Fotos (WebP ≤1920px, q72) e logos de parceiros
+│   ├── video/hero.mp4, kaptura.mp4, *-poster.webp
+│   ├── og-home.jpg             # Open Graph padrão
+│   └── logo.svg, style.css     # LEGADO do site antigo (só os decks em d/ podem depender); não usar em página nova
+├── d/                          # Decks/propostas (não indexados, robots Disallow)
+├── _extraidos/tools/shell.py   # Gerador da casca compartilhada (fora do git)
+├── _extraidos/tools/migrate_blog.py, build_*.py  # Scripts usados na migração (fora do git)
+├── sitemap.xml, robots.txt, CNAME
+└── komplexa_hoteis_resumo.md   # Fonte de conteúdo/posicionamento
 ```
+
+## Casca compartilhada (header, menu overlay, concierge, carta do fundador, rodapé)
+
+Toda página não-home é montada pelo gerador `_extraidos/tools/shell.py`, que recorta esses blocos da
+`index.html` e ajusta caminhos (`base` = `''` na raiz, `'../'` em `blog/`) e o `utm_content`:
+
+```python
+import sys, os; sys.path.insert(0, '_extraidos/tools'); from shell import Shell
+sh = Shell(os.getcwd())
+html = sh.head(base, title, description, canonical, extra='<style>…</style>' ) \
+     + sh.top(base, utm) + MIOLO + sh.carta_cta(base, utm) + sh.bottom(base, utm)
+```
+
+- Página com foto no hero usa `<section class="hero-int">` (logo nasce branca e escurece ao rolar).
+- Página sem hero de foto (blog) precisa de `class="logo-fix dark"` no `<a class="logo-fix">`.
+- Se a home mudar (menu, rodapé, carta), regerar as páginas rodando os `build_*.py` e `migrate_blog.py`
+  (este só na primeira migração; para posts já migrados, ajustar direto no HTML).
 
 ## Brand
 
-- **Colors:** `#00C6FF` (blue), `#14233C` (navy), `#A8A8A8` (gray), `#FFFFFF` (white), `#F7F9FC` (bg)
-- **Gradient:** `linear-gradient(135deg, #1670C3 0%, #1099E9 48%, #24D5FF 100%)`
-- **Fonts:** Exo 2 (headings, bold/semibold), Work Sans (body)
-- **CSS variables:** `--blue`, `--navy`, `--gray`, `--white`, `--bg`, `--border`, `--grad`
+- Tokens em `:root` de `assets/css/style.css`: `--ink #0E1E35`, `--sage #1099E9` (azul de ação),
+  `--terra #24D5FF`, `--dark #081525`, `--bg #F3F6FA`, `--grad` (135°, #1670C3 → #1099E9 → #24D5FF).
+- Fontes: Cormorant (display, `.t-display`, itálico `.gi` em gradiente) e Jost (texto, peso 300).
+- Utilitários: `.wrap`, `.overline`, `.head-center`/`.head-left`, `.p-muted`, `.btn-sage`, `.btn-glass`,
+  `.narrow`, `.prose`, `.grid-2/3`, `.card-soft`, `.stat`, `.split`, `.highlight-box`, `.data-block`,
+  `.faq-wrap` + `details.faq-item`, `.rg-grid`/`.rg-card`, `.pcard`, `.news-box`.
 
 ## Key Conventions
 
-**All CTAs link to:** `https://komplexa-pricing.vercel.app/f/komplexaconsultoria?utm_source=komplexahoteis&utm_medium=site&utm_content={page}` (target="_blank")
+**All CTAs link to:** `https://komplexa-pricing.vercel.app/f/komplexaconsultoria?utm_source=komplexahoteis&utm_medium=site&utm_content={page}` (target="_blank" rel="noopener").
+`utm_content`: `home-boutique-*` na home, `{pagina}-header|menu|final|footer` na casca, `blog-{slug}` nos posts, `blog-listing` no índice, `deck-{name}` nos decks.
 
-`utm_content` varies per page: `home`, `sistema`, `ia`, `arquitetura`, `contato`, `blog-listing`, `blog-{slug}` for each post, `deck-{name}` for each `d/` deck.
+**Fotos:** converter para WebP (≤1920px no lado maior, q72 para foto, q80 para tela) antes de subir;
+`loading="lazy"` fora do hero; só há ~16 fotos únicas, evitar repetir a mesma na mesma dobra.
 
-**Asset paths:**
-- Root pages: `assets/style.css`, `assets/logo.svg`
-- Blog pages: `../assets/style.css`, `../assets/logo.svg`
-
-**Shared components** (defined in `assets/style.css`, used on every page):
-- `nav` + `.nav-inner` + `.mobile-nav` — fixed top nav with hamburger for mobile
-- `footer` + `.footer-inner` + `.footer-top` + `.footer-bottom`
-- `.btn`, `.btn-primary`, `.btn-outline`, `.btn-ghost` — button variants
-- `.cta-banner` — dark navy CTA section used at bottom of every page
-- `.tag`, `.section-title`, `.section-sub`, `.grad-text` — typography utilities
-- `.card`, `.card-dark` — base card styles
-
-**Page-specific styles** go in a `<style>` block in each HTML file's `<head>`.
-
-**Mobile nav** requires this JS snippet on every page:
-```js
-function toggleMenu() {
-  document.getElementById('mobileNav').classList.toggle('open');
-}
-```
+**Conteúdo:** só prova real (cases medidos no PMS: Bahia Bonita 19x, Solar Dona Dora 3,4x, Sunsmart 60%+,
+Karandá 6,5x, Lagamar 7x+). Integrações reais: Omnibees, HSystem, Asksuite, Erbon, Bitz, Foco.
 
 ## Adding a New Blog Post
 
-Copy `blog/_template.html` as the base (it already includes the full SEO `<head>`, the FAQ section + `FAQPage` schema, and the `.data-block`/`.faq` styles). Replace the `__PLACEHOLDER__` tokens and update:
-- `<title>`, `<meta name="description">`, `<meta name="keywords">`
-- Canonical, Open Graph and Twitter URLs (use the post slug)
-- `BlogPosting` + `BreadcrumbList` + `FAQPage` JSON-LD in the `<head>` (dates, slug, category, keywords)
-- `.post-breadcrumb` category label and `.post-category-pill` text
-- `<h1>` headline and `.post-meta` date + reading time
-- Article body inside `<article class="post-content">`
-- **FAQ:** keep the visible `<details class="faq-item">` questions **identical** to the `FAQPage` schema in the `<head>`
-- Table of contents links in `.sidebar-card` (href="#id")
-- Related posts in sidebar and `.related-grid`
-
-Then update `blog/index.html` to add the new post card in `.posts-grid`, and add the post URL to `sitemap.xml`.
-
-## Content Source
-
-All copy is based on `komplexa_hoteis_resumo.md` in the project root. Refer to it when writing new sections or blog posts to stay consistent with tone and positioning.
+Copie `blog/_template.html`, substitua os tokens `__TITLE__`, `__DESCRIPTION__`, `__KEYWORDS__`, `__SLUG__`,
+`__DATE__`/`__DATE_ISO__`, `__READTIME__`, `__CATEGORY__`, `__RELATED__`, `__FAQ_Q1__`/`__FAQ_A1__`.
+Mantenha a FAQ visível **idêntica** ao `FAQPage` do `<head>`. Depois: adicione o card no
+`blog/index.html` (`.pcard` com `data-cat` igual à categoria) e a URL no `sitemap.xml`. Acione o agente
+`seo-blog-lead` após criar ou alterar conteúdo.
