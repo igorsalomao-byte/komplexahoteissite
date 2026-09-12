@@ -619,7 +619,7 @@ footer{background:#F6F9FC;border-top:1px solid rgba(14,30,53,.08);
 /* --- o corte --- */
 .a-ad .ad-flash{position:absolute;inset:0;z-index:4;background:#fff;opacity:0;
   pointer-events:none;animation:flashCut 12s linear infinite}
-@keyframes flashCut{0%,43%{opacity:0}45%{opacity:.85}47%,100%{opacity:0}}
+@keyframes flashCut{0%,100%{opacity:0}}
 
 /* --- o patrocinado sobe na busca --- */
 .a-ad .ad-q{display:flex;align-items:center;gap:.5rem;background:#fff;
@@ -665,7 +665,7 @@ footer{background:#F6F9FC;border-top:1px solid rgba(14,30,53,.08);
   animation-delay:.75s;flex:none}
 .a-site .bk em{height:12px;border-radius:3px;background:#E5E7EB}
 .a-site .bk b{font-size:.56rem;font-weight:500;color:#fff;background:var(--grad);
-  padding:.32rem .6rem;border-radius:4px;animation:ctaPulse 2s ease-in-out infinite 1.6s}
+  padding:.32rem .6rem;border-radius:4px}
 .a-site .row{display:grid;grid-template-columns:repeat(3,1fr);gap:.35rem;
   animation-delay:1.15s;flex:none}
 .a-site .row em{height:22px;border-radius:4px;background:rgba(255,255,255,.12)}
@@ -840,13 +840,13 @@ footer{background:#F6F9FC;border-top:1px solid rgba(14,30,53,.08);
 /* respiração lenta atrás da rede: o palco parece vivo mesmo entre pulsos */
 .a-ia .ia-net::before{content:'';position:absolute;inset:8% 4%;z-index:-1;border-radius:50%;
   background:radial-gradient(circle,rgba(36,213,255,.22),rgba(16,153,233,.08) 45%,transparent 70%);
-  filter:blur(18px);animation:nnBreath 8s ease-in-out infinite}
+  animation:nnBreath 8s ease-in-out infinite}
 @keyframes nnBreath{0%,100%{opacity:.55;transform:scale(.92)}50%{opacity:1;transform:scale(1.06)}}
 
 /* neurônios: acendem devagar quando a luz chega, camada após camada */
 .a-ia .nn-nodes circle{fill:#0F2036;stroke:rgba(36,213,255,.5);stroke-width:1.6;
   transform-box:fill-box;transform-origin:center;
-  animation:nnFire 3s cubic-bezier(.4,0,.2,1) infinite;animation-delay:var(--d)}
+  animation:nnFire 4.5s cubic-bezier(.4,0,.2,1) infinite;animation-delay:var(--d)}
 .a-ia .nn-nodes .n-in{animation-name:nnFireIn;animation-duration:15s}
 .a-ia .nn-nodes .n-in:nth-child(1){animation-delay:.2s}
 .a-ia .nn-nodes .n-in:nth-child(2){animation-delay:3.2s}
@@ -859,15 +859,15 @@ footer{background:#F6F9FC;border-top:1px solid rgba(14,30,53,.08);
 .a-ia .nn-nodes .c3{animation-delay:calc(.75s + var(--d))}
 @keyframes nnFire{
   0%,4%{fill:#0F2036;stroke:rgba(36,213,255,.5);stroke-width:1.6;transform:scale(1)}
-  14%{fill:#24D5FF;stroke:#fff;stroke-width:2;transform:scale(1.4)}
-  26%{fill:#1099E9;stroke:rgba(36,213,255,.55);stroke-width:9;transform:scale(1.12)}
-  40%{fill:#0F2036;stroke:rgba(36,213,255,0);stroke-width:16;transform:scale(1)}
+  14%{fill:#24D5FF;stroke:#fff;stroke-width:2;transform:scale(1.18)}
+  26%{fill:#1099E9;stroke:rgba(36,213,255,.45);stroke-width:4;transform:scale(1.06)}
+  40%{fill:#0F2036;stroke:rgba(36,213,255,0);stroke-width:6;transform:scale(1)}
   41%,100%{fill:#0F2036;stroke:rgba(36,213,255,.5);stroke-width:1.6;transform:scale(1)}
 }
 @keyframes nnFireIn{
   0%{fill:#0F2036;transform:scale(1)}
-  2.5%{fill:#fff;transform:scale(1.55)}
-  7%{fill:#24D5FF;transform:scale(1.15)}
+  2.5%{fill:#24D5FF;transform:scale(1.22)}
+  7%{fill:#1099E9;transform:scale(1.08)}
   14%,100%{fill:#0F2036;transform:scale(1)}
 }
 /* halo lento na saída, para ela ler como o "resultado" */

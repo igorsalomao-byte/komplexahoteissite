@@ -9,10 +9,9 @@ const FORM_URL = 'https://komplexa-pricing.vercel.app/f/komplexaconsultoria' +
   '?utm_source=komplexahoteis&utm_medium=site&utm_content=home-boutique-concierge';
 
 /* ---------- Lenis ---------- */
-const lenis = new Lenis({ duration: 1.5, easing: t => Math.min(1, 1.001 - Math.pow(2, -10 * t)) });
+const lenis = new Lenis({ duration: 1.2, easing: t => Math.min(1, 1.001 - Math.pow(2, -10 * t)) });
 lenis.on('scroll', ScrollTrigger.update);
 gsap.ticker.add(t => lenis.raf(t * 1000));
-gsap.ticker.lagSmoothing(0);
 
 /* ---------- Lazy media ---------- */
 document.querySelectorAll('.ph img, .ph video').forEach(m => {
