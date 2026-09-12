@@ -5,6 +5,11 @@
 gsap.registerPlugin(ScrollTrigger);
 
 /* Todo caminho de conversão do site aponta para o formulário externo */
+/* Meta Pixel: clique em qualquer CTA para o formulário vira evento Contact */
+document.addEventListener('click', e => {
+  const a = e.target.closest('a[href*="komplexa-pricing.vercel.app"]');
+  if (a && typeof fbq === 'function') fbq('track', 'Contact', { content_name: a.textContent.trim().slice(0, 60) });
+});
 const FORM_URL = 'https://komplexa-pricing.vercel.app/f/komplexaconsultoria' +
   '?utm_source=komplexahoteis&utm_medium=site&utm_content=home-boutique-concierge';
 
