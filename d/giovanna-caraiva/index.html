@@ -1,0 +1,611 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow,noarchive,nosnippet">
+<title>Komplexa × Giovanna — Casas de Caraíva · Proposta</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Fraunces:ital,wght@1,400;1,500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --navy:#0E1E35;--navy9:#081525;--white:#fff;
+  --blue:#1670C3;--g1:#1670C3;--g2:#1099E9;--g3:#24D5FF;
+  --grad:linear-gradient(90deg,#1670C3 0%,#1099E9 48%,#24D5FF 100%);
+  --grad-r:radial-gradient(circle at 70% 50%,rgba(36,213,255,.35) 0%,transparent 60%);
+  --txt:#4A5770;--gray:#8896A8;--bdr:#DDE3ED;--bg:#F3F6FA;
+  --tb09:rgba(22,112,195,.09);--tb18:rgba(22,112,195,.18);
+  --ok:#16A34A;--okbg:rgba(22,163,74,.10);
+  --bad:#DC2626;--badbg:rgba(220,38,38,.08);
+  --fd:'Inter',system-ui,sans-serif;
+  --page-bg:#0a0f1a;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{font-family:var(--fd);background:var(--page-bg);color:var(--navy);-webkit-font-smoothing:antialiased}
+
+.deck{display:flex;flex-direction:column;align-items:center;gap:32px;padding:64px 24px 96px}
+.slide{width:1280px;height:720px;border-radius:8px;overflow:hidden;box-shadow:0 20px 60px rgba(0,0,0,.4);position:relative;display:flex;flex-direction:column}
+.slide *{font-family:var(--fd)}
+.slide.dark{background:var(--navy);color:#fff}
+.slide.dark::before{content:"";position:absolute;inset:0;background:var(--grad-r);opacity:.4;pointer-events:none}
+.slide.light{background:#fff;color:var(--navy)}
+
+.slide .top{display:flex;justify-content:space-between;align-items:center;padding:32px 56px 0;position:relative;z-index:2}
+.slide .top img.brand{height:30px;width:auto}
+.slide .top .pg{font-size:11px;letter-spacing:1.5px;text-transform:uppercase;font-weight:600;color:rgba(255,255,255,.45)}
+.slide.light .top .pg{color:var(--gray)}
+.slide .body{flex:1;padding:24px 56px;position:relative;z-index:2;display:flex;flex-direction:column;min-height:0}
+.slide .bot{padding:14px 56px 22px;display:flex;justify-content:space-between;align-items:flex-end;font-size:10px;color:rgba(255,255,255,.4);letter-spacing:.6px;text-transform:uppercase;position:relative;z-index:2}
+.slide.light .bot{color:var(--gray)}
+
+.eyebrow{display:inline-block;font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:1.8px;margin-bottom:12px}
+.dark .eyebrow{color:var(--g3)}
+.light .eyebrow{color:var(--blue)}
+.title{font-weight:800;font-size:36px;line-height:1.05;letter-spacing:-1.2px;margin:0 0 10px}
+.dark .title{color:#fff}
+.light .title{color:var(--navy)}
+.title em{font-style:normal;font-family:'Fraunces',Georgia,serif;font-weight:400;letter-spacing:-.5px;background:var(--grad);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+.lead{font-size:14.5px;line-height:1.55;max-width:820px}
+.dark .lead{color:rgba(255,255,255,.75)}
+.light .lead{color:var(--txt)}
+.lead strong{font-weight:600}
+.dark .lead strong{color:#fff}
+.light .lead strong{color:var(--navy)}
+@keyframes nIn{to{opacity:1;transform:none}}
+
+/* 01 COVER */
+.cover-mid{flex:1;display:flex;flex-direction:column;justify-content:center}
+.cover-eye{font-size:13.5px;font-weight:500;color:rgba(255,255,255,.65);letter-spacing:.4px;margin-bottom:10px}
+.cover-title{font-weight:800;font-size:62px;line-height:1.02;letter-spacing:-2.4px;color:#fff;margin:0 0 16px}
+.cover-title .accent{font-style:normal;font-family:'Fraunces',Georgia,serif;font-weight:400;background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.cover-sub{font-size:16.5px;color:rgba(255,255,255,.72);max-width:640px;line-height:1.5}
+.cover-meta{padding:22px 56px;display:grid;grid-template-columns:repeat(3,1fr);gap:28px;border-top:1px solid rgba(255,255,255,.12);position:relative;z-index:2}
+.cover-meta .label{font-size:10px;text-transform:uppercase;letter-spacing:1.2px;color:rgba(255,255,255,.5);font-weight:600;margin-bottom:5px}
+.cover-meta .value{font-size:14px;font-weight:600;color:#fff}
+
+/* 02 CENÁRIO */
+.st-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:16px}
+.st{background:#fff;border:1px solid var(--bdr);border-radius:14px;padding:20px 18px;box-shadow:0 5px 18px rgba(20,35,60,.05);opacity:0;transform:translateY(12px);animation:nIn .5s ease forwards}
+.st:nth-child(1){animation-delay:.15s}.st:nth-child(2){animation-delay:.3s}.st:nth-child(3){animation-delay:.45s}.st:nth-child(4){animation-delay:.6s}
+.st .n{font-weight:800;font-size:40px;letter-spacing:-1.8px;line-height:1;background:var(--grad);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+.st .l{font-size:12.5px;color:var(--txt);line-height:1.45;margin-top:8px}
+.st .l strong{color:var(--navy);font-weight:600}
+.pain-list{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:16px}
+.pain{display:grid;grid-template-columns:26px 1fr;gap:10px;align-items:start;background:var(--bg);border:1px solid var(--bdr);border-radius:11px;padding:12px 15px;font-size:13px;color:var(--txt);line-height:1.5}
+.pain .x{width:20px;height:20px;border-radius:50%;background:var(--badbg);color:var(--bad);font-size:10px;font-weight:800;display:grid;place-items:center;margin-top:1px}
+.pain strong{color:var(--navy);font-weight:600}
+.hl{display:flex;align-items:center;gap:12px;background:var(--bg);border:1px solid var(--bdr);border-radius:12px;padding:13px 20px;font-size:13.5px;color:var(--txt);line-height:1.5;margin-top:14px}
+.dark .hl{background:rgba(36,213,255,.08);border-color:rgba(36,213,255,.3);color:rgba(255,255,255,.85)}
+.hl .stx{color:var(--blue);font-size:15px;flex-shrink:0}
+.dark .hl .stx{color:var(--g3)}
+.hl strong{color:var(--navy);font-weight:600}
+.dark .hl strong{color:#fff}
+
+/* 03 EFEITO OUTDOOR */
+.flow-lbl{font-size:10.5px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;margin:18px 0 10px;color:rgba(255,255,255,.5)}
+.flow-lbl.good{color:#4ade80}
+.chain{display:flex;align-items:stretch;gap:8px}
+.cstep{flex:1;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.12);border-radius:12px;padding:14px 15px;opacity:0;transform:translateY(10px);animation:nIn .45s ease forwards;display:flex;flex-direction:column;gap:5px}
+.cstep .ic{font-size:19px}
+.cstep .t{font-size:13.5px;font-weight:700;color:#fff;line-height:1.25}
+.cstep .d{font-size:11.5px;color:rgba(255,255,255,.6);line-height:1.4}
+.cstep.bad{border-color:rgba(220,38,38,.45);background:rgba(220,38,38,.07)}
+.cstep.bad .t{color:#FCA5A5}
+.cstep.win{border-color:rgba(74,222,128,.5);background:rgba(34,197,94,.08)}
+.cstep.win .t{color:#4ade80}
+.carr{align-self:center;color:rgba(36,213,255,.7);font-size:15px;flex-shrink:0;opacity:0;animation:nIn .4s ease forwards}
+.chain.c1 .cstep:nth-child(1){animation-delay:.15s}.chain.c1 .carr:nth-child(2){animation-delay:.3s}.chain.c1 .cstep:nth-child(3){animation-delay:.45s}.chain.c1 .carr:nth-child(4){animation-delay:.6s}.chain.c1 .cstep:nth-child(5){animation-delay:.75s}.chain.c1 .carr:nth-child(6){animation-delay:.9s}.chain.c1 .cstep:nth-child(7){animation-delay:1.05s}
+.chain.c2 .cstep:nth-child(1){animation-delay:1.3s}.chain.c2 .carr:nth-child(2){animation-delay:1.45s}.chain.c2 .cstep:nth-child(3){animation-delay:1.6s}.chain.c2 .carr:nth-child(4){animation-delay:1.75s}.chain.c2 .cstep:nth-child(5){animation-delay:1.9s}
+
+/* 04 FASES */
+.nosell{display:flex;align-items:center;gap:14px;border:1.5px dashed rgba(220,38,38,.4);background:var(--badbg);border-radius:13px;padding:15px 20px;margin-top:14px}
+.nosell .tagx{flex-shrink:0;background:var(--bad);color:#fff;font-size:9.5px;font-weight:800;letter-spacing:1px;text-transform:uppercase;padding:5px 12px;border-radius:100px}
+.nosell p{font-size:13.5px;color:var(--txt);line-height:1.5}
+.nosell p strong{color:var(--navy);font-weight:700}
+.fases{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:16px;flex:1;min-height:0}
+.fase{border-radius:16px;padding:22px 24px;opacity:0;transform:translateY(12px);animation:nIn .5s ease forwards;display:flex;flex-direction:column}
+.fase.f1{background:linear-gradient(160deg,var(--tb09),#fff);border:1.5px solid var(--tb18);animation-delay:.25s}
+.fase.f2{background:#fff;border:1px solid var(--bdr);animation-delay:.45s}
+.fase .fb{display:inline-flex;width:max-content;font-size:9.5px;font-weight:800;letter-spacing:1.2px;text-transform:uppercase;padding:5px 13px;border-radius:100px;background:var(--grad);color:#fff;margin-bottom:10px}
+.fase.f2 .fb{background:var(--bg);color:var(--gray);border:1px solid var(--bdr)}
+.fase h3{font-size:19px;font-weight:800;color:var(--navy);letter-spacing:-.4px;margin-bottom:4px}
+.fase .fs{font-size:12px;color:var(--gray);font-weight:600;margin-bottom:12px}
+.fase ul{list-style:none;display:flex;flex-direction:column;gap:8px}
+.fase li{display:grid;grid-template-columns:18px 1fr;gap:9px;font-size:13px;color:var(--txt);line-height:1.5;align-items:start}
+.fase li .k{width:15px;height:15px;border-radius:50%;background:var(--grad);color:#fff;font-size:8.5px;font-weight:700;display:grid;place-items:center;margin-top:3px}
+.fase.f2 li .k{background:var(--bg);color:var(--gray);border:1px solid var(--bdr)}
+.fase li strong{color:var(--navy);font-weight:600}
+.fase .now{margin-top:auto;padding-top:12px;font-size:11px;font-weight:700;letter-spacing:1.2px;text-transform:uppercase;color:var(--blue)}
+
+/* 05 SITE — mockup */
+.wk-grid{display:grid;grid-template-columns:1fr 1.05fr;gap:34px;flex:1;min-height:0;margin-top:10px;align-items:center}
+.feat-list{display:flex;flex-direction:column;gap:10px}
+.feat{display:grid;grid-template-columns:42px 1fr;gap:13px;align-items:center;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.1);border-radius:12px;padding:13px 16px;font-size:13.5px;color:rgba(255,255,255,.78);line-height:1.5;opacity:0;transform:translateY(10px);animation:nIn .5s ease forwards}
+.feat:nth-child(1){animation-delay:.2s}.feat:nth-child(2){animation-delay:.35s}.feat:nth-child(3){animation-delay:.5s}.feat:nth-child(4){animation-delay:.65s}
+.feat .ic{width:34px;height:34px;border-radius:9px;background:var(--grad);display:grid;place-items:center}
+.feat .ic svg{width:16px;height:16px;stroke:#fff;fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.feat strong{color:#fff;font-weight:600}
+.light .feat{background:#fff;border-color:var(--bdr);color:var(--txt);box-shadow:0 4px 14px rgba(20,35,60,.05)}
+.light .feat strong{color:var(--navy)}
+.msite{width:100%;max-width:470px;margin:0 auto;border-radius:12px;background:#fff;box-shadow:0 18px 50px rgba(0,0,0,.5),0 0 70px rgba(36,213,255,.18),0 0 0 1px rgba(255,255,255,.1);opacity:0;transform:scale(.92);animation:nIn .6s cubic-bezier(.34,1.4,.64,1) forwards;animation-delay:.4s}
+.msite .bbar{background:#F3F4F6;padding:8px 12px;display:flex;align-items:center;gap:6px;border-bottom:1px solid #E5E7EB;border-radius:12px 12px 0 0}
+.msite .bbar i{width:8px;height:8px;border-radius:50%;display:block}
+.msite .bbar i:nth-child(1){background:#FF5F57}
+.msite .bbar i:nth-child(2){background:#FEBC2E}
+.msite .bbar i:nth-child(3){background:#28C840}
+.msite .bbar .url{flex:1;background:#fff;border-radius:4px;padding:2px 10px;font-size:10px;color:#6B7280;font-family:Menlo,monospace}
+.msite .hero-m{height:150px;background-image:url('assets/karanda.jpg');background-size:cover;background-position:center 65%;position:relative;display:flex;flex-direction:column;justify-content:flex-end;padding:14px 16px;color:#fff}
+.msite .hero-m::before{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(14,30,53,.25),rgba(14,30,53,.82))}
+.msite .hero-m .h1m{position:relative;font-weight:800;font-size:17px;letter-spacing:-.3px}
+.msite .hero-m .h2m{position:relative;font-size:11px;color:rgba(255,255,255,.8)}
+.msite .bk{padding:10px 12px;background:#fff;display:grid;grid-template-columns:1fr 1fr auto;gap:7px;align-items:center}
+.msite .bk .f{padding:4px 7px;border:1px solid #E5E7EB;border-radius:7px}
+.msite .bk .f .la{font-size:8px;color:#9CA3AF;text-transform:uppercase;letter-spacing:.5px;font-weight:600;display:block}
+.msite .bk .f .va{font-size:11.5px;color:#111;font-weight:600}
+.msite .bk .go{background:var(--grad);color:#fff;font-size:11px;font-weight:700;padding:10px 16px;border-radius:7px}
+.msite .casas{display:grid;grid-template-columns:1fr 1fr;gap:8px;padding:0 12px 12px;background:#fff;border-radius:0 0 12px 12px}
+.msite .casa{border:1px solid #E5E7EB;border-radius:9px;padding:9px 11px}
+.msite .casa .cn{font-size:11px;font-weight:700;color:#111}
+.msite .casa .cd{font-size:9px;color:#9CA3AF;margin-top:2px}
+.mock-note{text-align:center;font-size:10.5px;color:rgba(255,255,255,.45);margin-top:12px;letter-spacing:.4px}
+.light .mock-note{color:var(--gray)}
+
+/* 06 INSTAGRAM — phone */
+.igphone{width:270px;margin:0 auto;background:#0A1322;border-radius:30px;padding:10px;box-shadow:0 24px 60px rgba(20,35,60,.35),0 0 0 1px rgba(14,30,53,.12);opacity:0;transform:scale(.92);animation:nIn .6s cubic-bezier(.34,1.4,.64,1) forwards;animation-delay:.4s}
+.igphone .wp-notch{display:flex;justify-content:center;padding:2px 0 7px}
+.igphone .wp-notch i{width:58px;height:5px;border-radius:100px;background:rgba(255,255,255,.18)}
+.igscr{border-radius:22px;overflow:hidden;background:#fff}
+.ig-head{display:flex;align-items:center;gap:12px;padding:13px 14px 9px}
+.ig-av{width:52px;height:52px;border-radius:50%;background:linear-gradient(135deg,#1670C3,#24D5FF);display:grid;place-items:center;color:#fff;font-weight:800;font-size:17px;flex-shrink:0;border:2px solid #fff;outline:2px solid #E1306C}
+.ig-id .u{font-size:12.5px;font-weight:700;color:#111}
+.ig-nums{display:flex;gap:11px;margin-top:4px}
+.ig-nums span{font-size:9px;color:#6B7280;text-align:center;line-height:1.2}
+.ig-nums b{display:block;font-size:11px;color:#111}
+.ig-bio{padding:0 14px 9px;font-size:10px;color:#111;line-height:1.45}
+.ig-bio .bl{color:#1670C3;font-weight:600}
+.ig-cta{margin:0 14px 10px;background:var(--grad);color:#fff;text-align:center;font-size:10.5px;font-weight:700;padding:7px;border-radius:7px}
+.ig-hl{display:flex;gap:10px;padding:2px 14px 10px}
+.ig-hl .h{display:flex;flex-direction:column;align-items:center;gap:3px;font-size:8px;color:#111}
+.ig-hl .c{width:40px;height:40px;border-radius:50%;border:1.5px solid #D1D5DB;display:grid;place-items:center;font-size:15px;background:#F9FAFB}
+.ig-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;border-top:1px solid #E5E7EB;padding-top:2px}
+.ig-post{aspect-ratio:1;background:linear-gradient(160deg,#13294a,#0E1E35);position:relative;display:flex;align-items:flex-end;padding:6px}
+.ig-post .pt{font-size:7.5px;font-weight:700;color:#fff;line-height:1.25}
+.ig-post .pin{position:absolute;top:4px;right:4px;font-size:8px}
+.ig-post.p2{background:linear-gradient(160deg,#1670C3,#1099E9)}
+.ig-post.p3{background:linear-gradient(160deg,#0d3a63,#1670C3)}
+
+/* 07 COMPLEMENTOS */
+.comp-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:14px}
+.comp{background:#fff;border:1px solid var(--bdr);border-radius:15px;padding:22px 24px;box-shadow:0 5px 18px rgba(20,35,60,.05);opacity:0;transform:translateY(12px);animation:nIn .5s ease forwards}
+.comp:nth-child(1){animation-delay:.2s}.comp:nth-child(2){animation-delay:.38s}
+.comp .ch{display:flex;align-items:center;gap:12px;margin-bottom:10px}
+.comp .ch .ic{width:40px;height:40px;border-radius:11px;background:var(--grad);display:grid;place-items:center;flex-shrink:0}
+.comp .ch .ic svg{width:19px;height:19px;stroke:#fff;fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.comp .ch h3{font-size:16.5px;font-weight:800;color:var(--navy);letter-spacing:-.3px}
+.comp .price{display:inline-flex;align-items:baseline;gap:6px;margin:2px 0 10px}
+.comp .price b{font-size:24px;font-weight:800;letter-spacing:-1px;background:var(--grad);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+.comp .price small{font-size:11px;color:var(--gray);font-weight:600}
+.comp .price .was{font-size:11px;color:var(--gray);text-decoration:line-through}
+.comp p{font-size:13px;color:var(--txt);line-height:1.55}
+.comp p strong{color:var(--navy);font-weight:600}
+.social-proof{margin-top:16px;display:flex;align-items:center;gap:14px;background:linear-gradient(160deg,var(--tb09),#fff);border:1.5px solid var(--tb18);border-radius:14px;padding:16px 22px}
+.social-proof .av{width:46px;height:46px;border-radius:50%;background-image:url('assets/karanda.jpg');background-size:cover;background-position:center;flex-shrink:0;border:2px solid #fff;box-shadow:0 3px 10px rgba(20,35,60,.2)}
+.social-proof p{font-size:13.5px;color:var(--txt);line-height:1.5}
+.social-proof p strong{color:var(--navy);font-weight:700}
+
+/* 08 INVESTIMENTO */
+.inv-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:20px;flex:1;min-height:0;margin-top:12px;align-items:stretch}
+.inv-main{background:linear-gradient(160deg,rgba(36,213,255,.1),rgba(255,255,255,.03));border:1.5px solid rgba(36,213,255,.4);border-radius:18px;padding:26px 30px;display:flex;flex-direction:column;opacity:0;transform:translateY(12px);animation:nIn .5s ease forwards;animation-delay:.2s}
+.inv-main .il{font-size:10.5px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--g3);margin-bottom:8px}
+.inv-main .iv{font-weight:800;font-size:58px;letter-spacing:-2.6px;line-height:1;background:var(--grad);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;filter:drop-shadow(0 3px 18px rgba(36,213,255,.3))}
+.inv-main .iu{font-size:12.5px;color:rgba(255,255,255,.6);margin-top:6px;margin-bottom:16px}
+.inv-main ul{list-style:none;display:flex;flex-direction:column;gap:9px}
+.inv-main li{display:grid;grid-template-columns:20px 1fr;gap:10px;font-size:13.5px;color:rgba(255,255,255,.82);line-height:1.5;align-items:start}
+.inv-main li .k{width:17px;height:17px;border-radius:50%;background:var(--grad);color:#fff;font-size:9px;font-weight:700;display:grid;place-items:center;margin-top:2px}
+.inv-main li strong{color:#fff;font-weight:600}
+.inv-side{display:flex;flex-direction:column;gap:14px}
+.inv-card{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.12);border-radius:15px;padding:18px 22px;opacity:0;transform:translateY(12px);animation:nIn .5s ease forwards}
+.inv-card.i1{animation-delay:.4s}.inv-card.i2{animation-delay:.55s;border-color:rgba(245,217,168,.45);background:linear-gradient(150deg,rgba(217,179,121,.12),rgba(255,255,255,.03))}
+.inv-card h4{font-size:13.5px;font-weight:700;color:#fff;display:flex;align-items:center;gap:9px;margin-bottom:6px}
+.inv-card p{font-size:12px;color:rgba(255,255,255,.68);line-height:1.5}
+.inv-card p b{color:#fff}
+.inv-card .gold{color:#F5D9A8;font-weight:700}
+
+/* 09 PASSOS */
+.steps{display:flex;flex-direction:column;gap:12px;margin-top:14px}
+.step{display:grid;grid-template-columns:46px 1fr auto;gap:16px;align-items:center;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.1);border-radius:14px;padding:16px 20px;opacity:0;transform:translateY(10px);animation:nIn .5s ease forwards}
+.step:nth-child(1){animation-delay:.2s}.step:nth-child(2){animation-delay:.35s}.step:nth-child(3){animation-delay:.5s}
+.step .n{width:40px;height:40px;border-radius:12px;background:var(--grad);color:#fff;font-weight:800;font-size:15px;display:grid;place-items:center}
+.step .t{display:block;font-size:15px;font-weight:700;color:#fff;margin-bottom:3px}
+.step .d{display:block;font-size:12.5px;color:rgba(255,255,255,.65);line-height:1.45}
+.step .d b{color:#fff;font-weight:600}
+.step .tagf{font-size:9.5px;font-weight:800;letter-spacing:1px;text-transform:uppercase;padding:5px 12px;border-radius:100px;white-space:nowrap}
+.step .tagf.free{background:var(--okbg);color:#4ade80;border:1px solid rgba(74,222,128,.4)}
+.step .tagf.urg{background:var(--badbg);color:#FCA5A5;border:1px solid rgba(220,38,38,.4)}
+.cta-row{margin-top:18px;display:flex;align-items:center;gap:16px}
+.ct{display:inline-flex;align-items:center;gap:10px;background:var(--grad);color:#fff;font-weight:700;font-size:15px;padding:15px 32px;border-radius:100px;text-decoration:none;box-shadow:0 10px 32px rgba(16,153,233,.4)}
+.cta-note{font-size:12px;color:rgba(255,255,255,.55);line-height:1.45}
+
+/* PRESENT MODE */
+.toggle-present{position:fixed;top:14px;right:14px;background:var(--grad);color:#fff;border:none;padding:8px 16px;border-radius:8px;font-family:var(--fd);font-weight:600;font-size:12px;cursor:pointer;z-index:99;letter-spacing:.3px}
+.nav-hint{position:fixed;bottom:12px;left:50%;transform:translateX(-50%);font-size:11px;color:rgba(255,255,255,.4);letter-spacing:.5px;z-index:99;display:none;font-family:var(--fd)}
+.deck.present{padding:0;gap:0;background:#000;position:fixed;inset:0;overflow:hidden;display:flex;align-items:center;justify-content:center}
+.deck.present .slide{display:none;transform:scale(var(--present-scale,1));transform-origin:center;box-shadow:none;border-radius:0}
+.deck.present .slide.active{display:flex}
+.deck.present ~ .nav-hint{display:block}
+
+@media (max-width:760px){
+  .deck{padding:0;gap:0}
+  .slide{width:100%;height:auto;min-height:0;border-radius:0;box-shadow:none}
+  .slide .top{padding:20px 22px 0}
+  .slide .body{padding:20px 22px}
+  .slide .bot{padding:12px 22px 20px}
+  .toggle-present,.nav-hint{display:none!important}
+  .title{font-size:26px!important}
+  .cover-title{font-size:38px}
+  .cover-meta{grid-template-columns:1fr;gap:14px;padding:20px 22px}
+  .st-grid{grid-template-columns:1fr 1fr}
+  .pain-list,.fases,.comp-grid,.inv-grid,.wk-grid{grid-template-columns:1fr}
+  .wk-grid{gap:22px}
+  .chain{flex-direction:column}
+  .carr{transform:rotate(90deg)}
+  .step{grid-template-columns:40px 1fr;gap:12px}
+  .step .tagf{display:none}
+  .inv-main .iv{font-size:44px}
+}
+@media print{
+  .toggle-present,.nav-hint{display:none!important}
+  .deck{padding:0;gap:0}
+  .slide{box-shadow:none;border-radius:0;page-break-after:always;break-after:page}
+}
+</style>
+</head>
+<body>
+
+<button class="toggle-present" onclick="togglePresent()">▶ Apresentar</button>
+
+<div class="deck" id="deck">
+
+<!-- ═══ 01 · COVER ═══ -->
+<section class="slide dark active">
+  <div class="top"><img class="brand" src="assets/logotipo_white.svg" alt="Komplexa"><span class="pg">Proposta · Giovanna</span></div>
+  <div class="body">
+    <div class="cover-mid">
+      <div class="cover-eye">Komplexa Hotéis · Proposta personalizada</div>
+      <h1 class="cover-title">Suas casas em Caraíva,<br><span class="accent">com canal próprio</span>.</h1>
+      <p class="cover-sub">Site com reserva direta + Instagram estruturado — a base para as duas casas saírem da dependência do Airbnb e venderem com margem e previsibilidade.</p>
+    </div>
+  </div>
+  <div class="cover-meta">
+    <div><div class="label">Indicação</div><div class="value">Melque Zedek</div></div>
+    <div><div class="label">Referência próxima</div><div class="value">Lagoa Caraíva · Hermínia</div></div>
+    <div><div class="label">Investimento</div><div class="value">R$ 2.890 · único</div></div>
+  </div>
+</section>
+
+<!-- ═══ 02 · CENÁRIO ═══ -->
+<section class="slide light">
+  <div class="top"><img class="brand" src="assets/logotipo_blue.svg" alt="Komplexa"><span class="pg">02 · 09</span></div>
+  <div class="body">
+    <div class="eyebrow">O que entendemos da conversa</div>
+    <h2 class="title">O cenário <em>hoje</em>.</h2>
+
+    <div class="st-grid">
+      <div class="st"><div class="n">20-30%</div><div class="l"><strong>de ocupação média</strong> — às vezes abaixo disso</div></div>
+      <div class="st"><div class="n">95%</div><div class="l"><strong>das reservas via Airbnb</strong> — o resto por indicação local</div></div>
+      <div class="st"><div class="n">2 anos</div><div class="l"><strong>de Instagram parado</strong> — sem conteúdo, sem fotos de qualidade</div></div>
+      <div class="st"><div class="n">0</div><div class="l"><strong>reservas de novembro em diante</strong> — fora o Réveillon</div></div>
+    </div>
+
+    <div class="pain-list">
+      <div class="pain"><span class="x">✕</span><span><strong>Janeiro de 2026 foi o pior da história</strong> — agravado pela questão de segurança na região.</span></div>
+      <div class="pain"><span class="x">✕</span><span><strong>Anúncios em 2024 geraram contato, zero conversão</strong> — não tinha base pra converter.</span></div>
+      <div class="pain"><span class="x">✕</span><span><strong>Precificação sem metodologia</strong> — diária definida no feeling.</span></div>
+      <div class="pain"><span class="x">✕</span><span><strong>Calendários Airbnb × Booking sem sincronizar</strong> — risco real de overbooking no fim do ano.</span></div>
+    </div>
+
+    <div class="hl"><span class="stx">✦</span><span><strong>Nada disso é falta de demanda por Caraíva.</strong> É falta de presença própria pra capturar a demanda que já procura por você.</span></div>
+  </div>
+  <div class="bot"><span>komplexahoteis.com</span><span>02 · 09</span></div>
+</section>
+
+<!-- ═══ 03 · EFEITO OUTDOOR ═══ -->
+<section class="slide dark">
+  <div class="top"><img class="brand" src="assets/logotipo_white.svg" alt="Komplexa"><span class="pg">03 · 09</span></div>
+  <div class="body">
+    <div class="eyebrow">Por que o Airbnb fica com tudo</div>
+    <h2 class="title">Quem te acha, <em>não te encontra</em>.</h2>
+    <p class="lead">Existe um fenômeno estudado pela Cornell, o <strong>Efeito Outdoor</strong>: o hóspede descobre a hospedagem na plataforma — e antes de fechar, sai pra procurar no Google e no Instagram. O que acontece hoje quando ele procura as suas casas:</p>
+
+    <div class="flow-lbl">Hoje</div>
+    <div class="chain c1">
+      <div class="cstep"><span class="ic">🏠</span><span class="t">Vê a casa no Airbnb</span><span class="d">Se interessa, quer saber mais</span></div>
+      <span class="carr">→</span>
+      <div class="cstep"><span class="ic">🔎</span><span class="t">Procura no Google e no Instagram</span><span class="d">Quer confirmar que é real, ver fotos, preço direto</span></div>
+      <span class="carr">→</span>
+      <div class="cstep bad"><span class="ic">🕸️</span><span class="t">Encontra um perfil parado</span><span class="d">Sem site, sem conteúdo há 2 anos, sem confiança</span></div>
+      <span class="carr">→</span>
+      <div class="cstep bad"><span class="ic">💸</span><span class="t">Volta e fecha no Airbnb</span><span class="d">Você paga comissão por um hóspede que te procurou</span></div>
+    </div>
+
+    <div class="flow-lbl good">Com a base no ar</div>
+    <div class="chain c2">
+      <div class="cstep"><span class="ic">🔎</span><span class="t">Procura as casas</span><span class="d">Mesmo movimento de hoje</span></div>
+      <span class="carr">→</span>
+      <div class="cstep win"><span class="ic">✨</span><span class="t">Encontra site + Instagram vivos</span><span class="d">Fotos de verdade, preço, botão de reservar</span></div>
+      <span class="carr">→</span>
+      <div class="cstep win"><span class="ic">✓</span><span class="t">Reserva direta</span><span class="d">Sem comissão — e o hóspede vira SEU: dado, remarketing, recorrência</span></div>
+    </div>
+  </div>
+  <div class="bot"><span>komplexahoteis.com</span><span>03 · 09</span></div>
+</section>
+
+<!-- ═══ 04 · ESTRATÉGIA EM FASES ═══ -->
+<section class="slide light">
+  <div class="top"><img class="brand" src="assets/logotipo_blue.svg" alt="Komplexa"><span class="pg">04 · 09</span></div>
+  <div class="body">
+    <div class="eyebrow">A estratégia certa pro seu tamanho</div>
+    <h2 class="title">Primeiro a base, <em>depois o tráfego</em>.</h2>
+
+    <div class="nosell">
+      <span class="tagx">O que não vamos te vender</span>
+      <p><strong>Tráfego pago pesado agora.</strong> Um pacote de gestão + verba custaria na casa de R$ 4.500/mês — e com 2 casas, sem base pronta, essa conta não fecha. Foi o que aconteceu em 2024: anúncio gerou contato e nada converteu.</p>
+    </div>
+
+    <div class="fases">
+      <div class="fase f1">
+        <span class="fb">Fase 1 · Agora</span>
+        <h3>Construir a base</h3>
+        <div class="fs">Esta proposta</div>
+        <ul>
+          <li><span class="k">✓</span><span><strong>Site das casas com reserva direta</strong> — página de cada casa, fotos, preços e botão de reservar</span></li>
+          <li><span class="k">✓</span><span><strong>Instagram estruturado</strong> — bio, destaques e posts fixados</span></li>
+          <li><span class="k">✓</span><span><strong>Tracking desde o dia 1</strong> — cada visita e contato vira dado pra fase 2</span></li>
+        </ul>
+        <div class="now">← Começa aqui</div>
+      </div>
+      <div class="fase f2">
+        <span class="fb">Fase 2 · Com a base no ar</span>
+        <h3>Escalar com anúncio enxuto</h3>
+        <div class="fs">Quando fizer sentido — sem pressa</div>
+        <ul>
+          <li><span class="k">→</span><span><strong>Google + Meta juntos</strong>, verba pequena e espaçada — o modelo certo pra 2 casas</span></li>
+          <li><span class="k">→</span><span><strong>Campanhas nas janelas certas</strong> — feriados, Réveillon, baixa</span></li>
+          <li><span class="k">→</span><span><strong>Decisão baseada nos dados da fase 1</strong> — não no achismo</span></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="bot"><span>komplexahoteis.com</span><span>04 · 09</span></div>
+</section>
+
+<!-- ═══ 05 · ENTREGA SITE ═══ -->
+<section class="slide dark">
+  <div class="top"><img class="brand" src="assets/logotipo_white.svg" alt="Komplexa"><span class="pg">05 · 09</span></div>
+  <div class="body">
+    <div class="eyebrow">Entrega 01</div>
+    <h2 class="title">Site com <em>reserva direta</em>.</h2>
+
+    <div class="wk-grid">
+      <div class="feat-list">
+        <div class="feat"><span class="ic"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="16" rx="2"/><line x1="3" y1="10" x2="21" y2="10"/><line x1="8" y1="3" x2="8" y2="7"/><line x1="16" y1="3" x2="16" y2="7"/><path d="M8 15l3 3 5-6"/></svg></span><span><strong>Motor de reservas integrado</strong> — indicamos o motor certo pro tamanho da operação; o hóspede vê disponibilidade e fecha direto no site.</span></div>
+        <div class="feat"><span class="ic"><svg viewBox="0 0 24 24"><path d="M3 3v18h18"/><path d="M7 14l4-4 3 3 5-6"/></svg></span><span><strong>Tracking como e-commerce</strong> — cada visita, clique e reserva medidos. É o que faz a fase 2 nascer barata.</span></div>
+        <div class="feat"><span class="ic"><svg viewBox="0 0 24 24"><path d="M21 11.5a8.4 8.4 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.4 8.4 0 01-3.8-.9L3 21l1.9-5.7a8.4 8.4 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.4 8.4 0 013.8-.9h.5a8.5 8.5 0 018 8v.5z"/></svg></span><span><strong>WhatsApp com origem rastreada</strong> — o formulário coleta UTMs: você sabe de onde veio cada contato.</span></div>
+        <div class="feat"><span class="ic"><svg viewBox="0 0 24 24"><path d="M3 21h18M5 21V8l7-5 7 5v13"/><path d="M9 21v-6h6v6"/></svg></span><span><strong>Uma página por casa</strong> — cada casa com sua identidade, fotos e calendário.</span></div>
+      </div>
+      <div>
+        <div class="msite">
+          <div class="bbar"><i></i><i></i><i></i><span class="url">site-das-suas-casas.com.br</span></div>
+          <div class="hero-m">
+            <div class="h1m">Suas férias em Caraíva</div>
+            <div class="h2m">Reserve direto · melhor tarifa garantida</div>
+          </div>
+          <div class="bk">
+            <div class="f"><span class="la">Check-in</span><span class="va">20 dez</span></div>
+            <div class="f"><span class="la">Check-out</span><span class="va">27 dez</span></div>
+            <span class="go">Ver disponibilidade</span>
+          </div>
+          <div class="casas">
+            <div class="casa"><div class="cn">Casa 1</div><div class="cd">até X hóspedes · vista jardim</div></div>
+            <div class="casa"><div class="cn">Casa 2</div><div class="cd">até X hóspedes · varanda</div></div>
+          </div>
+        </div>
+        <div class="mock-note">Estrutura ilustrativa — o site real nasce com as fotos da sessão em Caraíva</div>
+      </div>
+    </div>
+  </div>
+  <div class="bot"><span>komplexahoteis.com</span><span>05 · 09</span></div>
+</section>
+
+<!-- ═══ 06 · ENTREGA INSTAGRAM ═══ -->
+<section class="slide light">
+  <div class="top"><img class="brand" src="assets/logotipo_blue.svg" alt="Komplexa"><span class="pg">06 · 09</span></div>
+  <div class="body">
+    <div class="eyebrow">Entrega 02</div>
+    <h2 class="title">Instagram que <em>vende de novo</em>.</h2>
+
+    <div class="wk-grid">
+      <div class="feat-list">
+        <div class="feat"><span class="ic"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21v-1a7 7 0 0114 0v1"/></svg></span><span><strong>Bio que vende e direciona</strong> — quem são as casas, pra quem, e o link certo pra reservar.</span></div>
+        <div class="feat"><span class="ic"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg></span><span><strong>Destaques organizados</strong> — Como chegar · As casas · Caraíva · Avaliações. O hóspede resolve as dúvidas sozinho.</span></div>
+        <div class="feat"><span class="ic"><svg viewBox="0 0 24 24"><path d="M12 3l2.5 5.5L20 9l-4 4 1 6-5-3-5 3 1-6-4-4 5.5-.5z"/></svg></span><span><strong>3 posts fixados estratégicos</strong> — apresentação, como reservar e prova social. O perfil vira vitrine.</span></div>
+        <div class="feat"><span class="ic"><svg viewBox="0 0 24 24"><path d="M3 17l6-6 4 4 8-8"/><path d="M21 7v6h-6"/></svg></span><span><strong>Pronto pra crescer</strong> — perfil estruturado pra receber os creators da curadoria e os anúncios da fase 2.</span></div>
+      </div>
+      <div>
+        <div class="igphone">
+          <div class="wp-notch"><i></i></div>
+          <div class="igscr">
+            <div class="ig-head">
+              <div class="ig-av">🏠</div>
+              <div class="ig-id">
+                <div class="u">perfil_das_casas</div>
+                <div class="ig-nums"><span><b>24</b>posts</span><span><b>—</b>seguidores</span><span><b>—</b>seguindo</span></div>
+              </div>
+            </div>
+            <div class="ig-bio"><b>[Nome das casas] · Caraíva, BA</b><br>Duas casas na vila 🌴<br><span class="bl">↳ Reserve direto no link</span></div>
+            <div class="ig-cta">Reservar pelo site</div>
+            <div class="ig-hl">
+              <div class="h"><span class="c">🛶</span>Como chegar</div>
+              <div class="h"><span class="c">🏠</span>As casas</div>
+              <div class="h"><span class="c">🌅</span>Caraíva</div>
+              <div class="h"><span class="c">⭐</span>Avaliações</div>
+            </div>
+            <div class="ig-grid">
+              <div class="ig-post"><span class="pin">📌</span><span class="pt">Conheça as casas</span></div>
+              <div class="ig-post p2"><span class="pin">📌</span><span class="pt">Como reservar</span></div>
+              <div class="ig-post p3"><span class="pin">📌</span><span class="pt">Por que Caraíva</span></div>
+            </div>
+          </div>
+        </div>
+        <div class="mock-note">Estrutura da otimização — preenchida com as fotos novas</div>
+      </div>
+    </div>
+  </div>
+  <div class="bot"><span>komplexahoteis.com</span><span>06 · 09</span></div>
+</section>
+
+<!-- ═══ 07 · COMPLEMENTOS ═══ -->
+<section class="slide light">
+  <div class="top"><img class="brand" src="assets/logotipo_blue.svg" alt="Komplexa"><span class="pg">07 · 09</span></div>
+  <div class="body">
+    <div class="eyebrow">Complementos da base</div>
+    <h2 class="title">Foto de verdade e <em>alcance esperto</em>.</h2>
+
+    <div class="comp-grid">
+      <div class="comp">
+        <div class="ch"><span class="ic"><svg viewBox="0 0 24 24"><path d="M23 19a2 2 0 01-2 2H3a2 2 0 01-2-2V8a2 2 0 012-2h4l2-3h6l2 3h4a2 2 0 012 2z"/><circle cx="12" cy="13" r="4"/></svg></span><h3>Sessão de fotos em Caraíva</h3></div>
+        <p>Site e Instagram só performam com <strong>foto profissional das casas</strong>. O plano: fotógrafo local articulado <strong>com a Hermínia</strong> (possível permuta), e o conteúdo da Lagoa Caraíva como régua de qualidade. A gente acompanha a pauta da sessão pra sair exatamente o que o site precisa.</p>
+      </div>
+      <div class="comp">
+        <div class="ch"><span class="ic"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1"/></svg></span><h3>Curadoria de influenciadores</h3></div>
+        <div class="price"><b>R$ 97</b><small>/mês</small><span class="was">depois R$ 297</span></div>
+        <p>Creators certos pra gerar <strong>conteúdo e alcance</strong> pras casas — funciona muito bem como material de anúncio na fase 2. Opcional, preço de lançamento garantido entrando agora.</p>
+      </div>
+    </div>
+
+    <div class="social-proof">
+      <span class="av"></span>
+      <p><strong>A mesma esteira que roda na Lagoa Caraíva, da Hermínia</strong> — você acompanha de perto o padrão de conteúdo e resultado que esse método entrega na própria vila.</p>
+    </div>
+  </div>
+  <div class="bot"><span>komplexahoteis.com</span><span>07 · 09</span></div>
+</section>
+
+<!-- ═══ 08 · INVESTIMENTO ═══ -->
+<section class="slide dark">
+  <div class="top"><img class="brand" src="assets/logotipo_white.svg" alt="Komplexa"><span class="pg">08 · 09</span></div>
+  <div class="body">
+    <div class="eyebrow">Investimento</div>
+    <h2 class="title">Um valor único pra <em>base inteira</em>.</h2>
+
+    <div class="inv-grid">
+      <div class="inv-main">
+        <div class="il">Site + Estruturação do Instagram</div>
+        <div class="iv">R$ 2.890</div>
+        <div class="iu">pagamento único · sem mensalidade obrigatória</div>
+        <ul>
+          <li><span class="k">✓</span><span><strong>Site completo das duas casas</strong> — reserva direta, página por casa, tracking de ponta a ponta</span></li>
+          <li><span class="k">✓</span><span><strong>Formulário WhatsApp com UTM</strong> — origem de cada contato identificada</span></li>
+          <li><span class="k">✓</span><span><strong>Otimização completa do Instagram</strong> — bio, destaques, 3 fixados e link</span></li>
+          <li><span class="k">✓</span><span><strong>Indicação do motor de reservas</strong> — o motor certo pro tamanho da operação, integrado ao site</span></li>
+          <li><span class="k">✓</span><span><strong>Acompanhamento da pauta de fotos</strong> — a sessão sai com tudo que o site precisa</span></li>
+        </ul>
+      </div>
+      <div class="inv-side">
+        <div class="inv-card i1">
+          <h4>➕ Opcional</h4>
+          <p><b>Curadoria de influenciadores</b> — R$ 97/mês no lançamento (sobe pra R$ 297). Cancela quando quiser.</p>
+        </div>
+        <div class="inv-card i2">
+          <h4><span class="gold">✦</span> Condição de indicação</h4>
+          <p>Valor com <span class="gold">condição especial por indicação do Melque</span> — válida pra fecharmos nesta rodada de projetos.</p>
+        </div>
+        <div class="inv-card i1" style="animation-delay:.7s">
+          <h4>📈 E a fase 2?</h4>
+          <p>Quando a base estiver no ar e medindo, desenhamos o anúncio enxuto <b>com os seus dados</b> — proposta separada, sem compromisso agora.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="bot"><span>komplexahoteis.com</span><span>08 · 09</span></div>
+</section>
+
+<!-- ═══ 09 · PRÓXIMOS PASSOS ═══ -->
+<section class="slide dark">
+  <div class="top"><img class="brand" src="assets/logotipo_white.svg" alt="Komplexa"><span class="pg">09 · 09</span></div>
+  <div class="body">
+    <div class="eyebrow">Próximos passos</div>
+    <h2 class="title">O que acontece <em>agora</em>.</h2>
+
+    <div class="steps">
+      <div class="step">
+        <span class="n">01</span>
+        <span><span class="t">Sincronizar os calendários Airbnb × Booking</span><span class="d">Independente da proposta: é <b>grátis, leva ~15 minutos</b> e elimina o risco de overbooking no fim do ano. Te mandamos o passo a passo hoje.</span></span>
+        <span class="tagf urg">Urgente · grátis</span>
+      </div>
+      <div class="step">
+        <span class="n">02</span>
+        <span><span class="t">Fotógrafo com a Hermínia</span><span class="d">Você consulta a Hermínia sobre o fotógrafo local (possível permuta) — e a gente já entra <b>com a pauta da sessão</b> alinhada ao site.</span></span>
+        <span class="tagf free">Em paralelo</span>
+      </div>
+      <div class="step">
+        <span class="n">03</span>
+        <span><span class="t">Aprovação → produção começa</span><span class="d">Briefing rápido das casas e mãos à obra: <b>site + Instagram estruturados</b> pra chegar no fim do ano com a base no ar.</span></span>
+        <span class="tagf free">Kick-off</span>
+      </div>
+    </div>
+
+    <div class="cta-row">
+      <a class="ct" href="https://komplexa-pricing.vercel.app/f/komplexaconsultoria?utm_source=komplexahoteis&utm_medium=site&utm_content=deck-giovanna-caraiva" target="_blank" rel="noopener">Vamos começar →</a>
+      <span class="cta-note">Qualquer ajuste na proposta,<br>é só chamar o Igor no WhatsApp.</span>
+    </div>
+  </div>
+  <div class="bot"><span>komplexahoteis.com</span><span>09 · 09</span></div>
+</section>
+
+</div>
+
+<div class="nav-hint">← →  navegar  ·  Esc  sair</div>
+
+<script>
+const deck = document.getElementById('deck');
+const slides = deck.querySelectorAll('.slide');
+let current = 0;
+
+function show(i){
+  slides.forEach((s,idx) => s.classList.toggle('active', idx === i));
+  current = i;
+}
+function applyPresentScale(){
+  const w = window.innerWidth, h = window.innerHeight;
+  const fitW = w / 1280, fitH = h / 720;
+  const fill = Math.max(fitW, fitH), fit = Math.min(fitW, fitH);
+  deck.style.setProperty('--present-scale', (fit + (fill - fit) * 0.7).toFixed(3));
+}
+function togglePresent(){
+  deck.classList.toggle('present');
+  const btn = document.querySelector('.toggle-present');
+  if(deck.classList.contains('present')){
+    btn.textContent = '✕ Sair';
+    show(0);
+    applyPresentScale();
+    if(deck.requestFullscreen){ deck.requestFullscreen().then(applyPresentScale).catch(()=>{}); }
+  } else {
+    btn.textContent = '▶ Apresentar';
+    slides.forEach(s => s.classList.add('active'));
+    deck.style.removeProperty('--present-scale');
+    if(document.fullscreenElement) document.exitFullscreen();
+  }
+}
+window.addEventListener('resize', () => { if(deck.classList.contains('present')) applyPresentScale(); });
+document.addEventListener('keydown', e => {
+  if(!deck.classList.contains('present')) return;
+  if(e.key === 'ArrowRight' || e.key === ' '){ if(current < slides.length-1) show(current+1); }
+  if(e.key === 'ArrowLeft'){ if(current > 0) show(current-1); }
+  if(e.key === 'Escape'){ togglePresent(); }
+});
+document.addEventListener('fullscreenchange', () => {
+  if(!document.fullscreenElement && deck.classList.contains('present')) togglePresent();
+});
+</script>
+</body>
+</html>
