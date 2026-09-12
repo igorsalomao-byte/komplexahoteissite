@@ -1770,3 +1770,5 @@ footer{background:#F6F9FC;border-top:1px solid rgba(14,30,53,.08);
 .menu-grid{grid-template-columns:1fr;justify-items:center}
 .menu-list a{font-size:clamp(2rem,3.4vw,3.2rem)}
 @media (max-width:560px){.menu-list a{font-size:1.85rem;padding:.05rem .6rem}}
+.menu-open .hdr{z-index:1200}
+.menu-open .menu-btn{background:#fff;box-shadow:0 6px 18px rgba(8,21,37,.12)}
