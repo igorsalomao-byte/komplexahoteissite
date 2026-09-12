@@ -443,7 +443,7 @@ html.js .rv{opacity:0;transform:translateY(38px)}
 .cs-arrow:hover{background:var(--sage);border-color:var(--sage);transform:scale(1.06)}
 
 /* ---------- trilho ---------- */
-.cs-track{display:flex;gap:clamp(1rem,1.8vw,1.6rem);overflow-x:auto;
+.cs-track{display:flex;gap:clamp(1rem,1.8vw,1.6rem);overflow-x:auto;overscroll-behavior-x:contain;
   scroll-snap-type:x mandatory;scroll-behavior:smooth;
   padding:.5rem clamp(1.2rem,3.5vw,3.2rem) 1.5rem;
   scrollbar-width:none;-ms-overflow-style:none}
@@ -1785,4 +1785,4 @@ html.no-anim .ph img,html.no-anim .ph video{opacity:1}
 .rating.hide{opacity:0;pointer-events:none;transform:translateX(24px)}
 
 /* Lenis parado (menu/pop-up aberto): trava a rolagem também no scroll nativo */
-html.lenis-stopped,html.lenis-stopped body{overflow:hidden}
+@media (hover:none) and (pointer:coarse){html.lenis-stopped,html.lenis-stopped body{overflow:hidden}}
