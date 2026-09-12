@@ -46,8 +46,8 @@ const heroEl = document.querySelector('.hero, .hero-int');
 if (logoFix && heroEl) {
   ScrollTrigger.create({
     trigger: heroEl, start: 'bottom 90px',
-    onEnter: () => logoFix.classList.add('dark'),
-    onLeaveBack: () => logoFix.classList.remove('dark')
+    onEnter: () => { logoFix.classList.add('dark'); document.getElementById('rating')?.classList.remove('hide'); },
+    onLeaveBack: () => { logoFix.classList.remove('dark'); document.getElementById('rating')?.classList.add('hide'); }
   });
 }
 
