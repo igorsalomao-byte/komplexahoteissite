@@ -1765,3 +1765,13 @@ footer{background:#F6F9FC;border-top:1px solid rgba(14,30,53,.08);
   .db-row .db-bar-wrap{grid-column:1/-1}
   .post-content h2,.prose h2{font-size:1.9rem}
 }
+
+/* Menu: painel de texto no lugar da foto (acervo pequeno) */
+.menu-img .ph{background:var(--dark)}
+.menu-img .ph::before{background:linear-gradient(150deg,#12243D 0%,#081525 55%,#050E1A 100%)}
+.menu-txt{position:absolute;inset:0;z-index:1;display:flex;flex-direction:column;justify-content:flex-end;
+  padding:clamp(1.8rem,3vw,3rem);color:#fff}
+.menu-txt .overline{color:rgba(255,255,255,.6);margin-bottom:1.1rem}
+.menu-txt p{font-family:var(--display);font-weight:500;font-size:clamp(1.9rem,2.8vw,2.9rem);line-height:1.15;
+  color:#fff;max-width:16ch}
+.menu-txt p em{font-style:italic;color:var(--terra)}
