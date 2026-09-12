@@ -313,7 +313,7 @@ section{padding:clamp(3.2rem,6vh,5.2rem) 0}
 /* ---------- FOOTER CLARO ---------- */
 footer{background:#F6F9FC;border-top:1px solid rgba(14,30,53,.08);
   padding:clamp(3.5rem,8vh,6rem) 0 1.6rem;margin-top:clamp(3rem,6vh,5rem)}
-.ft-grid{display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr 1fr;
+.ft-grid{display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr;
   gap:clamp(1.8rem,3.5vw,3.5rem);padding-bottom:clamp(2.5rem,5vh,4rem)}
 .ft-brand svg{width:64px;height:64px;color:var(--ink)}
 .ft-brand .name{font-family:var(--display);font-weight:500;
