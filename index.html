@@ -102,10 +102,9 @@
   <div class="hero-media ph ph-hero">
     <!-- SUBSTITUIR: vídeo institucional da Komplexa (mp4 1920px, loop ~20s).
          Hoje roda o vídeo placeholder do template. -->
-    <video autoplay muted loop playsinline preload="metadata"
-           poster="assets/video/hero-poster.webp">
-      <source src="assets/video/hero.mp4" type="video/mp4">
-    </video>
+    <video autoplay muted loop playsinline preload="metadata" disablepictureinpicture
+           poster="assets/video/hero-poster.webp"
+           data-src="assets/video/hero.mp4" data-src-mobile="assets/video/hero-mobile.mp4"></video>
   </div>
   <div class="hero-center">
     <svg viewBox="0 0 100 97" fill="currentColor" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
@@ -890,6 +889,8 @@
 (function(){
   var v = document.querySelector('.hero video');
   if(!v) return;
+  /* fonte por largura: 480p no celular, 720p no resto */
+  v.src = (innerWidth < 768 ? v.dataset.srcMobile : v.dataset.src);
   var show = function(){ v.classList.add('is-playing'); };
   if(!v.paused && v.readyState > 2) show();
   v.addEventListener('playing', show, {once:true});

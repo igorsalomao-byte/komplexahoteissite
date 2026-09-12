@@ -27,8 +27,8 @@ document.querySelectorAll('.ph img, .ph video').forEach(m => {
 (() => {
   const heroCenter = document.querySelector('.hero-center, .hero-int-body');
   const tl = gsap.timeline();
-  if (document.querySelector('.hero-media, .hero-int .media')) {
-    tl.fromTo('.hero-media, .hero-int .media', { scale: 1.12 },
+  if (document.querySelector('.hero-int .media')) {
+    tl.fromTo('.hero-int .media', { scale: 1.12 },
       { scale: 1.03, duration: 2.4, ease: 'power3.out' }, 0);
   }
   if (heroCenter) tl.to(heroCenter, { opacity: 1, scale: 1, duration: 1.6, ease: 'power3.out' }, .25);
@@ -38,11 +38,7 @@ document.querySelectorAll('.ph img, .ph video').forEach(m => {
   }
 })();
 
-/* Hero parallax de saída */
-if (document.querySelector('.hero')) {
-  gsap.to('.hero-media', { yPercent: 16, scale: 1.1, ease: 'none',
-    scrollTrigger: { trigger: '.hero', start: 'top top', end: 'bottom top', scrub: true } });
-}
+/* (parallax do hero removido: transformar o vídeo a cada frame pesava na GPU) */
 
 /* ---------- Logo fixa: branca no hero, escura depois ---------- */
 const logoFix = document.getElementById('logoFix');

@@ -168,7 +168,7 @@ p{font-size:clamp(1.05rem,1.25vw,1.24rem);line-height:1.8;color:var(--ink)}
 .hero{position:relative;height:100vh;min-height:640px;overflow:hidden}
 /* Fundo escuro: sem foto nem poster, e o que segura o hero enquanto o video
    nao tem quadro. Sobrepoe o gradiente claro do placeholder .ph. */
-.hero-media{position:absolute;inset:0;transform:scale(1.12);background:#16181A}
+.hero-media{position:absolute;inset:0;background:#16181A}
 .hero-media::before{background:#16181A url('../video/hero-poster.webp') center/cover no-repeat}
 /* O video ocupa o hero inteiro, sobre o fundo escuro. */
 .hero-media img,.hero-media video{position:absolute;inset:0;
