@@ -102,7 +102,7 @@
   <div class="hero-media ph ph-hero">
     <!-- SUBSTITUIR: vídeo institucional da Komplexa (mp4 1920px, loop ~20s).
          Hoje roda o vídeo placeholder do template. -->
-    <video autoplay muted loop playsinline preload="metadata" disablepictureinpicture
+    <video autoplay muted loop playsinline preload="auto" disablepictureinpicture
            poster="assets/video/hero-poster.webp"
            data-src="assets/video/hero.mp4" data-src-mobile="assets/video/hero-mobile.mp4"></video>
   </div>
@@ -889,8 +889,10 @@
 (function(){
   var v = document.querySelector('.hero video');
   if(!v) return;
-  /* fonte por largura: 480p no celular, 720p no resto */
+  /* fonte por largura: recorte vertical 720x1280 no celular, 1080p no resto */
   v.src = (innerWidth < 768 ? v.dataset.srcMobile : v.dataset.src);
+  v.load();
+  var p = v.play(); if (p && p.catch) p.catch(function(){});
   var show = function(){ v.classList.add('is-playing'); };
   if(!v.paused && v.readyState > 2) show();
   v.addEventListener('playing', show, {once:true});
