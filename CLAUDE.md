@@ -10,14 +10,20 @@ do `main` em `komplexahoteis.com` (CNAME na raiz).
 
 ## ⚠️ Estado do trabalho (set/2026)
 
-O site inteiro foi migrado para o visual novo (Template 6 "Autoral" com a paleta Komplexa) na branch
-**`site-novo`**: home, 13 posts + índice do blog, `sistema`, `ia`, `arquitetura`, `contato`,
-`agencia-marketing-hoteleiro` e `404`. O `main` ainda tem o site antigo até o Igor aprovar o merge.
+O site inteiro foi migrado para o visual novo (Template 6 "Autoral" com a paleta Komplexa) e
+**publicado no `main` em 12/set/2026**: home, 13 posts + índice do blog, `sistema`, `ia`, `arquitetura`,
+`contato`, `agencia-marketing-hoteleiro` e `404`. A branch `site-novo` já foi mesclada.
+
+Decisão do Igor: **operar só com a home + blog por enquanto.** As páginas `sistema`, `ia`, `arquitetura`
+e `contato` ficam no ar (indexadas, no sitemap) mas **sem link** no menu, no rodapé e nos posts, até
+serem revisadas. A landing `agencia-marketing-hoteleiro` nunca teve link (só SEO). Afirmações dessas
+páginas que ainda precisam de confirmação do Igor: chatbot de atendimento e precificação por IA (`ia`),
+Omnibees/HSystem/Erbon como integrações e "não precisa trocar motor/PMS" (`sistema`), "comissão de
+15% a 25%" (`arquitetura`), "3 a 6 meses" na FAQ (`contato`).
 
 Regras:
-- **Não fazer merge em `main` nem push sem aprovação explícita do Igor** (publica em produção).
-- `novo-site/` (excluído do git) era a proposta original da home; a fonte de verdade agora é a raiz da
-  branch `site-novo`. Não editar `novo-site/`.
+- **Push no `main` publica em produção**: só com pedido explícito do Igor.
+- `_extraidos/novo-site-snapshot/` (fora do git) era a proposta original da home; não editar.
 - Originais das fotos e vídeos antes da compressão: `_extraidos/novo-site-originais/` (fora do git).
 - Vídeo do hero (`assets/video/hero.mp4`) é placeholder do template; será trocado quando houver material.
 - Critério de qualidade de copy e layout: `_extraidos/site-hotel-boutique/SKILL.md` (sem clichê,
