@@ -24,7 +24,8 @@ button{font-family:var(--body)}
 .ph{position:relative;overflow:hidden;background:#16283F}
 .ph::before{content:'';position:absolute;inset:0;z-index:0;
   background:linear-gradient(150deg,#1F3654 0%,#16283F 45%,#0E1E35 100%)}
-.ph img,.ph video{position:relative;z-index:1;opacity:0;transition:opacity 1s ease}
+.ph img,.ph video{position:relative;z-index:1;transition:opacity 1s ease}
+html.js .ph img,html.js .ph video{opacity:0}
 .ph img.loaded,.ph video.loaded{opacity:1}
 /* Reforçado junto com o placeholder bronze — o texto branco sobreposto
    ficava com pouco contraste sobre o tom claro do gradiente. */
@@ -181,8 +182,9 @@ p{font-size:clamp(1.05rem,1.25vw,1.24rem);line-height:1.8;color:var(--ink)}
 .hero-media::after{content:'';position:absolute;inset:0;z-index:2;
   background:radial-gradient(120% 90% at 50% 50%,rgba(12,12,12,.34) 0%,rgba(12,12,12,.52) 100%)}
 .hero-center{position:absolute;inset:0;z-index:3;display:flex;flex-direction:column;
-  align-items:center;justify-content:center;color:#fff;text-align:center;opacity:0;
+  align-items:center;justify-content:center;color:#fff;text-align:center;
   transform:scale(.96)}
+html.js .hero-center{opacity:0}
 .hero-center svg{width:clamp(130px,15vw,180px);height:auto;
   filter:drop-shadow(0 6px 26px rgba(0,0,0,.3))}
 .hero-word{font-family:var(--display);font-weight:500;
@@ -416,7 +418,7 @@ footer{background:#F6F9FC;border-top:1px solid rgba(14,30,53,.08);
   color:var(--muted);font-style:italic}
 
 /* ============ REVEAL BASE ============ */
-.rv{opacity:0;transform:translateY(38px)}
+html.js .rv{opacity:0;transform:translateY(38px)}
 
 /* ============================================================
    CASES — Ato 06 · Confirmar
@@ -1615,7 +1617,7 @@ footer{background:#F6F9FC;border-top:1px solid rgba(14,30,53,.08);
 /* ---------- Hero interno com foto (páginas institucionais) ---------- */
 .hero-int{display:flex;align-items:center;justify-content:center;text-align:center;background:var(--dark)}
 .hero-int .media img{width:100%;height:100%;object-fit:cover}
-.hero-int-body{opacity:0;transform:scale(.98)}
+html.js .hero-int-body{opacity:0;transform:scale(.98)}
 .hero-int-body p{color:rgba(255,255,255,.88);max-width:58ch;margin:1.4rem auto 0}
 .hero-int-body .btn-sage{margin-top:2rem}
 
@@ -1772,3 +1774,7 @@ footer{background:#F6F9FC;border-top:1px solid rgba(14,30,53,.08);
 @media (max-width:560px){.menu-list a{font-size:1.85rem;padding:.05rem .6rem}}
 .menu-open .hdr{z-index:1200}
 .menu-open .menu-btn{background:#fff;box-shadow:0 6px 18px rgba(8,21,37,.12)}
+
+/* Trava de segurança: se as animações não iniciarem (JS lento ou bloqueado), mostra tudo */
+html.no-anim .rv,html.no-anim .hero-center,html.no-anim .hero-int-body{opacity:1!important;transform:none!important}
+html.no-anim .ph img,html.no-anim .ph video{opacity:1}

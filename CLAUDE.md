@@ -35,8 +35,10 @@ no headless, use um wrapper com iframe injetando `.rv{opacity:1!important;transf
 
 ## Tech Stack
 
-HTML + CSS + JS puro, sem build. Dependências via CDN: Google Fonts (Cormorant + Jost), Lenis e GSAP +
-ScrollTrigger (efeitos de scroll, menu overlay, reveals `.rv`).
+HTML + CSS + JS puro, sem build. Google Fonts (Cormorant + Jost) via CDN; Lenis, GSAP e ScrollTrigger
+hospedados em `assets/js/vendor/` (não usar CDN: em conexão lenta a página ficava vazia). Um script inline
+no `<head>` marca `html.js` e, se as animações não iniciarem em 2,5 s, marca `html.no-anim`, que revela
+tudo (`.rv`, hero, fotos). Só `html.js .rv` nasce invisível.
 
 ## File Structure
 

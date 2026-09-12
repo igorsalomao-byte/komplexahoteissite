@@ -9,6 +9,7 @@ const FORM_URL = 'https://komplexa-pricing.vercel.app/f/komplexaconsultoria' +
   '?utm_source=komplexahoteis&utm_medium=site&utm_content=home-boutique-concierge';
 
 /* ---------- Lenis ---------- */
+if (window.gsap && window.ScrollTrigger && window.Lenis) window.__animReady = true;
 const lenis = new Lenis({ duration: 1.2, easing: t => Math.min(1, 1.001 - Math.pow(2, -10 * t)) });
 lenis.on('scroll', ScrollTrigger.update);
 gsap.ticker.add(t => lenis.raf(t * 1000));
@@ -22,8 +23,8 @@ document.querySelectorAll('.ph img, .ph video').forEach(m => {
   m.addEventListener('error', () => m.style.display = 'none', { once: true });
 });
 
-/* ---------- Entrada da página ---------- */
-window.addEventListener('load', () => {
+/* ---------- Entrada da página (imediata; não espera o load) ---------- */
+(() => {
   const heroCenter = document.querySelector('.hero-center, .hero-int-body');
   const tl = gsap.timeline();
   if (document.querySelector('.hero-media, .hero-int .media')) {
@@ -35,7 +36,7 @@ window.addEventListener('load', () => {
     tl.add(() => gsap.fromTo('#concBubble', { opacity: 0, scale: .6, y: 10 },
       { opacity: 1, scale: 1, y: 0, duration: .5, ease: 'back.out(1.6)' }), 1.2);
   }
-});
+})();
 
 /* Hero parallax de saída */
 if (document.querySelector('.hero')) {
