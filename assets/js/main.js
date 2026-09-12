@@ -8,6 +8,15 @@ gsap.registerPlugin(ScrollTrigger);
 const FORM_URL = 'https://komplexa-pricing.vercel.app/f/komplexaconsultoria' +
   '?utm_source=komplexahoteis&utm_medium=site&utm_content=home-boutique-concierge';
 
+/* ---------- Altura do hero fixa: a barra do navegador móvel some ao rolar e o 100vh
+   cresce, o que dava "zoom" no vídeo. Trava na altura inicial; só recalcula se a largura mudar. */
+(() => {
+  let w = innerWidth;
+  const set = () => document.documentElement.style.setProperty('--hero-h', innerHeight + 'px');
+  set();
+  addEventListener('resize', () => { if (innerWidth !== w) { w = innerWidth; set(); } });
+})();
+
 /* ---------- Lenis ---------- */
 if (window.gsap && window.ScrollTrigger && window.Lenis) window.__animReady = true;
 const lenis = new Lenis({ duration: 1.2, easing: t => Math.min(1, 1.001 - Math.pow(2, -10 * t)) });

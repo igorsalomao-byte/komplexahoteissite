@@ -165,7 +165,7 @@ p{font-size:clamp(1.05rem,1.25vw,1.24rem);line-height:1.8;color:var(--ink)}
 .menu-foot-social svg{width:100%;height:100%}
 
 /* ============ HERO ============ */
-.hero{position:relative;height:100vh;min-height:640px;overflow:hidden}
+.hero{position:relative;height:100vh;height:var(--hero-h,100svh);min-height:640px;overflow:hidden}
 /* Fundo escuro: sem foto nem poster, e o que segura o hero enquanto o video
    nao tem quadro. Sobrepoe o gradiente claro do placeholder .ph. */
 .hero-media{position:absolute;inset:0;background:#16181A}
@@ -347,7 +347,7 @@ footer{background:#F6F9FC;border-top:1px solid rgba(14,30,53,.08);
   padding-top:1.4rem}
 
 /* ============ INTERNA: ACOMODAÇÕES ============ */
-.hero-int{position:relative;height:100vh;min-height:600px;overflow:hidden;
+.hero-int{position:relative;height:100vh;height:var(--hero-h,100svh);min-height:600px;overflow:hidden;
   display:flex;align-items:center;justify-content:center;text-align:center}
 .hero-int .media{position:absolute;inset:0;transform:scale(1.1)}
 .hero-int .media::after{content:'';position:absolute;inset:0;z-index:2;
