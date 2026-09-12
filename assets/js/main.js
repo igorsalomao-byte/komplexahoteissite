@@ -19,9 +19,30 @@ const FORM_URL = 'https://komplexa-pricing.vercel.app/f/komplexaconsultoria' +
 
 /* ---------- Lenis ---------- */
 if (window.gsap && window.ScrollTrigger && window.Lenis) window.__animReady = true;
-const lenis = new Lenis({ duration: 1.2, easing: t => Math.min(1, 1.001 - Math.pow(2, -10 * t)) });
-lenis.on('scroll', ScrollTrigger.update);
-gsap.ticker.add(t => lenis.raf(t * 1000));
+/* Em tela de toque a rolagem é 100% nativa: o Lenis disputava a posição com o
+   navegador (pulos e sensação de travamento no celular). No desktop ele segue,
+   mais curto. O objeto "lenis" mantém a mesma API nos dois casos. */
+const IS_TOUCH = matchMedia('(hover: none) and (pointer: coarse)').matches;
+let lenis;
+if (!IS_TOUCH) {
+  lenis = new Lenis({ duration: 1, easing: t => Math.min(1, 1.001 - Math.pow(2, -10 * t)), wheelMultiplier: 1 });
+  lenis.on('scroll', ScrollTrigger.update);
+  gsap.ticker.add(t => lenis.raf(t * 1000));
+} else {
+  const root = document.documentElement;
+  lenis = {
+    stop() { root.classList.add('lenis-stopped'); },
+    start() { root.classList.remove('lenis-stopped'); },
+    scrollTo(t, o) {
+      const y = typeof t === 'number' ? t : (t.getBoundingClientRect().top + scrollY);
+      scrollTo({ top: y, behavior: 'smooth' });
+    },
+    on() {}, raf() {}
+  };
+}
+/* A barra de endereço do celular dispara resize ao rolar; recalcular os gatilhos
+   nesse momento reposiciona a página. */
+ScrollTrigger.config({ ignoreMobileResize: true, limitCallbacks: true });
 
 /* ---------- Lazy media ---------- */
 document.querySelectorAll('.ph img, .ph video').forEach(m => {
@@ -657,4 +678,10 @@ document.querySelectorAll('#metodo, #cases, #site, #sistema, #criativos, #frente
     if (r.top < innerHeight && r.bottom > 0) sec.classList.add('viz');
   });
 
-addEventListener('resize', () => ScrollTrigger.refresh());
+(() => {
+  let w = innerWidth, t;
+  addEventListener('resize', () => {
+    if (innerWidth === w) return;            /* só largura: altura muda com a barra do navegador */
+    w = innerWidth; clearTimeout(t); t = setTimeout(() => ScrollTrigger.refresh(), 200);
+  });
+})();

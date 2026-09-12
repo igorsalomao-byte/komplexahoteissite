@@ -1783,3 +1783,6 @@ html.no-anim .ph img,html.no-anim .ph video{opacity:1}
 /* Selo 19x: só aparece depois do hero */
 .rating{transition:opacity .45s var(--ease),transform .45s var(--ease)}
 .rating.hide{opacity:0;pointer-events:none;transform:translateX(24px)}
+
+/* Lenis parado (menu/pop-up aberto): trava a rolagem também no scroll nativo */
+html.lenis-stopped,html.lenis-stopped body{overflow:hidden}
