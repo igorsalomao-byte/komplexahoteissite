@@ -530,57 +530,81 @@ html,body{font-family:var(--fd);background:var(--page-bg);color:var(--navy);-web
 /* ─── 08 · selo Operação Completa + Comercial ─── */
 .wed-selo{display:inline-block;margin-top:12px;max-width:520px;font-size:12.5px;font-weight:600;line-height:1.45;color:#F5D9A8;background:rgba(8,16,30,.72);border:1px solid rgba(245,217,168,.5);backdrop-filter:blur(6px);border-radius:12px;padding:10px 16px}
 
-/* ─── 09 · OS PLANOS ─── */
+/* ─── 09 · OS PLANOS (navy) ─── */
+.slide.slide-planos{background:linear-gradient(180deg,#0E1E35 0%,#0A1628 55%,#081525 100%)}
+.slide.slide-planos::before{background:radial-gradient(ellipse 60% 42% at 50% 0%,rgba(16,153,233,.26) 0%,transparent 70%),radial-gradient(ellipse 40% 40% at 50% 62%,rgba(36,213,255,.07) 0%,transparent 70%);opacity:1}
 .planos-head{display:flex;align-items:flex-end;justify-content:space-between;gap:24px;flex-wrap:wrap}
-.verba-sel{display:flex;flex-direction:column;gap:7px;align-items:flex-end}
-.vs-lbl{font-size:10.5px;font-weight:700;letter-spacing:1.4px;text-transform:uppercase;color:var(--gray)}
-.vs-chips{display:flex;gap:6px;flex-wrap:wrap}
-.vs-chip{font-family:var(--fd);font-size:12px;font-weight:600;color:var(--navy);background:#fff;border:1px solid var(--bdr);border-radius:100px;padding:8px 14px;cursor:pointer;transition:all .2s}
-.vs-chip:hover{border-color:var(--g2)}
-.vs-chip.on{background:var(--navy);border-color:var(--navy);color:#fff}
-.vs-note{font-size:11px;color:var(--gray);max-width:420px;text-align:right;line-height:1.45}
-.planos-grid{display:grid;grid-template-columns:1fr 1.08fr 1fr;gap:13px;margin-top:16px;align-items:stretch}
-.plano{position:relative;background:#fff;border:1px solid var(--bdr);border-radius:16px;padding:18px 19px;display:flex;flex-direction:column;box-shadow:0 5px 18px rgba(20,35,60,.05)}
-.plano.p2{border:2px solid transparent;background:linear-gradient(#fff,#fff) padding-box,var(--grad) border-box;box-shadow:0 12px 34px rgba(16,112,195,.16)}
-.selo-rec{position:absolute;top:-11px;left:50%;transform:translateX(-50%);background:var(--grad);color:#fff;font-size:9.5px;font-weight:800;letter-spacing:1.4px;text-transform:uppercase;padding:5px 14px;border-radius:100px;box-shadow:0 4px 14px rgba(16,153,233,.4);white-space:nowrap}
-.plano h3{font-size:15.5px;font-weight:800;color:var(--navy);letter-spacing:-.3px;line-height:1.2}
-.plano .ps{font-size:12px;color:var(--gray);margin:3px 0 10px;line-height:1.4}
-.plano .pimpl{font-size:12px;color:var(--txt);background:var(--bg);border:1px solid var(--bdr);border-radius:9px;padding:7px 11px;margin-bottom:8px;line-height:1.45}
-.plano .pimpl s{color:var(--gray)}
-.plano .pimpl b{color:var(--navy);font-weight:700}
-.plano .pimpl .pz{color:var(--gray)}
-.plano .pimpl.leve{background:transparent;border-style:dashed;color:var(--gray)}
-.plano .pr{display:flex;align-items:baseline;gap:6px;margin-bottom:10px;flex-wrap:wrap}
-.plano .pr .mais{font-size:15px;font-weight:700;color:var(--gray)}
-.plano .pv{font-size:26px;font-weight:800;letter-spacing:-1px;background:var(--grad);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
-.plano .pv.sob{font-size:19px}
-.plano .pms{font-size:11px;color:var(--gray);font-weight:600}
-.plano .pdest{font-size:11.5px;font-weight:600;color:var(--blue);background:var(--tb09);border:1px solid var(--tb18);border-radius:9px;padding:7px 11px;margin-bottom:8px;line-height:1.45}
-.plano .pdia{font-size:11px;color:var(--gray);margin:-6px 0 8px}
-.plano .plbl{font-size:9.5px;font-weight:800;letter-spacing:1.6px;text-transform:uppercase;color:var(--blue);margin:8px 0 2px}
-.plano ul{list-style:none;display:flex;flex-direction:column}
-.plano ul:last-of-type{flex:1}
-.plano li{position:relative;font-size:12.3px;color:var(--txt);line-height:1.45;padding:6px 0 6px 20px;border-top:1px solid var(--bdr)}
-.plano li::before{content:"";position:absolute;left:2px;top:12px;width:7px;height:7px;border-radius:2px;background:var(--g2)}
-.plano.p2 li::before{background:var(--grad)}
-.plano .pnote{margin-top:10px;font-size:11px;color:var(--gray);line-height:1.45;border-top:1px dashed var(--bdr);padding-top:9px}
-.planos-foot{margin-top:14px;font-size:11.5px;color:var(--gray);text-align:center;line-height:1.5}
+.planos-head .title{margin-bottom:0}
+.verba-sel{display:flex;flex-direction:column;gap:8px;align-items:flex-end}
+.vs-lbl{font-size:10.5px;font-weight:700;letter-spacing:1.6px;text-transform:uppercase;color:rgba(255,255,255,.5)}
+.vs-chips{display:flex;gap:4px;flex-wrap:wrap;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.1);border-radius:100px;padding:4px}
+.vs-chip{font-family:var(--fd);font-size:12px;font-weight:600;color:rgba(255,255,255,.72);background:transparent;border:0;border-radius:100px;padding:8px 14px;cursor:pointer;transition:background .2s,color .2s,box-shadow .2s}
+.vs-chip:hover{color:#fff;background:rgba(255,255,255,.06)}
+.vs-chip.on{background:#fff;color:var(--navy);box-shadow:0 6px 20px rgba(36,213,255,.22)}
+.vs-note{font-size:11px;color:rgba(255,255,255,.45);max-width:430px;text-align:right;line-height:1.5}
 
-/* ─── 10 · COMPARE OS PLANOS ─── */
-.cmp-wrap{margin-top:2px}
-table.cmp{width:100%;border-collapse:collapse}
-.cmp th{font-size:12.5px;font-weight:700;color:var(--navy);padding:8px 6px;text-align:center;width:150px;vertical-align:bottom;line-height:1.3}
-.cmp th.f{text-align:left;width:auto;font-size:10.5px;font-weight:700;letter-spacing:1.4px;text-transform:uppercase;color:var(--gray)}
-.cmp td{border-top:1px solid var(--bdr)}
-.cmp td.f{font-size:12.5px;color:var(--txt);padding:6px 12px 6px 0;line-height:1.4;text-align:left}
-.cmp td.v{text-align:center;font-size:13.5px}
-.cmp .ok{color:var(--ok);font-weight:700}
-.cmp .no{color:#B9C2D0;font-weight:600}
-.cmp tr.g td{border-top:none;padding:13px 0 4px}
-.cmp tr.g td.f{font-size:10px;font-weight:800;letter-spacing:1.6px;text-transform:uppercase;color:var(--blue)}
-.cmp th.rec,.cmp td.rec{background:var(--tb09)}
-.cmp th.rec{border-radius:10px 10px 0 0}
-.cmp tr:last-child td{border-bottom:1px solid var(--bdr)}
+.planos-grid{display:grid;grid-template-columns:1fr 1.14fr 1fr;gap:16px;margin-top:22px;align-items:stretch}
+.plano{position:relative;background:linear-gradient(180deg,rgba(255,255,255,.055) 0%,rgba(255,255,255,.018) 100%);border:1px solid rgba(255,255,255,.1);border-radius:18px;padding:22px 22px 20px;display:flex;flex-direction:column;color:#fff}
+.plano.p2{border:1.5px solid transparent;background:linear-gradient(180deg,#14304F 0%,#0E2240 100%) padding-box,var(--grad) border-box;box-shadow:0 28px 70px rgba(16,153,233,.22),0 0 90px rgba(36,213,255,.08)}
+.selo-rec{position:absolute;top:-12px;left:50%;transform:translateX(-50%);background:var(--grad);color:#fff;font-size:9.5px;font-weight:800;letter-spacing:1.6px;text-transform:uppercase;padding:6px 15px;border-radius:100px;box-shadow:0 6px 18px rgba(16,153,233,.45);white-space:nowrap}
+.plano h3{font-size:17px;font-weight:800;color:#fff;letter-spacing:-.3px;line-height:1.2}
+.plano .ps{font-size:12.5px;color:rgba(255,255,255,.58);margin-top:4px;line-height:1.4}
+
+.plano .pprice{margin-top:14px;padding:13px 0 12px;border-top:1px solid rgba(255,255,255,.09);border-bottom:1px solid rgba(255,255,255,.09)}
+.plano .pr{display:flex;align-items:baseline;gap:6px;flex-wrap:wrap}
+.plano .pv{font-size:34px;font-weight:800;letter-spacing:-1.3px;line-height:1;color:#fff}
+.plano.p2 .pv{background:linear-gradient(90deg,#FFFFFF 0%,#9BE9FF 100%);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+.plano .pv.sob{font-size:22px;letter-spacing:-.5px}
+.plano .pms{font-size:12px;color:rgba(255,255,255,.55);font-weight:600}
+.plano .pdia{font-size:11.5px;color:rgba(255,255,255,.5);margin-top:6px}
+.plano .pimpl{margin-top:10px;font-size:11.5px;color:rgba(255,255,255,.62);line-height:1.5;min-height:34px}
+.plano .pimpl s{color:rgba(255,255,255,.38)}
+.plano .pimpl b{color:#fff;font-weight:700}
+
+.plano .plbl{display:flex;align-items:center;gap:10px;font-size:9.5px;font-weight:800;letter-spacing:1.8px;text-transform:uppercase;color:var(--g3);margin:14px 0 5px}
+.plano .plbl::after{content:"";flex:1;height:1px;background:linear-gradient(90deg,rgba(36,213,255,.35),transparent)}
+.plano .plbl.imp{color:rgba(255,255,255,.5)}
+.plano .plbl.imp::after{background:linear-gradient(90deg,rgba(255,255,255,.18),transparent)}
+
+.plano .time{display:grid;grid-template-columns:repeat(4,1fr);gap:6px;margin:4px 0 6px}
+.plano .time span{display:flex;flex-direction:column;align-items:center;gap:5px;text-align:center;font-size:10.5px;font-weight:600;color:rgba(255,255,255,.82);line-height:1.2;background:rgba(36,213,255,.06);border:1px solid rgba(36,213,255,.16);border-radius:11px;padding:9px 4px 8px}
+.plano .time i{width:26px;height:26px;border-radius:50%;background:var(--grad);display:grid;place-items:center;font-style:normal;font-size:9.5px;font-weight:800;color:#fff;letter-spacing:.2px}
+.plano .time-sub{font-size:11px;color:rgba(255,255,255,.55);margin:0 0 4px;line-height:1.4}
+
+.plano ul{list-style:none;display:flex;flex-direction:column}
+.plano li{position:relative;font-size:12.5px;color:rgba(255,255,255,.8);line-height:1.42;padding:4.5px 0 4.5px 21px}
+.plano li::before{content:"";position:absolute;left:4px;top:8.5px;width:4px;height:8px;border:solid var(--g3);border-width:0 2px 2px 0;transform:rotate(45deg)}
+.plano li b{color:#fff;font-weight:600}
+.plano .grow{flex:1}
+
+.plano .imp-grid{display:grid;grid-template-columns:1fr 1fr;gap:6px}
+.plano .imp-grid div{background:rgba(255,255,255,.035);border:1px solid rgba(255,255,255,.08);border-radius:10px;padding:8px 10px;font-size:10.5px;color:rgba(255,255,255,.55);line-height:1.35}
+.plano .imp-grid b{display:block;font-size:11.5px;font-weight:700;color:#fff;margin-bottom:2px}
+.plano .gar{display:flex;gap:8px;align-items:flex-start;margin-top:8px;font-size:11px;color:rgba(255,255,255,.72);line-height:1.45;background:rgba(22,163,74,.1);border:1px solid rgba(74,222,128,.25);border-radius:10px;padding:8px 10px}
+.plano .gar::before{content:"";flex-shrink:0;width:14px;height:14px;margin-top:1px;border-radius:50%;background:#22C55E url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='3.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M6 12.5l4 4 8-9'/%3E%3C/svg%3E") center/10px no-repeat}
+.plano .gar b{color:#fff;font-weight:600}
+.plano .pnote{margin-top:14px;font-size:11px;color:rgba(255,255,255,.45);line-height:1.5;border-top:1px dashed rgba(255,255,255,.12);padding-top:10px}
+.planos-foot{margin-top:18px;font-size:11.5px;color:rgba(255,255,255,.45);text-align:center;line-height:1.5}
+
+/* ─── 10 · COMPARE OS PLANOS (navy) ─── */
+.cmp-wrap{margin-top:6px}
+table.cmp{width:100%;border-collapse:separate;border-spacing:0}
+.cmp th{font-size:12.5px;font-weight:700;color:#fff;padding:12px 6px 10px;text-align:center;width:158px;vertical-align:bottom;line-height:1.3}
+.cmp th.f{text-align:left;width:auto;font-size:10.5px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:rgba(255,255,255,.42);padding-left:0}
+.cmp th small{display:block;font-size:8.5px;font-weight:800;letter-spacing:1.4px;text-transform:uppercase;color:var(--g3);margin-bottom:4px}
+.cmp td{border-top:1px solid rgba(255,255,255,.07)}
+.cmp td.f{font-size:12.5px;color:rgba(255,255,255,.78);padding:6px 12px 6px 0;line-height:1.4;text-align:left}
+.cmp td.v{text-align:center;font-size:13px;padding:5px 0}
+.cmp .ok{display:inline-grid;place-items:center;width:20px;height:20px;border-radius:50%;background:rgba(36,213,255,.14);color:var(--g3);font-size:11px;font-weight:800;line-height:1}
+.cmp td.rec .ok{background:var(--grad);color:#fff}
+.cmp .no{color:rgba(255,255,255,.22);font-weight:600}
+.cmp tr.g td{border-top:none;padding:14px 0 5px}
+.cmp tr.g td.f{font-size:10px;font-weight:800;letter-spacing:1.7px;text-transform:uppercase;color:var(--g3)}
+.cmp tr.g td.f em{font-style:normal;font-size:9px;font-weight:700;letter-spacing:.8px;color:rgba(255,255,255,.5);background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:100px;padding:2px 8px;margin-left:8px;text-transform:none}
+.cmp th.rec,.cmp td.rec{background:rgba(36,213,255,.06);box-shadow:inset 1px 0 0 rgba(36,213,255,.22),inset -1px 0 0 rgba(36,213,255,.22)}
+.cmp th.rec{border-radius:12px 12px 0 0;box-shadow:inset 1px 0 0 rgba(36,213,255,.22),inset -1px 0 0 rgba(36,213,255,.22),inset 0 1px 0 rgba(36,213,255,.22)}
+.cmp tr:last-child td{border-bottom:1px solid rgba(255,255,255,.07)}
+.cmp tr:last-child td.rec{border-radius:0 0 12px 12px;border-bottom-color:rgba(36,213,255,.22)}
 
 /* ─── 11 · GARANTIA ─── */
 .gar-box{margin-top:18px;background:rgba(36,213,255,.08);border:1px solid rgba(36,213,255,.3);border-radius:14px;padding:18px 22px;font-size:14.5px;line-height:1.6;color:rgba(255,255,255,.85)}
@@ -789,22 +813,28 @@ table.cmp{width:100%;border-collapse:collapse}
   .crm-live .dm-lead{width:27%}
   .com-punch{font-size:13px;padding:13px 16px}
   /* 09 planos */
-  .planos-head{flex-direction:column;align-items:flex-start;gap:14px}
-  .verba-sel{align-items:flex-start}
+  .planos-head{flex-direction:column;align-items:flex-start;gap:16px}
+  .verba-sel{align-items:flex-start;width:100%}
+  .vs-chips{border-radius:14px;display:grid;grid-template-columns:1fr 1fr;width:100%}
+  .vs-chip{font-size:11.5px;padding:9px 8px;border-radius:10px}
   .vs-note{text-align:left}
-  .vs-chip{font-size:11.5px;padding:8px 11px}
-  .planos-grid{grid-template-columns:1fr;gap:16px;margin-top:14px}
+  .planos-grid{grid-template-columns:1fr;gap:18px;margin-top:18px}
+  .plano{padding:22px 18px 18px}
   .plano.p2{order:-1;margin-top:8px}
   .plano li{font-size:12.5px}
-  .plano .pdest{font-size:12px}
+  .plano .pimpl{min-height:0}
+  .plano .time span{font-size:10px}
   .wed-selo{font-size:11.5px}
   /* 10 compare: lista por grupo, marcas em colunas estreitas */
-  .cmp th{font-size:9px;width:56px;padding:6px 2px;letter-spacing:0}
+  .cmp th{font-size:9px;width:56px;padding:8px 2px;letter-spacing:0}
+  .cmp th small{font-size:7px;letter-spacing:.6px}
   .cmp th.f{font-size:9px;letter-spacing:.8px}
   .cmp td.f{font-size:11.5px;padding:6px 8px 6px 0}
   .cmp td.v{font-size:12px}
+  .cmp .ok{width:18px;height:18px;font-size:10px}
   .cmp tr.g td{padding:12px 0 4px}
   .cmp tr.g td.f{font-size:9.5px;letter-spacing:1.2px}
+  .cmp tr.g td.f em{display:inline-block;margin:4px 0 0;font-size:8.5px}
   /* 10 garantia */
   .gar-box{font-size:13px;padding:15px 17px}
   .gar-selos span{font-size:11.5px}
@@ -1324,13 +1354,13 @@ table.cmp{width:100%;border-collapse:collapse}
 </section>
 
 <!-- ═══════════════ 09 · OS PLANOS ═══════════════ -->
-<section class="slide light" id="planos">
-  <div class="top"><img class="brand" src="assets/logotipo_blue.svg" alt="Komplexa"><span class="pg">09 · 11</span></div>
+<section class="slide dark slide-planos" id="planos">
+  <div class="top"><img class="brand" src="assets/logotipo_white.svg" alt="Komplexa"><span class="pg">09 · 11</span></div>
   <div class="body">
     <div class="planos-head">
       <div>
         <div class="eyebrow">Os planos</div>
-        <h2 class="title" style="font-size:34px;margin-bottom:0">Escolha o <em>plano</em>.</h2>
+        <h2 class="title" style="font-size:34px">Escolha o <em>plano</em>.</h2>
       </div>
       <div class="verba-sel">
         <span class="vs-lbl">Verba mensal de anúncio</span>
@@ -1348,11 +1378,13 @@ table.cmp{width:100%;border-collapse:collapse}
       <div class="plano p1">
         <h3>Anúncios</h3>
         <p class="ps">Mais gente encontrando o seu hotel.</p>
-        <div class="pr"><span class="pv" data-plan="anuncios">R$ 2.090</span><small class="pms">/mês</small></div>
-        <p class="pdia" data-plan="anuncios">o equivalente a R$ 70 por dia</p>
-        <p class="pimpl leve">Sem implantação</p>
+        <div class="pprice">
+          <div class="pr"><span class="pv" data-plan="anuncios">R$ 2.090</span><small class="pms">/mês</small></div>
+          <p class="pdia" data-plan="anuncios">o equivalente a R$ 70 por dia</p>
+          <p class="pimpl">Sem implantação.<br>Mensalidade desde o 1º mês.</p>
+        </div>
         <p class="plbl">Todo mês</p>
-        <ul>
+        <ul class="grow">
           <li>Campanhas de venda no Google (Pesquisa e Performance Max) e na Meta, na conta do hotel</li>
           <li>Otimização toda semana, com públicos parecidos com os seus melhores hóspedes</li>
           <li>4 criativos novos, feitos a partir das fotos e vídeos do hotel</li>
@@ -1365,38 +1397,60 @@ table.cmp{width:100%;border-collapse:collapse}
         <span class="selo-rec">Recomendado</span>
         <h3>Operação Completa</h3>
         <p class="ps">Mais gente reservando direto no seu site.</p>
-        <p class="pdest">4 especialistas no WhatsApp do hotel: account, designer, gestor de tráfego e especialista em IA.</p>
-        <div class="pimpl">Implantação <s>de R$ 5.351</s> <b>por R$ 2.350</b> <span class="pz">· 4 semanas</span></div>
-        <div class="pr"><span class="mais">+</span><span class="pv" data-plan="completa">R$ 2.350</span><small class="pms">/mês a partir do 2º mês</small></div>
-        <p class="pdia" data-plan="completa">o equivalente a R$ 78 por dia</p>
-        <p class="plbl">Nas 4 semanas</p>
-        <ul>
-          <li>Website novo, integrado ao motor de reservas e preparado para o Google e para as IAs (ChatGPT, Gemini)</li>
-          <li>Instagram estruturado: bio, destaques, padrão visual e 6 publicações</li>
-          <li>Criativos para anúncios, aprovados por você</li>
-          <li>Campanhas Google e Meta no ar, com rastreio até a reserva</li>
-          <li>Garantia: as 4 entregas em 28 dias ou 100% do valor delas de volta</li>
+        <div class="pprice">
+          <div class="pr"><span class="pv" data-plan="completa">R$ 2.350</span><small class="pms">/mês</small></div>
+          <p class="pdia" data-plan="completa">o equivalente a R$ 78 por dia</p>
+          <p class="pimpl">Implantação <s>de R$ 5.351</s> <b>por R$ 2.350</b> no 1º mês.<br>Mensalidade a partir do 2º mês.</p>
+        </div>
+
+        <p class="plbl">Todo mês, com o seu time</p>
+        <div class="time">
+          <span><i>AC</i>Account</span>
+          <span><i>DS</i>Designer</span>
+          <span><i>GT</i>Gestor de tráfego</span>
+          <span><i>IA</i>Especialista em IA</span>
+        </div>
+        <p class="time-sub">4 especialistas no WhatsApp do hotel.</p>
+        <ul class="grow">
+          <li><b>Otimização semanal</b> das campanhas no Google (Pesquisa e Performance Max) e na Meta</li>
+          <li><b>Remarketing por etapa da jornada</b>, inclusive para quem abandonou a reserva no motor</li>
+          <li><b>4 criativos novos</b>, com teste A/B contínuo até achar o vencedor</li>
+          <li><b>Públicos atualizados</b> com os dados de quem já reservou</li>
+          <li><b>Rastreio de cada reserva</b> até a campanha de origem, com custo por reserva e retorno do investimento</li>
+          <li><b>Relatório e reunião mensal</b> de resultado</li>
         </ul>
-        <p class="plbl">Todo mês</p>
-        <ul>
-          <li>Otimização semanal das campanhas e remarketing por etapa da jornada</li>
-          <li>4 criativos novos</li>
-          <li>Relatório com a origem de cada reserva e reunião mensal de resultado</li>
-        </ul>
+
+        <p class="plbl imp">Na implantação · 4 semanas</p>
+        <div class="imp-grid">
+          <div><b>Website novo</b>integrado ao motor e preparado para Google e IAs</div>
+          <div><b>Instagram</b>bio, destaques, padrão visual e 6 publicações</div>
+          <div><b>Criativos</b>para os anúncios, aprovados por você</div>
+          <div><b>Campanhas</b>Google e Meta no ar, com rastreio até a reserva</div>
+        </div>
+        <p class="gar"><span><b>Garantia:</b> as 4 entregas em 28 dias ou 100% do valor delas de volta.</span></p>
       </div>
 
       <div class="plano p3">
         <h3>Operação Completa + Comercial</h3>
         <p class="ps">Seu time fechando mais reservas e eventos.</p>
-        <p class="pdest">Os 4 especialistas, mais a consultoria comercial com os sócios da Komplexa.</p>
-        <div class="pimpl">Implantação <s>de R$ 9.131</s> <b>por R$ 6.130</b></div>
-        <div class="pr"><span class="mais">+</span><span class="pv" data-plan="comercial">R$ 3.240</span><small class="pms">/mês a partir do 2º mês</small></div>
-        <p class="pdia" data-plan="comercial">o equivalente a R$ 108 por dia</p>
+        <div class="pprice">
+          <div class="pr"><span class="pv" data-plan="comercial">R$ 3.240</span><small class="pms">/mês</small></div>
+          <p class="pdia" data-plan="comercial">o equivalente a R$ 108 por dia</p>
+          <p class="pimpl">Implantação <s>de R$ 9.131</s> <b>por R$ 6.130</b> no 1º mês.<br>Mensalidade a partir do 2º mês.</p>
+        </div>
+        <p class="plbl">Todo mês</p>
+        <p class="time-sub">Os 4 especialistas, mais a consultoria comercial com os sócios da Komplexa.</p>
         <ul>
-          <li>Tudo da Operação Completa</li>
+          <li><b>Tudo da Operação Completa</b>, com o mesmo time</li>
+          <li><b>Consultoria comercial</b> com os sócios da Komplexa</li>
+          <li><b>Treinamento e acompanhamento</b> do time de atendimento</li>
+          <li><b>Campanha da frente de receita</b> dentro da mesma verba</li>
+        </ul>
+        <p class="plbl imp">Na implantação</p>
+        <ul class="grow">
+          <li>Tudo da implantação da Operação Completa</li>
           <li>Script e processo de atendimento no WhatsApp, da primeira resposta ao fechamento</li>
-          <li>Treinamento e acompanhamento do time de atendimento</li>
-          <li>1 página própria para uma frente de receita (casamentos, eventos, day use ou datas especiais), com campanha dentro da mesma verba</li>
+          <li>1 página própria para uma frente de receita (casamentos, eventos, day use ou datas especiais)</li>
         </ul>
         <p class="pnote">Valores para time de atendimento de 1 a 2 pessoas. Com 3 ou mais, o valor é ajustado na proposta.</p>
       </div>
@@ -1408,8 +1462,8 @@ table.cmp{width:100%;border-collapse:collapse}
 </section>
 
 <!-- ═══════════════ 10 · COMPARE OS PLANOS ═══════════════ -->
-<section class="slide light">
-  <div class="top"><img class="brand" src="assets/logotipo_blue.svg" alt="Komplexa"><span class="pg">10 · 11</span></div>
+<section class="slide dark slide-planos">
+  <div class="top"><img class="brand" src="assets/logotipo_white.svg" alt="Komplexa"><span class="pg">10 · 11</span></div>
   <div class="body">
     <div>
       <div class="eyebrow">Os planos</div>
@@ -1418,22 +1472,22 @@ table.cmp{width:100%;border-collapse:collapse}
     <div class="cmp-wrap">
       <table class="cmp">
         <thead>
-          <tr><th class="f">O que está incluso</th><th>Anúncios</th><th class="rec">Operação Completa</th><th>Completa + Comercial</th></tr>
+          <tr><th class="f">O que está incluso</th><th>Anúncios</th><th class="rec"><small>Recomendado</small>Operação Completa</th><th>Completa + Comercial</th></tr>
         </thead>
         <tbody>
-          <tr class="g"><td class="f">Anúncios</td><td class="v"></td><td class="v rec"></td><td class="v"></td></tr>
+          <tr class="g"><td class="f">Anúncios<em>todo mês</em></td><td class="v"></td><td class="v rec"></td><td class="v"></td></tr>
           <tr><td class="f">Campanhas de venda no Google e na Meta, na conta do hotel</td><td class="v"><span class="ok">✓</span></td><td class="v rec"><span class="ok">✓</span></td><td class="v"><span class="ok">✓</span></td></tr>
           <tr><td class="f">Otimização semanal</td><td class="v"><span class="ok">✓</span></td><td class="v rec"><span class="ok">✓</span></td><td class="v"><span class="ok">✓</span></td></tr>
           <tr><td class="f">Públicos parecidos com os seus melhores hóspedes</td><td class="v"><span class="ok">✓</span></td><td class="v rec"><span class="ok">✓</span></td><td class="v"><span class="ok">✓</span></td></tr>
           <tr><td class="f">Remarketing por etapa da jornada</td><td class="v"><span class="no">-</span></td><td class="v rec"><span class="ok">✓</span></td><td class="v"><span class="ok">✓</span></td></tr>
-          <tr class="g"><td class="f">Criativos</td><td class="v"></td><td class="v rec"></td><td class="v"></td></tr>
+          <tr class="g"><td class="f">Criativos<em>todo mês</em></td><td class="v"></td><td class="v rec"></td><td class="v"></td></tr>
           <tr><td class="f">4 criativos novos por mês</td><td class="v"><span class="ok">✓</span></td><td class="v rec"><span class="ok">✓</span></td><td class="v"><span class="ok">✓</span></td></tr>
-          <tr class="g"><td class="f">Site e Instagram</td><td class="v"></td><td class="v rec"></td><td class="v"></td></tr>
+          <tr class="g"><td class="f">Site e Instagram<em>na implantação</em></td><td class="v"></td><td class="v rec"></td><td class="v"></td></tr>
           <tr><td class="f">Website novo integrado ao motor de reservas</td><td class="v"><span class="no">-</span></td><td class="v rec"><span class="ok">✓</span></td><td class="v"><span class="ok">✓</span></td></tr>
           <tr><td class="f">Site preparado para o Google e para as IAs</td><td class="v"><span class="no">-</span></td><td class="v rec"><span class="ok">✓</span></td><td class="v"><span class="ok">✓</span></td></tr>
           <tr><td class="f">Instagram estruturado com 6 publicações</td><td class="v"><span class="no">-</span></td><td class="v rec"><span class="ok">✓</span></td><td class="v"><span class="ok">✓</span></td></tr>
           <tr><td class="f">Consultoria na escolha do motor de reservas</td><td class="v"><span class="no">-</span></td><td class="v rec"><span class="ok">✓</span></td><td class="v"><span class="ok">✓</span></td></tr>
-          <tr class="g"><td class="f">Medição</td><td class="v"></td><td class="v rec"></td><td class="v"></td></tr>
+          <tr class="g"><td class="f">Medição<em>todo mês</em></td><td class="v"></td><td class="v rec"></td><td class="v"></td></tr>
           <tr><td class="f">Rastreio até a reserva</td><td class="v"><span class="no">-</span></td><td class="v rec"><span class="ok">✓</span></td><td class="v"><span class="ok">✓</span></td></tr>
           <tr><td class="f">Relatório mensal com a origem de cada reserva</td><td class="v"><span class="ok">✓</span></td><td class="v rec"><span class="ok">✓</span></td><td class="v"><span class="ok">✓</span></td></tr>
           <tr><td class="f">Reunião mensal de resultado</td><td class="v"><span class="no">-</span></td><td class="v rec"><span class="ok">✓</span></td><td class="v"><span class="ok">✓</span></td></tr>
