@@ -24,7 +24,7 @@ html,body{font-family:var(--fd);background:var(--page-bg);color:var(--navy);-web
 /* ─── DECK ─── */
 .deck{display:flex;flex-direction:column;align-items:center;gap:32px;padding:64px 24px 96px}
 .slide{
-  width:1280px;height:720px;border-radius:8px;overflow:hidden;
+  width:1280px;min-height:720px;border-radius:8px;overflow:hidden;
   box-shadow:0 20px 60px rgba(0,0,0,.4);
   position:relative;display:flex;flex-direction:column;
 }
@@ -555,14 +555,34 @@ html,body{font-family:var(--fd);background:var(--page-bg);color:var(--navy);-web
 .plano .pv{font-size:26px;font-weight:800;letter-spacing:-1px;background:var(--grad);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
 .plano .pv.sob{font-size:19px}
 .plano .pms{font-size:11px;color:var(--gray);font-weight:600}
-.plano ul{list-style:none;display:flex;flex-direction:column;flex:1}
+.plano .pdest{font-size:11.5px;font-weight:600;color:var(--blue);background:var(--tb09);border:1px solid var(--tb18);border-radius:9px;padding:7px 11px;margin-bottom:8px;line-height:1.45}
+.plano .pdia{font-size:11px;color:var(--gray);margin:-6px 0 8px}
+.plano .plbl{font-size:9.5px;font-weight:800;letter-spacing:1.6px;text-transform:uppercase;color:var(--blue);margin:8px 0 2px}
+.plano ul{list-style:none;display:flex;flex-direction:column}
+.plano ul:last-of-type{flex:1}
 .plano li{position:relative;font-size:12.3px;color:var(--txt);line-height:1.45;padding:6px 0 6px 20px;border-top:1px solid var(--bdr)}
 .plano li::before{content:"";position:absolute;left:2px;top:12px;width:7px;height:7px;border-radius:2px;background:var(--g2)}
 .plano.p2 li::before{background:var(--grad)}
 .plano .pnote{margin-top:10px;font-size:11px;color:var(--gray);line-height:1.45;border-top:1px dashed var(--bdr);padding-top:9px}
 .planos-foot{margin-top:14px;font-size:11.5px;color:var(--gray);text-align:center;line-height:1.5}
 
-/* ─── 10 · GARANTIA ─── */
+/* ─── 10 · COMPARE OS PLANOS ─── */
+.cmp-wrap{margin-top:2px}
+table.cmp{width:100%;border-collapse:collapse}
+.cmp th{font-size:12.5px;font-weight:700;color:var(--navy);padding:8px 6px;text-align:center;width:150px;vertical-align:bottom;line-height:1.3}
+.cmp th.f{text-align:left;width:auto;font-size:10.5px;font-weight:700;letter-spacing:1.4px;text-transform:uppercase;color:var(--gray)}
+.cmp td{border-top:1px solid var(--bdr)}
+.cmp td.f{font-size:12.5px;color:var(--txt);padding:6px 12px 6px 0;line-height:1.4;text-align:left}
+.cmp td.v{text-align:center;font-size:13.5px}
+.cmp .ok{color:var(--ok);font-weight:700}
+.cmp .no{color:#B9C2D0;font-weight:600}
+.cmp tr.g td{border-top:none;padding:13px 0 4px}
+.cmp tr.g td.f{font-size:10px;font-weight:800;letter-spacing:1.6px;text-transform:uppercase;color:var(--blue)}
+.cmp th.rec,.cmp td.rec{background:var(--tb09)}
+.cmp th.rec{border-radius:10px 10px 0 0}
+.cmp tr:last-child td{border-bottom:1px solid var(--bdr)}
+
+/* ─── 11 · GARANTIA ─── */
 .gar-box{margin-top:18px;background:rgba(36,213,255,.08);border:1px solid rgba(36,213,255,.3);border-radius:14px;padding:18px 22px;font-size:14.5px;line-height:1.6;color:rgba(255,255,255,.85)}
 .gar-box strong{color:#fff;font-weight:700}
 .gar-selos{display:flex;gap:8px;flex-wrap:wrap;margin-top:14px}
@@ -776,7 +796,15 @@ html,body{font-family:var(--fd);background:var(--page-bg);color:var(--navy);-web
   .planos-grid{grid-template-columns:1fr;gap:16px;margin-top:14px}
   .plano.p2{order:-1;margin-top:8px}
   .plano li{font-size:12.5px}
+  .plano .pdest{font-size:12px}
   .wed-selo{font-size:11.5px}
+  /* 10 compare: lista por grupo, marcas em colunas estreitas */
+  .cmp th{font-size:9px;width:56px;padding:6px 2px;letter-spacing:0}
+  .cmp th.f{font-size:9px;letter-spacing:.8px}
+  .cmp td.f{font-size:11.5px;padding:6px 8px 6px 0}
+  .cmp td.v{font-size:12px}
+  .cmp tr.g td{padding:12px 0 4px}
+  .cmp tr.g td.f{font-size:9.5px;letter-spacing:1.2px}
   /* 10 garantia */
   .gar-box{font-size:13px;padding:15px 17px}
   .gar-selos span{font-size:11.5px}
@@ -813,7 +841,7 @@ html,body{font-family:var(--fd);background:var(--page-bg);color:var(--navy);-web
 
 <!-- ═══════════════ 02 · AUTORIDADE ═══════════════ -->
 <section class="slide dark">
-  <div class="top"><img class="brand" src="assets/logotipo_white.svg" alt="Komplexa"><span class="pg">02 · 10</span></div>
+  <div class="top"><img class="brand" src="assets/logotipo_white.svg" alt="Komplexa"><span class="pg">02 · 11</span></div>
   <div class="body">
     <div class="auth-grid">
       <div>
@@ -868,12 +896,12 @@ html,body{font-family:var(--fd);background:var(--page-bg);color:var(--navy);-web
       </div>
     </div>
   </div>
-  <div class="bot"><span>komplexahoteis.com</span><span>02 · 10</span></div>
+  <div class="bot"><span>komplexahoteis.com</span><span>02 · 11</span></div>
 </section>
 
 <!-- ═══════════════ 03 · MONEY SLIDE HORIZONTAL ═══════════════ -->
 <section class="slide dark slide-money">
-  <div class="top"><img class="brand" src="assets/logotipo_white.svg" alt="Komplexa"><span class="pg">03 · 10</span></div>
+  <div class="top"><img class="brand" src="assets/logotipo_white.svg" alt="Komplexa"><span class="pg">03 · 11</span></div>
   <div class="body">
     <div class="money-head">
       <div class="eyebrow">O método</div>
@@ -1052,12 +1080,12 @@ html,body{font-family:var(--fd);background:var(--page-bg);color:var(--navy);-web
       <span class="mchip"><span class="d"></span>Dados do hóspede viram audiência</span>
     </div>
   </div>
-  <div class="bot"><span>komplexahoteis.com</span><span>03 · 10</span></div>
+  <div class="bot"><span>komplexahoteis.com</span><span>03 · 11</span></div>
 </section>
 
 <!-- ═══════════════ 04 · CASES ═══════════════ -->
 <section class="slide dark slide-cases">
-  <div class="top"><img class="brand" src="assets/logotipo_white.svg" alt="Komplexa"><span class="pg">04 · 10</span></div>
+  <div class="top"><img class="brand" src="assets/logotipo_white.svg" alt="Komplexa"><span class="pg">04 · 11</span></div>
   <div class="body">
     <div class="eyebrow">Cases reais · Clientes Komplexa</div>
     <h2 class="title" style="font-size:38px">Resultados que <em>se repetem</em>.</h2>
@@ -1133,12 +1161,12 @@ html,body{font-family:var(--fd);background:var(--page-bg);color:var(--navy);-web
       </div>
     </div>
   </div>
-  <div class="bot"><span>komplexahoteis.com</span><span>04 · 10</span></div>
+  <div class="bot"><span>komplexahoteis.com</span><span>04 · 11</span></div>
 </section>
 
 <!-- ═══════════════ 05 · MARKETING → MOTOR ═══════════════ -->
 <section class="slide light">
-  <div class="top"><img class="brand" src="assets/logotipo_blue.svg" alt="Komplexa"><span class="pg">05 · 10</span></div>
+  <div class="top"><img class="brand" src="assets/logotipo_blue.svg" alt="Komplexa"><span class="pg">05 · 11</span></div>
   <div class="body">
     <div class="mkt-grid">
       <div>
@@ -1163,12 +1191,12 @@ html,body{font-family:var(--fd);background:var(--page-bg);color:var(--navy);-web
       </div>
     </div>
   </div>
-  <div class="bot"><span>komplexahoteis.com</span><span>05 · 10</span></div>
+  <div class="bot"><span>komplexahoteis.com</span><span>05 · 11</span></div>
 </section>
 
 <!-- ═══════════════ 06 · BANCO DE CRIATIVOS ═══════════════ -->
 <section class="slide dark slide-banco">
-  <div class="top"><img class="brand" src="assets/logotipo_white.svg" alt="Komplexa"><span class="pg">06 · 10</span></div>
+  <div class="top"><img class="brand" src="assets/logotipo_white.svg" alt="Komplexa"><span class="pg">06 · 11</span></div>
   <div class="body">
     <div class="eyebrow">Produto · Criativos</div>
     <h2 class="title" style="font-size:38px">Banco de criativos <em>validados</em>.</h2>
@@ -1200,12 +1228,12 @@ html,body{font-family:var(--fd);background:var(--page-bg);color:var(--navy);-web
       </div>
     </div>
   </div>
-  <div class="bot"><span>komplexahoteis.com</span><span>06 · 10</span></div>
+  <div class="bot"><span>komplexahoteis.com</span><span>06 · 11</span></div>
 </section>
 
 <!-- ═══════════════ 07 · COMERCIAL ═══════════════ -->
 <section class="slide dark slide-com">
-  <div class="top"><img class="brand" src="assets/logotipo_white.svg" alt="Komplexa"><span class="pg">07 · 10</span></div>
+  <div class="top"><img class="brand" src="assets/logotipo_white.svg" alt="Komplexa"><span class="pg">07 · 11</span></div>
   <div class="body">
     <div style="display:flex;align-items:center;gap:14px;flex-wrap:wrap;margin-bottom:10px">
       <div class="eyebrow" style="margin-bottom:0">Produto · Vendas</div>
@@ -1247,13 +1275,13 @@ html,body{font-family:var(--fd);background:var(--page-bg);color:var(--navy);-web
       <span>Agência de tráfego entrega clique. A Komplexa acompanha até a <em>reserva no PMS</em>.</span>
     </div>
   </div>
-  <div class="bot"><span>komplexahoteis.com</span><span>07 · 10</span></div>
+  <div class="bot"><span>komplexahoteis.com</span><span>07 · 11</span></div>
 </section>
 
 <!-- ═══════════════ 08 · OUTRAS FRENTES ═══════════════ -->
 <section class="slide slide-wed">
   <div class="wed-bg"></div>
-  <div class="top"><img class="brand" src="assets/logotipo_white.svg" alt="Komplexa"><span class="pg">08 · 10</span></div>
+  <div class="top"><img class="brand" src="assets/logotipo_white.svg" alt="Komplexa"><span class="pg">08 · 11</span></div>
   <div class="body">
     <div class="wed-copy">
       <div class="eyebrow">Outras frentes de receita</div>
@@ -1292,12 +1320,12 @@ html,body{font-family:var(--fd);background:var(--page-bg);color:var(--navy);-web
   <div class="wnote n1"><span class="t">💍 Novo lead · Ana &amp; Pedro</span><small>120 convidados · Setembro 2027</small></div>
   <div class="wnote n2"><span class="t">✓ Lead qualificado</span><small>direto no CRM do hotel</small></div>
 
-  <div class="bot"><span>komplexahoteis.com</span><span>08 · 10</span></div>
+  <div class="bot"><span>komplexahoteis.com</span><span>08 · 11</span></div>
 </section>
 
 <!-- ═══════════════ 09 · OS PLANOS ═══════════════ -->
 <section class="slide light" id="planos">
-  <div class="top"><img class="brand" src="assets/logotipo_blue.svg" alt="Komplexa"><span class="pg">09 · 10</span></div>
+  <div class="top"><img class="brand" src="assets/logotipo_blue.svg" alt="Komplexa"><span class="pg">09 · 11</span></div>
   <div class="body">
     <div class="planos-head">
       <div>
@@ -1319,14 +1347,16 @@ html,body{font-family:var(--fd);background:var(--page-bg);color:var(--navy);-web
     <div class="planos-grid">
       <div class="plano p1">
         <h3>Anúncios</h3>
-        <p class="ps">Mais gente encontrando o seu hotel</p>
+        <p class="ps">Mais gente encontrando o seu hotel.</p>
         <div class="pr"><span class="pv" data-plan="anuncios">R$ 2.090</span><small class="pms">/mês</small></div>
+        <p class="pdia" data-plan="anuncios">o equivalente a R$ 70 por dia</p>
         <p class="pimpl leve">Sem implantação</p>
+        <p class="plbl">Todo mês</p>
         <ul>
-          <li>Campanhas de venda no Google e na Meta, na conta do hotel</li>
-          <li>4 criativos novos por mês</li>
-          <li>Rastreio e relatório mensal da origem das reservas</li>
-          <li>Grupo de WhatsApp com a equipe</li>
+          <li>Campanhas de venda no Google (Pesquisa e Performance Max) e na Meta, na conta do hotel</li>
+          <li>Otimização toda semana, com públicos parecidos com os seus melhores hóspedes</li>
+          <li>4 criativos novos, feitos a partir das fotos e vídeos do hotel</li>
+          <li>Relatório mensal com a origem de cada reserva</li>
         </ul>
         <p class="pnote">Para hotéis que já têm site e Instagram prontos.</p>
       </div>
@@ -1334,26 +1364,38 @@ html,body{font-family:var(--fd);background:var(--page-bg);color:var(--navy);-web
       <div class="plano p2">
         <span class="selo-rec">Recomendado</span>
         <h3>Operação Completa</h3>
-        <p class="ps">Mais gente reservando direto no seu site</p>
+        <p class="ps">Mais gente reservando direto no seu site.</p>
+        <p class="pdest">4 especialistas no WhatsApp do hotel: account, designer, gestor de tráfego e especialista em IA.</p>
         <div class="pimpl">Implantação <s>de R$ 5.351</s> <b>por R$ 2.350</b> <span class="pz">· 4 semanas</span></div>
         <div class="pr"><span class="mais">+</span><span class="pv" data-plan="completa">R$ 2.350</span><small class="pms">/mês a partir do 2º mês</small></div>
+        <p class="pdia" data-plan="completa">o equivalente a R$ 78 por dia</p>
+        <p class="plbl">Nas 4 semanas</p>
         <ul>
-          <li>Instagram estruturado</li>
-          <li>Website novo integrado ao motor, com rastreamento completo</li>
-          <li>Criativos e campanhas Google + Meta de venda</li>
-          <li>Remarketing por etapa da jornada</li>
-          <li>Depois da semana 4: gestão das campanhas, 4 criativos novos por mês, relatório mensal e grupo com a equipe</li>
+          <li>Website novo, integrado ao motor de reservas e preparado para o Google e para as IAs (ChatGPT, Gemini)</li>
+          <li>Instagram estruturado: bio, destaques, padrão visual e 6 publicações</li>
+          <li>Criativos para anúncios, aprovados por você</li>
+          <li>Campanhas Google e Meta no ar, com rastreio até a reserva</li>
+          <li>Garantia: as 4 entregas em 28 dias ou 100% do valor delas de volta</li>
+        </ul>
+        <p class="plbl">Todo mês</p>
+        <ul>
+          <li>Otimização semanal das campanhas e remarketing por etapa da jornada</li>
+          <li>4 criativos novos</li>
+          <li>Relatório com a origem de cada reserva e reunião mensal de resultado</li>
         </ul>
       </div>
 
       <div class="plano p3">
         <h3>Operação Completa + Comercial</h3>
-        <p class="ps">Seu time fechando mais reservas e eventos</p>
+        <p class="ps">Seu time fechando mais reservas e eventos.</p>
+        <p class="pdest">Os 4 especialistas, mais a consultoria comercial com os sócios da Komplexa.</p>
         <div class="pimpl">Implantação <s>de R$ 9.131</s> <b>por R$ 6.130</b></div>
         <div class="pr"><span class="mais">+</span><span class="pv" data-plan="comercial">R$ 3.240</span><small class="pms">/mês a partir do 2º mês</small></div>
+        <p class="pdia" data-plan="comercial">o equivalente a R$ 108 por dia</p>
         <ul>
           <li>Tudo da Operação Completa</li>
-          <li>Consultoria comercial com o time de atendimento: script, processo e treinamento</li>
+          <li>Script e processo de atendimento no WhatsApp, da primeira resposta ao fechamento</li>
+          <li>Treinamento e acompanhamento do time de atendimento</li>
           <li>1 página própria para uma frente de receita (casamentos, eventos, day use ou datas especiais), com campanha dentro da mesma verba</li>
         </ul>
         <p class="pnote">Valores para time de atendimento de 1 a 2 pessoas. Com 3 ou mais, o valor é ajustado na proposta.</p>
@@ -1362,12 +1404,56 @@ html,body{font-family:var(--fd);background:var(--page-bg);color:var(--navy);-web
 
     <p class="planos-foot">Sem fidelidade. Sem renovação automática. Verba de anúncio não inclusa. Condição válida para contratos fechados em setembro de 2026.</p>
   </div>
-  <div class="bot"><span>komplexahoteis.com</span><span>09 · 10</span></div>
+  <div class="bot"><span>komplexahoteis.com</span><span>09 · 11</span></div>
 </section>
 
-<!-- ═══════════════ 10 · GARANTIA E COMO COMEÇA ═══════════════ -->
+<!-- ═══════════════ 10 · COMPARE OS PLANOS ═══════════════ -->
+<section class="slide light">
+  <div class="top"><img class="brand" src="assets/logotipo_blue.svg" alt="Komplexa"><span class="pg">10 · 11</span></div>
+  <div class="body">
+    <div>
+      <div class="eyebrow">Os planos</div>
+      <h2 class="title" style="font-size:34px;margin-bottom:6px">Compare os <em>planos</em>.</h2>
+    </div>
+    <div class="cmp-wrap">
+      <table class="cmp">
+        <thead>
+          <tr><th class="f">O que está incluso</th><th>Anúncios</th><th class="rec">Operação Completa</th><th>Completa + Comercial</th></tr>
+        </thead>
+        <tbody>
+          <tr class="g"><td class="f">Anúncios</td><td class="v"></td><td class="v rec"></td><td class="v"></td></tr>
+          <tr><td class="f">Campanhas de venda no Google e na Meta, na conta do hotel</td><td class="v"><span class="ok">✓</span></td><td class="v rec"><span class="ok">✓</span></td><td class="v"><span class="ok">✓</span></td></tr>
+          <tr><td class="f">Otimização semanal</td><td class="v"><span class="ok">✓</span></td><td class="v rec"><span class="ok">✓</span></td><td class="v"><span class="ok">✓</span></td></tr>
+          <tr><td class="f">Públicos parecidos com os seus melhores hóspedes</td><td class="v"><span class="ok">✓</span></td><td class="v rec"><span class="ok">✓</span></td><td class="v"><span class="ok">✓</span></td></tr>
+          <tr><td class="f">Remarketing por etapa da jornada</td><td class="v"><span class="no">-</span></td><td class="v rec"><span class="ok">✓</span></td><td class="v"><span class="ok">✓</span></td></tr>
+          <tr class="g"><td class="f">Criativos</td><td class="v"></td><td class="v rec"></td><td class="v"></td></tr>
+          <tr><td class="f">4 criativos novos por mês</td><td class="v"><span class="ok">✓</span></td><td class="v rec"><span class="ok">✓</span></td><td class="v"><span class="ok">✓</span></td></tr>
+          <tr class="g"><td class="f">Site e Instagram</td><td class="v"></td><td class="v rec"></td><td class="v"></td></tr>
+          <tr><td class="f">Website novo integrado ao motor de reservas</td><td class="v"><span class="no">-</span></td><td class="v rec"><span class="ok">✓</span></td><td class="v"><span class="ok">✓</span></td></tr>
+          <tr><td class="f">Site preparado para o Google e para as IAs</td><td class="v"><span class="no">-</span></td><td class="v rec"><span class="ok">✓</span></td><td class="v"><span class="ok">✓</span></td></tr>
+          <tr><td class="f">Instagram estruturado com 6 publicações</td><td class="v"><span class="no">-</span></td><td class="v rec"><span class="ok">✓</span></td><td class="v"><span class="ok">✓</span></td></tr>
+          <tr><td class="f">Consultoria na escolha do motor de reservas</td><td class="v"><span class="no">-</span></td><td class="v rec"><span class="ok">✓</span></td><td class="v"><span class="ok">✓</span></td></tr>
+          <tr class="g"><td class="f">Medição</td><td class="v"></td><td class="v rec"></td><td class="v"></td></tr>
+          <tr><td class="f">Rastreio até a reserva</td><td class="v"><span class="no">-</span></td><td class="v rec"><span class="ok">✓</span></td><td class="v"><span class="ok">✓</span></td></tr>
+          <tr><td class="f">Relatório mensal com a origem de cada reserva</td><td class="v"><span class="ok">✓</span></td><td class="v rec"><span class="ok">✓</span></td><td class="v"><span class="ok">✓</span></td></tr>
+          <tr><td class="f">Reunião mensal de resultado</td><td class="v"><span class="no">-</span></td><td class="v rec"><span class="ok">✓</span></td><td class="v"><span class="ok">✓</span></td></tr>
+          <tr class="g"><td class="f">Comercial</td><td class="v"></td><td class="v rec"></td><td class="v"></td></tr>
+          <tr><td class="f">Script e processo de atendimento</td><td class="v"><span class="no">-</span></td><td class="v rec"><span class="no">-</span></td><td class="v"><span class="ok">✓</span></td></tr>
+          <tr><td class="f">Treinamento e acompanhamento do time</td><td class="v"><span class="no">-</span></td><td class="v rec"><span class="no">-</span></td><td class="v"><span class="ok">✓</span></td></tr>
+          <tr><td class="f">1 página de frente de receita, com campanha</td><td class="v"><span class="no">-</span></td><td class="v rec"><span class="no">-</span></td><td class="v"><span class="ok">✓</span></td></tr>
+          <tr class="g"><td class="f">Garantias</td><td class="v"></td><td class="v rec"></td><td class="v"></td></tr>
+          <tr><td class="f">4 entregas em 28 dias ou dinheiro de volta</td><td class="v"><span class="no">-</span></td><td class="v rec"><span class="ok">✓</span></td><td class="v"><span class="ok">✓</span></td></tr>
+          <tr><td class="f">Sem fidelidade e tudo no nome do hotel</td><td class="v"><span class="ok">✓</span></td><td class="v rec"><span class="ok">✓</span></td><td class="v"><span class="ok">✓</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <div class="bot"><span>komplexahoteis.com</span><span>10 · 11</span></div>
+</section>
+
+<!-- ═══════════════ 11 · GARANTIA E COMO COMEÇA ═══════════════ -->
 <section class="slide dark">
-  <div class="top"><img class="brand" src="assets/logotipo_white.svg" alt="Komplexa"><span class="pg">10 · 10</span></div>
+  <div class="top"><img class="brand" src="assets/logotipo_white.svg" alt="Komplexa"><span class="pg">11 · 11</span></div>
   <div class="body">
     <div class="next-grid">
       <div>
@@ -1399,7 +1485,7 @@ html,body{font-family:var(--fd);background:var(--page-bg);color:var(--navy);-web
       </div>
     </div>
   </div>
-  <div class="bot"><span>komplexahoteis.com</span><span>10 · 10</span></div>
+  <div class="bot"><span>komplexahoteis.com</span><span>11 · 11</span></div>
 </section>
 
 <!-- pop-up dos widgets e cases (filho do deck: funciona em doc view e fullscreen) -->
@@ -1432,14 +1518,19 @@ let current = 0;
 function show(i){
   slides.forEach((s,idx) => s.classList.toggle('active', idx === i));
   current = i;
+  if(deck.classList.contains('present')) applyPresentScale();
 }
 
 function applyPresentScale(){
   const w = window.innerWidth, h = window.innerHeight;
-  const fitW = w / 1280, fitH = h / 720;
-  const fillScale = Math.max(fitW, fitH);
+  const sh = Math.max(720, slides[current] ? slides[current].offsetHeight : 720);
+  const fitW = w / 1280, fitH = h / sh;
   const fitScale = Math.min(fitW, fitH);
-  const scale = fitScale + (fillScale - fitScale) * 0.7;
+  let scale = fitScale;
+  if(sh <= 724){
+    const fillScale = Math.max(fitW, fitH);
+    scale = fitScale + (fillScale - fitScale) * 0.7;
+  }
   deck.style.setProperty('--present-scale', scale.toFixed(3));
 }
 
@@ -1661,6 +1752,12 @@ function setVerba(f){
     el.classList.toggle('sob', sob);
     const pms = el.parentElement.querySelector('.pms');
     if (pms) pms.style.display = sob ? 'none' : '';
+  });
+  document.querySelectorAll('.pdia[data-plan]').forEach(el => {
+    const n = parseInt(String(tabela[el.dataset.plan] || '').replace(/\D/g, ''), 10);
+    const ok = !isNaN(n) && n > 0;
+    el.style.display = ok ? '' : 'none';
+    if (ok) el.textContent = 'o equivalente a R$ ' + Math.round(n / 30) + ' por dia';
   });
 }
 document.querySelectorAll('.vs-chip').forEach(c => c.addEventListener('click', () => setVerba(+c.dataset.f)));
