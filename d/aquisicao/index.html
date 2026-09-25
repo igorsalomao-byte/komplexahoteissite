@@ -24,7 +24,7 @@ html,body{font-family:var(--fd);background:var(--page-bg);color:var(--navy);-web
 /* ─── DECK ─── */
 .deck{display:flex;flex-direction:column;align-items:center;gap:32px;padding:64px 24px 96px}
 .slide{
-  width:1280px;min-height:720px;border-radius:8px;overflow:hidden;
+  width:1280px;height:720px;border-radius:8px;overflow:hidden;
   box-shadow:0 20px 60px rgba(0,0,0,.4);
   position:relative;display:flex;flex-direction:column;
 }
@@ -533,74 +533,80 @@ html,body{font-family:var(--fd);background:var(--page-bg);color:var(--navy);-web
 /* ─── 09 · OS PLANOS (navy) ─── */
 .slide.slide-planos{background:linear-gradient(180deg,#0E1E35 0%,#0A1628 55%,#081525 100%)}
 .slide.slide-planos::before{background:radial-gradient(ellipse 60% 42% at 50% 0%,rgba(16,153,233,.26) 0%,transparent 70%),radial-gradient(ellipse 40% 40% at 50% 62%,rgba(36,213,255,.07) 0%,transparent 70%);opacity:1}
-.planos-head{display:flex;align-items:flex-end;justify-content:space-between;gap:24px;flex-wrap:wrap}
+.slide-planos .body{padding:12px 56px 0;min-height:0}
+.slide-planos .bot{padding-top:10px}
+.planos-head{display:flex;align-items:flex-end;justify-content:space-between;gap:24px}
+.planos-head .eyebrow{margin-bottom:8px}
 .planos-head .title{margin-bottom:0}
-.verba-sel{display:flex;flex-direction:column;gap:8px;align-items:flex-end}
-.vs-lbl{font-size:10.5px;font-weight:700;letter-spacing:1.6px;text-transform:uppercase;color:rgba(255,255,255,.5)}
-.vs-chips{display:flex;gap:4px;flex-wrap:wrap;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.1);border-radius:100px;padding:4px}
-.vs-chip{font-family:var(--fd);font-size:12px;font-weight:600;color:rgba(255,255,255,.72);background:transparent;border:0;border-radius:100px;padding:8px 14px;cursor:pointer;transition:background .2s,color .2s,box-shadow .2s}
+.verba-sel{display:flex;flex-direction:column;gap:6px;align-items:flex-end}
+.vs-row{display:flex;align-items:center;gap:12px}
+.vs-lbl{font-size:10px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:rgba(255,255,255,.5);white-space:nowrap}
+.vs-chips{display:flex;gap:3px;flex-wrap:wrap;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.1);border-radius:100px;padding:3px}
+.vs-chip{font-family:var(--fd);font-size:12px;font-weight:600;color:rgba(255,255,255,.72);background:transparent;border:0;border-radius:100px;padding:7px 13px;cursor:pointer;transition:background .2s,color .2s,box-shadow .2s}
 .vs-chip:hover{color:#fff;background:rgba(255,255,255,.06)}
 .vs-chip.on{background:#fff;color:var(--navy);box-shadow:0 6px 20px rgba(36,213,255,.22)}
-.vs-note{font-size:11px;color:rgba(255,255,255,.45);max-width:430px;text-align:right;line-height:1.5}
+.vs-note{font-size:11px;color:rgba(255,255,255,.45);text-align:right;line-height:1.4}
 
-.planos-grid{display:grid;grid-template-columns:1fr 1.14fr 1fr;gap:16px;margin-top:22px;align-items:stretch}
-.plano{position:relative;background:linear-gradient(180deg,rgba(255,255,255,.055) 0%,rgba(255,255,255,.018) 100%);border:1px solid rgba(255,255,255,.1);border-radius:18px;padding:22px 22px 20px;display:flex;flex-direction:column;color:#fff}
-.plano.p2{border:1.5px solid transparent;background:linear-gradient(180deg,#14304F 0%,#0E2240 100%) padding-box,var(--grad) border-box;box-shadow:0 28px 70px rgba(16,153,233,.22),0 0 90px rgba(36,213,255,.08)}
-.selo-rec{position:absolute;top:-12px;left:50%;transform:translateX(-50%);background:var(--grad);color:#fff;font-size:9.5px;font-weight:800;letter-spacing:1.6px;text-transform:uppercase;padding:6px 15px;border-radius:100px;box-shadow:0 6px 18px rgba(16,153,233,.45);white-space:nowrap}
-.plano h3{font-size:17px;font-weight:800;color:#fff;letter-spacing:-.3px;line-height:1.2}
-.plano .ps{font-size:12.5px;color:rgba(255,255,255,.58);margin-top:4px;line-height:1.4}
+.planos-grid{flex:1;min-height:0;display:grid;grid-template-columns:.95fr 1.85fr 1fr;gap:14px;margin-top:16px}
+.plano{position:relative;min-height:0;background:linear-gradient(180deg,rgba(255,255,255,.055) 0%,rgba(255,255,255,.018) 100%);border:1px solid rgba(255,255,255,.1);border-radius:16px;padding:16px 18px 14px;display:flex;flex-direction:column;color:#fff}
+.plano.p2{border:1.5px solid transparent;background:linear-gradient(180deg,#14304F 0%,#0E2240 100%) padding-box,var(--grad) border-box;box-shadow:0 24px 60px rgba(16,153,233,.2),0 0 80px rgba(36,213,255,.07)}
+.selo-rec{position:absolute;top:-11px;left:50%;transform:translateX(-50%);background:var(--grad);color:#fff;font-size:9.5px;font-weight:800;letter-spacing:1.6px;text-transform:uppercase;padding:5px 14px;border-radius:100px;box-shadow:0 6px 18px rgba(16,153,233,.45);white-space:nowrap}
+.plano h3{font-size:16px;font-weight:800;color:#fff;letter-spacing:-.4px;line-height:1.2;white-space:nowrap}
+.plano .ps{font-size:12px;color:rgba(255,255,255,.58);margin-top:3px;line-height:1.35}
 
-.plano .pprice{margin-top:14px;padding:13px 0 12px;border-top:1px solid rgba(255,255,255,.09);border-bottom:1px solid rgba(255,255,255,.09)}
-.plano .pr{display:flex;align-items:baseline;gap:6px;flex-wrap:wrap}
-.plano .pv{font-size:34px;font-weight:800;letter-spacing:-1.3px;line-height:1;color:#fff}
+.plano .pprice{margin-top:10px;padding:10px 0 9px;border-top:1px solid rgba(255,255,255,.09);border-bottom:1px solid rgba(255,255,255,.09)}
+.plano .pr{display:flex;align-items:baseline;gap:6px;flex-wrap:nowrap;white-space:nowrap}
+.plano .pv{font-size:30px;font-weight:800;letter-spacing:-1.2px;line-height:1;color:#fff}
 .plano.p2 .pv{background:linear-gradient(90deg,#FFFFFF 0%,#9BE9FF 100%);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
-.plano .pv.sob{font-size:22px;letter-spacing:-.5px}
-.plano .pms{font-size:12px;color:rgba(255,255,255,.55);font-weight:600}
-.plano .pdia{font-size:11.5px;color:rgba(255,255,255,.5);margin-top:6px}
-.plano .pimpl{margin-top:10px;font-size:11.5px;color:rgba(255,255,255,.62);line-height:1.5;min-height:34px}
+.plano .pv.sob{font-size:21px;letter-spacing:-.5px}
+.plano .pms{font-size:11px;color:rgba(255,255,255,.55);font-weight:600}
+.plano .pdia{font-size:11px;color:rgba(255,255,255,.5);margin-top:5px}
+.plano .pimpl{margin-top:5px;font-size:11.5px;color:rgba(255,255,255,.62);line-height:1.4}
 .plano .pimpl s{color:rgba(255,255,255,.38)}
 .plano .pimpl b{color:#fff;font-weight:700}
 
-.plano .plbl{display:flex;align-items:center;gap:10px;font-size:9.5px;font-weight:800;letter-spacing:1.8px;text-transform:uppercase;color:var(--g3);margin:14px 0 5px}
+.plano .plbl{display:flex;align-items:center;gap:10px;font-size:9.5px;font-weight:800;letter-spacing:1.7px;text-transform:uppercase;color:var(--g3);margin:10px 0 3px;white-space:nowrap}
 .plano .plbl::after{content:"";flex:1;height:1px;background:linear-gradient(90deg,rgba(36,213,255,.35),transparent)}
 .plano .plbl.imp{color:rgba(255,255,255,.5)}
 .plano .plbl.imp::after{background:linear-gradient(90deg,rgba(255,255,255,.18),transparent)}
 
-.plano .time{display:grid;grid-template-columns:repeat(4,1fr);gap:6px;margin:4px 0 6px}
-.plano .time span{display:flex;flex-direction:column;align-items:center;gap:5px;text-align:center;font-size:10.5px;font-weight:600;color:rgba(255,255,255,.82);line-height:1.2;background:rgba(36,213,255,.06);border:1px solid rgba(36,213,255,.16);border-radius:11px;padding:9px 4px 8px}
-.plano .time i{width:26px;height:26px;border-radius:50%;background:var(--grad);display:grid;place-items:center;font-style:normal;font-size:9.5px;font-weight:800;color:#fff;letter-spacing:.2px}
-.plano .time-sub{font-size:11px;color:rgba(255,255,255,.55);margin:0 0 4px;line-height:1.4}
+.plano .time{display:flex;align-items:center;gap:11px;margin:4px 0 4px;background:rgba(36,213,255,.06);border:1px solid rgba(36,213,255,.16);border-radius:11px;padding:7px 11px}
+.plano .time .av{display:flex;flex-shrink:0}
+.plano .time .av i{width:25px;height:25px;border-radius:50%;background:var(--grad);border:2px solid #12294A;margin-left:-7px;display:grid;place-items:center;font-style:normal;font-size:8px;font-weight:800;color:#fff;letter-spacing:.2px}
+.plano .time .av i:first-child{margin-left:0}
+.plano .time .tx{font-size:11px;color:rgba(255,255,255,.62);line-height:1.4}
+.plano .time .tx b{color:#fff;font-weight:700}
 
 .plano ul{list-style:none;display:flex;flex-direction:column}
-.plano li{position:relative;font-size:12.5px;color:rgba(255,255,255,.8);line-height:1.42;padding:4.5px 0 4.5px 21px}
-.plano li::before{content:"";position:absolute;left:4px;top:8.5px;width:4px;height:8px;border:solid var(--g3);border-width:0 2px 2px 0;transform:rotate(45deg)}
+.plano ul.cols{display:grid;grid-template-columns:1fr 1fr;column-gap:18px;align-content:start}
+.plano li{position:relative;font-size:12px;color:rgba(255,255,255,.8);line-height:1.42;padding:4px 0 4px 19px}
+.plano li::before{content:"";position:absolute;left:3px;top:8px;width:4px;height:8px;border:solid var(--g3);border-width:0 2px 2px 0;transform:rotate(45deg)}
 .plano li b{color:#fff;font-weight:600}
 .plano .grow{flex:1}
 
-.plano .imp-grid{display:grid;grid-template-columns:1fr 1fr;gap:6px}
-.plano .imp-grid div{background:rgba(255,255,255,.035);border:1px solid rgba(255,255,255,.08);border-radius:10px;padding:8px 10px;font-size:10.5px;color:rgba(255,255,255,.55);line-height:1.35}
-.plano .imp-grid b{display:block;font-size:11.5px;font-weight:700;color:#fff;margin-bottom:2px}
-.plano .gar{display:flex;gap:8px;align-items:flex-start;margin-top:8px;font-size:11px;color:rgba(255,255,255,.72);line-height:1.45;background:rgba(22,163,74,.1);border:1px solid rgba(74,222,128,.25);border-radius:10px;padding:8px 10px}
-.plano .gar::before{content:"";flex-shrink:0;width:14px;height:14px;margin-top:1px;border-radius:50%;background:#22C55E url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='3.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M6 12.5l4 4 8-9'/%3E%3C/svg%3E") center/10px no-repeat}
+.plano .imp-pills{display:grid;grid-template-columns:repeat(4,1fr);gap:6px}
+.plano .imp-pills span{display:flex;align-items:center;justify-content:center;text-align:center;font-size:10.5px;font-weight:600;color:rgba(255,255,255,.9);line-height:1.35;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.12);border-radius:8px;padding:5px 7px}
+.plano .gar{display:flex;gap:8px;align-items:center;margin-top:7px;font-size:11px;color:rgba(255,255,255,.72);line-height:1.4;background:rgba(22,163,74,.1);border:1px solid rgba(74,222,128,.25);border-radius:9px;padding:6px 10px}
+.plano .gar::before{content:"";flex-shrink:0;width:14px;height:14px;border-radius:50%;background:#22C55E url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='3.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M6 12.5l4 4 8-9'/%3E%3C/svg%3E") center/10px no-repeat}
 .plano .gar b{color:#fff;font-weight:600}
-.plano .pnote{margin-top:14px;font-size:11px;color:rgba(255,255,255,.45);line-height:1.5;border-top:1px dashed rgba(255,255,255,.12);padding-top:10px}
-.planos-foot{margin-top:18px;font-size:11.5px;color:rgba(255,255,255,.45);text-align:center;line-height:1.5}
+.plano .pnote{margin-top:8px;font-size:10.5px;color:rgba(255,255,255,.45);line-height:1.45;border-top:1px dashed rgba(255,255,255,.12);padding-top:8px}
+.planos-foot{margin-top:10px;font-size:11px;color:rgba(255,255,255,.45);text-align:center;line-height:1.5}
 
 /* ─── 10 · COMPARE OS PLANOS (navy) ─── */
-.cmp-wrap{margin-top:6px}
+.cmp-cols{display:grid;grid-template-columns:1fr 1fr;gap:34px;align-items:start;margin-top:6px}
 table.cmp{width:100%;border-collapse:separate;border-spacing:0}
-.cmp th{font-size:12.5px;font-weight:700;color:#fff;padding:12px 6px 10px;text-align:center;width:158px;vertical-align:bottom;line-height:1.3}
-.cmp th.f{text-align:left;width:auto;font-size:10.5px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:rgba(255,255,255,.42);padding-left:0}
-.cmp th small{display:block;font-size:8.5px;font-weight:800;letter-spacing:1.4px;text-transform:uppercase;color:var(--g3);margin-bottom:4px}
+.cmp th{font-size:11.5px;font-weight:700;color:#fff;padding:9px 4px 9px;text-align:center;width:82px;vertical-align:bottom;line-height:1.25}
+.cmp th.f{text-align:left;width:auto;font-size:10px;font-weight:700;letter-spacing:1.4px;text-transform:uppercase;color:rgba(255,255,255,.42);padding-left:0}
+.cmp th small{display:block;font-size:8px;font-weight:800;letter-spacing:1.2px;text-transform:uppercase;color:var(--g3);margin-bottom:3px}
 .cmp td{border-top:1px solid rgba(255,255,255,.07)}
-.cmp td.f{font-size:12.5px;color:rgba(255,255,255,.78);padding:6px 12px 6px 0;line-height:1.4;text-align:left}
-.cmp td.v{text-align:center;font-size:13px;padding:5px 0}
-.cmp .ok{display:inline-grid;place-items:center;width:20px;height:20px;border-radius:50%;background:rgba(36,213,255,.14);color:var(--g3);font-size:11px;font-weight:800;line-height:1}
+.cmp td.f{font-size:12.5px;color:rgba(255,255,255,.8);padding:7px 10px 7px 0;line-height:1.35;text-align:left}
+.cmp td.v{text-align:center;font-size:12px;padding:4px 0}
+.cmp .ok{display:inline-grid;place-items:center;width:20px;height:20px;border-radius:50%;background:rgba(36,213,255,.14);color:var(--g3);font-size:10.5px;font-weight:800;line-height:1}
 .cmp td.rec .ok{background:var(--grad);color:#fff}
 .cmp .no{color:rgba(255,255,255,.22);font-weight:600}
 .cmp tr.g td{border-top:none;padding:14px 0 5px}
-.cmp tr.g td.f{font-size:10px;font-weight:800;letter-spacing:1.7px;text-transform:uppercase;color:var(--g3)}
-.cmp tr.g td.f em{font-style:normal;font-size:9px;font-weight:700;letter-spacing:.8px;color:rgba(255,255,255,.5);background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:100px;padding:2px 8px;margin-left:8px;text-transform:none}
+.cmp tr.g td.f{font-size:10px;font-weight:800;letter-spacing:1.6px;text-transform:uppercase;color:var(--g3)}
+.cmp tr.g td.f em{font-style:normal;font-size:9px;font-weight:700;letter-spacing:.6px;color:rgba(255,255,255,.5);background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:100px;padding:2px 8px;margin-left:8px;text-transform:none}
 .cmp th.rec,.cmp td.rec{background:rgba(36,213,255,.06);box-shadow:inset 1px 0 0 rgba(36,213,255,.22),inset -1px 0 0 rgba(36,213,255,.22)}
 .cmp th.rec{border-radius:12px 12px 0 0;box-shadow:inset 1px 0 0 rgba(36,213,255,.22),inset -1px 0 0 rgba(36,213,255,.22),inset 0 1px 0 rgba(36,213,255,.22)}
 .cmp tr:last-child td{border-bottom:1px solid rgba(255,255,255,.07)}
@@ -813,19 +819,25 @@ table.cmp{width:100%;border-collapse:separate;border-spacing:0}
   .crm-live .dm-lead{width:27%}
   .com-punch{font-size:13px;padding:13px 16px}
   /* 09 planos */
+  .slide-planos .body{padding:22px 22px 20px}
+  .slide-planos .bot{padding-top:12px}
   .planos-head{flex-direction:column;align-items:flex-start;gap:16px}
   .verba-sel{align-items:flex-start;width:100%}
+  .vs-row{flex-direction:column;align-items:flex-start;gap:8px;width:100%}
   .vs-chips{border-radius:14px;display:grid;grid-template-columns:1fr 1fr;width:100%}
   .vs-chip{font-size:11.5px;padding:9px 8px;border-radius:10px}
   .vs-note{text-align:left}
   .planos-grid{grid-template-columns:1fr;gap:18px;margin-top:18px}
   .plano{padding:22px 18px 18px}
   .plano.p2{order:-1;margin-top:8px}
+  .plano h3{white-space:normal}
   .plano li{font-size:12.5px}
-  .plano .pimpl{min-height:0}
-  .plano .time span{font-size:10px}
+  .plano ul.cols{grid-template-columns:1fr}
+  .plano .time{align-items:flex-start}
+  .plano .imp-pills{grid-template-columns:1fr 1fr}
   .wed-selo{font-size:11.5px}
   /* 10 compare: lista por grupo, marcas em colunas estreitas */
+  .cmp-cols{grid-template-columns:1fr;gap:18px}
   .cmp th{font-size:9px;width:56px;padding:8px 2px;letter-spacing:0}
   .cmp th small{font-size:7px;letter-spacing:.6px}
   .cmp th.f{font-size:9px;letter-spacing:.8px}
@@ -1360,15 +1372,17 @@ table.cmp{width:100%;border-collapse:separate;border-spacing:0}
     <div class="planos-head">
       <div>
         <div class="eyebrow">Os planos</div>
-        <h2 class="title" style="font-size:34px">Escolha o <em>plano</em>.</h2>
+        <h2 class="title" style="font-size:32px">Escolha o <em>plano</em>.</h2>
       </div>
       <div class="verba-sel">
-        <span class="vs-lbl">Verba mensal de anúncio</span>
-        <div class="vs-chips">
-          <button type="button" class="vs-chip" data-f="1">Até R$ 3 mil</button>
-          <button type="button" class="vs-chip" data-f="2">R$ 3 a 10 mil</button>
-          <button type="button" class="vs-chip" data-f="3">R$ 10 a 30 mil</button>
-          <button type="button" class="vs-chip" data-f="4">Acima de R$ 30 mil</button>
+        <div class="vs-row">
+          <span class="vs-lbl">Verba mensal de anúncio</span>
+          <div class="vs-chips">
+            <button type="button" class="vs-chip" data-f="1">Até R$ 3 mil</button>
+            <button type="button" class="vs-chip" data-f="2">R$ 3 a 10 mil</button>
+            <button type="button" class="vs-chip" data-f="3">R$ 10 a 30 mil</button>
+            <button type="button" class="vs-chip" data-f="4">Acima de R$ 30 mil</button>
+          </div>
         </div>
         <span class="vs-note">Verba paga direto ao Google e à Meta, na conta do hotel. Recomendamos a partir de R$ 2.000 por mês.</span>
       </div>
@@ -1381,7 +1395,7 @@ table.cmp{width:100%;border-collapse:separate;border-spacing:0}
         <div class="pprice">
           <div class="pr"><span class="pv" data-plan="anuncios">R$ 2.090</span><small class="pms">/mês</small></div>
           <p class="pdia" data-plan="anuncios">o equivalente a R$ 70 por dia</p>
-          <p class="pimpl">Sem implantação.<br>Mensalidade desde o 1º mês.</p>
+          <p class="pimpl">Sem implantação</p>
         </div>
         <p class="plbl">Todo mês</p>
         <ul class="grow">
@@ -1398,34 +1412,31 @@ table.cmp{width:100%;border-collapse:separate;border-spacing:0}
         <h3>Operação Completa</h3>
         <p class="ps">Mais gente reservando direto no seu site.</p>
         <div class="pprice">
-          <div class="pr"><span class="pv" data-plan="completa">R$ 2.350</span><small class="pms">/mês</small></div>
+          <div class="pr"><span class="pv" data-plan="completa">R$ 2.350</span><small class="pms">/mês a partir do 2º mês</small></div>
           <p class="pdia" data-plan="completa">o equivalente a R$ 78 por dia</p>
-          <p class="pimpl">Implantação <s>de R$ 5.351</s> <b>por R$ 2.350</b> no 1º mês.<br>Mensalidade a partir do 2º mês.</p>
+          <p class="pimpl">Implantação <s>de R$ 5.351</s> <b>por R$ 2.350</b> · 4 semanas</p>
         </div>
 
         <p class="plbl">Todo mês, com o seu time</p>
         <div class="time">
-          <span><i>AC</i>Account</span>
-          <span><i>DS</i>Designer</span>
-          <span><i>GT</i>Gestor de tráfego</span>
-          <span><i>IA</i>Especialista em IA</span>
+          <span class="av"><i>AC</i><i>DS</i><i>GT</i><i>IA</i></span>
+          <span class="tx"><b>4 especialistas no WhatsApp do hotel:</b> account, designer, gestor de tráfego e especialista em IA.</span>
         </div>
-        <p class="time-sub">4 especialistas no WhatsApp do hotel.</p>
-        <ul class="grow">
-          <li><b>Otimização semanal</b> das campanhas no Google (Pesquisa e Performance Max) e na Meta</li>
-          <li><b>Remarketing por etapa da jornada</b>, inclusive para quem abandonou a reserva no motor</li>
+        <ul class="cols grow">
+          <li><b>Otimização semanal</b> das campanhas no Google e na Meta</li>
+          <li><b>Remarketing por etapa</b>, inclusive de quem abandonou a reserva no motor</li>
           <li><b>4 criativos novos</b>, com teste A/B contínuo até achar o vencedor</li>
           <li><b>Públicos atualizados</b> com os dados de quem já reservou</li>
-          <li><b>Rastreio de cada reserva</b> até a campanha de origem, com custo por reserva e retorno do investimento</li>
+          <li><b>Rastreio de cada reserva</b>, com custo por reserva e retorno do investimento</li>
           <li><b>Relatório e reunião mensal</b> de resultado</li>
         </ul>
 
         <p class="plbl imp">Na implantação · 4 semanas</p>
-        <div class="imp-grid">
-          <div><b>Website novo</b>integrado ao motor e preparado para Google e IAs</div>
-          <div><b>Instagram</b>bio, destaques, padrão visual e 6 publicações</div>
-          <div><b>Criativos</b>para os anúncios, aprovados por você</div>
-          <div><b>Campanhas</b>Google e Meta no ar, com rastreio até a reserva</div>
+        <div class="imp-pills">
+          <span>Website novo integrado ao motor</span>
+          <span>Instagram com 6 publicações</span>
+          <span>Criativos aprovados por você</span>
+          <span>Campanhas no ar com rastreio</span>
         </div>
         <p class="gar"><span><b>Garantia:</b> as 4 entregas em 28 dias ou 100% do valor delas de volta.</span></p>
       </div>
@@ -1434,23 +1445,16 @@ table.cmp{width:100%;border-collapse:separate;border-spacing:0}
         <h3>Operação Completa + Comercial</h3>
         <p class="ps">Seu time fechando mais reservas e eventos.</p>
         <div class="pprice">
-          <div class="pr"><span class="pv" data-plan="comercial">R$ 3.240</span><small class="pms">/mês</small></div>
+          <div class="pr"><span class="pv" data-plan="comercial">R$ 3.240</span><small class="pms">/mês a partir do 2º mês</small></div>
           <p class="pdia" data-plan="comercial">o equivalente a R$ 108 por dia</p>
-          <p class="pimpl">Implantação <s>de R$ 9.131</s> <b>por R$ 6.130</b> no 1º mês.<br>Mensalidade a partir do 2º mês.</p>
+          <p class="pimpl">Implantação <s>de R$ 9.131</s> <b>por R$ 6.130</b></p>
         </div>
-        <p class="plbl">Todo mês</p>
-        <p class="time-sub">Os 4 especialistas, mais a consultoria comercial com os sócios da Komplexa.</p>
-        <ul>
-          <li><b>Tudo da Operação Completa</b>, com o mesmo time</li>
-          <li><b>Consultoria comercial</b> com os sócios da Komplexa</li>
-          <li><b>Treinamento e acompanhamento</b> do time de atendimento</li>
-          <li><b>Campanha da frente de receita</b> dentro da mesma verba</li>
-        </ul>
-        <p class="plbl imp">Na implantação</p>
+        <p class="plbl">Tudo da Operação Completa, mais</p>
         <ul class="grow">
-          <li>Tudo da implantação da Operação Completa</li>
-          <li>Script e processo de atendimento no WhatsApp, da primeira resposta ao fechamento</li>
-          <li>1 página própria para uma frente de receita (casamentos, eventos, day use ou datas especiais)</li>
+          <li><b>Consultoria comercial</b> com os sócios da Komplexa</li>
+          <li><b>Script e processo</b> de atendimento no WhatsApp, da primeira resposta ao fechamento</li>
+          <li><b>Treinamento e acompanhamento</b> do time de atendimento</li>
+          <li><b>1 página própria</b> para uma frente de receita (casamentos, eventos, day use ou datas especiais), com campanha dentro da mesma verba</li>
         </ul>
         <p class="pnote">Valores para time de atendimento de 1 a 2 pessoas. Com 3 ou mais, o valor é ajustado na proposta.</p>
       </div>
@@ -1466,10 +1470,10 @@ table.cmp{width:100%;border-collapse:separate;border-spacing:0}
   <div class="top"><img class="brand" src="assets/logotipo_white.svg" alt="Komplexa"><span class="pg">10 · 11</span></div>
   <div class="body">
     <div>
-      <div class="eyebrow">Os planos</div>
-      <h2 class="title" style="font-size:34px;margin-bottom:6px">Compare os <em>planos</em>.</h2>
+      <div class="eyebrow" style="margin-bottom:8px">Os planos</div>
+      <h2 class="title" style="font-size:32px;margin-bottom:10px">Compare os <em>planos</em>.</h2>
     </div>
-    <div class="cmp-wrap">
+    <div class="cmp-cols">
       <table class="cmp">
         <thead>
           <tr><th class="f">O que está incluso</th><th>Anúncios</th><th class="rec"><small>Recomendado</small>Operação Completa</th><th>Completa + Comercial</th></tr>
@@ -1487,6 +1491,13 @@ table.cmp{width:100%;border-collapse:separate;border-spacing:0}
           <tr><td class="f">Site preparado para o Google e para as IAs</td><td class="v"><span class="no">-</span></td><td class="v rec"><span class="ok">✓</span></td><td class="v"><span class="ok">✓</span></td></tr>
           <tr><td class="f">Instagram estruturado com 6 publicações</td><td class="v"><span class="no">-</span></td><td class="v rec"><span class="ok">✓</span></td><td class="v"><span class="ok">✓</span></td></tr>
           <tr><td class="f">Consultoria na escolha do motor de reservas</td><td class="v"><span class="no">-</span></td><td class="v rec"><span class="ok">✓</span></td><td class="v"><span class="ok">✓</span></td></tr>
+        </tbody>
+      </table>
+      <table class="cmp">
+        <thead>
+          <tr><th class="f">O que está incluso</th><th>Anúncios</th><th class="rec"><small>Recomendado</small>Operação Completa</th><th>Completa + Comercial</th></tr>
+        </thead>
+        <tbody>
           <tr class="g"><td class="f">Medição<em>todo mês</em></td><td class="v"></td><td class="v rec"></td><td class="v"></td></tr>
           <tr><td class="f">Rastreio até a reserva</td><td class="v"><span class="no">-</span></td><td class="v rec"><span class="ok">✓</span></td><td class="v"><span class="ok">✓</span></td></tr>
           <tr><td class="f">Relatório mensal com a origem de cada reserva</td><td class="v"><span class="ok">✓</span></td><td class="v rec"><span class="ok">✓</span></td><td class="v"><span class="ok">✓</span></td></tr>
@@ -1572,19 +1583,14 @@ let current = 0;
 function show(i){
   slides.forEach((s,idx) => s.classList.toggle('active', idx === i));
   current = i;
-  if(deck.classList.contains('present')) applyPresentScale();
 }
 
 function applyPresentScale(){
   const w = window.innerWidth, h = window.innerHeight;
-  const sh = Math.max(720, slides[current] ? slides[current].offsetHeight : 720);
-  const fitW = w / 1280, fitH = h / sh;
+  const fitW = w / 1280, fitH = h / 720;
+  const fillScale = Math.max(fitW, fitH);
   const fitScale = Math.min(fitW, fitH);
-  let scale = fitScale;
-  if(sh <= 724){
-    const fillScale = Math.max(fitW, fitH);
-    scale = fitScale + (fillScale - fitScale) * 0.7;
-  }
+  const scale = fitScale + (fillScale - fitScale) * 0.7;
   deck.style.setProperty('--present-scale', scale.toFixed(3));
 }
 
