@@ -1,0 +1,10 @@
+# GitHub Pages: arquivos de trabalho que ficam no repositório mas não são publicados no site.
+exclude:
+  - CLAUDE.md
+  - komplexa_hoteis_resumo.md
+  - publicar.sh
+  - novo-post.py
+  - novo-post.js
+  - blog/teste-api.txt
+  - ref
+  - "referência"

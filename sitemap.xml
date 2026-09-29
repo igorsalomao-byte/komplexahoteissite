@@ -1,187 +1,135 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-        xmlns:xhtml="http://www.w3.org/1999/xhtml">
-
-  <!-- HOME -->
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://komplexahoteis.com/</loc>
-    <lastmod>2026-09-11</lastmod>
+    <lastmod>2026-09-29</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
-    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://komplexahoteis.com/"/>
   </url>
-
-  <!-- O SISTEMA -->
   <url>
-    <loc>https://komplexahoteis.com/sistema.html</loc>
-    <lastmod>2026-09-11</lastmod>
+    <loc>https://komplexahoteis.com/guia-reservas-diretas.html</loc>
+    <lastmod>2026-09-29</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
-    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://komplexahoteis.com/sistema.html"/>
   </url>
-
-  <!-- IA APLICADA -->
   <url>
-    <loc>https://komplexahoteis.com/ia.html</loc>
-    <lastmod>2026-09-11</lastmod>
+    <loc>https://komplexahoteis.com/igor-salomao.html</loc>
+    <lastmod>2026-09-29</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://komplexahoteis.com/ia.html"/>
+    <priority>0.6</priority>
   </url>
-
-  <!-- ARQUITETURA -->
-  <url>
-    <loc>https://komplexahoteis.com/arquitetura.html</loc>
-    <lastmod>2026-09-11</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://komplexahoteis.com/arquitetura.html"/>
-  </url>
-
-  <!-- CONTATO -->
-  <url>
-    <loc>https://komplexahoteis.com/contato.html</loc>
-    <lastmod>2026-09-11</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://komplexahoteis.com/contato.html"/>
-  </url>
-
-  <!-- AGÊNCIA DE MARKETING HOTELEIRO (landing de categoria) -->
-  <url>
-    <loc>https://komplexahoteis.com/agencia-marketing-hoteleiro.html</loc>
-    <lastmod>2026-09-11</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://komplexahoteis.com/agencia-marketing-hoteleiro.html"/>
-  </url>
-
-  <!-- BLOG INDEX -->
   <url>
     <loc>https://komplexahoteis.com/blog/</loc>
-    <lastmod>2026-09-11</lastmod>
+    <lastmod>2026-09-29</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
-    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://komplexahoteis.com/blog/"/>
   </url>
-
-  <!-- ═══════════ BLOG POSTS ═══════════ -->
-
-  <!-- Comissão Booking 18% (2026) -->
   <url>
     <loc>https://komplexahoteis.com/blog/post-comissao-booking-18.html</loc>
-    <lastmod>2026-09-11</lastmod>
+    <lastmod>2026-09-29</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
-    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://komplexahoteis.com/blog/post-comissao-booking-18.html"/>
   </url>
-
-  <!-- Pousada presa no Booking: reservas diretas -->
   <url>
     <loc>https://komplexahoteis.com/blog/post-dependencia-booking-pousada.html</loc>
-    <lastmod>2026-09-11</lastmod>
+    <lastmod>2026-09-29</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://komplexahoteis.com/blog/post-dependencia-booking-pousada.html"/>
+    <priority>0.8</priority>
   </url>
-
-  <!-- Motor de reservas para pousada -->
-  <url>
-    <loc>https://komplexahoteis.com/blog/post-motor-de-reservas.html</loc>
-    <lastmod>2026-09-11</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://komplexahoteis.com/blog/post-motor-de-reservas.html"/>
-  </url>
-
-  <!-- Precificação para pousada -->
-  <url>
-    <loc>https://komplexahoteis.com/blog/post-precificacao-pousada.html</loc>
-    <lastmod>2026-09-11</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://komplexahoteis.com/blog/post-precificacao-pousada.html"/>
-  </url>
-
-  <!-- AEO / IA na busca -->
-  <url>
-    <loc>https://komplexahoteis.com/blog/post-aeo-ia-busca.html</loc>
-    <lastmod>2026-09-11</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://komplexahoteis.com/blog/post-aeo-ia-busca.html"/>
-  </url>
-
-  <!-- Paridade tarifária -->
-  <url>
-    <loc>https://komplexahoteis.com/blog/post-paridade-tarifaria.html</loc>
-    <lastmod>2026-09-11</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://komplexahoteis.com/blog/post-paridade-tarifaria.html"/>
-  </url>
-
-  <!-- Google Hotel Ads -->
-  <url>
-    <loc>https://komplexahoteis.com/blog/post-google-hotel-ads.html</loc>
-    <lastmod>2026-09-11</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://komplexahoteis.com/blog/post-google-hotel-ads.html"/>
-  </url>
-
-  <!-- Reduzir dependência de OTAs -->
   <url>
     <loc>https://komplexahoteis.com/blog/post-ota.html</loc>
-    <lastmod>2026-09-11</lastmod>
+    <lastmod>2026-09-29</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://komplexahoteis.com/blog/post-ota.html"/>
+    <priority>0.8</priority>
   </url>
-
-  <!-- IA na hotelaria -->
   <url>
-    <loc>https://komplexahoteis.com/blog/post-ia.html</loc>
-    <lastmod>2026-09-11</lastmod>
+    <loc>https://komplexahoteis.com/blog/post-paridade-tarifaria.html</loc>
+    <lastmod>2026-09-29</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://komplexahoteis.com/blog/post-ia.html"/>
+    <priority>0.8</priority>
   </url>
-
-  <!-- RevPAR vs ocupação -->
   <url>
-    <loc>https://komplexahoteis.com/blog/post-revpar.html</loc>
-    <lastmod>2026-09-11</lastmod>
+    <loc>https://komplexahoteis.com/blog/post-motor-de-reservas.html</loc>
+    <lastmod>2026-09-29</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://komplexahoteis.com/blog/post-revpar.html"/>
+    <priority>0.8</priority>
   </url>
-
-  <!-- Funil / campanhas isoladas -->
   <url>
     <loc>https://komplexahoteis.com/blog/post-funil.html</loc>
-    <lastmod>2026-09-11</lastmod>
+    <lastmod>2026-09-29</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://komplexahoteis.com/blog/post-funil.html"/>
+    <priority>0.8</priority>
   </url>
-
-  <!-- Ocupar a semana -->
+  <url>
+    <loc>https://komplexahoteis.com/blog/post-google-hotel-ads.html</loc>
+    <lastmod>2026-09-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://komplexahoteis.com/blog/post-ia.html</loc>
+    <lastmod>2026-09-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://komplexahoteis.com/blog/post-aeo-ia-busca.html</loc>
+    <lastmod>2026-09-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://komplexahoteis.com/blog/post-precificacao-pousada.html</loc>
+    <lastmod>2026-09-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://komplexahoteis.com/blog/post-revpar.html</loc>
+    <lastmod>2026-09-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
   <url>
     <loc>https://komplexahoteis.com/blog/post-semana.html</loc>
-    <lastmod>2026-09-11</lastmod>
+    <lastmod>2026-09-29</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://komplexahoteis.com/blog/post-semana.html"/>
+    <priority>0.8</priority>
   </url>
-
-  <!-- LTV em hotéis -->
   <url>
     <loc>https://komplexahoteis.com/blog/post-ltv.html</loc>
-    <lastmod>2026-09-11</lastmod>
+    <lastmod>2026-09-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://komplexahoteis.com/agencia-marketing-hoteleiro.html</loc>
+    <lastmod>2026-09-29</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
-    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://komplexahoteis.com/blog/post-ltv.html"/>
   </url>
-
+  <url>
+    <loc>https://komplexahoteis.com/sistema.html</loc>
+    <lastmod>2026-09-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://komplexahoteis.com/ia.html</loc>
+    <lastmod>2026-09-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://komplexahoteis.com/arquitetura.html</loc>
+    <lastmod>2026-09-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://komplexahoteis.com/contato.html</loc>
+    <lastmod>2026-09-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
 </urlset>

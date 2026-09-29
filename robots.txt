@@ -1,17 +1,61 @@
-# Robots.txt — Komplexa Hotéis
+# Robots.txt - Komplexa Hotéis
 # https://komplexahoteis.com
 
 User-agent: *
 Allow: /
-
-# Bloqueio de arquivos desnecessários
-Disallow: /assets/
-Allow: /assets/logo.svg
-Allow: /assets/logo-white.svg
-Allow: /assets/og-image.jpg
-
-# Pasta de apresentações privadas (links enviados a leads)
+# Apresentações privadas enviadas a leads e clientes (também têm noindex)
 Disallow: /d/
+Disallow: /novo-x7k2/
 
-# Sitemap
+# Buscadores e assistentes de IA: liberados para ler e citar o conteúdo público
+User-agent: Googlebot
+Allow: /
+Disallow: /d/
+Disallow: /novo-x7k2/
+
+User-agent: Bingbot
+Allow: /
+Disallow: /d/
+Disallow: /novo-x7k2/
+
+User-agent: Google-Extended
+Allow: /
+Disallow: /d/
+Disallow: /novo-x7k2/
+
+User-agent: GPTBot
+Allow: /
+Disallow: /d/
+Disallow: /novo-x7k2/
+
+User-agent: OAI-SearchBot
+Allow: /
+Disallow: /d/
+Disallow: /novo-x7k2/
+
+User-agent: ChatGPT-User
+Allow: /
+Disallow: /d/
+Disallow: /novo-x7k2/
+
+User-agent: ClaudeBot
+Allow: /
+Disallow: /d/
+Disallow: /novo-x7k2/
+
+User-agent: Claude-SearchBot
+Allow: /
+Disallow: /d/
+Disallow: /novo-x7k2/
+
+User-agent: PerplexityBot
+Allow: /
+Disallow: /d/
+Disallow: /novo-x7k2/
+
+User-agent: Applebot-Extended
+Allow: /
+Disallow: /d/
+Disallow: /novo-x7k2/
+
 Sitemap: https://komplexahoteis.com/sitemap.xml

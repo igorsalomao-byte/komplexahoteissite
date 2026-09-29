@@ -1,0 +1,46 @@
+# Komplexa Hotéis
+
+> Agência de aquisição para hotelaria no Brasil. Integra marketing e vendas para hotéis, pousadas e resorts venderem mais no canal direto (reservas diretas), com o resultado conferido no PMS de cada hotel, não em painel de anúncio. Atua em 14 estados do Brasil.
+
+- Site: https://komplexahoteis.com/
+- Fundador: Igor Salomão (https://komplexahoteis.com/igor-salomao.html)
+- Contato comercial: https://komplexa-pricing.vercel.app/f/komplexaconsultoria
+- Instagram: https://www.instagram.com/komplexa.hoteis/
+
+## O que a Komplexa faz
+
+- Produção de criativos para anúncios (vídeo, motion e estático) na identidade do hotel, testados até achar o criativo vencedor.
+- Mídia paga no Google (Pesquisa e Performance Max) e na Meta (Instagram e Facebook), na conta do próprio hotel.
+- Site novo integrado ao motor de reservas, com o caminho mais curto entre a home e o checkout e rastreamento de ponta a ponta.
+- Consultoria e tecnologia hoteleira: motor de reservas, CRM e PMS integrados.
+- Treinamento comercial do time de atendimento: script, processo e rotina acompanhada no WhatsApp.
+- Frentes de receita: páginas, captação e campanhas próprias para casamentos, eventos, day use e datas especiais.
+- Integrações e parceiros de tecnologia: Omnibees, HSystem, Asksuite, Erbon, Bitz e Foco.
+
+## Resultados de clientes (conferidos no PMS de cada hotel)
+
+- Bahia Bonita (hotel boutique): 19x de retorno sobre o investimento em mídia.
+- Lagamar (resort e hotel): mais de 7x de retorno sobre o investimento em mídia paga.
+- Pousada Karandá: 6,5x de retorno sobre o investimento em mídia paga.
+- Pousada Solar Dona Dora: faturamento 3,4x maior na baixa temporada, de R$ 12,4 mil para R$ 42,5 mil.
+- Hotel Sunsmart: as reservas diretas passaram de 30% para mais de 60% do total.
+
+## Guia
+
+- [Reservas diretas para hotéis e pousadas: o guia completo](https://komplexahoteis.com/guia-reservas-diretas.html): o que um hotel ou pousada precisa ter, e em que ordem, para vender mais pelo próprio site e WhatsApp e depender menos das OTAs.
+
+## Artigos
+
+- [Comissão do Booking em 18% desde julho de 2026: o que mudou e como proteger sua margem](https://komplexahoteis.com/blog/post-comissao-booking-18.html): Desde 1º de julho de 2026, a comissão preferencial do Booking.com no Brasil é de 18%, acima da faixa anterior de 10% a 15%. Para proteger a margem sem sair do Booking de uma vez, fortaleça o canal direto com motor próprio, ofereça vantagem na reserva direta, ative o Google Hotel Ads e reative hóspedes antigos.
+- [Pousada presa no Booking: como migrar para reservas diretas sem perder ocupação](https://komplexahoteis.com/blog/post-dependencia-booking-pousada.html): Não corte o Booking de uma vez: construa o canal direto enquanto a OTA segura a ocupação e só reduza o Booking quando o direto provar que sustenta aquela fatia. Os pilares são site com motor de reservas, paridade com vantagem no direto, tráfego e CRM. Com a comissão preferencial em 18% desde julho de 2026, adiar ficou mais caro.
+- [Como reduzir a dependência de OTAs e gerar reservas diretas](https://komplexahoteis.com/blog/post-ota.html): Para reduzir a dependência de OTAs, construa o canal direto aos poucos, enquanto o volume das OTAs ainda sustenta a ocupação: estruture o funil de conversão, segmente com IA quem tem perfil de reserva direta, recupere quem visitou e não reservou e reative hóspedes antigos. Com consistência, a proporção entre OTA e direto muda em 6 a 12 meses.
+- [Paridade tarifária: o que é e como não perder dinheiro com isso](https://komplexahoteis.com/blog/post-paridade-tarifaria.html): Paridade tarifária é manter a mesma tarifa pública de um quarto em todos os canais: site próprio, Booking, Expedia e demais OTAs. Para não perder dinheiro, mantenha o preço público igual e vença no que a paridade não restringe: tarifa de membro, benefícios exclusivos no site (café da manhã, late check-out, upgrade) e ofertas fechadas à sua base.
+- [Motor de reservas para pousada: vale a pena e como escolher em 2026](https://komplexahoteis.com/blog/post-motor-de-reservas.html): Vale a pena, inclusive para pousada pequena: o motor de reservas permite consultar disponibilidade, pagar e confirmar a reserva no próprio site, 24 horas por dia, evita overbooking e captura os dados do hóspede. Para escolher, compare custo real, facilidade de uso com suporte em português, integrações (channel manager, Google Hotel Ads, pagamento) e adequação ao porte.
+- [Por que campanhas isoladas não funcionam para hotéis](https://komplexahoteis.com/blog/post-funil.html): Campanhas isoladas não funcionam para hotéis porque o anúncio só traz a visita. Quem fecha a reserva é o que vem depois: site otimizado, motor de reservas, recuperação de carrinho, remarketing e CRM. Sem essas camadas, o hotel paga pelo mesmo tráfego três ou quatro vezes, converte uma só e o custo por reserva sobe.
+- [Google Hotel Ads: como aparecer no Google e gerar reservas sem pagar comissão de OTA](https://komplexahoteis.com/blog/post-google-hotel-ads.html): Para aparecer nos preços do Google sem pagar comissão de OTA, ative o Google Hotel Ads. Ele mostra a tarifa do seu motor de reservas ao lado de Booking e Expedia e leva o hóspede para reservar no seu site. Funciona quando o site converte e a tarifa direta não está mais cara que a da OTA.
+- [IA na hotelaria: segmentação inteligente que reduz custo por reserva](https://komplexahoteis.com/blog/post-ia.html): A IA reduz o custo por reserva de um hotel porque aprende com quem já reservou: cria públicos lookalike a partir dos hóspedes reais, exclui automaticamente perfis que clicam e nunca reservam e realoca a verba para o que gera reservas, não cliques. Isso só funciona com dados de reserva integrados ao Meta e ao Google.
+- [Sua pousada aparece no ChatGPT? O que é AEO e por que importa em 2026](https://komplexahoteis.com/blog/post-aeo-ia-busca.html): Sua pousada tende a aparecer no ChatGPT quando a IA consegue ler e confiar nas informações dela, e o AEO (Answer Engine Optimization) cuida disso. Na prática: conteúdo que responde perguntas reais, Schema de Hotel, LocalBusiness e FAQ e dados consistentes na web. Importa porque a IA não cobra comissão e cita quem é claro, não quem paga mais.
+- [Precificação para pousada: revenue management na prática (sem complicar)](https://komplexahoteis.com/blog/post-precificacao-pousada.html): Para precificar uma pousada, troque a tarifa fixa por três faixas (baixa, média e alta temporada) definidas por custos e concorrência, com regras de antecedência e mínimo de noites nos picos. Uma planilha com disciplina basta para começar; a precificação dinâmica com IA entra quando o volume justifica. A meta é o melhor RevPAR, não só ocupação alta.
+- [RevPAR vs. ocupação: qual métrica define o sucesso do seu hotel](https://komplexahoteis.com/blog/post-revpar.html): O RevPAR define melhor o sucesso do hotel do que a ocupação, porque combina preço e volume: é a diária média multiplicada pela taxa de ocupação. Um hotel com 65% de ocupação e diária de R$ 450 tem RevPAR de R$ 292, acima dos R$ 252 de outro com 90% de ocupação e diária de R$ 280.
+- [Como ocupar a semana sem depender de eventos](https://komplexahoteis.com/blog/post-semana.html): Para ocupar a semana sem depender de eventos, pare de tratar o hóspede de dia útil como o de fim de semana e rode funis separados para cada perfil: casais sem filhos, workation, público maduro, mini-fugas e corporativo. Somados e sempre ligados, esses funis mudam a curva de segunda a quinta sem recorrer a desconto generalizado.
+- [LTV em hotéis: o ativo que a maioria ignora](https://komplexahoteis.com/blog/post-ltv.html): LTV é a receita total que um hóspede gera ao longo do relacionamento com o hotel, e a base de hóspedes antigos é um dos ativos mais ignorados da operação. Reativá-la custa centavos por mensagem, contra algumas centenas de reais por reserva nova em mídia paga, e pode virar uma fatia relevante do faturamento.

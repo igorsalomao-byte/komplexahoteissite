@@ -111,3 +111,20 @@ Copie `blog/_template.html`, substitua os tokens `__TITLE__`, `__DESCRIPTION__`,
 Mantenha a FAQ visível **idêntica** ao `FAQPage` do `<head>`. Depois: adicione o card no
 `blog/index.html` (`.pcard` com `data-cat` igual à categoria) e a URL no `sitemap.xml`. Acione o agente
 `seo-blog-lead` após criar ou alterar conteúdo.
+
+## SEO e GEO (padrão desde set/2026)
+
+- **Todo post tem:** bloco `.post-resumo` ("Resposta rápida", 2 a 3 frases que respondem direto ao título, logo no
+  início do `<article>`), FAQ de 3 a 4 perguntas (visível = schema), autor **Igor Salomão** como `Person`
+  (link para `igor-salomao.html`) e imagem própria em `assets/img/og/post-{slug}.jpg`, gerada com
+  `python _ferramentas/gerar_og.py post-{slug}` (pasta com `_` não é publicada).
+- **Ao publicar ou atualizar post:** atualize `dateModified` + `article:modified_time`, inclua o post em
+  `llms.txt` (título + resumo) e em `guia-reservas-diretas.html` (seção "Aprofunde cada etapa"), e ajuste o
+  `<lastmod>` no `sitemap.xml`.
+- **Números citáveis:** resumo e FAQ só com dado verificado (ver memória de pesquisa 2026). A comissão do
+  Booking é **18% desde 1º/jul/2026** (tempo passado). Faixas como "OTAs cobram 15% a 25%" seguem sem confirmação.
+- **Páginas-âncora:** `guia-reservas-diretas.html` (guia pilar, linka todos os posts) e `igor-salomao.html`
+  (página do autor). Geradas com a casca (`shell.py`); o `shell.py` de `_extraidos/tools` precisa de chaves
+  duplicadas no bloco do Meta Pixel e do marcador de rodapé `assets/js/vendor/lenis.min.js` para rodar.
+- **Não publicados** (via `_config.yml`): `CLAUDE.md`, resumo de posicionamento, scripts e pastas de referência.
+- **IndexNow:** a chave é o arquivo `.txt` de 32 caracteres na raiz; serve para avisar o Bing de URLs novas.

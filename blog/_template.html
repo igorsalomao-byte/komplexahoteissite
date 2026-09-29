@@ -25,19 +25,20 @@ if(document.prerendering){document.addEventListener('prerenderingchange',go,{onc
 <meta property="og:url" content="https://komplexahoteis.com/blog/post-__SLUG__.html">
 <meta property="og:title" content="__TITLE__">
 <meta property="og:description" content="__DESCRIPTION__">
-<meta property="og:image" content="https://komplexahoteis.com/assets/og-home.jpg">
+<meta property="og:image" content="https://komplexahoteis.com/assets/img/og/post-__SLUG__.jpg">
 <meta property="og:locale" content="pt_BR">
 <meta property="og:site_name" content="Komplexa Hotéis">
 <meta property="article:published_time" content="__DATE_ISO__">
-<meta property="article:author" content="Komplexa Hotéis">
+<meta property="article:author" content="Igor Salomão">
+<meta name="author" content="Igor Salomão">
 <meta property="article:section" content="__CATEGORY__">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="__TITLE__">
 <meta name="twitter:description" content="__DESCRIPTION__">
-<meta name="twitter:image" content="https://komplexahoteis.com/assets/og-home.jpg">
+<meta name="twitter:image" content="https://komplexahoteis.com/assets/img/og/post-__SLUG__.jpg">
 <script type="application/ld+json">
 {"@context":"https://schema.org","@graph":[
- {"@type":"BlogPosting","headline":"__TITLE__","description":"__DESCRIPTION__","url":"https://komplexahoteis.com/blog/post-__SLUG__.html","datePublished":"__DATE_ISO__","dateModified":"__DATE_ISO__","inLanguage":"pt-BR","keywords":"__KEYWORDS__","articleSection":"__CATEGORY__","author":{"@type":"Organization","name":"Komplexa Hotéis","url":"https://komplexahoteis.com/"},"publisher":{"@type":"Organization","name":"Komplexa Hotéis","logo":{"@type":"ImageObject","url":"https://komplexahoteis.com/assets/logo.svg"}},"mainEntityOfPage":{"@type":"WebPage","@id":"https://komplexahoteis.com/blog/post-__SLUG__.html"}},
+ {"@type":"BlogPosting","headline":"__TITLE__","description":"__DESCRIPTION__","url":"https://komplexahoteis.com/blog/post-__SLUG__.html","datePublished":"__DATE_ISO__","dateModified":"__DATE_ISO__","inLanguage":"pt-BR","keywords":"__KEYWORDS__","articleSection":"__CATEGORY__","author":{"@type":"Person","name":"Igor Salomão","url":"https://komplexahoteis.com/igor-salomao.html","jobTitle":"Fundador da Komplexa Hotéis"},"image":["https://komplexahoteis.com/assets/img/og/post-__SLUG__.jpg"],"publisher":{"@type":"Organization","name":"Komplexa Hotéis","logo":{"@type":"ImageObject","url":"https://komplexahoteis.com/assets/logo.svg"}},"mainEntityOfPage":{"@type":"WebPage","@id":"https://komplexahoteis.com/blog/post-__SLUG__.html"}},
  {"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Início","item":"https://komplexahoteis.com/"},{"@type":"ListItem","position":2,"name":"Blog","item":"https://komplexahoteis.com/blog/"},{"@type":"ListItem","position":3,"name":"__TITLE__","item":"https://komplexahoteis.com/blog/post-__SLUG__.html"}]},
  {"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"__FAQ_Q1__","acceptedAnswer":{"@type":"Answer","text":"__FAQ_A1__"}}]}
 ]}
@@ -47,6 +48,12 @@ if(document.prerendering){document.addEventListener('prerenderingchange',go,{onc
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../assets/css/style.css">
+<style>
+.post-resumo{border-left:3px solid #1099E9;background:rgba(16,153,233,.06);border-radius:0 14px 14px 0;padding:1.2rem 1.4rem;margin:0 0 2.2rem}
+.post-resumo .overline{display:block;margin:0 0 .5rem}
+.post-content .post-resumo p{margin:0;font-size:1.06rem;line-height:1.65}
+.post-meta a{color:inherit;border-bottom:1px solid currentColor}
+</style>
 </head>
 <body class="pg-int">
 <!-- ============ FIXOS ============ -->
@@ -111,12 +118,13 @@ if(document.prerendering){document.addEventListener('prerenderingchange',go,{onc
     <span class="overline">__CATEGORY__</span>
     <h1 class="t-display">__TITLE__</h1>
     <p class="post-lead">__DESCRIPTION__</p>
-    <div class="post-meta"><span>__DATE__</span><span>__READTIME__ de leitura</span><span>Komplexa Hotéis</span></div>
+    <div class="post-meta"><span>__DATE__</span><span>__READTIME__ de leitura</span><span>Por <a href="../igor-salomao.html">Igor Salomão</a></span></div>
   </div></div>
 </section>
 
 <div class="wrap"><div class="post-layout">
   <article class="post-content">
+    <div class="post-resumo"><span class="overline">Resposta rápida</span><p>__RESUMO__ (2 a 3 frases que respondem direto à pergunta do título)</p></div>
     <p>Parágrafo de abertura.</p>
     <div class="highlight-box"><p>Frase-síntese do artigo, em itálico.</p></div>
     <h2 id="secao-1">Título da seção</h2>
@@ -215,6 +223,7 @@ if(document.prerendering){document.addEventListener('prerenderingchange',go,{onc
         <a href="../blog/post-comissao-booking-18.html">Booking a 18%</a>
         <a href="../blog/post-motor-de-reservas.html">Motor de reservas</a>
         <a href="../blog/post-google-hotel-ads.html">Google Hotel Ads</a>
+        <a href="../guia-reservas-diretas.html">Guia de reservas diretas</a>
       </div>
       <div class="ft-col">
         <h4>Contato</h4>
