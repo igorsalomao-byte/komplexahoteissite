@@ -128,3 +128,7 @@ Mantenha a FAQ visível **idêntica** ao `FAQPage` do `<head>`. Depois: adicione
   duplicadas no bloco do Meta Pixel e do marcador de rodapé `assets/js/vendor/lenis.min.js` para rodar.
 - **Não publicados** (via `_config.yml`): `CLAUDE.md`, resumo de posicionamento, scripts e pastas de referência.
 - **IndexNow:** a chave é o arquivo `.txt` de 32 caracteres na raiz; serve para avisar o Bing de URLs novas.
+- **Favicon (set/2026):** `assets/img/favicon.svg` (símbolo em degradê sobre navy), `favicon.ico` na raiz
+  (16/32/48), `assets/img/apple-touch-icon.png`, `icon-192/512.png` e `site.webmanifest`. Toda página leva as
+  4 tags (`icon` .ico, `icon` .svg, `apple-touch-icon`, `manifest`); o `shell.py` ainda emite só a do .svg,
+  então páginas novas geradas por ele precisam das outras 3 acrescentadas.
