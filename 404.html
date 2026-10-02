@@ -3,8 +3,22 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script>
+/* Link de apresentação por lead: /d/<deck>/<nome-do-hotel> não existe como arquivo.
+   Vai para /d/<deck>/?l=<nome-do-hotel>; o d/rastreio.js registra a visita e volta a
+   mostrar o endereço com o nome do hotel na barra. */
+(function(){
+  var m=location.pathname.match(/^\/d\/([a-z0-9-]+)\/([a-z0-9-]+)\/?$/i);
+  if(!m)return;
+  window.__deckRoute=true;
+  document.documentElement.style.visibility='hidden';
+  var q=new URLSearchParams(location.search);q.set('l',m[2].toLowerCase());
+  location.replace('/d/'+m[1].toLowerCase()+'/?'+q.toString()+location.hash);
+})();
+</script>
 <!-- Meta Pixel -->
 <script>
+if(!window.__deckRoute){
 !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
 n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
 n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
@@ -12,6 +26,7 @@ t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,do
 'https://connect.facebook.net/en_US/fbevents.js');
 (function(){var go=function(){fbq('init','1364660957915622');fbq('track','PageView');};
 if(document.prerendering){document.addEventListener('prerenderingchange',go,{once:true});}else{go();}})();
+}
 </script>
 <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=1364660957915622&ev=PageView&noscript=1"></noscript>
 <!-- /Meta Pixel -->

@@ -860,7 +860,7 @@ table.cmp{width:100%;border-collapse:separate;border-spacing:0}
   <div class="top"><img class="brand" src="assets/logotipo_white.svg" alt="Komplexa"><span class="pg">Komplexa · 2026</span></div>
   <div class="body">
     <div class="cover-mid">
-      <div class="cover-eye">Apresentação · Método Komplexa</div>
+      <div class="cover-eye" data-lead-nome="Apresentação · ">Apresentação · Método Komplexa</div>
       <h1 class="cover-title">Mais reservas diretas,<br><span class="accent">sem depender de OTA</span></h1>
       <p class="cover-sub">Marketing e vendas integrados para hotéis, pousadas e resorts, do criativo à reserva efetuada.</p>
     </div>
@@ -1814,5 +1814,6 @@ const cntIO = new IntersectionObserver(entries => {
 }, {threshold:.4});
 document.querySelectorAll('[data-cnt]').forEach(el => cntIO.observe(el));
 </script>
+<script src="/d/rastreio.js" defer></script>
 </body>
 </html>
