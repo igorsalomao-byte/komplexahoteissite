@@ -16,7 +16,10 @@ O site inteiro foi migrado para o visual novo (Template 6 "Autoral" com a paleta
 
 Decisão do Igor: **operar só com a home + blog por enquanto.** As páginas `sistema`, `ia`, `arquitetura`
 e `contato` ficam no ar (indexadas, no sitemap) mas **sem link** no menu, no rodapé e nos posts, até
-serem revisadas. A landing `agencia-marketing-hoteleiro` nunca teve link (só SEO). Afirmações dessas
+serem revisadas. A landing `agencia-marketing-hoteleiro` foi revisada em 06/out/2026 (sem Google Hotel Ads
+como serviço, links para `sistema`/`ia`/`arquitetura` trocados por âncoras da home) e está no rodapé de
+todas as páginas como "Agência de marketing hoteleiro"; ainda sem confirmação nela: "trabalha com equipes
+internas", card "Redes menores", automação de WhatsApp e "aumentar o RevPAR". Afirmações dessas
 páginas que ainda precisam de confirmação do Igor: chatbot de atendimento e precificação por IA (`ia`),
 Omnibees/HSystem/Erbon como integrações e "não precisa trocar motor/PMS" (`sistema`), "comissão de
 15% a 25%" (`arquitetura`), "3 a 6 meses" na FAQ (`contato`).
