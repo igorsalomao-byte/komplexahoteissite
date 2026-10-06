@@ -7,34 +7,37 @@
 <script>
 !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
 n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
-n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
-t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script',
+n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];
+/* fbevents.js entra depois do load, com a página ociosa; init e PageView já ficam na fila do fbq */
+var go=function(){t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)},
+idle=function(){f.requestIdleCallback?f.requestIdleCallback(go,{timeout:2000}):setTimeout(go,200)};
+b.readyState==='complete'?idle():f.addEventListener('load',idle,{once:true})}(window,document,'script',
 'https://connect.facebook.net/en_US/fbevents.js');
 (function(){var go=function(){fbq('init','1364660957915622');fbq('track','PageView');};
 if(document.prerendering){document.addEventListener('prerenderingchange',go,{once:true});}else{go();}})();
 </script>
 <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=1364660957915622&ev=PageView&noscript=1"></noscript>
 <!-- /Meta Pixel -->
-<script>document.documentElement.className+=" js";setTimeout(function(){if(!window.__animReady)document.documentElement.className+=" no-anim"},2500)</script>
-<title>Como ocupar a semana sem depender de eventos — Komplexa Hotéis</title>
-<meta content="Baixa ocupação de segunda a quinta não é inevitável. Estratégias de segmentação e múltiplos funis que mudam esse padrão e estabilizam a receita mensal." name="description"/>
+<script>document.documentElement.className+=" js";setTimeout(function(){if(!window.__animReady)document.documentElement.className+=" no-anim"},1200)</script>
+<title>Como ocupar a semana sem depender de eventos</title>
+<meta content="Baixa ocupação de segunda a quinta não é inevitável. Veja os cinco públicos de dia útil e como rodar um funil para cada um sem recorrer a desconto geral." name="description"/>
 <meta content="Igor Salomão" name="author"/>
-<meta content="index, follow" name="robots"/>
+<meta content="index, follow, max-image-preview:large, max-snippet:-1" name="robots"/>
 <link href="https://komplexahoteis.com/blog/post-semana.html" rel="canonical"/>
 <meta content="article" property="og:type"/>
 <meta content="https://komplexahoteis.com/blog/post-semana.html" property="og:url"/>
 <meta content="Como ocupar a semana sem depender de eventos" property="og:title"/>
-<meta content="Estratégias para estabilizar a receita de segunda a quinta sem promoção genérica." property="og:description"/>
+<meta content="Baixa ocupação de segunda a quinta não é inevitável. Veja os cinco públicos de dia útil e como rodar um funil para cada um sem recorrer a desconto geral." property="og:description"/>
 <meta content="https://komplexahoteis.com/assets/img/og/post-semana.jpg" property="og:image"/>
 <meta content="pt_BR" property="og:locale"/>
 <meta content="Komplexa Hotéis" property="og:site_name"/>
 <meta content="2025-04-08" property="article:published_time"/>
 <meta content="Igor Salomão" property="article:author"/>
 <meta content="Marketing Hoteleiro" property="article:section"/>
-<meta content="2026-09-29" property="article:modified_time"/>
+<meta content="2026-10-06" property="article:modified_time"/>
 <meta content="summary_large_image" name="twitter:card"/>
 <meta content="Como ocupar a semana sem depender de eventos" name="twitter:title"/>
-<meta content="Estratégias para estabilizar a receita de segunda a quinta sem promoção genérica." name="twitter:description"/>
+<meta content="Baixa ocupação de segunda a quinta não é inevitável. Veja os cinco públicos de dia útil e como rodar um funil para cada um sem recorrer a desconto geral." name="twitter:description"/>
 <meta content="https://komplexahoteis.com/assets/img/og/post-semana.jpg" name="twitter:image"/>
 <script type="application/ld+json">
 [
@@ -42,10 +45,10 @@ if(document.prerendering){document.addEventListener('prerenderingchange',go,{onc
     "@context": "https://schema.org",
     "@type": "BlogPosting",
     "headline": "Como ocupar a semana sem depender de eventos",
-    "description": "Baixa ocupação de segunda a quinta não é inevitável. Estratégias que mudam esse padrão.",
+    "description": "Baixa ocupação de segunda a quinta não é inevitável. Veja os cinco públicos de dia útil e como rodar um funil para cada um sem recorrer a desconto geral.",
     "url": "https://komplexahoteis.com/blog/post-semana.html",
     "datePublished": "2025-04-08",
-    "dateModified": "2026-09-29",
+    "dateModified": "2026-10-06",
     "inLanguage": "pt-BR",
     "author": {
       "@type": "Person",
@@ -61,7 +64,7 @@ if(document.prerendering){document.addEventListener('prerenderingchange',go,{onc
       "url": "https://komplexahoteis.com/",
       "logo": {
         "@type": "ImageObject",
-        "url": "https://komplexahoteis.com/assets/logo.svg"
+        "url": "https://komplexahoteis.com/assets/img/icon-512.png", "width": 512, "height": 512
       }
     },
     "mainEntityOfPage": {
@@ -141,15 +144,16 @@ if(document.prerendering){document.addEventListener('prerenderingchange',go,{onc
 <link rel="icon" type="image/svg+xml" href="../assets/img/favicon.svg">
 <link rel="apple-touch-icon" href="../assets/img/apple-touch-icon.png">
 <link rel="manifest" href="../site.webmanifest">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="preload" href="../assets/fonts/jost-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="../assets/fonts/cormorant-latin.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="../assets/css/style.css">
 <style>
 .post-resumo{border-left:3px solid #1099E9;background:rgba(16,153,233,.06);border-radius:0 14px 14px 0;padding:1.2rem 1.4rem;margin:0 0 2.2rem}
 .post-resumo .overline{display:block;margin:0 0 .5rem}
 .post-content .post-resumo p{margin:0;font-size:1.06rem;line-height:1.65}
 .post-meta a{color:inherit;border-bottom:1px solid currentColor}
+.post-content{min-width:0}
+@media (max-width:600px){.post-content table{font-size:.84rem}.post-content th,.post-content td{padding:.6rem .3rem}.post-content th{letter-spacing:.06em}}
 </style>
 </head>
 <body class="pg-int">
@@ -163,7 +167,7 @@ if(document.prerendering){document.addEventListener('prerenderingchange',go,{onc
   </div>
 </header>
 
-<a href="../index.html" class="logo-fix dark" id="logoFix" aria-label="Komplexa Hotéis">
+<a href="../" class="logo-fix dark" id="logoFix" aria-label="Komplexa Hotéis">
   <svg viewBox="0 0 100 97" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
     <path d="M45.8247 36.6514C47.5271 36.6514 49.1676 37.1817 50.5604 38.211L89.22 66.5651C90.9533 67.844 92.0985 69.7156 92.439 71.8679C92.7795 74.0202 92.2533 76.1413 90.9843 77.8881C89.4366 80.0092 87.0842 81.2257 84.4533 81.2257C81.8223 81.2257 81.1104 80.6954 79.7176 79.6661L41.0581 51.3119C39.3247 50.033 38.1795 48.1615 37.839 46.0092C37.4985 43.8569 38.0247 41.7358 39.2938 39.989C40.8414 37.8679 43.1938 36.6514 45.8247 36.6514ZM45.8247 29.1651C41.0581 29.1651 36.3223 31.3798 33.289 35.5908C28.2747 42.5468 29.7914 52.3101 36.6938 57.3633L75.3533 85.7174C78.1081 87.745 81.2962 88.7119 84.4533 88.7119C89.22 88.7119 93.9557 86.4973 96.989 82.2862C102.003 75.3303 100.487 65.567 93.5842 60.5138L54.9247 32.1596C52.17 30.1321 48.9819 29.1651 45.8247 29.1651Z"/>
     <path d="M69.1938 7.48624C70.8961 7.48624 72.5366 8.01651 73.9295 9.04587L79.47 13.1009C83.0604 15.7211 83.8652 20.8055 81.2342 24.4239L76.4985 30.9743L64.4581 22.1468C60.8676 19.5266 60.0628 14.4422 62.6938 10.8239C64.2414 8.70275 66.5938 7.48624 69.2247 7.48624M69.1938 0C64.4271 0 59.6914 2.21468 56.658 6.42569C51.6438 13.3816 53.1604 23.145 60.0628 28.1982L78.108 41.4239L87.2081 28.822C92.2223 21.8661 90.7057 12.1027 83.8033 7.04954L78.2628 2.99449C75.508 0.966969 72.32 0 69.1628 0H69.1938Z"/>
@@ -178,7 +182,7 @@ if(document.prerendering){document.addEventListener('prerenderingchange',go,{onc
     Oi! Sou o Igor, fundador<br>da Komplexa. Quer o plano<br>do seu hotel?
   </div>
   <button class="conc-avatar" onclick="openConcierge()" aria-label="Falar com a Komplexa">
-    <img src="../assets/img/igor.png" alt="Igor Salomão, fundador da Komplexa"><span class="conc-dot"></span>
+    <img src="../assets/img/igor.png" alt="Igor Salomão, fundador da Komplexa" width="400" height="400"><span class="conc-dot"></span>
   </button>
 </div>
 
@@ -186,18 +190,20 @@ if(document.prerendering){document.addEventListener('prerenderingchange',go,{onc
 <nav class="menu" id="menu">
   <div class="menu-grid">
     <div class="menu-list" data-lenis-prevent>
-      <a href="../index.html#metodo" class="active">O método</a>
-      <a href="../index.html#cases">Cases</a>
-      <a href="../index.html#site">O site entregue</a>
-      <a href="../index.html#sistema">O sistema</a>
-      <a href="../index.html#frentes">Frentes de receita</a>
-      <a href="../index.html#presenca">Quem somos</a>
-      <a href="../index.html#contato">Falar com a Komplexa</a>
+      <a href="../#metodo" class="active">O método</a>
+      <a href="../#cases">Cases</a>
+      <a href="../#site">O site entregue</a>
+      <a href="../#sistema">O sistema</a>
+      <a href="../#frentes">Frentes de receita</a>
+      <a href="../#presenca">Quem somos</a>
+      <a href="../#contato">Falar com a Komplexa</a>
     </div>
   </div>
   <div class="menu-foot">
     <div class="menu-foot-links">
-      <a href="../blog/index.html">Blog</a>
+      <a href="./">Blog</a>
+      <a href="../guia-reservas-diretas.html">Guia de reservas diretas</a>
+      <a href="../agencia-marketing-hoteleiro.html">Agência de marketing hoteleiro</a>
       <a href="https://komplexa-pricing.vercel.app/f/komplexaconsultoria?utm_source=komplexahoteis&amp;utm_medium=site&amp;utm_content=blog-semana-menu" target="_blank" rel="noopener">Agendar conversa <span class="ext">↗</span></a>
     </div>
     <div class="menu-foot-social">
@@ -210,58 +216,79 @@ if(document.prerendering){document.addEventListener('prerenderingchange',go,{onc
 <!-- ============ POST ============ -->
 <section class="post-hero">
   <div class="wrap"><div class="post-wrap">
-    <nav class="crumbs" aria-label="Navegação"><a href="../index.html">Início</a><span>/</span><a href="index.html">Blog</a><span>/</span><span>Marketing Hoteleiro</span></nav>
+    <nav class="crumbs" aria-label="Navegação"><a href="../">Início</a><span>/</span><a href="./">Blog</a><span>/</span><span>Marketing Hoteleiro</span></nav>
     <span class="overline">Marketing Hoteleiro</span>
     <h1 class="t-display">Como ocupar a semana sem depender de eventos</h1>
-    <p class="post-lead">Baixa ocupação de segunda a quinta não é inevitável. Estratégias de segmentação e múltiplos funis que mudam esse padrão e estabilizam a receita mensal.</p>
-    <div class="post-meta"><span>Abril 2025</span><span>5 min de leitura</span><span>Por <a href="../igor-salomao.html">Igor Salomão</a></span><span>Atualizado em setembro de 2026</span></div>
+    <p class="post-lead">Baixa ocupação de segunda a quinta não é inevitável. Veja os cinco públicos de dia útil e como rodar um funil para cada um sem recorrer a desconto geral.</p>
+    <div class="post-meta"><span>Abril 2025</span><span>7 min de leitura</span><span>Por <a href="../igor-salomao.html">Igor Salomão</a></span><span>Atualizado em outubro de 2026</span></div>
   </div></div>
 </section>
 
 <div class="wrap"><div class="post-layout">
   <article class="post-content">
-<div class="post-resumo"><span class="overline">Resposta rápida</span><p>Para ocupar a semana sem depender de eventos, pare de tratar o hóspede de dia útil como o de fim de semana e rode funis separados para cada perfil: casais sem filhos, workation, público maduro, mini-fugas e corporativo. Somados e sempre ligados, esses funis mudam a curva de segunda a quinta sem recorrer a desconto generalizado.</p></div>
-<p>Quase todo hotel tem o mesmo perfil de ocupação: cheio de sexta a domingo, vazio de segunda a quinta. A pergunta que pesa no caixa é: como mudar esse padrão sem depender de um congresso ou de um feriado prolongado?</p>
+<div class="post-resumo"><span class="overline">Resposta rápida</span><p>Para ocupar a semana sem depender de eventos, pare de tratar o hóspede de dia útil como o de fim de semana: rode um funil para cada perfil (casais sem filhos, workation, público maduro, mini-fugas e corporativo), com oferta própria, e meça o resultado por dia da semana no PMS. Sempre ligados, esses funis mudam a curva de segunda a quinta sem recorrer a desconto geral.</p></div>
+<p>Quase todo hotel tem o mesmo perfil de ocupação: cheio de sexta a domingo, vazio de segunda a quinta. A pergunta que pesa no caixa é: como mudar esse padrão sem depender de um congresso ou de um feriado prolongado? Este texto trata dessa parte do nosso <a href="../guia-reservas-diretas.html">guia de reservas diretas para hotéis e pousadas</a>: a demanda de dia útil, que existe, mas precisa ser buscada.</p>
 <p>A resposta passa por algo que a maioria não faz: <strong>parar de tratar o cliente de semana como se fosse o mesmo cliente de fim de semana</strong>.</p>
 <div class="highlight-box">
-<p>Quem reserva quinta-feira não busca a mesma coisa que quem reserva sábado. Mesmo hotel, mesma cidade, públicos completamente diferentes — e portanto campanhas, criativos e ofertas diferentes.</p>
+<p>Quem reserva quinta-feira não busca a mesma coisa que quem reserva sábado. Mesmo hotel, mesma cidade, públicos completamente diferentes e, portanto, campanhas, criativos e ofertas diferentes.</p>
 </div>
 <h2 id="problema">Por que descontos não resolvem</h2>
-<p>A reação automática à baixa ocupação na semana é baixar tarifa. Funciona um pouco — e cobra caro. O hotel acaba treinando o mercado a esperar promoção, derruba RevPAR e ainda canibaliza vendas que aconteceriam pelo preço cheio.</p>
+<p>A reação automática à baixa ocupação na semana é baixar a tarifa. Funciona um pouco e cobra caro. O hotel acaba treinando o mercado a esperar promoção, canibaliza vendas que aconteceriam pelo preço cheio e perde receita por quarto disponível. A diferença entre encher o hotel e faturar mais está em <a href="post-revpar.html">RevPAR vs. ocupação</a>.</p>
+<p>A conta mostra o tamanho do problema. <strong>Exemplo ilustrativo, não é resultado de cliente:</strong> uma diária de R$ 400 com 20% de desconto vira R$ 320, e a reserva precisa trazer 25% mais diárias só para empatar a receita (400 ÷ 320 = 1,25). Se o desconto vale para quem já viria pelo preço cheio, o hotel vende o mesmo quarto por menos e ainda precisa de mais hóspedes para voltar ao ponto de partida.</p>
 <p>Para mudar a curva sem destruir margem, é preciso atacar o problema do outro lado: <strong>encontrar quem viaja na semana e fazer com que ele descubra o seu hotel</strong>.</p>
 <h2 id="publicos">Os públicos que enchem dia útil</h2>
-<p>Existe demanda para meio de semana — só não é a mesma do fim de semana. Os principais perfis:</p>
+<p>Existe demanda para meio de semana, só não é a mesma do fim de semana. Os principais perfis:</p>
 <h3>1. Casais sem filhos</h3>
-<p>Não estão presos a calendário escolar. Quartas e quintas costumam ser mais baratas e mais tranquilas — e isso é argumento de venda, não desvantagem.</p>
+<p>Não estão presos a calendário escolar. Quartas e quintas costumam ser mais baratas e mais tranquilas, e isso é argumento de venda, não desvantagem.</p>
 <h3>2. Workation e nômades digitais</h3>
 <p>Profissionais remotos que trocam o home office por um cenário melhor por 3 ou 4 dias. Querem Wi-Fi sólido, mesa de trabalho, café decente. Hotel que mostra isso explicitamente captura esse público.</p>
 <h3>3. Aposentados e maduros</h3>
 <p>Têm tempo e renda. Preferem viajar quando está mais vazio e mais barato. Funcionam muito bem com pacotes maiores (4 a 6 diárias) cobrindo justamente o miolo da semana.</p>
 <h3>4. Mini-fugas e celebrações</h3>
-<p>Aniversário no meio da semana, comemoração de casal, "pular um dia". Públicos pequenos mas recorrentes que respondem muito bem a ofertas com data específica.</p>
+<p>Aniversário no meio da semana, comemoração de casal, "pular um dia". Públicos pequenos, mas recorrentes, que respondem muito bem a ofertas com data específica. Quem já comemorou no hotel tem motivo para voltar, e a base de contatos é o caminho mais barato até ele: veja como <a href="post-ltv.html">reativar hóspedes antigos: LTV em hotéis</a>.</p>
 <h3>5. Corporativo</h3>
 <p>Não é só evento. Reunião com fornecedor, treinamento interno, viagem de trabalho. Tarifa corporativa estruturada e parceria local com empresas resolve uma parcela importante.</p>
+<h2 id="ofertas">Uma oferta por perfil (modelo para adaptar)</h2>
+<p>Cada perfil pede uma oferta, um canal e uma métrica própria. A tabela abaixo é um ponto de partida para adaptar à realidade do seu hotel, sem valores fixos: o preço de cada oferta sai das faixas por temporada e do mínimo de noites de cada período, como no post de <a href="post-precificacao-pousada.html">precificação para pousada</a>.</p>
+<table>
+<thead><tr><th>Perfil</th><th>Oferta</th><th>Canal</th><th>O que medir</th></tr></thead>
+<tbody>
+<tr><td><strong>Casal sem filhos</strong></td><td>Diária de meio de semana com café reforçado</td><td>Meta Ads e remarketing</td><td>Reservas de quarta e quinta</td></tr>
+<tr><td><strong>Workation</strong></td><td>Pacote de 3 a 4 noites com mesa de trabalho e Wi-Fi estável</td><td>Google e Meta</td><td>Reservas por pacote</td></tr>
+<tr><td><strong>Público maduro</strong></td><td>Pacote de 4 a 6 diárias</td><td>WhatsApp e e-mail</td><td>Diárias por reserva</td></tr>
+<tr><td><strong>Mini-fuga e celebração</strong></td><td>Oferta com data específica</td><td>Meta Ads e CRM</td><td>Reservas por data</td></tr>
+<tr><td><strong>Corporativo</strong></td><td>Tarifa corporativa e parceria local</td><td>Contato direto e página própria</td><td>Reservas por empresa</td></tr>
+</tbody>
+</table>
+<h2 id="medir">Como medir se a curva da semana mudou</h2>
+<p>Sem medição por dia da semana, o hotel só enxerga o total do mês e não sabe se a semana melhorou ou se um feriado escondeu o resultado. Quatro leituras respondem a isso, todas montadas com os dados do PMS:</p>
+<ul>
+<li><strong>Ocupação por dia da semana</strong> = diárias vendidas no dia ÷ quartos disponíveis no dia, em média no mês. Mostra quais dias da semana continuam vazios.</li>
+<li><strong>RevPAR por dia da semana</strong> = receita de hospedagem do dia ÷ quartos disponíveis no dia. Mostra se a ocupação de segunda a quinta está vindo com receita, e não só com desconto.</li>
+<li><strong>Participação de cada perfil nas reservas de segunda a quinta</strong> = reservas do perfil ÷ total de reservas de segunda a quinta. Exige marcar o perfil ou a origem de cada reserva no cadastro. Mostra qual funil entrega e qual deve receber mais verba.</li>
+<li><strong>Comparação mês a mês</strong> com a mesma janela do ano anterior, para não confundir resultado da estratégia com sazonalidade.</li>
+</ul>
 <h2 id="estrategia">A estratégia que muda a curva</h2>
-<p>O segredo é rodar <strong>múltiplos funis simultaneamente</strong> — um para cada perfil — em vez de uma única campanha "ocupação semana".</p>
+<p>O segredo é rodar <strong>múltiplos funis simultaneamente</strong>, um para cada perfil, em vez de uma única campanha "ocupação semana".</p>
 <ul>
 <li>Criativo direcionado para casal sem filhos com foco em sossego e diária menor</li>
-<li>Criativo workation com foto de mesa de trabalho e Wi-Fi de gigabit</li>
+<li>Criativo workation com foto de mesa de trabalho e Wi-Fi estável</li>
 <li>Pacote 4 noites com early check-in e late check-out para público maduro</li>
 <li>Oferta de mini-fuga com café da manhã na cama para datas pessoais</li>
 <li>Página corporativa com proposta para empresas próximas</li>
 </ul>
-<p>Cada um desses funis traz um volume modesto isoladamente. Somados, mudam o padrão da semana — sem que nenhum deles dependa de promoção generalizada.</p>
-<h2 id="continuo">É always-on, não campanha pontual</h2>
+<p>Cada um desses funis traz um volume modesto isoladamente. Somados, mudam o padrão da semana, sem que nenhum deles dependa de promoção generalizada.</p>
+<h2 id="continuo">Sempre ligado: por que campanha pontual não resolve</h2>
 <p>Ocupação de semana não se resolve em uma campanha de duas semanas. Resolve com uma estrutura sempre ligada, ajustada por dados de conversão real, que vai aprendendo qual perfil responde melhor em cada janela do mês.</p>
-<p>É exatamente o oposto de "vamos correr atrás porque a semana está vazia". É anteceder o problema com vários canais funcionando em paralelo o tempo todo.</p>
+<p>É exatamente o oposto de "vamos correr atrás porque a semana está vazia". É anteceder o problema com vários canais funcionando em paralelo o tempo todo. Manter vários funis ligados ao mesmo tempo é rotina de uma <a href="../agencia-marketing-hoteleiro.html">agência de marketing hoteleiro</a> com mídia, conversão e CRM no mesmo time.</p>
 <div class="post-divider"></div>
-<h2 id="conclusao">Conclusão</h2>
-<p>Hotel que estabiliza ocupação na semana não é hotel sortudo com agenda de eventos lotada. É hotel que parou de esperar a demanda chegar e construiu mecanismos para <strong>buscar perfis específicos de viajante de meio de semana</strong>.</p>
-<p>Quando isso entra no lugar, o calendário deixa de ter "dias bons" e "dias ruins" — e a receita mensal vira muito mais previsível.</p>
+<h2 id="conclusao">Resumo: um funil por perfil e medição por dia da semana</h2>
+<p>Hotel que estabiliza ocupação na semana não é hotel sortudo com agenda de eventos lotada. É hotel que parou de esperar a demanda chegar e construiu mecanismos para <strong>buscar perfis específicos de viajante de meio de semana</strong>, com uma oferta para cada um e a medição por dia da semana para saber o que funciona.</p>
+<p>Quando isso entra no lugar, o calendário deixa de ter "dias bons" e "dias ruins" e a receita mensal vira muito mais previsível.</p>
 <div class="post-cta">
 <h4>Quer estabilizar a ocupação da semana?</h4>
-<p>A Komplexa monta funis específicos por perfil de público, com mídia paga, conversão e CRM operando em conjunto.</p>
-<a class="btn-sage" href="https://komplexa-pricing.vercel.app/f/komplexaconsultoria?utm_source=komplexahoteis&amp;utm_medium=site&amp;utm_content=blog-semana" target="_blank">Falar com especialista</a>
+<p>A Pousada Solar Dona Dora, atendida pela Komplexa, passou de R$ 12,4 mil para R$ 42,5 mil de faturamento na baixa temporada, 3,4x mais, conferido no PMS do hotel. Cada resultado vem de uma operação diferente: na conversa com a Komplexa, o plano nasce do seu hotel, sem pacote pronto. <a href="../#cases" style="color:#fff;border-bottom:1px solid rgba(255,255,255,.5)">Ver os cases</a></p>
+<a class="btn-sage" href="https://komplexa-pricing.vercel.app/f/komplexaconsultoria?utm_source=komplexahoteis&amp;utm_medium=site&amp;utm_content=blog-semana-meio" target="_blank" rel="noopener">Agendar conversa</a>
 </div>
   <h2 id="faq">Perguntas frequentes</h2>
 <div class="faq-list">
@@ -287,18 +314,21 @@ if(document.prerendering){document.addEventListener('prerenderingchange',go,{onc
     <div class="side-card"><h4>Neste artigo</h4>
 <a href="#problema" class="toc-link">Por que descontos não resolvem</a>
 <a href="#publicos" class="toc-link">Os públicos que enchem dia útil</a>
+<a href="#ofertas" class="toc-link">Uma oferta por perfil</a>
+<a href="#medir" class="toc-link">Como medir a curva da semana</a>
 <a href="#estrategia" class="toc-link">A estratégia que muda a curva</a>
-<a href="#continuo" class="toc-link">Always-on, não pontual</a>
-<a href="#conclusao" class="toc-link">Conclusão</a>
+<a href="#continuo" class="toc-link">Sempre ligado, não pontual</a>
+<a href="#conclusao" class="toc-link">Resumo</a>
     <a href="#faq" class="toc-link">Perguntas frequentes</a>
     </div>
     <div class="side-cta"><h4>Para o seu hotel</h4>
       <p>Um plano de aquisição desenhado a partir da sua operação, medido no PMS.</p>
-      <a href="https://komplexa-pricing.vercel.app/f/komplexaconsultoria?utm_source=komplexahoteis&amp;utm_medium=site&amp;utm_content=blog-semana" target="_blank" rel="noopener" class="btn-sage">Agendar conversa</a>
+      <a href="https://komplexa-pricing.vercel.app/f/komplexaconsultoria?utm_source=komplexahoteis&amp;utm_medium=site&amp;utm_content=blog-semana-lateral" target="_blank" rel="noopener" class="btn-sage">Agendar conversa</a>
     </div>
     <div class="side-card"><h4>Leia também</h4>
-<a href="post-revpar.html" class="related-post"><h5>RevPAR vs. ocupação: qual métrica define o sucesso</h5><span>RevPAR e Receita · 7 min</span></a>
-<a href="post-funil.html" class="related-post"><h5>Por que campanhas isoladas não funcionam</h5><span>Conversão · 5 min</span></a>
+<a href="post-revpar.html" class="related-post"><h5>RevPAR vs. ocupação: qual métrica define o sucesso do seu hotel</h5><span>RevPAR e Receita · 7 min</span></a>
+<a href="post-precificacao-pousada.html" class="related-post"><h5>Precificação para pousada: revenue management na prática (sem complicar)</h5><span>RevPAR e Receita · 9 min</span></a>
+<a href="post-ltv.html" class="related-post"><h5>LTV em hotéis: o ativo que a maioria ignora</h5><span>CRM e Pós-venda · 7 min</span></a>
     </div>
   </aside>
 </div></div>
@@ -307,9 +337,9 @@ if(document.prerendering){document.addEventListener('prerenderingchange',go,{onc
   <div class="wrap">
     <span class="overline">Continue lendo</span>
     <div class="rg-grid">
-<a href="post-revpar.html" class="rg-card"><span class="rg-tag">RevPAR e Receita</span><h4>RevPAR vs. ocupação: qual métrica define o sucesso do seu hotel</h4><p>Encher o hotel nem sempre significa lucrar mais. Entenda o que medir.</p></a>
-<a href="post-ia.html" class="rg-card"><span class="rg-tag">Inteligência Artificial</span><h4>IA na hotelaria: segmentação inteligente que reduz custo por reserva</h4><p>Como lookalike baseado em hóspedes reais é mais eficiente que demográfico genérico.</p></a>
-<a href="post-ltv.html" class="rg-card"><span class="rg-tag">CRM e Pós-venda</span><h4>LTV em hotéis: o ativo que a maioria ignora</h4><p>Reativar hóspedes antigos pode representar 20% a 30% da receita sem custo de aquisição.</p></a>
+<a href="post-funil.html" class="rg-card"><span class="rg-tag">Conversão</span><h4>Por que campanhas isoladas não funcionam para hotéis</h4><p>Anúncio sem site, motor e atendimento ligados vaza verba. O funil inteiro decide a reserva.</p></a>
+<a href="post-ia.html" class="rg-card"><span class="rg-tag">Inteligência Artificial</span><h4>IA na hotelaria: segmentação inteligente que reduz custo por reserva</h4><p>Como o público lookalike de hóspedes reais e a exclusão de quem não reserva mudam a mídia paga.</p></a>
+<a href="post-como-escolher-agencia.html" class="rg-card"><span class="rg-tag">Marketing Hoteleiro</span><h4>Como escolher uma agência de marketing para hotel ou pousada</h4><p>As 8 perguntas que separam uma agência de marketing hoteleiro de uma de social media.</p></a>
     </div>
   </div>
 </section>
@@ -320,7 +350,7 @@ if(document.prerendering){document.addEventListener('prerenderingchange',go,{onc
     <div class="news-box">
       <span class="overline rv">Carta do fundador</span>
       <h2 class="t-display rv">Um convite para conhecer <em class="gi">o nosso time.</em></h2>
-      <img class="carta-foto rv" src="../assets/img/igor.png" alt="Igor Salomão, fundador da Komplexa">
+      <img class="carta-foto rv" src="../assets/img/igor.png" alt="Igor Salomão, fundador da Komplexa" width="400" height="400" loading="lazy">
       <div class="carta rv">
         <p>Sou o Igor Salomão, fundador da Komplexa. Se você chegou até aqui, quero te fazer um convite: uma conversa comigo e com o time sobre o seu hotel.</p>
         <p>Nela, queremos entender de verdade como a sua operação funciona hoje: de onde vêm as reservas, como o hóspede chega até você e onde você sente que dá para crescer.</p>
@@ -352,15 +382,15 @@ if(document.prerendering){document.addEventListener('prerenderingchange',go,{onc
       </div>
       <div class="ft-col">
         <h4>A solução</h4>
-        <a href="../index.html#metodo">O método</a>
-        <a href="../index.html#cases">Cases</a>
-        <a href="../index.html#sistema">O sistema</a>
-        <a href="../index.html#ia">IA aplicada</a>
-        <a href="../index.html#frentes">Frentes de receita</a>
+        <a href="../#metodo">O método</a>
+        <a href="../#cases">Cases</a>
+        <a href="../#sistema">O sistema</a>
+        <a href="../#ia">IA aplicada</a>
+        <a href="../#frentes">Frentes de receita</a>
       </div>
       <div class="ft-col">
         <h4>Conteúdo</h4>
-        <a href="../blog/index.html">Blog</a>
+        <a href="./">Blog</a>
         <a href="../blog/post-comissao-booking-18.html">Booking a 18%</a>
         <a href="../blog/post-motor-de-reservas.html">Motor de reservas</a>
         <a href="../blog/post-google-hotel-ads.html">Google Hotel Ads</a>
@@ -376,28 +406,28 @@ if(document.prerendering){document.addEventListener('prerenderingchange',go,{onc
     <div class="selos" aria-label="Integrações e parceiros de tecnologia">
       <div class="selos-track">
         <!-- lista repetida 2x para o loop contínuo do marquee -->
-        <div class="selo"><img src="../assets/img/omnibees.png" alt="Omnibees"></div>
-        <div class="selo"><img src="../assets/img/hsystem.png" alt="HSystem"></div>
-        <div class="selo"><img src="../assets/img/asksuite.jpeg" alt="Asksuite"></div>
-        <div class="selo"><img src="../assets/img/erbon.png" alt="Erbon"></div>
-        <div class="selo"><img src="../assets/img/bitz.png" alt="Bitz"></div>
-        <div class="selo"><img src="../assets/img/foco.png" alt="Foco"></div>
-        <div class="selo"><img src="../assets/img/omnibees.png" alt="Omnibees"></div>
-        <div class="selo"><img src="../assets/img/hsystem.png" alt="HSystem"></div>
-        <div class="selo"><img src="../assets/img/asksuite.jpeg" alt="Asksuite"></div>
-        <div class="selo"><img src="../assets/img/erbon.png" alt="Erbon"></div>
-        <div class="selo"><img src="../assets/img/bitz.png" alt="Bitz"></div>
-        <div class="selo"><img src="../assets/img/foco.png" alt="Foco"></div>
+        <div class="selo"><img src="../assets/img/omnibees.png" alt="Omnibees" width="168" height="96" loading="lazy"></div>
+        <div class="selo"><img src="../assets/img/hsystem.png" alt="HSystem" width="428" height="118" loading="lazy"></div>
+        <div class="selo"><img src="../assets/img/asksuite.jpeg" alt="Asksuite" width="200" height="200" loading="lazy"></div>
+        <div class="selo"><img src="../assets/img/erbon.png" alt="Erbon" width="301" height="456" loading="lazy"></div>
+        <div class="selo"><img src="../assets/img/bitz.png" alt="Bitz" width="492" height="158" loading="lazy"></div>
+        <div class="selo"><img src="../assets/img/foco.png" alt="Foco" width="331" height="152" loading="lazy"></div>
+        <div class="selo"><img src="../assets/img/omnibees.png" alt="Omnibees" width="168" height="96" loading="lazy"></div>
+        <div class="selo"><img src="../assets/img/hsystem.png" alt="HSystem" width="428" height="118" loading="lazy"></div>
+        <div class="selo"><img src="../assets/img/asksuite.jpeg" alt="Asksuite" width="200" height="200" loading="lazy"></div>
+        <div class="selo"><img src="../assets/img/erbon.png" alt="Erbon" width="301" height="456" loading="lazy"></div>
+        <div class="selo"><img src="../assets/img/bitz.png" alt="Bitz" width="492" height="158" loading="lazy"></div>
+        <div class="selo"><img src="../assets/img/foco.png" alt="Foco" width="331" height="152" loading="lazy"></div>
       </div>
     </div>
     <div class="ft-credit">© 2026 Komplexa Hotéis · Arquitetura de crescimento para reservas diretas · komplexahoteis.com</div>
   </div>
 </footer>
 
-<script src="../assets/js/vendor/lenis.min.js"></script>
-<script src="../assets/js/vendor/gsap.min.js"></script>
-<script src="../assets/js/vendor/ScrollTrigger.min.js"></script>
-<script src="../assets/js/main.js"></script>
+<script src="../assets/js/vendor/lenis.min.js" defer></script>
+<script src="../assets/js/vendor/gsap.min.js" defer></script>
+<script src="../assets/js/vendor/ScrollTrigger.min.js" defer></script>
+<script src="../assets/js/main.js" defer></script>
 
 </body>
 </html>

@@ -7,15 +7,18 @@
 <script>
 !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
 n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
-n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
-t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script',
+n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];
+/* fbevents.js entra depois do load, com a página ociosa; init e PageView já ficam na fila do fbq */
+var go=function(){t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)},
+idle=function(){f.requestIdleCallback?f.requestIdleCallback(go,{timeout:2000}):setTimeout(go,200)};
+b.readyState==='complete'?idle():f.addEventListener('load',idle,{once:true})}(window,document,'script',
 'https://connect.facebook.net/en_US/fbevents.js');
 (function(){var go=function(){fbq('init','1364660957915622');fbq('track','PageView');};
 if(document.prerendering){document.addEventListener('prerenderingchange',go,{once:true});}else{go();}})();
 </script>
 <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=1364660957915622&ev=PageView&noscript=1"></noscript>
 <!-- /Meta Pixel -->
-<script>document.documentElement.className+=" js";setTimeout(function(){if(!window.__animReady)document.documentElement.className+=" no-anim"},2500)</script>
+<script>document.documentElement.className+=" js";setTimeout(function(){if(!window.__animReady)document.documentElement.className+=" no-anim"},1200)</script>
 <title>Reservas diretas para hotéis e pousadas: guia completo de 2026</title>
 <meta name="description" content="Como hotéis e pousadas vendem mais no canal direto: motor de reservas, site, Google e Meta, paridade, preço, atendimento e medição no PMS. Guia prático de 2026.">
 <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
@@ -77,7 +80,7 @@ if(document.prerendering){document.addEventListener('prerenderingchange',go,{onc
       "url": "https://komplexahoteis.com/",
       "logo": {
         "@type": "ImageObject",
-        "url": "https://komplexahoteis.com/assets/logo.svg"
+        "url": "https://komplexahoteis.com/assets/img/icon-512.png", "width": 512, "height": 512
       }
     },
     "about": [
@@ -122,7 +125,15 @@ if(document.prerendering){document.addEventListener('prerenderingchange',go,{onc
         "name": "Quanto o Booking cobra de comissão em 2026?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "No Brasil, a comissão preferencial do Booking.com é de 18% desde 1º de julho de 2026. Antes, a faixa praticada pela maioria das propriedades era de 10% a 15%. O percentual exato depende do programa de visibilidade que o hotel contrata na plataforma."
+          "text": "Desde 1º de julho de 2026, a comissão preferencial do Booking.com no Brasil é de 18%. Antes, segundo a Panrotas, as comissões da plataforma historicamente variavam entre 10% e 15%, conforme o tipo de acordo; na representação ao Cade, as entidades descrevem a taxa do programa Preferencial subindo de 15% ou 16% para 18%. O percentual exato depende do contrato e do programa de visibilidade que o hotel contrata na plataforma."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Quanto custa uma reserva direta?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Some mídia, mensalidade ou taxa do motor, custo de atendimento e ferramentas e divida pelas reservas diretas confirmadas no PMS no período. Compare com a comissão que a mesma reserva pagaria na OTA: numa reserva de R$ 800, os 18% do Booking preferencial são R$ 144."
         }
       },
       {
@@ -161,9 +172,8 @@ if(document.prerendering){document.addEventListener('prerenderingchange',go,{onc
 .autor-side p{margin:0;font-size:.92rem;line-height:1.45;color:var(--muted)}
 .autor-side a{color:var(--ink);font-weight:500;border-bottom:1px solid rgba(14,30,53,.3)}
 </style>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="preload" href="assets/fonts/jost-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="assets/fonts/cormorant-latin.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body class="pg-int">
@@ -177,7 +187,7 @@ if(document.prerendering){document.addEventListener('prerenderingchange',go,{onc
   </div>
 </header>
 
-<a href="index.html" class="logo-fix dark" id="logoFix" aria-label="Komplexa Hotéis">
+<a href="./" class="logo-fix dark" id="logoFix" aria-label="Komplexa Hotéis">
   <svg viewBox="0 0 100 97" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
     <path d="M45.8247 36.6514C47.5271 36.6514 49.1676 37.1817 50.5604 38.211L89.22 66.5651C90.9533 67.844 92.0985 69.7156 92.439 71.8679C92.7795 74.0202 92.2533 76.1413 90.9843 77.8881C89.4366 80.0092 87.0842 81.2257 84.4533 81.2257C81.8223 81.2257 81.1104 80.6954 79.7176 79.6661L41.0581 51.3119C39.3247 50.033 38.1795 48.1615 37.839 46.0092C37.4985 43.8569 38.0247 41.7358 39.2938 39.989C40.8414 37.8679 43.1938 36.6514 45.8247 36.6514ZM45.8247 29.1651C41.0581 29.1651 36.3223 31.3798 33.289 35.5908C28.2747 42.5468 29.7914 52.3101 36.6938 57.3633L75.3533 85.7174C78.1081 87.745 81.2962 88.7119 84.4533 88.7119C89.22 88.7119 93.9557 86.4973 96.989 82.2862C102.003 75.3303 100.487 65.567 93.5842 60.5138L54.9247 32.1596C52.17 30.1321 48.9819 29.1651 45.8247 29.1651Z"/>
     <path d="M69.1938 7.48624C70.8961 7.48624 72.5366 8.01651 73.9295 9.04587L79.47 13.1009C83.0604 15.7211 83.8652 20.8055 81.2342 24.4239L76.4985 30.9743L64.4581 22.1468C60.8676 19.5266 60.0628 14.4422 62.6938 10.8239C64.2414 8.70275 66.5938 7.48624 69.2247 7.48624M69.1938 0C64.4271 0 59.6914 2.21468 56.658 6.42569C51.6438 13.3816 53.1604 23.145 60.0628 28.1982L78.108 41.4239L87.2081 28.822C92.2223 21.8661 90.7057 12.1027 83.8033 7.04954L78.2628 2.99449C75.508 0.966969 72.32 0 69.1628 0H69.1938Z"/>
@@ -192,7 +202,7 @@ if(document.prerendering){document.addEventListener('prerenderingchange',go,{onc
     Oi! Sou o Igor, fundador<br>da Komplexa. Quer o plano<br>do seu hotel?
   </div>
   <button class="conc-avatar" onclick="openConcierge()" aria-label="Falar com a Komplexa">
-    <img src="assets/img/igor.png" alt="Igor Salomão, fundador da Komplexa"><span class="conc-dot"></span>
+    <img src="assets/img/igor.png" alt="Igor Salomão, fundador da Komplexa" width="400" height="400"><span class="conc-dot"></span>
   </button>
 </div>
 
@@ -200,18 +210,20 @@ if(document.prerendering){document.addEventListener('prerenderingchange',go,{onc
 <nav class="menu" id="menu">
   <div class="menu-grid">
     <div class="menu-list" data-lenis-prevent>
-      <a href="index.html#metodo" class="active">O método</a>
-      <a href="index.html#cases">Cases</a>
-      <a href="index.html#site">O site entregue</a>
-      <a href="index.html#sistema">O sistema</a>
-      <a href="index.html#frentes">Frentes de receita</a>
-      <a href="index.html#presenca">Quem somos</a>
-      <a href="index.html#contato">Falar com a Komplexa</a>
+      <a href="./#metodo" class="active">O método</a>
+      <a href="./#cases">Cases</a>
+      <a href="./#site">O site entregue</a>
+      <a href="./#sistema">O sistema</a>
+      <a href="./#frentes">Frentes de receita</a>
+      <a href="./#presenca">Quem somos</a>
+      <a href="./#contato">Falar com a Komplexa</a>
     </div>
   </div>
   <div class="menu-foot">
     <div class="menu-foot-links">
-      <a href="blog/index.html">Blog</a>
+      <a href="blog/">Blog</a>
+      <a href="guia-reservas-diretas.html">Guia de reservas diretas</a>
+      <a href="agencia-marketing-hoteleiro.html">Agência de marketing hoteleiro</a>
       <a href="https://komplexa-pricing.vercel.app/f/komplexaconsultoria?utm_source=komplexahoteis&amp;utm_medium=site&amp;utm_content=guia-reservas-diretas-menu" target="_blank" rel="noopener">Agendar conversa <span class="ext">↗</span></a>
     </div>
     <div class="menu-foot-social">
@@ -224,11 +236,11 @@ if(document.prerendering){document.addEventListener('prerenderingchange',go,{onc
 <!-- ============ GUIA ============ -->
 <section class="post-hero">
   <div class="wrap"><div class="post-wrap">
-    <nav class="crumbs" aria-label="Navegação"><a href="index.html">Início</a><span>/</span><span>Guia de reservas diretas</span></nav>
+    <nav class="crumbs" aria-label="Navegação"><a href="./">Início</a><span>/</span><span>Guia de reservas diretas</span></nav>
     <span class="overline">Guia completo</span>
     <h1 class="t-display">Reservas diretas para hotéis e pousadas: o guia completo</h1>
     <p class="post-lead">O que um hotel ou pousada precisa ter, e em que ordem, para vender mais pelo próprio site e WhatsApp e depender menos das OTAs. Com links para o aprofundamento de cada etapa.</p>
-    <div class="post-meta"><span>Setembro 2026</span><span>7 min de leitura</span><span>Por <a href="igor-salomao.html">Igor Salomão</a></span></div>
+    <div class="post-meta"><span>Setembro 2026</span><span>Atualizado em outubro de 2026</span><span>10 min de leitura</span><span>Por <a href="igor-salomao.html">Igor Salomão</a></span></div>
   </div></div>
 </section>
 
@@ -239,7 +251,7 @@ if(document.prerendering){document.addEventListener('prerenderingchange',go,{onc
 
 <h2 id="o-que-e">O que é reserva direta e por que ela pesa mais em 2026</h2>
 <p>Reserva direta é toda reserva que chega ao hotel sem passar por uma agência online (OTA) como Booking.com ou Expedia: pelo site com motor de reservas, pelo WhatsApp, pelo telefone ou no balcão. Nela o hotel não paga comissão de intermediário e fica com o dado do hóspede, que pode ser usado para trazê-lo de volta.</p>
-<p>Em 2026 essa diferença ficou maior. Desde 1º de julho, a <strong>comissão preferencial do Booking.com no Brasil é de 18%</strong>, acima dos 10% a 15% praticados antes (<a href="https://www.panrotas.com.br/hotelaria/mercado/2026/05/bookingcom-altera-politica-de-comissao-no-brasil-e-gera-preocupacao-na-hotelaria_228875.html" target="_blank" rel="noopener">Panrotas</a>). E o canal pesa: o Booking é usado por cerca de 89% dos hotéis independentes, as OTAs respondem por mais da metade das reservas online e muitas pousadas pequenas concentram de 80% a 100% do inventário num único canal. Cada reserva que migra para o direto devolve a comissão para a margem. <a href="blog/post-comissao-booking-18.html">Entenda o que mudou na comissão do Booking</a>.</p>
+<p>Em 2026 essa diferença ficou maior. Desde 1º de julho, a <strong>comissão preferencial do Booking.com no Brasil é de 18%</strong>, acima da faixa de 10% a 15% que a Panrotas descreve como histórica, conforme o tipo de acordo (<a href="https://www.panrotas.com.br/hotelaria/mercado/2026/05/bookingcom-altera-politica-de-comissao-no-brasil-e-gera-preocupacao-na-hotelaria_228875.html" target="_blank" rel="noopener">Panrotas, 26/05/2026</a>); o percentual efetivo depende do contrato. A mudança foi levada ao Cade por entidades do setor em junho; este guia não afirma desfecho (<a href="blog/post-comissao-booking-18.html">linha do tempo da comissão do Booking</a>). No <a href="https://blog.hospedin.com/panorama-hoteleiro-2026/" target="_blank" rel="noopener">Panorama Hospedin 2026</a>, levantamento com 235 profissionais do setor, o Booking.com era usado por 89% dos empreendimentos. Segundo fontes ouvidas pela Panrotas (<a href="https://www.panrotas.com.br/hotelaria/distribuicao/2026/07/bookingcom-implementa-nova-comissao-de-18-e-passa-a-impactar-ganhos-da-hotelaria_229880.html" target="_blank" rel="noopener">01/07/2026</a>), muitos empreendimentos chegam a concentrar de 80% a 100% do inventário num único canal, o Booking.com. Cada reserva que migra para o direto devolve a comissão para a margem.</p>
 
 <h2 id="nao-e-sair-do-booking">Vender direto não é sair do Booking</h2>
 <p>O erro mais caro é cortar a OTA antes de o canal direto estar pronto. A OTA continua sendo vitrine e volume, principalmente para quem ainda não tem público próprio. O caminho que protege a ocupação é construir o direto enquanto a OTA segura a casa e mudar a proporção mês a mês, reduzindo a dependência só quando o direto provar que sustenta aquela fatia.</p>
@@ -247,7 +259,7 @@ if(document.prerendering){document.addEventListener('prerenderingchange',go,{onc
 
 <h2 id="as-pecas">As cinco peças do canal direto</h2>
 <h3>1. Motor de reservas</h3>
-<p>É a base. Sem ele, o hóspede não consegue ver disponibilidade, pagar e confirmar a reserva no seu site a qualquer hora, e todo o tráfego que você gera escorre de volta para a OTA. No Panorama Hospedin 2026, que ouviu 235 meios de hospedagem, só 46% tinham motor de reservas e cerca de um terço ainda controlava as reservas em planilha. Veja <a href="blog/post-motor-de-reservas.html">como escolher um motor de reservas</a>.</p>
+<p>É a base. Sem ele, o hóspede não consegue ver disponibilidade, pagar e confirmar a reserva no seu site a qualquer hora, e todo o tráfego que você gera escorre de volta para a OTA. No <a href="https://blog.hospedin.com/panorama-hoteleiro-2026/" target="_blank" rel="noopener">Panorama Hospedin 2026</a>, levantamento com 235 profissionais do setor, 46% dos respondentes usavam motor de reservas e um terço ainda dependia de controles manuais ou planilhas. Veja <a href="blog/post-motor-de-reservas.html">como escolher um motor de reservas</a>.</p>
 <h3>2. Site que converte</h3>
 <p>Site bonito não basta. Ele precisa levar o hóspede da home ao checkout pelo caminho mais curto, funcionar primeiro no celular, deixar claro o benefício de reservar direto e registrar cada passo (visita, busca de datas, checkout e reserva) para que os anúncios aprendam com quem reserva de verdade. É por isso que <a href="blog/post-funil.html">campanhas isoladas não funcionam para hotéis</a>.</p>
 <h3>3. Anúncios que trazem o hóspede certo</h3>
@@ -261,8 +273,40 @@ if(document.prerendering){document.addEventListener('prerenderingchange',go,{onc
 <p>Curtida, alcance e até clique enganam. O número que importa é a reserva que entrou no PMS do hotel e quanto ela custou. Com isso você enxerga o custo por reserva de cada canal e o RevPAR líquido, que desconta a comissão de cada canal e mostra quanto cada quarto disponível rendeu de fato. Entenda <a href="blog/post-revpar.html">por que o RevPAR vale mais que a ocupação</a>.</p>
 <p>A base de hóspedes que o canal direto constrói também vira receita: reativar quem já ficou custa muito menos do que conquistar alguém novo. Veja <a href="blog/post-ltv.html">o que é LTV em hotéis</a>.</p>
 
+<h2 id="custo">Quanto custa uma reserva direta</h2>
+<p><strong>Custo por reserva direta = (mídia + mensalidade ou taxa do motor + custo de atendimento + ferramentas) ÷ reservas diretas confirmadas no PMS no período.</strong> Compare com a comissão que a mesma reserva pagaria na OTA: numa reserva de R$ 800 (2 diárias de R$ 400), a comissão de 18% é R$ 144. Se o custo por reserva direta do seu hotel, calculado pela fórmula, ficar abaixo desse valor, a reserva direta devolve margem; se ficar acima, o problema está no funil, não no canal.</p>
+
+<h2 id="kpis">Indicadores do canal direto</h2>
+<p>Seis números mostram se o canal direto está crescendo de forma saudável. Para cada um, a definição e como medir:</p>
+<ul>
+<li><strong>% de reservas diretas:</strong> reservas diretas ÷ reservas totais no PMS, por mês.</li>
+<li><strong>Custo por reserva direta:</strong> a fórmula da seção anterior.</li>
+<li><strong>Diária média direta x OTA:</strong> receita ÷ diárias vendidas de cada canal.</li>
+<li><strong>Conversão do site:</strong> reservas no motor ÷ visitas, com rastreamento da visita até a reserva.</li>
+<li><strong>Reservas via WhatsApp:</strong> conversas que viraram reserva ÷ conversas, com a origem registrada no CRM.</li>
+<li><strong>Taxa de retorno:</strong> hóspedes que voltaram em 12 meses ÷ base de hóspedes.</li>
+</ul>
+<p>Some a eles o <a href="blog/post-revpar.html">RevPAR líquido</a>, que desconta a comissão de cada canal. Não há meta universal: defina a meta a partir da linha de base dos últimos 12 meses do seu PMS.</p>
+
+<h2 id="plano">Plano de 30, 60 e 90 dias</h2>
+<ul>
+<li><strong>Dias 1 a 30:</strong> medir a linha de base (reservas por canal nos últimos 12 meses, no PMS), conferir a paridade, checar o motor e o rastreamento e passar as contas de anúncio para o nome do hotel.</li>
+<li><strong>Dias 31 a 60:</strong> ativar o Google (marca e destino; <a href="blog/post-google-hotel-ads.html">Google Hotel Ads</a> se o motor integrar), a Meta com remarketing, o script de WhatsApp com origem registrada e uma vantagem clara para quem reserva direto.</li>
+<li><strong>Dias 61 a 90:</strong> régua de reativação de hóspedes, <a href="blog/post-semana.html">ofertas para ocupar a semana</a>, revisão mensal dos indicadores e só então a decisão de reduzir os programas pagos do Booking, se o direto sustentar aquela fatia.</li>
+</ul>
+
+<h2 id="erros">Erros comuns ao montar o canal direto</h2>
+<ul>
+<li>Cortar a OTA antes de o direto estar pronto. O caminho está em <a href="blog/post-ota.html">reduzir a dependência de OTAs</a> por etapas.</li>
+<li>Anunciar sem motor de reservas integrado.</li>
+<li>Medir por clique e curtida em vez de reserva no PMS.</li>
+<li>Deixar a tarifa direta mais cara que a da OTA.</li>
+<li>Manter a conta de anúncio no nome da agência.</li>
+<li>Atender no WhatsApp sem registrar a origem da reserva.</li>
+</ul>
+
 <h2 id="ia">Aparecer quando o hóspede pergunta para uma IA</h2>
-<p>O hóspede começou a pedir recomendações ao ChatGPT, ao Gemini e ao Perplexity, e as plataformas do setor estão se conectando a esses assistentes: a SiteMinder, por exemplo, ligou cerca de 53 mil hotéis ao ChatGPT. Para ser citado, o hotel precisa de informações claras, consistentes e fáceis de ler por máquinas: conteúdo que responde perguntas reais, dados estruturados e as mesmas informações em todos os lugares onde aparece. Leia <a href="blog/post-aeo-ia-busca.html">o que é AEO e como aparecer no ChatGPT</a>.</p>
+<p>O hóspede começou a pedir recomendações ao ChatGPT, ao Gemini e ao Perplexity, e as plataformas do setor estão se conectando a esses assistentes: a SiteMinder anunciou em abril de 2026 que está estendendo seus cerca de 53 mil hotéis a ferramentas de reserva por IA, como ChatGPT e Claude (<a href="https://skift.com/2026/04/15/siteminder-hotels-ai-discovery-directbooker/" target="_blank" rel="noopener">Skift, 15/04/2026</a>). Para ser citado, o hotel precisa de informações claras, consistentes e fáceis de ler por máquinas: conteúdo que responde perguntas reais, dados estruturados e as mesmas informações em todos os lugares onde aparece. Leia <a href="blog/post-aeo-ia-busca.html">o que é AEO e como aparecer no ChatGPT</a>.</p>
 
 <h2 id="por-onde-comecar">Por onde começar: a ordem que protege a margem</h2>
 <ol>
@@ -283,7 +327,7 @@ if(document.prerendering){document.addEventListener('prerenderingchange',go,{onc
 <li><b>3,4x</b><span><strong>Solar Dona Dora</strong> (pousada): de faturamento na baixa temporada, de R$ 12,4 mil para R$ 42,5 mil.</span></li>
 <li><b>60%+</b><span><strong>Sunsmart</strong> (hotel): das reservas agora são diretas; antes eram 30%.</span></li>
 </ul>
-<p><a href="index.html#cases">Veja os cases na página inicial</a>.</p>
+<p><a href="./#cases">Veja os cases na página inicial</a>.</p>
 
 <h2 id="temas">Aprofunde cada etapa</h2>
 <div class="temas">
@@ -315,6 +359,9 @@ if(document.prerendering){document.addEventListener('prerenderingchange',go,{onc
 </ul>
 </div>
 
+<h2 id="contratar">Quando faz sentido contratar uma agência</h2>
+<p>Se a decisão for contratar ajuda, a <a href="agencia-marketing-hoteleiro.html">agência de marketing hoteleiro</a> da Komplexa opera as cinco peças deste guia com o resultado conferido no PMS, e as <a href="blog/post-como-escolher-agencia.html">8 perguntas para escolher uma agência de marketing para hotel ou pousada</a> valem para qualquer proposta.</p>
+
 <h2 id="faq">Perguntas frequentes</h2>
 <div class="faq-list">
 <details class="faq-item">
@@ -323,7 +370,11 @@ if(document.prerendering){document.addEventListener('prerenderingchange',go,{onc
 </details>
 <details class="faq-item">
 <summary>Quanto o Booking cobra de comissão em 2026?</summary>
-<div class="faq-answer"><p>No Brasil, a comissão preferencial do Booking.com é de 18% desde 1º de julho de 2026. Antes, a faixa praticada pela maioria das propriedades era de 10% a 15%. O percentual exato depende do programa de visibilidade que o hotel contrata na plataforma.</p></div>
+<div class="faq-answer"><p>Desde 1º de julho de 2026, a comissão preferencial do Booking.com no Brasil é de 18%. Antes, segundo a Panrotas, as comissões da plataforma historicamente variavam entre 10% e 15%, conforme o tipo de acordo; na representação ao Cade, as entidades descrevem a taxa do programa Preferencial subindo de 15% ou 16% para 18%. O percentual exato depende do contrato e do programa de visibilidade que o hotel contrata na plataforma.</p></div>
+</details>
+<details class="faq-item">
+<summary>Quanto custa uma reserva direta?</summary>
+<div class="faq-answer"><p>Some mídia, mensalidade ou taxa do motor, custo de atendimento e ferramentas e divida pelas reservas diretas confirmadas no PMS no período. Compare com a comissão que a mesma reserva pagaria na OTA: numa reserva de R$ 800, os 18% do Booking preferencial são R$ 144.</p></div>
 </details>
 <details class="faq-item">
 <summary>Preciso sair do Booking para vender direto?</summary>
@@ -334,6 +385,16 @@ if(document.prerendering){document.addEventListener('prerenderingchange',go,{onc
 <div class="faq-answer"><p>Pelo motor de reservas e por um site que leve o hóspede ao checkout em poucos cliques, com rastreamento. Sem essa base, qualquer anúncio traz visita que termina reservando na OTA. Depois vêm os anúncios no Google, para quem já procura hospedagem no destino, e o atendimento pelo WhatsApp com processo para fechar a venda.</p></div>
 </details>
 </div>
+
+<h2 id="fontes">Fontes</h2>
+<ul>
+<li><a href="https://www.panrotas.com.br/hotelaria/mercado/2026/05/bookingcom-altera-politica-de-comissao-no-brasil-e-gera-preocupacao-na-hotelaria_228875.html" target="_blank" rel="noopener">Panrotas, 26/05/2026: Booking.com altera política de comissão no Brasil</a></li>
+<li><a href="https://www.panrotas.com.br/hotelaria/distribuicao/2026/06/hotelaria-nacional-aciona-cade-contra-bookingcom-por-aumento-de-comissoes-veja-detalhes_229688.html" target="_blank" rel="noopener">Panrotas, 23/06/2026: hotelaria nacional aciona o Cade contra o Booking.com</a></li>
+<li><a href="https://brasilturis.com.br/2026/06/24/entidades-acionam-cade-contra-aumento-de-comissao-da-booking-com/" target="_blank" rel="noopener">Brasilturis, 24/06/2026: entidades acionam o Cade contra o aumento de comissão do Booking.com</a></li>
+<li><a href="https://www.panrotas.com.br/hotelaria/distribuicao/2026/07/bookingcom-implementa-nova-comissao-de-18-e-passa-a-impactar-ganhos-da-hotelaria_229880.html" target="_blank" rel="noopener">Panrotas, 01/07/2026: Booking.com implementa nova comissão de 18%</a></li>
+<li><a href="https://blog.hospedin.com/panorama-hoteleiro-2026/" target="_blank" rel="noopener">Panorama Hospedin 2026</a>, com os números publicados pela <a href="https://hoteliernews.com.br/hotelaria-independente-encara-desafios-em-2026/" target="_blank" rel="noopener">Hotelier News</a></li>
+<li><a href="https://skift.com/2026/04/15/siteminder-hotels-ai-discovery-directbooker/" target="_blank" rel="noopener">Skift, 15/04/2026: SiteMinder e a descoberta de hotéis por IA</a></li>
+</ul>
   </article>
   <aside class="post-side">
     <div class="side-card"><h4>Neste guia</h4>
@@ -341,18 +402,24 @@ if(document.prerendering){document.addEventListener('prerenderingchange',go,{onc
 <a href="#nao-e-sair-do-booking" class="toc-link">Vender direto não é sair do Booking</a>
 <a href="#as-pecas" class="toc-link">As cinco peças do canal direto</a>
 <a href="#medir" class="toc-link">Medir no PMS</a>
+<a href="#custo" class="toc-link">Custo da reserva direta</a>
+<a href="#kpis" class="toc-link">Indicadores</a>
+<a href="#plano" class="toc-link">Plano de 30, 60 e 90 dias</a>
+<a href="#erros" class="toc-link">Erros comuns</a>
 <a href="#ia" class="toc-link">Aparecer nas IAs</a>
 <a href="#por-onde-comecar" class="toc-link">Por onde começar</a>
 <a href="#resultados" class="toc-link">Resultados</a>
 <a href="#temas" class="toc-link">Aprofunde cada etapa</a>
+<a href="#contratar" class="toc-link">Contratar uma agência</a>
 <a href="#faq" class="toc-link">Perguntas frequentes</a>
+<a href="#fontes" class="toc-link">Fontes</a>
     </div>
     <div class="side-cta"><h4>Para o seu hotel</h4>
       <p>Um plano de aquisição desenhado a partir da sua operação, medido no PMS.</p>
-      <a href="https://komplexa-pricing.vercel.app/f/komplexaconsultoria?utm_source=komplexahoteis&amp;utm_medium=site&amp;utm_content=guia-reservas-diretas" target="_blank" rel="noopener" class="btn-sage">Agendar conversa</a>
+      <a href="https://komplexa-pricing.vercel.app/f/komplexaconsultoria?utm_source=komplexahoteis&amp;utm_medium=site&amp;utm_content=guia-reservas-diretas-lateral" target="_blank" rel="noopener" class="btn-sage">Agendar conversa</a>
     </div>
     <div class="side-card"><h4>Quem escreve</h4>
-      <div class="autor-side"><img src="assets/img/igor.png" alt="Igor Salomão" loading="lazy"><p><a href="igor-salomao.html">Igor Salomão</a>, fundador da Komplexa Hotéis.</p></div>
+      <div class="autor-side"><img src="assets/img/igor.png" alt="Igor Salomão" loading="lazy" width="400" height="400"><p><a href="igor-salomao.html">Igor Salomão</a>, fundador da Komplexa Hotéis.</p></div>
     </div>
   </aside>
 </div></div>
@@ -362,7 +429,7 @@ if(document.prerendering){document.addEventListener('prerenderingchange',go,{onc
     <div class="news-box">
       <span class="overline rv">Carta do fundador</span>
       <h2 class="t-display rv">Um convite para conhecer <em class="gi">o nosso time.</em></h2>
-      <img class="carta-foto rv" src="assets/img/igor.png" alt="Igor Salomão, fundador da Komplexa">
+      <img class="carta-foto rv" src="assets/img/igor.png" alt="Igor Salomão, fundador da Komplexa" width="400" height="400" loading="lazy">
       <div class="carta rv">
         <p>Sou o Igor Salomão, fundador da Komplexa. Se você chegou até aqui, quero te fazer um convite: uma conversa comigo e com o time sobre o seu hotel.</p>
         <p>Nela, queremos entender de verdade como a sua operação funciona hoje: de onde vêm as reservas, como o hóspede chega até você e onde você sente que dá para crescer.</p>
@@ -394,15 +461,15 @@ if(document.prerendering){document.addEventListener('prerenderingchange',go,{onc
       </div>
       <div class="ft-col">
         <h4>A solução</h4>
-        <a href="index.html#metodo">O método</a>
-        <a href="index.html#cases">Cases</a>
-        <a href="index.html#sistema">O sistema</a>
-        <a href="index.html#ia">IA aplicada</a>
-        <a href="index.html#frentes">Frentes de receita</a>
+        <a href="./#metodo">O método</a>
+        <a href="./#cases">Cases</a>
+        <a href="./#sistema">O sistema</a>
+        <a href="./#ia">IA aplicada</a>
+        <a href="./#frentes">Frentes de receita</a>
       </div>
       <div class="ft-col">
         <h4>Conteúdo</h4>
-        <a href="blog/index.html">Blog</a>
+        <a href="blog/">Blog</a>
         <a href="blog/post-comissao-booking-18.html">Booking a 18%</a>
         <a href="blog/post-motor-de-reservas.html">Motor de reservas</a>
         <a href="blog/post-google-hotel-ads.html">Google Hotel Ads</a>
@@ -418,28 +485,28 @@ if(document.prerendering){document.addEventListener('prerenderingchange',go,{onc
     <div class="selos" aria-label="Integrações e parceiros de tecnologia">
       <div class="selos-track">
         <!-- lista repetida 2x para o loop contínuo do marquee -->
-        <div class="selo"><img src="assets/img/omnibees.png" alt="Omnibees"></div>
-        <div class="selo"><img src="assets/img/hsystem.png" alt="HSystem"></div>
-        <div class="selo"><img src="assets/img/asksuite.jpeg" alt="Asksuite"></div>
-        <div class="selo"><img src="assets/img/erbon.png" alt="Erbon"></div>
-        <div class="selo"><img src="assets/img/bitz.png" alt="Bitz"></div>
-        <div class="selo"><img src="assets/img/foco.png" alt="Foco"></div>
-        <div class="selo"><img src="assets/img/omnibees.png" alt="Omnibees"></div>
-        <div class="selo"><img src="assets/img/hsystem.png" alt="HSystem"></div>
-        <div class="selo"><img src="assets/img/asksuite.jpeg" alt="Asksuite"></div>
-        <div class="selo"><img src="assets/img/erbon.png" alt="Erbon"></div>
-        <div class="selo"><img src="assets/img/bitz.png" alt="Bitz"></div>
-        <div class="selo"><img src="assets/img/foco.png" alt="Foco"></div>
+        <div class="selo"><img src="assets/img/omnibees.png" alt="Omnibees" width="168" height="96" loading="lazy"></div>
+        <div class="selo"><img src="assets/img/hsystem.png" alt="HSystem" width="428" height="118" loading="lazy"></div>
+        <div class="selo"><img src="assets/img/asksuite.jpeg" alt="Asksuite" width="200" height="200" loading="lazy"></div>
+        <div class="selo"><img src="assets/img/erbon.png" alt="Erbon" width="301" height="456" loading="lazy"></div>
+        <div class="selo"><img src="assets/img/bitz.png" alt="Bitz" width="492" height="158" loading="lazy"></div>
+        <div class="selo"><img src="assets/img/foco.png" alt="Foco" width="331" height="152" loading="lazy"></div>
+        <div class="selo"><img src="assets/img/omnibees.png" alt="Omnibees" width="168" height="96" loading="lazy"></div>
+        <div class="selo"><img src="assets/img/hsystem.png" alt="HSystem" width="428" height="118" loading="lazy"></div>
+        <div class="selo"><img src="assets/img/asksuite.jpeg" alt="Asksuite" width="200" height="200" loading="lazy"></div>
+        <div class="selo"><img src="assets/img/erbon.png" alt="Erbon" width="301" height="456" loading="lazy"></div>
+        <div class="selo"><img src="assets/img/bitz.png" alt="Bitz" width="492" height="158" loading="lazy"></div>
+        <div class="selo"><img src="assets/img/foco.png" alt="Foco" width="331" height="152" loading="lazy"></div>
       </div>
     </div>
     <div class="ft-credit">© 2026 Komplexa Hotéis · Arquitetura de crescimento para reservas diretas · komplexahoteis.com</div>
   </div>
 </footer>
 
-<script src="assets/js/vendor/lenis.min.js"></script>
-<script src="assets/js/vendor/gsap.min.js"></script>
-<script src="assets/js/vendor/ScrollTrigger.min.js"></script>
-<script src="assets/js/main.js"></script>
+<script src="assets/js/vendor/lenis.min.js" defer></script>
+<script src="assets/js/vendor/gsap.min.js" defer></script>
+<script src="assets/js/vendor/ScrollTrigger.min.js" defer></script>
+<script src="assets/js/main.js" defer></script>
 
 </body>
 </html>

@@ -7,34 +7,37 @@
 <script>
 !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
 n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
-n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
-t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script',
+n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];
+/* fbevents.js entra depois do load, com a página ociosa; init e PageView já ficam na fila do fbq */
+var go=function(){t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)},
+idle=function(){f.requestIdleCallback?f.requestIdleCallback(go,{timeout:2000}):setTimeout(go,200)};
+b.readyState==='complete'?idle():f.addEventListener('load',idle,{once:true})}(window,document,'script',
 'https://connect.facebook.net/en_US/fbevents.js');
 (function(){var go=function(){fbq('init','1364660957915622');fbq('track','PageView');};
 if(document.prerendering){document.addEventListener('prerenderingchange',go,{once:true});}else{go();}})();
 </script>
 <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=1364660957915622&ev=PageView&noscript=1"></noscript>
 <!-- /Meta Pixel -->
-<script>document.documentElement.className+=" js";setTimeout(function(){if(!window.__animReady)document.documentElement.className+=" no-anim"},2500)</script>
-<title>Por que campanhas isoladas não funcionam para hotéis — Komplexa Hotéis</title>
-<meta content="Uma campanha de Meta Ads sem recuperação de carrinho, site otimizado e CRM é um investimento pela metade. Por que o funil completo é o único modelo que escala." name="description"/>
+<script>document.documentElement.className+=" js";setTimeout(function(){if(!window.__animReady)document.documentElement.className+=" no-anim"},1200)</script>
+<title>Por que campanhas isoladas não vendem para hotéis</title>
+<meta content="Anúncio sozinho só traz visita. Veja por que campanhas isoladas não vendem para hotéis e como site, motor, remarketing e CRM fecham a reserva." name="description"/>
 <meta content="Igor Salomão" name="author"/>
-<meta content="index, follow" name="robots"/>
+<meta content="index, follow, max-image-preview:large, max-snippet:-1" name="robots"/>
 <link href="https://komplexahoteis.com/blog/post-funil.html" rel="canonical"/>
 <meta content="article" property="og:type"/>
 <meta content="https://komplexahoteis.com/blog/post-funil.html" property="og:url"/>
-<meta content="Por que campanhas isoladas não funcionam para hotéis" property="og:title"/>
-<meta content="Campanha sem funil é um investimento pela metade. Entenda por que." property="og:description"/>
+<meta content="Por que campanhas isoladas não vendem para hotéis" property="og:title"/>
+<meta content="Anúncio sozinho só traz visita. Veja por que campanhas isoladas não vendem para hotéis e como site, motor, remarketing e CRM fecham a reserva." property="og:description"/>
 <meta content="https://komplexahoteis.com/assets/img/og/post-funil.jpg" property="og:image"/>
 <meta content="pt_BR" property="og:locale"/>
 <meta content="Komplexa Hotéis" property="og:site_name"/>
 <meta content="2025-03-20" property="article:published_time"/>
 <meta content="Igor Salomão" property="article:author"/>
 <meta content="Conversão" property="article:section"/>
-<meta content="2026-09-29" property="article:modified_time"/>
+<meta content="2026-10-06" property="article:modified_time"/>
 <meta content="summary_large_image" name="twitter:card"/>
-<meta content="Por que campanhas isoladas não funcionam para hotéis" name="twitter:title"/>
-<meta content="Campanha sem funil é um investimento pela metade. Entenda por que." name="twitter:description"/>
+<meta content="Por que campanhas isoladas não vendem para hotéis" name="twitter:title"/>
+<meta content="Anúncio sozinho só traz visita. Veja por que campanhas isoladas não vendem para hotéis e como site, motor, remarketing e CRM fecham a reserva." name="twitter:description"/>
 <meta content="https://komplexahoteis.com/assets/img/og/post-funil.jpg" name="twitter:image"/>
 <script type="application/ld+json">
 [
@@ -42,10 +45,10 @@ if(document.prerendering){document.addEventListener('prerenderingchange',go,{onc
     "@context": "https://schema.org",
     "@type": "BlogPosting",
     "headline": "Por que campanhas isoladas não funcionam para hotéis",
-    "description": "Uma campanha de Meta Ads sem recuperação de carrinho, site otimizado e CRM é um investimento pela metade.",
+    "description": "Anúncio sozinho só traz visita. Veja por que campanhas isoladas não vendem para hotéis e como site, motor, remarketing e CRM fecham a reserva.",
     "url": "https://komplexahoteis.com/blog/post-funil.html",
     "datePublished": "2025-03-20",
-    "dateModified": "2026-09-29",
+    "dateModified": "2026-10-06",
     "inLanguage": "pt-BR",
     "author": {
       "@type": "Person",
@@ -61,7 +64,7 @@ if(document.prerendering){document.addEventListener('prerenderingchange',go,{onc
       "url": "https://komplexahoteis.com/",
       "logo": {
         "@type": "ImageObject",
-        "url": "https://komplexahoteis.com/assets/logo.svg"
+        "url": "https://komplexahoteis.com/assets/img/icon-512.png", "width": 512, "height": 512
       }
     },
     "mainEntityOfPage": {
@@ -106,7 +109,7 @@ if(document.prerendering){document.addEventListener('prerenderingchange',go,{onc
         "name": "Por que meus anúncios geram cliques mas não geram reservas?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Porque o anúncio é só a porta de entrada. Dos cliques que chegam ao site, apenas uma fração busca disponibilidade, uma fração menor chega ao checkout e boa parte dessas pessoas abandona. Se não existe nada para resgatar quem saiu, o hotel paga pelo tráfego três ou quatro vezes e converte uma. O custo por reserva fica artificialmente alto e a campanha parece não funcionar, quando o problema está no que vem depois dela."
+          "text": "Porque o anúncio é só a porta de entrada. Dos cliques que chegam ao site, apenas uma fração busca disponibilidade, uma fração menor chega ao checkout e parte dessas pessoas abandona. Se não existe nada para resgatar quem saiu, o hotel paga pelo clique de quem foi embora sem reservar. O custo por reserva sobe e a campanha parece não funcionar, quando o problema está no que vem depois dela."
         }
       },
       {
@@ -114,7 +117,7 @@ if(document.prerendering){document.addEventListener('prerenderingchange',go,{onc
         "name": "Vale a pena trocar de agência quando a campanha do hotel não traz reservas?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Antes de trocar, vale checar o que existe ao redor da campanha. Na maioria dos casos, o anúncio não é o problema: é o único elemento presente. Confira se há site otimizado ligado ao motor de reservas, recuperação de carrinho, remarketing, atendimento com CRM e régua de pós-venda. Se essas camadas faltam, a campanha está sustentando sozinha uma máquina que precisa de várias engrenagens trabalhando juntas."
+          "text": "Antes de trocar, vale checar o que existe ao redor da campanha. Muitas vezes o anúncio não é o problema: é o único elemento presente. Confira se há site otimizado ligado ao motor de reservas, recuperação de carrinho, remarketing, atendimento com CRM e régua de pós-venda. Se essas camadas faltam, a campanha está sustentando sozinha uma máquina que precisa de várias engrenagens trabalhando juntas."
         }
       },
       {
@@ -122,7 +125,7 @@ if(document.prerendering){document.addEventListener('prerenderingchange',go,{onc
         "name": "O que o site de um hotel precisa ter para transformar visitas em reservas?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "O site precisa de caminho curto até o motor de reservas, prova social visível, fotos que vendem, telefone e WhatsApp à mão e uma versão mobile impecável. Ser bonito não basta: cada segundo e cada clique a mais derrubam a conversão. Como os elementos do funil se multiplicam, um site que converte 30% melhor faz cada real investido em mídia render mais."
+          "text": "O site precisa de caminho curto até o motor de reservas, prova social visível, fotos que vendem, telefone e WhatsApp à mão e uma versão mobile impecável. Ser bonito não basta: cada segundo e cada clique a mais derrubam a conversão. Como os elementos do funil se multiplicam, um site que converte mais faz cada real investido em mídia render mais."
         }
       },
       {
@@ -130,7 +133,7 @@ if(document.prerendering){document.addEventListener('prerenderingchange',go,{onc
         "name": "Como recuperar hóspedes que abandonaram a reserva no checkout?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Quem chegou ao checkout e não fechou é o lead mais quente que existe. A recuperação combina WhatsApp e e-mail automatizados, disparados nas primeiras horas após o abandono, e resgata um percentual significativo dessas reservas sem custo de mídia adicional. Para quem visitou o site mas não chegou ao checkout, o complemento é o remarketing, com criativo diferente e no momento certo."
+          "text": "Quem chegou ao checkout e não fechou é o lead mais quente que existe. A recuperação combina WhatsApp e e-mail automatizados, disparados nas primeiras horas após o abandono, e resgata parte dessas reservas sem custo de mídia adicional. Para quem visitou o site mas não chegou ao checkout, o complemento é o remarketing, com criativo diferente e no momento certo."
         }
       }
     ]
@@ -141,9 +144,8 @@ if(document.prerendering){document.addEventListener('prerenderingchange',go,{onc
 <link rel="icon" type="image/svg+xml" href="../assets/img/favicon.svg">
 <link rel="apple-touch-icon" href="../assets/img/apple-touch-icon.png">
 <link rel="manifest" href="../site.webmanifest">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="preload" href="../assets/fonts/jost-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="../assets/fonts/cormorant-latin.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="../assets/css/style.css">
 <style>
 .post-resumo{border-left:3px solid #1099E9;background:rgba(16,153,233,.06);border-radius:0 14px 14px 0;padding:1.2rem 1.4rem;margin:0 0 2.2rem}
@@ -163,7 +165,7 @@ if(document.prerendering){document.addEventListener('prerenderingchange',go,{onc
   </div>
 </header>
 
-<a href="../index.html" class="logo-fix dark" id="logoFix" aria-label="Komplexa Hotéis">
+<a href="../" class="logo-fix dark" id="logoFix" aria-label="Komplexa Hotéis">
   <svg viewBox="0 0 100 97" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
     <path d="M45.8247 36.6514C47.5271 36.6514 49.1676 37.1817 50.5604 38.211L89.22 66.5651C90.9533 67.844 92.0985 69.7156 92.439 71.8679C92.7795 74.0202 92.2533 76.1413 90.9843 77.8881C89.4366 80.0092 87.0842 81.2257 84.4533 81.2257C81.8223 81.2257 81.1104 80.6954 79.7176 79.6661L41.0581 51.3119C39.3247 50.033 38.1795 48.1615 37.839 46.0092C37.4985 43.8569 38.0247 41.7358 39.2938 39.989C40.8414 37.8679 43.1938 36.6514 45.8247 36.6514ZM45.8247 29.1651C41.0581 29.1651 36.3223 31.3798 33.289 35.5908C28.2747 42.5468 29.7914 52.3101 36.6938 57.3633L75.3533 85.7174C78.1081 87.745 81.2962 88.7119 84.4533 88.7119C89.22 88.7119 93.9557 86.4973 96.989 82.2862C102.003 75.3303 100.487 65.567 93.5842 60.5138L54.9247 32.1596C52.17 30.1321 48.9819 29.1651 45.8247 29.1651Z"/>
     <path d="M69.1938 7.48624C70.8961 7.48624 72.5366 8.01651 73.9295 9.04587L79.47 13.1009C83.0604 15.7211 83.8652 20.8055 81.2342 24.4239L76.4985 30.9743L64.4581 22.1468C60.8676 19.5266 60.0628 14.4422 62.6938 10.8239C64.2414 8.70275 66.5938 7.48624 69.2247 7.48624M69.1938 0C64.4271 0 59.6914 2.21468 56.658 6.42569C51.6438 13.3816 53.1604 23.145 60.0628 28.1982L78.108 41.4239L87.2081 28.822C92.2223 21.8661 90.7057 12.1027 83.8033 7.04954L78.2628 2.99449C75.508 0.966969 72.32 0 69.1628 0H69.1938Z"/>
@@ -178,7 +180,7 @@ if(document.prerendering){document.addEventListener('prerenderingchange',go,{onc
     Oi! Sou o Igor, fundador<br>da Komplexa. Quer o plano<br>do seu hotel?
   </div>
   <button class="conc-avatar" onclick="openConcierge()" aria-label="Falar com a Komplexa">
-    <img src="../assets/img/igor.png" alt="Igor Salomão, fundador da Komplexa"><span class="conc-dot"></span>
+    <img src="../assets/img/igor.png" alt="Igor Salomão, fundador da Komplexa" width="400" height="400"><span class="conc-dot"></span>
   </button>
 </div>
 
@@ -186,18 +188,20 @@ if(document.prerendering){document.addEventListener('prerenderingchange',go,{onc
 <nav class="menu" id="menu">
   <div class="menu-grid">
     <div class="menu-list" data-lenis-prevent>
-      <a href="../index.html#metodo" class="active">O método</a>
-      <a href="../index.html#cases">Cases</a>
-      <a href="../index.html#site">O site entregue</a>
-      <a href="../index.html#sistema">O sistema</a>
-      <a href="../index.html#frentes">Frentes de receita</a>
-      <a href="../index.html#presenca">Quem somos</a>
-      <a href="../index.html#contato">Falar com a Komplexa</a>
+      <a href="../#metodo" class="active">O método</a>
+      <a href="../#cases">Cases</a>
+      <a href="../#site">O site entregue</a>
+      <a href="../#sistema">O sistema</a>
+      <a href="../#frentes">Frentes de receita</a>
+      <a href="../#presenca">Quem somos</a>
+      <a href="../#contato">Falar com a Komplexa</a>
     </div>
   </div>
   <div class="menu-foot">
     <div class="menu-foot-links">
-      <a href="../blog/index.html">Blog</a>
+      <a href="./">Blog</a>
+      <a href="../guia-reservas-diretas.html">Guia de reservas diretas</a>
+      <a href="../agencia-marketing-hoteleiro.html">Agência de marketing hoteleiro</a>
       <a href="https://komplexa-pricing.vercel.app/f/komplexaconsultoria?utm_source=komplexahoteis&amp;utm_medium=site&amp;utm_content=blog-funil-menu" target="_blank" rel="noopener">Agendar conversa <span class="ext">↗</span></a>
     </div>
     <div class="menu-foot-social">
@@ -210,93 +214,119 @@ if(document.prerendering){document.addEventListener('prerenderingchange',go,{onc
 <!-- ============ POST ============ -->
 <section class="post-hero">
   <div class="wrap"><div class="post-wrap">
-    <nav class="crumbs" aria-label="Navegação"><a href="../index.html">Início</a><span>/</span><a href="index.html">Blog</a><span>/</span><span>Conversão</span></nav>
+    <nav class="crumbs" aria-label="Navegação"><a href="../">Início</a><span>/</span><a href="./">Blog</a><span>/</span><span>Conversão</span></nav>
     <span class="overline">Conversão</span>
     <h1 class="t-display">Por que campanhas isoladas não funcionam para hotéis</h1>
-    <p class="post-lead">Uma campanha de Meta Ads sem recuperação de carrinho, site otimizado e CRM é um investimento pela metade. Por que o funil completo é o único modelo que escala.</p>
-    <div class="post-meta"><span>Março 2025</span><span>5 min de leitura</span><span>Por <a href="../igor-salomao.html">Igor Salomão</a></span><span>Atualizado em setembro de 2026</span></div>
+    <p class="post-lead">Anúncio sozinho só traz visita. Veja por que campanhas isoladas não vendem para hotéis e como site, motor, remarketing e CRM fecham a reserva.</p>
+    <div class="post-meta"><span>Março 2025</span><span>6 min de leitura</span><span>Por <a href="../igor-salomao.html">Igor Salomão</a></span><span>Atualizado em outubro de 2026</span></div>
   </div></div>
 </section>
 
 <div class="wrap"><div class="post-layout">
   <article class="post-content">
-<div class="post-resumo"><span class="overline">Resposta rápida</span><p>Campanhas isoladas não funcionam para hotéis porque o anúncio só traz a visita. Quem fecha a reserva é o que vem depois: site otimizado, motor de reservas, recuperação de carrinho, remarketing e CRM. Sem essas camadas, o hotel paga pelo mesmo tráfego três ou quatro vezes, converte uma só e o custo por reserva sobe.</p></div>
-<p>Quase todo hotel que procura a Komplexa já tentou marketing antes. Geralmente foi assim: contratou alguém para "rodar tráfego", investiu uns meses, viu alguns leads chegando — mas não viu reservas suficientes para justificar o investimento.</p>
-<p>O diagnóstico é quase sempre o mesmo. Não foi a campanha que falhou. Foi a <strong>arquitetura ao redor dela</strong> que não existia.</p>
+<div class="post-resumo"><span class="overline">Resposta rápida</span><p>Campanhas isoladas não vendem para hotéis porque o anúncio só traz a visita. Quem fecha a reserva é o que vem depois: site otimizado, motor de reservas, recuperação de carrinho, remarketing e CRM. Sem essas camadas, o hotel paga pelo clique de quem foi embora sem reservar e o custo por reserva sobe.</p></div>
+<p>Muitos hotéis que procuram a Komplexa já tentaram marketing antes. O roteiro costuma ser parecido: contrataram alguém para "rodar tráfego", investiram alguns meses, viram contatos chegando, mas não viram reservas suficientes para justificar o investimento. Este artigo aprofunda uma etapa do nosso <a href="../guia-reservas-diretas.html">guia de reservas diretas para hotéis e pousadas</a>: o que precisa existir ao redor do anúncio para ele virar reserva.</p>
+<p>O diagnóstico costuma ser o mesmo. Não foi a campanha que falhou. Foi a <strong>arquitetura ao redor dela</strong> que não existia.</p>
 <div class="highlight-box">
-<p>Anúncio é só a porta de entrada. Quem decide se a venda acontece é o que vem depois: o site, o motor de reservas, o WhatsApp, a recuperação de carrinho, o CRM. Sem isso, o anúncio paga ou ele queima dinheiro.</p>
+<p>Anúncio é só a porta de entrada. Quem decide se a venda acontece é o que vem depois: o site, o motor de reservas, o WhatsApp, a recuperação de carrinho, o CRM. Sem isso, o dinheiro de mídia vira visita que não reserva.</p>
 </div>
 <h2 id="problema">A campanha não vende sozinha</h2>
-<p>Um hotel que investe R$ 10 mil/mês em mídia paga, em média, atrai milhares de cliques no site. Desses, apenas uma fração busca disponibilidade. E desses que buscam, uma fração menor ainda chega ao checkout. E desses que chegam ao checkout, <strong>boa parte abandona</strong>.</p>
-<p>Sem nada para resgatar essas pessoas, o hotel paga pelo tráfego três, quatro vezes — e converte só uma vez. O custo por reserva fica artificialmente alto, e a campanha "não funciona".</p>
+<p>Todo anúncio de hotel percorre o mesmo caminho. O clique leva ao site, só parte dos visitantes busca disponibilidade, só parte dos que buscam chega ao checkout e <strong>parte dos que chegam ao checkout abandona</strong>. Cada etapa perde gente, e a mídia paga o clique de todos eles.</p>
+<p>Sem nada para resgatar essas pessoas, o hotel paga pelo clique de quem foi embora sem reservar. O custo por reserva fica alto, e a campanha "não funciona", quando o problema está no que vem depois dela.</p>
+<h2 id="conta">A conta do funil (exemplo ilustrativo)</h2>
+<p>Duas fórmulas bastam para enxergar o problema. <strong>Conversão do site = reservas ÷ visitas.</strong> <strong>Custo por reserva = investimento em mídia ÷ reservas.</strong></p>
+<p>Valores hipotéticos, não é resultado de cliente: com R$&nbsp;10.000 em mídia e 1.000 visitas, 10 reservas dão conversão de 1% e custo de R$&nbsp;1.000 por reserva. Se o site converter 1,5% das mesmas 1.000 visitas, são 15 reservas e R$&nbsp;666,67 por reserva. A mídia é a mesma; mudou o que vem depois do clique.</p>
+<table>
+<thead><tr><th>Cenário hipotético (R$&nbsp;10.000, 1.000 visitas)</th><th>Reservas</th><th>Custo por reserva</th></tr></thead>
+<tbody>
+<tr><td>Site com conversão de 1%</td><td>10</td><td>R$&nbsp;1.000,00</td></tr>
+<tr><td>Site com conversão de 1,5%</td><td>15</td><td>R$&nbsp;666,67</td></tr>
+</tbody>
+</table>
 <h2 id="ingredientes">Os ingredientes que faltam</h2>
-<p>O que separa uma campanha que rende uma campanha que queima dinheiro são quatro elementos rodando em conjunto:</p>
+<p>O que separa uma campanha que rende de uma campanha que queima dinheiro são quatro elementos rodando em conjunto:</p>
 <h3>1. Site otimizado para conversão</h3>
-<p>Não basta ter um site bonito. Ele precisa ter caminho curto até o motor de reservas, prova social visível, fotos que vendem, telefone/WhatsApp à mão e mobile impecável. Cada segundo a mais e cada clique a mais derruba conversão.</p>
+<p>Não basta ter um site bonito. Ele precisa ter caminho curto até o motor de reservas (veja <a href="post-motor-de-reservas.html">como escolher um motor de reservas</a>), prova social visível, fotos que vendem, telefone e WhatsApp à mão e mobile impecável. Cada segundo a mais e cada clique a mais derrubam a conversão.</p>
 <h3>2. Recuperação de carrinho</h3>
-<p>Quem chegou no checkout e não fechou é o lead mais quente que existe. WhatsApp + e-mail automatizados nas primeiras horas resgatam um percentual significativo dessas reservas — sem custo de mídia adicional.</p>
+<p>Quem chegou ao checkout e não fechou é o lead mais quente que existe. WhatsApp e e-mail automatizados nas primeiras horas resgatam parte dessas reservas, sem custo de mídia adicional.</p>
 <h3>3. Remarketing inteligente</h3>
 <p>Quem visitou o site e não reservou precisa ser impactado de novo, com criativo diferente, no momento certo. Sem remarketing estruturado, o investimento em topo de funil vira ruído.</p>
 <h3>4. CRM e pós-venda</h3>
 <p>Hóspede que já ficou no hotel é o lead mais barato e mais qualificado para a próxima reserva. Sem uma régua de comunicação, o hotel paga mídia para reconquistar gente que já era cliente.</p>
 <h2 id="cadeia">É uma cadeia, não uma soma</h2>
-<p>O ponto central: esses elementos não somam — <strong>multiplicam</strong>. Um site com conversão 30% melhor faz <strong>todo</strong> o investimento de mídia render mais. Recuperação de carrinho funcionando dobra o aproveitamento de cada visita. Remarketing recupera quem o anúncio inicial não converteu.</p>
-<p>Por isso campanha isolada decepciona. Não porque o anúncio é ruim — mas porque ele está sustentando sozinho uma máquina que precisa de várias engrenagens trabalhando juntas.</p>
+<p>O ponto central: esses elementos não somam, <strong>multiplicam</strong>. A conta é uma cadeia de taxas: <strong>reservas = visitas × % que busca datas × % que chega ao checkout × % que fecha a reserva</strong>. Melhorar qualquer uma das taxas aumenta o resultado de todo o resto.</p>
+<p>Um site que converte mais faz <strong>todo</strong> o investimento de mídia render mais, como na conta acima. Recuperação de carrinho funcionando aproveita melhor cada visita. Remarketing recupera quem o anúncio inicial não converteu.</p>
+<p>Por isso campanha isolada decepciona. Não porque o anúncio é ruim, mas porque ele está sustentando sozinho uma máquina que precisa de várias engrenagens trabalhando juntas.</p>
+<h2 id="diagnostico">Como saber qual camada está falhando</h2>
+<p>Antes de culpar o anúncio, meça cada camada separadamente e compare com o histórico do próprio hotel. A tabela mostra o que acompanhar e de onde tirar o dado.</p>
+<table>
+<thead><tr><th>Camada</th><th>O que medir</th><th>Onde</th></tr></thead>
+<tbody>
+<tr><td>Site</td><td>Visitas que buscam datas ÷ visitas; buscas de datas que chegam ao checkout</td><td>Rastreamento do site e do motor</td></tr>
+<tr><td>Motor e checkout</td><td>Checkouts que viram reserva</td><td>Motor de reservas e PMS</td></tr>
+<tr><td>Recuperação</td><td>Abandonos recuperados ÷ abandonos</td><td>WhatsApp e e-mail</td></tr>
+<tr><td>CRM</td><td>Hóspedes que voltam ÷ base de hóspedes</td><td>CRM e PMS</td></tr>
+</tbody>
+</table>
+<p>A camada com a taxa mais fraca em relação ao histórico do hotel é por onde começar a corrigir.</p>
 <h2 id="modelo">O modelo que escala</h2>
 <p>O que funciona em hotelaria é o oposto da campanha pontual: um <strong>sistema sempre ligado</strong>, com várias camadas operando simultaneamente.</p>
 <ul>
-<li>Atração qualificada (Meta Ads + Google Ads com IA)</li>
+<li>Atração qualificada (Meta Ads, Google Ads com IA e <a href="post-google-hotel-ads.html">Google Hotel Ads</a>)</li>
 <li>Conversão direta (site + motor)</li>
 <li>Recuperação (carrinho, remarketing, WhatsApp)</li>
 <li>Conversão assistida (CRM + atendimento)</li>
 <li>Pós-venda e reativação (LTV)</li>
 </ul>
-<p>Cada camada cobre uma falha que a anterior teve. E é por isso que esse modelo escala enquanto campanhas isoladas estagnam.</p>
+<p>Cada camada cobre uma falha que a anterior teve. E é por isso que esse modelo escala enquanto campanhas isoladas estagnam. Montar essas camadas juntas é o trabalho de uma <a href="../agencia-marketing-hoteleiro.html">agência de marketing hoteleiro</a>.</p>
 <div class="post-divider"></div>
-<h2 id="conclusao">Conclusão</h2>
-<p>Se uma campanha não está rendendo, antes de trocar a agência, vale checar o que existe ao redor dela. Na maioria dos casos, o anúncio não é o problema — é o único elemento presente.</p>
+<h2 id="conclusao">Funil completo: o que checar antes de trocar de agência</h2>
+<p>Se uma campanha não está rendendo, o primeiro passo é checar o que existe ao redor dela. Muitas vezes o anúncio não é o problema: é o único elemento presente. Antes de trocar, veja <a href="post-como-escolher-agencia.html">como escolher uma agência de marketing para hotel ou pousada</a>.</p>
 <p>Hotel que cresce com previsibilidade não tem "uma boa campanha". Tem um sistema de receita direta operando.</p>
 <div class="post-cta">
 <h4>Quer parar de rodar campanha solta?</h4>
-<p>A Komplexa estrutura o funil completo de reservas diretas — da atração ao pós-venda. Estratégia personalizada para o perfil do seu hotel.</p>
-<a class="btn-sage" href="https://komplexa-pricing.vercel.app/f/komplexaconsultoria?utm_source=komplexahoteis&amp;utm_medium=site&amp;utm_content=blog-funil" target="_blank">Falar com especialista</a>
+<p>O Lagamar, resort e hotel atendido pela Komplexa, teve mais de 7x de retorno sobre a mídia paga, conferido no PMS do hotel. Cada resultado vem de uma operação diferente: na conversa com a Komplexa, o plano nasce do seu hotel, sem pacote pronto. <a href="../#cases" style="color:#fff;border-bottom:1px solid rgba(255,255,255,.5)">Ver os cases</a></p>
+<a class="btn-sage" href="https://komplexa-pricing.vercel.app/f/komplexaconsultoria?utm_source=komplexahoteis&amp;utm_medium=site&amp;utm_content=blog-funil-meio" target="_blank" rel="noopener">Agendar conversa</a>
 </div>
   <h2 id="faq">Perguntas frequentes</h2>
 <div class="faq-list">
 <details class="faq-item">
 <summary>Por que meus anúncios geram cliques mas não geram reservas?</summary>
-<div class="faq-answer"><p>Porque o anúncio é só a porta de entrada. Dos cliques que chegam ao site, apenas uma fração busca disponibilidade, uma fração menor chega ao checkout e boa parte dessas pessoas abandona. Se não existe nada para resgatar quem saiu, o hotel paga pelo tráfego três ou quatro vezes e converte uma. O custo por reserva fica artificialmente alto e a campanha parece não funcionar, quando o problema está no que vem depois dela.</p></div>
+<div class="faq-answer"><p>Porque o anúncio é só a porta de entrada. Dos cliques que chegam ao site, apenas uma fração busca disponibilidade, uma fração menor chega ao checkout e parte dessas pessoas abandona. Se não existe nada para resgatar quem saiu, o hotel paga pelo clique de quem foi embora sem reservar. O custo por reserva sobe e a campanha parece não funcionar, quando o problema está no que vem depois dela.</p></div>
 </details>
 <details class="faq-item">
 <summary>Vale a pena trocar de agência quando a campanha do hotel não traz reservas?</summary>
-<div class="faq-answer"><p>Antes de trocar, vale checar o que existe ao redor da campanha. Na maioria dos casos, o anúncio não é o problema: é o único elemento presente. Confira se há site otimizado ligado ao motor de reservas, recuperação de carrinho, remarketing, atendimento com CRM e régua de pós-venda. Se essas camadas faltam, a campanha está sustentando sozinha uma máquina que precisa de várias engrenagens trabalhando juntas.</p></div>
+<div class="faq-answer"><p>Antes de trocar, vale checar o que existe ao redor da campanha. Muitas vezes o anúncio não é o problema: é o único elemento presente. Confira se há site otimizado ligado ao motor de reservas, recuperação de carrinho, remarketing, atendimento com CRM e régua de pós-venda. Se essas camadas faltam, a campanha está sustentando sozinha uma máquina que precisa de várias engrenagens trabalhando juntas.</p></div>
 </details>
 <details class="faq-item">
 <summary>O que o site de um hotel precisa ter para transformar visitas em reservas?</summary>
-<div class="faq-answer"><p>O site precisa de caminho curto até o motor de reservas, prova social visível, fotos que vendem, telefone e WhatsApp à mão e uma versão mobile impecável. Ser bonito não basta: cada segundo e cada clique a mais derrubam a conversão. Como os elementos do funil se multiplicam, um site que converte 30% melhor faz cada real investido em mídia render mais.</p></div>
+<div class="faq-answer"><p>O site precisa de caminho curto até o motor de reservas, prova social visível, fotos que vendem, telefone e WhatsApp à mão e uma versão mobile impecável. Ser bonito não basta: cada segundo e cada clique a mais derrubam a conversão. Como os elementos do funil se multiplicam, um site que converte mais faz cada real investido em mídia render mais.</p></div>
 </details>
 <details class="faq-item">
 <summary>Como recuperar hóspedes que abandonaram a reserva no checkout?</summary>
-<div class="faq-answer"><p>Quem chegou ao checkout e não fechou é o lead mais quente que existe. A recuperação combina WhatsApp e e-mail automatizados, disparados nas primeiras horas após o abandono, e resgata um percentual significativo dessas reservas sem custo de mídia adicional. Para quem visitou o site mas não chegou ao checkout, o complemento é o remarketing, com criativo diferente e no momento certo.</p></div>
+<div class="faq-answer"><p>Quem chegou ao checkout e não fechou é o lead mais quente que existe. A recuperação combina WhatsApp e e-mail automatizados, disparados nas primeiras horas após o abandono, e resgata parte dessas reservas sem custo de mídia adicional. Para quem visitou o site mas não chegou ao checkout, o complemento é o remarketing, com criativo diferente e no momento certo.</p></div>
 </details>
 </div>
 </article>
   <aside class="post-side">
     <div class="side-card"><h4>Neste artigo</h4>
 <a href="#problema" class="toc-link">A campanha não vende sozinha</a>
+<a href="#conta" class="toc-link">A conta do funil</a>
 <a href="#ingredientes" class="toc-link">Os ingredientes que faltam</a>
 <a href="#cadeia" class="toc-link">É uma cadeia, não uma soma</a>
+<a href="#diagnostico" class="toc-link">Como saber qual camada falha</a>
 <a href="#modelo" class="toc-link">O modelo que escala</a>
-<a href="#conclusao" class="toc-link">Conclusão</a>
+<a href="#conclusao" class="toc-link">O que checar antes de trocar de agência</a>
     <a href="#faq" class="toc-link">Perguntas frequentes</a>
     </div>
     <div class="side-cta"><h4>Para o seu hotel</h4>
       <p>Um plano de aquisição desenhado a partir da sua operação, medido no PMS.</p>
-      <a href="https://komplexa-pricing.vercel.app/f/komplexaconsultoria?utm_source=komplexahoteis&amp;utm_medium=site&amp;utm_content=blog-funil" target="_blank" rel="noopener" class="btn-sage">Agendar conversa</a>
+      <a href="https://komplexa-pricing.vercel.app/f/komplexaconsultoria?utm_source=komplexahoteis&amp;utm_medium=site&amp;utm_content=blog-funil-lateral" target="_blank" rel="noopener" class="btn-sage">Agendar conversa</a>
     </div>
     <div class="side-card"><h4>Leia também</h4>
-<a href="post-ia.html" class="related-post"><h5>IA na hotelaria: segmentação que reduz custo por reserva</h5><span>Inteligência Artificial · 6 min</span></a>
-<a href="post-ltv.html" class="related-post"><h5>LTV em hotéis: o ativo que a maioria ignora</h5><span>CRM e Pós-venda · 6 min</span></a>
+<a href="post-como-escolher-agencia.html" class="related-post"><h5>Como escolher uma agência de marketing para hotel ou pousada</h5><span>Marketing Hoteleiro · 9 min</span></a>
+<a href="post-ia.html" class="related-post"><h5>IA na hotelaria: segmentação inteligente que reduz custo por reserva</h5><span>Inteligência Artificial · 7 min</span></a>
+<a href="post-ltv.html" class="related-post"><h5>LTV em hotéis: o ativo que a maioria ignora</h5><span>CRM e Pós-venda · 7 min</span></a>
     </div>
   </aside>
 </div></div>
@@ -305,9 +335,9 @@ if(document.prerendering){document.addEventListener('prerenderingchange',go,{onc
   <div class="wrap">
     <span class="overline">Continue lendo</span>
     <div class="rg-grid">
-<a href="post-ia.html" class="rg-card"><span class="rg-tag">Inteligência Artificial</span><h4>IA na hotelaria: segmentação inteligente que reduz custo por reserva</h4><p>Como lookalike baseado em hóspedes reais é mais eficiente que demográfico genérico.</p></a>
-<a href="post-ota.html" class="rg-card"><span class="rg-tag">OTA e Distribuição</span><h4>Como reduzir a dependência de OTAs e gerar reservas diretas</h4><p>Comissões de 15% a 25% não são inevitáveis. A estratégia completa para mudar a proporção.</p></a>
-<a href="post-ltv.html" class="rg-card"><span class="rg-tag">CRM e Pós-venda</span><h4>LTV em hotéis: o ativo que a maioria ignora</h4><p>Como reativar hóspedes antigos pode representar 20% a 30% da receita sem custo de aquisição.</p></a>
+<a href="post-google-hotel-ads.html" class="rg-card"><span class="rg-tag">Reservas Diretas</span><h4>Google Hotel Ads: como aparecer no Google e gerar reservas sem pagar comissão de OTA</h4><p>O bloco de preços do Google que leva a reserva ao site do hotel, e o que ter em ordem antes de ativar.</p></a>
+<a href="post-ota.html" class="rg-card"><span class="rg-tag">OTA e Distribuição</span><h4>Como reduzir a dependência de OTAs e gerar reservas diretas</h4><p>Como mudar a proporção entre OTA e reserva direta sem abrir mão do volume.</p></a>
+<a href="post-motor-de-reservas.html" class="rg-card"><span class="rg-tag">Reservas Diretas</span><h4>Motor de reservas para pousada: vale a pena e como escolher em 2026</h4><p>O que avaliar no motor para o hóspede reservar no seu site e não voltar para a OTA.</p></a>
     </div>
   </div>
 </section>
@@ -318,7 +348,7 @@ if(document.prerendering){document.addEventListener('prerenderingchange',go,{onc
     <div class="news-box">
       <span class="overline rv">Carta do fundador</span>
       <h2 class="t-display rv">Um convite para conhecer <em class="gi">o nosso time.</em></h2>
-      <img class="carta-foto rv" src="../assets/img/igor.png" alt="Igor Salomão, fundador da Komplexa">
+      <img class="carta-foto rv" src="../assets/img/igor.png" alt="Igor Salomão, fundador da Komplexa" width="400" height="400" loading="lazy">
       <div class="carta rv">
         <p>Sou o Igor Salomão, fundador da Komplexa. Se você chegou até aqui, quero te fazer um convite: uma conversa comigo e com o time sobre o seu hotel.</p>
         <p>Nela, queremos entender de verdade como a sua operação funciona hoje: de onde vêm as reservas, como o hóspede chega até você e onde você sente que dá para crescer.</p>
@@ -350,15 +380,15 @@ if(document.prerendering){document.addEventListener('prerenderingchange',go,{onc
       </div>
       <div class="ft-col">
         <h4>A solução</h4>
-        <a href="../index.html#metodo">O método</a>
-        <a href="../index.html#cases">Cases</a>
-        <a href="../index.html#sistema">O sistema</a>
-        <a href="../index.html#ia">IA aplicada</a>
-        <a href="../index.html#frentes">Frentes de receita</a>
+        <a href="../#metodo">O método</a>
+        <a href="../#cases">Cases</a>
+        <a href="../#sistema">O sistema</a>
+        <a href="../#ia">IA aplicada</a>
+        <a href="../#frentes">Frentes de receita</a>
       </div>
       <div class="ft-col">
         <h4>Conteúdo</h4>
-        <a href="../blog/index.html">Blog</a>
+        <a href="./">Blog</a>
         <a href="../blog/post-comissao-booking-18.html">Booking a 18%</a>
         <a href="../blog/post-motor-de-reservas.html">Motor de reservas</a>
         <a href="../blog/post-google-hotel-ads.html">Google Hotel Ads</a>
@@ -374,28 +404,28 @@ if(document.prerendering){document.addEventListener('prerenderingchange',go,{onc
     <div class="selos" aria-label="Integrações e parceiros de tecnologia">
       <div class="selos-track">
         <!-- lista repetida 2x para o loop contínuo do marquee -->
-        <div class="selo"><img src="../assets/img/omnibees.png" alt="Omnibees"></div>
-        <div class="selo"><img src="../assets/img/hsystem.png" alt="HSystem"></div>
-        <div class="selo"><img src="../assets/img/asksuite.jpeg" alt="Asksuite"></div>
-        <div class="selo"><img src="../assets/img/erbon.png" alt="Erbon"></div>
-        <div class="selo"><img src="../assets/img/bitz.png" alt="Bitz"></div>
-        <div class="selo"><img src="../assets/img/foco.png" alt="Foco"></div>
-        <div class="selo"><img src="../assets/img/omnibees.png" alt="Omnibees"></div>
-        <div class="selo"><img src="../assets/img/hsystem.png" alt="HSystem"></div>
-        <div class="selo"><img src="../assets/img/asksuite.jpeg" alt="Asksuite"></div>
-        <div class="selo"><img src="../assets/img/erbon.png" alt="Erbon"></div>
-        <div class="selo"><img src="../assets/img/bitz.png" alt="Bitz"></div>
-        <div class="selo"><img src="../assets/img/foco.png" alt="Foco"></div>
+        <div class="selo"><img src="../assets/img/omnibees.png" alt="Omnibees" width="168" height="96" loading="lazy"></div>
+        <div class="selo"><img src="../assets/img/hsystem.png" alt="HSystem" width="428" height="118" loading="lazy"></div>
+        <div class="selo"><img src="../assets/img/asksuite.jpeg" alt="Asksuite" width="200" height="200" loading="lazy"></div>
+        <div class="selo"><img src="../assets/img/erbon.png" alt="Erbon" width="301" height="456" loading="lazy"></div>
+        <div class="selo"><img src="../assets/img/bitz.png" alt="Bitz" width="492" height="158" loading="lazy"></div>
+        <div class="selo"><img src="../assets/img/foco.png" alt="Foco" width="331" height="152" loading="lazy"></div>
+        <div class="selo"><img src="../assets/img/omnibees.png" alt="Omnibees" width="168" height="96" loading="lazy"></div>
+        <div class="selo"><img src="../assets/img/hsystem.png" alt="HSystem" width="428" height="118" loading="lazy"></div>
+        <div class="selo"><img src="../assets/img/asksuite.jpeg" alt="Asksuite" width="200" height="200" loading="lazy"></div>
+        <div class="selo"><img src="../assets/img/erbon.png" alt="Erbon" width="301" height="456" loading="lazy"></div>
+        <div class="selo"><img src="../assets/img/bitz.png" alt="Bitz" width="492" height="158" loading="lazy"></div>
+        <div class="selo"><img src="../assets/img/foco.png" alt="Foco" width="331" height="152" loading="lazy"></div>
       </div>
     </div>
     <div class="ft-credit">© 2026 Komplexa Hotéis · Arquitetura de crescimento para reservas diretas · komplexahoteis.com</div>
   </div>
 </footer>
 
-<script src="../assets/js/vendor/lenis.min.js"></script>
-<script src="../assets/js/vendor/gsap.min.js"></script>
-<script src="../assets/js/vendor/ScrollTrigger.min.js"></script>
-<script src="../assets/js/main.js"></script>
+<script src="../assets/js/vendor/lenis.min.js" defer></script>
+<script src="../assets/js/vendor/gsap.min.js" defer></script>
+<script src="../assets/js/vendor/ScrollTrigger.min.js" defer></script>
+<script src="../assets/js/main.js" defer></script>
 
 </body>
 </html>

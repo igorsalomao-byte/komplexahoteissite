@@ -7,17 +7,20 @@
 <script>
 !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
 n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
-n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
-t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script',
+n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];
+/* fbevents.js entra depois do load, com a página ociosa; init e PageView já ficam na fila do fbq */
+var go=function(){t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)},
+idle=function(){f.requestIdleCallback?f.requestIdleCallback(go,{timeout:2000}):setTimeout(go,200)};
+b.readyState==='complete'?idle():f.addEventListener('load',idle,{once:true})}(window,document,'script',
 'https://connect.facebook.net/en_US/fbevents.js');
 (function(){var go=function(){fbq('init','1364660957915622');fbq('track','PageView');};
 if(document.prerendering){document.addEventListener('prerenderingchange',go,{once:true});}else{go();}})();
 </script>
 <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=1364660957915622&ev=PageView&noscript=1"></noscript>
 <!-- /Meta Pixel -->
-<script>document.documentElement.className+=" js";setTimeout(function(){if(!window.__animReady)document.documentElement.className+=" no-anim"},2500)</script>
-<title>Paridade tarifária: o que é e como não perder dinheiro com isso</title>
-<meta content="Paridade tarifária decide se o hóspede reserva no seu site ou na OTA. Entenda o que é, como ela aparece nos contratos das OTAs e como usá-la a favor das suas reservas diretas." name="description"/>
+<script>document.documentElement.className+=" js";setTimeout(function(){if(!window.__animReady)document.documentElement.className+=" no-anim"},1200)</script>
+<title>Paridade tarifária: o que é e como não perder dinheiro</title>
+<meta content="Paridade tarifária decide se o hóspede reserva no seu site ou na OTA. Entenda o que é e como usá-la a favor das suas reservas diretas, sem furar contrato." name="description"/>
 <meta content="paridade tarifária, paridade de preços hotel, tarifa booking site, reserva direta mais barata, disparidade tarifária" name="keywords"/>
 <meta content="Igor Salomão" name="author"/>
 <meta content="index, follow, max-image-preview:large, max-snippet:-1" name="robots"/>
@@ -25,8 +28,8 @@ if(document.prerendering){document.addEventListener('prerenderingchange',go,{onc
 <link href="https://komplexahoteis.com/blog/post-paridade-tarifaria.html" rel="canonical"/>
 <meta content="article" property="og:type"/>
 <meta content="https://komplexahoteis.com/blog/post-paridade-tarifaria.html" property="og:url"/>
-<meta content="Paridade tarifária: o que é e como não perder dinheiro com isso" property="og:title"/>
-<meta content="Paridade tarifária decide se o hóspede reserva no seu site ou na OTA. Entenda o que é, como ela aparece nos contratos das OTAs e como usá-la a favor das suas reservas diretas." property="og:description"/>
+<meta content="Paridade tarifária: o que é e como não perder dinheiro" property="og:title"/>
+<meta content="Paridade tarifária decide se o hóspede reserva no seu site ou na OTA. Entenda o que é e como usá-la a favor das suas reservas diretas, sem furar contrato." property="og:description"/>
 <meta content="https://komplexahoteis.com/assets/img/og/post-paridade-tarifaria.jpg" property="og:image"/>
 <meta content="1200" property="og:image:width"/>
 <meta content="630" property="og:image:height"/>
@@ -36,10 +39,10 @@ if(document.prerendering){document.addEventListener('prerenderingchange',go,{onc
 <meta content="2026-06-17" property="article:published_time"/>
 <meta content="Igor Salomão" property="article:author"/>
 <meta content="OTA e Distribuição" property="article:section"/>
-<meta content="2026-09-29" property="article:modified_time"/>
+<meta content="2026-10-06" property="article:modified_time"/>
 <meta content="summary_large_image" name="twitter:card"/>
-<meta content="Paridade tarifária: o que é e como não perder dinheiro com isso" name="twitter:title"/>
-<meta content="Paridade tarifária decide se o hóspede reserva no seu site ou na OTA. Entenda o que é e como usá-la a favor das suas reservas diretas." name="twitter:description"/>
+<meta content="Paridade tarifária: o que é e como não perder dinheiro" name="twitter:title"/>
+<meta content="Paridade tarifária decide se o hóspede reserva no seu site ou na OTA. Entenda o que é e como usá-la a favor das suas reservas diretas, sem furar contrato." name="twitter:description"/>
 <meta content="https://komplexahoteis.com/assets/img/og/post-paridade-tarifaria.jpg" name="twitter:image"/>
 <script type="application/ld+json">
 [
@@ -47,13 +50,13 @@ if(document.prerendering){document.addEventListener('prerenderingchange',go,{onc
     "@context": "https://schema.org",
     "@type": "BlogPosting",
     "headline": "Paridade tarifária: o que é e como não perder dinheiro com isso",
-    "description": "Paridade tarifária decide se o hóspede reserva no seu site ou na OTA. Entenda o que é, como ela aparece nos contratos das OTAs e como usá-la a favor das suas reservas diretas.",
+    "description": "Paridade tarifária decide se o hóspede reserva no seu site ou na OTA. Entenda o que é e como usá-la a favor das suas reservas diretas, sem furar contrato.",
     "image": [
       "https://komplexahoteis.com/assets/img/og/post-paridade-tarifaria.jpg"
     ],
     "url": "https://komplexahoteis.com/blog/post-paridade-tarifaria.html",
     "datePublished": "2026-06-17",
-    "dateModified": "2026-09-29",
+    "dateModified": "2026-10-06",
     "inLanguage": "pt-BR",
     "keywords": "paridade tarifária, paridade de preços hotel, tarifa booking site, reserva direta mais barata, disparidade tarifária",
     "author": {
@@ -70,7 +73,7 @@ if(document.prerendering){document.addEventListener('prerenderingchange',go,{onc
       "url": "https://komplexahoteis.com/",
       "logo": {
         "@type": "ImageObject",
-        "url": "https://komplexahoteis.com/assets/logo.svg"
+        "url": "https://komplexahoteis.com/assets/img/icon-512.png", "width": 512, "height": 512
       }
     },
     "mainEntityOfPage": {
@@ -139,9 +142,8 @@ if(document.prerendering){document.addEventListener('prerenderingchange',go,{onc
 <link rel="icon" type="image/svg+xml" href="../assets/img/favicon.svg">
 <link rel="apple-touch-icon" href="../assets/img/apple-touch-icon.png">
 <link rel="manifest" href="../site.webmanifest">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="preload" href="../assets/fonts/jost-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="../assets/fonts/cormorant-latin.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="../assets/css/style.css">
 <style>
 .post-resumo{border-left:3px solid #1099E9;background:rgba(16,153,233,.06);border-radius:0 14px 14px 0;padding:1.2rem 1.4rem;margin:0 0 2.2rem}
@@ -161,7 +163,7 @@ if(document.prerendering){document.addEventListener('prerenderingchange',go,{onc
   </div>
 </header>
 
-<a href="../index.html" class="logo-fix dark" id="logoFix" aria-label="Komplexa Hotéis">
+<a href="../" class="logo-fix dark" id="logoFix" aria-label="Komplexa Hotéis">
   <svg viewBox="0 0 100 97" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
     <path d="M45.8247 36.6514C47.5271 36.6514 49.1676 37.1817 50.5604 38.211L89.22 66.5651C90.9533 67.844 92.0985 69.7156 92.439 71.8679C92.7795 74.0202 92.2533 76.1413 90.9843 77.8881C89.4366 80.0092 87.0842 81.2257 84.4533 81.2257C81.8223 81.2257 81.1104 80.6954 79.7176 79.6661L41.0581 51.3119C39.3247 50.033 38.1795 48.1615 37.839 46.0092C37.4985 43.8569 38.0247 41.7358 39.2938 39.989C40.8414 37.8679 43.1938 36.6514 45.8247 36.6514ZM45.8247 29.1651C41.0581 29.1651 36.3223 31.3798 33.289 35.5908C28.2747 42.5468 29.7914 52.3101 36.6938 57.3633L75.3533 85.7174C78.1081 87.745 81.2962 88.7119 84.4533 88.7119C89.22 88.7119 93.9557 86.4973 96.989 82.2862C102.003 75.3303 100.487 65.567 93.5842 60.5138L54.9247 32.1596C52.17 30.1321 48.9819 29.1651 45.8247 29.1651Z"/>
     <path d="M69.1938 7.48624C70.8961 7.48624 72.5366 8.01651 73.9295 9.04587L79.47 13.1009C83.0604 15.7211 83.8652 20.8055 81.2342 24.4239L76.4985 30.9743L64.4581 22.1468C60.8676 19.5266 60.0628 14.4422 62.6938 10.8239C64.2414 8.70275 66.5938 7.48624 69.2247 7.48624M69.1938 0C64.4271 0 59.6914 2.21468 56.658 6.42569C51.6438 13.3816 53.1604 23.145 60.0628 28.1982L78.108 41.4239L87.2081 28.822C92.2223 21.8661 90.7057 12.1027 83.8033 7.04954L78.2628 2.99449C75.508 0.966969 72.32 0 69.1628 0H69.1938Z"/>
@@ -176,7 +178,7 @@ if(document.prerendering){document.addEventListener('prerenderingchange',go,{onc
     Oi! Sou o Igor, fundador<br>da Komplexa. Quer o plano<br>do seu hotel?
   </div>
   <button class="conc-avatar" onclick="openConcierge()" aria-label="Falar com a Komplexa">
-    <img src="../assets/img/igor.png" alt="Igor Salomão, fundador da Komplexa"><span class="conc-dot"></span>
+    <img src="../assets/img/igor.png" alt="Igor Salomão, fundador da Komplexa" width="400" height="400"><span class="conc-dot"></span>
   </button>
 </div>
 
@@ -184,18 +186,20 @@ if(document.prerendering){document.addEventListener('prerenderingchange',go,{onc
 <nav class="menu" id="menu">
   <div class="menu-grid">
     <div class="menu-list" data-lenis-prevent>
-      <a href="../index.html#metodo" class="active">O método</a>
-      <a href="../index.html#cases">Cases</a>
-      <a href="../index.html#site">O site entregue</a>
-      <a href="../index.html#sistema">O sistema</a>
-      <a href="../index.html#frentes">Frentes de receita</a>
-      <a href="../index.html#presenca">Quem somos</a>
-      <a href="../index.html#contato">Falar com a Komplexa</a>
+      <a href="../#metodo" class="active">O método</a>
+      <a href="../#cases">Cases</a>
+      <a href="../#site">O site entregue</a>
+      <a href="../#sistema">O sistema</a>
+      <a href="../#frentes">Frentes de receita</a>
+      <a href="../#presenca">Quem somos</a>
+      <a href="../#contato">Falar com a Komplexa</a>
     </div>
   </div>
   <div class="menu-foot">
     <div class="menu-foot-links">
-      <a href="../blog/index.html">Blog</a>
+      <a href="./">Blog</a>
+      <a href="../guia-reservas-diretas.html">Guia de reservas diretas</a>
+      <a href="../agencia-marketing-hoteleiro.html">Agência de marketing hoteleiro</a>
       <a href="https://komplexa-pricing.vercel.app/f/komplexaconsultoria?utm_source=komplexahoteis&amp;utm_medium=site&amp;utm_content=blog-paridade-tarifaria-menu" target="_blank" rel="noopener">Agendar conversa <span class="ext">↗</span></a>
     </div>
     <div class="menu-foot-social">
@@ -208,11 +212,11 @@ if(document.prerendering){document.addEventListener('prerenderingchange',go,{onc
 <!-- ============ POST ============ -->
 <section class="post-hero">
   <div class="wrap"><div class="post-wrap">
-    <nav class="crumbs" aria-label="Navegação"><a href="../index.html">Início</a><span>/</span><a href="index.html">Blog</a><span>/</span><span>OTA e Distribuição</span></nav>
+    <nav class="crumbs" aria-label="Navegação"><a href="../">Início</a><span>/</span><a href="./">Blog</a><span>/</span><span>OTA e Distribuição</span></nav>
     <span class="overline">OTA e Distribuição</span>
     <h1 class="t-display">Paridade tarifária: o que é e como não perder dinheiro com isso</h1>
-    <p class="post-lead">Paridade tarifária decide se o hóspede reserva no seu site ou na OTA. Entenda o que é, como ela aparece nos contratos das OTAs e como usá-la a favor das suas reservas diretas.</p>
-    <div class="post-meta"><span>Junho 2026</span><span>7 min de leitura</span><span>Por <a href="../igor-salomao.html">Igor Salomão</a></span><span>Atualizado em setembro de 2026</span></div>
+    <p class="post-lead">Paridade tarifária decide se o hóspede reserva no seu site ou na OTA. Entenda o que é e como usá-la a favor das suas reservas diretas, sem furar contrato.</p>
+    <div class="post-meta"><span>Junho 2026</span><span>7 min de leitura</span><span>Por <a href="../igor-salomao.html">Igor Salomão</a></span><span>Atualizado em outubro de 2026</span></div>
   </div></div>
 </section>
 
@@ -226,7 +230,7 @@ if(document.prerendering){document.addEventListener('prerenderingchange',go,{onc
       Entendê-la bem é o que separa quem usa as OTAs como vitrine de quem é usado por elas como balcão. Neste artigo você vai ver o que é paridade tarifária, por que ela coloca o hoteleiro em um dilema real, e — principalmente — como jogar dentro das regras e ainda assim ganhar a reserva direta.
     </p>
 <div class="highlight-box">
-<p>O Booking.com é usado por cerca de 89% dos hotéis independentes, e as OTAs já respondem por mais da metade das reservas online do setor. Quando a regra de preço dessas plataformas trabalha contra o seu site, ela trabalha contra a maior parte do seu funil — não contra uma fatia pequena.</p>
+<p>No <a href="https://blog.hospedin.com/panorama-hoteleiro-2026/" target="_blank" rel="noopener">Panorama Hospedin 2026</a>, levantamento com 235 profissionais do setor, o Booking.com era usado por 89% dos empreendimentos. Quando a regra de preço dessas plataformas trabalha contra o seu site, ela trabalha contra grande parte do seu funil.</p>
 </div>
 <h2 id="o-que-e">O que é paridade tarifária</h2>
 <p>
@@ -274,15 +278,18 @@ if(document.prerendering){document.addEventListener('prerenderingchange',go,{onc
 <p>
       Promoções enviadas por e-mail e WhatsApp para a sua base de contatos são <strong>ofertas fechadas</strong>: chegam só a quem você escolhe, não ficam expostas publicamente. Pacotes (duas noites + jantar, romântico, longa permanência) também escapam da comparação direta de paridade, porque combinam produtos que a OTA não vende daquela forma.
     </p>
+<p>
+      Para construir esse canal de forma gradual, veja <a href="post-dependencia-booking-pousada.html">como migrar para reservas diretas sem perder ocupação</a>.
+    </p>
 <h2 id="paridade-e-comissao">Paridade e a comissão de 18% do Booking</h2>
 <p>
-      Em <strong>1º de julho de 2026</strong>, a comissão preferencial do Booking.com subiu para <strong>18%</strong> no Brasil (ante os 10% a 15% praticados até então). Quando você cruza esse dado com a lógica da paridade, aparece o pior dos mundos possíveis.
+      Em <strong>1º de julho de 2026</strong>, a comissão preferencial do Booking.com no Brasil passou a ser de <strong>18%</strong>, acima da faixa de 10% a 15% que a Panrotas descreve como histórica; o percentual efetivo depende do contrato. A mudança foi levada ao Cade por entidades do setor, sem desfecho afirmado aqui; veja a <a href="post-comissao-booking-18.html">linha do tempo da comissão do Booking</a>. Quando você cruza esse dado com a lógica da paridade, aparece o pior dos mundos possíveis.
     </p>
 <p>
-      Pense na sequência: você paga uma comissão maior para o Booking aparecer bem posicionado; o viajante encontra seu site e o Booking com o mesmo preço; sem uma vantagem clara no direto, ele reserva na OTA por confiança; e você paga 18% por uma venda que estava, literalmente, na palma da sua mão. Ou seja: <strong>pagar mais comissão e ainda assim perder a venda direta por causa de preço empatado é desperdício em dose dupla</strong>.
+      Pense na sequência: você paga uma comissão maior para o Booking aparecer bem posicionado; o viajante encontra seu site e o Booking com o mesmo preço; sem uma vantagem clara no direto, ele reserva na OTA por confiança; e você paga a comissão por uma venda que estava, literalmente, na palma da sua mão. Ou seja: <strong>pagar mais comissão e ainda assim perder a venda direta por causa de preço empatado é desperdício em dose dupla</strong>.
     </p>
 <p>
-      A paridade bem trabalhada inverte essa conta. Quando o site tem preço igual <em>mais</em> uma vantagem direta percebida, parte do tráfego que a OTA ajudou a gerar converte no seu canal — e cada reserva direta deixa de carregar os 18%. A paridade deixa de ser uma amarra e vira o ponto de partida de uma estratégia de margem.
+      A paridade bem trabalhada inverte essa conta. Quando o site tem preço igual <em>mais</em> uma vantagem direta percebida, parte do tráfego que a OTA ajudou a gerar converte no seu canal — e cada reserva direta deixa de carregar a comissão. A paridade deixa de ser uma amarra e vira o ponto de partida de uma estratégia de margem.
     </p>
 <div class="data-block">
 <h4>Exemplo ilustrativo — para onde pende a decisão do hóspede</h4>
@@ -310,7 +317,7 @@ if(document.prerendering){document.addEventListener('prerenderingchange',go,{onc
       A maior parte das perdas com paridade não vem de uma decisão deliberada — vem de descuido operacional. Os deslizes mais frequentes:
     </p>
 <ul>
-<li><strong>Disparidade acidental por channel manager mal configurado.</strong> Quando um canal não recebe a atualização de tarifa, seu site pode aparecer mais caro (ou mais barato) que a OTA sem que ninguém perceba. É a causa número um de paridade quebrada.</li>
+<li><strong>Disparidade acidental por channel manager mal configurado.</strong> Quando um canal não recebe a atualização de tarifa, seu site pode aparecer mais caro (ou mais barato) que a OTA sem que ninguém perceba. É uma das causas mais comuns de paridade quebrada.</li>
 <li><strong>Esquecer impostos e taxas na comparação.</strong> Às vezes a tarifa-base é idêntica, mas a forma como cada canal exibe taxas, impostos e taxa de serviço faz o preço final parecer diferente — e o hóspede compara o número final, não a base.</li>
 <li><strong>Não monitorar com regularidade.</strong> Promoções relâmpago e descontos automáticos das próprias OTAs podem deixar o seu site mais caro de uma hora para outra, mesmo sem você ter mexido em nada.</li>
 <li><strong>Tratar todos os canais como um só.</strong> Cada OTA tem regras e prazos de sincronização diferentes; gerir tudo "no olho" é receita para disparidade.</li>
@@ -321,22 +328,25 @@ if(document.prerendering){document.addEventListener('prerenderingchange',go,{onc
     </p>
 <ul>
 <li><strong>Cheque manual periódico:</strong> uma vez por semana, simule uma busca pelo seu hotel no Booking e no seu site, nas mesmas datas, e compare o preço final — com taxas e impostos.</li>
-<li><strong>Centralize a tarifa:</strong> use o channel manager como fonte única de preço e confira se todos os canais sincronizaram após cada alteração.</li>
+<li><strong>Centralize a tarifa:</strong> use o channel manager como fonte única de preço e confira se todos os canais sincronizaram após cada alteração. Para escolher a ferramenta, veja o guia de <a href="post-motor-de-reservas.html">motor de reservas e gestor de canais</a>.</li>
 <li><strong>Acompanhe o preço final, não só a base:</strong> a comparação que importa é a que o hóspede vê na hora de pagar.</li>
 <li><strong>Ferramentas de rate parity:</strong> quando o volume justifica, soluções dedicadas avisam automaticamente sempre que algum canal sai da linha.</li>
 </ul>
+<p>
+      Se a rotina de monitorar tarifa não cabe na equipe, uma <a href="../agencia-marketing-hoteleiro.html">agência de marketing hoteleiro</a> pode incluí-la no acompanhamento mensal.
+    </p>
 <div class="post-cta">
 <h4>Quer transformar paridade em reservas diretas?</h4>
-<p>A Komplexa estrutura o funil completo — site que converte, paridade monitorada, tarifa de membro e vantagens diretas — para o seu hotel ganhar a reserva sem furar regra de OTA.</p>
-<a class="btn-sage" href="https://komplexa-pricing.vercel.app/f/komplexaconsultoria?utm_source=komplexahoteis&amp;utm_medium=site&amp;utm_content=blog-paridade-tarifaria" target="_blank">Falar com especialista</a>
+<p>O Hotel Sunsmart, atendido pela Komplexa, foi de 30% para mais de 60% de reservas diretas, conferido no PMS do hotel. Cada resultado vem de uma operação diferente: na conversa com a Komplexa, o plano nasce do seu hotel, sem pacote pronto. <a href="../#cases" style="color:#fff;border-bottom:1px solid rgba(255,255,255,.5)">Ver os cases</a></p>
+<a class="btn-sage" href="https://komplexa-pricing.vercel.app/f/komplexaconsultoria?utm_source=komplexahoteis&amp;utm_medium=site&amp;utm_content=blog-paridade-tarifaria-meio" target="_blank" rel="noopener">Agendar conversa</a>
 </div>
 <div class="post-divider"></div>
 <h2 id="conclusao">Conclusão: a paridade não é inimiga, é o tabuleiro</h2>
 <p>
-      Paridade tarifária não é uma punição imposta pelas OTAs — é a regra do jogo de quem distribui inventário em plataformas de terceiros. Brigar contra ela furando preço é arriscado e, no fim, raso. O movimento inteligente é aceitar que o preço público vai empatar e <strong>vencer no que a OTA não consegue replicar</strong>: confiança, relacionamento e <a href="../index.html#sistema">vantagens exclusivas no seu canal</a>.
+      Paridade tarifária não é uma punição imposta pelas OTAs — é a regra do jogo de quem distribui inventário em plataformas de terceiros. Brigar contra ela furando preço é arriscado e, no fim, raso. O movimento inteligente é aceitar que o preço público vai empatar e <strong>vencer no que a OTA não consegue replicar</strong>: confiança, relacionamento e vantagens exclusivas no seu canal, passo a passo no <a href="../guia-reservas-diretas.html">guia de reservas diretas para hotéis e pousadas</a>.
     </p>
 <p>
-      Com a comissão do Booking em 18%, cada reserva que você traz para o direto vale mais do que valia ontem. A paridade, bem trabalhada, deixa de ser o motivo de você perder a venda e passa a ser o ponto de partida para reconquistá-la — com margem cheia.
+      Com a comissão preferencial do Booking em 18%, cada reserva que você traz para o direto pesa mais na sua margem. A paridade, bem trabalhada, deixa de ser o motivo de você perder a venda e passa a ser o ponto de partida para reconquistá-la — com margem cheia.
     </p>
 <h2 id="faq">Perguntas frequentes</h2>
 <div class="faq-list">
@@ -353,6 +363,12 @@ if(document.prerendering){document.addEventListener('prerenderingchange',go,{onc
 <div class="faq-answer"><p>A paridade restringe o preço público, não os benefícios. Você pode manter a tarifa igual e agregar valor exclusivo na reserva direta: café da manhã incluso, late check-out, upgrade condicionado, desconto de membro logado, pacotes ou brindes. São vantagens fechadas ou condicionais que tornam o site mais atraente sem expor um preço público menor.</p></div>
 </details>
 </div>
+<h2 id="fontes">Fontes</h2>
+<ul>
+<li><a href="https://blog.hospedin.com/panorama-hoteleiro-2026/" target="_blank" rel="noopener">Panorama Hospedin 2026</a>, relatório do setor; os números citados (235 profissionais do setor, Booking.com usado por 89% dos empreendimentos) aparecem na cobertura do <a href="https://hoteliernews.com.br/hotelaria-independente-encara-desafios-em-2026/" target="_blank" rel="noopener">Hotelier News</a>.</li>
+<li><a href="https://www.panrotas.com.br/hotelaria/mercado/2026/05/bookingcom-altera-politica-de-comissao-no-brasil-e-gera-preocupacao-na-hotelaria_228875.html" target="_blank" rel="noopener">Panrotas, 26/05/2026</a>: Booking.com anuncia comissão preferencial de 18% a partir de 1º/jul/2026; a matéria descreve as comissões históricas entre 10% e 15%.</li>
+<li><a href="https://brasilturis.com.br/2026/06/24/entidades-acionam-cade-contra-aumento-de-comissao-da-booking-com/" target="_blank" rel="noopener">Brasilturis, 24/06/2026</a>: entidades do setor levam o aumento ao Cade.</li>
+</ul>
   </article>
   <aside class="post-side">
     <div class="side-card"><h4>Neste artigo</h4>
@@ -363,15 +379,16 @@ if(document.prerendering){document.addEventListener('prerenderingchange',go,{onc
 <a href="#erros-monitoramento" class="toc-link">Erros comuns e monitoramento</a>
 <a href="#conclusao" class="toc-link">Conclusão</a>
 <a href="#faq" class="toc-link">Perguntas frequentes</a>
+<a href="#fontes" class="toc-link">Fontes</a>
     </div>
     <div class="side-cta"><h4>Para o seu hotel</h4>
       <p>Um plano de aquisição desenhado a partir da sua operação, medido no PMS.</p>
-      <a href="https://komplexa-pricing.vercel.app/f/komplexaconsultoria?utm_source=komplexahoteis&amp;utm_medium=site&amp;utm_content=blog-paridade-tarifaria" target="_blank" rel="noopener" class="btn-sage">Agendar conversa</a>
+      <a href="https://komplexa-pricing.vercel.app/f/komplexaconsultoria?utm_source=komplexahoteis&amp;utm_medium=site&amp;utm_content=blog-paridade-tarifaria-lateral" target="_blank" rel="noopener" class="btn-sage">Agendar conversa</a>
     </div>
     <div class="side-card"><h4>Leia também</h4>
-<a href="post-comissao-booking-18.html" class="related-post"><h5>Comissão do Booking em 18% desde julho de 2026</h5><span>OTA e Distribuição · 9 min</span></a>
-<a href="post-ota.html" class="related-post"><h5>Como reduzir a dependência de OTAs e gerar reservas diretas</h5><span>OTA e Distribuição · 8 min</span></a>
-<a href="post-google-hotel-ads.html" class="related-post"><h5>Google Hotel Ads: reservas sem comissão de OTA</h5><span>Reservas Diretas · 8 min</span></a>
+<a href="post-comissao-booking-18.html" class="related-post"><h5>Comissão do Booking em 18% desde julho de 2026: o que mudou e como proteger sua margem</h5><span>OTA e Distribuição · 9 min</span></a>
+<a href="post-dependencia-booking-pousada.html" class="related-post"><h5>Pousada presa no Booking: como migrar para reservas diretas sem perder ocupação</h5><span>Reservas Diretas · 10 min</span></a>
+<a href="post-motor-de-reservas.html" class="related-post"><h5>Motor de reservas para pousada: vale a pena e como escolher em 2026</h5><span>Reservas Diretas · 9 min</span></a>
     </div>
   </aside>
 </div></div>
@@ -380,9 +397,9 @@ if(document.prerendering){document.addEventListener('prerenderingchange',go,{onc
   <div class="wrap">
     <span class="overline">Continue lendo</span>
     <div class="rg-grid">
-<a href="post-comissao-booking-18.html" class="rg-card"><span class="rg-tag">OTA e Distribuição</span><h4>Comissão do Booking em 18% desde julho de 2026: o que mudou e como proteger sua margem</h4><p>O aumento da comissão preferencial e o que fazer agora para não comprimir a rentabilidade do hotel.</p></a>
-<a href="post-google-hotel-ads.html" class="rg-card"><span class="rg-tag">Reservas Diretas</span><h4>Google Hotel Ads: como aparecer no Google sem pagar comissão de OTA</h4><p>Apareça no mesmo bloco do Booking na busca — mas mandando a reserva para o seu site.</p></a>
-<a href="post-motor-de-reservas.html" class="rg-card"><span class="rg-tag">Reservas Diretas</span><h4>Motor de reservas para pousada: o que é e como escolher</h4><p>Sem um bom motor de reservas, todo o tráfego que você gera acaba escorrendo de volta para a OTA.</p></a>
+<a href="post-google-hotel-ads.html" class="rg-card"><span class="rg-tag">Reservas Diretas</span><h4>Google Hotel Ads: como aparecer no Google e gerar reservas sem pagar comissão de OTA</h4><p>O bloco de preços do Google que leva a reserva ao site do hotel, e o que ter em ordem antes de ativar.</p></a>
+<a href="post-aeo-ia-busca.html" class="rg-card"><span class="rg-tag">Inteligência Artificial</span><h4>Sua pousada aparece no ChatGPT? O que é AEO e por que importa em 2026</h4><p>O que fazer para a IA ler e recomendar a sua pousada, e por que isso leva reserva direta.</p></a>
+<a href="post-como-escolher-agencia.html" class="rg-card"><span class="rg-tag">Marketing Hoteleiro</span><h4>Como escolher uma agência de marketing para hotel ou pousada</h4><p>As 8 perguntas que separam uma agência de marketing hoteleiro de uma de social media.</p></a>
     </div>
   </div>
 </section>
@@ -393,7 +410,7 @@ if(document.prerendering){document.addEventListener('prerenderingchange',go,{onc
     <div class="news-box">
       <span class="overline rv">Carta do fundador</span>
       <h2 class="t-display rv">Um convite para conhecer <em class="gi">o nosso time.</em></h2>
-      <img class="carta-foto rv" src="../assets/img/igor.png" alt="Igor Salomão, fundador da Komplexa">
+      <img class="carta-foto rv" src="../assets/img/igor.png" alt="Igor Salomão, fundador da Komplexa" width="400" height="400" loading="lazy">
       <div class="carta rv">
         <p>Sou o Igor Salomão, fundador da Komplexa. Se você chegou até aqui, quero te fazer um convite: uma conversa comigo e com o time sobre o seu hotel.</p>
         <p>Nela, queremos entender de verdade como a sua operação funciona hoje: de onde vêm as reservas, como o hóspede chega até você e onde você sente que dá para crescer.</p>
@@ -425,15 +442,15 @@ if(document.prerendering){document.addEventListener('prerenderingchange',go,{onc
       </div>
       <div class="ft-col">
         <h4>A solução</h4>
-        <a href="../index.html#metodo">O método</a>
-        <a href="../index.html#cases">Cases</a>
-        <a href="../index.html#sistema">O sistema</a>
-        <a href="../index.html#ia">IA aplicada</a>
-        <a href="../index.html#frentes">Frentes de receita</a>
+        <a href="../#metodo">O método</a>
+        <a href="../#cases">Cases</a>
+        <a href="../#sistema">O sistema</a>
+        <a href="../#ia">IA aplicada</a>
+        <a href="../#frentes">Frentes de receita</a>
       </div>
       <div class="ft-col">
         <h4>Conteúdo</h4>
-        <a href="../blog/index.html">Blog</a>
+        <a href="./">Blog</a>
         <a href="../blog/post-comissao-booking-18.html">Booking a 18%</a>
         <a href="../blog/post-motor-de-reservas.html">Motor de reservas</a>
         <a href="../blog/post-google-hotel-ads.html">Google Hotel Ads</a>
@@ -449,28 +466,28 @@ if(document.prerendering){document.addEventListener('prerenderingchange',go,{onc
     <div class="selos" aria-label="Integrações e parceiros de tecnologia">
       <div class="selos-track">
         <!-- lista repetida 2x para o loop contínuo do marquee -->
-        <div class="selo"><img src="../assets/img/omnibees.png" alt="Omnibees"></div>
-        <div class="selo"><img src="../assets/img/hsystem.png" alt="HSystem"></div>
-        <div class="selo"><img src="../assets/img/asksuite.jpeg" alt="Asksuite"></div>
-        <div class="selo"><img src="../assets/img/erbon.png" alt="Erbon"></div>
-        <div class="selo"><img src="../assets/img/bitz.png" alt="Bitz"></div>
-        <div class="selo"><img src="../assets/img/foco.png" alt="Foco"></div>
-        <div class="selo"><img src="../assets/img/omnibees.png" alt="Omnibees"></div>
-        <div class="selo"><img src="../assets/img/hsystem.png" alt="HSystem"></div>
-        <div class="selo"><img src="../assets/img/asksuite.jpeg" alt="Asksuite"></div>
-        <div class="selo"><img src="../assets/img/erbon.png" alt="Erbon"></div>
-        <div class="selo"><img src="../assets/img/bitz.png" alt="Bitz"></div>
-        <div class="selo"><img src="../assets/img/foco.png" alt="Foco"></div>
+        <div class="selo"><img src="../assets/img/omnibees.png" alt="Omnibees" width="168" height="96" loading="lazy"></div>
+        <div class="selo"><img src="../assets/img/hsystem.png" alt="HSystem" width="428" height="118" loading="lazy"></div>
+        <div class="selo"><img src="../assets/img/asksuite.jpeg" alt="Asksuite" width="200" height="200" loading="lazy"></div>
+        <div class="selo"><img src="../assets/img/erbon.png" alt="Erbon" width="301" height="456" loading="lazy"></div>
+        <div class="selo"><img src="../assets/img/bitz.png" alt="Bitz" width="492" height="158" loading="lazy"></div>
+        <div class="selo"><img src="../assets/img/foco.png" alt="Foco" width="331" height="152" loading="lazy"></div>
+        <div class="selo"><img src="../assets/img/omnibees.png" alt="Omnibees" width="168" height="96" loading="lazy"></div>
+        <div class="selo"><img src="../assets/img/hsystem.png" alt="HSystem" width="428" height="118" loading="lazy"></div>
+        <div class="selo"><img src="../assets/img/asksuite.jpeg" alt="Asksuite" width="200" height="200" loading="lazy"></div>
+        <div class="selo"><img src="../assets/img/erbon.png" alt="Erbon" width="301" height="456" loading="lazy"></div>
+        <div class="selo"><img src="../assets/img/bitz.png" alt="Bitz" width="492" height="158" loading="lazy"></div>
+        <div class="selo"><img src="../assets/img/foco.png" alt="Foco" width="331" height="152" loading="lazy"></div>
       </div>
     </div>
     <div class="ft-credit">© 2026 Komplexa Hotéis · Arquitetura de crescimento para reservas diretas · komplexahoteis.com</div>
   </div>
 </footer>
 
-<script src="../assets/js/vendor/lenis.min.js"></script>
-<script src="../assets/js/vendor/gsap.min.js"></script>
-<script src="../assets/js/vendor/ScrollTrigger.min.js"></script>
-<script src="../assets/js/main.js"></script>
+<script src="../assets/js/vendor/lenis.min.js" defer></script>
+<script src="../assets/js/vendor/gsap.min.js" defer></script>
+<script src="../assets/js/vendor/ScrollTrigger.min.js" defer></script>
+<script src="../assets/js/main.js" defer></script>
 
 </body>
 </html>

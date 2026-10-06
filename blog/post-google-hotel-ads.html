@@ -7,34 +7,37 @@
 <script>
 !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
 n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
-n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
-t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script',
+n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];
+/* fbevents.js entra depois do load, com a página ociosa; init e PageView já ficam na fila do fbq */
+var go=function(){t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)},
+idle=function(){f.requestIdleCallback?f.requestIdleCallback(go,{timeout:2000}):setTimeout(go,200)};
+b.readyState==='complete'?idle():f.addEventListener('load',idle,{once:true})}(window,document,'script',
 'https://connect.facebook.net/en_US/fbevents.js');
 (function(){var go=function(){fbq('init','1364660957915622');fbq('track','PageView');};
 if(document.prerendering){document.addEventListener('prerenderingchange',go,{once:true});}else{go();}})();
 </script>
 <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=1364660957915622&ev=PageView&noscript=1"></noscript>
 <!-- /Meta Pixel -->
-<script>document.documentElement.className+=" js";setTimeout(function(){if(!window.__animReady)document.documentElement.className+=" no-anim"},2500)</script>
-<title>Google Hotel Ads: como aparecer no Google e gerar reservas sem pagar comissão de OTA — Komplexa Hotéis</title>
-<meta content="O Google Hotel Ads coloca seu hotel direto na busca, competindo com Booking e Expedia — mas mandando a reserva para o seu site. Entenda como funciona e como configurar." name="description"/>
+<script>document.documentElement.className+=" js";setTimeout(function(){if(!window.__animReady)document.documentElement.className+=" no-anim"},1200)</script>
+<title>Google Hotel Ads: como aparecer e vender direto no Google</title>
+<meta content="Como funciona o Google Hotel Ads, o bloco de preços do Google que leva a reserva ao site do hotel, o que ter em ordem antes de ativar e como medir o custo." name="description"/>
 <meta content="Igor Salomão" name="author"/>
-<meta content="index, follow" name="robots"/>
+<meta content="index, follow, max-image-preview:large, max-snippet:-1" name="robots"/>
 <link href="https://komplexahoteis.com/blog/post-google-hotel-ads.html" rel="canonical"/>
 <meta content="article" property="og:type"/>
 <meta content="https://komplexahoteis.com/blog/post-google-hotel-ads.html" property="og:url"/>
-<meta content="Google Hotel Ads: como aparecer no Google e gerar reservas sem pagar comissão de OTA" property="og:title"/>
-<meta content="O Google Hotel Ads coloca seu hotel direto na busca, competindo com Booking e Expedia — mas mandando a reserva para o seu site. Entenda como funciona e como configurar." property="og:description"/>
+<meta content="Google Hotel Ads: como aparecer e vender direto no Google" property="og:title"/>
+<meta content="Como funciona o Google Hotel Ads, o bloco de preços do Google que leva a reserva ao site do hotel, o que ter em ordem antes de ativar e como medir o custo." property="og:description"/>
 <meta content="https://komplexahoteis.com/assets/img/og/post-google-hotel-ads.jpg" property="og:image"/>
 <meta content="pt_BR" property="og:locale"/>
 <meta content="Komplexa Hotéis" property="og:site_name"/>
 <meta content="2026-04-01" property="article:published_time"/>
 <meta content="Igor Salomão" property="article:author"/>
 <meta content="Reservas Diretas" property="article:section"/>
-<meta content="2026-09-29" property="article:modified_time"/>
+<meta content="2026-10-06" property="article:modified_time"/>
 <meta content="summary_large_image" name="twitter:card"/>
-<meta content="Google Hotel Ads: como aparecer no Google e gerar reservas sem pagar comissão de OTA" name="twitter:title"/>
-<meta content="O Google Hotel Ads coloca seu hotel direto na busca, competindo com Booking e Expedia — mas mandando a reserva para o seu site. Entenda como funciona e como configurar." name="twitter:description"/>
+<meta content="Google Hotel Ads: como aparecer e vender direto no Google" name="twitter:title"/>
+<meta content="Como funciona o Google Hotel Ads, o bloco de preços do Google que leva a reserva ao site do hotel, o que ter em ordem antes de ativar e como medir o custo." name="twitter:description"/>
 <meta content="https://komplexahoteis.com/assets/img/og/post-google-hotel-ads.jpg" name="twitter:image"/>
 <script type="application/ld+json">
 [
@@ -42,10 +45,10 @@ if(document.prerendering){document.addEventListener('prerenderingchange',go,{onc
     "@context": "https://schema.org",
     "@type": "BlogPosting",
     "headline": "Google Hotel Ads: como aparecer no Google e gerar reservas sem pagar comissão de OTA",
-    "description": "O Google Hotel Ads coloca seu hotel direto na busca, competindo com Booking e Expedia — mas mandando a reserva para o seu site. Entenda como funciona e como configurar.",
+    "description": "Como funciona o Google Hotel Ads, o bloco de preços do Google que leva a reserva ao site do hotel, o que ter em ordem antes de ativar e como medir o custo.",
     "url": "https://komplexahoteis.com/blog/post-google-hotel-ads.html",
     "datePublished": "2026-04-01",
-    "dateModified": "2026-09-29",
+    "dateModified": "2026-10-06",
     "inLanguage": "pt-BR",
     "author": {
       "@type": "Person",
@@ -61,7 +64,7 @@ if(document.prerendering){document.addEventListener('prerenderingchange',go,{onc
       "url": "https://komplexahoteis.com/",
       "logo": {
         "@type": "ImageObject",
-        "url": "https://komplexahoteis.com/assets/logo.svg"
+        "url": "https://komplexahoteis.com/assets/img/icon-512.png", "width": 512, "height": 512
       }
     },
     "mainEntityOfPage": {
@@ -106,7 +109,7 @@ if(document.prerendering){document.addEventListener('prerenderingchange',go,{onc
         "name": "Quanto custa anunciar minha pousada no Google Hotel Ads?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Depende do modelo de cobrança. No CPC, você paga cada clique no link do seu hotel, o que favorece quem tem site rápido e boa conversão. No CPA, paga uma porcentagem de cada reserva concluída, com menos risco e custo por reserva potencialmente maior. Nos dois casos, a referência para avaliar é a comissão de 18% que o Booking cobra desde julho de 2026: se a reserva direta custar menos que isso, o canal devolve margem."
+          "text": "O Google Hotel Ads cobra conforme a estratégia de lance: CPC manual, CPC% (percentual do preço da diária), CPC otimizado ou ROAS desejado, segundo a ajuda do Google. Para saber se compensa, calcule o custo por reserva (gasto em cliques ÷ reservas confirmadas no PMS) e compare com a comissão de 18% que o Booking cobra no programa Preferencial desde julho de 2026."
         }
       },
       {
@@ -141,9 +144,8 @@ if(document.prerendering){document.addEventListener('prerenderingchange',go,{onc
 <link rel="icon" type="image/svg+xml" href="../assets/img/favicon.svg">
 <link rel="apple-touch-icon" href="../assets/img/apple-touch-icon.png">
 <link rel="manifest" href="../site.webmanifest">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="preload" href="../assets/fonts/jost-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="../assets/fonts/cormorant-latin.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="../assets/css/style.css">
 <style>
 .post-resumo{border-left:3px solid #1099E9;background:rgba(16,153,233,.06);border-radius:0 14px 14px 0;padding:1.2rem 1.4rem;margin:0 0 2.2rem}
@@ -163,7 +165,7 @@ if(document.prerendering){document.addEventListener('prerenderingchange',go,{onc
   </div>
 </header>
 
-<a href="../index.html" class="logo-fix dark" id="logoFix" aria-label="Komplexa Hotéis">
+<a href="../" class="logo-fix dark" id="logoFix" aria-label="Komplexa Hotéis">
   <svg viewBox="0 0 100 97" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
     <path d="M45.8247 36.6514C47.5271 36.6514 49.1676 37.1817 50.5604 38.211L89.22 66.5651C90.9533 67.844 92.0985 69.7156 92.439 71.8679C92.7795 74.0202 92.2533 76.1413 90.9843 77.8881C89.4366 80.0092 87.0842 81.2257 84.4533 81.2257C81.8223 81.2257 81.1104 80.6954 79.7176 79.6661L41.0581 51.3119C39.3247 50.033 38.1795 48.1615 37.839 46.0092C37.4985 43.8569 38.0247 41.7358 39.2938 39.989C40.8414 37.8679 43.1938 36.6514 45.8247 36.6514ZM45.8247 29.1651C41.0581 29.1651 36.3223 31.3798 33.289 35.5908C28.2747 42.5468 29.7914 52.3101 36.6938 57.3633L75.3533 85.7174C78.1081 87.745 81.2962 88.7119 84.4533 88.7119C89.22 88.7119 93.9557 86.4973 96.989 82.2862C102.003 75.3303 100.487 65.567 93.5842 60.5138L54.9247 32.1596C52.17 30.1321 48.9819 29.1651 45.8247 29.1651Z"/>
     <path d="M69.1938 7.48624C70.8961 7.48624 72.5366 8.01651 73.9295 9.04587L79.47 13.1009C83.0604 15.7211 83.8652 20.8055 81.2342 24.4239L76.4985 30.9743L64.4581 22.1468C60.8676 19.5266 60.0628 14.4422 62.6938 10.8239C64.2414 8.70275 66.5938 7.48624 69.2247 7.48624M69.1938 0C64.4271 0 59.6914 2.21468 56.658 6.42569C51.6438 13.3816 53.1604 23.145 60.0628 28.1982L78.108 41.4239L87.2081 28.822C92.2223 21.8661 90.7057 12.1027 83.8033 7.04954L78.2628 2.99449C75.508 0.966969 72.32 0 69.1628 0H69.1938Z"/>
@@ -178,7 +180,7 @@ if(document.prerendering){document.addEventListener('prerenderingchange',go,{onc
     Oi! Sou o Igor, fundador<br>da Komplexa. Quer o plano<br>do seu hotel?
   </div>
   <button class="conc-avatar" onclick="openConcierge()" aria-label="Falar com a Komplexa">
-    <img src="../assets/img/igor.png" alt="Igor Salomão, fundador da Komplexa"><span class="conc-dot"></span>
+    <img src="../assets/img/igor.png" alt="Igor Salomão, fundador da Komplexa" width="400" height="400"><span class="conc-dot"></span>
   </button>
 </div>
 
@@ -186,18 +188,20 @@ if(document.prerendering){document.addEventListener('prerenderingchange',go,{onc
 <nav class="menu" id="menu">
   <div class="menu-grid">
     <div class="menu-list" data-lenis-prevent>
-      <a href="../index.html#metodo" class="active">O método</a>
-      <a href="../index.html#cases">Cases</a>
-      <a href="../index.html#site">O site entregue</a>
-      <a href="../index.html#sistema">O sistema</a>
-      <a href="../index.html#frentes">Frentes de receita</a>
-      <a href="../index.html#presenca">Quem somos</a>
-      <a href="../index.html#contato">Falar com a Komplexa</a>
+      <a href="../#metodo" class="active">O método</a>
+      <a href="../#cases">Cases</a>
+      <a href="../#site">O site entregue</a>
+      <a href="../#sistema">O sistema</a>
+      <a href="../#frentes">Frentes de receita</a>
+      <a href="../#presenca">Quem somos</a>
+      <a href="../#contato">Falar com a Komplexa</a>
     </div>
   </div>
   <div class="menu-foot">
     <div class="menu-foot-links">
-      <a href="../blog/index.html">Blog</a>
+      <a href="./">Blog</a>
+      <a href="../guia-reservas-diretas.html">Guia de reservas diretas</a>
+      <a href="../agencia-marketing-hoteleiro.html">Agência de marketing hoteleiro</a>
       <a href="https://komplexa-pricing.vercel.app/f/komplexaconsultoria?utm_source=komplexahoteis&amp;utm_medium=site&amp;utm_content=blog-google-hotel-ads-menu" target="_blank" rel="noopener">Agendar conversa <span class="ext">↗</span></a>
     </div>
     <div class="menu-foot-social">
@@ -210,11 +214,11 @@ if(document.prerendering){document.addEventListener('prerenderingchange',go,{onc
 <!-- ============ POST ============ -->
 <section class="post-hero">
   <div class="wrap"><div class="post-wrap">
-    <nav class="crumbs" aria-label="Navegação"><a href="../index.html">Início</a><span>/</span><a href="index.html">Blog</a><span>/</span><span>Reservas Diretas</span></nav>
+    <nav class="crumbs" aria-label="Navegação"><a href="../">Início</a><span>/</span><a href="./">Blog</a><span>/</span><span>Reservas Diretas</span></nav>
     <span class="overline">Reservas Diretas</span>
     <h1 class="t-display">Google Hotel Ads: como aparecer no Google e gerar reservas sem pagar comissão de OTA</h1>
-    <p class="post-lead">O Google Hotel Ads coloca seu hotel direto na busca, competindo com Booking e Expedia — mas mandando a reserva para o seu site. Entenda como funciona e como configurar.</p>
-    <div class="post-meta"><span>Abril 2026</span><span>8 min de leitura</span><span>Por <a href="../igor-salomao.html">Igor Salomão</a></span><span>Atualizado em setembro de 2026</span></div>
+    <p class="post-lead">Como funciona o Google Hotel Ads, o bloco de preços do Google que leva a reserva ao site do hotel, o que ter em ordem antes de ativar e como medir o custo.</p>
+    <div class="post-meta"><span>Abril 2026</span><span>8 min de leitura</span><span>Por <a href="../igor-salomao.html">Igor Salomão</a></span><span>Atualizado em outubro de 2026</span></div>
   </div></div>
 </section>
 
@@ -225,10 +229,10 @@ if(document.prerendering){document.addEventListener('prerenderingchange',go,{onc
       Quando um viajante pesquisa "hotel em Florianópolis" no Google, ele não vê apenas resultados orgânicos. Aparece um bloco com fotos, preços e disponibilidade em tempo real — direto na busca. Booking.com está lá. Expedia também. E o site do seu hotel? Provavelmente não.
     </p>
 <p>
-      O Google Hotel Ads é o canal que permite ao seu hotel aparecer nesse bloco, competindo de igual para igual com as OTAs — mas com uma diferença fundamental: quando o hóspede clica, ele vai direto para o <strong>seu site</strong>, não para a plataforma. A comissão fica com você.
+      O Google Hotel Ads é o canal que permite ao seu hotel aparecer nesse bloco, competindo de igual para igual com as OTAs — mas com uma diferença fundamental: quando o hóspede clica, ele vai direto para o <strong>seu site</strong>, não para a plataforma. A comissão fica com você. O contexto completo está no <a href="../guia-reservas-diretas.html">guia de reservas diretas para hotéis e pousadas</a>.
     </p>
 <div class="highlight-box">
-<p>Booking.com e Expedia já investem pesado no Google Hotel Ads para aparecer antes do seu site na busca. Não usar o canal significa pagar comissão de 15% a 25% para intermediários que estão usando a sua própria audiência contra você.</p>
+<p>Booking.com e Expedia aparecem nesse mesmo bloco. Não usar o canal significa depender de intermediários que cobram comissão sobre a reserva (18% no Booking, no programa Preferencial, desde 1º de julho de 2026; veja o que muda com a <a href="post-comissao-booking-18.html">comissão do Booking em 18%</a>).</p>
 </div>
 <h2 id="o-que-e">O que é o Google Hotel Ads</h2>
 <p>
@@ -247,7 +251,7 @@ if(document.prerendering){document.addEventListener('prerenderingchange',go,{onc
     </p>
 <h2 id="como-funciona">Como o Google Hotel Ads funciona na prática</h2>
 <p>
-      O Google Hotel Ads opera no modelo de <strong>metasearch</strong>: ele não é uma OTA. Não armazena reservas nem gerencia hóspedes. Ele apenas agrega e exibe preços de múltiplas fontes em tempo real, cobrando do anunciante por clique (CPC) ou por conversão (CPA).
+      O Google Hotel Ads opera no modelo de <strong>metasearch</strong>: ele não é uma OTA. Não armazena reservas nem gerencia hóspedes. Ele apenas agrega e exibe preços de múltiplas fontes em tempo real, cobrando do anunciante conforme a estratégia de lance escolhida.
     </p>
 <h3>O fluxo básico</h3>
 <ul>
@@ -258,49 +262,26 @@ if(document.prerendering){document.addEventListener('prerenderingchange',go,{onc
 </ul>
 <h3>Modelo de cobrança</h3>
 <p>
-      Existem dois modelos principais:
+      As estratégias de lance de hotel ads listadas na ajuda do Google são CPC manual (valor fixo por clique), CPC% (lance como percentual do preço da diária), CPC otimizado e ROAS desejado. As estratégias por comissão (por estadia e por conversão) estão sendo descontinuadas, segundo a mesma ajuda. Fonte: <a href="https://support.google.com/google-ads/answer/9244120" target="_blank" rel="noopener">Ajuda do Google Ads: estratégias de lance para hotel ads</a>.
     </p>
-<ul>
-<li><strong>CPC (custo por clique):</strong> você paga cada vez que alguém clica no link do seu hotel. Bom para hotéis com site bem otimizado e boa taxa de conversão.</li>
-<li><strong>CPA (custo por aquisição):</strong> você paga uma porcentagem de cada reserva concluída. Menor risco, mas custo potencialmente mais alto por reserva.</li>
-</ul>
 <div class="highlight-box">
-<p>Mesmo no pior cenário, o custo por reserva via Google Hotel Ads costuma ficar entre 8% e 12% — menos da metade da comissão média de OTA. E os dados do hóspede ficam com o hotel.</p>
+<p>O custo por reserva depende do destino, do site e da estratégia de lance. Calcule: custo por reserva = gasto em cliques ÷ reservas confirmadas no PMS. Exemplo ilustrativo, não é resultado de cliente: numa reserva de R$ 800 (2 diárias de R$ 400), a comissão de 18% é R$ 144; se o custo por reserva nos anúncios for R$ 100, ele equivale a 12,5% do valor da reserva (100 ÷ 800). Só o seu PMS diz de que lado da conta o hotel está.</p>
 </div>
 <h2 id="vs-ota">Google Hotel Ads vs. OTA: a diferença que muda a conta</h2>
 <p>
       OTAs como Booking.com também investem no Google Hotel Ads. Elas aparecem no mesmo bloco que o seu site direto. A diferença está no que acontece depois do clique:
     </p>
-<div class="data-block">
-<h4>Comparativo: reserva via OTA vs. Google Hotel Ads direto</h4>
-<div class="db-row">
-<span class="db-label">Comissão OTA (média)</span>
-<div class="db-bar-wrap"><div class="db-bar" style="width:80%"></div></div>
-<span class="db-val">~18%</span>
-</div>
-<div class="db-row">
-<span class="db-label">Custo Google Ads (CPA)</span>
-<div class="db-bar-wrap"><div class="db-bar" style="width:45%"></div></div>
-<span class="db-val">~10%</span>
-</div>
-<div class="db-row">
-<span class="db-label">Custo Google Ads (CPC)</span>
-<div class="db-bar-wrap"><div class="db-bar" style="width:30%"></div></div>
-<span class="db-val">~6%</span>
-</div>
-<div class="db-row">
-<span class="db-label">Dados do hóspede com OTA</span>
-<div class="db-bar-wrap"><div class="db-bar" style="width:0%"></div></div>
-<span class="db-val">Não</span>
-</div>
-<div class="db-row">
-<span class="db-label">Dados do hóspede (direto)</span>
-<div class="db-bar-wrap"><div class="db-bar" style="width:100%"></div></div>
-<span class="db-val">Sim</span>
-</div>
-</div>
+<table>
+<thead>
+<tr><th>Ponto de comparação</th><th>Reserva pela OTA</th><th>Reserva pelo Google Hotel Ads</th></tr>
+</thead>
+<tbody>
+<tr><td>Custo cobrado</td><td>Comissão sobre a reserva (18% no programa Preferencial do Booking)</td><td>Lance por clique, conforme a estratégia escolhida</td></tr>
+<tr><td>Dados do hóspede</td><td>Ficam com a plataforma</td><td>Ficam com o hotel</td></tr>
+</tbody>
+</table>
 <p>
-      Além do custo menor, a reserva direta entrega algo que OTA nunca entrega: o <strong>contato do hóspede</strong>. E-mail, telefone, histórico de preferências — tudo isso fica com o hotel e pode ser usado para reativar, fazer upsell e aumentar o LTV do cliente ao longo do tempo.
+      Além de trocar comissão por lance, a reserva direta entrega algo que OTA não entrega: o <strong>contato do hóspede</strong>. E-mail, telefone, histórico de preferências — tudo isso fica com o hotel e pode ser usado para reativar, fazer upsell e aumentar o LTV do cliente ao longo do tempo.
     </p>
 <h2 id="pre-requisitos">O que precisa estar em ordem antes de ativar</h2>
 <p>
@@ -308,11 +289,11 @@ if(document.prerendering){document.addEventListener('prerenderingchange',go,{onc
     </p>
 <h3>1. Motor de reservas com integração ao Google</h3>
 <p>
-      O primeiro requisito é ter um motor de reservas que se integre ao Google Hotel Ads via feed de preços. Sistemas como Cloudbeds, Omnibees, Reserva Certa e outros já possuem essa integração nativa ou via parceiros de conectividade. Sem isso, não há como exibir tarifas em tempo real.
+      O primeiro requisito é ter um motor de reservas que se integre ao Google Hotel Ads via feed de preços (veja <a href="post-motor-de-reservas.html">como escolher um motor de reservas</a>). Sistemas como Cloudbeds, Omnibees, Reserva Certa e outros já possuem essa integração nativa ou via parceiros de conectividade. Sem isso, não há como exibir tarifas em tempo real.
     </p>
 <h3>2. Paridade tarifária</h3>
 <p>
-      Se o preço no seu site direto for maior que na Booking.com, o hóspede vai reservar na Booking. Simples assim. Paridade tarifária — ou melhor, uma <strong>tarifa exclusiva para reserva direta</strong> — é condição básica para o canal funcionar.
+      Se o preço no seu site direto for maior que na Booking.com, o hóspede vai reservar na Booking. Simples assim. A <a href="post-paridade-tarifaria.html">paridade tarifária entre site e OTAs</a>, ou melhor, uma <strong>tarifa exclusiva para reserva direta</strong>, é condição básica para o canal funcionar.
     </p>
 <h3>3. Site otimizado para conversão</h3>
 <p>
@@ -324,7 +305,7 @@ if(document.prerendering){document.addEventListener('prerenderingchange',go,{onc
     </p>
 <h2 id="como-ativar">Como ativar o Google Hotel Ads no seu hotel</h2>
 <p>
-      A ativação segue um caminho específico. O hotel não contrata diretamente com o Google — a conexão é feita via <strong>parceiros de integração</strong> (também chamados de connectivity partners), que são plataformas ou agências autorizadas a enviar feeds de preço ao Google.
+      A ativação segue um caminho específico. O hotel não contrata diretamente com o Google — a conexão é feita via <strong>parceiros de integração</strong> (também chamados de connectivity partners), que são plataformas ou agências autorizadas a enviar feeds de preço ao Google. Para operar a conta de anúncios e o funil, uma <a href="../agencia-marketing-hoteleiro.html">agência de marketing hoteleiro</a> pode assumir a gestão contínua.
     </p>
 <ul>
 <li><strong>Passo 1:</strong> Verificar se o motor de reservas atual tem integração nativa com Google Hotel Ads ou precisa de um parceiro intermediário</li>
@@ -339,7 +320,7 @@ if(document.prerendering){document.addEventListener('prerenderingchange',go,{onc
 </div>
 <h2 id="resultados">Resultados realistas e como medir</h2>
 <p>
-      O Google Hotel Ads não é uma solução mágica. É um canal de aquisição que, bem configurado e integrado a uma estratégia maior, entrega reservas diretas com custo menor que OTA. Os resultados variam conforme o mercado, a competitividade do destino e a qualidade do funil de conversão.
+      O Google Hotel Ads não é uma solução mágica. É um canal de aquisição que, bem configurado e integrado a uma estratégia maior, pode entregar reservas diretas por um custo menor que a comissão de OTA. Os resultados variam conforme o mercado, a competitividade do destino e a qualidade do funil de conversão.
     </p>
 <p>
       As métricas que realmente importam no canal:
@@ -351,7 +332,7 @@ if(document.prerendering){document.addEventListener('prerenderingchange',go,{onc
 <li><strong>Parcela de impressões:</strong> com que frequência seu hotel aparece vs. OTAs no bloco</li>
 </ul>
 <p>
-      Hotéis com funil bem estruturado — site que converte, paridade tarifária e rastreamento configurado — costumam ver custo por reserva entre 6% e 12% do valor da diária, contra 15% a 25% de OTA.
+      Compare o custo por reserva dos anúncios, calculado como acima, com a comissão que a mesma reserva pagaria na OTA.
     </p>
 <div class="post-divider"></div>
 <h2 id="conclusao">Google Hotel Ads é suficiente sozinho?</h2>
@@ -365,15 +346,15 @@ if(document.prerendering){document.addEventListener('prerenderingchange',go,{onc
       A estrutura que realmente funciona combina Google Hotel Ads com funil completo: atração qualificada, conversão otimizada, recuperação de carrinho e pós-venda. É a diferença entre ter um canal a mais e ter um sistema de receita direta previsível.
     </p>
 <div class="post-cta">
-<h4>Quer o Google Hotel Ads rodando no seu hotel?</h4>
-<p>A Komplexa configura e gerencia o canal integrado ao funil completo de reservas diretas — da ativação técnica à otimização contínua.</p>
-<a class="btn-sage" href="https://komplexa-pricing.vercel.app/f/komplexaconsultoria?utm_source=komplexahoteis&amp;utm_medium=site&amp;utm_content=blog-google-hotel-ads" target="_blank">Falar com especialista</a>
+<h4>Quer conversar sobre o canal direto do seu hotel?</h4>
+<p>O Lagamar, resort e hotel atendido pela Komplexa, teve mais de 7x de retorno sobre a mídia paga, conferido no PMS do hotel. Cada resultado vem de uma operação diferente: na conversa com a Komplexa, o plano nasce do seu hotel, sem pacote pronto. <a href="../#cases" style="color:#fff;border-bottom:1px solid rgba(255,255,255,.5)">Ver os cases</a></p>
+<a class="btn-sage" href="https://komplexa-pricing.vercel.app/f/komplexaconsultoria?utm_source=komplexahoteis&amp;utm_medium=site&amp;utm_content=blog-google-hotel-ads-meio" target="_blank" rel="noopener">Agendar conversa</a>
 </div>
   <h2 id="faq">Perguntas frequentes</h2>
 <div class="faq-list">
 <details class="faq-item">
 <summary>Quanto custa anunciar minha pousada no Google Hotel Ads?</summary>
-<div class="faq-answer"><p>Depende do modelo de cobrança. No CPC, você paga cada clique no link do seu hotel, o que favorece quem tem site rápido e boa conversão. No CPA, paga uma porcentagem de cada reserva concluída, com menos risco e custo por reserva potencialmente maior. Nos dois casos, a referência para avaliar é a comissão de 18% que o Booking cobra desde julho de 2026: se a reserva direta custar menos que isso, o canal devolve margem.</p></div>
+<div class="faq-answer"><p>O Google Hotel Ads cobra conforme a estratégia de lance: CPC manual, CPC% (percentual do preço da diária), CPC otimizado ou ROAS desejado, segundo a ajuda do Google. Para saber se compensa, calcule o custo por reserva (gasto em cliques ÷ reservas confirmadas no PMS) e compare com a comissão de 18% que o Booking cobra no programa Preferencial desde julho de 2026.</p></div>
 </details>
 <details class="faq-item">
 <summary>Como conectar meu motor de reservas ao Google Hotel Ads?</summary>
@@ -388,6 +369,11 @@ if(document.prerendering){document.addEventListener('prerenderingchange',go,{onc
 <div class="faq-answer"><p>Não. O canal captura demanda que já existe: quem pesquisa o nome do seu hotel ou hotéis no seu destino. Depender só dele troca uma dependência, a da OTA, por outra, a do Google. Para ter reserva direta previsível, ele precisa operar junto com geração de demanda, como Meta Ads, remarketing, reativação de hóspedes antigos e automação de WhatsApp, e com um funil que inclua site que converte, recuperação de carrinho e pós-venda.</p></div>
 </details>
 </div>
+  <h2 id="fontes">Fontes</h2>
+<ul>
+<li><a href="https://support.google.com/google-ads/answer/9244120" target="_blank" rel="noopener">Ajuda do Google Ads: estratégias de lance para hotel ads</a> (consultado em 06/10/2026)</li>
+<li><a href="https://www.panrotas.com.br/hotelaria/mercado/2026/05/bookingcom-altera-politica-de-comissao-no-brasil-e-gera-preocupacao-na-hotelaria_228875.html" target="_blank" rel="noopener">Panrotas, 26/05/2026: Booking.com altera política de comissão no Brasil</a></li>
+</ul>
 </article>
   <aside class="post-side">
     <div class="side-card"><h4>Neste artigo</h4>
@@ -399,15 +385,16 @@ if(document.prerendering){document.addEventListener('prerenderingchange',go,{onc
 <a href="#resultados" class="toc-link">Resultados e métricas</a>
 <a href="#conclusao" class="toc-link">É suficiente sozinho?</a>
     <a href="#faq" class="toc-link">Perguntas frequentes</a>
+    <a href="#fontes" class="toc-link">Fontes</a>
     </div>
     <div class="side-cta"><h4>Para o seu hotel</h4>
       <p>Um plano de aquisição desenhado a partir da sua operação, medido no PMS.</p>
-      <a href="https://komplexa-pricing.vercel.app/f/komplexaconsultoria?utm_source=komplexahoteis&amp;utm_medium=site&amp;utm_content=blog-google-hotel-ads" target="_blank" rel="noopener" class="btn-sage">Agendar conversa</a>
+      <a href="https://komplexa-pricing.vercel.app/f/komplexaconsultoria?utm_source=komplexahoteis&amp;utm_medium=site&amp;utm_content=blog-google-hotel-ads-lateral" target="_blank" rel="noopener" class="btn-sage">Agendar conversa</a>
     </div>
     <div class="side-card"><h4>Leia também</h4>
-<a href="post-ota.html" class="related-post"><h5>Como reduzir a dependência de OTAs e gerar reservas diretas</h5><span>OTA e Distribuição · 8 min</span></a>
-<a href="post-funil.html" class="related-post"><h5>Por que campanhas isoladas não funcionam para hotéis</h5><span>Conversão · 5 min</span></a>
-<a href="post-ltv.html" class="related-post"><h5>LTV em hotéis: o ativo que a maioria ignora</h5><span>CRM e Pós-venda · 6 min</span></a>
+<a href="post-motor-de-reservas.html" class="related-post"><h5>Motor de reservas para pousada: vale a pena e como escolher em 2026</h5><span>Reservas Diretas · 9 min</span></a>
+<a href="post-paridade-tarifaria.html" class="related-post"><h5>Paridade tarifária: o que é e como não perder dinheiro com isso</h5><span>OTA e Distribuição · 7 min</span></a>
+<a href="post-dependencia-booking-pousada.html" class="related-post"><h5>Pousada presa no Booking: como migrar para reservas diretas sem perder ocupação</h5><span>Reservas Diretas · 10 min</span></a>
     </div>
   </aside>
 </div></div>
@@ -416,9 +403,9 @@ if(document.prerendering){document.addEventListener('prerenderingchange',go,{onc
   <div class="wrap">
     <span class="overline">Continue lendo</span>
     <div class="rg-grid">
-<a href="post-ota.html" class="rg-card"><span class="rg-tag">OTA e Distribuição</span><h4>Como reduzir a dependência de OTAs e gerar reservas diretas</h4><p>Comissões de 15% a 25% não são inevitáveis. Estratégia completa para construir um canal direto forte e recuperar margem.</p></a>
-<a href="post-funil.html" class="rg-card"><span class="rg-tag">Conversão</span><h4>Por que campanhas isoladas não funcionam para hotéis</h4><p>Google Hotel Ads sem funil completo é só mais um custo. Entenda o sistema que escala reservas diretas.</p></a>
-<a href="post-ltv.html" class="rg-card"><span class="rg-tag">CRM e Pós-venda</span><h4>LTV em hotéis: o ativo que a maioria ignora</h4><p>Hóspedes antigos são o lead mais barato de reativar — e poucos hotéis usam essa alavanca.</p></a>
+<a href="post-funil.html" class="rg-card"><span class="rg-tag">Conversão</span><h4>Por que campanhas isoladas não funcionam para hotéis</h4><p>Anúncio sem site, motor e atendimento ligados vaza verba. O funil inteiro decide a reserva.</p></a>
+<a href="post-comissao-booking-18.html" class="rg-card"><span class="rg-tag">OTA e Distribuição</span><h4>Comissão do Booking em 18% desde julho de 2026: o que mudou e como proteger sua margem</h4><p>Linha do tempo da comissão preferencial de 18%, a conta por diária e o que fazer sem sair do Booking.</p></a>
+<a href="post-aeo-ia-busca.html" class="rg-card"><span class="rg-tag">Inteligência Artificial</span><h4>Sua pousada aparece no ChatGPT? O que é AEO e por que importa em 2026</h4><p>O que fazer para a IA ler e recomendar a sua pousada, e por que isso leva reserva direta.</p></a>
     </div>
   </div>
 </section>
@@ -429,7 +416,7 @@ if(document.prerendering){document.addEventListener('prerenderingchange',go,{onc
     <div class="news-box">
       <span class="overline rv">Carta do fundador</span>
       <h2 class="t-display rv">Um convite para conhecer <em class="gi">o nosso time.</em></h2>
-      <img class="carta-foto rv" src="../assets/img/igor.png" alt="Igor Salomão, fundador da Komplexa">
+      <img class="carta-foto rv" src="../assets/img/igor.png" alt="Igor Salomão, fundador da Komplexa" width="400" height="400" loading="lazy">
       <div class="carta rv">
         <p>Sou o Igor Salomão, fundador da Komplexa. Se você chegou até aqui, quero te fazer um convite: uma conversa comigo e com o time sobre o seu hotel.</p>
         <p>Nela, queremos entender de verdade como a sua operação funciona hoje: de onde vêm as reservas, como o hóspede chega até você e onde você sente que dá para crescer.</p>
@@ -461,15 +448,15 @@ if(document.prerendering){document.addEventListener('prerenderingchange',go,{onc
       </div>
       <div class="ft-col">
         <h4>A solução</h4>
-        <a href="../index.html#metodo">O método</a>
-        <a href="../index.html#cases">Cases</a>
-        <a href="../index.html#sistema">O sistema</a>
-        <a href="../index.html#ia">IA aplicada</a>
-        <a href="../index.html#frentes">Frentes de receita</a>
+        <a href="../#metodo">O método</a>
+        <a href="../#cases">Cases</a>
+        <a href="../#sistema">O sistema</a>
+        <a href="../#ia">IA aplicada</a>
+        <a href="../#frentes">Frentes de receita</a>
       </div>
       <div class="ft-col">
         <h4>Conteúdo</h4>
-        <a href="../blog/index.html">Blog</a>
+        <a href="./">Blog</a>
         <a href="../blog/post-comissao-booking-18.html">Booking a 18%</a>
         <a href="../blog/post-motor-de-reservas.html">Motor de reservas</a>
         <a href="../blog/post-google-hotel-ads.html">Google Hotel Ads</a>
@@ -485,28 +472,28 @@ if(document.prerendering){document.addEventListener('prerenderingchange',go,{onc
     <div class="selos" aria-label="Integrações e parceiros de tecnologia">
       <div class="selos-track">
         <!-- lista repetida 2x para o loop contínuo do marquee -->
-        <div class="selo"><img src="../assets/img/omnibees.png" alt="Omnibees"></div>
-        <div class="selo"><img src="../assets/img/hsystem.png" alt="HSystem"></div>
-        <div class="selo"><img src="../assets/img/asksuite.jpeg" alt="Asksuite"></div>
-        <div class="selo"><img src="../assets/img/erbon.png" alt="Erbon"></div>
-        <div class="selo"><img src="../assets/img/bitz.png" alt="Bitz"></div>
-        <div class="selo"><img src="../assets/img/foco.png" alt="Foco"></div>
-        <div class="selo"><img src="../assets/img/omnibees.png" alt="Omnibees"></div>
-        <div class="selo"><img src="../assets/img/hsystem.png" alt="HSystem"></div>
-        <div class="selo"><img src="../assets/img/asksuite.jpeg" alt="Asksuite"></div>
-        <div class="selo"><img src="../assets/img/erbon.png" alt="Erbon"></div>
-        <div class="selo"><img src="../assets/img/bitz.png" alt="Bitz"></div>
-        <div class="selo"><img src="../assets/img/foco.png" alt="Foco"></div>
+        <div class="selo"><img src="../assets/img/omnibees.png" alt="Omnibees" width="168" height="96" loading="lazy"></div>
+        <div class="selo"><img src="../assets/img/hsystem.png" alt="HSystem" width="428" height="118" loading="lazy"></div>
+        <div class="selo"><img src="../assets/img/asksuite.jpeg" alt="Asksuite" width="200" height="200" loading="lazy"></div>
+        <div class="selo"><img src="../assets/img/erbon.png" alt="Erbon" width="301" height="456" loading="lazy"></div>
+        <div class="selo"><img src="../assets/img/bitz.png" alt="Bitz" width="492" height="158" loading="lazy"></div>
+        <div class="selo"><img src="../assets/img/foco.png" alt="Foco" width="331" height="152" loading="lazy"></div>
+        <div class="selo"><img src="../assets/img/omnibees.png" alt="Omnibees" width="168" height="96" loading="lazy"></div>
+        <div class="selo"><img src="../assets/img/hsystem.png" alt="HSystem" width="428" height="118" loading="lazy"></div>
+        <div class="selo"><img src="../assets/img/asksuite.jpeg" alt="Asksuite" width="200" height="200" loading="lazy"></div>
+        <div class="selo"><img src="../assets/img/erbon.png" alt="Erbon" width="301" height="456" loading="lazy"></div>
+        <div class="selo"><img src="../assets/img/bitz.png" alt="Bitz" width="492" height="158" loading="lazy"></div>
+        <div class="selo"><img src="../assets/img/foco.png" alt="Foco" width="331" height="152" loading="lazy"></div>
       </div>
     </div>
     <div class="ft-credit">© 2026 Komplexa Hotéis · Arquitetura de crescimento para reservas diretas · komplexahoteis.com</div>
   </div>
 </footer>
 
-<script src="../assets/js/vendor/lenis.min.js"></script>
-<script src="../assets/js/vendor/gsap.min.js"></script>
-<script src="../assets/js/vendor/ScrollTrigger.min.js"></script>
-<script src="../assets/js/main.js"></script>
+<script src="../assets/js/vendor/lenis.min.js" defer></script>
+<script src="../assets/js/vendor/gsap.min.js" defer></script>
+<script src="../assets/js/vendor/ScrollTrigger.min.js" defer></script>
+<script src="../assets/js/main.js" defer></script>
 
 </body>
 </html>

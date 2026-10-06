@@ -21,8 +21,11 @@
 if(!window.__deckRoute){
 !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
 n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
-n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
-t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script',
+n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];
+/* fbevents.js entra depois do load, com a página ociosa; init e PageView já ficam na fila do fbq */
+var go=function(){t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)},
+idle=function(){f.requestIdleCallback?f.requestIdleCallback(go,{timeout:2000}):setTimeout(go,200)};
+b.readyState==='complete'?idle():f.addEventListener('load',idle,{once:true})}(window,document,'script',
 'https://connect.facebook.net/en_US/fbevents.js');
 (function(){var go=function(){fbq('init','1364660957915622');fbq('track','PageView');};
 if(document.prerendering){document.addEventListener('prerenderingchange',go,{once:true});}else{go();}})();
@@ -30,15 +33,15 @@ if(document.prerendering){document.addEventListener('prerenderingchange',go,{onc
 </script>
 <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=1364660957915622&ev=PageView&noscript=1"></noscript>
 <!-- /Meta Pixel -->
-<script>document.documentElement.className+=" js";setTimeout(function(){if(!window.__animReady)document.documentElement.className+=" no-anim"},2500)</script>
+<script>document.documentElement.className+=" js";setTimeout(function(){if(!window.__animReady)document.documentElement.className+=" no-anim"},1200)</script>
 <title>Página não encontrada — Komplexa Hotéis</title>
 <meta name="description" content="A página que você procurou não existe mais. Volte para a home da Komplexa Hotéis ou para o blog.">
 <meta name="robots" content="noindex, follow">
 <link rel="canonical" href="https://komplexahoteis.com/404.html">
-<link rel="icon" href="favicon.ico" sizes="32x32">
-<link rel="icon" type="image/svg+xml" href="assets/img/favicon.svg">
-<link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
-<link rel="manifest" href="site.webmanifest">
+<link rel="icon" href="/favicon.ico" sizes="32x32">
+<link rel="icon" type="image/svg+xml" href="/assets/img/favicon.svg">
+<link rel="apple-touch-icon" href="/assets/img/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://komplexahoteis.com/404.html">
 <meta property="og:title" content="Página não encontrada — Komplexa Hotéis">
@@ -51,10 +54,9 @@ if(document.prerendering){document.addEventListener('prerenderingchange',go,{onc
 <meta name="twitter:description" content="A página que você procurou não existe mais. Volte para a home da Komplexa Hotéis ou para o blog.">
 <meta name="twitter:image" content="https://komplexahoteis.com/assets/og-home.jpg">
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/css/style.css">
+<link rel="preload" href="/assets/fonts/jost-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/fonts/cormorant-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/assets/css/style.css">
 </head>
 <body class="pg-int">
 <!-- ============ FIXOS ============ -->
@@ -67,7 +69,7 @@ if(document.prerendering){document.addEventListener('prerenderingchange',go,{onc
   </div>
 </header>
 
-<a href="index.html" class="logo-fix dark" id="logoFix" aria-label="Komplexa Hotéis">
+<a href="/" class="logo-fix dark" id="logoFix" aria-label="Komplexa Hotéis">
   <svg viewBox="0 0 100 97" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
     <path d="M45.8247 36.6514C47.5271 36.6514 49.1676 37.1817 50.5604 38.211L89.22 66.5651C90.9533 67.844 92.0985 69.7156 92.439 71.8679C92.7795 74.0202 92.2533 76.1413 90.9843 77.8881C89.4366 80.0092 87.0842 81.2257 84.4533 81.2257C81.8223 81.2257 81.1104 80.6954 79.7176 79.6661L41.0581 51.3119C39.3247 50.033 38.1795 48.1615 37.839 46.0092C37.4985 43.8569 38.0247 41.7358 39.2938 39.989C40.8414 37.8679 43.1938 36.6514 45.8247 36.6514ZM45.8247 29.1651C41.0581 29.1651 36.3223 31.3798 33.289 35.5908C28.2747 42.5468 29.7914 52.3101 36.6938 57.3633L75.3533 85.7174C78.1081 87.745 81.2962 88.7119 84.4533 88.7119C89.22 88.7119 93.9557 86.4973 96.989 82.2862C102.003 75.3303 100.487 65.567 93.5842 60.5138L54.9247 32.1596C52.17 30.1321 48.9819 29.1651 45.8247 29.1651Z"/>
     <path d="M69.1938 7.48624C70.8961 7.48624 72.5366 8.01651 73.9295 9.04587L79.47 13.1009C83.0604 15.7211 83.8652 20.8055 81.2342 24.4239L76.4985 30.9743L64.4581 22.1468C60.8676 19.5266 60.0628 14.4422 62.6938 10.8239C64.2414 8.70275 66.5938 7.48624 69.2247 7.48624M69.1938 0C64.4271 0 59.6914 2.21468 56.658 6.42569C51.6438 13.3816 53.1604 23.145 60.0628 28.1982L78.108 41.4239L87.2081 28.822C92.2223 21.8661 90.7057 12.1027 83.8033 7.04954L78.2628 2.99449C75.508 0.966969 72.32 0 69.1628 0H69.1938Z"/>
@@ -82,7 +84,7 @@ if(document.prerendering){document.addEventListener('prerenderingchange',go,{onc
     Oi! Sou o Igor, fundador<br>da Komplexa. Quer o plano<br>do seu hotel?
   </div>
   <button class="conc-avatar" onclick="openConcierge()" aria-label="Falar com a Komplexa">
-    <img src="assets/img/igor.png" alt="Igor Salomão, fundador da Komplexa"><span class="conc-dot"></span>
+    <img src="/assets/img/igor.png" alt="Igor Salomão, fundador da Komplexa" width="400" height="400"><span class="conc-dot"></span>
   </button>
 </div>
 
@@ -90,18 +92,20 @@ if(document.prerendering){document.addEventListener('prerenderingchange',go,{onc
 <nav class="menu" id="menu">
   <div class="menu-grid">
     <div class="menu-list" data-lenis-prevent>
-      <a href="index.html#metodo" class="active">O método</a>
-      <a href="index.html#cases">Cases</a>
-      <a href="index.html#site">O site entregue</a>
-      <a href="index.html#sistema">O sistema</a>
-      <a href="index.html#frentes">Frentes de receita</a>
-      <a href="index.html#presenca">Quem somos</a>
-      <a href="index.html#contato">Falar com a Komplexa</a>
+      <a href="/#metodo" class="active">O método</a>
+      <a href="/#cases">Cases</a>
+      <a href="/#site">O site entregue</a>
+      <a href="/#sistema">O sistema</a>
+      <a href="/#frentes">Frentes de receita</a>
+      <a href="/#presenca">Quem somos</a>
+      <a href="/#contato">Falar com a Komplexa</a>
     </div>
   </div>
   <div class="menu-foot">
     <div class="menu-foot-links">
-      <a href="blog/index.html">Blog</a>
+      <a href="/blog/">Blog</a>
+      <a href="/guia-reservas-diretas.html">Guia de reservas diretas</a>
+      <a href="/agencia-marketing-hoteleiro.html">Agência de marketing hoteleiro</a>
       <a href="https://komplexa-pricing.vercel.app/f/komplexaconsultoria?utm_source=komplexahoteis&amp;utm_medium=site&amp;utm_content=404-menu" target="_blank" rel="noopener">Agendar conversa <span class="ext">↗</span></a>
     </div>
     <div class="menu-foot-social">
@@ -117,8 +121,8 @@ if(document.prerendering){document.addEventListener('prerenderingchange',go,{onc
     <h1 class="t-display">Essa página <em class="gi">não está mais aqui.</em></h1>
     <p class="post-lead">O endereço pode ter mudado com o site novo. O conteúdo continua: comece pela home ou pelo blog.</p>
     <div class="post-meta" style="gap:1rem;margin-top:2.2rem">
-      <a href="index.html" class="btn-sage">Ir para a home</a>
-      <a href="blog/index.html" class="btn-sage" style="background:var(--dark)">Ver o blog</a>
+      <a href="/" class="btn-sage">Ir para a home</a>
+      <a href="/blog/" class="btn-sage" style="background:var(--dark)">Ver o blog</a>
     </div>
   </div></div>
 </section>
@@ -140,20 +144,20 @@ if(document.prerendering){document.addEventListener('prerenderingchange',go,{onc
       </div>
       <div class="ft-col">
         <h4>A solução</h4>
-        <a href="index.html#metodo">O método</a>
-        <a href="index.html#cases">Cases</a>
-        <a href="index.html#sistema">O sistema</a>
-        <a href="index.html#ia">IA aplicada</a>
-        <a href="index.html#frentes">Frentes de receita</a>
+        <a href="/#metodo">O método</a>
+        <a href="/#cases">Cases</a>
+        <a href="/#sistema">O sistema</a>
+        <a href="/#ia">IA aplicada</a>
+        <a href="/#frentes">Frentes de receita</a>
       </div>
       <div class="ft-col">
         <h4>Conteúdo</h4>
-        <a href="blog/index.html">Blog</a>
-        <a href="blog/post-comissao-booking-18.html">Booking a 18%</a>
-        <a href="blog/post-motor-de-reservas.html">Motor de reservas</a>
-        <a href="blog/post-google-hotel-ads.html">Google Hotel Ads</a>
-        <a href="guia-reservas-diretas.html">Guia de reservas diretas</a>
-        <a href="agencia-marketing-hoteleiro.html">Agência de marketing hoteleiro</a>
+        <a href="/blog/">Blog</a>
+        <a href="/blog/post-comissao-booking-18.html">Booking a 18%</a>
+        <a href="/blog/post-motor-de-reservas.html">Motor de reservas</a>
+        <a href="/blog/post-google-hotel-ads.html">Google Hotel Ads</a>
+        <a href="/guia-reservas-diretas.html">Guia de reservas diretas</a>
+        <a href="/agencia-marketing-hoteleiro.html">Agência de marketing hoteleiro</a>
       </div>
       <div class="ft-col">
         <h4>Contato</h4>
@@ -164,28 +168,28 @@ if(document.prerendering){document.addEventListener('prerenderingchange',go,{onc
     <div class="selos" aria-label="Integrações e parceiros de tecnologia">
       <div class="selos-track">
         <!-- lista repetida 2x para o loop contínuo do marquee -->
-        <div class="selo"><img src="assets/img/omnibees.png" alt="Omnibees"></div>
-        <div class="selo"><img src="assets/img/hsystem.png" alt="HSystem"></div>
-        <div class="selo"><img src="assets/img/asksuite.jpeg" alt="Asksuite"></div>
-        <div class="selo"><img src="assets/img/erbon.png" alt="Erbon"></div>
-        <div class="selo"><img src="assets/img/bitz.png" alt="Bitz"></div>
-        <div class="selo"><img src="assets/img/foco.png" alt="Foco"></div>
-        <div class="selo"><img src="assets/img/omnibees.png" alt="Omnibees"></div>
-        <div class="selo"><img src="assets/img/hsystem.png" alt="HSystem"></div>
-        <div class="selo"><img src="assets/img/asksuite.jpeg" alt="Asksuite"></div>
-        <div class="selo"><img src="assets/img/erbon.png" alt="Erbon"></div>
-        <div class="selo"><img src="assets/img/bitz.png" alt="Bitz"></div>
-        <div class="selo"><img src="assets/img/foco.png" alt="Foco"></div>
+        <div class="selo"><img src="/assets/img/omnibees.png" alt="Omnibees" width="168" height="96" loading="lazy"></div>
+        <div class="selo"><img src="/assets/img/hsystem.png" alt="HSystem" width="428" height="118" loading="lazy"></div>
+        <div class="selo"><img src="/assets/img/asksuite.jpeg" alt="Asksuite" width="200" height="200" loading="lazy"></div>
+        <div class="selo"><img src="/assets/img/erbon.png" alt="Erbon" width="301" height="456" loading="lazy"></div>
+        <div class="selo"><img src="/assets/img/bitz.png" alt="Bitz" width="492" height="158" loading="lazy"></div>
+        <div class="selo"><img src="/assets/img/foco.png" alt="Foco" width="331" height="152" loading="lazy"></div>
+        <div class="selo"><img src="/assets/img/omnibees.png" alt="Omnibees" width="168" height="96" loading="lazy"></div>
+        <div class="selo"><img src="/assets/img/hsystem.png" alt="HSystem" width="428" height="118" loading="lazy"></div>
+        <div class="selo"><img src="/assets/img/asksuite.jpeg" alt="Asksuite" width="200" height="200" loading="lazy"></div>
+        <div class="selo"><img src="/assets/img/erbon.png" alt="Erbon" width="301" height="456" loading="lazy"></div>
+        <div class="selo"><img src="/assets/img/bitz.png" alt="Bitz" width="492" height="158" loading="lazy"></div>
+        <div class="selo"><img src="/assets/img/foco.png" alt="Foco" width="331" height="152" loading="lazy"></div>
       </div>
     </div>
     <div class="ft-credit">© 2026 Komplexa Hotéis · Arquitetura de crescimento para reservas diretas · komplexahoteis.com</div>
   </div>
 </footer>
 
-<script src="assets/js/vendor/lenis.min.js"></script>
-<script src="assets/js/vendor/gsap.min.js"></script>
-<script src="assets/js/vendor/ScrollTrigger.min.js"></script>
-<script src="assets/js/main.js"></script>
+<script src="/assets/js/vendor/lenis.min.js"></script>
+<script src="/assets/js/vendor/gsap.min.js"></script>
+<script src="/assets/js/vendor/ScrollTrigger.min.js"></script>
+<script src="/assets/js/main.js"></script>
 
 </body>
 </html>

@@ -7,33 +7,36 @@
 <script>
 !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
 n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
-n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
-t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script',
+n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];
+/* fbevents.js entra depois do load, com a página ociosa; init e PageView já ficam na fila do fbq */
+var go=function(){t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)},
+idle=function(){f.requestIdleCallback?f.requestIdleCallback(go,{timeout:2000}):setTimeout(go,200)};
+b.readyState==='complete'?idle():f.addEventListener('load',idle,{once:true})}(window,document,'script',
 'https://connect.facebook.net/en_US/fbevents.js');
 (function(){var go=function(){fbq('init','1364660957915622');fbq('track','PageView');};
 if(document.prerendering){document.addEventListener('prerenderingchange',go,{once:true});}else{go();}})();
 </script>
 <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=1364660957915622&ev=PageView&noscript=1"></noscript>
 <!-- /Meta Pixel -->
-<script>document.documentElement.className+=" js";setTimeout(function(){if(!window.__animReady)document.documentElement.className+=" no-anim"},2500)</script>
-<meta name="robots" content="index, follow, max-image-preview:large">
+<script>document.documentElement.className+=" js";setTimeout(function(){if(!window.__animReady)document.documentElement.className+=" no-anim"},1200)</script>
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
 <link rel="icon" href="favicon.ico" sizes="32x32">
 <link rel="icon" type="image/svg+xml" href="assets/img/favicon.svg">
 <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
 <link rel="manifest" href="site.webmanifest">
-<title>Marketing e reservas diretas para hotéis e pousadas | Komplexa Hotéis</title>
-<meta name="description" content="Agência de marketing hoteleiro com mais de 50 hotéis atendidos em 14 estados. Marketing e vendas integrados, com resultado conferido no PMS.">
+<title>Marketing e reservas diretas para hotéis | Komplexa Hotéis</title>
+<meta name="description" content="Agência de marketing hoteleiro para hotéis e pousadas: mais de 50 hotéis atendidos em 14 estados. Marketing e vendas integrados, resultado conferido no PMS.">
 <link rel="canonical" href="https://komplexahoteis.com/">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://komplexahoteis.com/">
-<meta property="og:title" content="Marketing e reservas diretas para hotéis e pousadas | Komplexa Hotéis">
-<meta property="og:description" content="Agência de marketing hoteleiro com mais de 50 hotéis atendidos em 14 estados. Marketing e vendas integrados, com resultado conferido no PMS.">
+<meta property="og:title" content="Marketing e reservas diretas para hotéis | Komplexa Hotéis">
+<meta property="og:description" content="Agência de marketing hoteleiro para hotéis e pousadas: mais de 50 hotéis atendidos em 14 estados. Marketing e vendas integrados, resultado conferido no PMS.">
 <meta property="og:image" content="https://komplexahoteis.com/assets/og-home.jpg">
 <meta property="og:locale" content="pt_BR">
 <meta property="og:site_name" content="Komplexa Hotéis">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Marketing e reservas diretas para hotéis e pousadas | Komplexa Hotéis">
-<meta name="twitter:description" content="Agência de marketing hoteleiro com mais de 50 hotéis atendidos em 14 estados. Marketing e vendas integrados, com resultado conferido no PMS.">
+<meta name="twitter:title" content="Marketing e reservas diretas para hotéis | Komplexa Hotéis">
+<meta name="twitter:description" content="Agência de marketing hoteleiro para hotéis e pousadas: mais de 50 hotéis atendidos em 14 estados. Marketing e vendas integrados, resultado conferido no PMS.">
 <meta name="twitter:image" content="https://komplexahoteis.com/assets/og-home.jpg">
 <script type="application/ld+json">
 {
@@ -47,10 +50,10 @@ if(document.prerendering){document.addEventListener('prerenderingchange',go,{onc
    "url": "https://komplexahoteis.com/",
    "logo": {
     "@type": "ImageObject",
-    "url": "https://komplexahoteis.com/assets/logo.svg"
+    "url": "https://komplexahoteis.com/assets/img/icon-512.png", "width": 512, "height": 512
    },
    "image": "https://komplexahoteis.com/assets/og-home.jpg",
-   "description": "Agência de marketing hoteleiro (aquisição para hotelaria): marketing e vendas integrados para hotéis, pousadas e resorts venderem mais no canal direto, com resultado conferido no PMS de cada hotel. Mais de 50 hotéis atendidos em 14 estados do Brasil.",
+   "description": "A Komplexa Hotéis é uma agência de marketing hoteleiro: constrói o canal direto de hotéis, pousadas e resorts, com campanha, site, motor, comercial e pós-venda respondendo por um número só. Mais de 50 hotéis atendidos em 14 estados, com o resultado conferido no PMS.",
    "slogan": "Marketing e vendas numa operação só, do criativo à reserva no PMS.",
    "founder": {
     "@id": "https://komplexahoteis.com/igor-salomao.html#igor"
@@ -168,14 +171,64 @@ if(document.prerendering){document.addEventListener('prerenderingchange',go,{onc
    "publisher": {
     "@id": "https://komplexahoteis.com/#organizacao"
    }
+  },
+  {
+   "@type": "FAQPage",
+   "@id": "https://komplexahoteis.com/#faq",
+   "inLanguage": "pt-BR",
+   "isPartOf": {
+    "@id": "https://komplexahoteis.com/#site"
+   },
+   "mainEntity": [
+    {
+     "@type": "Question",
+     "name": "O que é a Komplexa Hotéis?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "A Komplexa Hotéis é uma agência de marketing hoteleiro que integra marketing e vendas na mesma operação para hotéis, pousadas e resorts venderem mais no canal direto. Já atendeu mais de 50 hotéis em 14 estados do Brasil, e o resultado de cada um é conferido no PMS do hotel."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "O que a Komplexa faz por um hotel ou pousada?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Produz criativos para anúncios, opera mídia paga no Google e na Meta na conta do próprio hotel, entrega um site integrado ao motor de reservas, integra motor, CRM e PMS, treina o time de atendimento e monta frentes de receita como casamentos, eventos e day use. O plano nasce da operação de cada hotel, sem pacote pronto."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Que resultados a Komplexa já entregou?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Resultados de hotéis atendidos, conferidos no PMS de cada um: Bahia Bonita, 19x de retorno sobre o investimento em mídia; Lagamar, mais de 7x de retorno sobre a mídia paga; Pousada Karandá, 6,5x de retorno sobre a mídia paga; Pousada Solar Dona Dora, faturamento 3,4x maior na baixa temporada, de R$ 12,4 mil para R$ 42,5 mil; Hotel Sunsmart, reservas diretas de 30% para mais de 60% do total."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Com quais sistemas a Komplexa trabalha?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Trabalha com integrações a Omnibees, HSystem, Asksuite, Erbon, Bitz e Foco, sistemas usados por hotéis e pousadas para motor de reservas, PMS e atendimento."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Como funciona a primeira conversa com a Komplexa?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "A conversa é com o Igor Salomão, fundador, e com o time. Eles entendem de onde vêm as reservas do hotel, como o hóspede chega até você e onde há espaço para crescer, e depois montam um plano de ação a partir da sua operação. Para agendar, use o botão Agendar conversa."
+     }
+    }
+   ]
   }
  ]
 }
 </script>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="preload" as="image" href="assets/video/hero-poster.webp">
-<link href="https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="preload" as="image" href="assets/video/hero-poster-m.webp" media="(max-width:767px) and (orientation:portrait)">
+<link rel="preload" as="image" href="assets/video/hero-poster.webp" media="(min-width:768px), (orientation:landscape)">
+<link rel="preload" href="assets/fonts/jost-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="assets/fonts/cormorant-latin.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="assets/css/style.css">
 <style>h1.hero-sub{font-weight:inherit;margin-bottom:0;line-height:1.6}.hero-center p.hero-word{color:#fff;line-height:normal}</style>
 </head>
@@ -191,7 +244,7 @@ if(document.prerendering){document.addEventListener('prerenderingchange',go,{onc
   </div>
 </header>
 
-<a href="index.html" class="logo-fix" id="logoFix" aria-label="Komplexa Hotéis">
+<a href="./" class="logo-fix" id="logoFix" aria-label="Komplexa Hotéis">
   <svg viewBox="0 0 100 97" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
     <path d="M45.8247 36.6514C47.5271 36.6514 49.1676 37.1817 50.5604 38.211L89.22 66.5651C90.9533 67.844 92.0985 69.7156 92.439 71.8679C92.7795 74.0202 92.2533 76.1413 90.9843 77.8881C89.4366 80.0092 87.0842 81.2257 84.4533 81.2257C81.8223 81.2257 81.1104 80.6954 79.7176 79.6661L41.0581 51.3119C39.3247 50.033 38.1795 48.1615 37.839 46.0092C37.4985 43.8569 38.0247 41.7358 39.2938 39.989C40.8414 37.8679 43.1938 36.6514 45.8247 36.6514ZM45.8247 29.1651C41.0581 29.1651 36.3223 31.3798 33.289 35.5908C28.2747 42.5468 29.7914 52.3101 36.6938 57.3633L75.3533 85.7174C78.1081 87.745 81.2962 88.7119 84.4533 88.7119C89.22 88.7119 93.9557 86.4973 96.989 82.2862C102.003 75.3303 100.487 65.567 93.5842 60.5138L54.9247 32.1596C52.17 30.1321 48.9819 29.1651 45.8247 29.1651Z"/>
     <path d="M69.1938 7.48624C70.8961 7.48624 72.5366 8.01651 73.9295 9.04587L79.47 13.1009C83.0604 15.7211 83.8652 20.8055 81.2342 24.4239L76.4985 30.9743L64.4581 22.1468C60.8676 19.5266 60.0628 14.4422 62.6938 10.8239C64.2414 8.70275 66.5938 7.48624 69.2247 7.48624M69.1938 0C64.4271 0 59.6914 2.21468 56.658 6.42569C51.6438 13.3816 53.1604 23.145 60.0628 28.1982L78.108 41.4239L87.2081 28.822C92.2223 21.8661 90.7057 12.1027 83.8033 7.04954L78.2628 2.99449C75.508 0.966969 72.32 0 69.1628 0H69.1938Z"/>
@@ -219,7 +272,7 @@ if(document.prerendering){document.addEventListener('prerenderingchange',go,{onc
     Oi! Sou o Igor, fundador<br>da Komplexa. Quer o plano<br>do seu hotel?
   </div>
   <button class="conc-avatar" onclick="openConcierge()" aria-label="Falar com a Komplexa">
-    <img src="assets/img/igor.png" alt="Igor Salomão, fundador da Komplexa"><span class="conc-dot"></span>
+    <img src="assets/img/igor.png" alt="Igor Salomão, fundador da Komplexa" width="400" height="400"><span class="conc-dot"></span>
   </button>
 </div>
 
@@ -238,7 +291,9 @@ if(document.prerendering){document.addEventListener('prerenderingchange',go,{onc
   </div>
   <div class="menu-foot">
     <div class="menu-foot-links">
-      <a href="blog/index.html">Blog</a>
+      <a href="blog/">Blog</a>
+      <a href="guia-reservas-diretas.html">Guia de reservas diretas</a>
+      <a href="agencia-marketing-hoteleiro.html">Agência de marketing hoteleiro</a>
       <a href="https://komplexa-pricing.vercel.app/f/komplexaconsultoria?utm_source=komplexahoteis&amp;utm_medium=site&amp;utm_content=home-boutique-menu" target="_blank" rel="noopener">Agendar conversa <span class="ext">↗</span></a>
     </div>
     <div class="menu-foot-social">
@@ -252,8 +307,7 @@ if(document.prerendering){document.addEventListener('prerenderingchange',go,{onc
   <div class="hero-media ph ph-hero">
     <!-- SUBSTITUIR: vídeo institucional da Komplexa (mp4 1920px, loop ~20s).
          Hoje roda o vídeo placeholder do template. -->
-    <video autoplay muted loop playsinline preload="auto" disablepictureinpicture
-           poster="assets/video/hero-poster.webp"
+    <video autoplay muted loop playsinline preload="none" disablepictureinpicture
            data-src="assets/video/hero-1080.mp4" data-src-mobile="assets/video/hero-m720.mp4"></video>
   </div>
   <div class="hero-center">
@@ -274,7 +328,7 @@ if(document.prerendering){document.addEventListener('prerenderingchange',go,{onc
   <div class="wrap">
     <div class="head-center">
       <h2 class="t-display rv">Marketing e vendas numa operação só, do criativo à <em class="gi">reserva no PMS</em></h2>
-      <p class="p-muted rv">A Komplexa constrói o canal direto de hotéis, pousadas e resorts — campanha, site, motor, comercial e pós-venda respondendo por um número só.</p>
+      <p class="p-muted rv">A Komplexa Hotéis é uma agência de marketing hoteleiro: constrói o canal direto de hotéis, pousadas e resorts, com campanha, site, motor, comercial e pós-venda respondendo por um número só. Mais de 50 hotéis atendidos em 14 estados, com o resultado conferido no PMS.</p>
     </div>
     <!-- ===== O FUNIL FLUIDO =====
          Sem contorno: o funil é um feixe de luz que afunila, e o fluxo é
@@ -350,9 +404,9 @@ if(document.prerendering){document.addEventListener('prerenderingchange',go,{onc
             </span>
             <span class="fw-body">
               <span class="w-thumbs">
-                <span class="th"><video src="assets/img/criativo-video.mp4" autoplay muted loop playsinline></video><em>Vídeo</em></span>
-                <span class="th"><img src="assets/img/criativo-01.webp" alt="Criativo de campanha para hotel"></span>
-                <span class="th"><img src="assets/img/criativo-02.webp" alt="Criativo de oferta para hotel"></span>
+                <span class="th"><video data-src="assets/img/criativo-video.mp4" poster="assets/img/criativo-video-poster.webp" preload="none" autoplay muted loop playsinline></video><em>Vídeo</em></span>
+                <span class="th"><img src="assets/img/criativo-01.webp" alt="Criativo de campanha para hotel" width="1080" height="1350" loading="lazy" srcset="assets/img/criativo-01-480.webp 480w, assets/img/criativo-01-800.webp 800w, assets/img/criativo-01.webp 1080w" sizes="(max-width:767px) 105px, 200px"></span>
+                <span class="th"><img src="assets/img/criativo-02.webp" alt="Criativo de oferta para hotel" width="1080" height="1350" loading="lazy" srcset="assets/img/criativo-02-480.webp 480w, assets/img/criativo-02-800.webp 800w, assets/img/criativo-02.webp 1080w" sizes="(max-width:767px) 105px, 200px"></span>
               </span>
             </span>
           </button>
@@ -389,7 +443,7 @@ if(document.prerendering){document.addEventListener('prerenderingchange',go,{onc
             <span class="fw-body">
               <span class="w-ig">
                 <span class="ig-top"><i class="av"></i>seuhotel<em>Patrocinado</em></span>
-                <span class="ig-img"><img src="assets/img/hotel-02.webp" alt="Anúncio do hotel no feed"></span>
+                <span class="ig-img"><img src="assets/img/hotel-02.webp" alt="Anúncio do hotel no feed" width="1400" height="1004" loading="lazy" srcset="assets/img/hotel-02-480.webp 480w, assets/img/hotel-02-800.webp 800w, assets/img/hotel-02-1200.webp 1200w, assets/img/hotel-02.webp 1400w" sizes="276px"></span>
                 <span class="ig-bot"><i class="hrt">♥</i><em>Reservar agora →</em></span>
               </span>
             </span>
@@ -411,7 +465,7 @@ if(document.prerendering){document.addEventListener('prerenderingchange',go,{onc
             <span class="fw-body">
               <span class="w-browser">
                 <span class="bb"><i></i><i></i><i></i><em>seuhotel.com.br</em></span>
-                <span class="bhero"><img src="assets/img/lagoa-home.webp" alt="Site do hotel">
+                <span class="bhero"><img src="assets/img/lagoa-home.webp" alt="Site do hotel" width="1600" height="900" loading="lazy" srcset="assets/img/lagoa-home-480.webp 480w, assets/img/lagoa-home-800.webp 800w, assets/img/lagoa-home-1200.webp 1200w, assets/img/lagoa-home.webp 1600w" sizes="(max-width:767px) 250px, 476px">
                   <b>Reserve direto</b><em>Melhor tarifa garantida</em></span>
                 <span class="bbook">
                   <em class="f"><i>Check-in</i><b>15 mai</b></em>
@@ -545,7 +599,7 @@ if(document.prerendering){document.addEventListener('prerenderingchange',go,{onc
 
   <div class="cs-track" id="csTrack" tabindex="0" aria-label="Cases da Komplexa">
     <article class="cs-card">
-      <img src="assets/img/hotel-01.webp" alt="Hotel boutique Bahia Bonita" loading="lazy">
+      <img src="assets/img/hotel-01.webp" alt="Hotel boutique Bahia Bonita" loading="lazy" width="1050" height="1400" srcset="assets/img/hotel-01-480.webp 480w, assets/img/hotel-01-800.webp 800w, assets/img/hotel-01.webp 1050w" sizes="(max-width:767px) 82vw, 380px">
       <span class="cs-tag">Hotel boutique</span>
       <div class="cs-body">
         <b class="cs-nome">Bahia Bonita</b>
@@ -558,7 +612,7 @@ if(document.prerendering){document.addEventListener('prerenderingchange',go,{onc
       </div>
     </article>
     <article class="cs-card">
-      <img src="assets/img/lagamar.webp" alt="Lagamar Resort e Hotel, evento à noite" loading="lazy" style="object-position:50% 45%">
+      <img src="assets/img/lagamar.webp" alt="Lagamar Resort e Hotel, evento à noite" loading="lazy" style="object-position:50% 45%" width="680" height="510">
       <span class="cs-tag">Resort e hotel</span>
       <div class="cs-body">
         <b class="cs-nome">Lagamar</b>
@@ -571,7 +625,7 @@ if(document.prerendering){document.addEventListener('prerenderingchange',go,{onc
       </div>
     </article>
     <article class="cs-card">
-      <img src="assets/img/solar-dona-dora.webp" alt="Pousada Solar Dona Dora" loading="lazy">
+      <img src="assets/img/solar-dona-dora.webp" alt="Pousada Solar Dona Dora" loading="lazy" width="1920" height="1079" srcset="assets/img/solar-dona-dora-480.webp 480w, assets/img/solar-dona-dora-800.webp 800w, assets/img/solar-dona-dora-1200.webp 1200w, assets/img/solar-dona-dora.webp 1920w" sizes="(max-width:767px) 200vw, 925px">
       <span class="cs-tag">Pousada</span>
       <div class="cs-body">
         <b class="cs-nome">Solar Dona Dora</b>
@@ -584,7 +638,7 @@ if(document.prerendering){document.addEventListener('prerenderingchange',go,{onc
       </div>
     </article>
     <article class="cs-card">
-      <img src="assets/img/sunsmart.webp" alt="Hotel Sunsmart" loading="lazy">
+      <img src="assets/img/sunsmart.webp" alt="Hotel Sunsmart" loading="lazy" width="800" height="533">
       <span class="cs-tag">Hotel</span>
       <div class="cs-body">
         <b class="cs-nome">Sunsmart</b>
@@ -597,7 +651,7 @@ if(document.prerendering){document.addEventListener('prerenderingchange',go,{onc
       </div>
     </article>
     <article class="cs-card">
-      <img src="assets/img/karanda.webp" alt="Pousada Karandá" loading="lazy">
+      <img src="assets/img/karanda.webp" alt="Pousada Karandá" loading="lazy" width="900" height="900" srcset="assets/img/karanda-480.webp 480w, assets/img/karanda-800.webp 800w, assets/img/karanda.webp 900w" sizes="(max-width:767px) 112vw, 520px">
       <span class="cs-tag">Pousada</span>
       <div class="cs-body">
         <b class="cs-nome">Karandá</b>
@@ -642,7 +696,7 @@ if(document.prerendering){document.addEventListener('prerenderingchange',go,{onc
         </span>
         <span class="ws-view">
           <img class="ws-poster" src="assets/img/lagoa-home.webp"
-               alt="Site da Pousada Lagoa Caraíva, feito pela Komplexa" loading="lazy">
+               alt="Site da Pousada Lagoa Caraíva, feito pela Komplexa" loading="lazy" width="1600" height="900" srcset="assets/img/lagoa-home-480.webp 480w, assets/img/lagoa-home-800.webp 800w, assets/img/lagoa-home-1200.webp 1200w, assets/img/lagoa-home.webp 1600w" sizes="(max-width:767px) 140vw, 1020px">
           <span class="ws-invite">
             <b>Navegue no site</b>
             <em>da home ao checkout em três cliques — o mesmo caminho do hóspede</em>
@@ -679,9 +733,9 @@ if(document.prerendering){document.addEventListener('prerenderingchange',go,{onc
       <!-- 01 · o banco de criativos, com as peças reais -->
       <article class="sis-card rv">
         <div class="sis-art a-deck">
-          <span class="dk"><video src="assets/img/criativo-video.mp4" autoplay muted loop playsinline></video></span>
-          <span class="dk"><img src="assets/img/criativo-01.webp" alt="Criativo de campanha para hotel" loading="lazy"></span>
-          <span class="dk"><img src="assets/img/criativo-02.webp" alt="Criativo de oferta para hotel" loading="lazy"></span>
+          <span class="dk"><video data-src="assets/img/criativo-video.mp4" poster="assets/img/criativo-video-poster.webp" preload="none" autoplay muted loop playsinline></video></span>
+          <span class="dk"><img src="assets/img/criativo-01.webp" alt="Criativo de campanha para hotel" loading="lazy" width="1080" height="1350" srcset="assets/img/criativo-01-480.webp 480w, assets/img/criativo-01-800.webp 800w, assets/img/criativo-01.webp 1080w" sizes="128px"></span>
+          <span class="dk"><img src="assets/img/criativo-02.webp" alt="Criativo de oferta para hotel" loading="lazy" width="1080" height="1350" srcset="assets/img/criativo-02-480.webp 480w, assets/img/criativo-02-800.webp 800w, assets/img/criativo-02.webp 1080w" sizes="128px"></span>
         </div>
         <span class="sis-n">01</span>
         <span class="sis-cat">Estúdio</span>
@@ -698,11 +752,11 @@ if(document.prerendering){document.addEventListener('prerenderingchange',go,{onc
             <span class="feed-track">
               <span class="post">
                 <span class="p-top"><i class="av"></i><b>caraiva.oficial</b></span>
-                <span class="p-img"><img src="assets/img/hotel-01.webp" alt="" loading="lazy"></span>
+                <span class="p-img"><img src="assets/img/hotel-01.webp" alt="" loading="lazy" width="1050" height="1400" srcset="assets/img/hotel-01-480.webp 480w, assets/img/hotel-01-800.webp 800w, assets/img/hotel-01.webp 1050w" sizes="(max-width:767px) 80vw, 365px"></span>
               </span>
               <span class="post promo">
                 <span class="p-top"><i class="av"></i><b>pousadalagoacaraiva</b><em>Patrocinado</em></span>
-                <span class="p-img"><img src="assets/img/criativo-01.webp" alt="Anúncio da pousada" loading="lazy"></span>
+                <span class="p-img"><img src="assets/img/criativo-01.webp" alt="Anúncio da pousada" loading="lazy" width="1080" height="1350" srcset="assets/img/criativo-01-480.webp 480w, assets/img/criativo-01-800.webp 800w, assets/img/criativo-01.webp 1080w" sizes="(max-width:767px) 80vw, 365px"></span>
                 <span class="p-acts">
                   <svg class="hrt" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M20.8 5.6a5 5 0 00-7.1 0L12 7.3l-1.7-1.7a5 5 0 10-7.1 7.1L12 21.5l8.8-8.8a5 5 0 000-7.1z"/></svg>
                   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M21 11.5a8.4 8.4 0 01-9 8.4 8.9 8.9 0 01-4-.9L3 21l1.9-4.9A8.4 8.4 0 1121 11.5z"/></svg>
@@ -711,7 +765,7 @@ if(document.prerendering){document.addEventListener('prerenderingchange',go,{onc
               </span>
               <span class="post">
                 <span class="p-top"><i class="av"></i><b>bahia.trip</b></span>
-                <span class="p-img"><img src="assets/img/karanda.webp" alt="" loading="lazy"></span>
+                <span class="p-img"><img src="assets/img/karanda.webp" alt="" loading="lazy" width="900" height="900" srcset="assets/img/karanda-480.webp 480w, assets/img/karanda-800.webp 800w, assets/img/karanda.webp 900w" sizes="(max-width:767px) 80vw, 365px"></span>
               </span>
             </span>
             <svg class="ad-cursor" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 3l14 8-6 1.6L10 19z" fill="#fff" stroke="#0B1A2C" stroke-width="1.4" stroke-linejoin="round"/></svg>
@@ -743,7 +797,7 @@ if(document.prerendering){document.addEventListener('prerenderingchange',go,{onc
         <!-- mockup genérico: o site real ganhou dobra própria -->
         <div class="sis-art a-site">
           <span class="bar"><i></i><i></i><i></i></span>
-          <span class="blk b-hero"><img src="assets/img/lagoa-home.webp" alt="Site do hotel" loading="lazy"></span>
+          <span class="blk b-hero"><img src="assets/img/lagoa-home.webp" alt="Site do hotel" loading="lazy" width="1600" height="900" srcset="assets/img/lagoa-home-480.webp 480w, assets/img/lagoa-home-800.webp 800w, assets/img/lagoa-home-1200.webp 1200w, assets/img/lagoa-home.webp 1600w" sizes="(max-width:767px) 300px, 400px"></span>
           <span class="blk bk"><em></em><em></em><b>Reservar</b></span>
           <span class="blk row"><em></em><em></em><em></em></span>
         </div>
@@ -758,12 +812,12 @@ if(document.prerendering){document.addEventListener('prerenderingchange',go,{onc
         <!-- painel de integrações: cada sistema "aperta a mão" em
              sequência e o rodapé fecha no PMS -->
         <div class="sis-art a-tech">
-          <span class="tc"><img src="assets/img/omnibees.png" alt="Omnibees" loading="lazy"><i></i></span>
-          <span class="tc"><img src="assets/img/erbon.png" alt="Erbon" loading="lazy"><i></i></span>
-          <span class="tc"><img src="assets/img/asksuite.jpeg" alt="Asksuite" loading="lazy"><i></i></span>
-          <span class="tc"><img src="assets/img/bitz.png" alt="Bitz" loading="lazy"><i></i></span>
-          <span class="tc"><img src="assets/img/hsystem.png" alt="HSystem" loading="lazy"><i></i></span>
-          <span class="tc"><img src="assets/img/foco.png" alt="Foco" loading="lazy"><i></i></span>
+          <span class="tc"><img src="assets/img/omnibees.png" alt="Omnibees" loading="lazy" width="168" height="96"><i></i></span>
+          <span class="tc"><img src="assets/img/erbon.png" alt="Erbon" loading="lazy" width="301" height="456"><i></i></span>
+          <span class="tc"><img src="assets/img/asksuite.jpeg" alt="Asksuite" loading="lazy" width="200" height="200"><i></i></span>
+          <span class="tc"><img src="assets/img/bitz.png" alt="Bitz" loading="lazy" width="492" height="158"><i></i></span>
+          <span class="tc"><img src="assets/img/hsystem.png" alt="HSystem" loading="lazy" width="428" height="118"><i></i></span>
+          <span class="tc"><img src="assets/img/foco.png" alt="Foco" loading="lazy" width="331" height="152"><i></i></span>
           <span class="tc-foot">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l4.5 4.5L19 7.5"/></svg>
             Tudo gravando no PMS do hotel
@@ -868,13 +922,13 @@ if(document.prerendering){document.addEventListener('prerenderingchange',go,{onc
     </div>
     <div class="compB">
       <a class="compB-card" href="https://komplexa-pricing.vercel.app/f/komplexaconsultoria?utm_source=komplexahoteis&amp;utm_medium=site&amp;utm_content=home-boutique-frentes-casamentos" target="_blank" rel="noopener">
-        <div class="ph shade"><img src="assets/img/casamento-hero.webp" alt="Casal em cerimônia de casamento em hotel"></div>
+        <div class="ph shade"><img src="assets/img/casamento-hero.webp" alt="Casal em cerimônia de casamento em hotel" width="600" height="927" loading="lazy"></div>
         <h3>Casamentos</h3>
         <p>Página dedicada, campanha própria e leads qualificados por número de convidados e data — antes da primeira conversa.</p>
         <span class="btn-glass">Saber mais</span>
       </a>
       <a class="compB-card" href="https://komplexa-pricing.vercel.app/f/komplexaconsultoria?utm_source=komplexahoteis&amp;utm_medium=site&amp;utm_content=home-boutique-frentes-eventos" target="_blank" rel="noopener">
-        <div class="ph shade"><img src="assets/img/casamento-bg.webp" alt="Cerimônia montada no jardim de hotel"></div>
+        <div class="ph shade"><img src="assets/img/casamento-bg.webp" alt="Cerimônia montada no jardim de hotel" width="1800" height="1339" loading="lazy" srcset="assets/img/casamento-bg-480.webp 480w, assets/img/casamento-bg-800.webp 800w, assets/img/casamento-bg-1200.webp 1200w, assets/img/casamento-bg.webp 1800w" sizes="(max-width:767px) 210vw, 1160px"></div>
         <h3>Eventos &amp; datas</h3>
         <p>Day use, réveillon, feriados e corporativo: campanhas por ocasião que enchem o hotel fora do pico.</p>
         <span class="btn-glass">Saber mais</span>
@@ -892,7 +946,7 @@ if(document.prerendering){document.addEventListener('prerenderingchange',go,{onc
       <div class="cred-txt">
         <span class="overline">Quem somos</span>
         <h2 class="t-display">Especialistas em <em class="gi">aquisição hoteleira</em></h2>
-        <p>Agência de marketing hoteleiro, com foco único em hotelaria. Marketing e vendas na mesma operação — um time só responde pelo resultado.</p>
+        <p><a href="agencia-marketing-hoteleiro.html" style="color:#1670C3;border-bottom:1px solid rgba(16,153,233,.5)">Agência de marketing hoteleiro</a>, com foco único em hotelaria. Marketing e vendas na mesma operação, com um time só respondendo pelo resultado.</p>
       </div>
       <div class="cred-nums">
         <span><b>+50</b><em>hotéis atendidos</em></span>
@@ -916,7 +970,7 @@ if(document.prerendering){document.addEventListener('prerenderingchange',go,{onc
       <a class="pcard rv" href="blog/post-comissao-booking-18.html">
         <span class="cat">OTA e Distribuição</span>
         <h3>Comissão do Booking em 18% desde julho de 2026: o que mudou e como proteger sua margem</h3>
-        <p>Desde 1º de julho de 2026, a comissão preferencial do Booking.com é de 18%. O que mudou para pousadas e independentes, e como reduzir o impacto na margem.</p>
+        <p>Anúncio em 26/05, representação ao Cade em junho e vigência em 1º/jul/2026. A linha do tempo da comissão preferencial de 18% e o que fazer sem sair do Booking.</p>
         <span class="meta">Junho 2026 · 9 min</span>
         <span class="go">Ler artigo</span>
       </a>
@@ -927,16 +981,33 @@ if(document.prerendering){document.addEventListener('prerenderingchange',go,{onc
         <span class="meta">Junho 2026 · 9 min</span>
         <span class="go">Ler artigo</span>
       </a>
-      <a class="pcard rv" href="blog/post-google-hotel-ads.html">
-        <span class="cat">Reservas Diretas</span>
-        <h3>Google Hotel Ads: como aparecer no Google e gerar reservas sem pagar comissão de OTA</h3>
-        <p>O Google Hotel Ads coloca seu hotel direto na busca, competindo com Booking e Expedia — mas mandando a reserva para o seu site. Entenda como funciona e como configurar.</p>
-        <span class="meta">Abril 2026 · 8 min</span>
+      <a class="pcard rv" href="blog/post-como-escolher-agencia.html">
+        <span class="cat">Marketing Hoteleiro</span>
+        <h3>Como escolher uma agência de marketing para hotel ou pousada</h3>
+        <p>As 8 perguntas que separam uma agência de marketing hoteleiro de uma agência de social media: custo por reserva direta, resultado no PMS e contas no nome do hotel.</p>
+        <span class="meta">Outubro 2026 · 9 min</span>
         <span class="go">Ler artigo</span>
       </a>
     </div>
-    <p class="rv" style="text-align:center;margin-top:2rem"><a href="blog/index.html" class="btn-sage" style="background:var(--dark)">Ver todos os artigos</a></p>
+    <p class="rv" style="text-align:center;margin-top:2rem"><a href="blog/" class="btn-sage" style="background:var(--dark)">Ver todos os artigos</a></p>
     <p class="rv" style="text-align:center;margin-top:1.2rem;font-size:.95rem">Começando do zero? Leia o <a href="guia-reservas-diretas.html" style="color:#1670C3;border-bottom:1px solid rgba(16,153,233,.5)">guia de reservas diretas para hotéis e pousadas</a>.</p>
+  </div>
+</section>
+
+<!-- ============ FAQ DE MARCA (visível = schema FAQPage) ============ -->
+<section id="faq" style="padding-top:0">
+  <div class="wrap">
+    <div class="faq-wrap">
+      <span class="overline rv">Dúvidas frequentes</span>
+      <h2 class="t-display rv">Sobre a <em class="gi">Komplexa</em></h2>
+      <div class="faq-list">
+<details class="faq-item"><summary>O que é a Komplexa Hotéis?</summary><div class="faq-answer"><p>A Komplexa Hotéis é uma agência de marketing hoteleiro que integra marketing e vendas na mesma operação para hotéis, pousadas e resorts venderem mais no canal direto. Já atendeu mais de 50 hotéis em 14 estados do Brasil, e o resultado de cada um é conferido no PMS do hotel.</p></div></details>
+<details class="faq-item"><summary>O que a Komplexa faz por um hotel ou pousada?</summary><div class="faq-answer"><p>Produz criativos para anúncios, opera mídia paga no Google e na Meta na conta do próprio hotel, entrega um site integrado ao motor de reservas, integra motor, CRM e PMS, treina o time de atendimento e monta frentes de receita como casamentos, eventos e day use. O plano nasce da operação de cada hotel, sem pacote pronto.</p></div></details>
+<details class="faq-item"><summary>Que resultados a Komplexa já entregou?</summary><div class="faq-answer"><p>Resultados de hotéis atendidos, conferidos no PMS de cada um: Bahia Bonita, 19x de retorno sobre o investimento em mídia; Lagamar, mais de 7x de retorno sobre a mídia paga; Pousada Karandá, 6,5x de retorno sobre a mídia paga; Pousada Solar Dona Dora, faturamento 3,4x maior na baixa temporada, de R$ 12,4 mil para R$ 42,5 mil; Hotel Sunsmart, reservas diretas de 30% para mais de 60% do total.</p></div></details>
+<details class="faq-item"><summary>Com quais sistemas a Komplexa trabalha?</summary><div class="faq-answer"><p>Trabalha com integrações a Omnibees, HSystem, Asksuite, Erbon, Bitz e Foco, sistemas usados por hotéis e pousadas para motor de reservas, PMS e atendimento.</p></div></details>
+<details class="faq-item"><summary>Como funciona a primeira conversa com a Komplexa?</summary><div class="faq-answer"><p>A conversa é com o Igor Salomão, fundador, e com o time. Eles entendem de onde vêm as reservas do hotel, como o hóspede chega até você e onde há espaço para crescer, e depois montam um plano de ação a partir da sua operação. Para agendar, use o botão Agendar conversa.</p></div></details>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -946,7 +1017,7 @@ if(document.prerendering){document.addEventListener('prerenderingchange',go,{onc
     <div class="news-box">
       <span class="overline rv">Carta do fundador</span>
       <h2 class="t-display rv">Um convite para conhecer <em class="gi">o nosso time.</em></h2>
-      <img class="carta-foto rv" src="assets/img/igor.png" alt="Igor Salomão, fundador da Komplexa">
+      <img class="carta-foto rv" src="assets/img/igor.png" alt="Igor Salomão, fundador da Komplexa" width="400" height="400" loading="lazy">
       <div class="carta rv">
         <p>Sou o Igor Salomão, fundador da Komplexa. Se você chegou até aqui, quero te fazer um convite: uma conversa comigo e com o time sobre o seu hotel.</p>
         <p>Nela, queremos entender de verdade como a sua operação funciona hoje: de onde vêm as reservas, como o hóspede chega até você e onde você sente que dá para crescer.</p>
@@ -986,7 +1057,7 @@ if(document.prerendering){document.addEventListener('prerenderingchange',go,{onc
       </div>
       <div class="ft-col">
         <h4>Conteúdo</h4>
-        <a href="blog/index.html">Blog</a>
+        <a href="blog/">Blog</a>
         <a href="blog/post-comissao-booking-18.html">Booking a 18%</a>
         <a href="blog/post-motor-de-reservas.html">Motor de reservas</a>
         <a href="blog/post-google-hotel-ads.html">Google Hotel Ads</a>
@@ -1002,18 +1073,18 @@ if(document.prerendering){document.addEventListener('prerenderingchange',go,{onc
     <div class="selos" aria-label="Integrações e parceiros de tecnologia">
       <div class="selos-track">
         <!-- lista repetida 2x para o loop contínuo do marquee -->
-        <div class="selo"><img src="assets/img/omnibees.png" alt="Omnibees"></div>
-        <div class="selo"><img src="assets/img/hsystem.png" alt="HSystem"></div>
-        <div class="selo"><img src="assets/img/asksuite.jpeg" alt="Asksuite"></div>
-        <div class="selo"><img src="assets/img/erbon.png" alt="Erbon"></div>
-        <div class="selo"><img src="assets/img/bitz.png" alt="Bitz"></div>
-        <div class="selo"><img src="assets/img/foco.png" alt="Foco"></div>
-        <div class="selo"><img src="assets/img/omnibees.png" alt="Omnibees"></div>
-        <div class="selo"><img src="assets/img/hsystem.png" alt="HSystem"></div>
-        <div class="selo"><img src="assets/img/asksuite.jpeg" alt="Asksuite"></div>
-        <div class="selo"><img src="assets/img/erbon.png" alt="Erbon"></div>
-        <div class="selo"><img src="assets/img/bitz.png" alt="Bitz"></div>
-        <div class="selo"><img src="assets/img/foco.png" alt="Foco"></div>
+        <div class="selo"><img src="assets/img/omnibees.png" alt="Omnibees" width="168" height="96" loading="lazy"></div>
+        <div class="selo"><img src="assets/img/hsystem.png" alt="HSystem" width="428" height="118" loading="lazy"></div>
+        <div class="selo"><img src="assets/img/asksuite.jpeg" alt="Asksuite" width="200" height="200" loading="lazy"></div>
+        <div class="selo"><img src="assets/img/erbon.png" alt="Erbon" width="301" height="456" loading="lazy"></div>
+        <div class="selo"><img src="assets/img/bitz.png" alt="Bitz" width="492" height="158" loading="lazy"></div>
+        <div class="selo"><img src="assets/img/foco.png" alt="Foco" width="331" height="152" loading="lazy"></div>
+        <div class="selo"><img src="assets/img/omnibees.png" alt="Omnibees" width="168" height="96" loading="lazy"></div>
+        <div class="selo"><img src="assets/img/hsystem.png" alt="HSystem" width="428" height="118" loading="lazy"></div>
+        <div class="selo"><img src="assets/img/asksuite.jpeg" alt="Asksuite" width="200" height="200" loading="lazy"></div>
+        <div class="selo"><img src="assets/img/erbon.png" alt="Erbon" width="301" height="456" loading="lazy"></div>
+        <div class="selo"><img src="assets/img/bitz.png" alt="Bitz" width="492" height="158" loading="lazy"></div>
+        <div class="selo"><img src="assets/img/foco.png" alt="Foco" width="331" height="152" loading="lazy"></div>
       </div>
     </div>
     <div class="ft-credit">© 2026 Komplexa Hotéis · Arquitetura de crescimento para reservas diretas · komplexahoteis.com</div>
@@ -1037,19 +1108,28 @@ if(document.prerendering){document.addEventListener('prerenderingchange',go,{onc
 <script src="assets/js/vendor/gsap.min.js"></script>
 <script src="assets/js/vendor/ScrollTrigger.min.js"></script>
 <script src="assets/js/main.js"></script>
-<!-- Hero: revela o vídeo só quando ele realmente começa a tocar. Se o autoplay
-     for bloqueado ou o arquivo falhar, o poster continua no lugar. -->
+<!-- Hero: o vídeo só começa a baixar depois do load da página (não disputa banda com
+     o texto, as fontes e o poster) e é pulado quando o aparelho pede economia de dados.
+     Ele aparece só quando realmente começa a tocar; se o autoplay for bloqueado ou o
+     arquivo falhar, o poster continua no lugar. -->
 <script>
 (function(){
   var v = document.querySelector('.hero video');
   if(!v) return;
-  /* fonte por largura: recorte vertical 720x1280 no celular, 1080p no resto */
-  v.src = (innerWidth < 768 ? v.dataset.srcMobile : v.dataset.src);
-  v.load();
-  var p = v.play(); if (p && p.catch) p.catch(function(){});
-  var show = function(){ v.classList.add('is-playing'); };
-  if(!v.paused && v.readyState > 2) show();
-  v.addEventListener('playing', show, {once:true});
+  var c = navigator.connection;
+  if (c && c.saveData) return;
+  var start = function(){
+    /* fonte por largura: recorte vertical 720x1280 no celular, 1080p no resto */
+    v.src = (innerWidth < 768 ? v.dataset.srcMobile : v.dataset.src);
+    v.preload = 'auto';
+    v.load();
+    var p = v.play(); if (p && p.catch) p.catch(function(){});
+    var show = function(){ v.classList.add('is-playing'); };
+    if(!v.paused && v.readyState > 2) show();
+    v.addEventListener('playing', show, {once:true});
+  };
+  if (document.readyState === 'complete') start();
+  else addEventListener('load', start, {once:true});
 })();
 </script>
 </body>

@@ -7,16 +7,19 @@
 <script>
 !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
 n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
-n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
-t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script',
+n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];
+/* fbevents.js entra depois do load, com a página ociosa; init e PageView já ficam na fila do fbq */
+var go=function(){t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)},
+idle=function(){f.requestIdleCallback?f.requestIdleCallback(go,{timeout:2000}):setTimeout(go,200)};
+b.readyState==='complete'?idle():f.addEventListener('load',idle,{once:true})}(window,document,'script',
 'https://connect.facebook.net/en_US/fbevents.js');
 (function(){var go=function(){fbq('init','1364660957915622');fbq('track','PageView');};
 if(document.prerendering){document.addEventListener('prerenderingchange',go,{once:true});}else{go();}})();
 </script>
 <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=1364660957915622&ev=PageView&noscript=1"></noscript>
 <!-- /Meta Pixel -->
-<script>document.documentElement.className+=" js";setTimeout(function(){if(!window.__animReady)document.documentElement.className+=" no-anim"},2500)</script>
-<title>Precificação para pousada: revenue management na prática (sem complicar)</title>
+<script>document.documentElement.className+=" js";setTimeout(function(){if(!window.__animReady)document.documentElement.className+=" no-anim"},1200)</script>
+<title>Precificação de pousada: revenue management na prática</title>
 <meta content="Tarifa fixa o ano todo deixa dinheiro na mesa. Aprenda revenue management na prática para pousadas: como precificar por demanda, sazonalidade e antecedência." name="description"/>
 <meta content="precificação pousada, revenue management hotelaria, como definir diária pousada, tarifa dinâmica pousada, precificação dinâmica hotel" name="keywords"/>
 <meta content="Igor Salomão" name="author"/>
@@ -25,7 +28,7 @@ if(document.prerendering){document.addEventListener('prerenderingchange',go,{onc
 <link href="https://komplexahoteis.com/blog/post-precificacao-pousada.html" rel="canonical"/>
 <meta content="article" property="og:type"/>
 <meta content="https://komplexahoteis.com/blog/post-precificacao-pousada.html" property="og:url"/>
-<meta content="Precificação para pousada: revenue management na prática (sem complicar)" property="og:title"/>
+<meta content="Precificação de pousada: revenue management na prática" property="og:title"/>
 <meta content="Tarifa fixa o ano todo deixa dinheiro na mesa. Aprenda revenue management na prática para pousadas: como precificar por demanda, sazonalidade e antecedência." property="og:description"/>
 <meta content="https://komplexahoteis.com/assets/img/og/post-precificacao-pousada.jpg" property="og:image"/>
 <meta content="1200" property="og:image:width"/>
@@ -36,10 +39,10 @@ if(document.prerendering){document.addEventListener('prerenderingchange',go,{onc
 <meta content="2026-06-17" property="article:published_time"/>
 <meta content="Igor Salomão" property="article:author"/>
 <meta content="RevPAR e Receita" property="article:section"/>
-<meta content="2026-09-29" property="article:modified_time"/>
+<meta content="2026-10-06" property="article:modified_time"/>
 <meta content="summary_large_image" name="twitter:card"/>
-<meta content="Precificação para pousada: revenue management na prática (sem complicar)" name="twitter:title"/>
-<meta content="Tarifa fixa o ano todo deixa dinheiro na mesa. Aprenda revenue management na prática para pousadas: precifique por demanda, sazonalidade e antecedência." name="twitter:description"/>
+<meta content="Precificação de pousada: revenue management na prática" name="twitter:title"/>
+<meta content="Tarifa fixa o ano todo deixa dinheiro na mesa. Aprenda revenue management na prática para pousadas: como precificar por demanda, sazonalidade e antecedência." name="twitter:description"/>
 <meta content="https://komplexahoteis.com/assets/img/og/post-precificacao-pousada.jpg" name="twitter:image"/>
 <script type="application/ld+json">
 [
@@ -53,7 +56,7 @@ if(document.prerendering){document.addEventListener('prerenderingchange',go,{onc
     ],
     "url": "https://komplexahoteis.com/blog/post-precificacao-pousada.html",
     "datePublished": "2026-06-17",
-    "dateModified": "2026-09-29",
+    "dateModified": "2026-10-06",
     "inLanguage": "pt-BR",
     "keywords": "precificação pousada, revenue management hotelaria, como definir diária pousada, tarifa dinâmica pousada, precificação dinâmica hotel",
     "author": {
@@ -70,7 +73,7 @@ if(document.prerendering){document.addEventListener('prerenderingchange',go,{onc
       "url": "https://komplexahoteis.com/",
       "logo": {
         "@type": "ImageObject",
-        "url": "https://komplexahoteis.com/assets/logo.svg"
+        "url": "https://komplexahoteis.com/assets/img/icon-512.png", "width": 512, "height": 512
       }
     },
     "mainEntityOfPage": {
@@ -139,9 +142,8 @@ if(document.prerendering){document.addEventListener('prerenderingchange',go,{onc
 <link rel="icon" type="image/svg+xml" href="../assets/img/favicon.svg">
 <link rel="apple-touch-icon" href="../assets/img/apple-touch-icon.png">
 <link rel="manifest" href="../site.webmanifest">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="preload" href="../assets/fonts/jost-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="../assets/fonts/cormorant-latin.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="../assets/css/style.css">
 <style>
 .post-resumo{border-left:3px solid #1099E9;background:rgba(16,153,233,.06);border-radius:0 14px 14px 0;padding:1.2rem 1.4rem;margin:0 0 2.2rem}
@@ -161,7 +163,7 @@ if(document.prerendering){document.addEventListener('prerenderingchange',go,{onc
   </div>
 </header>
 
-<a href="../index.html" class="logo-fix dark" id="logoFix" aria-label="Komplexa Hotéis">
+<a href="../" class="logo-fix dark" id="logoFix" aria-label="Komplexa Hotéis">
   <svg viewBox="0 0 100 97" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
     <path d="M45.8247 36.6514C47.5271 36.6514 49.1676 37.1817 50.5604 38.211L89.22 66.5651C90.9533 67.844 92.0985 69.7156 92.439 71.8679C92.7795 74.0202 92.2533 76.1413 90.9843 77.8881C89.4366 80.0092 87.0842 81.2257 84.4533 81.2257C81.8223 81.2257 81.1104 80.6954 79.7176 79.6661L41.0581 51.3119C39.3247 50.033 38.1795 48.1615 37.839 46.0092C37.4985 43.8569 38.0247 41.7358 39.2938 39.989C40.8414 37.8679 43.1938 36.6514 45.8247 36.6514ZM45.8247 29.1651C41.0581 29.1651 36.3223 31.3798 33.289 35.5908C28.2747 42.5468 29.7914 52.3101 36.6938 57.3633L75.3533 85.7174C78.1081 87.745 81.2962 88.7119 84.4533 88.7119C89.22 88.7119 93.9557 86.4973 96.989 82.2862C102.003 75.3303 100.487 65.567 93.5842 60.5138L54.9247 32.1596C52.17 30.1321 48.9819 29.1651 45.8247 29.1651Z"/>
     <path d="M69.1938 7.48624C70.8961 7.48624 72.5366 8.01651 73.9295 9.04587L79.47 13.1009C83.0604 15.7211 83.8652 20.8055 81.2342 24.4239L76.4985 30.9743L64.4581 22.1468C60.8676 19.5266 60.0628 14.4422 62.6938 10.8239C64.2414 8.70275 66.5938 7.48624 69.2247 7.48624M69.1938 0C64.4271 0 59.6914 2.21468 56.658 6.42569C51.6438 13.3816 53.1604 23.145 60.0628 28.1982L78.108 41.4239L87.2081 28.822C92.2223 21.8661 90.7057 12.1027 83.8033 7.04954L78.2628 2.99449C75.508 0.966969 72.32 0 69.1628 0H69.1938Z"/>
@@ -176,7 +178,7 @@ if(document.prerendering){document.addEventListener('prerenderingchange',go,{onc
     Oi! Sou o Igor, fundador<br>da Komplexa. Quer o plano<br>do seu hotel?
   </div>
   <button class="conc-avatar" onclick="openConcierge()" aria-label="Falar com a Komplexa">
-    <img src="../assets/img/igor.png" alt="Igor Salomão, fundador da Komplexa"><span class="conc-dot"></span>
+    <img src="../assets/img/igor.png" alt="Igor Salomão, fundador da Komplexa" width="400" height="400"><span class="conc-dot"></span>
   </button>
 </div>
 
@@ -184,18 +186,20 @@ if(document.prerendering){document.addEventListener('prerenderingchange',go,{onc
 <nav class="menu" id="menu">
   <div class="menu-grid">
     <div class="menu-list" data-lenis-prevent>
-      <a href="../index.html#metodo" class="active">O método</a>
-      <a href="../index.html#cases">Cases</a>
-      <a href="../index.html#site">O site entregue</a>
-      <a href="../index.html#sistema">O sistema</a>
-      <a href="../index.html#frentes">Frentes de receita</a>
-      <a href="../index.html#presenca">Quem somos</a>
-      <a href="../index.html#contato">Falar com a Komplexa</a>
+      <a href="../#metodo" class="active">O método</a>
+      <a href="../#cases">Cases</a>
+      <a href="../#site">O site entregue</a>
+      <a href="../#sistema">O sistema</a>
+      <a href="../#frentes">Frentes de receita</a>
+      <a href="../#presenca">Quem somos</a>
+      <a href="../#contato">Falar com a Komplexa</a>
     </div>
   </div>
   <div class="menu-foot">
     <div class="menu-foot-links">
-      <a href="../blog/index.html">Blog</a>
+      <a href="./">Blog</a>
+      <a href="../guia-reservas-diretas.html">Guia de reservas diretas</a>
+      <a href="../agencia-marketing-hoteleiro.html">Agência de marketing hoteleiro</a>
       <a href="https://komplexa-pricing.vercel.app/f/komplexaconsultoria?utm_source=komplexahoteis&amp;utm_medium=site&amp;utm_content=blog-precificacao-pousada-menu" target="_blank" rel="noopener">Agendar conversa <span class="ext">↗</span></a>
     </div>
     <div class="menu-foot-social">
@@ -208,11 +212,11 @@ if(document.prerendering){document.addEventListener('prerenderingchange',go,{onc
 <!-- ============ POST ============ -->
 <section class="post-hero">
   <div class="wrap"><div class="post-wrap">
-    <nav class="crumbs" aria-label="Navegação"><a href="../index.html">Início</a><span>/</span><a href="index.html">Blog</a><span>/</span><span>RevPAR e Receita</span></nav>
+    <nav class="crumbs" aria-label="Navegação"><a href="../">Início</a><span>/</span><a href="./">Blog</a><span>/</span><span>RevPAR e Receita</span></nav>
     <span class="overline">RevPAR e Receita</span>
     <h1 class="t-display">Precificação para pousada: revenue management na prática (sem complicar)</h1>
     <p class="post-lead">Tarifa fixa o ano todo deixa dinheiro na mesa. Aprenda revenue management na prática para pousadas: como precificar por demanda, sazonalidade e antecedência.</p>
-    <div class="post-meta"><span>Junho 2026</span><span>9 min de leitura</span><span>Por <a href="../igor-salomao.html">Igor Salomão</a></span><span>Atualizado em setembro de 2026</span></div>
+    <div class="post-meta"><span>Junho 2026</span><span>9 min de leitura</span><span>Por <a href="../igor-salomao.html">Igor Salomão</a></span><span>Atualizado em outubro de 2026</span></div>
   </div></div>
 </section>
 
@@ -226,7 +230,7 @@ if(document.prerendering){document.addEventListener('prerenderingchange',go,{onc
       A boa notícia é que arrumar isso não exige um sistema caro nem um time de analistas. Exige entender o que move o preço de uma hospedagem e aplicar algumas regras simples. É disso que trata o <strong>revenue management</strong> — e este artigo mostra como começar mesmo numa pousada pequena.
     </p>
 <div class="highlight-box">
-<p>Uma pesquisa do setor em 2026 (base de cerca de 235 respondentes, de caráter direcional) apontou a precificação como uma das principais dores dos hoteleiros independentes, citada por cerca de 23% deles, enquanto captação e marketing aparecem entre as maiores, perto de 31%. Não é um detalhe técnico: é uma das alavancas que mais separam uma operação que sobrevive de uma que lucra.</p>
+<p>No <a href="https://blog.hospedin.com/panorama-hoteleiro-2026/" target="_blank" rel="noopener">Panorama Hospedin 2026</a>, levantamento com 235 profissionais do setor, a definição de tarifas foi apontada como dificuldade por 23% e a atração de hóspedes por 31%. Não é um detalhe técnico: é uma das alavancas que mais separam uma operação que sobrevive de uma que lucra.</p>
 </div>
 <h2 id="erro-tarifa-fixa">O erro de cobrar o mesmo valor o ano inteiro</h2>
 <p>
@@ -263,7 +267,7 @@ if(document.prerendering){document.addEventListener('prerenderingchange',go,{onc
 <li><strong>Ocupação atual.</strong> Quanto mais cheia a data já está, mais você pode (e deve) cobrar pelos últimos quartos. Se restam 2 de 10 quartos para o próximo sábado, eles valem mais que os 10 que estavam disponíveis há um mês.</li>
 <li><strong>Sazonalidade.</strong> Alta, média e baixa temporada têm patamares de preço diferentes por natureza. É a camada mais óbvia e a primeira a estruturar.</li>
 <li><strong>Antecedência (lead time).</strong> Quem reserva com muitos meses de antecedência costuma buscar segurança e bom preço; quem reserva em cima da hora geralmente já decidiu e aceita pagar mais. A tarifa pode acompanhar essa curva.</li>
-<li><strong>Dia da semana.</strong> Em destino de lazer, fim de semana puxa a demanda; em pousada de rota corporativa, pode ser o contrário. Sexta e sábado raramente deveriam custar o mesmo que uma segunda-feira.</li>
+<li><strong>Dia da semana.</strong> Em destino de lazer, fim de semana puxa a demanda; em pousada de rota corporativa, pode ser o contrário. Sexta e sábado raramente deveriam custar o mesmo que uma segunda-feira. Para encher o meio de semana sem desconto geral, veja <a href="post-semana.html">como ocupar a semana sem depender de eventos</a>.</li>
 <li><strong>Eventos locais.</strong> Festa da cidade, show, feira, congresso, casamento na região — qualquer coisa que traga gente para perto da sua pousada empurra a demanda e justifica tarifa de pico.</li>
 <li><strong>Concorrência.</strong> O que pousadas comparáveis estão cobrando para a mesma data é uma referência de mercado. Não para copiar, mas para não ficar absurdamente acima nem regalar diária abaixo do que a praça aceita.</li>
 </ul>
@@ -287,7 +291,7 @@ if(document.prerendering){document.addEventListener('prerenderingchange',go,{onc
       Em feriados e datas de pico, exigir <strong>estadia mínima</strong> (duas, três noites) evita que uma reserva de uma diária bloqueie um fim de semana inteiro que renderia mais. É uma regra de revenue management que não mexe no preço, mas protege a receita da data mais valiosa do mês.
     </p>
 <div class="highlight-box">
-<p>Comece pelo básico e com disciplina. Uma planilha com as faixas por temporada, as regras de antecedência e o mínimo de noites já coloca a sua pousada à frente da maioria — afinal, no setor, cerca de um terço dos independentes ainda opera com baixa maturidade tecnológica, muitos só com planilhas e sem regra nenhuma de precificação.</p>
+<p>Comece pelo básico e com disciplina. Uma planilha com as faixas por temporada, as regras de antecedência e o mínimo de noites já dá à sua pousada uma regra escrita para cada data. No mesmo levantamento, um terço dos respondentes ainda dependia de controles manuais ou planilhas.</p>
 </div>
 <h2 id="exemplo">Como a tarifa deveria variar (exemplo ilustrativo)</h2>
 <p>
@@ -322,7 +326,7 @@ if(document.prerendering){document.addEventListener('prerenderingchange',go,{onc
 </div>
 </div>
 <p>
-      Repare que não há números de reais ali de propósito: o que importa é o <strong>formato escalonado</strong>. A diária de pico pode ser facilmente o dobro ou mais da base de baixa temporada, e isso é saudável — desde que cada degrau respeite o seu piso de custo e o teto que o mercado da sua região aceita pagar.
+      Repare que não há números de reais ali de propósito: o que importa é o <strong>formato escalonado</strong>. A diária de pico pode ficar bem acima da tarifa base de baixa temporada, e isso é saudável — desde que cada degrau respeite o seu piso de custo e o teto que o mercado da sua região aceita pagar.
     </p>
 <h2 id="ia-dinamica">Quando a IA e a precificação dinâmica entram</h2>
 <p>
@@ -332,12 +336,12 @@ if(document.prerendering){document.addEventListener('prerenderingchange',go,{onc
       Quando a operação amadurece — mais volume de reservas, vários canais, demanda menos previsível —, ferramentas com IA passam a ajustar a tarifa automaticamente, lendo a curva de reservas, a antecedência média, o comportamento da concorrência e a ocupação prevista para sugerir (ou aplicar) o preço ideal de cada noite. O que você fazia com bom senso em uma planilha passa a acontecer em escala, várias vezes ao dia.
     </p>
 <p>
-      Mas a ordem importa: <strong>a tecnologia automatiza uma estratégia que já existe — ela não cria estratégia do nada.</strong> Pousada que ainda cobra tarifa fixa não precisa de software de precificação dinâmica; precisa primeiro estruturar as faixas e as regras. A IA acelera quem já sabe para onde está indo, não substitui a decisão de começar.
+      Mas a ordem importa: <strong>a tecnologia automatiza uma estratégia que já existe — ela não cria estratégia do nada.</strong> Pousada que ainda cobra tarifa fixa não precisa de software de precificação dinâmica; precisa primeiro estruturar as faixas e as regras. A IA acelera quem já sabe para onde está indo, não substitui a decisão de começar. Para ligar precificação, mídia e canal direto na mesma rotina, uma <a href="../agencia-marketing-hoteleiro.html">agência de marketing hoteleiro</a> pode assumir o funil.
     </p>
 <div class="post-cta">
-<h4>Quer estruturar a precificação da sua pousada?</h4>
-<p>A Komplexa monta a estratégia de revenue management junto com o funil de reservas diretas — faixas por demanda, regras claras e tecnologia na medida certa para o seu tamanho.</p>
-<a class="btn-sage" href="https://komplexa-pricing.vercel.app/f/komplexaconsultoria?utm_source=komplexahoteis&amp;utm_medium=site&amp;utm_content=blog-precificacao-pousada" target="_blank">Falar com especialista</a>
+<h4>Quer um plano para a sua pousada?</h4>
+<p>A Pousada Solar Dona Dora, atendida pela Komplexa, passou de R$ 12,4 mil para R$ 42,5 mil de faturamento na baixa temporada, 3,4x mais, conferido no PMS do hotel. Cada resultado vem de uma operação diferente: na conversa com a Komplexa, o plano nasce do seu hotel, sem pacote pronto. <a href="../#cases" style="color:#fff;border-bottom:1px solid rgba(255,255,255,.5)">Ver os cases</a></p>
+<a class="btn-sage" href="https://komplexa-pricing.vercel.app/f/komplexaconsultoria?utm_source=komplexahoteis&amp;utm_medium=site&amp;utm_content=blog-precificacao-pousada-meio" target="_blank" rel="noopener">Agendar conversa</a>
 </div>
 <div class="post-divider"></div>
 <h2 id="revpar">A ligação com o RevPAR: encher barato não é vitória</h2>
@@ -345,10 +349,10 @@ if(document.prerendering){document.addEventListener('prerenderingchange',go,{onc
       Há uma armadilha que derruba muita pousada bem-intencionada: confundir <strong>ocupação alta</strong> com <strong>resultado bom</strong>. Baixar a diária até lotar a casa é fácil — e parece sucesso quando o painel mostra 100% de ocupação. Só que receita não se mede em quartos ocupados; se mede em dinheiro no caixa.
     </p>
 <p>
-      É por isso que o indicador que importa é o <strong>RevPAR</strong> (receita por quarto disponível), que combina ocupação e diária média numa única conta. Uma pousada com 70% de ocupação a uma boa tarifa pode faturar mais que outra com 95% vendendo barato demais. Encher por encher, regalando margem, não é vencer — é trabalhar muito para ganhar pouco.
+      É por isso que o indicador que importa é o <strong>RevPAR</strong> (receita por quarto disponível), que combina ocupação e diária média numa única conta: <strong>RevPAR = ocupação × diária média</strong>. Uma pousada com 70% de ocupação a uma boa tarifa pode faturar mais que outra com 95% vendendo barato demais. Para a conta completa, veja <a href="post-revpar.html">RevPAR vs. ocupação</a>. Encher por encher, regalando margem, não é vencer, é trabalhar muito para ganhar pouco.
     </p>
 <p>
-      Revenue management, no fim, é exatamente a disciplina de buscar o melhor RevPAR para cada data: nem quartos vazios por preço alto, nem casa cheia por preço baixo, mas o equilíbrio que rende mais. E quanto mais reservas vierem pelo <strong>canal direto</strong> — sem a comissão da OTA mordendo a diária —, mais cada ponto de RevPAR sobra de fato no seu bolso. Vale lembrar que a comissão preferencial do Booking.com subiu para <strong>18% em julho de 2026</strong>: precificar bem importa ainda mais quando o intermediário fica mais caro, e proteger a margem passa também por <a href="../index.html#metodo">fortalecer a reserva direta</a>.
+      Revenue management, no fim, é exatamente a disciplina de buscar o melhor RevPAR para cada data: nem quartos vazios por preço alto, nem casa cheia por preço baixo, mas o equilíbrio que rende mais. E quanto mais reservas vierem pelo <strong>canal direto</strong> — sem a comissão da OTA mordendo a diária —, mais cada ponto de RevPAR sobra de fato no seu bolso. Vale lembrar que a comissão preferencial do Booking.com no Brasil passou a <strong>18% em 1º de julho de 2026</strong> (veja a <a href="post-comissao-booking-18.html">comissão do Booking em 18%</a>, com linha do tempo e conta por diária). Numa diária de R$ 400, 18% são R$ 72 (R$ 400 × 18%), e o percentual efetivo de cada hotel depende do contrato. Precificar bem importa ainda mais quando o intermediário fica mais caro, e o <a href="../guia-reservas-diretas.html">guia de reservas diretas para hotéis e pousadas</a> mostra como proteger a margem pelo canal direto.
     </p>
 <h2 id="faq">Perguntas frequentes</h2>
 <div class="faq-list">
@@ -365,6 +369,12 @@ if(document.prerendering){document.addEventListener('prerenderingchange',go,{onc
 <div class="faq-answer"><p>Sim, mas em proporção ao seu tamanho. Pousada pequena não precisa de um software sofisticado de início — precisa parar de cobrar o mesmo valor o ano todo. Faixas por temporada e regras de antecedência já capturam boa parte do ganho. A precificação dinâmica automatizada com IA entra depois, quando o volume de reservas e a operação justificam o investimento.</p></div>
 </details>
 </div>
+<h2 id="fontes">Fontes</h2>
+<ul>
+<li><a href="https://blog.hospedin.com/panorama-hoteleiro-2026/" target="_blank" rel="noopener">Hospedin, Panorama Hospedin 2026</a>: levantamento com 235 profissionais do setor.</li>
+<li><a href="https://hoteliernews.com.br/hotelaria-independente-encara-desafios-em-2026/" target="_blank" rel="noopener">Hotelier News, 25/09/2025</a>: números do Panorama Hospedin (definição de tarifas 23%, atração de hóspedes 31%, um terço com controles manuais ou planilhas).</li>
+<li><a href="https://www.panrotas.com.br/hotelaria/distribuicao/2026/07/bookingcom-implementa-nova-comissao-de-18-e-passa-a-impactar-ganhos-da-hotelaria_229880.html" target="_blank" rel="noopener">Panrotas, 01/07/2026</a>: comissão de 18% do Booking.com entra em vigor para propriedades do programa Preferencial.</li>
+</ul>
   </article>
   <aside class="post-side">
     <div class="side-card"><h4>Neste artigo</h4>
@@ -376,15 +386,16 @@ if(document.prerendering){document.addEventListener('prerenderingchange',go,{onc
 <a href="#ia-dinamica" class="toc-link">IA e precificação dinâmica</a>
 <a href="#revpar" class="toc-link">A ligação com o RevPAR</a>
 <a href="#faq" class="toc-link">Perguntas frequentes</a>
+<a href="#fontes" class="toc-link">Fontes</a>
     </div>
     <div class="side-cta"><h4>Para o seu hotel</h4>
       <p>Um plano de aquisição desenhado a partir da sua operação, medido no PMS.</p>
-      <a href="https://komplexa-pricing.vercel.app/f/komplexaconsultoria?utm_source=komplexahoteis&amp;utm_medium=site&amp;utm_content=blog-precificacao-pousada" target="_blank" rel="noopener" class="btn-sage">Agendar conversa</a>
+      <a href="https://komplexa-pricing.vercel.app/f/komplexaconsultoria?utm_source=komplexahoteis&amp;utm_medium=site&amp;utm_content=blog-precificacao-pousada-lateral" target="_blank" rel="noopener" class="btn-sage">Agendar conversa</a>
     </div>
     <div class="side-card"><h4>Leia também</h4>
-<a href="post-revpar.html" class="related-post"><h5>RevPAR vs. ocupação: qual métrica realmente importa</h5><span>RevPAR e Receita · 8 min</span></a>
-<a href="post-motor-de-reservas.html" class="related-post"><h5>Motor de reservas para pousada: por que ter o seu próprio</h5><span>Reservas Diretas · 8 min</span></a>
-<a href="post-comissao-booking-18.html" class="related-post"><h5>Comissão do Booking em 18% desde julho de 2026</h5><span>OTA e Distribuição · 9 min</span></a>
+<a href="post-revpar.html" class="related-post"><h5>RevPAR vs. ocupação: qual métrica define o sucesso do seu hotel</h5><span>RevPAR e Receita · 7 min</span></a>
+<a href="post-motor-de-reservas.html" class="related-post"><h5>Motor de reservas para pousada: vale a pena e como escolher em 2026</h5><span>Reservas Diretas · 9 min</span></a>
+<a href="post-dependencia-booking-pousada.html" class="related-post"><h5>Pousada presa no Booking: como migrar para reservas diretas sem perder ocupação</h5><span>Reservas Diretas · 10 min</span></a>
     </div>
   </aside>
 </div></div>
@@ -393,9 +404,9 @@ if(document.prerendering){document.addEventListener('prerenderingchange',go,{onc
   <div class="wrap">
     <span class="overline">Continue lendo</span>
     <div class="rg-grid">
-<a href="post-revpar.html" class="rg-card"><span class="rg-tag">RevPAR e Receita</span><h4>RevPAR vs. ocupação: qual métrica realmente importa</h4><p>Por que casa cheia não significa caixa cheio — e como a métrica certa muda a sua estratégia de preço.</p></a>
-<a href="post-motor-de-reservas.html" class="rg-card"><span class="rg-tag">Reservas Diretas</span><h4>Motor de reservas para pousada: por que ter o seu próprio</h4><p>A peça que fecha a reserva no seu site sem fricção — e segura a margem que a OTA levaria.</p></a>
-<a href="post-ota.html" class="rg-card"><span class="rg-tag">OTA e Distribuição</span><h4>Como reduzir a dependência de OTAs e gerar reservas diretas</h4><p>A estratégia completa para mudar a proporção entre reservas diretas e OTA — sem abrir mão do volume.</p></a>
+<a href="post-semana.html" class="rg-card"><span class="rg-tag">Marketing Hoteleiro</span><h4>Como ocupar a semana sem depender de eventos</h4><p>Os cinco públicos de dia útil e um funil para cada um, sem desconto geral.</p></a>
+<a href="post-comissao-booking-18.html" class="rg-card"><span class="rg-tag">OTA e Distribuição</span><h4>Comissão do Booking em 18% desde julho de 2026: o que mudou e como proteger sua margem</h4><p>Linha do tempo da comissão preferencial de 18%, a conta por diária e o que fazer sem sair do Booking.</p></a>
+<a href="post-como-escolher-agencia.html" class="rg-card"><span class="rg-tag">Marketing Hoteleiro</span><h4>Como escolher uma agência de marketing para hotel ou pousada</h4><p>As 8 perguntas que separam uma agência de marketing hoteleiro de uma de social media.</p></a>
     </div>
   </div>
 </section>
@@ -406,7 +417,7 @@ if(document.prerendering){document.addEventListener('prerenderingchange',go,{onc
     <div class="news-box">
       <span class="overline rv">Carta do fundador</span>
       <h2 class="t-display rv">Um convite para conhecer <em class="gi">o nosso time.</em></h2>
-      <img class="carta-foto rv" src="../assets/img/igor.png" alt="Igor Salomão, fundador da Komplexa">
+      <img class="carta-foto rv" src="../assets/img/igor.png" alt="Igor Salomão, fundador da Komplexa" width="400" height="400" loading="lazy">
       <div class="carta rv">
         <p>Sou o Igor Salomão, fundador da Komplexa. Se você chegou até aqui, quero te fazer um convite: uma conversa comigo e com o time sobre o seu hotel.</p>
         <p>Nela, queremos entender de verdade como a sua operação funciona hoje: de onde vêm as reservas, como o hóspede chega até você e onde você sente que dá para crescer.</p>
@@ -438,15 +449,15 @@ if(document.prerendering){document.addEventListener('prerenderingchange',go,{onc
       </div>
       <div class="ft-col">
         <h4>A solução</h4>
-        <a href="../index.html#metodo">O método</a>
-        <a href="../index.html#cases">Cases</a>
-        <a href="../index.html#sistema">O sistema</a>
-        <a href="../index.html#ia">IA aplicada</a>
-        <a href="../index.html#frentes">Frentes de receita</a>
+        <a href="../#metodo">O método</a>
+        <a href="../#cases">Cases</a>
+        <a href="../#sistema">O sistema</a>
+        <a href="../#ia">IA aplicada</a>
+        <a href="../#frentes">Frentes de receita</a>
       </div>
       <div class="ft-col">
         <h4>Conteúdo</h4>
-        <a href="../blog/index.html">Blog</a>
+        <a href="./">Blog</a>
         <a href="../blog/post-comissao-booking-18.html">Booking a 18%</a>
         <a href="../blog/post-motor-de-reservas.html">Motor de reservas</a>
         <a href="../blog/post-google-hotel-ads.html">Google Hotel Ads</a>
@@ -462,28 +473,28 @@ if(document.prerendering){document.addEventListener('prerenderingchange',go,{onc
     <div class="selos" aria-label="Integrações e parceiros de tecnologia">
       <div class="selos-track">
         <!-- lista repetida 2x para o loop contínuo do marquee -->
-        <div class="selo"><img src="../assets/img/omnibees.png" alt="Omnibees"></div>
-        <div class="selo"><img src="../assets/img/hsystem.png" alt="HSystem"></div>
-        <div class="selo"><img src="../assets/img/asksuite.jpeg" alt="Asksuite"></div>
-        <div class="selo"><img src="../assets/img/erbon.png" alt="Erbon"></div>
-        <div class="selo"><img src="../assets/img/bitz.png" alt="Bitz"></div>
-        <div class="selo"><img src="../assets/img/foco.png" alt="Foco"></div>
-        <div class="selo"><img src="../assets/img/omnibees.png" alt="Omnibees"></div>
-        <div class="selo"><img src="../assets/img/hsystem.png" alt="HSystem"></div>
-        <div class="selo"><img src="../assets/img/asksuite.jpeg" alt="Asksuite"></div>
-        <div class="selo"><img src="../assets/img/erbon.png" alt="Erbon"></div>
-        <div class="selo"><img src="../assets/img/bitz.png" alt="Bitz"></div>
-        <div class="selo"><img src="../assets/img/foco.png" alt="Foco"></div>
+        <div class="selo"><img src="../assets/img/omnibees.png" alt="Omnibees" width="168" height="96" loading="lazy"></div>
+        <div class="selo"><img src="../assets/img/hsystem.png" alt="HSystem" width="428" height="118" loading="lazy"></div>
+        <div class="selo"><img src="../assets/img/asksuite.jpeg" alt="Asksuite" width="200" height="200" loading="lazy"></div>
+        <div class="selo"><img src="../assets/img/erbon.png" alt="Erbon" width="301" height="456" loading="lazy"></div>
+        <div class="selo"><img src="../assets/img/bitz.png" alt="Bitz" width="492" height="158" loading="lazy"></div>
+        <div class="selo"><img src="../assets/img/foco.png" alt="Foco" width="331" height="152" loading="lazy"></div>
+        <div class="selo"><img src="../assets/img/omnibees.png" alt="Omnibees" width="168" height="96" loading="lazy"></div>
+        <div class="selo"><img src="../assets/img/hsystem.png" alt="HSystem" width="428" height="118" loading="lazy"></div>
+        <div class="selo"><img src="../assets/img/asksuite.jpeg" alt="Asksuite" width="200" height="200" loading="lazy"></div>
+        <div class="selo"><img src="../assets/img/erbon.png" alt="Erbon" width="301" height="456" loading="lazy"></div>
+        <div class="selo"><img src="../assets/img/bitz.png" alt="Bitz" width="492" height="158" loading="lazy"></div>
+        <div class="selo"><img src="../assets/img/foco.png" alt="Foco" width="331" height="152" loading="lazy"></div>
       </div>
     </div>
     <div class="ft-credit">© 2026 Komplexa Hotéis · Arquitetura de crescimento para reservas diretas · komplexahoteis.com</div>
   </div>
 </footer>
 
-<script src="../assets/js/vendor/lenis.min.js"></script>
-<script src="../assets/js/vendor/gsap.min.js"></script>
-<script src="../assets/js/vendor/ScrollTrigger.min.js"></script>
-<script src="../assets/js/main.js"></script>
+<script src="../assets/js/vendor/lenis.min.js" defer></script>
+<script src="../assets/js/vendor/gsap.min.js" defer></script>
+<script src="../assets/js/vendor/ScrollTrigger.min.js" defer></script>
+<script src="../assets/js/main.js" defer></script>
 
 </body>
 </html>

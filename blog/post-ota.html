@@ -7,45 +7,48 @@
 <script>
 !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
 n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
-n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
-t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script',
+n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];
+/* fbevents.js entra depois do load, com a página ociosa; init e PageView já ficam na fila do fbq */
+var go=function(){t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)},
+idle=function(){f.requestIdleCallback?f.requestIdleCallback(go,{timeout:2000}):setTimeout(go,200)};
+b.readyState==='complete'?idle():f.addEventListener('load',idle,{once:true})}(window,document,'script',
 'https://connect.facebook.net/en_US/fbevents.js');
 (function(){var go=function(){fbq('init','1364660957915622');fbq('track','PageView');};
 if(document.prerendering){document.addEventListener('prerenderingchange',go,{once:true});}else{go();}})();
 </script>
 <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=1364660957915622&ev=PageView&noscript=1"></noscript>
 <!-- /Meta Pixel -->
-<script>document.documentElement.className+=" js";setTimeout(function(){if(!window.__animReady)document.documentElement.className+=" no-anim"},2500)</script>
-<title>Como Reduzir a Dependência de OTAs e Gerar Reservas Diretas — Komplexa Hotéis</title>
-<meta content="Comissões de 15% a 25% não são inevitáveis. Aprenda a estratégia completa para construir um canal direto forte, mudar a proporção OTA vs. reserva direta e recuperar margem." name="description"/>
+<script>document.documentElement.className+=" js";setTimeout(function(){if(!window.__animReady)document.documentElement.className+=" no-anim"},1200)</script>
+<title>Como reduzir a dependência de OTAs e vender mais direto</title>
+<meta content="Hotel com mix de canais? Veja como reduzir a dependência de OTAs com funil de conversão, remarketing e reativação, sem derrubar a ocupação do hotel." name="description"/>
 <meta content="Igor Salomão" name="author"/>
-<meta content="index, follow" name="robots"/>
+<meta content="index, follow, max-image-preview:large, max-snippet:-1" name="robots"/>
 <link href="https://komplexahoteis.com/blog/post-ota.html" rel="canonical"/>
 <meta content="article" property="og:type"/>
 <meta content="https://komplexahoteis.com/blog/post-ota.html" property="og:url"/>
-<meta content="Como Reduzir a Dependência de OTAs e Gerar Reservas Diretas" property="og:title"/>
-<meta content="Comissões de 15% a 25% não são inevitáveis. Estratégia completa para construir um canal direto forte e recuperar margem." property="og:description"/>
+<meta content="Como reduzir a dependência de OTAs e vender mais direto" property="og:title"/>
+<meta content="Hotel com mix de canais? Veja como reduzir a dependência de OTAs com funil de conversão, remarketing e reativação, sem derrubar a ocupação do hotel." property="og:description"/>
 <meta content="https://komplexahoteis.com/assets/img/og/post-ota.jpg" property="og:image"/>
 <meta content="pt_BR" property="og:locale"/>
 <meta content="Komplexa Hotéis" property="og:site_name"/>
 <meta content="2025-01-01" property="article:published_time"/>
 <meta content="Igor Salomão" property="article:author"/>
 <meta content="OTA e Distribuição" property="article:section"/>
-<meta content="2026-09-29" property="article:modified_time"/>
+<meta content="2026-10-06" property="article:modified_time"/>
 <meta content="summary_large_image" name="twitter:card"/>
-<meta content="Como Reduzir a Dependência de OTAs e Gerar Reservas Diretas" name="twitter:title"/>
-<meta content="Comissões de 15% a 25% não são inevitáveis. Estratégia completa para construir um canal direto forte." name="twitter:description"/>
+<meta content="Como reduzir a dependência de OTAs e vender mais direto" name="twitter:title"/>
+<meta content="Hotel com mix de canais? Veja como reduzir a dependência de OTAs com funil de conversão, remarketing e reativação, sem derrubar a ocupação do hotel." name="twitter:description"/>
 <meta content="https://komplexahoteis.com/assets/img/og/post-ota.jpg" name="twitter:image"/>
 <script type="application/ld+json">
 [
   {
     "@context": "https://schema.org",
     "@type": "BlogPosting",
-    "headline": "Como Reduzir a Dependência de OTAs e Gerar Reservas Diretas",
-    "description": "Comissões de 15% a 25% não são inevitáveis. Estratégia completa para construir um canal direto forte, mudar a proporção OTA vs. reserva direta e recuperar margem.",
+    "headline": "Como reduzir a dependência de OTAs e gerar reservas diretas",
+    "description": "Hotel com mix de canais? Veja como reduzir a dependência de OTAs com funil de conversão, remarketing e reativação, sem derrubar a ocupação do hotel.",
     "url": "https://komplexahoteis.com/blog/post-ota.html",
     "datePublished": "2025-01-01",
-    "dateModified": "2026-09-29",
+    "dateModified": "2026-10-06",
     "inLanguage": "pt-BR",
     "author": {
       "@type": "Person",
@@ -61,7 +64,7 @@ if(document.prerendering){document.addEventListener('prerenderingchange',go,{onc
       "url": "https://komplexahoteis.com/",
       "logo": {
         "@type": "ImageObject",
-        "url": "https://komplexahoteis.com/assets/logo.svg"
+        "url": "https://komplexahoteis.com/assets/img/icon-512.png", "width": 512, "height": 512
       }
     },
     "mainEntityOfPage": {
@@ -104,10 +107,10 @@ if(document.prerendering){document.addEventListener('prerenderingchange',go,{onc
     "mainEntity": [
       {
         "@type": "Question",
-        "name": "Quanto o Booking e as outras OTAs cobram de comissão de hotéis e pousadas?",
+        "name": "Quanto o Booking cobra de comissão e quanto isso pesa por diária?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "No Booking.com, a comissão preferencial no Brasil é de 18% desde 1º de julho de 2026; antes, a faixa praticada pela maioria das propriedades era de 10% a 15%. As outras OTAs têm tabelas próprias, também cobradas sobre cada reserva confirmada. Na reserva direta não existe comissão de intermediário, só o custo do motor e da mídia. Quanto maior a fatia vinda das plataformas, maior a parte da receita que sai do hotel."
+          "text": "No Booking.com, a comissão preferencial no Brasil é de 18% desde 1º de julho de 2026. Antes, segundo a Panrotas, as comissões da plataforma historicamente variavam entre 10% e 15%, conforme o tipo de acordo; o percentual efetivo de cada hotel depende do contrato. Numa diária de R$ 400, 18% são R$ 72. As outras OTAs têm tabelas próprias, também cobradas sobre cada reserva confirmada. Na reserva direta não há comissão de intermediário, só o custo do motor, da mídia e do atendimento."
         }
       },
       {
@@ -142,9 +145,8 @@ if(document.prerendering){document.addEventListener('prerenderingchange',go,{onc
 <link rel="icon" type="image/svg+xml" href="../assets/img/favicon.svg">
 <link rel="apple-touch-icon" href="../assets/img/apple-touch-icon.png">
 <link rel="manifest" href="../site.webmanifest">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="preload" href="../assets/fonts/jost-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="../assets/fonts/cormorant-latin.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="../assets/css/style.css">
 <style>
 .post-resumo{border-left:3px solid #1099E9;background:rgba(16,153,233,.06);border-radius:0 14px 14px 0;padding:1.2rem 1.4rem;margin:0 0 2.2rem}
@@ -164,7 +166,7 @@ if(document.prerendering){document.addEventListener('prerenderingchange',go,{onc
   </div>
 </header>
 
-<a href="../index.html" class="logo-fix dark" id="logoFix" aria-label="Komplexa Hotéis">
+<a href="../" class="logo-fix dark" id="logoFix" aria-label="Komplexa Hotéis">
   <svg viewBox="0 0 100 97" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
     <path d="M45.8247 36.6514C47.5271 36.6514 49.1676 37.1817 50.5604 38.211L89.22 66.5651C90.9533 67.844 92.0985 69.7156 92.439 71.8679C92.7795 74.0202 92.2533 76.1413 90.9843 77.8881C89.4366 80.0092 87.0842 81.2257 84.4533 81.2257C81.8223 81.2257 81.1104 80.6954 79.7176 79.6661L41.0581 51.3119C39.3247 50.033 38.1795 48.1615 37.839 46.0092C37.4985 43.8569 38.0247 41.7358 39.2938 39.989C40.8414 37.8679 43.1938 36.6514 45.8247 36.6514ZM45.8247 29.1651C41.0581 29.1651 36.3223 31.3798 33.289 35.5908C28.2747 42.5468 29.7914 52.3101 36.6938 57.3633L75.3533 85.7174C78.1081 87.745 81.2962 88.7119 84.4533 88.7119C89.22 88.7119 93.9557 86.4973 96.989 82.2862C102.003 75.3303 100.487 65.567 93.5842 60.5138L54.9247 32.1596C52.17 30.1321 48.9819 29.1651 45.8247 29.1651Z"/>
     <path d="M69.1938 7.48624C70.8961 7.48624 72.5366 8.01651 73.9295 9.04587L79.47 13.1009C83.0604 15.7211 83.8652 20.8055 81.2342 24.4239L76.4985 30.9743L64.4581 22.1468C60.8676 19.5266 60.0628 14.4422 62.6938 10.8239C64.2414 8.70275 66.5938 7.48624 69.2247 7.48624M69.1938 0C64.4271 0 59.6914 2.21468 56.658 6.42569C51.6438 13.3816 53.1604 23.145 60.0628 28.1982L78.108 41.4239L87.2081 28.822C92.2223 21.8661 90.7057 12.1027 83.8033 7.04954L78.2628 2.99449C75.508 0.966969 72.32 0 69.1628 0H69.1938Z"/>
@@ -179,7 +181,7 @@ if(document.prerendering){document.addEventListener('prerenderingchange',go,{onc
     Oi! Sou o Igor, fundador<br>da Komplexa. Quer o plano<br>do seu hotel?
   </div>
   <button class="conc-avatar" onclick="openConcierge()" aria-label="Falar com a Komplexa">
-    <img src="../assets/img/igor.png" alt="Igor Salomão, fundador da Komplexa"><span class="conc-dot"></span>
+    <img src="../assets/img/igor.png" alt="Igor Salomão, fundador da Komplexa" width="400" height="400"><span class="conc-dot"></span>
   </button>
 </div>
 
@@ -187,18 +189,20 @@ if(document.prerendering){document.addEventListener('prerenderingchange',go,{onc
 <nav class="menu" id="menu">
   <div class="menu-grid">
     <div class="menu-list" data-lenis-prevent>
-      <a href="../index.html#metodo" class="active">O método</a>
-      <a href="../index.html#cases">Cases</a>
-      <a href="../index.html#site">O site entregue</a>
-      <a href="../index.html#sistema">O sistema</a>
-      <a href="../index.html#frentes">Frentes de receita</a>
-      <a href="../index.html#presenca">Quem somos</a>
-      <a href="../index.html#contato">Falar com a Komplexa</a>
+      <a href="../#metodo" class="active">O método</a>
+      <a href="../#cases">Cases</a>
+      <a href="../#site">O site entregue</a>
+      <a href="../#sistema">O sistema</a>
+      <a href="../#frentes">Frentes de receita</a>
+      <a href="../#presenca">Quem somos</a>
+      <a href="../#contato">Falar com a Komplexa</a>
     </div>
   </div>
   <div class="menu-foot">
     <div class="menu-foot-links">
-      <a href="../blog/index.html">Blog</a>
+      <a href="./">Blog</a>
+      <a href="../guia-reservas-diretas.html">Guia de reservas diretas</a>
+      <a href="../agencia-marketing-hoteleiro.html">Agência de marketing hoteleiro</a>
       <a href="https://komplexa-pricing.vercel.app/f/komplexaconsultoria?utm_source=komplexahoteis&amp;utm_medium=site&amp;utm_content=blog-ota-menu" target="_blank" rel="noopener">Agendar conversa <span class="ext">↗</span></a>
     </div>
     <div class="menu-foot-social">
@@ -211,11 +215,11 @@ if(document.prerendering){document.addEventListener('prerenderingchange',go,{onc
 <!-- ============ POST ============ -->
 <section class="post-hero">
   <div class="wrap"><div class="post-wrap">
-    <nav class="crumbs" aria-label="Navegação"><a href="../index.html">Início</a><span>/</span><a href="index.html">Blog</a><span>/</span><span>OTA e Distribuição</span></nav>
+    <nav class="crumbs" aria-label="Navegação"><a href="../">Início</a><span>/</span><a href="./">Blog</a><span>/</span><span>OTA e Distribuição</span></nav>
     <span class="overline">OTA e Distribuição</span>
     <h1 class="t-display">Como reduzir a dependência de OTAs e gerar reservas diretas</h1>
-    <p class="post-lead">Comissões de 15% a 25% não são inevitáveis. Aprenda a estratégia completa para construir um canal direto forte, mudar a proporção OTA vs. reserva direta e recuperar margem.</p>
-    <div class="post-meta"><span>Janeiro 2025</span><span>8 min de leitura</span><span>Por <a href="../igor-salomao.html">Igor Salomão</a></span><span>Atualizado em setembro de 2026</span></div>
+    <p class="post-lead">Hotel com mix de canais? Veja como reduzir a dependência de OTAs com funil de conversão, remarketing e reativação, sem derrubar a ocupação do hotel.</p>
+    <div class="post-meta"><span>Janeiro 2025</span><span>9 min de leitura</span><span>Por <a href="../igor-salomao.html">Igor Salomão</a></span><span>Atualizado em outubro de 2026</span></div>
   </div></div>
 </section>
 
@@ -223,99 +227,105 @@ if(document.prerendering){document.addEventListener('prerenderingchange',go,{onc
   <article class="post-content">
 <div class="post-resumo"><span class="overline">Resposta rápida</span><p>Para reduzir a dependência de OTAs, construa o canal direto aos poucos, enquanto o volume das OTAs ainda sustenta a ocupação: estruture o funil de conversão, segmente com IA quem tem perfil de reserva direta, recupere quem visitou e não reservou e reative hóspedes antigos. A proporção entre OTA e direto muda aos poucos, no ritmo do ponto de partida de cada hotel.</p></div>
 <p>
-      Se o seu hotel tem mais de 60% das reservas vindo de plataformas como Booking.com, Expedia ou Airbnb, você está pagando entre 15% e 25% de cada reserva para empresas que controlam sua visibilidade, seus dados e, em certa medida, seu crescimento.
+      Se o seu hotel tem mais de 60% das reservas vindo de plataformas como Booking.com, Expedia ou Airbnb, você paga comissão sobre a maior parte da receita a empresas que controlam sua visibilidade, seus dados e, em certa medida, seu crescimento.
     </p>
 <p>
-      A boa notícia: não é uma situação irreversível. Hotéis que decidem construir um canal direto forte conseguem mudar essa proporção — e recuperar margem significativa no processo.
+      No Booking.com, a comissão preferencial no Brasil é de 18% desde 1º de julho de 2026 (<a href="https://www.panrotas.com.br/hotelaria/mercado/2026/05/bookingcom-altera-politica-de-comissao-no-brasil-e-gera-preocupacao-na-hotelaria_228875.html" target="_blank" rel="noopener">Panrotas, 26/05/2026</a>). Numa diária de R$ 400, são R$ 72 por reserva.
+    </p>
+<p>
+      A boa notícia: não é uma situação irreversível. Hotéis que decidem construir um canal direto forte conseguem mudar essa proporção e recuperar margem no processo. O panorama completo está no <a href="../guia-reservas-diretas.html">guia de reservas diretas para hotéis e pousadas</a>.
     </p>
 <div class="highlight-box">
 <p>Comissões de OTA não são apenas um custo operacional. São uma taxa de dependência. Quanto maior a proporção, menor o controle que o hotel tem sobre sua própria receita.</p>
 </div>
 <h2 id="problema">O problema real com OTAs</h2>
 <p>
-      OTAs não são inimigas. Elas entregam volume, especialmente para hotéis que ainda não construíram sua base de público própria. O problema é quando se tornam o canal principal — porque junto com o volume vêm três problemas estruturais:
+      OTAs não são inimigas. Elas entregam volume, especialmente para hotéis que ainda não construíram sua base de público própria. O problema é quando se tornam o canal principal, porque junto com o volume vêm três problemas estruturais:
     </p>
 <ul>
-<li><strong>Custo crescente:</strong> comissões não costumam cair. Hotéis presos no modelo OTA veem sua margem encolher conforme as tarifas sobem.</li>
+<li><strong>Custo que o hotel não controla:</strong> a nova comissão preferencial do Booking foi comunicada com menos de 60 dias de antecedência, segundo as entidades do setor citadas pela Panrotas.</li>
 <li><strong>Dados que ficam na plataforma:</strong> quando a reserva vem pelo Booking, o dado do hóspede pertence ao Booking. O hotel perde a capacidade de se relacionar, reativar e aumentar o LTV desse cliente.</li>
 <li><strong>Dependência de visibilidade terceira:</strong> o hotel compete com outros dentro da plataforma. Visibilidade, ranking e destaque dependem de fatores fora do seu controle.</li>
 </ul>
-<div class="data-block">
-<h4>Impacto das comissões de OTA</h4>
-<div class="db-row">
-<span class="db-label">Booking.com (média)</span>
-<div class="db-bar-wrap"><div class="db-bar" style="width:75%"></div></div>
-<span class="db-val">~18%</span>
-</div>
-<div class="db-row">
-<span class="db-label">Expedia (média)</span>
-<div class="db-bar-wrap"><div class="db-bar" style="width:85%"></div></div>
-<span class="db-val">~21%</span>
-</div>
-<div class="db-row">
-<span class="db-label">Airbnb (média)</span>
-<div class="db-bar-wrap"><div class="db-bar" style="width:65%"></div></div>
-<span class="db-val">~15%</span>
-</div>
-<div class="db-row">
-<span class="db-label">Reserva direta</span>
-<div class="db-bar-wrap"><div class="db-bar" style="width:10%"></div></div>
-<span class="db-val">~2%</span>
-</div>
-</div>
+<h2 id="conta">Quanto a comissão pesa na margem (com a conta)</h2>
+<p>
+      Comissão por diária = valor da diária x percentual. Numa diária de R$ 400 a 18%, são R$ 72 (400 x 0,18).
+    </p>
+<p>
+      Exemplo ilustrativo, não é resultado de cliente: um hotel com R$ 100 mil por mês em reservas vindas do Booking paga R$ 18 mil de comissão por mês (100.000 x 0,18), R$ 216 mil por ano. Cada R$ 10 mil por mês que migram para o direto deixam de pagar R$ 1.800 de comissão por mês (R$ 21.600 por ano), antes do custo do canal direto.
+    </p>
+<p>
+      Custo por reserva direta = (mídia + mensalidade do motor + custo de atendimento) ÷ reservas diretas confirmadas no PMS. A migração só devolve margem quando esse custo fica abaixo da comissão que a mesma reserva pagaria na OTA.
+    </p>
 <h2 id="estrategia">A estratégia para mudar a proporção</h2>
 <p>
-      O erro mais comum é tentar abandonar OTAs de forma abrupta. Isso gera queda de volume antes de o canal direto estar estruturado para compensar. A abordagem correta é outra: construir o canal direto enquanto o volume das OTAs sustenta a ocupação — e gradualmente mudar a proporção.
+      O erro mais comum é tentar abandonar OTAs de forma abrupta. Isso gera queda de volume antes de o canal direto estar estruturado para compensar. A abordagem correta é outra: construir o canal direto enquanto o volume das OTAs sustenta a ocupação e, gradualmente, mudar a proporção.
     </p>
 <h3 id="passo1">1. Estruturar o funil antes de aumentar o orçamento</h3>
 <p>
       Não adianta investir mais em tráfego pago se o site não converte, se não existe recuperação de carrinho e se o CRM não está operando. Cada real investido em atração precisa de uma estrutura de conversão que maximize o retorno.
     </p>
 <p>
-      O funil mínimo para começar a gerar reservas diretas de forma consistente inclui: site otimizado para conversão, integração com motor de reservas, remarketing configurado e um processo básico de atendimento via WhatsApp.
+      O funil mínimo para começar a gerar reservas diretas de forma consistente inclui: site otimizado para conversão, integração com motor de reservas, remarketing configurado e um processo básico de atendimento via WhatsApp. Quem não tem time para montar e operar esse funil pode contar com uma <a href="../agencia-marketing-hoteleiro.html">agência de marketing hoteleiro</a>.
     </p>
 <h3 id="passo2">2. Usar IA para segmentar quem tem perfil de reserva direta</h3>
 <p>
       Nem todo cliente de OTA tem o mesmo comportamento. Parte deles pesquisa direto no Google ou no Instagram antes de decidir. Esses são os que mais tendem a reservar diretamente quando o canal está disponível e bem apresentado.
     </p>
 <p>
-      Com segmentação inteligente baseada no perfil dos seus melhores hóspedes, as campanhas passam a minar exatamente esse público — pessoas com comportamento semelhante a quem já reservou direto com o hotel.
+      Com segmentação inteligente baseada no perfil dos seus melhores hóspedes, as campanhas passam a mirar exatamente esse público: pessoas com comportamento semelhante a quem já reservou direto com o hotel. O detalhamento está em <a href="post-ia.html">IA na hotelaria: segmentação que reduz custo por reserva</a>.
     </p>
 <div class="highlight-box">
-<p>Lookalike baseado em hóspedes reais é significativamente mais preciso que segmentação demográfica genérica. A diferença aparece no custo por reserva.</p>
+<p>Lookalike baseado em hóspedes reais tende a ser mais preciso que segmentação demográfica genérica. A diferença aparece no custo por reserva.</p>
 </div>
 <h3 id="passo3">3. Recuperar quem visitou mas não reservou</h3>
 <p>
-      A maioria das pessoas que visita o site de um hotel não reserva na primeira visita. Sem um sistema de recuperação, esse interesse some — e muitas vezes termina numa OTA porque foi lá que a pessoa encontrou o hotel mais facilmente.
+      A maioria das pessoas que visita o site de um hotel não reserva na primeira visita. Sem um sistema de recuperação, esse interesse some, e muitas vezes termina numa OTA porque foi lá que a pessoa encontrou o hotel mais facilmente.
     </p>
 <p>
       Remarketing bem configurado + sequência de WhatsApp para quem iniciou mas não finalizou a reserva = recuperação de demanda que já estava praticamente convertida. O custo dessa recuperação é uma fração do custo de nova aquisição.
     </p>
 <h3 id="passo4">4. Reativar hóspedes que já ficaram</h3>
 <p>
-      Quem já ficou no seu hotel é o prospect mais qualificado que existe. Ele conhece o produto, teve uma experiência positiva e tem alta probabilidade de voltar — especialmente se for abordado no momento certo com a oferta certa.
+      Quem já ficou no seu hotel é o prospect mais qualificado que existe. Ele conhece o produto, teve uma experiência positiva e tem alta probabilidade de voltar, especialmente se for abordado no momento certo com a oferta certa.
     </p>
 <p>
-      Campanhas de reativação por e-mail e WhatsApp, segmentadas por perfil e comportamento, geram receita com custo de aquisição próximo de zero. É o canal mais eficiente que a maioria dos hotéis simplesmente não usa.
+      Campanhas de reativação por e-mail e WhatsApp, segmentadas por perfil e comportamento, geram receita com custo de aquisição próximo de zero. É o canal mais eficiente que a maioria dos hotéis simplesmente não usa. A conta de quanto isso vale está em <a href="post-ltv.html">LTV em hotéis e reativação de hóspedes antigos</a>.
     </p>
 <div class="post-divider"></div>
-<h2 id="resultado">O que acontece quando o sistema está rodando</h2>
+<h2 id="medir">Como medir a mudança de proporção</h2>
 <p>
-      Hotéis que constroem esse sistema de forma consistente veem, ao longo de 6 a 12 meses, uma mudança real na proporção entre OTA e direto. A margem por reserva aumenta, os dados de hóspede passam a ser propriedade do hotel e a capacidade de planejar a receita com antecedência cresce significativamente.
+      Sem número, a mudança de proporção vira impressão. Três indicadores, todos calculados a partir do PMS do hotel, mês a mês:
+    </p>
+<ul>
+<li><strong>Percentual de reservas diretas:</strong> reservas diretas ÷ reservas totais.</li>
+<li><strong>Custo por reserva direta:</strong> (mídia + mensalidade do motor + custo de atendimento) ÷ reservas diretas confirmadas.</li>
+<li><strong>RevPAR líquido:</strong> diária média menos a comissão paga por canal, multiplicada pela ocupação do período.</li>
+</ul>
+<p>
+      Não existe meta de mercado que valha para todo hotel. A meta sai da linha de base dos últimos 12 meses do PMS do seu hotel.
+    </p>
+<h2 id="perfil">Hotel com mix de canais ou pousada presa no Booking?</h2>
+<p>
+      Este post trata do hotel que já vende por vários canais e quer mudar a proporção entre OTA e reserva direta. A pousada com 80% a 100% do inventário no Booking segue outro caminho, descrito em <a href="post-dependencia-booking-pousada.html">pousada presa no Booking: como migrar para reservas diretas sem perder ocupação</a>.
+    </p>
+<h2 id="resultado">Resultado: o que muda quando o canal direto assume uma fatia maior</h2>
+<p>
+      Hotéis que constroem esse sistema de forma consistente veem, ao longo do tempo e num ritmo que depende do ponto de partida de cada hotel, uma mudança real na proporção entre OTA e direto. A margem por reserva aumenta, os dados de hóspede passam a ser propriedade do hotel e a previsibilidade da receita tende a melhorar.
     </p>
 <p>
-      Não é uma transformação imediata. É uma arquitetura que se consolida com o tempo — e que, uma vez no lugar, cria uma vantagem competitiva difícil de copiar.
+      Não é uma transformação imediata. É uma arquitetura que se consolida com o tempo e que, uma vez no lugar, cria uma vantagem competitiva difícil de copiar.
     </p>
 <div class="post-cta">
 <h4>Quer mudar a proporção do seu hotel?</h4>
-<p>A Komplexa estrutura o funil completo de reservas diretas — da atração ao pós-venda. Estratégia personalizada para o perfil do seu hotel.</p>
-<a class="btn-sage" href="https://komplexa-pricing.vercel.app/f/komplexaconsultoria?utm_source=komplexahoteis&amp;utm_medium=site&amp;utm_content=blog-ota" target="_blank">Falar com especialista</a>
+<p>O Hotel Sunsmart, atendido pela Komplexa, foi de 30% para mais de 60% de reservas diretas, conferido no PMS do hotel. Cada resultado vem de uma operação diferente: na conversa com a Komplexa, o plano nasce do seu hotel, sem pacote pronto. <a href="../#cases" style="color:#fff;border-bottom:1px solid rgba(255,255,255,.5)">Ver os cases</a></p>
+<a class="btn-sage" href="https://komplexa-pricing.vercel.app/f/komplexaconsultoria?utm_source=komplexahoteis&amp;utm_medium=site&amp;utm_content=blog-ota-meio" target="_blank" rel="noopener">Agendar conversa</a>
 </div>
   <h2 id="faq">Perguntas frequentes</h2>
 <div class="faq-list">
 <details class="faq-item">
-<summary>Quanto o Booking e as outras OTAs cobram de comissão de hotéis e pousadas?</summary>
-<div class="faq-answer"><p>No Booking.com, a comissão preferencial no Brasil é de 18% desde 1º de julho de 2026; antes, a faixa praticada pela maioria das propriedades era de 10% a 15%. As outras OTAs têm tabelas próprias, também cobradas sobre cada reserva confirmada. Na reserva direta não existe comissão de intermediário, só o custo do motor e da mídia. Quanto maior a fatia vinda das plataformas, maior a parte da receita que sai do hotel.</p></div>
+<summary>Quanto o Booking cobra de comissão e quanto isso pesa por diária?</summary>
+<div class="faq-answer"><p>No Booking.com, a comissão preferencial no Brasil é de 18% desde 1º de julho de 2026. Antes, segundo a Panrotas, as comissões da plataforma historicamente variavam entre 10% e 15%, conforme o tipo de acordo; o percentual efetivo de cada hotel depende do contrato. Numa diária de R$ 400, 18% são R$ 72. As outras OTAs têm tabelas próprias, também cobradas sobre cada reserva confirmada. Na reserva direta não há comissão de intermediário, só o custo do motor, da mídia e do atendimento.</p></div>
 </details>
 <details class="faq-item">
 <summary>Vale a pena sair do Booking e vender só pelo site do hotel?</summary>
@@ -330,26 +340,34 @@ if(document.prerendering){document.addEventListener('prerenderingchange',go,{onc
 <div class="faq-answer"><p>Quando a reserva vem pelo Booking, o dado do hóspede fica com a plataforma, e o hotel perde a capacidade de se relacionar com ele, reativá-lo e aumentar o LTV desse cliente. Isso pesa porque quem já ficou no hotel é o prospect mais qualificado que existe, e campanhas de reativação por e-mail e WhatsApp geram receita com custo de aquisição próximo de zero.</p></div>
 </details>
 </div>
+<h2 id="fontes">Fontes</h2>
+<ul>
+<li><a href="https://www.panrotas.com.br/hotelaria/mercado/2026/05/bookingcom-altera-politica-de-comissao-no-brasil-e-gera-preocupacao-na-hotelaria_228875.html" target="_blank" rel="noopener">Panrotas, 26/05/2026</a>: Booking.com anuncia comissão preferencial de 18% no Brasil, com vigência a partir de 1º de julho de 2026.</li>
+</ul>
 </article>
   <aside class="post-side">
     <div class="side-card"><h4>Neste artigo</h4>
 <a href="#problema" class="toc-link">O problema real com OTAs</a>
+<a href="#conta" class="toc-link">Quanto a comissão pesa</a>
 <a href="#estrategia" class="toc-link">A estratégia para mudar</a>
 <a href="#passo1" class="toc-link">1. Estruturar o funil</a>
 <a href="#passo2" class="toc-link">2. IA para segmentação</a>
 <a href="#passo3" class="toc-link">3. Recuperação de carrinho</a>
 <a href="#passo4" class="toc-link">4. Reativar hóspedes</a>
-<a href="#resultado" class="toc-link">O resultado final</a>
+<a href="#medir" class="toc-link">Como medir a mudança</a>
+<a href="#perfil" class="toc-link">Mix de canais ou pousada presa</a>
+<a href="#resultado" class="toc-link">Resultado: o que muda</a>
     <a href="#faq" class="toc-link">Perguntas frequentes</a>
+    <a href="#fontes" class="toc-link">Fontes</a>
     </div>
     <div class="side-cta"><h4>Para o seu hotel</h4>
       <p>Um plano de aquisição desenhado a partir da sua operação, medido no PMS.</p>
-      <a href="https://komplexa-pricing.vercel.app/f/komplexaconsultoria?utm_source=komplexahoteis&amp;utm_medium=site&amp;utm_content=blog-ota" target="_blank" rel="noopener" class="btn-sage">Agendar conversa</a>
+      <a href="https://komplexa-pricing.vercel.app/f/komplexaconsultoria?utm_source=komplexahoteis&amp;utm_medium=site&amp;utm_content=blog-ota-lateral" target="_blank" rel="noopener" class="btn-sage">Agendar conversa</a>
     </div>
     <div class="side-card"><h4>Leia também</h4>
-<a href="post-ia.html" class="related-post"><h5>IA na hotelaria: segmentação que reduz custo por reserva</h5><span>IA Aplicada · 6 min</span></a>
-<a href="post-revpar.html" class="related-post"><h5>RevPAR vs. ocupação: qual métrica define o sucesso</h5><span>RevPAR · 7 min</span></a>
-<a href="post-funil.html" class="related-post"><h5>Por que campanhas isoladas não funcionam para hotéis</h5><span>Conversão · 5 min</span></a>
+<a href="post-dependencia-booking-pousada.html" class="related-post"><h5>Pousada presa no Booking: como migrar para reservas diretas sem perder ocupação</h5><span>Reservas Diretas · 10 min</span></a>
+<a href="post-paridade-tarifaria.html" class="related-post"><h5>Paridade tarifária: o que é e como não perder dinheiro com isso</h5><span>OTA e Distribuição · 7 min</span></a>
+<a href="post-como-escolher-agencia.html" class="related-post"><h5>Como escolher uma agência de marketing para hotel ou pousada</h5><span>Marketing Hoteleiro · 9 min</span></a>
     </div>
   </aside>
 </div></div>
@@ -358,9 +376,9 @@ if(document.prerendering){document.addEventListener('prerenderingchange',go,{onc
   <div class="wrap">
     <span class="overline">Continue lendo</span>
     <div class="rg-grid">
-<a href="post-ia.html" class="rg-card"><span class="rg-tag">Inteligência Artificial</span><h4>IA na hotelaria: segmentação inteligente que reduz custo por reserva</h4><p>Como lookalike baseado em hóspedes reais é mais eficiente que demográfico genérico.</p></a>
-<a href="post-funil.html" class="rg-card"><span class="rg-tag">Conversão</span><h4>Por que campanhas isoladas não funcionam para hotéis</h4><p>O funil completo é o único modelo que escala reservas diretas de forma previsível.</p></a>
-<a href="post-ltv.html" class="rg-card"><span class="rg-tag">CRM e Pós-venda</span><h4>LTV em hotéis: o ativo que a maioria ignora</h4><p>Hóspedes antigos são o lead mais barato de reativar — e poucos hotéis usam essa alavanca.</p></a>
+<a href="post-ia.html" class="rg-card"><span class="rg-tag">Inteligência Artificial</span><h4>IA na hotelaria: segmentação inteligente que reduz custo por reserva</h4><p>Como o público lookalike de hóspedes reais e a exclusão de quem não reserva mudam a mídia paga.</p></a>
+<a href="post-funil.html" class="rg-card"><span class="rg-tag">Conversão</span><h4>Por que campanhas isoladas não funcionam para hotéis</h4><p>Anúncio sem site, motor e atendimento ligados vaza verba. O funil inteiro decide a reserva.</p></a>
+<a href="post-ltv.html" class="rg-card"><span class="rg-tag">CRM e Pós-venda</span><h4>LTV em hotéis: o ativo que a maioria ignora</h4><p>Como estimar a receita de reativar hóspedes antigos e montar a régua de pós-venda.</p></a>
     </div>
   </div>
 </section>
@@ -371,7 +389,7 @@ if(document.prerendering){document.addEventListener('prerenderingchange',go,{onc
     <div class="news-box">
       <span class="overline rv">Carta do fundador</span>
       <h2 class="t-display rv">Um convite para conhecer <em class="gi">o nosso time.</em></h2>
-      <img class="carta-foto rv" src="../assets/img/igor.png" alt="Igor Salomão, fundador da Komplexa">
+      <img class="carta-foto rv" src="../assets/img/igor.png" alt="Igor Salomão, fundador da Komplexa" width="400" height="400" loading="lazy">
       <div class="carta rv">
         <p>Sou o Igor Salomão, fundador da Komplexa. Se você chegou até aqui, quero te fazer um convite: uma conversa comigo e com o time sobre o seu hotel.</p>
         <p>Nela, queremos entender de verdade como a sua operação funciona hoje: de onde vêm as reservas, como o hóspede chega até você e onde você sente que dá para crescer.</p>
@@ -403,15 +421,15 @@ if(document.prerendering){document.addEventListener('prerenderingchange',go,{onc
       </div>
       <div class="ft-col">
         <h4>A solução</h4>
-        <a href="../index.html#metodo">O método</a>
-        <a href="../index.html#cases">Cases</a>
-        <a href="../index.html#sistema">O sistema</a>
-        <a href="../index.html#ia">IA aplicada</a>
-        <a href="../index.html#frentes">Frentes de receita</a>
+        <a href="../#metodo">O método</a>
+        <a href="../#cases">Cases</a>
+        <a href="../#sistema">O sistema</a>
+        <a href="../#ia">IA aplicada</a>
+        <a href="../#frentes">Frentes de receita</a>
       </div>
       <div class="ft-col">
         <h4>Conteúdo</h4>
-        <a href="../blog/index.html">Blog</a>
+        <a href="./">Blog</a>
         <a href="../blog/post-comissao-booking-18.html">Booking a 18%</a>
         <a href="../blog/post-motor-de-reservas.html">Motor de reservas</a>
         <a href="../blog/post-google-hotel-ads.html">Google Hotel Ads</a>
@@ -427,28 +445,28 @@ if(document.prerendering){document.addEventListener('prerenderingchange',go,{onc
     <div class="selos" aria-label="Integrações e parceiros de tecnologia">
       <div class="selos-track">
         <!-- lista repetida 2x para o loop contínuo do marquee -->
-        <div class="selo"><img src="../assets/img/omnibees.png" alt="Omnibees"></div>
-        <div class="selo"><img src="../assets/img/hsystem.png" alt="HSystem"></div>
-        <div class="selo"><img src="../assets/img/asksuite.jpeg" alt="Asksuite"></div>
-        <div class="selo"><img src="../assets/img/erbon.png" alt="Erbon"></div>
-        <div class="selo"><img src="../assets/img/bitz.png" alt="Bitz"></div>
-        <div class="selo"><img src="../assets/img/foco.png" alt="Foco"></div>
-        <div class="selo"><img src="../assets/img/omnibees.png" alt="Omnibees"></div>
-        <div class="selo"><img src="../assets/img/hsystem.png" alt="HSystem"></div>
-        <div class="selo"><img src="../assets/img/asksuite.jpeg" alt="Asksuite"></div>
-        <div class="selo"><img src="../assets/img/erbon.png" alt="Erbon"></div>
-        <div class="selo"><img src="../assets/img/bitz.png" alt="Bitz"></div>
-        <div class="selo"><img src="../assets/img/foco.png" alt="Foco"></div>
+        <div class="selo"><img src="../assets/img/omnibees.png" alt="Omnibees" width="168" height="96" loading="lazy"></div>
+        <div class="selo"><img src="../assets/img/hsystem.png" alt="HSystem" width="428" height="118" loading="lazy"></div>
+        <div class="selo"><img src="../assets/img/asksuite.jpeg" alt="Asksuite" width="200" height="200" loading="lazy"></div>
+        <div class="selo"><img src="../assets/img/erbon.png" alt="Erbon" width="301" height="456" loading="lazy"></div>
+        <div class="selo"><img src="../assets/img/bitz.png" alt="Bitz" width="492" height="158" loading="lazy"></div>
+        <div class="selo"><img src="../assets/img/foco.png" alt="Foco" width="331" height="152" loading="lazy"></div>
+        <div class="selo"><img src="../assets/img/omnibees.png" alt="Omnibees" width="168" height="96" loading="lazy"></div>
+        <div class="selo"><img src="../assets/img/hsystem.png" alt="HSystem" width="428" height="118" loading="lazy"></div>
+        <div class="selo"><img src="../assets/img/asksuite.jpeg" alt="Asksuite" width="200" height="200" loading="lazy"></div>
+        <div class="selo"><img src="../assets/img/erbon.png" alt="Erbon" width="301" height="456" loading="lazy"></div>
+        <div class="selo"><img src="../assets/img/bitz.png" alt="Bitz" width="492" height="158" loading="lazy"></div>
+        <div class="selo"><img src="../assets/img/foco.png" alt="Foco" width="331" height="152" loading="lazy"></div>
       </div>
     </div>
     <div class="ft-credit">© 2026 Komplexa Hotéis · Arquitetura de crescimento para reservas diretas · komplexahoteis.com</div>
   </div>
 </footer>
 
-<script src="../assets/js/vendor/lenis.min.js"></script>
-<script src="../assets/js/vendor/gsap.min.js"></script>
-<script src="../assets/js/vendor/ScrollTrigger.min.js"></script>
-<script src="../assets/js/main.js"></script>
+<script src="../assets/js/vendor/lenis.min.js" defer></script>
+<script src="../assets/js/vendor/gsap.min.js" defer></script>
+<script src="../assets/js/vendor/ScrollTrigger.min.js" defer></script>
+<script src="../assets/js/main.js" defer></script>
 
 </body>
 </html>

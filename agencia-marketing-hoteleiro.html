@@ -7,17 +7,20 @@
 <script>
 !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
 n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
-n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
-t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script',
+n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];
+/* fbevents.js entra depois do load, com a página ociosa; init e PageView já ficam na fila do fbq */
+var go=function(){t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)},
+idle=function(){f.requestIdleCallback?f.requestIdleCallback(go,{timeout:2000}):setTimeout(go,200)};
+b.readyState==='complete'?idle():f.addEventListener('load',idle,{once:true})}(window,document,'script',
 'https://connect.facebook.net/en_US/fbevents.js');
 (function(){var go=function(){fbq('init','1364660957915622');fbq('track','PageView');};
 if(document.prerendering){document.addEventListener('prerenderingchange',go,{once:true});}else{go();}})();
 </script>
 <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=1364660957915622&ev=PageView&noscript=1"></noscript>
 <!-- /Meta Pixel -->
-<script>document.documentElement.className+=" js";setTimeout(function(){if(!window.__animReady)document.documentElement.className+=" no-anim"},2500)</script>
+<script>document.documentElement.className+=" js";setTimeout(function(){if(!window.__animReady)document.documentElement.className+=" no-anim"},1200)</script>
 <title>Agência de Marketing para Hotéis e Pousadas | Komplexa Hotéis</title>
-<meta name="description" content="Agência de marketing para hotéis e pousadas focada em reservas diretas: mais de 50 hotéis atendidos em 14 estados, com resultado conferido no PMS.">
+<meta name="description" content="Google Ads, Meta Ads, site com motor de reservas, atendimento e CRM para hotéis e pousadas. Mais de 50 hotéis atendidos em 14 estados. Veja como trabalhamos.">
 <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
 <link rel="canonical" href="https://komplexahoteis.com/agencia-marketing-hoteleiro.html">
 <link rel="icon" href="favicon.ico" sizes="32x32">
@@ -27,13 +30,13 @@ if(document.prerendering){document.addEventListener('prerenderingchange',go,{onc
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://komplexahoteis.com/agencia-marketing-hoteleiro.html">
 <meta property="og:title" content="Agência de Marketing para Hotéis e Pousadas | Komplexa Hotéis">
-<meta property="og:description" content="Agência de marketing para hotéis e pousadas focada em reservas diretas: mais de 50 hotéis atendidos em 14 estados, com resultado conferido no PMS.">
+<meta property="og:description" content="Google Ads, Meta Ads, site com motor de reservas, atendimento e CRM para hotéis e pousadas. Mais de 50 hotéis atendidos em 14 estados. Veja como trabalhamos.">
 <meta property="og:image" content="https://komplexahoteis.com/assets/og-home.jpg">
 <meta property="og:locale" content="pt_BR">
 <meta property="og:site_name" content="Komplexa Hotéis">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Agência de Marketing para Hotéis e Pousadas | Komplexa Hotéis">
-<meta name="twitter:description" content="Agência de marketing para hotéis e pousadas focada em reservas diretas: mais de 50 hotéis atendidos em 14 estados, com resultado conferido no PMS.">
+<meta name="twitter:description" content="Google Ads, Meta Ads, site com motor de reservas, atendimento e CRM para hotéis e pousadas. Mais de 50 hotéis atendidos em 14 estados. Veja como trabalhamos.">
 <meta name="twitter:image" content="https://komplexahoteis.com/assets/og-home.jpg">
 <meta name="keywords" content="agência de marketing para hotéis, agência de marketing hoteleiro, marketing para pousadas, agência reservas diretas, marketing digital para hotéis, agência marketing para hotelaria">
 <meta name="author" content="Komplexa Hotéis">
@@ -50,13 +53,14 @@ if(document.prerendering){document.addEventListener('prerenderingchange',go,{onc
       "name": "Komplexa Hotéis",
       "alternateName": "Komplexa",
       "url": "https://komplexahoteis.com",
-      "logo": "https://komplexahoteis.com/assets/logo.svg",
+      "logo": "https://komplexahoteis.com/assets/img/icon-512.png",
       "image": "https://komplexahoteis.com/assets/og-home.jpg",
       "sameAs": ["https://www.instagram.com/komplexa.hoteis/", "https://maps.google.com/?cid=10263659486995255571"],
       "hasMap": "https://maps.google.com/?cid=10263659486995255571",
       "telephone": "+55 12 98708-4407",
       "address": { "@type": "PostalAddress", "streetAddress": "R. dos Piquiroes, 40 - Aquarius", "addressLocality": "São José dos Campos", "addressRegion": "SP", "postalCode": "12246-020", "addressCountry": "BR" },
       "slogan": "Arquitetura de crescimento para reservas diretas",
+      "founder": { "@type": "Person", "@id": "https://komplexahoteis.com/igor-salomao.html#igor", "name": "Igor Salomão", "url": "https://komplexahoteis.com/igor-salomao.html" },
       "description": "Agência de marketing para hotéis e pousadas especializada em reservas diretas. A Komplexa Hotéis estrutura o funil completo de captação — atração, conversão, recuperação e pós-venda — com IA aplicada para reduzir a dependência de OTAs e aumentar o RevPAR. Mais de 50 hotéis atendidos em 14 estados do Brasil.",
       "areaServed": { "@type": "Country", "name": "Brasil" },
       "knowsLanguage": "Portuguese",
@@ -143,9 +147,8 @@ if(document.prerendering){document.addEventListener('prerenderingchange',go,{onc
 .faq-wrap .overline{margin-bottom:1rem}
 @media (max-width:900px){.split.cases .ph{aspect-ratio:16/11}}
 </style>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="preload" href="assets/fonts/jost-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="assets/fonts/cormorant-latin.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body class="pg-int">
@@ -159,7 +162,7 @@ if(document.prerendering){document.addEventListener('prerenderingchange',go,{onc
   </div>
 </header>
 
-<a href="index.html" class="logo-fix" id="logoFix" aria-label="Komplexa Hotéis">
+<a href="./" class="logo-fix" id="logoFix" aria-label="Komplexa Hotéis">
   <svg viewBox="0 0 100 97" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
     <path d="M45.8247 36.6514C47.5271 36.6514 49.1676 37.1817 50.5604 38.211L89.22 66.5651C90.9533 67.844 92.0985 69.7156 92.439 71.8679C92.7795 74.0202 92.2533 76.1413 90.9843 77.8881C89.4366 80.0092 87.0842 81.2257 84.4533 81.2257C81.8223 81.2257 81.1104 80.6954 79.7176 79.6661L41.0581 51.3119C39.3247 50.033 38.1795 48.1615 37.839 46.0092C37.4985 43.8569 38.0247 41.7358 39.2938 39.989C40.8414 37.8679 43.1938 36.6514 45.8247 36.6514ZM45.8247 29.1651C41.0581 29.1651 36.3223 31.3798 33.289 35.5908C28.2747 42.5468 29.7914 52.3101 36.6938 57.3633L75.3533 85.7174C78.1081 87.745 81.2962 88.7119 84.4533 88.7119C89.22 88.7119 93.9557 86.4973 96.989 82.2862C102.003 75.3303 100.487 65.567 93.5842 60.5138L54.9247 32.1596C52.17 30.1321 48.9819 29.1651 45.8247 29.1651Z"/>
     <path d="M69.1938 7.48624C70.8961 7.48624 72.5366 8.01651 73.9295 9.04587L79.47 13.1009C83.0604 15.7211 83.8652 20.8055 81.2342 24.4239L76.4985 30.9743L64.4581 22.1468C60.8676 19.5266 60.0628 14.4422 62.6938 10.8239C64.2414 8.70275 66.5938 7.48624 69.2247 7.48624M69.1938 0C64.4271 0 59.6914 2.21468 56.658 6.42569C51.6438 13.3816 53.1604 23.145 60.0628 28.1982L78.108 41.4239L87.2081 28.822C92.2223 21.8661 90.7057 12.1027 83.8033 7.04954L78.2628 2.99449C75.508 0.966969 72.32 0 69.1628 0H69.1938Z"/>
@@ -174,7 +177,7 @@ if(document.prerendering){document.addEventListener('prerenderingchange',go,{onc
     Oi! Sou o Igor, fundador<br>da Komplexa. Quer o plano<br>do seu hotel?
   </div>
   <button class="conc-avatar" onclick="openConcierge()" aria-label="Falar com a Komplexa">
-    <img src="assets/img/igor.png" alt="Igor Salomão, fundador da Komplexa"><span class="conc-dot"></span>
+    <img src="assets/img/igor.png" alt="Igor Salomão, fundador da Komplexa" width="400" height="400"><span class="conc-dot"></span>
   </button>
 </div>
 
@@ -182,18 +185,20 @@ if(document.prerendering){document.addEventListener('prerenderingchange',go,{onc
 <nav class="menu" id="menu">
   <div class="menu-grid">
     <div class="menu-list" data-lenis-prevent>
-      <a href="index.html#metodo" class="active">O método</a>
-      <a href="index.html#cases">Cases</a>
-      <a href="index.html#site">O site entregue</a>
-      <a href="index.html#sistema">O sistema</a>
-      <a href="index.html#frentes">Frentes de receita</a>
-      <a href="index.html#presenca">Quem somos</a>
-      <a href="index.html#contato">Falar com a Komplexa</a>
+      <a href="./#metodo" class="active">O método</a>
+      <a href="./#cases">Cases</a>
+      <a href="./#site">O site entregue</a>
+      <a href="./#sistema">O sistema</a>
+      <a href="./#frentes">Frentes de receita</a>
+      <a href="./#presenca">Quem somos</a>
+      <a href="./#contato">Falar com a Komplexa</a>
     </div>
   </div>
   <div class="menu-foot">
     <div class="menu-foot-links">
-      <a href="blog/index.html">Blog</a>
+      <a href="blog/">Blog</a>
+      <a href="guia-reservas-diretas.html">Guia de reservas diretas</a>
+      <a href="agencia-marketing-hoteleiro.html">Agência de marketing hoteleiro</a>
       <a href="https://komplexa-pricing.vercel.app/f/komplexaconsultoria?utm_source=komplexahoteis&amp;utm_medium=site&amp;utm_content=agencia-menu" target="_blank" rel="noopener">Agendar conversa <span class="ext">↗</span></a>
     </div>
     <div class="menu-foot-social">
@@ -205,14 +210,14 @@ if(document.prerendering){document.addEventListener('prerenderingchange',go,{onc
 
 <!-- ============ HERO ============ -->
 <section class="hero-int" style="padding:0">
-  <div class="media ph"><img src="assets/img/karanda-full.webp" alt="Pousada Karandá, cliente da Komplexa Hotéis"></div>
+  <div class="media ph"><img src="assets/img/karanda-full.webp" alt="Pousada Karandá, cliente da Komplexa Hotéis" width="1440" height="1440"></div>
   <div class="hero-int-body">
     <span class="overline">Agência de marketing hoteleiro</span>
     <h1 class="t-display">Agência de marketing para <em class="gi">hotéis e pousadas</em></h1>
     <p>A Komplexa Hotéis é uma agência de marketing especializada em hotelaria. Construímos o sistema completo de reservas diretas do seu hotel — da atração ao pós-venda — para reduzir a dependência de OTAs e aumentar o RevPAR. Mais de 50 hotéis atendidos em 14 estados do Brasil.</p>
     <div class="acts">
       <a href="https://komplexa-pricing.vercel.app/f/komplexaconsultoria?utm_source=komplexahoteis&amp;utm_medium=site&amp;utm_content=agencia-hero" target="_blank" rel="noopener" class="btn-sage">Falar com especialista</a>
-      <a href="index.html#sistema" class="btn-glass">Ver o sistema</a>
+      <a href="./#sistema" class="btn-glass">Ver o sistema</a>
     </div>
   </div>
 </section>
@@ -226,7 +231,7 @@ if(document.prerendering){document.addEventListener('prerenderingchange',go,{onc
         <p>Muitos hotéis e pousadas independentes dependem de Booking.com e Expedia para encher os quartos, e pagam por isso uma comissão que come a margem a cada reserva. Uma <strong>agência de marketing para hotéis</strong> de verdade não vende post bonito: ela constrói o canal próprio de vendas do hotel, para que o hóspede reserve direto e o dado fique com a propriedade.</p>
         <p>É isso que a Komplexa faz. Em vez de campanhas isoladas, montamos uma <strong>arquitetura de crescimento</strong>: um funil completo, integrado e medido por receita no PMS — não por curtida. O objetivo é ocupação mais previsível, custo por reserva menor e menos dependência de intermediários.</p>
       </div>
-      <div class="ph"><img src="assets/img/hotel-cafe.webp" alt="Mesa de café da manhã em hotel, com luz natural" loading="lazy"></div>
+      <div class="ph"><img src="assets/img/hotel-cafe.webp" alt="Mesa de café da manhã em hotel, com luz natural" loading="lazy" width="1080" height="1080"></div>
     </div>
   </div>
 </section>
@@ -248,7 +253,7 @@ if(document.prerendering){document.addEventListener('prerenderingchange',go,{onc
       <article class="card-soft rv">
         <span class="n">02</span>
         <h3>Conversão no site</h3>
-        <p>Site rápido e motor de reservas integrado, com checkout sem fricção, para transformar visita em reserva confirmada.</p>
+        <p>Site rápido e motor de reservas integrado, com checkout sem fricção, para transformar visita em reserva confirmada. Veja <a href="blog/post-motor-de-reservas.html">como escolher um motor de reservas para pousada</a>.</p>
       </article>
       <article class="card-soft rv">
         <span class="n">03</span>
@@ -278,7 +283,7 @@ if(document.prerendering){document.addEventListener('prerenderingchange',go,{onc
 <section style="padding-top:0">
   <div class="wrap">
     <div class="split flip cases">
-      <div class="ph"><img src="assets/img/sunsmart.webp" alt="Hotel Sunsmart, cliente da Komplexa" loading="lazy"></div>
+      <div class="ph"><img src="assets/img/sunsmart.webp" alt="Hotel Sunsmart, cliente da Komplexa" loading="lazy" width="800" height="533"></div>
       <div class="cases-txt">
         <span class="overline rv">Cases reais · conferidos no PMS</span>
         <h2 class="t-display rv">O que a agência já entregou para <em class="gi">hotéis e pousadas</em></h2>
@@ -292,7 +297,7 @@ if(document.prerendering){document.addEventListener('prerenderingchange',go,{onc
         </div>
         <div class="acts rv">
           <a href="https://komplexa-pricing.vercel.app/f/komplexaconsultoria?utm_source=komplexahoteis&amp;utm_medium=site&amp;utm_content=agencia-meio" target="_blank" rel="noopener" class="btn-sage">Quero esse plano no meu hotel</a>
-          <a href="index.html#cases">Ver os cases em detalhe</a>
+          <a href="./#cases">Ver os cases em detalhe</a>
         </div>
       </div>
     </div>
@@ -309,17 +314,17 @@ if(document.prerendering){document.addEventListener('prerenderingchange',go,{onc
     </div>
     <div class="grid-3">
       <article class="card-soft aud-card rv">
-        <div class="ph"><img src="assets/img/hotel-01.webp" alt="Hotel boutique Bahia Bonita, cliente da Komplexa" loading="lazy"></div>
+        <div class="ph"><img src="assets/img/hotel-01.webp" alt="Hotel boutique Bahia Bonita, cliente da Komplexa" loading="lazy" width="1050" height="1400"></div>
         <h3>Hotéis independentes</h3>
         <p>Propriedades sem o aparato de marketing de uma grande rede, que precisam de um sistema próprio para competir pelo hóspede.</p>
       </article>
       <article class="card-soft aud-card rv">
-        <div class="ph"><img src="assets/img/hotel-experiencia.webp" alt="Massagem ao ar livre com vista para o mar em uma pousada de charme" loading="lazy"></div>
+        <div class="ph"><img src="assets/img/hotel-experiencia.webp" alt="Massagem ao ar livre com vista para o mar em uma pousada de charme" loading="lazy" width="1080" height="720"></div>
         <h3>Pousadas e charme</h3>
         <p>Pousadas e hotéis boutique presos ao Booking, que querem migrar para o canal direto sem perder ocupação no caminho.</p>
       </article>
       <article class="card-soft aud-card rv">
-        <div class="ph"><img src="assets/img/hotel-05.webp" alt="Rede de descanso e piscina vistas da porta de um bangalô" loading="lazy"></div>
+        <div class="ph"><img src="assets/img/hotel-05.webp" alt="Rede de descanso e piscina vistas da porta de um bangalô" loading="lazy" width="933" height="1400"></div>
         <h3>Redes menores</h3>
         <p>Grupos com poucas unidades que buscam previsibilidade de receita e redução de comissões de OTA em todas as casas.</p>
       </article>
@@ -336,9 +341,9 @@ if(document.prerendering){document.addEventListener('prerenderingchange',go,{onc
         <p>Muitas agências entregam campanha avulsa: um anúncio aqui, um post ali. Sem site que converte, sem recuperação de carrinho e sem CRM, esse investimento vaza. A Komplexa trata marketing hoteleiro como <strong>engenharia de receita</strong> — cada peça do funil conversa com a próxima, e tudo é medido por reserva direta gerada.</p>
         <div class="highlight-box"><p>Não medimos curtida nem alcance. Medimos a reserva que entrou no PMS do hotel e quanto ela custou.</p></div>
         <h3>Sistema, não campanha solta</h3>
-        <p>Implementamos o funil completo de uma vez e o operamos com gestão contínua. Conheça <a href="index.html#sistema">o sistema da Komplexa</a>, a forma como aplicamos <a href="index.html#ia">IA na captação</a> e o <a href="index.html#metodo">método</a> por trás dele.</p>
+        <p>Implementamos o funil completo de uma vez e o operamos com gestão contínua. Conheça <a href="./#sistema">o sistema da Komplexa</a>, a forma como aplicamos <a href="./#ia">IA na captação</a> e o <a href="./#metodo">método</a> por trás dele. O passo a passo completo está no <a href="guia-reservas-diretas.html">guia de reservas diretas para hotéis e pousadas</a>.</p>
         <h3>Decisão por dado, não por achismo</h3>
-        <p>Acompanhamos métricas de negócio — receita direta, ROAS, custo por reserva, RevPAR e redução de comissões. Nada de métrica de vaidade. Quer entender o cenário do setor? Veja por que a <a href="blog/post-comissao-booking-18.html">comissão do Booking subiu para 18% em 2026</a> e como <a href="blog/post-ota.html">reduzir a dependência de OTAs</a>. Vai comparar agências? Veja <a href="blog/post-como-escolher-agencia.html">as 8 perguntas para fazer antes de contratar</a>.</p>
+        <p>Acompanhamos métricas de negócio — receita direta, ROAS, custo por reserva, RevPAR e redução de comissões. Nada de métrica de vaidade. Quer entender o cenário do setor? Veja por que a <a href="blog/post-comissao-booking-18.html">comissão do Booking subiu para 18% em 2026</a> e como <a href="blog/post-ota.html">reduzir a dependência de OTAs</a>. Quer entender como a reserva direta aparece na busca do Google? Leia sobre o <a href="blog/post-google-hotel-ads.html">Google Hotel Ads</a>, o bloco de preços que leva o hóspede ao site do hotel. Vai comparar agências? Veja <a href="blog/post-como-escolher-agencia.html">as 8 perguntas para fazer antes de contratar</a>.</p>
       </div>
     </div>
   </div>
@@ -378,7 +383,7 @@ if(document.prerendering){document.addEventListener('prerenderingchange',go,{onc
     <div class="news-box">
       <span class="overline rv">Carta do fundador</span>
       <h2 class="t-display rv">Um convite para conhecer <em class="gi">o nosso time.</em></h2>
-      <img class="carta-foto rv" src="assets/img/igor.png" alt="Igor Salomão, fundador da Komplexa">
+      <img class="carta-foto rv" src="assets/img/igor.png" alt="Igor Salomão, fundador da Komplexa" width="400" height="400" loading="lazy">
       <div class="carta rv">
         <p>Sou o Igor Salomão, fundador da Komplexa. Se você chegou até aqui, quero te fazer um convite: uma conversa comigo e com o time sobre o seu hotel.</p>
         <p>Nela, queremos entender de verdade como a sua operação funciona hoje: de onde vêm as reservas, como o hóspede chega até você e onde você sente que dá para crescer.</p>
@@ -410,15 +415,15 @@ if(document.prerendering){document.addEventListener('prerenderingchange',go,{onc
       </div>
       <div class="ft-col">
         <h4>A solução</h4>
-        <a href="index.html#metodo">O método</a>
-        <a href="index.html#cases">Cases</a>
-        <a href="index.html#sistema">O sistema</a>
-        <a href="index.html#ia">IA aplicada</a>
-        <a href="index.html#frentes">Frentes de receita</a>
+        <a href="./#metodo">O método</a>
+        <a href="./#cases">Cases</a>
+        <a href="./#sistema">O sistema</a>
+        <a href="./#ia">IA aplicada</a>
+        <a href="./#frentes">Frentes de receita</a>
       </div>
       <div class="ft-col">
         <h4>Conteúdo</h4>
-        <a href="blog/index.html">Blog</a>
+        <a href="blog/">Blog</a>
         <a href="blog/post-comissao-booking-18.html">Booking a 18%</a>
         <a href="blog/post-motor-de-reservas.html">Motor de reservas</a>
         <a href="blog/post-google-hotel-ads.html">Google Hotel Ads</a>
@@ -433,28 +438,28 @@ if(document.prerendering){document.addEventListener('prerenderingchange',go,{onc
     <div class="selos" aria-label="Integrações e parceiros de tecnologia">
       <div class="selos-track">
         <!-- lista repetida 2x para o loop contínuo do marquee -->
-        <div class="selo"><img src="assets/img/omnibees.png" alt="Omnibees"></div>
-        <div class="selo"><img src="assets/img/hsystem.png" alt="HSystem"></div>
-        <div class="selo"><img src="assets/img/asksuite.jpeg" alt="Asksuite"></div>
-        <div class="selo"><img src="assets/img/erbon.png" alt="Erbon"></div>
-        <div class="selo"><img src="assets/img/bitz.png" alt="Bitz"></div>
-        <div class="selo"><img src="assets/img/foco.png" alt="Foco"></div>
-        <div class="selo"><img src="assets/img/omnibees.png" alt="Omnibees"></div>
-        <div class="selo"><img src="assets/img/hsystem.png" alt="HSystem"></div>
-        <div class="selo"><img src="assets/img/asksuite.jpeg" alt="Asksuite"></div>
-        <div class="selo"><img src="assets/img/erbon.png" alt="Erbon"></div>
-        <div class="selo"><img src="assets/img/bitz.png" alt="Bitz"></div>
-        <div class="selo"><img src="assets/img/foco.png" alt="Foco"></div>
+        <div class="selo"><img src="assets/img/omnibees.png" alt="Omnibees" width="168" height="96" loading="lazy"></div>
+        <div class="selo"><img src="assets/img/hsystem.png" alt="HSystem" width="428" height="118" loading="lazy"></div>
+        <div class="selo"><img src="assets/img/asksuite.jpeg" alt="Asksuite" width="200" height="200" loading="lazy"></div>
+        <div class="selo"><img src="assets/img/erbon.png" alt="Erbon" width="301" height="456" loading="lazy"></div>
+        <div class="selo"><img src="assets/img/bitz.png" alt="Bitz" width="492" height="158" loading="lazy"></div>
+        <div class="selo"><img src="assets/img/foco.png" alt="Foco" width="331" height="152" loading="lazy"></div>
+        <div class="selo"><img src="assets/img/omnibees.png" alt="Omnibees" width="168" height="96" loading="lazy"></div>
+        <div class="selo"><img src="assets/img/hsystem.png" alt="HSystem" width="428" height="118" loading="lazy"></div>
+        <div class="selo"><img src="assets/img/asksuite.jpeg" alt="Asksuite" width="200" height="200" loading="lazy"></div>
+        <div class="selo"><img src="assets/img/erbon.png" alt="Erbon" width="301" height="456" loading="lazy"></div>
+        <div class="selo"><img src="assets/img/bitz.png" alt="Bitz" width="492" height="158" loading="lazy"></div>
+        <div class="selo"><img src="assets/img/foco.png" alt="Foco" width="331" height="152" loading="lazy"></div>
       </div>
     </div>
     <div class="ft-credit">© 2026 Komplexa Hotéis · Arquitetura de crescimento para reservas diretas · komplexahoteis.com</div>
   </div>
 </footer>
 
-<script src="assets/js/vendor/lenis.min.js"></script>
-<script src="assets/js/vendor/gsap.min.js"></script>
-<script src="assets/js/vendor/ScrollTrigger.min.js"></script>
-<script src="assets/js/main.js"></script>
+<script src="assets/js/vendor/lenis.min.js" defer></script>
+<script src="assets/js/vendor/gsap.min.js" defer></script>
+<script src="assets/js/vendor/ScrollTrigger.min.js" defer></script>
+<script src="assets/js/main.js" defer></script>
 
 </body>
 </html>

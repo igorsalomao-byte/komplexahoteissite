@@ -7,6 +7,9 @@
    Todo link para o formulário leva a origem real de quem chegou ao site
    (UTMs, clique de anúncio ou site de onde veio), guardada por 30 dias em
    localStorage ("kh_origem"). O utm_content de cada botão não muda.
+   Parâmetros próprios no link: kh_lp (página de entrada da visita que definiu a
+   origem), kh_ft ("source/medium" do primeiro toque) e kh_flp (entrada do primeiro
+   toque, guardado em "kh_primeiro").
    Fica antes do GSAP para funcionar mesmo se a animação não carregar. */
 const khOrigem = (() => {
   const CHAVE = 'kh_origem', VALIDADE = 30 * 864e5;
@@ -58,52 +61,133 @@ const khOrigem = (() => {
     return Object.assign(o, classifica(h) || { source: h, medium: 'referral' });
   };
 
-  let guardada = null;
+  let guardada = null, guardadaBruta = null;
   try {
     const g = JSON.parse(localStorage.getItem(CHAVE) || 'null');
+    if (g && g.source) guardadaBruta = g;
     if (g && g.source && Date.now() - g.em < VALIDADE) guardada = g;
   } catch (e) {}
-  const visita = daVisita();
+  let visita = null;
+  try { visita = daVisita(); } catch (e) {}
   let origem;
   if (!visita) origem = guardada || { source: 'direto', medium: 'nenhum' };
   else if (visita.source === 'direto' && guardada) origem = guardada;
   else {
-    origem = Object.assign(visita, { em: Date.now() });
+    // lp: página de entrada da visita que definiu a origem (navegação interna não troca)
+    origem = Object.assign(visita, { em: Date.now(), lp: location.pathname });
     try { localStorage.setItem(CHAVE, JSON.stringify(origem)); } catch (e) {}
+  }
+
+  /* primeiro toque: a primeira origem já vista neste navegador e a página de entrada dela.
+     Gravado uma vez; não expira e não muda o utm_campaign/utm_term. Se já havia uma origem
+     guardada de antes (mesmo vencida), ela é a mais antiga conhecida e vira o primeiro toque. */
+  const CHAVE_FT = 'kh_primeiro';
+  let primeiro = null;
+  try {
+    const f = JSON.parse(localStorage.getItem(CHAVE_FT) || 'null');
+    if (f && f.ft) primeiro = f;
+    else {
+      const base = guardadaBruta || (visita ? origem : null);
+      if (base) {
+        primeiro = { ft: base.source + '/' + (base.medium || ''), flp: base.lp || '', em: base.em || Date.now() };
+        localStorage.setItem(CHAVE_FT, JSON.stringify(primeiro));
+      }
+    }
+  } catch (e) {
+    if (!primeiro && visita) primeiro = { ft: origem.source + '/' + (origem.medium || ''), flp: origem.lp || '' };
   }
 
   /* link do formulário com a origem; mantém o utm_content e o resto do href */
   const link = href => {
     let u;
     try { u = new URL(href, location.href); } catch (e) { return href; }
-    const antes = u.searchParams, p = new URLSearchParams();
-    const put = (k, v) => { if (v) p.set(k, v); };
-    put('utm_source', origem.source);
-    put('utm_medium', origem.medium);
-    put('utm_campaign', origem.campaign || 'site-komplexahoteis');
-    put('utm_term', origem.term);
-    put('utm_content', antes.get('utm_content'));
-    antes.forEach((v, k) => {
-      if (!/^(utm_(source|medium|campaign|term|content)|fbclid|gclid)$/.test(k)) p.append(k, v);
-    });
-    put('fbclid', origem.fbclid);
-    put('gclid', origem.gclid);
-    u.search = p.toString();
-    return u.toString();
+    try {
+      const antes = u.searchParams, p = new URLSearchParams();
+      const put = (k, v) => { if (v) p.set(k, v); };
+      put('utm_source', origem.source);
+      put('utm_medium', origem.medium);
+      put('utm_campaign', origem.campaign || 'site-komplexahoteis');
+      put('utm_term', origem.term);
+      put('utm_content', antes.get('utm_content'));
+      antes.forEach((v, k) => {
+        if (!/^(utm_(source|medium|campaign|term|content)|fbclid|gclid|kh_(lp|ft|flp))$/.test(k)) p.append(k, v);
+      });
+      put('fbclid', origem.fbclid);
+      put('gclid', origem.gclid);
+      put('kh_lp', origem.lp);
+      if (primeiro) { put('kh_ft', primeiro.ft); put('kh_flp', primeiro.flp); }
+      u.search = p.toString();
+      return u.toString();
+    } catch (e) { return href; }
+  };
+
+  /* id da página para o utm_content do concierge: o mesmo prefixo dos outros botões dela
+     (home-boutique, blog-{slug}, blog-listing, {pagina}). Lê o CTA "-header" da casca, que
+     acompanha a página mesmo no 404 servido em outro path; sem ele, deduz pelo path. */
+  const paginaId = () => {
+    try {
+      for (const a of document.querySelectorAll(SEL)) {
+        const c = new URL(a.dataset.khHref || a.getAttribute('href'), location.href).searchParams.get('utm_content') || '';
+        if (/-header$/.test(c)) return c.replace(/-header$/, '');
+      }
+    } catch (e) {}
+    const partes = location.pathname.replace(/\/index(\.html?)?$/, '/').replace(/\.html?$/, '')
+      .split('/').filter(Boolean);
+    const nome = partes[partes.length - 1] || '';
+    if (partes[0] === 'blog') return nome && nome !== 'blog' ? 'blog-' + nome.replace(/^post-/, '') : 'blog-listing';
+    if (!nome) return 'home-boutique';
+    return nome === 'agencia-marketing-hoteleiro' ? 'agencia' : nome;
+  };
+  const FORM = 'https://komplexa-pricing.vercel.app/f/komplexaconsultoria';
+  const concierge = () => {
+    let id = 'home-boutique';
+    try { id = paginaId() || id; } catch (e) {}
+    return link(FORM + '?utm_source=komplexahoteis&utm_medium=site&utm_content=' + encodeURIComponent(id + '-concierge'));
   };
   const SEL = 'a[href*="komplexa-pricing.vercel.app/f/"]';
   const aplica = a => {
-    if (!a.dataset.khHref) a.dataset.khHref = a.getAttribute('href');
-    a.href = link(a.dataset.khHref);
+    try {
+      if (!a.dataset.khHref) a.dataset.khHref = a.getAttribute('href');
+      a.href = link(a.dataset.khHref);
+    } catch (e) {}
   };
-  document.querySelectorAll(SEL).forEach(aplica);
+  try { document.querySelectorAll(SEL).forEach(aplica); } catch (e) {}
   // de novo no clique, para cobrir links criados depois
   document.addEventListener('click', e => {
     const a = e.target.closest && e.target.closest(SEL);
     if (a) aplica(a);
   }, true);
 
-  return { origem, link, classifica };
+  return { origem, primeiro, link, classifica, concierge };
+})();
+
+/* ---------- Vídeos fora da dobra: só baixam perto da tela ----------
+   <video data-src="..." preload="none" autoplay ...>: o src entra quando o vídeo chega
+   a 300px da área visível, e aí ele toca como antes (autoplay, mudo, em loop).
+   O vídeo do hero tem lógica própria no index.html e fica de fora.
+   Também fica antes do GSAP, para não depender da animação. */
+const lazyVideos = (() => {
+  const start = v => {
+    if (!v.dataset.src || v.getAttribute('src')) return;
+    v.src = v.dataset.src;
+    v.preload = 'auto';
+    const p = v.play(); if (p && p.catch) p.catch(() => {});
+  };
+  const io = 'IntersectionObserver' in window
+    ? new IntersectionObserver(es => es.forEach(e => {
+        if (e.isIntersecting) { io.unobserve(e.target); start(e.target); }
+      }), { rootMargin: '300px 0px' })
+    : null;
+  const watch = (root = document) => {
+    try {
+      root.querySelectorAll('video[data-src]').forEach(v => {
+        if (v.closest('.hero-media')) return;
+        io ? io.observe(v) : start(v);
+      });
+    } catch (e) {}
+  };
+  watch();
+  return watch;
 })();
 
 gsap.registerPlugin(ScrollTrigger);
@@ -114,8 +198,6 @@ document.addEventListener('click', e => {
   const a = e.target.closest('a[href*="komplexa-pricing.vercel.app"]');
   if (a && typeof fbq === 'function') fbq('track', 'Contact', { content_name: a.textContent.trim().slice(0, 60) });
 });
-const FORM_URL = 'https://komplexa-pricing.vercel.app/f/komplexaconsultoria' +
-  '?utm_source=komplexahoteis&utm_medium=site&utm_content=home-boutique-concierge';
 
 /* ---------- Altura do hero fixa: a barra do navegador móvel some ao rolar e o 100vh
    cresce, o que dava "zoom" no vídeo. Trava na altura inicial; só recalcula se a largura mudar. */
@@ -170,7 +252,10 @@ document.querySelectorAll('.ph img, .ph video').forEach(m => {
     tl.fromTo('.hero-int .media', { scale: 1.12 },
       { scale: 1.03, duration: 2.4, ease: 'power3.out' }, 0);
   }
-  if (heroCenter) tl.to(heroCenter, { opacity: 1, scale: 1, duration: 1.6, ease: 'power3.out' }, .25);
+  /* o texto do hero da home (.hero-center) entra por keyframes no CSS, sem esperar este
+     script; aqui só animam os heros das páginas internas (.hero-int-body) */
+  if (heroCenter && !heroCenter.classList.contains('hero-center'))
+    tl.to(heroCenter, { opacity: 1, scale: 1, duration: 1.6, ease: 'power3.out' }, .25);
   if (document.getElementById('concBubble')) {
     tl.add(() => gsap.fromTo('#concBubble', { opacity: 0, scale: .6, y: 10 },
       { opacity: 1, scale: 1, y: 0, duration: .5, ease: 'back.out(1.6)' }), 1.2);
@@ -302,7 +387,10 @@ function openConcierge() {
     gsap.fromTo(b, { opacity: 0, scale: .6, y: 10 },
       { opacity: 1, scale: 1, y: 0, duration: .45, ease: 'back.out(1.6)' });
   } else {
-    window.open(khOrigem.link(FORM_URL), '_blank');
+    // utm_content pela página (home-boutique-concierge, blog-{slug}-concierge, {pagina}-concierge)
+    window.open(khOrigem.concierge(), '_blank');
+    // Meta Pixel: o concierge é <button>, não passa pelo handler dos links; mesmo evento Contact
+    try { if (typeof fbq === 'function') fbq('track', 'Contact', { content_name: 'Concierge' }); } catch (e) {}
   }
 }
 
@@ -512,7 +600,7 @@ if (fn && fnPop) {
         'Teste contínuo até achar o criativo vencedor'
       ],
       demo: '<div class="dm-media">' +
-        '<span class="md vid"><video src="assets/img/criativo-video.mp4" autoplay muted loop playsinline></video><span class="tag">▶ Vídeo</span></span>' +
+        '<span class="md vid"><video data-src="assets/img/criativo-video.mp4" poster="assets/img/criativo-video-poster.webp" preload="none" autoplay muted loop playsinline></video><span class="tag">▶ Vídeo</span></span>' +
         '<span class="md"><img src="assets/img/criativo-01.webp" alt="Criativo de campanha para hotel"><span class="tag">Estático</span></span>' +
         '<span class="md"><img src="assets/img/criativo-02.webp" alt="Criativo de oferta para hotel"><span class="tag">Estático</span></span>' +
         '</div>'
@@ -631,6 +719,7 @@ if (fn && fnPop) {
     fnPop.querySelector('.fnpop-desc').innerHTML = p.desc;
     fnPop.querySelector('.fnpop-list').innerHTML = p.list.map(i => `<li>${i}</li>`).join('');
     fnPop.querySelector('.fnpop-demo').innerHTML = p.demo || '';
+    lazyVideos(fnPop.querySelector('.fnpop-demo'));
     opener = btn;
     fnPop.hidden = false;
     if (typeof lenis !== 'undefined') lenis.stop();

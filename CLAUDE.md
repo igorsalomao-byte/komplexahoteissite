@@ -38,13 +38,23 @@ no headless, use um wrapper com iframe injetando `.rv{opacity:1!important;transf
 
 ## Tech Stack
 
-HTML + CSS + JS puro, sem build. Google Fonts (Cormorant + Jost) via CDN; Lenis, GSAP e ScrollTrigger
-hospedados em `assets/js/vendor/` (não usar CDN: em conexão lenta a página ficava vazia). **Lenis só no
+HTML + CSS + JS puro, sem build. Fontes Cormorant + Jost hospedadas em `assets/fonts/` (woff2 variáveis, só
+latin e latin-ext, `@font-face` com `font-display: swap` no topo do `style.css`; toda página faz preload de
+`jost-latin.woff2` e `cormorant-latin.woff2` e não carrega mais o Google Fonts). Lenis, GSAP e ScrollTrigger
+hospedados em `assets/js/vendor/` (não usar CDN: em conexão lenta a página ficava vazia); nas páginas de leitura
+(posts, `_template`, guia, autor, agência) eles e o `main.js` vão com `defer`. **Lenis só no
 desktop**: em tela de toque a rolagem é nativa (o objeto `lenis` vira um shim com a mesma API); ScrollTrigger com
 `ignoreMobileResize` e refresh só quando a largura muda. Sem pins nem scroll-snap vertical: qualquer "pulo" de
 scroll no celular vem de recalcular layout durante a rolagem, evitar. Um script inline
-no `<head>` marca `html.js` e, se as animações não iniciarem em 2,5 s, marca `html.no-anim`, que revela
-tudo (`.rv`, hero, fotos). Só `html.js .rv` nasce invisível.
+no `<head>` marca `html.js` e, se as animações não iniciarem em 1,2 s, marca `html.no-anim`, que revela
+tudo (`.rv`, hero, fotos). Só `html.js .rv` nasce invisível. O texto do hero da home (`.hero-center`) entra por
+keyframes CSS (`heroIn`), sem esperar o GSAP; o GSAP só anima o `.hero-int-body` das páginas internas.
+Performance (out/2026): o Meta Pixel enfileira `init` e `PageView` na hora e só injeta o `fbevents.js` depois do
+load (`requestIdleCallback`); o vídeo do hero recebe o `src` depois do load e é pulado com `saveData`; vídeos fora
+da dobra usam `<video data-src preload="none">` e o `main.js` (`lazyVideos`) põe o `src` perto da tela. Fotos
+grandes da home têm variantes `-480/-800/-1200.webp` com `srcset`/`sizes` (as caixas usam `object-fit: cover`,
+então o `sizes` considera a altura da caixa vezes a proporção da foto); `hero-poster-m.webp` é o recorte vertical
+do poster para celular em retrato.
 
 ## File Structure
 
@@ -133,8 +143,9 @@ Mantenha a FAQ visível **idêntica** ao `FAQPage` do `<head>`. Depois: adicione
 - **Números citáveis:** resumo e FAQ só com dado verificado (ver memória de pesquisa 2026). A comissão do
   Booking é **18% desde 1º/jul/2026** (tempo passado). Faixas como "OTAs cobram 15% a 25%" seguem sem confirmação.
 - **Páginas-âncora:** `guia-reservas-diretas.html` (guia pilar, linka todos os posts) e `igor-salomao.html`
-  (página do autor). Geradas com a casca (`shell.py`); o `shell.py` de `_extraidos/tools` precisa de chaves
-  duplicadas no bloco do Meta Pixel e do marcador de rodapé `assets/js/vendor/lenis.min.js` para rodar.
+  (página do autor). Geradas com a casca (`shell.py`); o bloco do Meta Pixel do `shell.py` de `_extraidos/tools`
+  já está com as chaves duplicadas (out/2026, junto com fontes locais, `defer` e no-anim de 1,2 s), mas ele ainda
+  precisa do marcador de rodapé `assets/js/vendor/lenis.min.js` para rodar.
 - **Não publicados** (via `_config.yml`): `CLAUDE.md`, resumo de posicionamento, scripts e pastas de referência.
 - **IndexNow:** a chave é o arquivo `.txt` de 32 caracteres na raiz; serve para avisar o Bing de URLs novas.
 - **Favicon (set/2026):** `assets/img/favicon.svg` (símbolo em degradê sobre navy), `favicon.ico` na raiz

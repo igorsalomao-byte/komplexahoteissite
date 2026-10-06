@@ -7,19 +7,24 @@
 <script>
 !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
 n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
-n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
-t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script',
+n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];
+/* fbevents.js entra depois do load, com a página ociosa; init e PageView já ficam na fila do fbq */
+var go=function(){t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)},
+idle=function(){f.requestIdleCallback?f.requestIdleCallback(go,{timeout:2000}):setTimeout(go,200)};
+b.readyState==='complete'?idle():f.addEventListener('load',idle,{once:true})}(window,document,'script',
 'https://connect.facebook.net/en_US/fbevents.js');
 (function(){var go=function(){fbq('init','1364660957915622');fbq('track','PageView');};
 if(document.prerendering){document.addEventListener('prerenderingchange',go,{once:true});}else{go();}})();
 </script>
 <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=1364660957915622&ev=PageView&noscript=1"></noscript>
 <!-- /Meta Pixel -->
-<script>document.documentElement.className+=" js";setTimeout(function(){if(!window.__animReady)document.documentElement.className+=" no-anim"},2500)</script>
-<title>__TITLE__ — Komplexa Hotéis</title>
+<script>document.documentElement.className+=" js";setTimeout(function(){if(!window.__animReady)document.documentElement.className+=" no-anim"},1200)</script>
+<!-- title com ate 60 caracteres, palavra-chave na frente, sem sufixo de marca (a marca ja vem de og:site_name) -->
+<title>__TITLE__</title>
+<!-- description de 140 a 158 caracteres, sem numero sem fonte, igual em meta, og, twitter, schema e post-lead -->
 <meta name="description" content="__DESCRIPTION__">
 <meta name="keywords" content="__KEYWORDS__">
-<meta name="robots" content="index, follow">
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
 <link rel="canonical" href="https://komplexahoteis.com/blog/post-__SLUG__.html">
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://komplexahoteis.com/blog/post-__SLUG__.html">
@@ -29,6 +34,8 @@ if(document.prerendering){document.addEventListener('prerenderingchange',go,{onc
 <meta property="og:locale" content="pt_BR">
 <meta property="og:site_name" content="Komplexa Hotéis">
 <meta property="article:published_time" content="__DATE_ISO__">
+<!-- ao atualizar o post, trocar so este valor e o dateModified do schema pela data da revisao (AAAA-MM-DD) -->
+<meta property="article:modified_time" content="__DATE_ISO__">
 <meta property="article:author" content="Igor Salomão">
 <meta name="author" content="Igor Salomão">
 <meta property="article:section" content="__CATEGORY__">
@@ -38,18 +45,17 @@ if(document.prerendering){document.addEventListener('prerenderingchange',go,{onc
 <meta name="twitter:image" content="https://komplexahoteis.com/assets/img/og/post-__SLUG__.jpg">
 <script type="application/ld+json">
 {"@context":"https://schema.org","@graph":[
- {"@type":"BlogPosting","headline":"__TITLE__","description":"__DESCRIPTION__","url":"https://komplexahoteis.com/blog/post-__SLUG__.html","datePublished":"__DATE_ISO__","dateModified":"__DATE_ISO__","inLanguage":"pt-BR","keywords":"__KEYWORDS__","articleSection":"__CATEGORY__","author":{"@type":"Person","name":"Igor Salomão","url":"https://komplexahoteis.com/igor-salomao.html","jobTitle":"Fundador da Komplexa Hotéis"},"image":["https://komplexahoteis.com/assets/img/og/post-__SLUG__.jpg"],"publisher":{"@type":"Organization","name":"Komplexa Hotéis","logo":{"@type":"ImageObject","url":"https://komplexahoteis.com/assets/logo.svg"}},"mainEntityOfPage":{"@type":"WebPage","@id":"https://komplexahoteis.com/blog/post-__SLUG__.html"}},
+ {"@type":"BlogPosting","headline":"__TITLE__","description":"__DESCRIPTION__","url":"https://komplexahoteis.com/blog/post-__SLUG__.html","datePublished":"__DATE_ISO__","dateModified":"__DATE_ISO__","inLanguage":"pt-BR","keywords":"__KEYWORDS__","articleSection":"__CATEGORY__","author":{"@type":"Person","@id":"https://komplexahoteis.com/igor-salomao.html#igor","name":"Igor Salomão","url":"https://komplexahoteis.com/igor-salomao.html","jobTitle":"Fundador da Komplexa Hotéis"},"image":["https://komplexahoteis.com/assets/img/og/post-__SLUG__.jpg"],"publisher":{"@type":"Organization","@id":"https://komplexahoteis.com/#organizacao","name":"Komplexa Hotéis","url":"https://komplexahoteis.com/","logo":{"@type":"ImageObject","url":"https://komplexahoteis.com/assets/img/icon-512.png", "width": 512, "height": 512}},"mainEntityOfPage":{"@type":"WebPage","@id":"https://komplexahoteis.com/blog/post-__SLUG__.html"}},
  {"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Início","item":"https://komplexahoteis.com/"},{"@type":"ListItem","position":2,"name":"Blog","item":"https://komplexahoteis.com/blog/"},{"@type":"ListItem","position":3,"name":"__TITLE__","item":"https://komplexahoteis.com/blog/post-__SLUG__.html"}]},
- {"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"__FAQ_Q1__","acceptedAnswer":{"@type":"Answer","text":"__FAQ_A1__"}}]}
+ {"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"__FAQ_Q1__","acceptedAnswer":{"@type":"Answer","text":"__FAQ_A1__"}},{"@type":"Question","name":"__FAQ_Q2__","acceptedAnswer":{"@type":"Answer","text":"__FAQ_A2__"}},{"@type":"Question","name":"__FAQ_Q3__","acceptedAnswer":{"@type":"Answer","text":"__FAQ_A3__"}}]}
 ]}
 </script>
 <link rel="icon" href="../favicon.ico" sizes="32x32">
 <link rel="icon" type="image/svg+xml" href="../assets/img/favicon.svg">
 <link rel="apple-touch-icon" href="../assets/img/apple-touch-icon.png">
 <link rel="manifest" href="../site.webmanifest">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="preload" href="../assets/fonts/jost-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="../assets/fonts/cormorant-latin.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="../assets/css/style.css">
 <style>
 .post-resumo{border-left:3px solid #1099E9;background:rgba(16,153,233,.06);border-radius:0 14px 14px 0;padding:1.2rem 1.4rem;margin:0 0 2.2rem}
@@ -65,11 +71,11 @@ if(document.prerendering){document.addEventListener('prerenderingchange',go,{onc
     <span class="lines"><span></span><span></span><span></span></span>
   </button>
   <div class="hdr-right">
-    <a href="https://komplexa-pricing.vercel.app/f/komplexaconsultoria?utm_source=komplexahoteis&amp;utm_medium=site&amp;utm_content=site-header" target="_blank" rel="noopener" class="hdr-book">Agendar<span class="hb-x"> conversa</span></a>
+    <a href="https://komplexa-pricing.vercel.app/f/komplexaconsultoria?utm_source=komplexahoteis&amp;utm_medium=site&amp;utm_content=blog-__SLUG__-header" target="_blank" rel="noopener" class="hdr-book">Agendar<span class="hb-x"> conversa</span></a>
   </div>
 </header>
 
-<a href="../index.html" class="logo-fix dark" id="logoFix" aria-label="Komplexa Hotéis">
+<a href="../" class="logo-fix dark" id="logoFix" aria-label="Komplexa Hotéis">
   <svg viewBox="0 0 100 97" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
     <path d="M45.8247 36.6514C47.5271 36.6514 49.1676 37.1817 50.5604 38.211L89.22 66.5651C90.9533 67.844 92.0985 69.7156 92.439 71.8679C92.7795 74.0202 92.2533 76.1413 90.9843 77.8881C89.4366 80.0092 87.0842 81.2257 84.4533 81.2257C81.8223 81.2257 81.1104 80.6954 79.7176 79.6661L41.0581 51.3119C39.3247 50.033 38.1795 48.1615 37.839 46.0092C37.4985 43.8569 38.0247 41.7358 39.2938 39.989C40.8414 37.8679 43.1938 36.6514 45.8247 36.6514ZM45.8247 29.1651C41.0581 29.1651 36.3223 31.3798 33.289 35.5908C28.2747 42.5468 29.7914 52.3101 36.6938 57.3633L75.3533 85.7174C78.1081 87.745 81.2962 88.7119 84.4533 88.7119C89.22 88.7119 93.9557 86.4973 96.989 82.2862C102.003 75.3303 100.487 65.567 93.5842 60.5138L54.9247 32.1596C52.17 30.1321 48.9819 29.1651 45.8247 29.1651Z"/>
     <path d="M69.1938 7.48624C70.8961 7.48624 72.5366 8.01651 73.9295 9.04587L79.47 13.1009C83.0604 15.7211 83.8652 20.8055 81.2342 24.4239L76.4985 30.9743L64.4581 22.1468C60.8676 19.5266 60.0628 14.4422 62.6938 10.8239C64.2414 8.70275 66.5938 7.48624 69.2247 7.48624M69.1938 0C64.4271 0 59.6914 2.21468 56.658 6.42569C51.6438 13.3816 53.1604 23.145 60.0628 28.1982L78.108 41.4239L87.2081 28.822C92.2223 21.8661 90.7057 12.1027 83.8033 7.04954L78.2628 2.99449C75.508 0.966969 72.32 0 69.1628 0H69.1938Z"/>
@@ -84,7 +90,7 @@ if(document.prerendering){document.addEventListener('prerenderingchange',go,{onc
     Oi! Sou o Igor, fundador<br>da Komplexa. Quer o plano<br>do seu hotel?
   </div>
   <button class="conc-avatar" onclick="openConcierge()" aria-label="Falar com a Komplexa">
-    <img src="../assets/img/igor.png" alt="Igor Salomão, fundador da Komplexa"><span class="conc-dot"></span>
+    <img src="../assets/img/igor.png" alt="Igor Salomão, fundador da Komplexa" width="400" height="400"><span class="conc-dot"></span>
   </button>
 </div>
 
@@ -92,19 +98,21 @@ if(document.prerendering){document.addEventListener('prerenderingchange',go,{onc
 <nav class="menu" id="menu">
   <div class="menu-grid">
     <div class="menu-list" data-lenis-prevent>
-      <a href="../index.html#metodo" class="active">O método</a>
-      <a href="../index.html#cases">Cases</a>
-      <a href="../index.html#site">O site entregue</a>
-      <a href="../index.html#sistema">O sistema</a>
-      <a href="../index.html#frentes">Frentes de receita</a>
-      <a href="../index.html#presenca">Quem somos</a>
-      <a href="../index.html#contato">Falar com a Komplexa</a>
+      <a href="../#metodo" class="active">O método</a>
+      <a href="../#cases">Cases</a>
+      <a href="../#site">O site entregue</a>
+      <a href="../#sistema">O sistema</a>
+      <a href="../#frentes">Frentes de receita</a>
+      <a href="../#presenca">Quem somos</a>
+      <a href="../#contato">Falar com a Komplexa</a>
     </div>
   </div>
   <div class="menu-foot">
     <div class="menu-foot-links">
-      <a href="../blog/index.html">Blog</a>
-      <a href="https://komplexa-pricing.vercel.app/f/komplexaconsultoria?utm_source=komplexahoteis&amp;utm_medium=site&amp;utm_content=site-menu" target="_blank" rel="noopener">Agendar conversa <span class="ext">↗</span></a>
+      <a href="./">Blog</a>
+      <a href="../guia-reservas-diretas.html">Guia de reservas diretas</a>
+      <a href="../agencia-marketing-hoteleiro.html">Agência de marketing hoteleiro</a>
+      <a href="https://komplexa-pricing.vercel.app/f/komplexaconsultoria?utm_source=komplexahoteis&amp;utm_medium=site&amp;utm_content=blog-__SLUG__-menu" target="_blank" rel="noopener">Agendar conversa <span class="ext">↗</span></a>
     </div>
     <div class="menu-foot-social">
       <a href="https://www.instagram.com/komplexa.hoteis/" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.2" cy="6.8" r=".9" fill="currentColor" stroke="none"/></svg></a>
@@ -114,10 +122,12 @@ if(document.prerendering){document.addEventListener('prerenderingchange',go,{onc
 
 
 <!-- ============ POST ============
-     Substitua os tokens __X__. A FAQ visível deve ser idêntica ao FAQPage do <head>. -->
+     Substitua os tokens __X__. A FAQ visível deve ser idêntica ao FAQPage do <head>.
+     Ao atualizar um post existente: dateModified + article:modified_time (head) e, no post-meta,
+     um segundo rótulo "Atualizado em [mês] de [ano]". Não mexer em datePublished. -->
 <section class="post-hero">
   <div class="wrap"><div class="post-wrap">
-    <nav class="crumbs" aria-label="Navegação"><a href="../index.html">Início</a><span>/</span><a href="index.html">Blog</a><span>/</span><span>__CATEGORY__</span></nav>
+    <nav class="crumbs" aria-label="Navegação"><a href="../">Início</a><span>/</span><a href="./">Blog</a><span>/</span><span>__CATEGORY__</span></nav>
     <span class="overline">__CATEGORY__</span>
     <h1 class="t-display">__TITLE__</h1>
     <p class="post-lead">__DESCRIPTION__</p>
@@ -127,6 +137,13 @@ if(document.prerendering){document.addEventListener('prerenderingchange',go,{onc
 
 <div class="wrap"><div class="post-layout">
   <article class="post-content">
+    <!-- CHECKLIST DE LINKS INTERNOS E FONTES (apagar este comentário ao publicar):
+         3 a 5 links internos no corpo: 1 guia (../guia-reservas-diretas.html), 1 agencia (../agencia-marketing-hoteleiro.html) no trecho sobre contratar,
+         2 a 3 posts irmaos com ancora descritiva (3 a 8 palavras, nunca "clique aqui"); um link por destino;
+         nunca sistema, ia, arquitetura, contato; nenhum link para ../#sistema, ../#metodo (nem ../index.html#sistema ou #metodo);
+         ../#cases so em frase sobre cases;
+         Leia tambem e Continue lendo sem destinos repetidos (6 posts distintos no total);
+         sem link dentro das respostas da FAQ; dado de terceiro so com fonte conferida e listada em "Fontes". -->
     <div class="post-resumo"><span class="overline">Resposta rápida</span><p>__RESUMO__ (2 a 3 frases que respondem direto à pergunta do título)</p></div>
     <p>Parágrafo de abertura.</p>
     <div class="highlight-box"><p>Frase-síntese do artigo, em itálico.</p></div>
@@ -139,39 +156,60 @@ if(document.prerendering){document.addEventListener('prerenderingchange',go,{onc
     <div class="post-divider"></div>
     <h2 id="conclusao">Conclusão</h2>
     <p>Texto.</p>
+    <!-- CTA COM PROVA: __CASE__ aceita so um destes cinco, com o numero exato e sem ligar o resultado ao tema do post:
+         Sunsmart: O Hotel Sunsmart, atendido pela Komplexa, foi de 30% para mais de 60% de reservas diretas
+         Bahia Bonita: O Bahia Bonita, hotel boutique atendido pela Komplexa, teve 19x de retorno sobre o investimento em midia
+         Lagamar: O Lagamar, resort e hotel atendido pela Komplexa, teve mais de 7x de retorno sobre a midia paga
+         Karanda: A Pousada Karanda, atendida pela Komplexa, teve 6,5x de retorno sobre a midia paga
+         Solar Dona Dora: A Pousada Solar Dona Dora, atendida pela Komplexa, passou de R$ 12,4 mil para R$ 42,5 mil de faturamento na baixa temporada, 3,4x mais
+         (escrever com acentos). Nenhum outro numero, prazo ou faixa de preco da Komplexa. -->
     <div class="post-cta">
       <h4>Chamada final</h4>
-      <p>Uma frase sobre o que a Komplexa faz por esse problema.</p>
-      <a href="https://komplexa-pricing.vercel.app/f/komplexaconsultoria?utm_source=komplexahoteis&amp;utm_medium=site&amp;utm_content=blog-__SLUG__" target="_blank" rel="noopener" class="btn-sage">Agendar conversa</a>
+      <p>__CASE__, conferido no PMS do hotel. Cada resultado vem de uma operação diferente: na conversa com a Komplexa, o plano nasce do seu hotel, sem pacote pronto. <a href="../#cases" style="color:#fff;border-bottom:1px solid rgba(255,255,255,.5)">Ver os cases</a></p>
+      <a href="https://komplexa-pricing.vercel.app/f/komplexaconsultoria?utm_source=komplexahoteis&amp;utm_medium=site&amp;utm_content=blog-__SLUG__-meio" target="_blank" rel="noopener" class="btn-sage">Agendar conversa</a>
     </div>
+    <h2 id="faq">Perguntas frequentes</h2>
+    <!-- 3 a 4 perguntas, textos identicos ao FAQPage do head (se usar 4, acrescentar a Q4/A4 nos dois lugares); sem link nas respostas. -->
+    <div class="faq-list">
+      <details class="faq-item"><summary>__FAQ_Q1__</summary><div class="faq-answer"><p>__FAQ_A1__</p></div></details>
+      <details class="faq-item"><summary>__FAQ_Q2__</summary><div class="faq-answer"><p>__FAQ_A2__</p></div></details>
+      <details class="faq-item"><summary>__FAQ_Q3__</summary><div class="faq-answer"><p>__FAQ_A3__</p></div></details>
+    </div>
+    <!-- FONTES: obrigatoria quando o post cita dado de terceiro; so fonte conferida; sem fonte, sem numero.
+         Nome da fonte + data de publicacao. Se o post nao cita terceiros, apagar a secao e o link "Fontes" do "Neste artigo". -->
+    <h2 id="fontes">Fontes</h2>
+    <ul>
+      <li><a href="__URL_FONTE__" target="_blank" rel="noopener">__NOME_DA_FONTE, data__</a></li>
+    </ul>
   </article>
   <aside class="post-side">
     <div class="side-card"><h4>Neste artigo</h4>
       <a href="#secao-1" class="toc-link">Título da seção</a>
       <a href="#conclusao" class="toc-link">Conclusão</a>
+      <a href="#faq" class="toc-link">Perguntas frequentes</a>
+      <a href="#fontes" class="toc-link">Fontes</a>
     </div>
     <div class="side-cta"><h4>Para o seu hotel</h4>
       <p>Um plano de aquisição desenhado a partir da sua operação, medido no PMS.</p>
-      <a href="https://komplexa-pricing.vercel.app/f/komplexaconsultoria?utm_source=komplexahoteis&amp;utm_medium=site&amp;utm_content=blog-__SLUG__" target="_blank" rel="noopener" class="btn-sage">Agendar conversa</a>
+      <a href="https://komplexa-pricing.vercel.app/f/komplexaconsultoria?utm_source=komplexahoteis&amp;utm_medium=site&amp;utm_content=blog-__SLUG__-lateral" target="_blank" rel="noopener" class="btn-sage">Agendar conversa</a>
     </div>
+    <!-- Leia tambem: 3 posts (so titulo, categoria e tempo). Destinos distintos entre si e distintos do "Continue lendo". -->
     <div class="side-card"><h4>Leia também</h4>
-      <a href="post-__RELATED__.html" class="related-post"><h5>Título do post relacionado</h5><span>Categoria · 8 min</span></a>
+      <a href="post-__RELATED1__.html" class="related-post"><h5>Título do post relacionado 1</h5><span>Categoria · 8 min</span></a>
+      <a href="post-__RELATED2__.html" class="related-post"><h5>Título do post relacionado 2</h5><span>Categoria · 8 min</span></a>
+      <a href="post-__RELATED3__.html" class="related-post"><h5>Título do post relacionado 3</h5><span>Categoria · 8 min</span></a>
     </div>
   </aside>
 </div></div>
 
-<section style="padding-top:0"><div class="wrap"><div class="faq-wrap">
-  <h2 class="t-display">Perguntas frequentes</h2>
-  <div class="faq-list">
-    <details class="faq-item"><summary>__FAQ_Q1__</summary><div class="faq-answer"><p>__FAQ_A1__</p></div></details>
-  </div>
-</div></div></section>
-
 <section class="related-wrap" style="padding-top:0">
   <div class="wrap">
     <span class="overline">Continue lendo</span>
+    <!-- Continue lendo: 3 posts, destinos distintos dos 3 do "Leia tambem" (seis posts diferentes no total). -->
     <div class="rg-grid">
-      <a href="post-__RELATED__.html" class="rg-card"><span class="rg-tag">Categoria</span><h4>Título</h4><p>Resumo.</p></a>
+      <a href="post-__RELATED4__.html" class="rg-card"><span class="rg-tag">Categoria</span><h4>Título 4</h4><p>Resumo.</p></a>
+      <a href="post-__RELATED5__.html" class="rg-card"><span class="rg-tag">Categoria</span><h4>Título 5</h4><p>Resumo.</p></a>
+      <a href="post-__RELATED6__.html" class="rg-card"><span class="rg-tag">Categoria</span><h4>Título 6</h4><p>Resumo.</p></a>
     </div>
   </div>
 </section>
@@ -182,7 +220,7 @@ if(document.prerendering){document.addEventListener('prerenderingchange',go,{onc
     <div class="news-box">
       <span class="overline rv">Carta do fundador</span>
       <h2 class="t-display rv">Um convite para conhecer <em class="gi">o nosso time.</em></h2>
-      <img class="carta-foto rv" src="../assets/img/igor.png" alt="Igor Salomão, fundador da Komplexa">
+      <img class="carta-foto rv" src="../assets/img/igor.png" alt="Igor Salomão, fundador da Komplexa" width="400" height="400" loading="lazy">
       <div class="carta rv">
         <p>Sou o Igor Salomão, fundador da Komplexa. Se você chegou até aqui, quero te fazer um convite: uma conversa comigo e com o time sobre o seu hotel.</p>
         <p>Nela, queremos entender de verdade como a sua operação funciona hoje: de onde vêm as reservas, como o hóspede chega até você e onde você sente que dá para crescer.</p>
@@ -190,7 +228,7 @@ if(document.prerendering){document.addEventListener('prerenderingchange',go,{onc
         <div class="carta-ass">Igor Salomão</div>
         <div class="carta-cargo">Fundador · Komplexa Hotéis</div>
       </div>
-      <a href="https://komplexa-pricing.vercel.app/f/komplexaconsultoria?utm_source=komplexahoteis&amp;utm_medium=site&amp;utm_content=site-final" target="_blank" rel="noopener" class="btn-sage rv">Agendar conversa</a>
+      <a href="https://komplexa-pricing.vercel.app/f/komplexaconsultoria?utm_source=komplexahoteis&amp;utm_medium=site&amp;utm_content=blog-__SLUG__-final" target="_blank" rel="noopener" class="btn-sage rv">Agendar conversa</a>
       <p class="carta-ps rv">P.S. Foi assim que começamos com todos os que hoje são cases de sucesso.</p>
     </div>
   </div>
@@ -214,15 +252,15 @@ if(document.prerendering){document.addEventListener('prerenderingchange',go,{onc
       </div>
       <div class="ft-col">
         <h4>A solução</h4>
-        <a href="../index.html#metodo">O método</a>
-        <a href="../index.html#cases">Cases</a>
-        <a href="../index.html#sistema">O sistema</a>
-        <a href="../index.html#ia">IA aplicada</a>
-        <a href="../index.html#frentes">Frentes de receita</a>
+        <a href="../#metodo">O método</a>
+        <a href="../#cases">Cases</a>
+        <a href="../#sistema">O sistema</a>
+        <a href="../#ia">IA aplicada</a>
+        <a href="../#frentes">Frentes de receita</a>
       </div>
       <div class="ft-col">
         <h4>Conteúdo</h4>
-        <a href="../blog/index.html">Blog</a>
+        <a href="./">Blog</a>
         <a href="../blog/post-comissao-booking-18.html">Booking a 18%</a>
         <a href="../blog/post-motor-de-reservas.html">Motor de reservas</a>
         <a href="../blog/post-google-hotel-ads.html">Google Hotel Ads</a>
@@ -231,35 +269,35 @@ if(document.prerendering){document.addEventListener('prerenderingchange',go,{onc
       </div>
       <div class="ft-col">
         <h4>Contato</h4>
-        <a href="https://komplexa-pricing.vercel.app/f/komplexaconsultoria?utm_source=komplexahoteis&amp;utm_medium=site&amp;utm_content=site-footer" target="_blank" rel="noopener">Agendar conversa</a>
+        <a href="https://komplexa-pricing.vercel.app/f/komplexaconsultoria?utm_source=komplexahoteis&amp;utm_medium=site&amp;utm_content=blog-__SLUG__-footer" target="_blank" rel="noopener">Agendar conversa</a>
         <a href="https://www.instagram.com/komplexa.hoteis/" target="_blank" rel="noopener">Instagram</a>
       </div>
     </div>
     <div class="selos" aria-label="Integrações e parceiros de tecnologia">
       <div class="selos-track">
         <!-- lista repetida 2x para o loop contínuo do marquee -->
-        <div class="selo"><img src="../assets/img/omnibees.png" alt="Omnibees"></div>
-        <div class="selo"><img src="../assets/img/hsystem.png" alt="HSystem"></div>
-        <div class="selo"><img src="../assets/img/asksuite.jpeg" alt="Asksuite"></div>
-        <div class="selo"><img src="../assets/img/erbon.png" alt="Erbon"></div>
-        <div class="selo"><img src="../assets/img/bitz.png" alt="Bitz"></div>
-        <div class="selo"><img src="../assets/img/foco.png" alt="Foco"></div>
-        <div class="selo"><img src="../assets/img/omnibees.png" alt="Omnibees"></div>
-        <div class="selo"><img src="../assets/img/hsystem.png" alt="HSystem"></div>
-        <div class="selo"><img src="../assets/img/asksuite.jpeg" alt="Asksuite"></div>
-        <div class="selo"><img src="../assets/img/erbon.png" alt="Erbon"></div>
-        <div class="selo"><img src="../assets/img/bitz.png" alt="Bitz"></div>
-        <div class="selo"><img src="../assets/img/foco.png" alt="Foco"></div>
+        <div class="selo"><img src="../assets/img/omnibees.png" alt="Omnibees" width="168" height="96" loading="lazy"></div>
+        <div class="selo"><img src="../assets/img/hsystem.png" alt="HSystem" width="428" height="118" loading="lazy"></div>
+        <div class="selo"><img src="../assets/img/asksuite.jpeg" alt="Asksuite" width="200" height="200" loading="lazy"></div>
+        <div class="selo"><img src="../assets/img/erbon.png" alt="Erbon" width="301" height="456" loading="lazy"></div>
+        <div class="selo"><img src="../assets/img/bitz.png" alt="Bitz" width="492" height="158" loading="lazy"></div>
+        <div class="selo"><img src="../assets/img/foco.png" alt="Foco" width="331" height="152" loading="lazy"></div>
+        <div class="selo"><img src="../assets/img/omnibees.png" alt="Omnibees" width="168" height="96" loading="lazy"></div>
+        <div class="selo"><img src="../assets/img/hsystem.png" alt="HSystem" width="428" height="118" loading="lazy"></div>
+        <div class="selo"><img src="../assets/img/asksuite.jpeg" alt="Asksuite" width="200" height="200" loading="lazy"></div>
+        <div class="selo"><img src="../assets/img/erbon.png" alt="Erbon" width="301" height="456" loading="lazy"></div>
+        <div class="selo"><img src="../assets/img/bitz.png" alt="Bitz" width="492" height="158" loading="lazy"></div>
+        <div class="selo"><img src="../assets/img/foco.png" alt="Foco" width="331" height="152" loading="lazy"></div>
       </div>
     </div>
     <div class="ft-credit">© 2026 Komplexa Hotéis · Arquitetura de crescimento para reservas diretas · komplexahoteis.com</div>
   </div>
 </footer>
 
-<script src="../assets/js/vendor/lenis.min.js"></script>
-<script src="../assets/js/vendor/gsap.min.js"></script>
-<script src="../assets/js/vendor/ScrollTrigger.min.js"></script>
-<script src="../assets/js/main.js"></script>
+<script src="../assets/js/vendor/lenis.min.js" defer></script>
+<script src="../assets/js/vendor/gsap.min.js" defer></script>
+<script src="../assets/js/vendor/ScrollTrigger.min.js" defer></script>
+<script src="../assets/js/main.js" defer></script>
 
 </body>
 </html>

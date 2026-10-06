@@ -7,17 +7,20 @@
 <script>
 !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
 n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
-n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
-t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script',
+n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];
+/* fbevents.js entra depois do load, com a página ociosa; init e PageView já ficam na fila do fbq */
+var go=function(){t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)},
+idle=function(){f.requestIdleCallback?f.requestIdleCallback(go,{timeout:2000}):setTimeout(go,200)};
+b.readyState==='complete'?idle():f.addEventListener('load',idle,{once:true})}(window,document,'script',
 'https://connect.facebook.net/en_US/fbevents.js');
 (function(){var go=function(){fbq('init','1364660957915622');fbq('track','PageView');};
 if(document.prerendering){document.addEventListener('prerenderingchange',go,{once:true});}else{go();}})();
 </script>
 <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=1364660957915622&ev=PageView&noscript=1"></noscript>
 <!-- /Meta Pixel -->
-<script>document.documentElement.className+=" js";setTimeout(function(){if(!window.__animReady)document.documentElement.className+=" no-anim"},2500)</script>
-<title>Sua pousada aparece no ChatGPT? O que é AEO e por que importa em 2026</title>
-<meta content="Cada vez mais viajantes perguntam ao ChatGPT onde se hospedar. Entenda o que é AEO (otimização para respostas de IA) e como fazer sua pousada ser recomendada." name="description"/>
+<script>document.documentElement.className+=" js";setTimeout(function(){if(!window.__animReady)document.documentElement.className+=" no-anim"},1200)</script>
+<title>Pousada no ChatGPT: o que é AEO e como aparecer na IA</title>
+<meta content="Viajantes já perguntam ao ChatGPT onde se hospedar. Entenda o que é AEO (otimização para respostas de IA) e como fazer sua pousada ser recomendada." name="description"/>
 <meta content="AEO hotelaria, otimização para IA, pousada no ChatGPT, GEO marketing, IA na busca de hotéis, ser recomendado por IA" name="keywords"/>
 <meta content="Igor Salomão" name="author"/>
 <meta content="index, follow, max-image-preview:large, max-snippet:-1" name="robots"/>
@@ -25,8 +28,8 @@ if(document.prerendering){document.addEventListener('prerenderingchange',go,{onc
 <link href="https://komplexahoteis.com/blog/post-aeo-ia-busca.html" rel="canonical"/>
 <meta content="article" property="og:type"/>
 <meta content="https://komplexahoteis.com/blog/post-aeo-ia-busca.html" property="og:url"/>
-<meta content="Sua pousada aparece no ChatGPT? O que é AEO e por que importa em 2026" property="og:title"/>
-<meta content="Cada vez mais viajantes perguntam ao ChatGPT onde se hospedar. Entenda o que é AEO (otimização para respostas de IA) e como fazer sua pousada ser recomendada." property="og:description"/>
+<meta content="Pousada no ChatGPT: o que é AEO e como aparecer na IA" property="og:title"/>
+<meta content="Viajantes já perguntam ao ChatGPT onde se hospedar. Entenda o que é AEO (otimização para respostas de IA) e como fazer sua pousada ser recomendada." property="og:description"/>
 <meta content="https://komplexahoteis.com/assets/img/og/post-aeo-ia-busca.jpg" property="og:image"/>
 <meta content="1200" property="og:image:width"/>
 <meta content="630" property="og:image:height"/>
@@ -36,10 +39,10 @@ if(document.prerendering){document.addEventListener('prerenderingchange',go,{onc
 <meta content="2026-06-17" property="article:published_time"/>
 <meta content="Igor Salomão" property="article:author"/>
 <meta content="Inteligência Artificial" property="article:section"/>
-<meta content="2026-09-29" property="article:modified_time"/>
+<meta content="2026-10-06" property="article:modified_time"/>
 <meta content="summary_large_image" name="twitter:card"/>
-<meta content="Sua pousada aparece no ChatGPT? O que é AEO e por que importa em 2026" name="twitter:title"/>
-<meta content="Cada vez mais viajantes perguntam ao ChatGPT onde se hospedar. Entenda o que é AEO e como fazer sua pousada ser recomendada." name="twitter:description"/>
+<meta content="Pousada no ChatGPT: o que é AEO e como aparecer na IA" name="twitter:title"/>
+<meta content="Viajantes já perguntam ao ChatGPT onde se hospedar. Entenda o que é AEO (otimização para respostas de IA) e como fazer sua pousada ser recomendada." name="twitter:description"/>
 <meta content="https://komplexahoteis.com/assets/img/og/post-aeo-ia-busca.jpg" name="twitter:image"/>
 <script type="application/ld+json">
 [
@@ -47,13 +50,13 @@ if(document.prerendering){document.addEventListener('prerenderingchange',go,{onc
     "@context": "https://schema.org",
     "@type": "BlogPosting",
     "headline": "Sua pousada aparece no ChatGPT? O que é AEO e por que importa em 2026",
-    "description": "Cada vez mais viajantes perguntam ao ChatGPT onde se hospedar. Entenda o que é AEO (otimização para respostas de IA) e como fazer sua pousada ser recomendada.",
+    "description": "Viajantes já perguntam ao ChatGPT onde se hospedar. Entenda o que é AEO (otimização para respostas de IA) e como fazer sua pousada ser recomendada.",
     "image": [
       "https://komplexahoteis.com/assets/img/og/post-aeo-ia-busca.jpg"
     ],
     "url": "https://komplexahoteis.com/blog/post-aeo-ia-busca.html",
     "datePublished": "2026-06-17",
-    "dateModified": "2026-09-29",
+    "dateModified": "2026-10-06",
     "inLanguage": "pt-BR",
     "keywords": "AEO hotelaria, otimização para IA, pousada no ChatGPT, GEO marketing, IA na busca de hotéis, ser recomendado por IA",
     "author": {
@@ -70,7 +73,7 @@ if(document.prerendering){document.addEventListener('prerenderingchange',go,{onc
       "url": "https://komplexahoteis.com/",
       "logo": {
         "@type": "ImageObject",
-        "url": "https://komplexahoteis.com/assets/logo.svg"
+        "url": "https://komplexahoteis.com/assets/img/icon-512.png", "width": 512, "height": 512
       }
     },
     "mainEntityOfPage": {
@@ -139,9 +142,8 @@ if(document.prerendering){document.addEventListener('prerenderingchange',go,{onc
 <link rel="icon" type="image/svg+xml" href="../assets/img/favicon.svg">
 <link rel="apple-touch-icon" href="../assets/img/apple-touch-icon.png">
 <link rel="manifest" href="../site.webmanifest">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="preload" href="../assets/fonts/jost-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="../assets/fonts/cormorant-latin.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="../assets/css/style.css">
 <style>
 .post-resumo{border-left:3px solid #1099E9;background:rgba(16,153,233,.06);border-radius:0 14px 14px 0;padding:1.2rem 1.4rem;margin:0 0 2.2rem}
@@ -161,7 +163,7 @@ if(document.prerendering){document.addEventListener('prerenderingchange',go,{onc
   </div>
 </header>
 
-<a href="../index.html" class="logo-fix dark" id="logoFix" aria-label="Komplexa Hotéis">
+<a href="../" class="logo-fix dark" id="logoFix" aria-label="Komplexa Hotéis">
   <svg viewBox="0 0 100 97" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
     <path d="M45.8247 36.6514C47.5271 36.6514 49.1676 37.1817 50.5604 38.211L89.22 66.5651C90.9533 67.844 92.0985 69.7156 92.439 71.8679C92.7795 74.0202 92.2533 76.1413 90.9843 77.8881C89.4366 80.0092 87.0842 81.2257 84.4533 81.2257C81.8223 81.2257 81.1104 80.6954 79.7176 79.6661L41.0581 51.3119C39.3247 50.033 38.1795 48.1615 37.839 46.0092C37.4985 43.8569 38.0247 41.7358 39.2938 39.989C40.8414 37.8679 43.1938 36.6514 45.8247 36.6514ZM45.8247 29.1651C41.0581 29.1651 36.3223 31.3798 33.289 35.5908C28.2747 42.5468 29.7914 52.3101 36.6938 57.3633L75.3533 85.7174C78.1081 87.745 81.2962 88.7119 84.4533 88.7119C89.22 88.7119 93.9557 86.4973 96.989 82.2862C102.003 75.3303 100.487 65.567 93.5842 60.5138L54.9247 32.1596C52.17 30.1321 48.9819 29.1651 45.8247 29.1651Z"/>
     <path d="M69.1938 7.48624C70.8961 7.48624 72.5366 8.01651 73.9295 9.04587L79.47 13.1009C83.0604 15.7211 83.8652 20.8055 81.2342 24.4239L76.4985 30.9743L64.4581 22.1468C60.8676 19.5266 60.0628 14.4422 62.6938 10.8239C64.2414 8.70275 66.5938 7.48624 69.2247 7.48624M69.1938 0C64.4271 0 59.6914 2.21468 56.658 6.42569C51.6438 13.3816 53.1604 23.145 60.0628 28.1982L78.108 41.4239L87.2081 28.822C92.2223 21.8661 90.7057 12.1027 83.8033 7.04954L78.2628 2.99449C75.508 0.966969 72.32 0 69.1628 0H69.1938Z"/>
@@ -176,7 +178,7 @@ if(document.prerendering){document.addEventListener('prerenderingchange',go,{onc
     Oi! Sou o Igor, fundador<br>da Komplexa. Quer o plano<br>do seu hotel?
   </div>
   <button class="conc-avatar" onclick="openConcierge()" aria-label="Falar com a Komplexa">
-    <img src="../assets/img/igor.png" alt="Igor Salomão, fundador da Komplexa"><span class="conc-dot"></span>
+    <img src="../assets/img/igor.png" alt="Igor Salomão, fundador da Komplexa" width="400" height="400"><span class="conc-dot"></span>
   </button>
 </div>
 
@@ -184,18 +186,20 @@ if(document.prerendering){document.addEventListener('prerenderingchange',go,{onc
 <nav class="menu" id="menu">
   <div class="menu-grid">
     <div class="menu-list" data-lenis-prevent>
-      <a href="../index.html#metodo" class="active">O método</a>
-      <a href="../index.html#cases">Cases</a>
-      <a href="../index.html#site">O site entregue</a>
-      <a href="../index.html#sistema">O sistema</a>
-      <a href="../index.html#frentes">Frentes de receita</a>
-      <a href="../index.html#presenca">Quem somos</a>
-      <a href="../index.html#contato">Falar com a Komplexa</a>
+      <a href="../#metodo" class="active">O método</a>
+      <a href="../#cases">Cases</a>
+      <a href="../#site">O site entregue</a>
+      <a href="../#sistema">O sistema</a>
+      <a href="../#frentes">Frentes de receita</a>
+      <a href="../#presenca">Quem somos</a>
+      <a href="../#contato">Falar com a Komplexa</a>
     </div>
   </div>
   <div class="menu-foot">
     <div class="menu-foot-links">
-      <a href="../blog/index.html">Blog</a>
+      <a href="./">Blog</a>
+      <a href="../guia-reservas-diretas.html">Guia de reservas diretas</a>
+      <a href="../agencia-marketing-hoteleiro.html">Agência de marketing hoteleiro</a>
       <a href="https://komplexa-pricing.vercel.app/f/komplexaconsultoria?utm_source=komplexahoteis&amp;utm_medium=site&amp;utm_content=blog-aeo-ia-busca-menu" target="_blank" rel="noopener">Agendar conversa <span class="ext">↗</span></a>
     </div>
     <div class="menu-foot-social">
@@ -208,11 +212,11 @@ if(document.prerendering){document.addEventListener('prerenderingchange',go,{onc
 <!-- ============ POST ============ -->
 <section class="post-hero">
   <div class="wrap"><div class="post-wrap">
-    <nav class="crumbs" aria-label="Navegação"><a href="../index.html">Início</a><span>/</span><a href="index.html">Blog</a><span>/</span><span>Inteligência Artificial</span></nav>
+    <nav class="crumbs" aria-label="Navegação"><a href="../">Início</a><span>/</span><a href="./">Blog</a><span>/</span><span>Inteligência Artificial</span></nav>
     <span class="overline">Inteligência Artificial</span>
     <h1 class="t-display">Sua pousada aparece no ChatGPT? O que é AEO e por que importa em 2026</h1>
-    <p class="post-lead">Cada vez mais viajantes perguntam ao ChatGPT onde se hospedar. Entenda o que é AEO (otimização para respostas de IA) e como fazer sua pousada ser recomendada.</p>
-    <div class="post-meta"><span>Junho 2026</span><span>8 min de leitura</span><span>Por <a href="../igor-salomao.html">Igor Salomão</a></span><span>Atualizado em setembro de 2026</span></div>
+    <p class="post-lead">Viajantes já perguntam ao ChatGPT onde se hospedar. Entenda o que é AEO (otimização para respostas de IA) e como fazer sua pousada ser recomendada.</p>
+    <div class="post-meta"><span>Junho 2026</span><span>8 min de leitura</span><span>Por <a href="../igor-salomao.html">Igor Salomão</a></span><span>Atualizado em outubro de 2026</span></div>
   </div></div>
 </section>
 
@@ -226,7 +230,7 @@ if(document.prerendering){document.addEventListener('prerenderingchange',go,{onc
       Se a sua propriedade aparece nessa resposta, você ganha um hóspede sem pagar comissão. Se não aparece, você nem soube que a venda existiu. Este artigo explica o que está por trás dessa mudança — e o que uma pousada independente pode fazer, na prática, para ser lida e citada pela IA.
     </p>
 <div class="highlight-box">
-<p>A IA conversacional desponta em 2026 como um novo canal de descoberta na hotelaria. O movimento já é concreto no setor: plataformas de distribuição como a SiteMinder conectaram cerca de 53.000 hotéis ao ChatGPT, sinalizando que ser encontrável dentro dos assistentes de IA deixou de ser ficção e virou pauta de gestão.</p>
+<p>A IA conversacional desponta em 2026 como um novo canal de descoberta na hotelaria. O movimento já aparece no setor: em abril de 2026, a SiteMinder anunciou a expansão de sua plataforma para conectar seus cerca de 53 mil hotéis a ferramentas de planejamento e reserva por IA, como ChatGPT e Claude (<a href="https://skift.com/2026/04/15/siteminder-hotels-ai-discovery-directbooker/" target="_blank" rel="noopener">Skift, 15/04/2026</a>). Ser encontrável dentro dos assistentes de IA virou pauta de gestão.</p>
 </div>
 <h2 id="mudanca">A busca está deixando de ser uma lista de links</h2>
 <p>
@@ -269,7 +273,7 @@ if(document.prerendering){document.addEventListener('prerenderingchange',go,{onc
       À primeira vista, mais uma "novidade de tecnologia" soa como mais uma dor de cabeça. Mas o AEO favorece justamente o hotel independente, por dois motivos.
     </p>
 <p>
-<strong>Primeiro: a IA não cobra comissão.</strong> Quando o ChatGPT recomenda sua pousada e o viajante vai direto ao seu site reservar, não há intermediário levando 15% ou 18% da diária. Isso contrasta com a OTA — e o contraste fica ainda mais relevante em 2026, com a comissão preferencial do Booking.com em 18% no Brasil desde julho. Ser descoberto pela IA é, em essência, um canal de descoberta de baixo custo.
+<strong>Primeiro: a IA não cobra comissão.</strong> Quando o ChatGPT recomenda sua pousada e o viajante vai direto ao seu site reservar, não há intermediário levando comissão da diária (18% no programa Preferencial do Booking, desde 1º de julho de 2026). Isso contrasta com a OTA. Ser descoberto pela IA é, em essência, um canal de descoberta de baixo custo.
     </p>
 <p>
 <strong>Segundo: a IA tende a recomendar quem tem informação clara e confiável na web.</strong> Ela não é seduzida por banner bonito nem por verba de mídia. Ela "lê" a internet e prefere o que consegue entender com segurança: dados consistentes, descrições factuais, avaliações reais. Uma pousada pequena, com informação bem organizada, pode ser citada lado a lado com uma rede grande — porque o critério é clareza e confiança, não tamanho do orçamento.
@@ -291,7 +295,7 @@ if(document.prerendering){document.addEventListener('prerenderingchange',go,{onc
     </p>
 <h3 id="presenca">Presença consistente em toda a web</h3>
 <p>
-      A IA cruza informações de várias fontes. Se o seu <strong>Google Business Profile</strong> diz uma coisa, o site diz outra e as avaliações contam uma terceira história, a máquina perde confiança e prefere recomendar quem é coerente. Mantenha nome, endereço, telefone, comodidades e fotos consistentes no site, no Google e nos diretórios — e cultive avaliações reais, que funcionam como prova social que a IA leva a sério.
+      A IA cruza informações de várias fontes. Se o seu <strong>Google Business Profile</strong> diz uma coisa, o site diz outra e as avaliações contam uma terceira história, a máquina perde confiança e prefere recomendar quem é coerente. Mantenha nome, endereço, telefone, comodidades e fotos consistentes no site, no Google e nos diretórios — e cultive avaliações reais, que funcionam como prova social que a IA leva a sério. Para ver como esses dados alimentam a busca do Google, leia sobre <a href="post-google-hotel-ads.html">Google Hotel Ads e o perfil do Google</a>.
     </p>
 <h3 id="factual">Informação factual e atualizada</h3>
 <p>
@@ -299,15 +303,15 @@ if(document.prerendering){document.addEventListener('prerenderingchange',go,{onc
     </p>
 <h2 id="reservas-diretas">A ligação com as reservas diretas</h2>
 <p>
-      Aqui está o ponto que amarra tudo. Ser citado pela IA só vale a pena de verdade se o hóspede chegar ao <strong>seu</strong> site — e não a uma OTA que também aparece na resposta. Por isso, o AEO não vive sozinho: ele faz parte da mesma arquitetura das reservas diretas.
+      Aqui está o ponto que amarra tudo. Ser citado pela IA só vale a pena de verdade se o hóspede chegar ao <strong>seu</strong> site — e não a uma OTA que também aparece na resposta. Por isso, o AEO não vive sozinho: ele faz parte da mesma arquitetura descrita no <a href="../guia-reservas-diretas.html">guia de reservas diretas para hotéis e pousadas</a>.
     </p>
 <p>
-      De nada adianta a IA recomendar sua pousada se o link leva a um site lento, sem motor de reservas, onde o visitante desiste e acaba reservando pelo Booking. A sequência ideal é: a IA encontra sua informação clara, recomenda sua propriedade, manda o viajante para um site rápido com reserva direta — e a venda se fecha sem comissão. AEO é o topo desse funil; o site que converte é o fundo. Um sem o outro vaza receita.
+      De nada adianta a IA recomendar sua pousada se o link leva a um site lento, sem motor de reservas, onde o visitante desiste e acaba reservando pelo Booking. A sequência ideal é: a IA encontra sua informação clara, recomenda sua propriedade, manda o viajante para um site rápido com <a href="post-motor-de-reservas.html">motor de reservas para pousada</a> e a venda se fecha sem comissão. AEO é o topo desse funil; o site que converte é o fundo. Um sem o outro vaza receita.
     </p>
 <div class="post-cta">
 <h4>Quer que sua pousada apareça quando a IA recomenda?</h4>
-<p>A Komplexa estrutura conteúdo, dados estruturados e o site de reservas diretas para que sua propriedade seja encontrada pela IA — e mande o hóspede direto para você, sem comissão.</p>
-<a class="btn-sage" href="https://komplexa-pricing.vercel.app/f/komplexaconsultoria?utm_source=komplexahoteis&amp;utm_medium=site&amp;utm_content=blog-aeo-ia-busca" target="_blank">Falar com especialista</a>
+<p>O Lagamar, resort e hotel atendido pela Komplexa, teve mais de 7x de retorno sobre a mídia paga, conferido no PMS do hotel. Cada resultado vem de uma operação diferente: na conversa com a Komplexa, o plano nasce do seu hotel, sem pacote pronto. <a href="../#cases" style="color:#fff;border-bottom:1px solid rgba(255,255,255,.5)">Ver os cases</a></p>
+<a class="btn-sage" href="https://komplexa-pricing.vercel.app/f/komplexaconsultoria?utm_source=komplexahoteis&amp;utm_medium=site&amp;utm_content=blog-aeo-ia-busca-meio" target="_blank" rel="noopener">Agendar conversa</a>
 </div>
 <div class="post-divider"></div>
 <h2 id="o-que-nao-fazer">O que NÃO fazer</h2>
@@ -316,14 +320,14 @@ if(document.prerendering){document.addEventListener('prerenderingchange',go,{onc
     </p>
 <ul>
 <li><strong>Encher de palavra-chave.</strong> A velha tática de repetir termos até cansar não engana motores de IA — pelo contrário, conteúdo artificial e repetitivo reduz a confiança da máquina. Escreva para gente, com clareza; a IA recompensa exatamente isso.</li>
-<li><strong>Acreditar em promessa de milagre.</strong> Ninguém garante posição fixa no ChatGPT, porque não existe "primeira posição" numa resposta gerada — ela varia por pergunta, contexto e momento. Quem promete "garantir que você apareça no ChatGPT" está vendendo certeza onde não há. O que funciona é o trabalho de base: informação clara, dados estruturados e presença consistente, de forma contínua.</li>
+<li><strong>Acreditar em promessa de milagre.</strong> Ninguém garante posição fixa no ChatGPT, porque não existe "primeira posição" numa resposta gerada — ela varia por pergunta, contexto e momento. Quem promete "garantir que você apareça no ChatGPT" está vendendo certeza onde não há. O que funciona é o trabalho de base: informação clara, dados estruturados e presença consistente, de forma contínua. Se for contratar ajuda, use as <a href="post-como-escolher-agencia.html">8 perguntas para escolher uma agência de marketing para hotel ou pousada</a> e prefira uma <a href="../agencia-marketing-hoteleiro.html">agência de marketing hoteleiro</a> que mostre resultado conferido no PMS.</li>
 </ul>
 <h2 id="conclusao">Conclusão: prepare-se para o canal que já está chegando</h2>
 <p>
-      A migração da busca por links para a busca por respostas não é uma promessa distante — é uma tendência de 2026, ao lado de movimentos como o atendimento <em>hands-free</em> e os <a href="../index.html#ia">agentes de IA</a> que já aparecem entre as principais apostas tecnológicas do setor. A boa notícia para o hotel independente é que o caminho do AEO é, em grande parte, o mesmo caminho das reservas diretas: informação honesta, bem organizada e um site próprio que converte.
+      A migração da busca por links para a busca por respostas já está em curso. A boa notícia para o hotel independente é que o caminho do AEO é, em grande parte, o mesmo caminho das reservas diretas: informação honesta, bem organizada e um site próprio que converte.
     </p>
 <p>
-      Quem cuidar disso agora não está só "se preparando para a IA". Está, ao mesmo tempo, <a href="post-ota.html">reduzindo a dependência de OTA</a> e construindo um ativo que funciona em qualquer canal de descoberta — o de hoje e o que vier depois.
+      Quem cuidar disso agora não está só "se preparando para a IA". Está, ao mesmo tempo, abrindo caminho para <a href="post-ota.html">reduzir a dependência de OTAs</a> e construindo um ativo que funciona em qualquer canal de descoberta — o de hoje e o que vier depois. Do lado da mídia paga, a IA também muda o jogo: veja a <a href="post-ia.html">IA aplicada à segmentação de campanhas de hotel</a>.
     </p>
 <h2 id="faq">Perguntas frequentes</h2>
 <div class="faq-list">
@@ -340,6 +344,11 @@ if(document.prerendering){document.addEventListener('prerenderingchange',go,{onc
 <div class="faq-answer"><p>Não. O AEO é uma evolução que convive com o SEO clássico, não o substitui. Boa parte do que fortalece o AEO — conteúdo claro, dados estruturados, autoridade e consistência — também melhora o ranqueamento tradicional. O que muda é o destino do esforço: além de ranquear na lista de links, você passa a otimizar para ser citado nas respostas geradas por IA.</p></div>
 </details>
 </div>
+<h2 id="fontes">Fontes</h2>
+<ul>
+<li><a href="https://skift.com/2026/04/15/siteminder-hotels-ai-discovery-directbooker/" target="_blank" rel="noopener">Skift, 15/04/2026: SiteMinder e a descoberta de hotéis por IA</a></li>
+<li><a href="https://www.panrotas.com.br/hotelaria/distribuicao/2026/07/bookingcom-implementa-nova-comissao-de-18-e-passa-a-impactar-ganhos-da-hotelaria_229880.html" target="_blank" rel="noopener">Panrotas, 01/07/2026: Booking.com implementa a nova comissão de 18%</a></li>
+</ul>
   </article>
   <aside class="post-side">
     <div class="side-card"><h4>Neste artigo</h4>
@@ -350,15 +359,16 @@ if(document.prerendering){document.addEventListener('prerenderingchange',go,{onc
 <a href="#reservas-diretas" class="toc-link">A ligação com reservas diretas</a>
 <a href="#o-que-nao-fazer" class="toc-link">O que NÃO fazer</a>
 <a href="#faq" class="toc-link">Perguntas frequentes</a>
+<a href="#fontes" class="toc-link">Fontes</a>
     </div>
     <div class="side-cta"><h4>Para o seu hotel</h4>
       <p>Um plano de aquisição desenhado a partir da sua operação, medido no PMS.</p>
-      <a href="https://komplexa-pricing.vercel.app/f/komplexaconsultoria?utm_source=komplexahoteis&amp;utm_medium=site&amp;utm_content=blog-aeo-ia-busca" target="_blank" rel="noopener" class="btn-sage">Agendar conversa</a>
+      <a href="https://komplexa-pricing.vercel.app/f/komplexaconsultoria?utm_source=komplexahoteis&amp;utm_medium=site&amp;utm_content=blog-aeo-ia-busca-lateral" target="_blank" rel="noopener" class="btn-sage">Agendar conversa</a>
     </div>
     <div class="side-card"><h4>Leia também</h4>
-<a href="post-ia.html" class="related-post"><h5>IA na hotelaria: o que muda na captação de hóspedes</h5><span>Inteligência Artificial · 8 min</span></a>
-<a href="post-google-hotel-ads.html" class="related-post"><h5>Google Hotel Ads: reservas sem comissão de OTA</h5><span>Reservas Diretas · 8 min</span></a>
-<a href="post-comissao-booking-18.html" class="related-post"><h5>Comissão do Booking em 18% desde julho de 2026</h5><span>OTA e Distribuição · 9 min</span></a>
+<a href="post-ia.html" class="related-post"><h5>IA na hotelaria: segmentação inteligente que reduz custo por reserva</h5><span>Inteligência Artificial · 7 min</span></a>
+<a href="post-google-hotel-ads.html" class="related-post"><h5>Google Hotel Ads: como aparecer no Google e gerar reservas sem pagar comissão de OTA</h5><span>Reservas Diretas · 8 min</span></a>
+<a href="post-como-escolher-agencia.html" class="related-post"><h5>Como escolher uma agência de marketing para hotel ou pousada</h5><span>Marketing Hoteleiro · 9 min</span></a>
     </div>
   </aside>
 </div></div>
@@ -367,9 +377,9 @@ if(document.prerendering){document.addEventListener('prerenderingchange',go,{onc
   <div class="wrap">
     <span class="overline">Continue lendo</span>
     <div class="rg-grid">
-<a href="post-ia.html" class="rg-card"><span class="rg-tag">Inteligência Artificial</span><h4>IA na hotelaria: o que muda na captação de hóspedes</h4><p>Como a inteligência artificial está reformatando a descoberta e a conversão na hotelaria independente.</p></a>
-<a href="post-google-hotel-ads.html" class="rg-card"><span class="rg-tag">Reservas Diretas</span><h4>Google Hotel Ads: como aparecer no Google sem pagar comissão de OTA</h4><p>Apareça no mesmo bloco do Booking na busca — mas mandando a reserva para o seu site.</p></a>
-<a href="post-comissao-booking-18.html" class="rg-card"><span class="rg-tag">OTA e Distribuição</span><h4>Comissão do Booking em 18% desde julho de 2026: o que mudou</h4><p>O aumento da comissão reforça a vantagem de canais sem intermediário — como ser descoberto pela IA.</p></a>
+<a href="post-comissao-booking-18.html" class="rg-card"><span class="rg-tag">OTA e Distribuição</span><h4>Comissão do Booking em 18% desde julho de 2026: o que mudou e como proteger sua margem</h4><p>Linha do tempo da comissão preferencial de 18%, a conta por diária e o que fazer sem sair do Booking.</p></a>
+<a href="post-motor-de-reservas.html" class="rg-card"><span class="rg-tag">Reservas Diretas</span><h4>Motor de reservas para pousada: vale a pena e como escolher em 2026</h4><p>O que avaliar no motor para o hóspede reservar no seu site e não voltar para a OTA.</p></a>
+<a href="post-dependencia-booking-pousada.html" class="rg-card"><span class="rg-tag">Reservas Diretas</span><h4>Pousada presa no Booking: como migrar para reservas diretas sem perder ocupação</h4><p>O modelo gradual para construir o canal direto sem derrubar a ocupação da pousada.</p></a>
     </div>
   </div>
 </section>
@@ -380,7 +390,7 @@ if(document.prerendering){document.addEventListener('prerenderingchange',go,{onc
     <div class="news-box">
       <span class="overline rv">Carta do fundador</span>
       <h2 class="t-display rv">Um convite para conhecer <em class="gi">o nosso time.</em></h2>
-      <img class="carta-foto rv" src="../assets/img/igor.png" alt="Igor Salomão, fundador da Komplexa">
+      <img class="carta-foto rv" src="../assets/img/igor.png" alt="Igor Salomão, fundador da Komplexa" width="400" height="400" loading="lazy">
       <div class="carta rv">
         <p>Sou o Igor Salomão, fundador da Komplexa. Se você chegou até aqui, quero te fazer um convite: uma conversa comigo e com o time sobre o seu hotel.</p>
         <p>Nela, queremos entender de verdade como a sua operação funciona hoje: de onde vêm as reservas, como o hóspede chega até você e onde você sente que dá para crescer.</p>
@@ -412,15 +422,15 @@ if(document.prerendering){document.addEventListener('prerenderingchange',go,{onc
       </div>
       <div class="ft-col">
         <h4>A solução</h4>
-        <a href="../index.html#metodo">O método</a>
-        <a href="../index.html#cases">Cases</a>
-        <a href="../index.html#sistema">O sistema</a>
-        <a href="../index.html#ia">IA aplicada</a>
-        <a href="../index.html#frentes">Frentes de receita</a>
+        <a href="../#metodo">O método</a>
+        <a href="../#cases">Cases</a>
+        <a href="../#sistema">O sistema</a>
+        <a href="../#ia">IA aplicada</a>
+        <a href="../#frentes">Frentes de receita</a>
       </div>
       <div class="ft-col">
         <h4>Conteúdo</h4>
-        <a href="../blog/index.html">Blog</a>
+        <a href="./">Blog</a>
         <a href="../blog/post-comissao-booking-18.html">Booking a 18%</a>
         <a href="../blog/post-motor-de-reservas.html">Motor de reservas</a>
         <a href="../blog/post-google-hotel-ads.html">Google Hotel Ads</a>
@@ -436,28 +446,28 @@ if(document.prerendering){document.addEventListener('prerenderingchange',go,{onc
     <div class="selos" aria-label="Integrações e parceiros de tecnologia">
       <div class="selos-track">
         <!-- lista repetida 2x para o loop contínuo do marquee -->
-        <div class="selo"><img src="../assets/img/omnibees.png" alt="Omnibees"></div>
-        <div class="selo"><img src="../assets/img/hsystem.png" alt="HSystem"></div>
-        <div class="selo"><img src="../assets/img/asksuite.jpeg" alt="Asksuite"></div>
-        <div class="selo"><img src="../assets/img/erbon.png" alt="Erbon"></div>
-        <div class="selo"><img src="../assets/img/bitz.png" alt="Bitz"></div>
-        <div class="selo"><img src="../assets/img/foco.png" alt="Foco"></div>
-        <div class="selo"><img src="../assets/img/omnibees.png" alt="Omnibees"></div>
-        <div class="selo"><img src="../assets/img/hsystem.png" alt="HSystem"></div>
-        <div class="selo"><img src="../assets/img/asksuite.jpeg" alt="Asksuite"></div>
-        <div class="selo"><img src="../assets/img/erbon.png" alt="Erbon"></div>
-        <div class="selo"><img src="../assets/img/bitz.png" alt="Bitz"></div>
-        <div class="selo"><img src="../assets/img/foco.png" alt="Foco"></div>
+        <div class="selo"><img src="../assets/img/omnibees.png" alt="Omnibees" width="168" height="96" loading="lazy"></div>
+        <div class="selo"><img src="../assets/img/hsystem.png" alt="HSystem" width="428" height="118" loading="lazy"></div>
+        <div class="selo"><img src="../assets/img/asksuite.jpeg" alt="Asksuite" width="200" height="200" loading="lazy"></div>
+        <div class="selo"><img src="../assets/img/erbon.png" alt="Erbon" width="301" height="456" loading="lazy"></div>
+        <div class="selo"><img src="../assets/img/bitz.png" alt="Bitz" width="492" height="158" loading="lazy"></div>
+        <div class="selo"><img src="../assets/img/foco.png" alt="Foco" width="331" height="152" loading="lazy"></div>
+        <div class="selo"><img src="../assets/img/omnibees.png" alt="Omnibees" width="168" height="96" loading="lazy"></div>
+        <div class="selo"><img src="../assets/img/hsystem.png" alt="HSystem" width="428" height="118" loading="lazy"></div>
+        <div class="selo"><img src="../assets/img/asksuite.jpeg" alt="Asksuite" width="200" height="200" loading="lazy"></div>
+        <div class="selo"><img src="../assets/img/erbon.png" alt="Erbon" width="301" height="456" loading="lazy"></div>
+        <div class="selo"><img src="../assets/img/bitz.png" alt="Bitz" width="492" height="158" loading="lazy"></div>
+        <div class="selo"><img src="../assets/img/foco.png" alt="Foco" width="331" height="152" loading="lazy"></div>
       </div>
     </div>
     <div class="ft-credit">© 2026 Komplexa Hotéis · Arquitetura de crescimento para reservas diretas · komplexahoteis.com</div>
   </div>
 </footer>
 
-<script src="../assets/js/vendor/lenis.min.js"></script>
-<script src="../assets/js/vendor/gsap.min.js"></script>
-<script src="../assets/js/vendor/ScrollTrigger.min.js"></script>
-<script src="../assets/js/main.js"></script>
+<script src="../assets/js/vendor/lenis.min.js" defer></script>
+<script src="../assets/js/vendor/gsap.min.js" defer></script>
+<script src="../assets/js/vendor/ScrollTrigger.min.js" defer></script>
+<script src="../assets/js/main.js" defer></script>
 
 </body>
 </html>

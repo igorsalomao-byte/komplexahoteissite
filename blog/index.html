@@ -7,18 +7,21 @@
 <script>
 !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
 n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
-n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
-t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script',
+n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];
+/* fbevents.js entra depois do load, com a página ociosa; init e PageView já ficam na fila do fbq */
+var go=function(){t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)},
+idle=function(){f.requestIdleCallback?f.requestIdleCallback(go,{timeout:2000}):setTimeout(go,200)};
+b.readyState==='complete'?idle():f.addEventListener('load',idle,{once:true})}(window,document,'script',
 'https://connect.facebook.net/en_US/fbevents.js');
 (function(){var go=function(){fbq('init','1364660957915622');fbq('track','PageView');};
 if(document.prerendering){document.addEventListener('prerenderingchange',go,{once:true});}else{go();}})();
 </script>
 <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=1364660957915622&ev=PageView&noscript=1"></noscript>
 <!-- /Meta Pixel -->
-<script>document.documentElement.className+=" js";setTimeout(function(){if(!window.__animReady)document.documentElement.className+=" no-anim"},2500)</script>
+<script>document.documentElement.className+=" js";setTimeout(function(){if(!window.__animReady)document.documentElement.className+=" no-anim"},1200)</script>
 <title>Blog Komplexa Hotéis — Estratégia, IA e reservas diretas</title>
 <meta name="description" content="Conteúdo prático sobre como hotéis e pousadas crescem o canal direto: OTAs, motor de reservas, Google Hotel Ads, RevPAR, IA aplicada e marketing hoteleiro.">
-<meta name="robots" content="index, follow">
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
 <link rel="canonical" href="https://komplexahoteis.com/blog/">
 <link rel="icon" href="../favicon.ico" sizes="32x32">
 <link rel="icon" type="image/svg+xml" href="../assets/img/favicon.svg">
@@ -36,9 +39,8 @@ if(document.prerendering){document.addEventListener('prerenderingchange',go,{onc
 <meta name="twitter:description" content="Conteúdo prático sobre como hotéis e pousadas crescem o canal direto: OTAs, motor de reservas, Google Hotel Ads, RevPAR, IA aplicada e marketing hoteleiro.">
 <meta name="twitter:image" content="https://komplexahoteis.com/assets/og-home.jpg">
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="preload" href="../assets/fonts/jost-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="../assets/fonts/cormorant-latin.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="../assets/css/style.css">
 <script type="application/ld+json">
 {
@@ -53,7 +55,8 @@ if(document.prerendering){document.addEventListener('prerenderingchange',go,{onc
     "@type": "Organization",
     "@id": "https://komplexahoteis.com/#organizacao",
     "name": "Komplexa Hotéis",
-    "url": "https://komplexahoteis.com/"
+    "url": "https://komplexahoteis.com/",
+    "logo": {"@type": "ImageObject", "url": "https://komplexahoteis.com/assets/img/icon-512.png", "width": 512, "height": 512}
   },
   "blogPost": [
     {
@@ -64,6 +67,7 @@ if(document.prerendering){document.addEventListener('prerenderingchange',go,{onc
       "dateModified": "2026-10-06",
       "author": {
         "@type": "Person",
+        "@id": "https://komplexahoteis.com/igor-salomao.html#igor",
         "name": "Igor Salomão",
         "url": "https://komplexahoteis.com/igor-salomao.html"
       }
@@ -73,9 +77,10 @@ if(document.prerendering){document.addEventListener('prerenderingchange',go,{onc
       "headline": "Sua pousada aparece no ChatGPT? O que é AEO e por que importa em 2026",
       "url": "https://komplexahoteis.com/blog/post-aeo-ia-busca.html",
       "datePublished": "2026-06-17",
-      "dateModified": "2026-09-29",
+      "dateModified": "2026-10-06",
       "author": {
         "@type": "Person",
+        "@id": "https://komplexahoteis.com/igor-salomao.html#igor",
         "name": "Igor Salomão",
         "url": "https://komplexahoteis.com/igor-salomao.html"
       }
@@ -85,9 +90,10 @@ if(document.prerendering){document.addEventListener('prerenderingchange',go,{onc
       "headline": "Comissão do Booking em 18% desde julho de 2026: o que mudou e como proteger sua margem",
       "url": "https://komplexahoteis.com/blog/post-comissao-booking-18.html",
       "datePublished": "2026-06-17",
-      "dateModified": "2026-09-29",
+      "dateModified": "2026-10-06",
       "author": {
         "@type": "Person",
+        "@id": "https://komplexahoteis.com/igor-salomao.html#igor",
         "name": "Igor Salomão",
         "url": "https://komplexahoteis.com/igor-salomao.html"
       }
@@ -97,9 +103,10 @@ if(document.prerendering){document.addEventListener('prerenderingchange',go,{onc
       "headline": "Pousada presa no Booking: como migrar para reservas diretas sem perder ocupação",
       "url": "https://komplexahoteis.com/blog/post-dependencia-booking-pousada.html",
       "datePublished": "2026-06-17",
-      "dateModified": "2026-09-29",
+      "dateModified": "2026-10-06",
       "author": {
         "@type": "Person",
+        "@id": "https://komplexahoteis.com/igor-salomao.html#igor",
         "name": "Igor Salomão",
         "url": "https://komplexahoteis.com/igor-salomao.html"
       }
@@ -109,9 +116,10 @@ if(document.prerendering){document.addEventListener('prerenderingchange',go,{onc
       "headline": "Motor de reservas para pousada: vale a pena e como escolher em 2026",
       "url": "https://komplexahoteis.com/blog/post-motor-de-reservas.html",
       "datePublished": "2026-06-17",
-      "dateModified": "2026-09-29",
+      "dateModified": "2026-10-06",
       "author": {
         "@type": "Person",
+        "@id": "https://komplexahoteis.com/igor-salomao.html#igor",
         "name": "Igor Salomão",
         "url": "https://komplexahoteis.com/igor-salomao.html"
       }
@@ -121,9 +129,10 @@ if(document.prerendering){document.addEventListener('prerenderingchange',go,{onc
       "headline": "Paridade tarifária: o que é e como não perder dinheiro com isso",
       "url": "https://komplexahoteis.com/blog/post-paridade-tarifaria.html",
       "datePublished": "2026-06-17",
-      "dateModified": "2026-09-29",
+      "dateModified": "2026-10-06",
       "author": {
         "@type": "Person",
+        "@id": "https://komplexahoteis.com/igor-salomao.html#igor",
         "name": "Igor Salomão",
         "url": "https://komplexahoteis.com/igor-salomao.html"
       }
@@ -133,9 +142,10 @@ if(document.prerendering){document.addEventListener('prerenderingchange',go,{onc
       "headline": "Precificação para pousada: revenue management na prática (sem complicar)",
       "url": "https://komplexahoteis.com/blog/post-precificacao-pousada.html",
       "datePublished": "2026-06-17",
-      "dateModified": "2026-09-29",
+      "dateModified": "2026-10-06",
       "author": {
         "@type": "Person",
+        "@id": "https://komplexahoteis.com/igor-salomao.html#igor",
         "name": "Igor Salomão",
         "url": "https://komplexahoteis.com/igor-salomao.html"
       }
@@ -145,9 +155,10 @@ if(document.prerendering){document.addEventListener('prerenderingchange',go,{onc
       "headline": "Google Hotel Ads: como aparecer no Google e gerar reservas sem pagar comissão de OTA",
       "url": "https://komplexahoteis.com/blog/post-google-hotel-ads.html",
       "datePublished": "2026-04-01",
-      "dateModified": "2026-09-29",
+      "dateModified": "2026-10-06",
       "author": {
         "@type": "Person",
+        "@id": "https://komplexahoteis.com/igor-salomao.html#igor",
         "name": "Igor Salomão",
         "url": "https://komplexahoteis.com/igor-salomao.html"
       }
@@ -157,9 +168,10 @@ if(document.prerendering){document.addEventListener('prerenderingchange',go,{onc
       "headline": "LTV em hotéis: o ativo que a maioria ignora",
       "url": "https://komplexahoteis.com/blog/post-ltv.html",
       "datePublished": "2025-04-22",
-      "dateModified": "2026-09-29",
+      "dateModified": "2026-10-06",
       "author": {
         "@type": "Person",
+        "@id": "https://komplexahoteis.com/igor-salomao.html#igor",
         "name": "Igor Salomão",
         "url": "https://komplexahoteis.com/igor-salomao.html"
       }
@@ -169,9 +181,10 @@ if(document.prerendering){document.addEventListener('prerenderingchange',go,{onc
       "headline": "Como ocupar a semana sem depender de eventos",
       "url": "https://komplexahoteis.com/blog/post-semana.html",
       "datePublished": "2025-04-08",
-      "dateModified": "2026-09-29",
+      "dateModified": "2026-10-06",
       "author": {
         "@type": "Person",
+        "@id": "https://komplexahoteis.com/igor-salomao.html#igor",
         "name": "Igor Salomão",
         "url": "https://komplexahoteis.com/igor-salomao.html"
       }
@@ -181,9 +194,10 @@ if(document.prerendering){document.addEventListener('prerenderingchange',go,{onc
       "headline": "Por que campanhas isoladas não funcionam para hotéis",
       "url": "https://komplexahoteis.com/blog/post-funil.html",
       "datePublished": "2025-03-20",
-      "dateModified": "2026-09-29",
+      "dateModified": "2026-10-06",
       "author": {
         "@type": "Person",
+        "@id": "https://komplexahoteis.com/igor-salomao.html#igor",
         "name": "Igor Salomão",
         "url": "https://komplexahoteis.com/igor-salomao.html"
       }
@@ -193,9 +207,10 @@ if(document.prerendering){document.addEventListener('prerenderingchange',go,{onc
       "headline": "RevPAR vs. ocupação: qual métrica define o sucesso do seu hotel",
       "url": "https://komplexahoteis.com/blog/post-revpar.html",
       "datePublished": "2025-03-04",
-      "dateModified": "2026-09-29",
+      "dateModified": "2026-10-06",
       "author": {
         "@type": "Person",
+        "@id": "https://komplexahoteis.com/igor-salomao.html#igor",
         "name": "Igor Salomão",
         "url": "https://komplexahoteis.com/igor-salomao.html"
       }
@@ -205,9 +220,10 @@ if(document.prerendering){document.addEventListener('prerenderingchange',go,{onc
       "headline": "IA na hotelaria: segmentação inteligente que reduz custo por reserva",
       "url": "https://komplexahoteis.com/blog/post-ia.html",
       "datePublished": "2025-02-12",
-      "dateModified": "2026-09-29",
+      "dateModified": "2026-10-06",
       "author": {
         "@type": "Person",
+        "@id": "https://komplexahoteis.com/igor-salomao.html#igor",
         "name": "Igor Salomão",
         "url": "https://komplexahoteis.com/igor-salomao.html"
       }
@@ -217,9 +233,10 @@ if(document.prerendering){document.addEventListener('prerenderingchange',go,{onc
       "headline": "Como Reduzir a Dependência de OTAs e Gerar Reservas Diretas",
       "url": "https://komplexahoteis.com/blog/post-ota.html",
       "datePublished": "2025-01-01",
-      "dateModified": "2026-09-29",
+      "dateModified": "2026-10-06",
       "author": {
         "@type": "Person",
+        "@id": "https://komplexahoteis.com/igor-salomao.html#igor",
         "name": "Igor Salomão",
         "url": "https://komplexahoteis.com/igor-salomao.html"
       }
@@ -245,7 +262,7 @@ if(document.prerendering){document.addEventListener('prerenderingchange',go,{onc
   </div>
 </header>
 
-<a href="../index.html" class="logo-fix dark" id="logoFix" aria-label="Komplexa Hotéis">
+<a href="../" class="logo-fix dark" id="logoFix" aria-label="Komplexa Hotéis">
   <svg viewBox="0 0 100 97" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
     <path d="M45.8247 36.6514C47.5271 36.6514 49.1676 37.1817 50.5604 38.211L89.22 66.5651C90.9533 67.844 92.0985 69.7156 92.439 71.8679C92.7795 74.0202 92.2533 76.1413 90.9843 77.8881C89.4366 80.0092 87.0842 81.2257 84.4533 81.2257C81.8223 81.2257 81.1104 80.6954 79.7176 79.6661L41.0581 51.3119C39.3247 50.033 38.1795 48.1615 37.839 46.0092C37.4985 43.8569 38.0247 41.7358 39.2938 39.989C40.8414 37.8679 43.1938 36.6514 45.8247 36.6514ZM45.8247 29.1651C41.0581 29.1651 36.3223 31.3798 33.289 35.5908C28.2747 42.5468 29.7914 52.3101 36.6938 57.3633L75.3533 85.7174C78.1081 87.745 81.2962 88.7119 84.4533 88.7119C89.22 88.7119 93.9557 86.4973 96.989 82.2862C102.003 75.3303 100.487 65.567 93.5842 60.5138L54.9247 32.1596C52.17 30.1321 48.9819 29.1651 45.8247 29.1651Z"/>
     <path d="M69.1938 7.48624C70.8961 7.48624 72.5366 8.01651 73.9295 9.04587L79.47 13.1009C83.0604 15.7211 83.8652 20.8055 81.2342 24.4239L76.4985 30.9743L64.4581 22.1468C60.8676 19.5266 60.0628 14.4422 62.6938 10.8239C64.2414 8.70275 66.5938 7.48624 69.2247 7.48624M69.1938 0C64.4271 0 59.6914 2.21468 56.658 6.42569C51.6438 13.3816 53.1604 23.145 60.0628 28.1982L78.108 41.4239L87.2081 28.822C92.2223 21.8661 90.7057 12.1027 83.8033 7.04954L78.2628 2.99449C75.508 0.966969 72.32 0 69.1628 0H69.1938Z"/>
@@ -260,7 +277,7 @@ if(document.prerendering){document.addEventListener('prerenderingchange',go,{onc
     Oi! Sou o Igor, fundador<br>da Komplexa. Quer o plano<br>do seu hotel?
   </div>
   <button class="conc-avatar" onclick="openConcierge()" aria-label="Falar com a Komplexa">
-    <img src="../assets/img/igor.png" alt="Igor Salomão, fundador da Komplexa"><span class="conc-dot"></span>
+    <img src="../assets/img/igor.png" alt="Igor Salomão, fundador da Komplexa" width="400" height="400"><span class="conc-dot"></span>
   </button>
 </div>
 
@@ -268,18 +285,20 @@ if(document.prerendering){document.addEventListener('prerenderingchange',go,{onc
 <nav class="menu" id="menu">
   <div class="menu-grid">
     <div class="menu-list" data-lenis-prevent>
-      <a href="../index.html#metodo" class="active">O método</a>
-      <a href="../index.html#cases">Cases</a>
-      <a href="../index.html#site">O site entregue</a>
-      <a href="../index.html#sistema">O sistema</a>
-      <a href="../index.html#frentes">Frentes de receita</a>
-      <a href="../index.html#presenca">Quem somos</a>
-      <a href="../index.html#contato">Falar com a Komplexa</a>
+      <a href="../#metodo" class="active">O método</a>
+      <a href="../#cases">Cases</a>
+      <a href="../#site">O site entregue</a>
+      <a href="../#sistema">O sistema</a>
+      <a href="../#frentes">Frentes de receita</a>
+      <a href="../#presenca">Quem somos</a>
+      <a href="../#contato">Falar com a Komplexa</a>
     </div>
   </div>
   <div class="menu-foot">
     <div class="menu-foot-links">
-      <a href="../blog/index.html">Blog</a>
+      <a href="./">Blog</a>
+      <a href="../guia-reservas-diretas.html">Guia de reservas diretas</a>
+      <a href="../agencia-marketing-hoteleiro.html">Agência de marketing hoteleiro</a>
       <a href="https://komplexa-pricing.vercel.app/f/komplexaconsultoria?utm_source=komplexahoteis&amp;utm_medium=site&amp;utm_content=blog-listing-menu" target="_blank" rel="noopener">Agendar conversa <span class="ext">↗</span></a>
     </div>
     <div class="menu-foot-social">
@@ -312,11 +331,11 @@ if(document.prerendering){document.addEventListener('prerenderingchange',go,{onc
     </div>
 
     <a href="post-comissao-booking-18.html" class="feat rv">
-      <div class="ph"><img src="../assets/img/hotel-04.webp" alt="Hotel atendido pela Komplexa" loading="lazy"></div>
+      <div class="ph"><img src="../assets/img/hotel-04.webp" alt="" loading="lazy" width="933" height="1400"></div>
       <div class="feat-body">
         <span class="cat">Destaque · OTA e Distribuição</span>
         <h2 class="t-display">Comissão do Booking em 18% desde julho de 2026: o que mudou e como proteger sua margem</h2>
-        <p>Desde 1º de julho de 2026, a comissão preferencial do Booking.com é de 18%. O que mudou para pousadas e independentes, e como reduzir o impacto na margem.</p>
+        <p>Anúncio em 26/05, representação ao Cade em junho e vigência em 1º/jul/2026. A linha do tempo da comissão preferencial de 18%, a conta por diária e o que fazer sem sair do Booking.</p>
         <span class="meta">Junho 2026 · 9 min</span>
         <span class="btn-sage" style="align-self:flex-start">Ler artigo</span>
       </div>
@@ -328,25 +347,34 @@ if(document.prerendering){document.addEventListener('prerenderingchange',go,{onc
       <span class="go">Ler o guia</span>
     </a>
 
+    <div class="guia-faixa rv">
+      <span class="overline">Vai contratar uma agência?</span>
+      <strong>Compare propostas pelo que é medido no PMS</strong>
+      <span style="display:flex;gap:1.4rem;flex-wrap:wrap">
+        <a class="go" href="post-como-escolher-agencia.html">Como escolher uma agência</a>
+        <a class="go" href="../agencia-marketing-hoteleiro.html">Agência de marketing hoteleiro</a>
+      </span>
+    </div>
+
     <div class="posts-grid" id="postsGrid">
 <a href="post-como-escolher-agencia.html" class="pcard" data-cat="Marketing Hoteleiro">
   <span class="cat">Marketing Hoteleiro</span>
   <h3>Como escolher uma agência de marketing para hotel ou pousada</h3>
   <p>As 8 perguntas que separam uma agência de marketing hoteleiro de uma agência de social media: custo por reserva direta, resultado no PMS e contas no nome do hotel.</p>
-  <span class="meta">Outubro 2026 · 7 min</span>
+  <span class="meta">Outubro 2026 · 9 min</span>
   <span class="go">Ler artigo</span>
 </a>
 <a href="post-comissao-booking-18.html" class="pcard" data-cat="OTA e Distribuição">
   <span class="cat">OTA e Distribuição</span>
   <h3>Comissão do Booking em 18% desde julho de 2026: o que mudou e como proteger sua margem</h3>
-  <p>Desde 1º de julho de 2026, a comissão preferencial do Booking.com é de 18%. O que mudou para pousadas e independentes, e como reduzir o impacto na margem.</p>
+  <p>Anúncio em 26/05, representação ao Cade em junho e vigência em 1º/jul/2026. A linha do tempo da comissão preferencial de 18%, a conta por diária e o que fazer sem sair do Booking.</p>
   <span class="meta">Junho 2026 · 9 min</span>
   <span class="go">Ler artigo</span>
 </a>
 <a href="post-dependencia-booking-pousada.html" class="pcard" data-cat="Reservas Diretas">
   <span class="cat">Reservas Diretas</span>
   <h3>Pousada presa no Booking: como migrar para reservas diretas sem perder ocupação</h3>
-  <p>O passo a passo para construir reservas diretas de forma gradual, sem derrubar a ocupação no caminho — feito para quem depende quase 100% das OTAs.</p>
+  <p>O modelo gradual para construir o canal direto sem derrubar a ocupação da pousada.</p>
   <span class="meta">Junho 2026 · 10 min</span>
   <span class="go">Ler artigo</span>
 </a>
@@ -389,7 +417,7 @@ if(document.prerendering){document.addEventListener('prerenderingchange',go,{onc
   <span class="cat">Inteligência Artificial</span>
   <h3>IA na hotelaria: segmentação inteligente que reduz custo por reserva</h3>
   <p>Como a inteligência artificial está mudando a forma de segmentar públicos em campanhas de hotel — e por que lookalike baseado em hóspedes reais é mais eficiente que demográfico genérico.</p>
-  <span class="meta">Fevereiro 2025 · 6 min</span>
+  <span class="meta">Fevereiro 2025 · 7 min</span>
   <span class="go">Ler artigo</span>
 </a>
 <a href="post-revpar.html" class="pcard" data-cat="RevPAR e Receita">
@@ -403,28 +431,28 @@ if(document.prerendering){document.addEventListener('prerenderingchange',go,{onc
   <span class="cat">Conversão</span>
   <h3>Por que campanhas isoladas não funcionam para hotéis</h3>
   <p>Uma campanha no Meta Ads sem recuperação de carrinho, sem site otimizado e sem CRM é um investimento pela metade. Entenda por que o funil completo é o único modelo que escala.</p>
-  <span class="meta">Março 2025 · 5 min</span>
+  <span class="meta">Março 2025 · 6 min</span>
   <span class="go">Ler artigo</span>
 </a>
 <a href="post-semana.html" class="pcard" data-cat="Marketing Hoteleiro">
   <span class="cat">Marketing Hoteleiro</span>
   <h3>Como ocupar a semana sem depender de eventos</h3>
   <p>A baixa ocupação de segunda a quinta não é inevitável. Estratégias de segmentação específicas e múltiplos funis simultâneos mudam esse padrão — e estabilizam a receita mensal.</p>
-  <span class="meta">Abril 2025 · 5 min</span>
+  <span class="meta">Abril 2025 · 7 min</span>
   <span class="go">Ler artigo</span>
 </a>
 <a href="post-ltv.html" class="pcard" data-cat="CRM e Pós-venda">
   <span class="cat">CRM e Pós-venda</span>
   <h3>LTV em hotéis: o ativo que a maioria ignora</h3>
-  <p>Hóspedes antigos são o lead mais qualificado e mais barato de reativar. Uma estratégia estruturada de pós-venda pode representar 20% a 30% da receita sem custo adicional de aquisição.</p>
-  <span class="meta">Abril 2025 · 6 min</span>
+  <p>Hóspedes antigos são o lead mais qualificado do hotel. Veja como estimar a receita de reativação com uma fórmula simples e montar a régua de pós-venda.</p>
+  <span class="meta">Abril 2025 · 7 min</span>
   <span class="go">Ler artigo</span>
 </a>
 <a href="post-ota.html" class="pcard" data-cat="OTA e Distribuição">
   <span class="cat">OTA e Distribuição</span>
   <h3>Como reduzir a dependência de OTAs e gerar reservas diretas</h3>
   <p>A estratégia completa para mudar a proporção entre reservas diretas e OTA — sem abrir mão do volume e sem precisar fazer isso do zero.</p>
-  <span class="meta">Janeiro 2025 · 8 min</span>
+  <span class="meta">Janeiro 2025 · 9 min</span>
   <span class="go">Ler artigo</span>
 </a>
     </div>
@@ -437,7 +465,7 @@ if(document.prerendering){document.addEventListener('prerenderingchange',go,{onc
     <div class="news-box">
       <span class="overline rv">Carta do fundador</span>
       <h2 class="t-display rv">Um convite para conhecer <em class="gi">o nosso time.</em></h2>
-      <img class="carta-foto rv" src="../assets/img/igor.png" alt="Igor Salomão, fundador da Komplexa">
+      <img class="carta-foto rv" src="../assets/img/igor.png" alt="Igor Salomão, fundador da Komplexa" width="400" height="400" loading="lazy">
       <div class="carta rv">
         <p>Sou o Igor Salomão, fundador da Komplexa. Se você chegou até aqui, quero te fazer um convite: uma conversa comigo e com o time sobre o seu hotel.</p>
         <p>Nela, queremos entender de verdade como a sua operação funciona hoje: de onde vêm as reservas, como o hóspede chega até você e onde você sente que dá para crescer.</p>
@@ -469,15 +497,15 @@ if(document.prerendering){document.addEventListener('prerenderingchange',go,{onc
       </div>
       <div class="ft-col">
         <h4>A solução</h4>
-        <a href="../index.html#metodo">O método</a>
-        <a href="../index.html#cases">Cases</a>
-        <a href="../index.html#sistema">O sistema</a>
-        <a href="../index.html#ia">IA aplicada</a>
-        <a href="../index.html#frentes">Frentes de receita</a>
+        <a href="../#metodo">O método</a>
+        <a href="../#cases">Cases</a>
+        <a href="../#sistema">O sistema</a>
+        <a href="../#ia">IA aplicada</a>
+        <a href="../#frentes">Frentes de receita</a>
       </div>
       <div class="ft-col">
         <h4>Conteúdo</h4>
-        <a href="../blog/index.html">Blog</a>
+        <a href="./">Blog</a>
         <a href="../blog/post-comissao-booking-18.html">Booking a 18%</a>
         <a href="../blog/post-motor-de-reservas.html">Motor de reservas</a>
         <a href="../blog/post-google-hotel-ads.html">Google Hotel Ads</a>
@@ -493,18 +521,18 @@ if(document.prerendering){document.addEventListener('prerenderingchange',go,{onc
     <div class="selos" aria-label="Integrações e parceiros de tecnologia">
       <div class="selos-track">
         <!-- lista repetida 2x para o loop contínuo do marquee -->
-        <div class="selo"><img src="../assets/img/omnibees.png" alt="Omnibees"></div>
-        <div class="selo"><img src="../assets/img/hsystem.png" alt="HSystem"></div>
-        <div class="selo"><img src="../assets/img/asksuite.jpeg" alt="Asksuite"></div>
-        <div class="selo"><img src="../assets/img/erbon.png" alt="Erbon"></div>
-        <div class="selo"><img src="../assets/img/bitz.png" alt="Bitz"></div>
-        <div class="selo"><img src="../assets/img/foco.png" alt="Foco"></div>
-        <div class="selo"><img src="../assets/img/omnibees.png" alt="Omnibees"></div>
-        <div class="selo"><img src="../assets/img/hsystem.png" alt="HSystem"></div>
-        <div class="selo"><img src="../assets/img/asksuite.jpeg" alt="Asksuite"></div>
-        <div class="selo"><img src="../assets/img/erbon.png" alt="Erbon"></div>
-        <div class="selo"><img src="../assets/img/bitz.png" alt="Bitz"></div>
-        <div class="selo"><img src="../assets/img/foco.png" alt="Foco"></div>
+        <div class="selo"><img src="../assets/img/omnibees.png" alt="Omnibees" width="168" height="96" loading="lazy"></div>
+        <div class="selo"><img src="../assets/img/hsystem.png" alt="HSystem" width="428" height="118" loading="lazy"></div>
+        <div class="selo"><img src="../assets/img/asksuite.jpeg" alt="Asksuite" width="200" height="200" loading="lazy"></div>
+        <div class="selo"><img src="../assets/img/erbon.png" alt="Erbon" width="301" height="456" loading="lazy"></div>
+        <div class="selo"><img src="../assets/img/bitz.png" alt="Bitz" width="492" height="158" loading="lazy"></div>
+        <div class="selo"><img src="../assets/img/foco.png" alt="Foco" width="331" height="152" loading="lazy"></div>
+        <div class="selo"><img src="../assets/img/omnibees.png" alt="Omnibees" width="168" height="96" loading="lazy"></div>
+        <div class="selo"><img src="../assets/img/hsystem.png" alt="HSystem" width="428" height="118" loading="lazy"></div>
+        <div class="selo"><img src="../assets/img/asksuite.jpeg" alt="Asksuite" width="200" height="200" loading="lazy"></div>
+        <div class="selo"><img src="../assets/img/erbon.png" alt="Erbon" width="301" height="456" loading="lazy"></div>
+        <div class="selo"><img src="../assets/img/bitz.png" alt="Bitz" width="492" height="158" loading="lazy"></div>
+        <div class="selo"><img src="../assets/img/foco.png" alt="Foco" width="331" height="152" loading="lazy"></div>
       </div>
     </div>
     <div class="ft-credit">© 2026 Komplexa Hotéis · Arquitetura de crescimento para reservas diretas · komplexahoteis.com</div>

@@ -7,34 +7,37 @@
 <script>
 !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
 n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
-n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
-t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script',
+n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];
+/* fbevents.js entra depois do load, com a página ociosa; init e PageView já ficam na fila do fbq */
+var go=function(){t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)},
+idle=function(){f.requestIdleCallback?f.requestIdleCallback(go,{timeout:2000}):setTimeout(go,200)};
+b.readyState==='complete'?idle():f.addEventListener('load',idle,{once:true})}(window,document,'script',
 'https://connect.facebook.net/en_US/fbevents.js');
 (function(){var go=function(){fbq('init','1364660957915622');fbq('track','PageView');};
 if(document.prerendering){document.addEventListener('prerenderingchange',go,{once:true});}else{go();}})();
 </script>
 <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=1364660957915622&ev=PageView&noscript=1"></noscript>
 <!-- /Meta Pixel -->
-<script>document.documentElement.className+=" js";setTimeout(function(){if(!window.__animReady)document.documentElement.className+=" no-anim"},2500)</script>
-<title>RevPAR vs. ocupação: qual métrica define o sucesso do seu hotel — Komplexa Hotéis</title>
-<meta content="Encher o hotel nem sempre significa lucrar mais. Entenda como o RevPAR mostra se você está crescendo de verdade — e como melhorá-lo com reservas diretas." name="description"/>
+<script>document.documentElement.className+=" js";setTimeout(function(){if(!window.__animReady)document.documentElement.className+=" no-anim"},1200)</script>
+<title>RevPAR vs. ocupação: qual métrica define o sucesso do hotel</title>
+<meta content="Encher o hotel nem sempre significa faturar mais. Entenda como o RevPAR mostra se você está crescendo de verdade e como melhorá-lo com reservas diretas." name="description"/>
 <meta content="Igor Salomão" name="author"/>
-<meta content="index, follow" name="robots"/>
+<meta content="index, follow, max-image-preview:large, max-snippet:-1" name="robots"/>
 <link href="https://komplexahoteis.com/blog/post-revpar.html" rel="canonical"/>
 <meta content="article" property="og:type"/>
 <meta content="https://komplexahoteis.com/blog/post-revpar.html" property="og:url"/>
-<meta content="RevPAR vs. ocupação: qual métrica define o sucesso do seu hotel" property="og:title"/>
-<meta content="Encher o hotel nem sempre significa lucrar mais. Entenda o que medir." property="og:description"/>
+<meta content="RevPAR vs. ocupação: qual métrica define o sucesso do hotel" property="og:title"/>
+<meta content="Encher o hotel nem sempre significa faturar mais. Entenda como o RevPAR mostra se você está crescendo de verdade e como melhorá-lo com reservas diretas." property="og:description"/>
 <meta content="https://komplexahoteis.com/assets/img/og/post-revpar.jpg" property="og:image"/>
 <meta content="pt_BR" property="og:locale"/>
 <meta content="Komplexa Hotéis" property="og:site_name"/>
 <meta content="2025-03-04" property="article:published_time"/>
 <meta content="Igor Salomão" property="article:author"/>
 <meta content="RevPAR e Receita" property="article:section"/>
-<meta content="2026-09-29" property="article:modified_time"/>
+<meta content="2026-10-06" property="article:modified_time"/>
 <meta content="summary_large_image" name="twitter:card"/>
-<meta content="RevPAR vs. ocupação: qual métrica define o sucesso do seu hotel" name="twitter:title"/>
-<meta content="Encher o hotel nem sempre significa lucrar mais. Entenda o que medir." name="twitter:description"/>
+<meta content="RevPAR vs. ocupação: qual métrica define o sucesso do hotel" name="twitter:title"/>
+<meta content="Encher o hotel nem sempre significa faturar mais. Entenda como o RevPAR mostra se você está crescendo de verdade e como melhorá-lo com reservas diretas." name="twitter:description"/>
 <meta content="https://komplexahoteis.com/assets/img/og/post-revpar.jpg" name="twitter:image"/>
 <script type="application/ld+json">
 [
@@ -42,10 +45,10 @@ if(document.prerendering){document.addEventListener('prerenderingchange',go,{onc
     "@context": "https://schema.org",
     "@type": "BlogPosting",
     "headline": "RevPAR vs. ocupação: qual métrica define o sucesso do seu hotel",
-    "description": "Encher o hotel nem sempre significa lucrar mais. Entenda como o RevPAR mostra se você está crescendo de verdade.",
+    "description": "Encher o hotel nem sempre significa faturar mais. Entenda como o RevPAR mostra se você está crescendo de verdade e como melhorá-lo com reservas diretas.",
     "url": "https://komplexahoteis.com/blog/post-revpar.html",
     "datePublished": "2025-03-04",
-    "dateModified": "2026-09-29",
+    "dateModified": "2026-10-06",
     "inLanguage": "pt-BR",
     "author": {
       "@type": "Person",
@@ -61,7 +64,7 @@ if(document.prerendering){document.addEventListener('prerenderingchange',go,{onc
       "url": "https://komplexahoteis.com/",
       "logo": {
         "@type": "ImageObject",
-        "url": "https://komplexahoteis.com/assets/logo.svg"
+        "url": "https://komplexahoteis.com/assets/img/icon-512.png", "width": 512, "height": 512
       }
     },
     "mainEntityOfPage": {
@@ -127,10 +130,10 @@ if(document.prerendering){document.addEventListener('prerenderingchange',go,{onc
       },
       {
         "@type": "Question",
-        "name": "Como ocupar o hotel de segunda a quinta sem dar desconto?",
+        "name": "O que é RevPAR líquido e como calcular?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "RevPAR ruim quase nunca é problema de fim de semana, e sim dos dias úteis. A saída é criar funis específicos para quem viaja no meio da semana, como públicos corporativos, casais sem filhos e quem faz workation. Isso eleva o RevPAR mensal sem mexer na tarifa. Descontos abertos no site devem dar lugar a ofertas segmentadas, só para quem precisa de um gatilho para fechar."
+          "text": "RevPAR líquido é o RevPAR menos a comissão paga por quarto disponível. Some a receita de cada canal, desconte a comissão correspondente (no Booking.com, a preferencial é de 18% desde 1º de julho de 2026) e divida pelos quartos disponíveis no período. Cada ponto percentual que migra para a reserva direta sobe esse número, antes do custo do canal direto."
         }
       }
     ]
@@ -141,9 +144,8 @@ if(document.prerendering){document.addEventListener('prerenderingchange',go,{onc
 <link rel="icon" type="image/svg+xml" href="../assets/img/favicon.svg">
 <link rel="apple-touch-icon" href="../assets/img/apple-touch-icon.png">
 <link rel="manifest" href="../site.webmanifest">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="preload" href="../assets/fonts/jost-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="../assets/fonts/cormorant-latin.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="../assets/css/style.css">
 <style>
 .post-resumo{border-left:3px solid #1099E9;background:rgba(16,153,233,.06);border-radius:0 14px 14px 0;padding:1.2rem 1.4rem;margin:0 0 2.2rem}
@@ -163,7 +165,7 @@ if(document.prerendering){document.addEventListener('prerenderingchange',go,{onc
   </div>
 </header>
 
-<a href="../index.html" class="logo-fix dark" id="logoFix" aria-label="Komplexa Hotéis">
+<a href="../" class="logo-fix dark" id="logoFix" aria-label="Komplexa Hotéis">
   <svg viewBox="0 0 100 97" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
     <path d="M45.8247 36.6514C47.5271 36.6514 49.1676 37.1817 50.5604 38.211L89.22 66.5651C90.9533 67.844 92.0985 69.7156 92.439 71.8679C92.7795 74.0202 92.2533 76.1413 90.9843 77.8881C89.4366 80.0092 87.0842 81.2257 84.4533 81.2257C81.8223 81.2257 81.1104 80.6954 79.7176 79.6661L41.0581 51.3119C39.3247 50.033 38.1795 48.1615 37.839 46.0092C37.4985 43.8569 38.0247 41.7358 39.2938 39.989C40.8414 37.8679 43.1938 36.6514 45.8247 36.6514ZM45.8247 29.1651C41.0581 29.1651 36.3223 31.3798 33.289 35.5908C28.2747 42.5468 29.7914 52.3101 36.6938 57.3633L75.3533 85.7174C78.1081 87.745 81.2962 88.7119 84.4533 88.7119C89.22 88.7119 93.9557 86.4973 96.989 82.2862C102.003 75.3303 100.487 65.567 93.5842 60.5138L54.9247 32.1596C52.17 30.1321 48.9819 29.1651 45.8247 29.1651Z"/>
     <path d="M69.1938 7.48624C70.8961 7.48624 72.5366 8.01651 73.9295 9.04587L79.47 13.1009C83.0604 15.7211 83.8652 20.8055 81.2342 24.4239L76.4985 30.9743L64.4581 22.1468C60.8676 19.5266 60.0628 14.4422 62.6938 10.8239C64.2414 8.70275 66.5938 7.48624 69.2247 7.48624M69.1938 0C64.4271 0 59.6914 2.21468 56.658 6.42569C51.6438 13.3816 53.1604 23.145 60.0628 28.1982L78.108 41.4239L87.2081 28.822C92.2223 21.8661 90.7057 12.1027 83.8033 7.04954L78.2628 2.99449C75.508 0.966969 72.32 0 69.1628 0H69.1938Z"/>
@@ -178,7 +180,7 @@ if(document.prerendering){document.addEventListener('prerenderingchange',go,{onc
     Oi! Sou o Igor, fundador<br>da Komplexa. Quer o plano<br>do seu hotel?
   </div>
   <button class="conc-avatar" onclick="openConcierge()" aria-label="Falar com a Komplexa">
-    <img src="../assets/img/igor.png" alt="Igor Salomão, fundador da Komplexa"><span class="conc-dot"></span>
+    <img src="../assets/img/igor.png" alt="Igor Salomão, fundador da Komplexa" width="400" height="400"><span class="conc-dot"></span>
   </button>
 </div>
 
@@ -186,18 +188,20 @@ if(document.prerendering){document.addEventListener('prerenderingchange',go,{onc
 <nav class="menu" id="menu">
   <div class="menu-grid">
     <div class="menu-list" data-lenis-prevent>
-      <a href="../index.html#metodo" class="active">O método</a>
-      <a href="../index.html#cases">Cases</a>
-      <a href="../index.html#site">O site entregue</a>
-      <a href="../index.html#sistema">O sistema</a>
-      <a href="../index.html#frentes">Frentes de receita</a>
-      <a href="../index.html#presenca">Quem somos</a>
-      <a href="../index.html#contato">Falar com a Komplexa</a>
+      <a href="../#metodo" class="active">O método</a>
+      <a href="../#cases">Cases</a>
+      <a href="../#site">O site entregue</a>
+      <a href="../#sistema">O sistema</a>
+      <a href="../#frentes">Frentes de receita</a>
+      <a href="../#presenca">Quem somos</a>
+      <a href="../#contato">Falar com a Komplexa</a>
     </div>
   </div>
   <div class="menu-foot">
     <div class="menu-foot-links">
-      <a href="../blog/index.html">Blog</a>
+      <a href="./">Blog</a>
+      <a href="../guia-reservas-diretas.html">Guia de reservas diretas</a>
+      <a href="../agencia-marketing-hoteleiro.html">Agência de marketing hoteleiro</a>
       <a href="https://komplexa-pricing.vercel.app/f/komplexaconsultoria?utm_source=komplexahoteis&amp;utm_medium=site&amp;utm_content=blog-revpar-menu" target="_blank" rel="noopener">Agendar conversa <span class="ext">↗</span></a>
     </div>
     <div class="menu-foot-social">
@@ -210,65 +214,76 @@ if(document.prerendering){document.addEventListener('prerenderingchange',go,{onc
 <!-- ============ POST ============ -->
 <section class="post-hero">
   <div class="wrap"><div class="post-wrap">
-    <nav class="crumbs" aria-label="Navegação"><a href="../index.html">Início</a><span>/</span><a href="index.html">Blog</a><span>/</span><span>RevPAR e Receita</span></nav>
+    <nav class="crumbs" aria-label="Navegação"><a href="../">Início</a><span>/</span><a href="./">Blog</a><span>/</span><span>RevPAR e Receita</span></nav>
     <span class="overline">RevPAR e Receita</span>
     <h1 class="t-display">RevPAR vs. ocupação: qual métrica define o sucesso do seu hotel</h1>
-    <p class="post-lead">Encher o hotel nem sempre significa lucrar mais. Entenda como o RevPAR mostra se você está crescendo de verdade — e como melhorá-lo com reservas diretas.</p>
-    <div class="post-meta"><span>Março 2025</span><span>7 min de leitura</span><span>Por <a href="../igor-salomao.html">Igor Salomão</a></span><span>Atualizado em setembro de 2026</span></div>
+    <p class="post-lead">Encher o hotel nem sempre significa faturar mais. Entenda como o RevPAR mostra se você está crescendo de verdade e como melhorá-lo com reservas diretas.</p>
+    <div class="post-meta"><span>Março 2025</span><span>7 min de leitura</span><span>Por <a href="../igor-salomao.html">Igor Salomão</a></span><span>Atualizado em outubro de 2026</span></div>
   </div></div>
 </section>
 
 <div class="wrap"><div class="post-layout">
   <article class="post-content">
-<div class="post-resumo"><span class="overline">Resposta rápida</span><p>O RevPAR define melhor o sucesso do hotel do que a ocupação, porque combina preço e volume: é a diária média multiplicada pela taxa de ocupação. Um hotel com 65% de ocupação e diária de R$ 450 tem RevPAR de R$ 292, acima dos R$ 252 de outro com 90% de ocupação e diária de R$ 280.</p></div>
-<p>Existe uma armadilha clássica na hotelaria: olhar para a taxa de ocupação como se ela fosse o termômetro do negócio. Quanto mais cheio o hotel, melhor — certo? Não necessariamente.</p>
-<p>Um hotel pode estar com 90% de ocupação e <strong>perdendo dinheiro</strong>. E outro, com 65% de ocupação, pode estar entregando muito mais lucro. A métrica que separa um cenário do outro é o <strong>RevPAR</strong>.</p>
+<div class="post-resumo"><span class="overline">Resposta rápida</span><p>O RevPAR define melhor o sucesso do hotel do que a ocupação, porque combina preço e volume: é a diária média multiplicada pela taxa de ocupação. Um hotel com 65% de ocupação e diária de R$ 450 tem RevPAR de R$ 292,50, acima dos R$ 252 de outro com 90% de ocupação e diária de R$ 280. Para enxergar o peso das comissões, use o RevPAR líquido.</p></div>
+<p>Existe uma armadilha clássica na hotelaria: olhar para a taxa de ocupação como se ela fosse o termômetro do negócio. Quanto mais cheio o hotel, melhor, certo? Não necessariamente.</p>
+<p>Um hotel pode estar com 90% de ocupação e <strong>faturar menos por quarto</strong> do que outro com 65%. A métrica que separa um cenário do outro é o <strong>RevPAR</strong>.</p>
+<p>Para ver o quadro completo de como construir o canal direto, leia o <a href="../guia-reservas-diretas.html">guia de reservas diretas para hotéis e pousadas</a>. Aqui o foco é a métrica que mostra se esse trabalho está virando receita.</p>
 <div class="highlight-box">
-<p>Ocupação te diz se há gente no hotel. RevPAR te diz se há receita no hotel. São coisas diferentes — e operar olhando só para a primeira é o caminho mais curto para um negócio sem margem.</p>
+<p>Ocupação te diz se há gente no hotel. RevPAR te diz se há receita no hotel. São coisas diferentes, e operar olhando só para a primeira é o caminho mais curto para um negócio sem margem.</p>
 </div>
 <h2 id="o-que-e">O que é RevPAR (e por que ele manda)</h2>
-<p>RevPAR significa <strong>Revenue Per Available Room</strong> — receita por quarto disponível. A fórmula é simples:</p>
+<p>RevPAR significa <strong>Revenue Per Available Room</strong>, ou receita por quarto disponível. A fórmula é simples:</p>
 <ul>
 <li><strong>RevPAR = Diária Média × Taxa de Ocupação</strong></li>
 <li>Ou: <strong>RevPAR = Receita Total de Hospedagem ÷ Quartos Disponíveis no Período</strong></li>
 </ul>
 <p>O RevPAR combina os dois eixos do negócio: <strong>preço</strong> e <strong>volume</strong>. Por isso ele é mais honesto que ocupação isolada ou diária média isolada.</p>
 <h2 id="armadilha">A armadilha da ocupação alta</h2>
-<p>Imagine dois hotéis idênticos, com 50 quartos cada, num mesmo mês:</p>
+<p>Imagine dois hotéis idênticos, com 50 quartos cada, num mesmo mês (exemplo ilustrativo, valores hipotéticos, não é resultado de cliente):</p>
 <ul>
 <li><strong>Hotel A:</strong> 90% de ocupação, diária média de R$ 280 → RevPAR de R$ 252</li>
-<li><strong>Hotel B:</strong> 65% de ocupação, diária média de R$ 450 → RevPAR de R$ 292</li>
+<li><strong>Hotel B:</strong> 65% de ocupação, diária média de R$ 450 → RevPAR de R$ 292,50</li>
 </ul>
-<p>O Hotel A está mais cheio. Mas o Hotel B fatura mais por quarto disponível — e ainda gasta menos com lavanderia, café da manhã, energia e desgaste operacional. O lucro do Hotel B é maior, mesmo com menos gente hospedada.</p>
+<p>O Hotel A está mais cheio. Mas o Hotel B fatura mais por quarto disponível e tem menos custo variável por diária vendida (lavanderia, café da manhã, energia), então tende a sobrar mais margem, mesmo com menos gente hospedada.</p>
 <p>Quando você baixa preço para encher, na maioria das vezes está apenas trocando margem por movimento.</p>
 <h2 id="ota-revpar">Por que OTA derruba RevPAR</h2>
-<p>Vender via Booking ou Expedia "enche" o hotel — mas a uma diária líquida menor. Cada reserva via OTA carrega 15% a 25% de comissão. Em termos de RevPAR líquido, é como se o quarto estivesse vendido por um preço bem inferior ao que aparece no painel.</p>
-<p>Hotéis que aumentam o mix de reservas diretas conseguem manter ou subir a ocupação <strong>sem comprometer o RevPAR líquido</strong>. É a diferença entre crescer em volume e crescer em receita.</p>
+<p>Vender via Booking ou Expedia enche o hotel, mas a uma diária líquida menor. No Booking.com, a comissão preferencial no Brasil é de 18% desde 1º de julho de 2026 (<a href="https://www.panrotas.com.br/hotelaria/mercado/2026/05/bookingcom-altera-politica-de-comissao-no-brasil-e-gera-preocupacao-na-hotelaria_228875.html" target="_blank" rel="noopener">Panrotas, 26/05/2026</a>); o percentual efetivo depende do contrato. Em termos de RevPAR líquido, o quarto rende menos do que o preço que aparece no painel.</p>
+<p>Quando parte das reservas passa a vir do canal direto, o RevPAR líquido sobe mesmo que a diária e a ocupação fiquem iguais. É a diferença entre crescer em volume e crescer em receita.</p>
+<h2 id="liquido">Como calcular o RevPAR líquido (com conta)</h2>
+<p>O RevPAR líquido é o RevPAR menos a comissão paga por quarto disponível:</p>
+<ul>
+<li><strong>RevPAR líquido = RevPAR bruto − comissão paga por quarto disponível</strong></li>
+</ul>
+<p>Exemplo ilustrativo, valores hipotéticos: diária média de R$ 400 e ocupação de 70% dão RevPAR bruto de R$ 280 (400 × 0,70).</p>
+<ul>
+<li><strong>100% da receita pelo Booking, a 18%:</strong> a comissão é de R$ 50,40 por quarto disponível (280 × 0,18) e o RevPAR líquido é de R$ 229,60 (280 × 0,82).</li>
+<li><strong>70% da receita pelo Booking e 30% pelo canal direto:</strong> a comissão cai para R$ 35,28 (196 × 0,18) e o RevPAR líquido sobe para R$ 244,72, ou R$ 15,12 a mais por quarto disponível, antes do custo do canal direto (motor, mídia e atendimento).</li>
+</ul>
+<p>A diária e a ocupação são as mesmas nos dois cenários. Só o mix de canais mudou.</p>
 <h2 id="como-aumentar">Como aumentar o RevPAR de forma estruturada</h2>
 <h3>1. Mudar o mix de canais</h3>
-<p>Cada ponto percentual que sai da OTA e entra como reserva direta sobe o RevPAR líquido — mesmo com a mesma diária bruta. É a alavanca mais rápida.</p>
+<p>Cada ponto percentual que sai da OTA e entra como reserva direta sobe o RevPAR líquido, mesmo com a mesma diária bruta. Veja como <a href="post-ota.html">reduzir a dependência de OTAs</a> sem abrir mão do volume.</p>
 <h3>2. Distribuir ocupação na semana</h3>
-<p>RevPAR ruim quase nunca é problema de fim de semana. É problema de segunda a quinta. Funis específicos para ocupar dias úteis (públicos corporativos, casais sem filhos, workation) elevam o RevPAR mensal sem mexer na tarifa.</p>
+<p>RevPAR ruim quase nunca é problema de fim de semana. É problema de segunda a quinta. Funis específicos para ocupar dias úteis (públicos corporativos, casais sem filhos, workation) elevam o RevPAR mensal sem mexer na tarifa. O passo a passo está em <a href="post-semana.html">como ocupar a semana sem depender de eventos</a>.</p>
 <h3>3. Reduzir promoções genéricas</h3>
-<p>Descontos abertos no site cabeceira corroem RevPAR. Ofertas devem ser segmentadas — só para quem precisa de gatilho para fechar (carrinho abandonado, retornantes, datas específicas).</p>
+<p>Descontos abertos no site corroem RevPAR. Ofertas devem ser segmentadas, só para quem precisa de gatilho para fechar (carrinho abandonado, retornantes, datas específicas).</p>
 <h3>4. Trabalhar pacotes em vez de tarifa</h3>
-<p>Em vez de baixar a diária, agregue valor. Pacote romântico, jantar incluso, late check-out com upgrade. O hóspede percebe valor maior e a diária média sobe.</p>
-<h2 id="medir">O que medir junto com o RevPAR</h2>
+<p>Em vez de baixar a diária, agregue valor. Pacote romântico, jantar incluso, late check-out com upgrade. O hóspede percebe valor maior e a diária média sobe. Para estruturar faixas por temporada e regras de antecedência, veja <a href="post-precificacao-pousada.html">precificação para pousada na prática</a>.</p>
+<h2 id="acompanhar">RevPAR, ocupação e diária: o que acompanhar todo mês</h2>
 <p>RevPAR sozinho ainda não é suficiente. Em um sistema saudável de receita direta, ele anda lado a lado com:</p>
 <ul>
-<li><strong>% de reservas diretas</strong> sobre o total</li>
+<li><strong>Ocupação e diária média</strong>, para ver qual dos dois eixos mudou o RevPAR no mês</li>
+<li><strong>% de reservas diretas</strong> = reservas diretas ÷ reservas totais, medido no PMS</li>
 <li><strong>Custo por reserva</strong> nas mídias pagas</li>
 <li><strong>Diária média de canal direto vs. OTA</strong></li>
 <li><strong>RevPAR líquido</strong> (já descontando comissão por canal)</li>
 </ul>
-<div class="post-divider"></div>
-<h2 id="conclusao">Conclusão</h2>
-<p>Ocupação te diz se o hotel está cheio. RevPAR te diz se ele está rentável. E RevPAR líquido te diz se a estratégia comercial está funcionando — ou só transferindo margem para a OTA.</p>
-<p>Quem opera olhando para os três indicadores juntos toma decisões diferentes: vende mais por canal direto, distribui ocupação na semana e protege a diária em vez de afundar para encher.</p>
+<p>Ocupação te diz se o hotel está cheio. RevPAR te diz quanto cada quarto disponível fatura. E RevPAR líquido te diz se a estratégia comercial está funcionando ou só transferindo margem para a OTA.</p>
+<p>Quem opera olhando para os três indicadores juntos toma decisões diferentes: vende mais por canal direto, distribui ocupação na semana e protege a diária em vez de afundar para encher. Pedir esse relatório mensal (RevPAR líquido e % de reservas diretas) é um critério para escolher uma <a href="../agencia-marketing-hoteleiro.html">agência de marketing hoteleiro</a>.</p>
 <div class="post-cta">
 <h4>Quer subir o RevPAR sem brigar por preço?</h4>
-<p>A Komplexa monta a arquitetura completa de reservas diretas — mídia, conversão, recuperação e pós-venda — com foco em receita líquida.</p>
-<a class="btn-sage" href="https://komplexa-pricing.vercel.app/f/komplexaconsultoria?utm_source=komplexahoteis&amp;utm_medium=site&amp;utm_content=blog-revpar" target="_blank">Falar com especialista</a>
+<p>A Pousada Karandá, atendida pela Komplexa, teve 6,5x de retorno sobre a mídia paga, conferido no PMS do hotel. Cada resultado vem de uma operação diferente: na conversa com a Komplexa, o plano nasce do seu hotel, sem pacote pronto. <a href="../#cases" style="color:#fff;border-bottom:1px solid rgba(255,255,255,.5)">Ver os cases</a></p>
+<a class="btn-sage" href="https://komplexa-pricing.vercel.app/f/komplexaconsultoria?utm_source=komplexahoteis&amp;utm_medium=site&amp;utm_content=blog-revpar-meio" target="_blank" rel="noopener">Agendar conversa</a>
 </div>
   <h2 id="faq">Perguntas frequentes</h2>
 <div class="faq-list">
@@ -285,28 +300,34 @@ if(document.prerendering){document.addEventListener('prerenderingchange',go,{onc
 <div class="faq-answer"><p>Sim. A OTA enche o hotel, mas a uma diária líquida menor: no Booking.com, a comissão preferencial no Brasil é de 18% desde 1º de julho de 2026. Na prática, o quarto rende menos do que o preço que aparece no painel. Por isso vale calcular o RevPAR líquido, descontando a comissão de cada canal: cada ponto percentual que migra para a reserva direta sobe esse número sem mexer na diária.</p></div>
 </details>
 <details class="faq-item">
-<summary>Como ocupar o hotel de segunda a quinta sem dar desconto?</summary>
-<div class="faq-answer"><p>RevPAR ruim quase nunca é problema de fim de semana, e sim dos dias úteis. A saída é criar funis específicos para quem viaja no meio da semana, como públicos corporativos, casais sem filhos e quem faz workation. Isso eleva o RevPAR mensal sem mexer na tarifa. Descontos abertos no site devem dar lugar a ofertas segmentadas, só para quem precisa de um gatilho para fechar.</p></div>
+<summary>O que é RevPAR líquido e como calcular?</summary>
+<div class="faq-answer"><p>RevPAR líquido é o RevPAR menos a comissão paga por quarto disponível. Some a receita de cada canal, desconte a comissão correspondente (no Booking.com, a preferencial é de 18% desde 1º de julho de 2026) e divida pelos quartos disponíveis no período. Cada ponto percentual que migra para a reserva direta sobe esse número, antes do custo do canal direto.</p></div>
 </details>
 </div>
+<h2 id="fontes">Fontes</h2>
+<ul>
+<li><a href="https://www.panrotas.com.br/hotelaria/mercado/2026/05/bookingcom-altera-politica-de-comissao-no-brasil-e-gera-preocupacao-na-hotelaria_228875.html" target="_blank" rel="noopener">Panrotas, 26/05/2026</a>, sobre a comissão preferencial de 18% do Booking.com no Brasil, com vigência a partir de 1º de julho de 2026.</li>
+</ul>
 </article>
   <aside class="post-side">
     <div class="side-card"><h4>Neste artigo</h4>
 <a href="#o-que-e" class="toc-link">O que é RevPAR</a>
 <a href="#armadilha" class="toc-link">A armadilha da ocupação alta</a>
 <a href="#ota-revpar" class="toc-link">Por que OTA derruba RevPAR</a>
+<a href="#liquido" class="toc-link">Como calcular o RevPAR líquido</a>
 <a href="#como-aumentar" class="toc-link">Como aumentar o RevPAR</a>
-<a href="#medir" class="toc-link">O que medir junto</a>
-<a href="#conclusao" class="toc-link">Conclusão</a>
+<a href="#acompanhar" class="toc-link">O que acompanhar todo mês</a>
     <a href="#faq" class="toc-link">Perguntas frequentes</a>
+    <a href="#fontes" class="toc-link">Fontes</a>
     </div>
     <div class="side-cta"><h4>Para o seu hotel</h4>
       <p>Um plano de aquisição desenhado a partir da sua operação, medido no PMS.</p>
-      <a href="https://komplexa-pricing.vercel.app/f/komplexaconsultoria?utm_source=komplexahoteis&amp;utm_medium=site&amp;utm_content=blog-revpar" target="_blank" rel="noopener" class="btn-sage">Agendar conversa</a>
+      <a href="https://komplexa-pricing.vercel.app/f/komplexaconsultoria?utm_source=komplexahoteis&amp;utm_medium=site&amp;utm_content=blog-revpar-lateral" target="_blank" rel="noopener" class="btn-sage">Agendar conversa</a>
     </div>
     <div class="side-card"><h4>Leia também</h4>
-<a href="post-ota.html" class="related-post"><h5>Como reduzir a dependência de OTAs</h5><span>OTA e Distribuição · 8 min</span></a>
-<a href="post-semana.html" class="related-post"><h5>Como ocupar a semana sem depender de eventos</h5><span>Marketing Hoteleiro · 5 min</span></a>
+<a href="post-precificacao-pousada.html" class="related-post"><h5>Precificação para pousada: revenue management na prática (sem complicar)</h5><span>RevPAR e Receita · 9 min</span></a>
+<a href="post-semana.html" class="related-post"><h5>Como ocupar a semana sem depender de eventos</h5><span>Marketing Hoteleiro · 7 min</span></a>
+<a href="post-dependencia-booking-pousada.html" class="related-post"><h5>Pousada presa no Booking: como migrar para reservas diretas sem perder ocupação</h5><span>Reservas Diretas · 10 min</span></a>
     </div>
   </aside>
 </div></div>
@@ -315,9 +336,9 @@ if(document.prerendering){document.addEventListener('prerenderingchange',go,{onc
   <div class="wrap">
     <span class="overline">Continue lendo</span>
     <div class="rg-grid">
-<a href="post-ota.html" class="rg-card"><span class="rg-tag">OTA e Distribuição</span><h4>Como reduzir a dependência de OTAs e gerar reservas diretas</h4><p>Comissões de 15% a 25% não são inevitáveis. Estratégia completa para construir um canal direto forte.</p></a>
-<a href="post-semana.html" class="rg-card"><span class="rg-tag">Marketing Hoteleiro</span><h4>Como ocupar a semana sem depender de eventos</h4><p>Estratégias de segmentação que estabilizam a receita de segunda a quinta.</p></a>
-<a href="post-ltv.html" class="rg-card"><span class="rg-tag">CRM e Pós-venda</span><h4>LTV em hotéis: o ativo que a maioria ignora</h4><p>Como reativar hóspedes antigos pode representar 20% a 30% da receita sem custo de aquisição.</p></a>
+<a href="post-ota.html" class="rg-card"><span class="rg-tag">OTA e Distribuição</span><h4>Como reduzir a dependência de OTAs e gerar reservas diretas</h4><p>Como mudar a proporção entre OTA e reserva direta sem abrir mão do volume.</p></a>
+<a href="post-ltv.html" class="rg-card"><span class="rg-tag">CRM e Pós-venda</span><h4>LTV em hotéis: o ativo que a maioria ignora</h4><p>Como estimar a receita de reativar hóspedes antigos e montar a régua de pós-venda.</p></a>
+<a href="post-como-escolher-agencia.html" class="rg-card"><span class="rg-tag">Marketing Hoteleiro</span><h4>Como escolher uma agência de marketing para hotel ou pousada</h4><p>As 8 perguntas que separam uma agência de marketing hoteleiro de uma de social media.</p></a>
     </div>
   </div>
 </section>
@@ -328,7 +349,7 @@ if(document.prerendering){document.addEventListener('prerenderingchange',go,{onc
     <div class="news-box">
       <span class="overline rv">Carta do fundador</span>
       <h2 class="t-display rv">Um convite para conhecer <em class="gi">o nosso time.</em></h2>
-      <img class="carta-foto rv" src="../assets/img/igor.png" alt="Igor Salomão, fundador da Komplexa">
+      <img class="carta-foto rv" src="../assets/img/igor.png" alt="Igor Salomão, fundador da Komplexa" width="400" height="400" loading="lazy">
       <div class="carta rv">
         <p>Sou o Igor Salomão, fundador da Komplexa. Se você chegou até aqui, quero te fazer um convite: uma conversa comigo e com o time sobre o seu hotel.</p>
         <p>Nela, queremos entender de verdade como a sua operação funciona hoje: de onde vêm as reservas, como o hóspede chega até você e onde você sente que dá para crescer.</p>
@@ -360,15 +381,15 @@ if(document.prerendering){document.addEventListener('prerenderingchange',go,{onc
       </div>
       <div class="ft-col">
         <h4>A solução</h4>
-        <a href="../index.html#metodo">O método</a>
-        <a href="../index.html#cases">Cases</a>
-        <a href="../index.html#sistema">O sistema</a>
-        <a href="../index.html#ia">IA aplicada</a>
-        <a href="../index.html#frentes">Frentes de receita</a>
+        <a href="../#metodo">O método</a>
+        <a href="../#cases">Cases</a>
+        <a href="../#sistema">O sistema</a>
+        <a href="../#ia">IA aplicada</a>
+        <a href="../#frentes">Frentes de receita</a>
       </div>
       <div class="ft-col">
         <h4>Conteúdo</h4>
-        <a href="../blog/index.html">Blog</a>
+        <a href="./">Blog</a>
         <a href="../blog/post-comissao-booking-18.html">Booking a 18%</a>
         <a href="../blog/post-motor-de-reservas.html">Motor de reservas</a>
         <a href="../blog/post-google-hotel-ads.html">Google Hotel Ads</a>
@@ -384,28 +405,28 @@ if(document.prerendering){document.addEventListener('prerenderingchange',go,{onc
     <div class="selos" aria-label="Integrações e parceiros de tecnologia">
       <div class="selos-track">
         <!-- lista repetida 2x para o loop contínuo do marquee -->
-        <div class="selo"><img src="../assets/img/omnibees.png" alt="Omnibees"></div>
-        <div class="selo"><img src="../assets/img/hsystem.png" alt="HSystem"></div>
-        <div class="selo"><img src="../assets/img/asksuite.jpeg" alt="Asksuite"></div>
-        <div class="selo"><img src="../assets/img/erbon.png" alt="Erbon"></div>
-        <div class="selo"><img src="../assets/img/bitz.png" alt="Bitz"></div>
-        <div class="selo"><img src="../assets/img/foco.png" alt="Foco"></div>
-        <div class="selo"><img src="../assets/img/omnibees.png" alt="Omnibees"></div>
-        <div class="selo"><img src="../assets/img/hsystem.png" alt="HSystem"></div>
-        <div class="selo"><img src="../assets/img/asksuite.jpeg" alt="Asksuite"></div>
-        <div class="selo"><img src="../assets/img/erbon.png" alt="Erbon"></div>
-        <div class="selo"><img src="../assets/img/bitz.png" alt="Bitz"></div>
-        <div class="selo"><img src="../assets/img/foco.png" alt="Foco"></div>
+        <div class="selo"><img src="../assets/img/omnibees.png" alt="Omnibees" width="168" height="96" loading="lazy"></div>
+        <div class="selo"><img src="../assets/img/hsystem.png" alt="HSystem" width="428" height="118" loading="lazy"></div>
+        <div class="selo"><img src="../assets/img/asksuite.jpeg" alt="Asksuite" width="200" height="200" loading="lazy"></div>
+        <div class="selo"><img src="../assets/img/erbon.png" alt="Erbon" width="301" height="456" loading="lazy"></div>
+        <div class="selo"><img src="../assets/img/bitz.png" alt="Bitz" width="492" height="158" loading="lazy"></div>
+        <div class="selo"><img src="../assets/img/foco.png" alt="Foco" width="331" height="152" loading="lazy"></div>
+        <div class="selo"><img src="../assets/img/omnibees.png" alt="Omnibees" width="168" height="96" loading="lazy"></div>
+        <div class="selo"><img src="../assets/img/hsystem.png" alt="HSystem" width="428" height="118" loading="lazy"></div>
+        <div class="selo"><img src="../assets/img/asksuite.jpeg" alt="Asksuite" width="200" height="200" loading="lazy"></div>
+        <div class="selo"><img src="../assets/img/erbon.png" alt="Erbon" width="301" height="456" loading="lazy"></div>
+        <div class="selo"><img src="../assets/img/bitz.png" alt="Bitz" width="492" height="158" loading="lazy"></div>
+        <div class="selo"><img src="../assets/img/foco.png" alt="Foco" width="331" height="152" loading="lazy"></div>
       </div>
     </div>
     <div class="ft-credit">© 2026 Komplexa Hotéis · Arquitetura de crescimento para reservas diretas · komplexahoteis.com</div>
   </div>
 </footer>
 
-<script src="../assets/js/vendor/lenis.min.js"></script>
-<script src="../assets/js/vendor/gsap.min.js"></script>
-<script src="../assets/js/vendor/ScrollTrigger.min.js"></script>
-<script src="../assets/js/main.js"></script>
+<script src="../assets/js/vendor/lenis.min.js" defer></script>
+<script src="../assets/js/vendor/gsap.min.js" defer></script>
+<script src="../assets/js/vendor/ScrollTrigger.min.js" defer></script>
+<script src="../assets/js/main.js" defer></script>
 
 </body>
 </html>

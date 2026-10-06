@@ -7,34 +7,37 @@
 <script>
 !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
 n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
-n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
-t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script',
+n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];
+/* fbevents.js entra depois do load, com a página ociosa; init e PageView já ficam na fila do fbq */
+var go=function(){t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)},
+idle=function(){f.requestIdleCallback?f.requestIdleCallback(go,{timeout:2000}):setTimeout(go,200)};
+b.readyState==='complete'?idle():f.addEventListener('load',idle,{once:true})}(window,document,'script',
 'https://connect.facebook.net/en_US/fbevents.js');
 (function(){var go=function(){fbq('init','1364660957915622');fbq('track','PageView');};
 if(document.prerendering){document.addEventListener('prerenderingchange',go,{once:true});}else{go();}})();
 </script>
 <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=1364660957915622&ev=PageView&noscript=1"></noscript>
 <!-- /Meta Pixel -->
-<script>document.documentElement.className+=" js";setTimeout(function(){if(!window.__animReady)document.documentElement.className+=" no-anim"},2500)</script>
-<title>IA na hotelaria: segmentação inteligente que reduz custo por reserva — Komplexa Hotéis</title>
-<meta content="Como a IA muda a forma de segmentar campanhas de hotel: lookalike baseado em hóspedes reais, exclusão automática de público sem potencial e ROAS crescente ao longo do tempo." name="description"/>
+<script>document.documentElement.className+=" js";setTimeout(function(){if(!window.__animReady)document.documentElement.className+=" no-anim"},1200)</script>
+<title>IA na hotelaria: segmentação que reduz custo por reserva</title>
+<meta content="Como a IA muda a segmentação de campanhas de hotel: lookalike de hóspedes reais, exclusão de público sem potencial e verba realocada para quem reserva." name="description"/>
 <meta content="Igor Salomão" name="author"/>
-<meta content="index, follow" name="robots"/>
+<meta content="index, follow, max-image-preview:large, max-snippet:-1" name="robots"/>
 <link href="https://komplexahoteis.com/blog/post-ia.html" rel="canonical"/>
 <meta content="article" property="og:type"/>
 <meta content="https://komplexahoteis.com/blog/post-ia.html" property="og:url"/>
-<meta content="IA na hotelaria: segmentação inteligente que reduz custo por reserva" property="og:title"/>
-<meta content="Como a IA muda a forma de segmentar campanhas de hotel: lookalike baseado em hóspedes reais e ROAS crescente ao longo do tempo." property="og:description"/>
+<meta content="IA na hotelaria: segmentação que reduz custo por reserva" property="og:title"/>
+<meta content="Como a IA muda a segmentação de campanhas de hotel: lookalike de hóspedes reais, exclusão de público sem potencial e verba realocada para quem reserva." property="og:description"/>
 <meta content="https://komplexahoteis.com/assets/img/og/post-ia.jpg" property="og:image"/>
 <meta content="pt_BR" property="og:locale"/>
 <meta content="Komplexa Hotéis" property="og:site_name"/>
 <meta content="2025-02-12" property="article:published_time"/>
 <meta content="Igor Salomão" property="article:author"/>
 <meta content="Inteligência Artificial" property="article:section"/>
-<meta content="2026-09-29" property="article:modified_time"/>
+<meta content="2026-10-06" property="article:modified_time"/>
 <meta content="summary_large_image" name="twitter:card"/>
-<meta content="IA na hotelaria: segmentação inteligente que reduz custo por reserva" name="twitter:title"/>
-<meta content="Lookalike com hóspedes reais é mais eficiente que demográfico genérico. Veja como aplicar." name="twitter:description"/>
+<meta content="IA na hotelaria: segmentação que reduz custo por reserva" name="twitter:title"/>
+<meta content="Como a IA muda a segmentação de campanhas de hotel: lookalike de hóspedes reais, exclusão de público sem potencial e verba realocada para quem reserva." name="twitter:description"/>
 <meta content="https://komplexahoteis.com/assets/img/og/post-ia.jpg" name="twitter:image"/>
 <script type="application/ld+json">
 [
@@ -42,10 +45,10 @@ if(document.prerendering){document.addEventListener('prerenderingchange',go,{onc
     "@context": "https://schema.org",
     "@type": "BlogPosting",
     "headline": "IA na hotelaria: segmentação inteligente que reduz custo por reserva",
-    "description": "Como a IA muda a forma de segmentar campanhas de hotel: lookalike baseado em hóspedes reais e ROAS crescente ao longo do tempo.",
+    "description": "Como a IA muda a segmentação de campanhas de hotel: lookalike de hóspedes reais, exclusão de público sem potencial e verba realocada para quem reserva.",
     "url": "https://komplexahoteis.com/blog/post-ia.html",
     "datePublished": "2025-02-12",
-    "dateModified": "2026-09-29",
+    "dateModified": "2026-10-06",
     "inLanguage": "pt-BR",
     "author": {
       "@type": "Person",
@@ -61,7 +64,7 @@ if(document.prerendering){document.addEventListener('prerenderingchange',go,{onc
       "url": "https://komplexahoteis.com/",
       "logo": {
         "@type": "ImageObject",
-        "url": "https://komplexahoteis.com/assets/logo.svg"
+        "url": "https://komplexahoteis.com/assets/img/icon-512.png", "width": 512, "height": 512
       }
     },
     "mainEntityOfPage": {
@@ -114,7 +117,7 @@ if(document.prerendering){document.addEventListener('prerenderingchange',go,{onc
         "name": "Quais dados meu hotel precisa enviar ao Meta e ao Google para a IA funcionar?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "As plataformas precisam receber o que importa de verdade: quem reservou, quando e quanto pagou. Na prática, isso exige o Pixel e a Conversion API do Meta integrados ao motor de reservas, as conversões offline do Google Ads alimentadas com reservas confirmadas e os eventos do funil mapeados, como busca de disponibilidade, escolha de quarto e checkout. Sem essa base, a IA decide com critérios irrelevantes."
+          "text": "As plataformas precisam receber o que importa de verdade: quem reservou, quando e quanto pagou. Na prática, isso exige o Pixel e a Conversions API do Meta integrados ao motor de reservas, as conversões offline do Google Ads alimentadas com reservas confirmadas e os eventos do funil mapeados, como busca de disponibilidade, escolha de quarto e checkout. Sem essa base, a IA decide com critérios irrelevantes."
         }
       },
       {
@@ -141,9 +144,8 @@ if(document.prerendering){document.addEventListener('prerenderingchange',go,{onc
 <link rel="icon" type="image/svg+xml" href="../assets/img/favicon.svg">
 <link rel="apple-touch-icon" href="../assets/img/apple-touch-icon.png">
 <link rel="manifest" href="../site.webmanifest">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="preload" href="../assets/fonts/jost-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="../assets/fonts/cormorant-latin.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="../assets/css/style.css">
 <style>
 .post-resumo{border-left:3px solid #1099E9;background:rgba(16,153,233,.06);border-radius:0 14px 14px 0;padding:1.2rem 1.4rem;margin:0 0 2.2rem}
@@ -163,7 +165,7 @@ if(document.prerendering){document.addEventListener('prerenderingchange',go,{onc
   </div>
 </header>
 
-<a href="../index.html" class="logo-fix dark" id="logoFix" aria-label="Komplexa Hotéis">
+<a href="../" class="logo-fix dark" id="logoFix" aria-label="Komplexa Hotéis">
   <svg viewBox="0 0 100 97" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
     <path d="M45.8247 36.6514C47.5271 36.6514 49.1676 37.1817 50.5604 38.211L89.22 66.5651C90.9533 67.844 92.0985 69.7156 92.439 71.8679C92.7795 74.0202 92.2533 76.1413 90.9843 77.8881C89.4366 80.0092 87.0842 81.2257 84.4533 81.2257C81.8223 81.2257 81.1104 80.6954 79.7176 79.6661L41.0581 51.3119C39.3247 50.033 38.1795 48.1615 37.839 46.0092C37.4985 43.8569 38.0247 41.7358 39.2938 39.989C40.8414 37.8679 43.1938 36.6514 45.8247 36.6514ZM45.8247 29.1651C41.0581 29.1651 36.3223 31.3798 33.289 35.5908C28.2747 42.5468 29.7914 52.3101 36.6938 57.3633L75.3533 85.7174C78.1081 87.745 81.2962 88.7119 84.4533 88.7119C89.22 88.7119 93.9557 86.4973 96.989 82.2862C102.003 75.3303 100.487 65.567 93.5842 60.5138L54.9247 32.1596C52.17 30.1321 48.9819 29.1651 45.8247 29.1651Z"/>
     <path d="M69.1938 7.48624C70.8961 7.48624 72.5366 8.01651 73.9295 9.04587L79.47 13.1009C83.0604 15.7211 83.8652 20.8055 81.2342 24.4239L76.4985 30.9743L64.4581 22.1468C60.8676 19.5266 60.0628 14.4422 62.6938 10.8239C64.2414 8.70275 66.5938 7.48624 69.2247 7.48624M69.1938 0C64.4271 0 59.6914 2.21468 56.658 6.42569C51.6438 13.3816 53.1604 23.145 60.0628 28.1982L78.108 41.4239L87.2081 28.822C92.2223 21.8661 90.7057 12.1027 83.8033 7.04954L78.2628 2.99449C75.508 0.966969 72.32 0 69.1628 0H69.1938Z"/>
@@ -178,7 +180,7 @@ if(document.prerendering){document.addEventListener('prerenderingchange',go,{onc
     Oi! Sou o Igor, fundador<br>da Komplexa. Quer o plano<br>do seu hotel?
   </div>
   <button class="conc-avatar" onclick="openConcierge()" aria-label="Falar com a Komplexa">
-    <img src="../assets/img/igor.png" alt="Igor Salomão, fundador da Komplexa"><span class="conc-dot"></span>
+    <img src="../assets/img/igor.png" alt="Igor Salomão, fundador da Komplexa" width="400" height="400"><span class="conc-dot"></span>
   </button>
 </div>
 
@@ -186,18 +188,20 @@ if(document.prerendering){document.addEventListener('prerenderingchange',go,{onc
 <nav class="menu" id="menu">
   <div class="menu-grid">
     <div class="menu-list" data-lenis-prevent>
-      <a href="../index.html#metodo" class="active">O método</a>
-      <a href="../index.html#cases">Cases</a>
-      <a href="../index.html#site">O site entregue</a>
-      <a href="../index.html#sistema">O sistema</a>
-      <a href="../index.html#frentes">Frentes de receita</a>
-      <a href="../index.html#presenca">Quem somos</a>
-      <a href="../index.html#contato">Falar com a Komplexa</a>
+      <a href="../#metodo" class="active">O método</a>
+      <a href="../#cases">Cases</a>
+      <a href="../#site">O site entregue</a>
+      <a href="../#sistema">O sistema</a>
+      <a href="../#frentes">Frentes de receita</a>
+      <a href="../#presenca">Quem somos</a>
+      <a href="../#contato">Falar com a Komplexa</a>
     </div>
   </div>
   <div class="menu-foot">
     <div class="menu-foot-links">
-      <a href="../blog/index.html">Blog</a>
+      <a href="./">Blog</a>
+      <a href="../guia-reservas-diretas.html">Guia de reservas diretas</a>
+      <a href="../agencia-marketing-hoteleiro.html">Agência de marketing hoteleiro</a>
       <a href="https://komplexa-pricing.vercel.app/f/komplexaconsultoria?utm_source=komplexahoteis&amp;utm_medium=site&amp;utm_content=blog-ia-menu" target="_blank" rel="noopener">Agendar conversa <span class="ext">↗</span></a>
     </div>
     <div class="menu-foot-social">
@@ -210,64 +214,86 @@ if(document.prerendering){document.addEventListener('prerenderingchange',go,{onc
 <!-- ============ POST ============ -->
 <section class="post-hero">
   <div class="wrap"><div class="post-wrap">
-    <nav class="crumbs" aria-label="Navegação"><a href="../index.html">Início</a><span>/</span><a href="index.html">Blog</a><span>/</span><span>Inteligência Artificial</span></nav>
+    <nav class="crumbs" aria-label="Navegação"><a href="../">Início</a><span>/</span><a href="./">Blog</a><span>/</span><span>Inteligência Artificial</span></nav>
     <span class="overline">Inteligência Artificial</span>
     <h1 class="t-display">IA na hotelaria: segmentação inteligente que reduz custo por reserva</h1>
-    <p class="post-lead">Como a IA muda a forma de segmentar campanhas de hotel: lookalike baseado em hóspedes reais, exclusão automática de público sem potencial e ROAS crescente ao longo do tempo.</p>
-    <div class="post-meta"><span>Fevereiro 2025</span><span>6 min de leitura</span><span>Por <a href="../igor-salomao.html">Igor Salomão</a></span><span>Atualizado em setembro de 2026</span></div>
+    <p class="post-lead">Como a IA muda a segmentação de campanhas de hotel: lookalike de hóspedes reais, exclusão de público sem potencial e verba realocada para quem reserva.</p>
+    <div class="post-meta"><span>Fevereiro 2025</span><span>7 min de leitura</span><span>Por <a href="../igor-salomao.html">Igor Salomão</a></span><span>Atualizado em outubro de 2026</span></div>
   </div></div>
 </section>
 
 <div class="wrap"><div class="post-layout">
   <article class="post-content">
-<div class="post-resumo"><span class="overline">Resposta rápida</span><p>A IA reduz o custo por reserva de um hotel porque aprende com quem já reservou: cria públicos lookalike a partir dos hóspedes reais, exclui automaticamente perfis que clicam e nunca reservam e realoca a verba para o que gera reservas, não cliques. Isso só funciona com dados de reserva integrados ao Meta e ao Google.</p></div>
-<p>A maior parte das campanhas de hotel ainda é configurada como se fosse 2015: público demográfico amplo, interesse em "viagens", segmentação por idade e cidade. O resultado é tráfego volumoso, com baixa intenção de compra e custo por reserva alto.</p>
-<p>A IA aplicada à mídia paga muda essa lógica. Em vez de adivinhar quem pode reservar, ela aprende com quem <strong>já reservou</strong> — e usa esse comportamento como matéria-prima para encontrar mais pessoas parecidas.</p>
+<div class="post-resumo"><span class="overline">Resposta rápida</span><p>A IA reduz o custo por reserva de um hotel quando aprende com quem já reservou: cria públicos lookalike a partir dos hóspedes reais, deixa de entregar anúncio para perfis que clicam e nunca reservam e realoca a verba para o que gera reservas confirmadas, não cliques. Isso só funciona com dados de reserva integrados ao Meta e ao Google, e o tamanho da queda no custo varia por hotel.</p></div>
+<p>Muita campanha de hotel ainda nasce de um público demográfico amplo: idade, cidade e interesse em "viagens". O resultado costuma ser tráfego volumoso, pouca intenção de compra e custo por reserva alto. Este artigo trata só da parte de mídia paga; o quadro completo está no nosso <a href="../guia-reservas-diretas.html">guia de reservas diretas para hotéis e pousadas</a>.</p>
+<p>A IA aplicada à mídia paga muda essa lógica. Em vez de adivinhar quem pode reservar, ela aprende com quem <strong>já reservou</strong> e usa esse comportamento como matéria-prima para encontrar mais pessoas parecidas.</p>
 <div class="highlight-box">
-<p>Lookalike baseado em hóspedes reais é o tipo de público com maior taxa de conversão dentro de um hotel. E é exatamente o que a maioria dos hotéis ainda não usa.</p>
+<p>A IA das plataformas aprende bem com reserva confirmada, mas otimiza para o que o hotel mede. Se o hotel só mede clique, ela entrega clique.</p>
 </div>
 <h2 id="problema">O problema da segmentação tradicional</h2>
-<p>Segmentar por idade, gênero, cidade e interesse em "hotéis" parece lógico, mas é uma camada rasa. Esse perfil é gigantesco — engloba curiosos, comparadores de preço, pessoas que sequer estão considerando viajar nos próximos 90 dias.</p>
+<p>Segmentar por idade, gênero, cidade e interesse em "hotéis" é uma camada rasa. Esse perfil é gigantesco e engloba curiosos, comparadores de preço e pessoas que sequer estão considerando viajar nos próximos 90 dias.</p>
 <p>O resultado prático:</p>
 <ul>
 <li>Tráfego que chega ao site mas não busca disponibilidade</li>
 <li>Custo por clique baixo, mas custo por reserva alto</li>
 <li>Campanhas que "performam" no relatório de mídia mas não aparecem no PMS</li>
 </ul>
+<p>O padrão se repete porque a plataforma está cumprindo o que o hotel pediu: clique barato. Quem define o que é sucesso é o dado que o hotel devolve a ela.</p>
 <h2 id="ia-real">O que a IA muda na prática</h2>
-<p>A IA atua em três camadas — todas elas baseadas em <strong>dados reais do hotel</strong>, não em palpite.</p>
+<p>A IA atua em três camadas, todas baseadas em <strong>dados reais do hotel</strong>, não em palpite.</p>
 <h3>1. Lookalike de hóspedes que reservaram</h3>
 <p>O ponto de partida não é uma lista demográfica. É a sua própria base: quem reservou nos últimos 12 meses, quanto pagou, em que datas, por quanto tempo. A IA lê esse padrão de comportamento e busca pessoas estatisticamente parecidas dentro do Meta e do Google.</p>
-<p>Isso significa que cada hotel acaba mirando um público diferente — porque cada hotel atrai um perfil diferente. Um boutique no Vale dos Vinhedos não tem o mesmo cliente de um resort all-inclusive.</p>
+<p>Isso significa que cada hotel acaba mirando um público diferente, porque cada hotel atrai um perfil diferente. Um boutique no Vale dos Vinhedos não tem o mesmo cliente de um resort all-inclusive. Uma base pequena ou desorganizada dá um sinal fraco; nesse caso, o trabalho começa por juntar reservas e limpar os dados, não por ajustar público.</p>
 <h3>2. Exclusão automática de público sem potencial</h3>
-<p>Tão importante quanto encontrar bons leads é parar de pagar pelos ruins. A IA identifica padrões de quem clica mas nunca reserva — e remove esses perfis da entrega. Em alguns casos, isso sozinho derruba o custo por reserva em 20% ou mais.</p>
+<p>Tão importante quanto encontrar bons públicos é parar de pagar pelos ruins. A IA identifica padrões de quem clica mas nunca reserva e reduz a entrega para esses perfis. O hotel também pode excluir quem já é hóspede ou acabou de reservar, para não gastar verba de aquisição com quem já converteu.</p>
+<p>O custo por reserva tende a cair quando a verba deixa de ir para quem nunca reserva; o tamanho da queda varia por hotel.</p>
 <h3>3. Distribuição inteligente de orçamento</h3>
-<p>Em vez de dividir o orçamento igualmente entre campanhas, a IA realoca verba em tempo real para os criativos, públicos e horários que estão de fato gerando reservas — não cliques.</p>
+<p>Em vez de dividir o orçamento igualmente entre campanhas, a IA realoca verba para os criativos, públicos e horários que estão de fato gerando reservas, não cliques. Essa realocação só é tão boa quanto o sinal de reserva que chega à plataforma.</p>
+<p>Há ainda uma frente fora da mídia paga, a de ser recomendado pelos próprios assistentes de IA, que tratamos em <a href="post-aeo-ia-busca.html">como aparecer no ChatGPT: o que é AEO</a>.</p>
 <h2 id="dados">Por que isso só funciona com dados integrados</h2>
-<p>IA sem dado não é inteligência — é palpite automatizado. Para que a segmentação funcione, é preciso enviar para as plataformas de mídia o que importa de verdade: <strong>quem reservou, quando e quanto pagou</strong>.</p>
+<p>IA sem dado não é inteligência, é palpite automatizado. Para que a segmentação funcione, é preciso enviar para as plataformas de mídia o que importa de verdade: <strong>quem reservou, quando e quanto pagou</strong>.</p>
 <p>Isso exige:</p>
 <ul>
-<li>Pixel/Conversion API do Meta integrado ao motor de reservas</li>
-<li>Conversões offline do Google Ads alimentadas com reservas confirmadas</li>
+<li>Pixel e Conversions API do Meta integrados ao motor de reservas</li>
+<li>Conversões offline do Google Ads alimentadas com reservas confirmadas (o formato que mostra preços direto na busca, o <a href="post-google-hotel-ads.html">Google Hotel Ads</a>, tem artigo próprio)</li>
 <li>Eventos de funil mapeados (busca de disponibilidade, escolha de quarto, checkout)</li>
 </ul>
-<p>Sem essa base, qualquer "IA" vira uma caixa preta que decide com critérios irrelevantes.</p>
-<h2 id="resultado">O resultado ao longo do tempo</h2>
-<p>Diferente de uma campanha tradicional que tem teto de performance, campanhas alimentadas por dados de reserva real <strong>melhoram com o tempo</strong>. A cada nova reserva, o algoritmo aprende mais sobre quem é seu cliente — e o ROAS tende a crescer mês a mês.</p>
-<p>Em hotéis bem instrumentados, é comum ver:</p>
+<p>Montar e manter essa integração costuma ser trabalho de uma <a href="../agencia-marketing-hoteleiro.html">agência de marketing hoteleiro</a> que opera mídia e site juntos.</p>
+<p>Sem essa base, qualquer "IA" vira uma caixa preta que decide com critérios irrelevantes. É o mesmo motivo pelo qual <a href="post-funil.html">campanhas isoladas não funcionam para hotéis</a>: anúncio sem site, motor e atendimento ligados vaza verba.</p>
+<h2 id="medir">Como medir se a IA reduziu o custo por reserva</h2>
+<p>Custo por reserva = investimento em mídia ÷ reservas confirmadas no PMS no período.</p>
+<p>ROAS = receita das reservas atribuídas ÷ investimento em mídia.</p>
+<p>Exemplo ilustrativo, números hipotéticos (não é resultado de cliente): R$ 10.000 de mídia com 25 reservas confirmadas dão R$ 400 por reserva (10.000 ÷ 25); se o mesmo orçamento gerar 30 reservas no mês seguinte, o custo cai para R$ 333,33. Compare sempre com o PMS, não com o painel de anúncios.</p>
+<p>Antes de comparar dois períodos, confira três pontos:</p>
 <ul>
-<li>Custo por reserva caindo 30%–50% nos primeiros 90 dias</li>
-<li>ROAS subindo de forma consistente após o terceiro mês</li>
-<li>Maior previsibilidade de aquisição em datas estratégicas</li>
+<li>As reservas do PMS batem com as conversões que chegam ao Meta e ao Google, com data e valor corretos</li>
+<li>Reservas canceladas não estão sendo contadas como resultado</li>
+<li>Os períodos são equivalentes: alta temporada contra alta temporada, e não contra um mês fraco</li>
 </ul>
+<h2 id="limites">O que a IA não resolve sozinha</h2>
+<ul>
+<li><strong>Sem dados integrados, vira caixa preta.</strong> A IA otimiza o que enxerga; se enxerga só clique, entrega clique.</li>
+<li><strong>Não substitui site que converte nem atendimento no WhatsApp.</strong> Tráfego melhor em site lento, ou com resposta que demora, continua perdendo reserva.</li>
+<li><strong>As plataformas já usam aprendizado de máquina.</strong> A vantagem do hotel não está em "ter IA", e sim em alimentá-la com reserva real em vez de clique.</li>
+<li><strong>Nenhum percentual de queda é prometido.</strong> O resultado depende da base de hóspedes, da sazonalidade, do site e do preço praticado.</li>
+</ul>
+<h2 id="acompanhar">O que acompanhar ao longo dos meses</h2>
+<p>Diferente de uma campanha tradicional, que tem teto de performance, campanhas alimentadas por dados de reserva real <strong>tendem a melhorar com o tempo</strong>. Cada reserva confirmada ensina ao algoritmo mais sobre quem é seu cliente: o ROAS tende a melhorar à medida que ele recebe mais reservas, sem prazo nem percentual garantido.</p>
+<p>Os indicadores que mostram se isso está acontecendo:</p>
+<ul>
+<li>Custo por reserva direta, calculado no PMS</li>
+<li>ROAS com reservas confirmadas</li>
+<li>Previsibilidade de aquisição em datas estratégicas</li>
+</ul>
+<p>A redução do custo por reserva varia por hotel e não há percentual garantido.</p>
 <div class="post-divider"></div>
-<h2 id="conclusao">Conclusão</h2>
+<h2 id="resumo">IA na mídia paga de hotel: resumo e primeiro passo</h2>
 <p>IA na hotelaria não é um filtro novo de campanha. É uma forma diferente de pensar mídia: <strong>parar de mirar em "viajantes" e começar a mirar em pessoas com perfil dos seus melhores hóspedes</strong>.</p>
-<p>O hotel que faz isso de forma estruturada deixa de competir no leilão genérico e passa a operar com um custo por reserva consistentemente menor — sem aumentar o investimento.</p>
+<p>O primeiro passo é verificar se as reservas confirmadas chegam ao Meta e ao Google. Se não chegam, é por aí que o trabalho começa, antes de qualquer ajuste de público. O hotel que faz isso de forma estruturada tende a pagar menos por reserva com o mesmo investimento, mas o quanto depende de cada operação.</p>
 <div class="post-cta">
 <h4>Quer aplicar IA de verdade na aquisição do seu hotel?</h4>
-<p>A Komplexa estrutura mídia paga com IA conectada aos dados reais de reserva. Estratégia personalizada para o perfil do seu hotel.</p>
-<a class="btn-sage" href="https://komplexa-pricing.vercel.app/f/komplexaconsultoria?utm_source=komplexahoteis&amp;utm_medium=site&amp;utm_content=blog-ia" target="_blank">Falar com especialista</a>
+<p>O Bahia Bonita, hotel boutique atendido pela Komplexa, teve 19x de retorno sobre o investimento em mídia, conferido no PMS do hotel. Cada resultado vem de uma operação diferente: na conversa com a Komplexa, o plano nasce do seu hotel, sem pacote pronto. <a href="../#cases" style="color:#fff;border-bottom:1px solid rgba(255,255,255,.5)">Ver os cases</a></p>
+<a class="btn-sage" href="https://komplexa-pricing.vercel.app/f/komplexaconsultoria?utm_source=komplexahoteis&amp;utm_medium=site&amp;utm_content=blog-ia-meio" target="_blank" rel="noopener">Agendar conversa</a>
 </div>
   <h2 id="faq">Perguntas frequentes</h2>
 <div class="faq-list">
@@ -277,7 +303,7 @@ if(document.prerendering){document.addEventListener('prerenderingchange',go,{onc
 </details>
 <details class="faq-item">
 <summary>Quais dados meu hotel precisa enviar ao Meta e ao Google para a IA funcionar?</summary>
-<div class="faq-answer"><p>As plataformas precisam receber o que importa de verdade: quem reservou, quando e quanto pagou. Na prática, isso exige o Pixel e a Conversion API do Meta integrados ao motor de reservas, as conversões offline do Google Ads alimentadas com reservas confirmadas e os eventos do funil mapeados, como busca de disponibilidade, escolha de quarto e checkout. Sem essa base, a IA decide com critérios irrelevantes.</p></div>
+<div class="faq-answer"><p>As plataformas precisam receber o que importa de verdade: quem reservou, quando e quanto pagou. Na prática, isso exige o Pixel e a Conversions API do Meta integrados ao motor de reservas, as conversões offline do Google Ads alimentadas com reservas confirmadas e os eventos do funil mapeados, como busca de disponibilidade, escolha de quarto e checkout. Sem essa base, a IA decide com critérios irrelevantes.</p></div>
 </details>
 <details class="faq-item">
 <summary>Como funciona um público lookalike para hotel ou pousada?</summary>
@@ -294,17 +320,20 @@ if(document.prerendering){document.addEventListener('prerenderingchange',go,{onc
 <a href="#problema" class="toc-link">O problema da segmentação tradicional</a>
 <a href="#ia-real" class="toc-link">O que a IA muda na prática</a>
 <a href="#dados" class="toc-link">Por que precisa de dados integrados</a>
-<a href="#resultado" class="toc-link">O resultado ao longo do tempo</a>
-<a href="#conclusao" class="toc-link">Conclusão</a>
+<a href="#medir" class="toc-link">Como medir o custo por reserva</a>
+<a href="#limites" class="toc-link">O que a IA não resolve sozinha</a>
+<a href="#acompanhar" class="toc-link">O que acompanhar ao longo dos meses</a>
+<a href="#resumo" class="toc-link">Resumo e primeiro passo</a>
     <a href="#faq" class="toc-link">Perguntas frequentes</a>
     </div>
     <div class="side-cta"><h4>Para o seu hotel</h4>
       <p>Um plano de aquisição desenhado a partir da sua operação, medido no PMS.</p>
-      <a href="https://komplexa-pricing.vercel.app/f/komplexaconsultoria?utm_source=komplexahoteis&amp;utm_medium=site&amp;utm_content=blog-ia" target="_blank" rel="noopener" class="btn-sage">Agendar conversa</a>
+      <a href="https://komplexa-pricing.vercel.app/f/komplexaconsultoria?utm_source=komplexahoteis&amp;utm_medium=site&amp;utm_content=blog-ia-lateral" target="_blank" rel="noopener" class="btn-sage">Agendar conversa</a>
     </div>
     <div class="side-card"><h4>Leia também</h4>
-<a href="post-ota.html" class="related-post"><h5>Como reduzir a dependência de OTAs e gerar reservas diretas</h5><span>OTA e Distribuição · 8 min</span></a>
-<a href="post-funil.html" class="related-post"><h5>Por que campanhas isoladas não funcionam para hotéis</h5><span>Conversão · 5 min</span></a>
+<a href="post-funil.html" class="related-post"><h5>Por que campanhas isoladas não funcionam para hotéis</h5><span>Conversão · 6 min</span></a>
+<a href="post-aeo-ia-busca.html" class="related-post"><h5>Sua pousada aparece no ChatGPT? O que é AEO e por que importa em 2026</h5><span>Inteligência Artificial · 8 min</span></a>
+<a href="post-como-escolher-agencia.html" class="related-post"><h5>Como escolher uma agência de marketing para hotel ou pousada</h5><span>Marketing Hoteleiro · 9 min</span></a>
     </div>
   </aside>
 </div></div>
@@ -313,9 +342,9 @@ if(document.prerendering){document.addEventListener('prerenderingchange',go,{onc
   <div class="wrap">
     <span class="overline">Continue lendo</span>
     <div class="rg-grid">
-<a href="post-ota.html" class="rg-card"><span class="rg-tag">OTA e Distribuição</span><h4>Como reduzir a dependência de OTAs e gerar reservas diretas</h4><p>Comissões de 15% a 25% não são inevitáveis. Estratégia completa para construir um canal direto forte.</p></a>
-<a href="post-revpar.html" class="rg-card"><span class="rg-tag">RevPAR e Receita</span><h4>RevPAR vs. ocupação: qual métrica define o sucesso do seu hotel</h4><p>Encher o hotel nem sempre significa lucrar mais. Entenda o que medir.</p></a>
-<a href="post-funil.html" class="rg-card"><span class="rg-tag">Conversão</span><h4>Por que campanhas isoladas não funcionam para hotéis</h4><p>O funil completo é o único modelo que escala reservas diretas de forma previsível.</p></a>
+<a href="post-google-hotel-ads.html" class="rg-card"><span class="rg-tag">Reservas Diretas</span><h4>Google Hotel Ads: como aparecer no Google e gerar reservas sem pagar comissão de OTA</h4><p>O bloco de preços do Google que leva a reserva ao site do hotel, e o que ter em ordem antes de ativar.</p></a>
+<a href="post-ltv.html" class="rg-card"><span class="rg-tag">CRM e Pós-venda</span><h4>LTV em hotéis: o ativo que a maioria ignora</h4><p>Como estimar a receita de reativar hóspedes antigos e montar a régua de pós-venda.</p></a>
+<a href="post-precificacao-pousada.html" class="rg-card"><span class="rg-tag">RevPAR e Receita</span><h4>Precificação para pousada: revenue management na prática (sem complicar)</h4><p>Faixas por temporada, regras de antecedência e mínimo de noites para sair da tarifa fixa.</p></a>
     </div>
   </div>
 </section>
@@ -326,7 +355,7 @@ if(document.prerendering){document.addEventListener('prerenderingchange',go,{onc
     <div class="news-box">
       <span class="overline rv">Carta do fundador</span>
       <h2 class="t-display rv">Um convite para conhecer <em class="gi">o nosso time.</em></h2>
-      <img class="carta-foto rv" src="../assets/img/igor.png" alt="Igor Salomão, fundador da Komplexa">
+      <img class="carta-foto rv" src="../assets/img/igor.png" alt="Igor Salomão, fundador da Komplexa" width="400" height="400" loading="lazy">
       <div class="carta rv">
         <p>Sou o Igor Salomão, fundador da Komplexa. Se você chegou até aqui, quero te fazer um convite: uma conversa comigo e com o time sobre o seu hotel.</p>
         <p>Nela, queremos entender de verdade como a sua operação funciona hoje: de onde vêm as reservas, como o hóspede chega até você e onde você sente que dá para crescer.</p>
@@ -358,15 +387,15 @@ if(document.prerendering){document.addEventListener('prerenderingchange',go,{onc
       </div>
       <div class="ft-col">
         <h4>A solução</h4>
-        <a href="../index.html#metodo">O método</a>
-        <a href="../index.html#cases">Cases</a>
-        <a href="../index.html#sistema">O sistema</a>
-        <a href="../index.html#ia">IA aplicada</a>
-        <a href="../index.html#frentes">Frentes de receita</a>
+        <a href="../#metodo">O método</a>
+        <a href="../#cases">Cases</a>
+        <a href="../#sistema">O sistema</a>
+        <a href="../#ia">IA aplicada</a>
+        <a href="../#frentes">Frentes de receita</a>
       </div>
       <div class="ft-col">
         <h4>Conteúdo</h4>
-        <a href="../blog/index.html">Blog</a>
+        <a href="./">Blog</a>
         <a href="../blog/post-comissao-booking-18.html">Booking a 18%</a>
         <a href="../blog/post-motor-de-reservas.html">Motor de reservas</a>
         <a href="../blog/post-google-hotel-ads.html">Google Hotel Ads</a>
@@ -382,28 +411,28 @@ if(document.prerendering){document.addEventListener('prerenderingchange',go,{onc
     <div class="selos" aria-label="Integrações e parceiros de tecnologia">
       <div class="selos-track">
         <!-- lista repetida 2x para o loop contínuo do marquee -->
-        <div class="selo"><img src="../assets/img/omnibees.png" alt="Omnibees"></div>
-        <div class="selo"><img src="../assets/img/hsystem.png" alt="HSystem"></div>
-        <div class="selo"><img src="../assets/img/asksuite.jpeg" alt="Asksuite"></div>
-        <div class="selo"><img src="../assets/img/erbon.png" alt="Erbon"></div>
-        <div class="selo"><img src="../assets/img/bitz.png" alt="Bitz"></div>
-        <div class="selo"><img src="../assets/img/foco.png" alt="Foco"></div>
-        <div class="selo"><img src="../assets/img/omnibees.png" alt="Omnibees"></div>
-        <div class="selo"><img src="../assets/img/hsystem.png" alt="HSystem"></div>
-        <div class="selo"><img src="../assets/img/asksuite.jpeg" alt="Asksuite"></div>
-        <div class="selo"><img src="../assets/img/erbon.png" alt="Erbon"></div>
-        <div class="selo"><img src="../assets/img/bitz.png" alt="Bitz"></div>
-        <div class="selo"><img src="../assets/img/foco.png" alt="Foco"></div>
+        <div class="selo"><img src="../assets/img/omnibees.png" alt="Omnibees" width="168" height="96" loading="lazy"></div>
+        <div class="selo"><img src="../assets/img/hsystem.png" alt="HSystem" width="428" height="118" loading="lazy"></div>
+        <div class="selo"><img src="../assets/img/asksuite.jpeg" alt="Asksuite" width="200" height="200" loading="lazy"></div>
+        <div class="selo"><img src="../assets/img/erbon.png" alt="Erbon" width="301" height="456" loading="lazy"></div>
+        <div class="selo"><img src="../assets/img/bitz.png" alt="Bitz" width="492" height="158" loading="lazy"></div>
+        <div class="selo"><img src="../assets/img/foco.png" alt="Foco" width="331" height="152" loading="lazy"></div>
+        <div class="selo"><img src="../assets/img/omnibees.png" alt="Omnibees" width="168" height="96" loading="lazy"></div>
+        <div class="selo"><img src="../assets/img/hsystem.png" alt="HSystem" width="428" height="118" loading="lazy"></div>
+        <div class="selo"><img src="../assets/img/asksuite.jpeg" alt="Asksuite" width="200" height="200" loading="lazy"></div>
+        <div class="selo"><img src="../assets/img/erbon.png" alt="Erbon" width="301" height="456" loading="lazy"></div>
+        <div class="selo"><img src="../assets/img/bitz.png" alt="Bitz" width="492" height="158" loading="lazy"></div>
+        <div class="selo"><img src="../assets/img/foco.png" alt="Foco" width="331" height="152" loading="lazy"></div>
       </div>
     </div>
     <div class="ft-credit">© 2026 Komplexa Hotéis · Arquitetura de crescimento para reservas diretas · komplexahoteis.com</div>
   </div>
 </footer>
 
-<script src="../assets/js/vendor/lenis.min.js"></script>
-<script src="../assets/js/vendor/gsap.min.js"></script>
-<script src="../assets/js/vendor/ScrollTrigger.min.js"></script>
-<script src="../assets/js/main.js"></script>
+<script src="../assets/js/vendor/lenis.min.js" defer></script>
+<script src="../assets/js/vendor/gsap.min.js" defer></script>
+<script src="../assets/js/vendor/ScrollTrigger.min.js" defer></script>
+<script src="../assets/js/main.js" defer></script>
 
 </body>
 </html>
