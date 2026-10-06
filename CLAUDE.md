@@ -110,7 +110,7 @@ passa por `khOrigem.link(FORM_URL)`. Os decks em `d/` não carregam o `main.js` 
 **Fotos:** converter para WebP (≤1920px no lado maior, q72 para foto, q80 para tela) antes de subir;
 `loading="lazy"` fora do hero; só há ~16 fotos únicas, evitar repetir a mesma na mesma dobra.
 
-**Conteúdo:** só prova real (cases medidos no PMS: Bahia Bonita 19x, Solar Dona Dora 3,4x, Sunsmart 60%+,
+**Conteúdo:** "mais de 50 hotéis atendidos" em 14 estados (confirmado pelo Igor em 06/out/2026). Só prova real (cases medidos no PMS: Bahia Bonita 19x, Solar Dona Dora 3,4x, Sunsmart 60%+,
 Karandá 6,5x, Lagamar 7x+). Integrações reais: Omnibees, HSystem, Asksuite, Erbon, Bitz, Foco.
 
 ## Adding a New Blog Post
