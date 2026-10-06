@@ -2,6 +2,110 @@
    Komplexa Hotéis — main.js
    Base Template 6 · Lenis + GSAP + componentes do blueprint
    ============================================================ */
+
+/* ---------- Origem da visita nos links do formulário ----------
+   Todo link para o formulário leva a origem real de quem chegou ao site
+   (UTMs, clique de anúncio ou site de onde veio), guardada por 30 dias em
+   localStorage ("kh_origem"). O utm_content de cada botão não muda.
+   Fica antes do GSAP para funcionar mesmo se a animação não carregar. */
+const khOrigem = (() => {
+  const CHAVE = 'kh_origem', VALIDADE = 30 * 864e5;
+  const INTERNOS = ['komplexahoteis.com', location.hostname.replace(/^www\./, '')];
+  // [domínios, source, medium]: a primeira que bater vale
+  const REGRAS = [
+    [['chatgpt.com', 'chat.openai.com'], 'chatgpt', 'ia'],
+    [['perplexity.ai'], 'perplexity', 'ia'],
+    [['gemini.google.com'], 'gemini', 'ia'],
+    [['copilot.microsoft.com'], 'copilot', 'ia'],
+    [['claude.ai'], 'claude', 'ia'],
+    [[/(^|\.)google\.[a-z.]+$/], 'google', 'organico'],
+    [['bing.com'], 'bing', 'organico'],
+    [['duckduckgo.com', 'search.yahoo.com', 'ecosia.org'], 'buscador', 'organico'],
+    [['instagram.com'], 'instagram', 'social'],
+    [['facebook.com', 'fb.me'], 'facebook', 'social'],
+    [['linkedin.com', 'lnkd.in'], 'linkedin', 'social'],
+    [['youtube.com', 'youtu.be'], 'youtube', 'social'],
+    [['whatsapp.com', 'wa.me'], 'whatsapp', 'social'],
+    [['t.co', 'x.com', 'twitter.com'], 'x', 'social'],
+  ];
+  const limpaHost = h => String(h || '').trim().toLowerCase()
+    .replace(/^[a-z][a-z0-9+.-]*:\/\//, '').replace(/[/?#:].*$/, '').replace(/^www\./, '');
+  const bate = (h, d) => typeof d === 'string' ? h === d || h.endsWith('.' + d) : d.test(h);
+  /* regra do site de onde veio; também aceita o nome da regra (utm_source=google) */
+  const classifica = h => {
+    h = limpaHost(h);
+    if (!h) return null;
+    const r = REGRAS.find(([ds, nome]) => h === nome || ds.some(d => bate(h, d)));
+    return r ? { source: r[1], medium: r[2] } : null;
+  };
+
+  const daVisita = () => {
+    const q = new URLSearchParams(location.search);
+    const pega = k => (q.get(k) || '').trim();
+    const o = { campaign: pega('utm_campaign'), term: pega('utm_term'), fbclid: pega('fbclid'), gclid: pega('gclid') };
+    if (pega('utm_source')) {
+      const r = classifica(pega('utm_source'));
+      o.source = pega('utm_source');
+      o.medium = pega('utm_medium') ||
+        (o.gclid ? 'cpc' : r ? r.medium : o.fbclid ? 'social' : 'referral');
+      return o;
+    }
+    if (o.gclid) return Object.assign(o, { source: 'google', medium: 'cpc' });
+    if (o.fbclid) return Object.assign(o, { source: 'meta', medium: 'social' });
+    const h = limpaHost(document.referrer);
+    if (h && INTERNOS.includes(h)) return null; // navegação dentro do site
+    if (!h) return Object.assign(o, { source: 'direto', medium: 'nenhum' });
+    return Object.assign(o, classifica(h) || { source: h, medium: 'referral' });
+  };
+
+  let guardada = null;
+  try {
+    const g = JSON.parse(localStorage.getItem(CHAVE) || 'null');
+    if (g && g.source && Date.now() - g.em < VALIDADE) guardada = g;
+  } catch (e) {}
+  const visita = daVisita();
+  let origem;
+  if (!visita) origem = guardada || { source: 'direto', medium: 'nenhum' };
+  else if (visita.source === 'direto' && guardada) origem = guardada;
+  else {
+    origem = Object.assign(visita, { em: Date.now() });
+    try { localStorage.setItem(CHAVE, JSON.stringify(origem)); } catch (e) {}
+  }
+
+  /* link do formulário com a origem; mantém o utm_content e o resto do href */
+  const link = href => {
+    let u;
+    try { u = new URL(href, location.href); } catch (e) { return href; }
+    const antes = u.searchParams, p = new URLSearchParams();
+    const put = (k, v) => { if (v) p.set(k, v); };
+    put('utm_source', origem.source);
+    put('utm_medium', origem.medium);
+    put('utm_campaign', origem.campaign || 'site-komplexahoteis');
+    put('utm_term', origem.term);
+    put('utm_content', antes.get('utm_content'));
+    antes.forEach((v, k) => {
+      if (!/^(utm_(source|medium|campaign|term|content)|fbclid|gclid)$/.test(k)) p.append(k, v);
+    });
+    put('fbclid', origem.fbclid);
+    put('gclid', origem.gclid);
+    u.search = p.toString();
+    return u.toString();
+  };
+  const SEL = 'a[href*="komplexa-pricing.vercel.app/f/"]';
+  const aplica = a => {
+    if (!a.dataset.khHref) a.dataset.khHref = a.getAttribute('href');
+    a.href = link(a.dataset.khHref);
+  };
+  document.querySelectorAll(SEL).forEach(aplica);
+  // de novo no clique, para cobrir links criados depois
+  document.addEventListener('click', e => {
+    const a = e.target.closest && e.target.closest(SEL);
+    if (a) aplica(a);
+  }, true);
+
+  return { origem, link, classifica };
+})();
+
 gsap.registerPlugin(ScrollTrigger);
 
 /* Todo caminho de conversão do site aponta para o formulário externo */
@@ -198,7 +302,7 @@ function openConcierge() {
     gsap.fromTo(b, { opacity: 0, scale: .6, y: 10 },
       { opacity: 1, scale: 1, y: 0, duration: .45, ease: 'back.out(1.6)' });
   } else {
-    window.open(FORM_URL, '_blank');
+    window.open(khOrigem.link(FORM_URL), '_blank');
   }
 }
 

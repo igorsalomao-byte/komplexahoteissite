@@ -97,6 +97,12 @@ html = sh.head(base, title, description, canonical, extra='<style>…</style>' )
 
 **All CTAs link to:** `https://komplexa-pricing.vercel.app/f/komplexaconsultoria?utm_source=komplexahoteis&utm_medium=site&utm_content={page}` (target="_blank" rel="noopener").
 `utm_content`: `home-boutique-*` na home, `{pagina}-header|menu|final|footer` na casca, `blog-{slug}` nos posts, `blog-listing` no índice, `deck-{name}` nos decks.
+**Origem real (out/2026):** o bloco `khOrigem` no topo de `assets/js/main.js` reescreve esses links ao carregar e no clique,
+trocando `utm_source/medium/campaign/term` (e repassando `fbclid`/`gclid`) pela origem da visita: UTMs da URL, clique de
+anúncio ou referrer (IA, buscador, rede social, `<domínio>`/referral, `direto`/`nenhum`), guardada 30 dias em
+`localStorage` (`kh_origem`); "direto" não sobrescreve origem válida. `utm_campaign` padrão `site-komplexahoteis`;
+`utm_content` do botão não muda. No HTML os links continuam com `utm_source=komplexahoteis&utm_medium=site`. O concierge
+passa por `khOrigem.link(FORM_URL)`. Os decks em `d/` não carregam o `main.js` e mantêm os links fixos.
 
 **Fotos:** converter para WebP (≤1920px no lado maior, q72 para foto, q80 para tela) antes de subir;
 `loading="lazy"` fora do hero; só há ~16 fotos únicas, evitar repetir a mesma na mesma dobra.
