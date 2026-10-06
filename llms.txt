@@ -1,11 +1,15 @@
 # Komplexa Hotéis
 
-> Agência de aquisição para hotelaria no Brasil. Integra marketing e vendas para hotéis, pousadas e resorts venderem mais no canal direto (reservas diretas), com o resultado conferido no PMS de cada hotel, não em painel de anúncio. Atua em 14 estados do Brasil.
+> Agência de marketing hoteleiro (aquisição para hotelaria) no Brasil. Integra marketing e vendas para hotéis, pousadas e resorts venderem mais no canal direto (reservas diretas), com o resultado conferido no PMS de cada hotel, não em painel de anúncio. Atua em 14 estados do Brasil.
 
 - Site: https://komplexahoteis.com/
 - Fundador: Igor Salomão (https://komplexahoteis.com/igor-salomao.html)
 - Contato comercial: https://komplexa-pricing.vercel.app/f/komplexaconsultoria
 - Instagram: https://www.instagram.com/komplexa.hoteis/
+- Página da agência: https://komplexahoteis.com/agencia-marketing-hoteleiro.html
+- Perfil no Google: https://maps.google.com/?cid=10263659486995255571
+- Endereço: R. dos Piquiroes, 40, Aquarius, São José dos Campos (SP), CEP 12246-020
+- Telefone: (12) 98708-4407
 
 ## O que a Komplexa faz
 
@@ -25,12 +29,14 @@
 - Pousada Solar Dona Dora: faturamento 3,4x maior na baixa temporada, de R$ 12,4 mil para R$ 42,5 mil.
 - Hotel Sunsmart: as reservas diretas passaram de 30% para mais de 60% do total.
 
-## Guia
+## Guia e página da agência
 
+- [Agência de marketing para hotéis e pousadas](https://komplexahoteis.com/agencia-marketing-hoteleiro.html): o que a Komplexa faz como agência de marketing hoteleiro, para quem é, cases conferidos no PMS e perguntas frequentes sobre contratar uma agência.
 - [Reservas diretas para hotéis e pousadas: o guia completo](https://komplexahoteis.com/guia-reservas-diretas.html): o que um hotel ou pousada precisa ter, e em que ordem, para vender mais pelo próprio site e WhatsApp e depender menos das OTAs.
 
 ## Artigos
 
+- [Como escolher uma agência de marketing para hotel ou pousada: 8 perguntas antes de contratar](https://komplexahoteis.com/blog/post-como-escolher-agencia.html): Escolha a agência pelo que ela mede, não pelo que ela posta. Uma agência de marketing hoteleiro mostra custo por reserva direta, retorno sobre mídia e evolução do canal direto conferidos no PMS de hotéis reais, deixa as contas de anúncio no nome do hotel e cuida do caminho inteiro, do anúncio ao atendimento no WhatsApp.
 - [Comissão do Booking em 18% desde julho de 2026: o que mudou e como proteger sua margem](https://komplexahoteis.com/blog/post-comissao-booking-18.html): Desde 1º de julho de 2026, a comissão preferencial do Booking.com no Brasil é de 18%, acima da faixa anterior de 10% a 15%. Para proteger a margem sem sair do Booking de uma vez, fortaleça o canal direto com motor próprio, ofereça vantagem na reserva direta, ative o Google Hotel Ads e reative hóspedes antigos.
 - [Pousada presa no Booking: como migrar para reservas diretas sem perder ocupação](https://komplexahoteis.com/blog/post-dependencia-booking-pousada.html): Não corte o Booking de uma vez: construa o canal direto enquanto a OTA segura a ocupação e só reduza o Booking quando o direto provar que sustenta aquela fatia. Os pilares são site com motor de reservas, paridade com vantagem no direto, tráfego e CRM. Com a comissão preferencial em 18% desde julho de 2026, adiar ficou mais caro.
 - [Como reduzir a dependência de OTAs e gerar reservas diretas](https://komplexahoteis.com/blog/post-ota.html): Para reduzir a dependência de OTAs, construa o canal direto aos poucos, enquanto o volume das OTAs ainda sustenta a ocupação: estruture o funil de conversão, segmente com IA quem tem perfil de reserva direta, recupere quem visitou e não reservou e reative hóspedes antigos. A proporção entre OTA e direto muda aos poucos, no ritmo do ponto de partida de cada hotel.
