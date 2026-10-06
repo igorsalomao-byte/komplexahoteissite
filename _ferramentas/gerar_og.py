@@ -52,6 +52,7 @@ for f in sorted(glob.glob(os.path.join(ROOT, 'blog', 'post-*.html'))):
     t = re.sub(r'<[^>]+>', '', re.search(r'(?s)<h1[^>]*>(.*?)</h1>', s).group(1)).strip()
     itens.append((os.path.basename(f)[:-5], page(over, t, 'komplexahoteis.com · Blog')))
 itens.append(('guia-reservas-diretas', page('Guia completo', 'Reservas diretas para hotéis e pousadas: o guia completo', 'komplexahoteis.com · Guia 2026')))
+itens.append(('calculadora-comissao-booking', page('Ferramenta gratuita', 'Calculadora de comissão do Booking para hotéis e pousadas', 'komplexahoteis.com · Calculadora')))
 itens.append(('igor-salomao', page('Fundador · Komplexa Hotéis', 'Igor Salomão', 'Marketing e reservas diretas para hotelaria', foto=True)))
 
 for slug, doc in itens:
