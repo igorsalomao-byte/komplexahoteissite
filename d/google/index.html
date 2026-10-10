@@ -1,0 +1,407 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow,noarchive,nosnippet">
+<title>Komplexa · Plano Google</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,500;0,600;1,500;1,600&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+/* Identidade oficial (cofre: 30-areas/marketing/identidade-visual.md): Cormorant e Jost, navy, azul de ação, ciano e o gradiente da marca. */
+:root{
+  --navy:#0E1E35;--dark:#081525;--navy-2:#13294A;--blue:#1099E9;--blue-deep:#1670C3;--cyan:#24D5FF;
+  --blue-light:#D6EEFB;--bg:#F3F6FA;--white:#fff;--gray:#4A5770;--ok:#22C55E;
+  --grad:linear-gradient(90deg,#1670C3 0%,#1099E9 48%,#24D5FF 100%);
+  --fd:'Cormorant','Cormorant Garamond',Georgia,serif;--fb:'Jost',system-ui,-apple-system,'Segoe UI',sans-serif;
+  --page-bg:#0a0f1a;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{background:var(--page-bg);color:var(--navy);font-family:var(--fb);font-weight:300;-webkit-font-smoothing:antialiased}
+b,strong{font-weight:500}
+
+.deck{display:flex;flex-direction:column;align-items:center;gap:32px;padding:64px 24px 96px}
+.slide{width:1280px;height:720px;border-radius:8px;overflow:hidden;box-shadow:0 20px 60px rgba(0,0,0,.4);position:relative;display:flex;flex-direction:column}
+.slide.dark{background:linear-gradient(160deg,var(--navy-2) 0%,var(--navy) 45%,var(--dark) 100%);color:#fff}
+.slide.dark::before{content:"";position:absolute;inset:0;background:radial-gradient(ellipse 55% 45% at 85% 10%,rgba(36,213,255,.16) 0%,transparent 70%);pointer-events:none}
+.slide.light{background:var(--bg);color:var(--navy)}
+.top{display:flex;justify-content:space-between;align-items:center;padding:34px 56px 0;position:relative;z-index:2}
+.brand{display:flex;align-items:center;gap:14px;color:#fff;text-decoration:none}
+.brand img{height:30px;width:auto}
+.brand span{font-family:var(--fd);font-weight:500;font-size:15px;letter-spacing:.4em;text-transform:uppercase}
+.light .brand span{color:var(--navy)}
+.pg{font-size:11px;letter-spacing:.2em;text-transform:uppercase;font-weight:400;color:rgba(255,255,255,.5)}
+.light .pg{color:var(--gray)}
+.body{flex:1;padding:30px 56px;position:relative;z-index:2;display:flex;flex-direction:column;min-height:0}
+.bot{padding:16px 56px 26px;display:flex;justify-content:space-between;font-size:10.5px;letter-spacing:.18em;text-transform:uppercase;color:rgba(255,255,255,.42);position:relative;z-index:2}
+.light .bot{color:var(--gray)}
+
+.ov{display:inline-block;font-size:12px;font-weight:500;letter-spacing:.24em;text-transform:uppercase;margin-bottom:16px}
+.dark .ov{color:var(--cyan)}
+.light .ov{color:var(--blue-deep)}
+.t{font-family:var(--fd);font-weight:600;font-size:56px;line-height:1.02;letter-spacing:-.5px}
+.t .gi{font-style:italic;font-weight:500;background:var(--grad);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;padding-right:.08em}
+.lead{font-size:18px;line-height:1.6;max-width:640px;margin-top:18px}
+.dark .lead{color:rgba(255,255,255,.75)}
+.light .lead{color:var(--gray)}
+.lead b{color:inherit}
+.dark .lead b{color:#fff}
+.light .lead b{color:var(--navy)}
+
+/* 01 capa */
+.cover{flex:1;display:grid;grid-template-columns:1.1fr .9fr;gap:40px;align-items:center}
+.cover .t{font-size:74px}
+.chips{display:flex;gap:8px;flex-wrap:wrap;margin-top:28px}
+.chips span{font-size:13px;letter-spacing:.04em;border:1px solid rgba(255,255,255,.18);border-radius:100px;padding:7px 15px;color:rgba(255,255,255,.82)}
+.gs{background:#fff;border-radius:16px;box-shadow:0 30px 70px rgba(0,0,0,.45);padding:22px 22px 18px;color:#202124;font-family:Arial,system-ui,sans-serif;font-weight:400}
+.gs .q{display:flex;align-items:center;gap:10px;border:1px solid #dfe1e5;border-radius:24px;padding:10px 16px;font-size:15px;color:#202124}
+.gs .q svg{width:16px;height:16px;flex-shrink:0}
+.gs .r{padding:14px 4px 0}
+.gs .r + .r{border-top:1px solid #eee;margin-top:12px}
+.gs .sp{font-size:12px;font-weight:700;color:#202124}
+.gs .u{font-size:12.5px;color:#4d5156}
+.gs .h{font-size:17px;color:#1a0dab;margin:3px 0 2px;line-height:1.3}
+.gs .d{font-size:13px;color:#4d5156;line-height:1.45}
+.gs .r.you .h{color:#1a0dab}
+.gs .tag{display:inline-block;font-size:11px;font-weight:700;border-radius:4px;padding:2px 7px;margin-left:6px;vertical-align:1px}
+.gs .tag.ota{background:#FDE7E7;color:#B42318}
+.gs .tag.dir{background:#DCFCE7;color:#166534}
+.cap-s{font-size:12.5px;color:rgba(255,255,255,.55);margin-top:12px;text-align:center}
+
+/* 02 problema */
+.prob{flex:1;display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center}
+.pts{display:flex;flex-direction:column;gap:14px}
+.pt{display:grid;grid-template-columns:44px 1fr;gap:16px;align-items:start;background:#fff;border:1px solid #DDE3ED;border-radius:14px;padding:18px 20px}
+.pt .n{font-family:var(--fd);font-size:30px;font-weight:600;line-height:1;background:var(--grad);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+.pt b{display:block;font-size:17px;color:var(--navy);margin-bottom:3px}
+.pt span{font-size:15px;color:var(--gray);line-height:1.5}
+
+/* 03 o que entra */
+.inc{flex:1;display:grid;grid-template-columns:1fr 1fr;gap:22px;margin-top:22px;min-height:0}
+.col{border:1px solid rgba(255,255,255,.12);border-radius:16px;padding:22px 24px;background:linear-gradient(180deg,rgba(255,255,255,.05),rgba(255,255,255,.015))}
+.col h4{font-size:12px;font-weight:500;letter-spacing:.22em;text-transform:uppercase;color:var(--cyan);margin-bottom:14px}
+.col ol{list-style:none;display:flex;flex-direction:column;gap:14px}
+.col li{display:grid;grid-template-columns:30px 1fr;gap:12px}
+.col li .i{width:28px;height:28px;border-radius:8px;background:var(--grad);display:grid;place-items:center;font-weight:500;font-size:13px;color:#fff}
+.col li b{display:block;font-size:16px;color:#fff;margin-bottom:2px}
+.col li span{font-size:14px;color:rgba(255,255,255,.65);line-height:1.45}
+
+/* 04 preço */
+.price-wrap{flex:1;display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center}
+.pcard{border-radius:20px;padding:30px 32px;border:1.5px solid transparent;background:linear-gradient(180deg,#14304F 0%,#0E2240 100%) padding-box,var(--grad) border-box;box-shadow:0 24px 60px rgba(16,153,233,.2)}
+.pcard .nm{font-family:var(--fd);font-size:30px;font-weight:600;color:#fff}
+.pcard .ps{font-size:15px;color:rgba(255,255,255,.62);margin-top:2px}
+.vs{display:flex;gap:4px;flex-wrap:wrap;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-radius:100px;padding:3px;margin-top:20px;width:max-content;max-width:100%}
+.vs button{font-family:var(--fb);font-size:12.5px;font-weight:400;color:rgba(255,255,255,.75);background:transparent;border:0;border-radius:100px;padding:7px 13px;cursor:pointer}
+.vs button.on{background:#fff;color:var(--navy);font-weight:500}
+.pv{font-family:var(--fd);font-size:84px;font-weight:600;line-height:1;letter-spacing:-1px;margin-top:18px;background:linear-gradient(90deg,#FFFFFF 0%,#9BE9FF 100%);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+.pv small{font-family:var(--fb);font-size:15px;font-weight:400;-webkit-text-fill-color:rgba(255,255,255,.6);letter-spacing:0;margin-left:6px}
+.pd{font-size:14px;color:rgba(255,255,255,.55);margin-top:6px}
+.pimpl{margin-top:16px;padding-top:16px;border-top:1px solid rgba(255,255,255,.1);font-size:15px;color:rgba(255,255,255,.75)}
+.pimpl b{color:#fff}
+.selos{display:flex;flex-direction:column;gap:12px}
+.selo{display:flex;gap:14px;align-items:center;font-size:17px;color:rgba(255,255,255,.88)}
+.selo::before{content:"";flex-shrink:0;width:22px;height:22px;border-radius:50%;background:var(--ok) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='3.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M6 12.5l4 4 8-9'/%3E%3C/svg%3E") center/13px no-repeat}
+.note{font-size:13px;color:rgba(255,255,255,.45);margin-top:20px;line-height:1.5}
+
+/* 05 a conta */
+.conta{flex:1;display:grid;grid-template-columns:360px 1fr;gap:28px;margin-top:20px;min-height:0}
+.fields{display:grid;grid-template-columns:1fr 1fr;gap:12px;align-content:start}
+.f{display:flex;flex-direction:column;gap:6px}
+.f span{font-size:11px;font-weight:500;letter-spacing:.16em;text-transform:uppercase;color:var(--gray)}
+.f input{font-family:var(--fb);font-size:20px;font-weight:500;color:var(--navy);background:#fff;border:1px solid #DDE3ED;border-radius:10px;padding:10px 12px;width:100%;font-variant-numeric:tabular-nums}
+.f input:focus{outline:none;border-color:var(--blue);box-shadow:0 0 0 3px rgba(16,153,233,.15)}
+.f.full{grid-column:1/-1}
+.ffx{grid-column:1/-1;font-size:13px;color:var(--gray);line-height:1.45}
+.out{background:linear-gradient(160deg,var(--navy-2),var(--dark));border-radius:18px;padding:26px 30px 22px;color:#fff;display:flex;flex-direction:column}
+.inv{font-size:15px;color:rgba(255,255,255,.68)}
+.inv b{color:#fff}
+.big{display:flex;align-items:baseline;gap:14px;margin-top:8px}
+.big .n{font-family:var(--fd);font-size:120px;font-weight:600;line-height:.9;background:linear-gradient(90deg,#FFFFFF 0%,#9BE9FF 100%);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;font-variant-numeric:tabular-nums}
+.big .l{font-size:22px;font-weight:500;line-height:1.2}
+.big .l small{display:block;font-size:14px;font-weight:300;color:rgba(255,255,255,.62)}
+.tiles{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:18px}
+.tile{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:12px;padding:12px 14px}
+.tile b{display:block;font-family:var(--fd);font-size:32px;font-weight:600;line-height:1;font-variant-numeric:tabular-nums}
+.tile span{font-size:12.5px;color:rgba(255,255,255,.62)}
+.bar{margin-top:16px}
+.bar .tk{height:10px;border-radius:6px;background:rgba(255,255,255,.1);overflow:hidden}
+.bar .tk i{display:block;height:100%;background:var(--grad);border-radius:6px;transition:width .4s ease}
+.bar .lg{display:flex;justify-content:space-between;font-size:12px;color:rgba(255,255,255,.5);margin-top:6px}
+.first{margin-top:auto;padding-top:12px;font-size:13px;color:rgba(255,255,255,.58);line-height:1.45}
+.first b{color:#fff}
+.foot-note{font-size:12.5px;color:var(--gray);margin-top:12px;text-align:center}
+
+/* 06 como começa */
+.next{flex:1;display:grid;grid-template-columns:1.2fr .8fr;gap:48px;align-items:center}
+.steps{display:flex;flex-direction:column;gap:12px;margin-top:26px}
+.step{display:grid;grid-template-columns:52px 1fr;gap:14px;align-items:center;border:1px solid rgba(255,255,255,.12);border-radius:14px;padding:14px 18px;background:rgba(255,255,255,.03)}
+.step .n{font-family:var(--fd);font-size:30px;font-weight:600;background:var(--grad);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+.step span{font-size:16px;color:rgba(255,255,255,.85);line-height:1.45}
+.step b{color:#fff}
+.who{border-radius:20px;padding:30px;background:linear-gradient(160deg,rgba(255,255,255,.07),rgba(255,255,255,.02));border:1px solid rgba(255,255,255,.12);text-align:center}
+.who .ph{width:120px;height:120px;border-radius:50%;margin:0 auto 18px;background:url(../aquisicao/assets/igor-foto-png-proposta.png) center/cover,radial-gradient(115% 115% at 32% 24%,#24D5FF 0%,#1099E9 55%,#0E1E35 100%)}
+.who .nm{font-family:var(--fd);font-size:28px;font-weight:600}
+.who .rl{font-size:14px;color:rgba(255,255,255,.6);line-height:1.6;margin-top:6px}
+.cta{display:inline-block;margin-top:18px;background:var(--grad);color:#fff;text-decoration:none;font-weight:500;font-size:15px;padding:12px 24px;border-radius:100px}
+
+/* apresentar */
+.toggle-present{position:fixed;top:14px;right:14px;background:var(--grad);color:#fff;border:none;padding:8px 16px;border-radius:8px;font-family:var(--fb);font-weight:500;font-size:12px;cursor:pointer;z-index:99}
+.deck.present{padding:0;gap:0;background:#000;position:fixed;inset:0;overflow:hidden;display:flex;align-items:center;justify-content:center}
+.deck.present .slide{display:none;transform:scale(var(--present-scale,1));transform-origin:center;box-shadow:none;border-radius:0}
+.deck.present .slide.active{display:flex}
+
+@media (max-width:760px){
+  .deck{padding:0;gap:0}
+  .slide{width:100%;height:auto;border-radius:0;box-shadow:none}
+  .top{padding:20px 22px 0}
+  .brand span{font-size:12px}
+  .body{padding:24px 22px 20px}
+  .bot{padding:10px 22px 20px}
+  .toggle-present{display:none}
+  .t,.cover .t{font-size:38px}
+  .lead{font-size:16px}
+  .cover,.prob,.inc,.price-wrap,.conta,.next{grid-template-columns:1fr;gap:24px}
+  .pv{font-size:64px}
+  .big .n{font-size:84px}
+  .tiles{gap:6px}
+  .tile{padding:10px}
+  .tile b{font-size:24px}
+  .vs{width:100%;border-radius:14px;display:grid;grid-template-columns:1fr 1fr}
+}
+</style>
+</head>
+<body>
+<button class="toggle-present" type="button">▶ Apresentar</button>
+<div class="deck" id="deck">
+
+<!-- 01 · CAPA -->
+<section class="slide dark active">
+  <div class="top"><span class="brand"><img src="../aquisicao/assets/logotipo_white.svg" alt=""><span>Komplexa Hotéis</span></span><span class="pg" data-lead-nome="Plano Google · ">Plano Google</span></div>
+  <div class="body">
+    <div class="cover">
+      <div>
+        <div class="ov">Plano Google</div>
+        <h1 class="t">Quem procura hotel na sua cidade <span class="gi">reserva direto com você.</span></h1>
+        <p class="lead">A Komplexa ajuda hotéis a aumentar as reservas diretas, sem depender de OTA. Este plano cuida de onde o hóspede do seu hotel começa: <b>a busca no Google.</b></p>
+        <div class="chips"><span>Hotéis em 14 estados</span><span>Sem fidelidade</span><span>Tudo no nome do hotel</span></div>
+      </div>
+      <div>
+        <div class="gs" aria-label="Exemplo de busca no Google">
+          <div class="q"><svg viewBox="0 0 24 24" fill="none" stroke="#5f6368" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg>hotel perto do centro</div>
+          <div class="r"><div class="sp">Patrocinado</div><div class="u">booking.com</div><div class="h">Hotéis no centro <span class="tag ota">comissão da OTA</span></div><div class="d">Reserve agora, pague no hotel. Preços baixos garantidos.</div></div>
+          <div class="r you"><div class="sp">Patrocinado</div><div class="u">seuhotel.com.br</div><div class="h">Seu Hotel · reserve direto <span class="tag dir">reserva direta</span></div><div class="d">Melhor tarifa no site oficial, com confirmação na hora.</div></div>
+        </div>
+        <p class="cap-s">Quem aparece primeiro na busca leva a reserva.</p>
+      </div>
+    </div>
+  </div>
+  <div class="bot"><span>komplexahoteis.com</span><span>01 · 06</span></div>
+</section>
+
+<!-- 02 · O PROBLEMA -->
+<section class="slide light">
+  <div class="top"><span class="brand"><img src="../aquisicao/assets/logotipo_navy.svg" alt=""><span>Komplexa Hotéis</span></span><span class="pg">02 · 06</span></div>
+  <div class="body">
+    <div class="prob">
+      <div>
+        <div class="ov">O que acontece hoje</div>
+        <h2 class="t">O hóspede já escolheu a cidade. <span class="gi">Falta escolher onde reservar.</span></h2>
+        <p class="lead">Quem viaja a trabalho, passa pela cidade ou vem para um evento abre o Google e reserva no primeiro resultado que resolve. <b>Se esse resultado é a OTA, a comissão sai do seu caixa.</b></p>
+      </div>
+      <div class="pts">
+        <div class="pt"><span class="n">1</span><div><b>A OTA aparece antes de você</b><span>Muitas vezes até quando a pessoa pesquisa o nome do seu hotel.</span></div></div>
+        <div class="pt"><span class="n">2</span><div><b>O site não fecha a reserva</b><span>Sem motor ligado ao site, sem botão de reservar, a visita volta para a OTA.</span></div></div>
+        <div class="pt"><span class="n">3</span><div><b>Ninguém mostra o que voltou</b><span>Relatório de clique não diz quantas reservas o Google trouxe.</span></div></div>
+      </div>
+    </div>
+  </div>
+  <div class="bot"><span>komplexahoteis.com</span><span>02 · 06</span></div>
+</section>
+
+<!-- 03 · O QUE ENTRA -->
+<section class="slide dark">
+  <div class="top"><span class="brand"><img src="../aquisicao/assets/logotipo_white.svg" alt=""><span>Komplexa Hotéis</span></span><span class="pg">03 · 06</span></div>
+  <div class="body">
+    <div class="ov">O que entra no plano</div>
+    <h2 class="t">Seu hotel pronto para <span class="gi">vender no Google.</span></h2>
+    <div class="inc">
+      <div class="col">
+        <h4>Na implantação</h4>
+        <ol>
+          <li><span class="i">1</span><div><b>Site novo no domínio do hotel</b><span>ligado ao motor de reservas e preparado para o Google e para as IAs</span></div></li>
+          <li><span class="i">2</span><div><b>Campanhas de venda no Google</b><span>na conta do próprio hotel, otimizadas para reserva, não para clique</span></div></li>
+          <li><span class="i">3</span><div><b>Google Hotel Center e Perfil da Empresa</b><span>a tarifa do seu site aparecendo no Google, com botão de reserva direta</span></div></li>
+          <li><span class="i">4</span><div><b>Rastreio até a reserva</b><span>cada reserva ligada à busca e à campanha que a trouxe</span></div></li>
+        </ol>
+      </div>
+      <div class="col">
+        <h4>Todo mês</h4>
+        <ol>
+          <li><span class="i">1</span><div><b>Otimização toda semana</b><span>palavras, lances e tarifas ajustados pelo que gera reserva</span></div></li>
+          <li><span class="i">2</span><div><b>Relatório com a origem das reservas</b><span>quantas reservas vieram do Google e quanto voltou por real investido</span></div></li>
+          <li><span class="i">3</span><div><b>Equipe num grupo de WhatsApp com você</b><span>falando direto com quem executa</span></div></li>
+        </ol>
+      </div>
+    </div>
+  </div>
+  <div class="bot"><span>komplexahoteis.com</span><span>03 · 06</span></div>
+</section>
+
+<!-- 04 · INVESTIMENTO -->
+<section class="slide dark">
+  <div class="top"><span class="brand"><img src="../aquisicao/assets/logotipo_white.svg" alt=""><span>Komplexa Hotéis</span></span><span class="pg">04 · 06</span></div>
+  <div class="body">
+    <div class="price-wrap">
+      <div class="pcard">
+        <div class="nm">Plano Google</div>
+        <p class="ps">Mais reservas diretas de quem já está procurando.</p>
+        <div class="vs" role="group" aria-label="Verba mensal de anúncio">
+          <button type="button" data-f="1" class="on">Até R$ 3 mil</button>
+          <button type="button" data-f="2">R$ 3 a 10 mil</button>
+          <button type="button" data-f="3">R$ 10 a 30 mil</button>
+        </div>
+        <div class="pv"><span id="pv">R$ 1.290</span><small>/mês a partir do 2º mês</small></div>
+        <p class="pd" id="pd">o equivalente a R$ 43 por dia</p>
+        <p class="pimpl">Implantação de <b>R$ 1.900</b>: site, campanhas, Hotel Center e rastreio.</p>
+      </div>
+      <div>
+        <div class="ov">Investimento</div>
+        <h2 class="t" style="font-size:48px">Escopo fechado, <span class="gi">preço pela verba.</span></h2>
+        <div class="selos" style="margin-top:26px">
+          <span class="selo">Sem fidelidade e sem renovação automática</span>
+          <span class="selo">Site, campanhas e dados no nome do hotel</span>
+          <span class="selo">Verba paga direto ao Google, na conta do hotel</span>
+          <span class="selo">Mensalidade travada no valor do fechamento</span>
+        </div>
+        <p class="note">Verba de anúncio não inclusa. Recomendamos a partir de R$ 1.000 por mês no Google.</p>
+      </div>
+    </div>
+  </div>
+  <div class="bot"><span>komplexahoteis.com</span><span>04 · 06</span></div>
+</section>
+
+<!-- 05 · A CONTA -->
+<section class="slide light" id="conta">
+  <div class="top"><span class="brand"><img src="../aquisicao/assets/logotipo_navy.svg" alt=""><span>Komplexa Hotéis</span></span><span class="pg">05 · 06</span></div>
+  <div class="body">
+    <div class="ov">A conta</div>
+    <h2 class="t" style="font-size:44px">Quantas reservas <span class="gi">pagam o plano.</span></h2>
+    <div class="conta">
+      <div class="fields">
+        <label class="f"><span>Diária média (R$)</span><input id="cDiaria" type="number" inputmode="numeric" min="1" step="10" value="280"></label>
+        <label class="f"><span>Quartos (UHs)</span><input id="cUhs" type="number" inputmode="numeric" min="1" step="1" value="40"></label>
+        <label class="f"><span>Verba no Google (R$)</span><input id="cVerba" type="number" inputmode="numeric" min="0" step="500" value="1500"></label>
+        <label class="f"><span>Diárias por reserva</span><input id="cNoites" type="number" inputmode="decimal" min="1" step="0.5" value="1.5"></label>
+        <p class="ffx" id="cFaixa"></p>
+      </div>
+      <div class="out">
+        <p class="inv" id="cInv"></p>
+        <div class="big"><span class="n" id="cDiarias">0</span><span class="l">diárias por mês<small>pagam o plano e o anúncio</small></span></div>
+        <div class="tiles">
+          <div class="tile"><b id="cRes">0</b><span>reservas a mais por mês</span></div>
+          <div class="tile"><b id="cCada">0</b><span>uma reserva a cada</span></div>
+          <div class="tile"><b id="cPct">0%</b><span>das noites do mês</span></div>
+        </div>
+        <div class="bar"><div class="tk"><i id="cBar" style="width:0"></i></div><div class="lg"><span id="cBarL"></span><span id="cBarR"></span></div></div>
+        <p class="first" id="cFirst"></p>
+      </div>
+    </div>
+    <p class="foot-note">Conta de empate: quanto o hotel precisa vender a mais para o investimento se pagar. Não é promessa de volume de reservas.</p>
+  </div>
+  <div class="bot"><span>komplexahoteis.com</span><span>05 · 06</span></div>
+</section>
+
+<!-- 06 · COMO COMEÇA -->
+<section class="slide dark">
+  <div class="top"><span class="brand"><img src="../aquisicao/assets/logotipo_white.svg" alt=""><span>Komplexa Hotéis</span></span><span class="pg">06 · 06</span></div>
+  <div class="body">
+    <div class="next">
+      <div>
+        <div class="ov">Como começa</div>
+        <h2 class="t" style="font-size:52px">Três passos e o seu hotel <span class="gi">aparece no Google.</span></h2>
+        <div class="steps">
+          <div class="step"><span class="n">01</span><span><b>Escolha da verba</b> e assinatura eletrônica</span></div>
+          <div class="step"><span class="n">02</span><span><b>Grupo de WhatsApp com a equipe</b> no primeiro dia útil e checklist de acessos</span></div>
+          <div class="step"><span class="n">03</span><span><b>Site, Hotel Center e campanhas no ar</b>, com cada reserva rastreada</span></div>
+        </div>
+      </div>
+      <div class="who">
+        <div class="ph" role="img" aria-label="Foto do fundador"></div>
+        <div class="nm">Igor Salomão</div>
+        <div class="rl">Komplexa Hotéis<br>komplexahoteis.com · (12) 98708-4407</div>
+      </div>
+    </div>
+  </div>
+  <div class="bot"><span>komplexahoteis.com</span><span>06 · 06</span></div>
+</section>
+
+</div>
+
+<script>
+/* apresentar: setas para navegar, Esc para sair */
+(function(){
+  const deck = document.getElementById('deck'), slides = deck.querySelectorAll('.slide'), btn = document.querySelector('.toggle-present');
+  let cur = 0;
+  const show = i => { slides.forEach((s, k) => s.classList.toggle('active', k === i)); cur = i; };
+  const scale = () => { const w = innerWidth / 1280, h = innerHeight / 720; deck.style.setProperty('--present-scale', Math.min(w, h).toFixed(3)); };
+  function toggle(){
+    deck.classList.toggle('present');
+    if (deck.classList.contains('present')) { btn.textContent = '✕ Sair'; show(0); scale(); if (deck.requestFullscreen) deck.requestFullscreen().then(scale).catch(() => {}); }
+    else { btn.textContent = '▶ Apresentar'; slides.forEach(s => s.classList.add('active')); if (document.fullscreenElement) document.exitFullscreen(); }
+  }
+  btn.addEventListener('click', toggle);
+  addEventListener('resize', () => { if (deck.classList.contains('present')) scale(); });
+  document.addEventListener('keydown', e => {
+    if (!deck.classList.contains('present')) return;
+    if (e.key === 'ArrowRight' || e.key === ' ') { if (cur < slides.length - 1) show(cur + 1); }
+    if (e.key === 'ArrowLeft') { if (cur > 0) show(cur - 1); }
+    if (e.key === 'Escape') toggle();
+  });
+  document.addEventListener('fullscreenchange', () => { if (!document.fullscreenElement && deck.classList.contains('present')) toggle(); });
+  slides.forEach(s => s.classList.add('active'));
+})();
+
+/* preço por faixa de verba e a conta das diárias */
+(function(){
+  const MENSAL = { 1: 1290, 2: 1790, 3: 2590 }, IMPL = 1900;
+  const FAIXAS = { 1: 'Até R$ 3 mil', 2: 'R$ 3 a 10 mil', 3: 'R$ 10 a 30 mil' };
+  const $ = id => document.getElementById(id);
+  const brl = v => 'R$ ' + Math.round(v).toLocaleString('pt-BR');
+  const val = id => { const v = parseFloat($(id).value); return isFinite(v) && v > 0 ? v : 0; };
+
+  function faixa(f){
+    document.querySelectorAll('.vs button').forEach(b => b.classList.toggle('on', +b.dataset.f === f));
+    $('pv').textContent = brl(MENSAL[f]);
+    $('pd').textContent = 'o equivalente a R$ ' + Math.round(MENSAL[f] / 30) + ' por dia';
+  }
+  document.querySelectorAll('.vs button').forEach(b => b.addEventListener('click', () => faixa(+b.dataset.f)));
+  faixa(1);
+
+  function conta(){
+    const diaria = val('cDiaria'), uhs = val('cUhs'), verba = val('cVerba'), noites = Math.max(1, val('cNoites') || 1);
+    const f = verba <= 3000 ? 1 : verba <= 10000 ? 2 : verba <= 30000 ? 3 : 0;
+    if (!f) { $('cFaixa').textContent = 'Acima de R$ 30 mil de verba, o valor do plano é sob consulta.'; return; }
+    const mensal = MENSAL[f];
+    $('cFaixa').textContent = 'Faixa de verba: ' + FAIXAS[f] + ', plano de ' + brl(mensal) + ' por mês.';
+    if (!diaria) { $('cInv').textContent = 'Preencha a diária média do hotel.'; return; }
+    const inv = mensal + verba, diarias = Math.ceil(inv / diaria), reservas = Math.ceil(diarias / noites);
+    const noitesMes = uhs * 30, pct = noitesMes ? diarias / noitesMes : 0, cada = 30 / reservas;
+    $('cInv').innerHTML = 'Investimento do mês: <b>' + brl(mensal) + '</b> do plano + <b>' + brl(verba) + '</b> de anúncio = <b>' + brl(inv) + '</b>';
+    $('cDiarias').textContent = diarias;
+    $('cRes').textContent = reservas;
+    $('cCada').textContent = cada >= 1 ? Math.floor(cada) + ' dias' : 'dia';
+    $('cPct').textContent = noitesMes ? (pct * 100).toLocaleString('pt-BR', { maximumFractionDigits: 1 }) + '%' : '·';
+    $('cBar').style.width = Math.min(100, pct * 100) + '%';
+    $('cBarL').textContent = diarias + ' de ' + noitesMes.toLocaleString('pt-BR') + ' noites à venda no mês';
+    $('cBarR').textContent = uhs + ' quartos × 30 dias';
+    $('cFirst').innerHTML = 'No 1º mês, a mensalidade dá lugar à implantação de <b>' + brl(IMPL) + '</b>: com o anúncio, são <b>' + Math.ceil((IMPL + verba) / diaria) + ' diárias</b>. Do 2º mês em diante, vale a conta acima.';
+  }
+  ['cDiaria','cUhs','cVerba','cNoites'].forEach(id => $(id).addEventListener('input', conta));
+  conta();
+})();
+</script>
+<script src="/d/rastreio.js" defer></script>
+</body>
+</html>

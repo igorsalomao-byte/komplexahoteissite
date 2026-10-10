@@ -581,6 +581,49 @@ html,body{font-family:var(--fd);background:var(--page-bg);color:var(--navy);-web
 .plano .pnote{margin-top:12px;font-size:11.5px;color:rgba(255,255,255,.45);line-height:1.45}
 .planos-foot{margin-top:12px;font-size:11px;color:rgba(255,255,255,.45);text-align:center;line-height:1.5}
 
+/* ─── 12 · A CONTA (diárias que pagam o plano) ─── */
+.conta-grid{flex:1;min-height:0;display:grid;grid-template-columns:400px 1fr;gap:28px;margin-top:18px}
+.conta-in{display:flex;flex-direction:column;gap:14px}
+.conta-in .cl{font-size:10px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:rgba(255,255,255,.5);margin-bottom:6px;display:block}
+.conta-plans{display:grid;grid-template-columns:1fr;gap:6px}
+.cp-btn{font-family:var(--fd);text-align:left;display:flex;justify-content:space-between;align-items:center;gap:10px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.1);border-radius:12px;padding:10px 14px;color:rgba(255,255,255,.8);font-size:13.5px;font-weight:600;cursor:pointer;transition:background .2s,border-color .2s}
+.cp-btn small{font-size:12px;font-weight:600;color:rgba(255,255,255,.5)}
+.cp-btn:hover{background:rgba(255,255,255,.07)}
+.cp-btn.on{border-color:transparent;background:linear-gradient(180deg,#14304F 0%,#0E2240 100%) padding-box,var(--grad) border-box;border:1.5px solid transparent;color:#fff}
+.cp-btn.on small{color:#9BE9FF}
+.conta-fields{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.cf{display:flex;flex-direction:column;gap:5px}
+.cf span{font-size:10px;font-weight:700;letter-spacing:1.3px;text-transform:uppercase;color:rgba(255,255,255,.5)}
+.cf input{font-family:var(--fd);font-size:18px;font-weight:700;color:#fff;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.14);border-radius:10px;padding:9px 12px;width:100%;font-variant-numeric:tabular-nums}
+.cf input:focus{outline:none;border-color:var(--g3);box-shadow:0 0 0 3px rgba(36,213,255,.15)}
+.conta-faixa{font-size:11.5px;color:rgba(255,255,255,.5);line-height:1.4}
+.conta-out{position:relative;border-radius:18px;padding:26px 30px 22px;display:flex;flex-direction:column;border:1.5px solid transparent;background:linear-gradient(180deg,#14304F 0%,#0E2240 100%) padding-box,var(--grad) border-box;box-shadow:0 24px 60px rgba(16,153,233,.18)}
+.co-inv{font-size:13.5px;color:rgba(255,255,255,.65);line-height:1.5}
+.co-inv b{color:#fff;font-weight:700}
+.co-big{display:flex;align-items:baseline;gap:14px;margin-top:10px}
+.co-big .n{font-size:104px;font-weight:800;letter-spacing:-4px;line-height:.9;background:linear-gradient(90deg,#FFFFFF 0%,#9BE9FF 100%);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;font-variant-numeric:tabular-nums}
+.co-big .l{font-size:20px;font-weight:700;color:#fff;line-height:1.2;letter-spacing:-.3px}
+.co-big .l small{display:block;font-size:13px;font-weight:500;color:rgba(255,255,255,.6);letter-spacing:0;margin-top:3px}
+.co-tiles{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:20px}
+.co-t{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.09);border-radius:12px;padding:12px 14px}
+.co-t b{display:block;font-size:24px;font-weight:800;color:#fff;letter-spacing:-.6px;font-variant-numeric:tabular-nums}
+.co-t span{font-size:11.5px;color:rgba(255,255,255,.6);line-height:1.35}
+.co-bar{margin-top:16px}
+.co-bar .tk{height:10px;border-radius:6px;background:rgba(255,255,255,.08);overflow:hidden}
+.co-bar .tk i{display:block;height:100%;background:var(--grad);border-radius:6px;transition:width .4s ease}
+.co-bar .lg{display:flex;justify-content:space-between;margin-top:6px;font-size:11px;color:rgba(255,255,255,.5)}
+.co-first{margin-top:auto;padding-top:14px;font-size:12px;color:rgba(255,255,255,.55);line-height:1.45}
+.co-first b{color:#fff;font-weight:600}
+.conta-foot{margin-top:10px;font-size:11px;color:rgba(255,255,255,.45);text-align:center;line-height:1.5}
+@media (max-width:760px){
+  .conta-grid{grid-template-columns:1fr;gap:18px}
+  .conta-out{padding:22px 20px 18px}
+  .co-big .n{font-size:76px}
+  .co-tiles{grid-template-columns:1fr 1fr 1fr;gap:6px}
+  .co-t{padding:10px}
+  .co-t b{font-size:19px}
+}
+
 /* ─── 10 · COMPARE OS PLANOS (navy) ─── */
 .cmp-wrap{margin-top:0}
 table.cmp{width:100%;border-collapse:separate;border-spacing:0}
@@ -1017,7 +1060,7 @@ table.cmp{width:100%;border-collapse:separate;border-spacing:0}
 
 <!-- ═══════════════ 02 · AUTORIDADE ═══════════════ -->
 <section class="slide dark">
-  <div class="top"><img class="brand" src="assets/logotipo_white.svg" alt="Komplexa"><span class="pg">02 · 12</span></div>
+  <div class="top"><img class="brand" src="assets/logotipo_white.svg" alt="Komplexa"><span class="pg">02 · 13</span></div>
   <div class="body">
     <div class="auth-grid">
       <div>
@@ -1072,12 +1115,12 @@ table.cmp{width:100%;border-collapse:separate;border-spacing:0}
       </div>
     </div>
   </div>
-  <div class="bot"><span>komplexahoteis.com</span><span>02 · 12</span></div>
+  <div class="bot"><span>komplexahoteis.com</span><span>02 · 13</span></div>
 </section>
 
 <!-- ═══════════════ 03 · IA APLICADA ═══════════════ -->
 <section class="slide dark slide-ia" id="slide-ia">
-  <div class="top"><img class="brand" src="assets/logotipo_white.svg" alt="Komplexa"><span class="pg">03 · 12</span></div>
+  <div class="top"><img class="brand" src="assets/logotipo_white.svg" alt="Komplexa"><span class="pg">03 · 13</span></div>
   <div class="body">
     <div class="ia-head">
       <div>
@@ -1115,12 +1158,12 @@ table.cmp{width:100%;border-collapse:separate;border-spacing:0}
       <div class="st"><span class="n">3</span><span><b>Anúncio para quem reserva</b><small>verba realocada pelo que gera reserva, conferido no PMS</small></span></div>
     </div>
   </div>
-  <div class="bot"><span>komplexahoteis.com</span><span>03 · 12</span></div>
+  <div class="bot"><span>komplexahoteis.com</span><span>03 · 13</span></div>
 </section>
 
 <!-- ═══════════════ 03 · MONEY SLIDE HORIZONTAL ═══════════════ -->
 <section class="slide dark slide-money">
-  <div class="top"><img class="brand" src="assets/logotipo_white.svg" alt="Komplexa"><span class="pg">04 · 12</span></div>
+  <div class="top"><img class="brand" src="assets/logotipo_white.svg" alt="Komplexa"><span class="pg">04 · 13</span></div>
   <div class="body">
     <div class="money-head">
       <div class="eyebrow">O método</div>
@@ -1299,12 +1342,12 @@ table.cmp{width:100%;border-collapse:separate;border-spacing:0}
       <span class="mchip"><span class="d"></span>Dados do hóspede viram audiência</span>
     </div>
   </div>
-  <div class="bot"><span>komplexahoteis.com</span><span>04 · 12</span></div>
+  <div class="bot"><span>komplexahoteis.com</span><span>04 · 13</span></div>
 </section>
 
 <!-- ═══════════════ 04 · CASES ═══════════════ -->
 <section class="slide dark slide-cases">
-  <div class="top"><img class="brand" src="assets/logotipo_white.svg" alt="Komplexa"><span class="pg">05 · 12</span></div>
+  <div class="top"><img class="brand" src="assets/logotipo_white.svg" alt="Komplexa"><span class="pg">05 · 13</span></div>
   <div class="body">
     <div class="eyebrow">Cases reais · Clientes Komplexa</div>
     <h2 class="title" style="font-size:38px">Resultados que <em>se repetem</em>.</h2>
@@ -1380,12 +1423,12 @@ table.cmp{width:100%;border-collapse:separate;border-spacing:0}
       </div>
     </div>
   </div>
-  <div class="bot"><span>komplexahoteis.com</span><span>05 · 12</span></div>
+  <div class="bot"><span>komplexahoteis.com</span><span>05 · 13</span></div>
 </section>
 
 <!-- ═══════════════ 05 · MARKETING → MOTOR ═══════════════ -->
 <section class="slide light">
-  <div class="top"><img class="brand" src="assets/logotipo_blue.svg" alt="Komplexa"><span class="pg">06 · 12</span></div>
+  <div class="top"><img class="brand" src="assets/logotipo_blue.svg" alt="Komplexa"><span class="pg">06 · 13</span></div>
   <div class="body">
     <div class="mkt-grid">
       <div>
@@ -1410,12 +1453,12 @@ table.cmp{width:100%;border-collapse:separate;border-spacing:0}
       </div>
     </div>
   </div>
-  <div class="bot"><span>komplexahoteis.com</span><span>06 · 12</span></div>
+  <div class="bot"><span>komplexahoteis.com</span><span>06 · 13</span></div>
 </section>
 
 <!-- ═══════════════ 06 · BANCO DE CRIATIVOS ═══════════════ -->
 <section class="slide dark slide-banco">
-  <div class="top"><img class="brand" src="assets/logotipo_white.svg" alt="Komplexa"><span class="pg">07 · 12</span></div>
+  <div class="top"><img class="brand" src="assets/logotipo_white.svg" alt="Komplexa"><span class="pg">07 · 13</span></div>
   <div class="body">
     <div class="eyebrow">Produto · Criativos</div>
     <h2 class="title" style="font-size:38px">Banco de criativos <em>validados</em>.</h2>
@@ -1447,12 +1490,12 @@ table.cmp{width:100%;border-collapse:separate;border-spacing:0}
       </div>
     </div>
   </div>
-  <div class="bot"><span>komplexahoteis.com</span><span>07 · 12</span></div>
+  <div class="bot"><span>komplexahoteis.com</span><span>07 · 13</span></div>
 </section>
 
 <!-- ═══════════════ 07 · COMERCIAL ═══════════════ -->
 <section class="slide dark slide-com">
-  <div class="top"><img class="brand" src="assets/logotipo_white.svg" alt="Komplexa"><span class="pg">08 · 12</span></div>
+  <div class="top"><img class="brand" src="assets/logotipo_white.svg" alt="Komplexa"><span class="pg">08 · 13</span></div>
   <div class="body">
     <div style="display:flex;align-items:center;gap:14px;flex-wrap:wrap;margin-bottom:10px">
       <div class="eyebrow" style="margin-bottom:0">Produto · Vendas</div>
@@ -1494,13 +1537,13 @@ table.cmp{width:100%;border-collapse:separate;border-spacing:0}
       <span>Agência de tráfego entrega clique. A Komplexa acompanha até a <em>reserva no PMS</em>.</span>
     </div>
   </div>
-  <div class="bot"><span>komplexahoteis.com</span><span>08 · 12</span></div>
+  <div class="bot"><span>komplexahoteis.com</span><span>08 · 13</span></div>
 </section>
 
 <!-- ═══════════════ 08 · OUTRAS FRENTES ═══════════════ -->
 <section class="slide slide-wed">
   <div class="wed-bg"></div>
-  <div class="top"><img class="brand" src="assets/logotipo_white.svg" alt="Komplexa"><span class="pg">09 · 12</span></div>
+  <div class="top"><img class="brand" src="assets/logotipo_white.svg" alt="Komplexa"><span class="pg">09 · 13</span></div>
   <div class="body">
     <div class="wed-copy">
       <div class="eyebrow">Outras frentes de receita</div>
@@ -1539,12 +1582,12 @@ table.cmp{width:100%;border-collapse:separate;border-spacing:0}
   <div class="wnote n1"><span class="t">💍 Novo lead · Ana &amp; Pedro</span><small>120 convidados · Setembro 2027</small></div>
   <div class="wnote n2"><span class="t">✓ Lead qualificado</span><small>direto no CRM do hotel</small></div>
 
-  <div class="bot"><span>komplexahoteis.com</span><span>09 · 12</span></div>
+  <div class="bot"><span>komplexahoteis.com</span><span>09 · 13</span></div>
 </section>
 
 <!-- ═══════════════ 09 · COMPARE OS PLANOS ═══════════════ -->
 <section class="slide dark slide-planos">
-  <div class="top"><img class="brand" src="assets/logotipo_white.svg" alt="Komplexa"><span class="pg">10 · 12</span></div>
+  <div class="top"><img class="brand" src="assets/logotipo_white.svg" alt="Komplexa"><span class="pg">10 · 13</span></div>
   <div class="body">
     <div class="cmp-wrap">
       <table class="cmp">
@@ -1572,12 +1615,12 @@ table.cmp{width:100%;border-collapse:separate;border-spacing:0}
       </table>
     </div>
   </div>
-  <div class="bot"><span>komplexahoteis.com</span><span>10 · 12</span></div>
+  <div class="bot"><span>komplexahoteis.com</span><span>10 · 13</span></div>
 </section>
 
 <!-- ═══════════════ 10 · OS PLANOS ═══════════════ -->
 <section class="slide dark slide-planos" id="planos">
-  <div class="top"><img class="brand" src="assets/logotipo_white.svg" alt="Komplexa"><span class="pg">11 · 12</span></div>
+  <div class="top"><img class="brand" src="assets/logotipo_white.svg" alt="Komplexa"><span class="pg">11 · 13</span></div>
   <div class="body">
     <div class="planos-head">
       <div>
@@ -1660,12 +1703,55 @@ table.cmp{width:100%;border-collapse:separate;border-spacing:0}
 
     <p class="planos-foot">Sem fidelidade. Sem renovação automática. Verba de anúncio não inclusa. Condição válida para contratos fechados em setembro de 2026.</p>
   </div>
-  <div class="bot"><span>komplexahoteis.com</span><span>11 · 12</span></div>
+  <div class="bot"><span>komplexahoteis.com</span><span>11 · 13</span></div>
 </section>
 
-<!-- ═══════════════ 11 · GARANTIA E COMO COMEÇA ═══════════════ -->
+<!-- ═══════════════ 12 · A CONTA ═══════════════ -->
+<section class="slide dark slide-planos" id="conta">
+  <div class="top"><img class="brand" src="assets/logotipo_white.svg" alt="Komplexa"><span class="pg">12 · 13</span></div>
+  <div class="body">
+    <div>
+      <div class="eyebrow">A conta</div>
+      <h2 class="title" style="font-size:32px;margin-bottom:0">Quantas reservas pagam o <em>seu plano</em>.</h2>
+    </div>
+    <div class="conta-grid">
+      <div class="conta-in">
+        <div>
+          <span class="cl">Plano</span>
+          <div class="conta-plans" role="group" aria-label="Plano">
+            <button type="button" class="cp-btn" data-cp="anuncios">Anúncios <small data-cpv="anuncios"></small></button>
+            <button type="button" class="cp-btn on" data-cp="completa">Operação Completa <small data-cpv="completa"></small></button>
+            <button type="button" class="cp-btn" data-cp="comercial">Operação Completa + Comercial <small data-cpv="comercial"></small></button>
+          </div>
+        </div>
+        <div class="conta-fields">
+          <label class="cf"><span>Diária média (R$)</span><input id="cDiaria" type="number" inputmode="numeric" min="1" step="10" value="350"></label>
+          <label class="cf"><span>Quartos (UHs)</span><input id="cUhs" type="number" inputmode="numeric" min="1" step="1" value="20"></label>
+          <label class="cf"><span>Verba de anúncio (R$)</span><input id="cVerba" type="number" inputmode="numeric" min="0" step="500" value="2000"></label>
+          <label class="cf"><span>Diárias por reserva</span><input id="cNoites" type="number" inputmode="decimal" min="1" step="0.5" value="2"></label>
+        </div>
+        <p class="conta-faixa" id="cFaixa"></p>
+      </div>
+      <div class="conta-out">
+        <p class="co-inv" id="cInv"></p>
+        <div class="co-big"><span class="n" id="cDiarias">0</span><span class="l">diárias por mês<small>pagam o plano e o anúncio</small></span></div>
+        <div class="co-tiles">
+          <div class="co-t"><b id="cRes">0</b><span>reservas a mais por mês</span></div>
+          <div class="co-t"><b id="cCada">0</b><span>uma reserva a cada</span></div>
+          <div class="co-t"><b id="cPct">0%</b><span>das noites do mês</span></div>
+        </div>
+        <div class="co-bar"><div class="tk"><i id="cBar" style="width:0"></i></div><div class="lg"><span id="cBarL"></span><span id="cBarR"></span></div></div>
+        <p class="co-first" id="cFirst"></p>
+      </div>
+    </div>
+    <p class="conta-foot">É a conta de empate: quanto o hotel precisa vender a mais para o investimento se pagar. A garantia cobre a entrega, não o volume de reservas.</p>
+  </div>
+  <div class="bot"><span>komplexahoteis.com</span><span>12 · 13</span></div>
+</section>
+
+<!-- ═══════════════ 13 · GARANTIA E COMO COMEÇA ═══════════════ -->
 <section class="slide dark">
-  <div class="top"><img class="brand" src="assets/logotipo_white.svg" alt="Komplexa"><span class="pg">12 · 12</span></div>
+  <div class="top"><img class="brand" src="assets/logotipo_white.svg" alt="Komplexa"><span class="pg">13 · 13</span></div>
   <div class="body">
     <div class="next-grid">
       <div>
@@ -1697,7 +1783,7 @@ table.cmp{width:100%;border-collapse:separate;border-spacing:0}
       </div>
     </div>
   </div>
-  <div class="bot"><span>komplexahoteis.com</span><span>12 · 12</span></div>
+  <div class="bot"><span>komplexahoteis.com</span><span>13 · 13</span></div>
 </section>
 
 <!-- pop-up dos widgets e cases (filho do deck: funciona em doc view e fullscreen) -->
@@ -1976,6 +2062,55 @@ if (verbaUrl && location.hash === '#planos') {
   const irAosPlanos = () => document.getElementById('planos')?.scrollIntoView();
   window.addEventListener('load', () => { irAosPlanos(); setTimeout(irAosPlanos, 700); });
 }
+
+/* ─── a conta: diárias que pagam plano + anúncio ─── */
+(function(){
+  const IMPL = { anuncios: 0, completa: 2350, comercial: 6130 };   // implantação de cada plano
+  const FAIXAS = ['', 'Até R$ 3 mil', 'R$ 3 a 10 mil', 'R$ 10 a 30 mil', 'Acima de R$ 30 mil'];
+  let plano = 'completa';
+  const $ = id => document.getElementById(id);
+  const brl = v => 'R$ ' + Math.round(v).toLocaleString('pt-BR');
+  const val = id => { const v = parseFloat($(id).value); return isFinite(v) && v > 0 ? v : 0; };
+  const valor = s => parseInt(String(s || '').replace(/\D/g, ''), 10) || 0;
+  function faixaDe(v){ return v <= 3000 ? 1 : v <= 10000 ? 2 : v <= 30000 ? 3 : 4; }
+  function conta(){
+    const diaria = val('cDiaria'), uhs = val('cUhs'), verba = val('cVerba'), noites = Math.max(1, val('cNoites') || 1);
+    const f = faixaDe(verba), tabela = VERBAS[f];
+    document.querySelectorAll('[data-cpv]').forEach(el => { el.textContent = tabela[el.dataset.cpv] + (valor(tabela[el.dataset.cpv]) ? '/mês' : ''); });
+    $('cFaixa').textContent = 'Faixa de verba: ' + FAIXAS[f] + '. A verba é paga direto ao Google e à Meta, na conta do hotel.';
+    const mensal = valor(tabela[plano]);
+    if (!mensal || !diaria) {
+      $('cInv').innerHTML = mensal ? 'Preencha a diária média do hotel.' : 'Acima de R$ 30 mil de verba, o valor do plano é <b>sob consulta</b>.';
+      ['cDiarias','cRes','cCada'].forEach(id => $(id).textContent = '·'); $('cPct').textContent = '·';
+      $('cBar').style.width = '0'; $('cBarL').textContent = ''; $('cBarR').textContent = ''; $('cFirst').textContent = '';
+      return;
+    }
+    const inv = mensal + verba;
+    const diarias = Math.ceil(inv / diaria);
+    const reservas = Math.ceil(diarias / noites);
+    const noitesMes = uhs * 30;
+    const pct = noitesMes ? diarias / noitesMes : 0;
+    $('cInv').innerHTML = 'Investimento do mês: <b>' + brl(mensal) + '</b> do plano + <b>' + brl(verba) + '</b> de anúncio = <b>' + brl(inv) + '</b>';
+    $('cDiarias').textContent = diarias.toLocaleString('pt-BR');
+    $('cRes').textContent = reservas.toLocaleString('pt-BR');
+    const cada = 30 / reservas;
+    $('cCada').textContent = cada >= 1 ? Math.floor(cada) + ' dias' : 'dia';
+    $('cPct').textContent = noitesMes ? (pct * 100).toLocaleString('pt-BR', { maximumFractionDigits: 1 }) + '%' : '·';
+    $('cBar').style.width = Math.min(100, pct * 100) + '%';
+    $('cBarL').textContent = diarias + ' de ' + noitesMes.toLocaleString('pt-BR') + ' noites à venda no mês';
+    $('cBarR').textContent = uhs + ' quartos × 30 dias';
+    $('cFirst').innerHTML = IMPL[plano]
+      ? 'No 1º mês, a mensalidade dá lugar à implantação de <b>' + brl(IMPL[plano]) + '</b>: com o anúncio, são <b>' + Math.ceil((IMPL[plano] + verba) / diaria) + ' diárias</b>. Do 2º mês em diante, vale a conta acima.'
+      : 'Sem implantação: a conta acima vale desde o 1º mês.';
+  }
+  document.querySelectorAll('.cp-btn').forEach(b => b.addEventListener('click', () => {
+    plano = b.dataset.cp;
+    document.querySelectorAll('.cp-btn').forEach(x => x.classList.toggle('on', x === b));
+    conta();
+  }));
+  ['cDiaria','cUhs','cVerba','cNoites'].forEach(id => $(id).addEventListener('input', conta));
+  conta();
+})();
 
 if(location.hash.startsWith('#pop-')) openPop(location.hash.slice(5));
 
