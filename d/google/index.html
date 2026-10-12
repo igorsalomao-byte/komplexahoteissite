@@ -262,8 +262,8 @@ b,strong{font-weight:500}
           <button type="button" data-f="2">R$ 3 a 10 mil</button>
           <button type="button" data-f="3">R$ 10 a 30 mil</button>
         </div>
-        <div class="pv"><span id="pv">R$ 1.290</span><small>/mês a partir do 2º mês</small></div>
-        <p class="pd" id="pd">o equivalente a R$ 43 por dia</p>
+        <div class="pv"><span id="pv">R$ 1.490</span><small>/mês a partir do 2º mês</small></div>
+        <p class="pd" id="pd">o equivalente a R$ 50 por dia</p>
         <p class="pimpl">Implantação de <b>R$ 1.900</b>: site, campanhas, Hotel Center e rastreio.</p>
       </div>
       <div>
@@ -365,7 +365,7 @@ b,strong{font-weight:500}
 
 /* preço por faixa de verba e a conta das diárias */
 (function(){
-  const MENSAL = { 1: 1290, 2: 1790, 3: 2590 }, IMPL = 1900;
+  const MENSAL = { 1: 1490, 2: 1790, 3: 2590 }, IMPL = 1900;
   const FAIXAS = { 1: 'Até R$ 3 mil', 2: 'R$ 3 a 10 mil', 3: 'R$ 10 a 30 mil' };
   const $ = id => document.getElementById(id);
   const brl = v => 'R$ ' + Math.round(v).toLocaleString('pt-BR');
