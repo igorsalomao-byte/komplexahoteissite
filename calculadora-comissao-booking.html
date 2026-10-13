@@ -269,12 +269,12 @@ if(document.prerendering){document.addEventListener('prerenderingchange',go,{onc
 <div class="calc-grid">
 <div class="calc-f"><label for="c-diaria">Diária média</label><div class="calc-in"><span class="u pre" aria-hidden="true">R$</span><input id="c-diaria" name="c-diaria" type="text" inputmode="decimal" autocomplete="off" value="400" aria-describedby="c-diaria-h"></div><small id="c-diaria-h">Valor médio da diária vendida, em reais.</small></div>
 <div class="calc-f"><label for="c-noites">Noites vendidas por mês</label><div class="calc-in"><input id="c-noites" name="c-noites" type="text" inputmode="numeric" autocomplete="off" value="300" aria-describedby="c-noites-h"><span class="u" aria-hidden="true">noites</span></div><small id="c-noites-h">Total de todos os canais, em média no ano.</small></div>
-<div class="calc-f"><label for="c-share">Reservas que vêm do Booking</label><div class="calc-in"><input id="c-share" name="c-share" type="text" inputmode="decimal" autocomplete="off" value="40" aria-describedby="c-share-h"><span class="u" aria-hidden="true">%</span></div><small id="c-share-h">Parcela das noites vendidas que entra pelo Booking.</small></div>
+<div class="calc-f"><label for="c-share">Parcela das noites vendidas pelo Booking</label><div class="calc-in"><input id="c-share" name="c-share" type="text" inputmode="decimal" autocomplete="off" value="40" aria-describedby="c-share-h"><span class="u" aria-hidden="true">%</span></div><small id="c-share-h">Das noites vendidas no mês, quantos % entram pelo Booking.</small></div>
 <div class="calc-f"><label for="c-com">Comissão do Booking</label><div class="calc-in"><input id="c-com" name="c-com" type="text" inputmode="decimal" autocomplete="off" value="18" aria-describedby="c-com-h"><span class="u" aria-hidden="true">%</span></div><small id="c-com-h">Padrão de 18%, a comissão preferencial desde 1º/jul/2026. Troque pelo percentual do seu contrato.</small></div>
-<div class="calc-f"><label for="c-estadia">Noites por reserva (média)</label><div class="calc-in"><input id="c-estadia" name="c-estadia" type="text" inputmode="decimal" autocomplete="off" value="2" aria-describedby="c-estadia-h"><span class="u" aria-hidden="true">noites</span></div><small id="c-estadia-h">Só entra na conta por reserva.</small></div>
+<div class="calc-f"><label for="c-estadia">Noites por reserva (média da estadia)</label><div class="calc-in"><input id="c-estadia" name="c-estadia" type="text" inputmode="decimal" autocomplete="off" value="2" aria-describedby="c-estadia-h"><span class="u" aria-hidden="true">noites</span></div><small id="c-estadia-h">Não muda o mês nem o ano: serve só para mostrar o valor de uma reserva.</small></div>
 </div>
 </form>
-<p class="calc-err" id="calcErr" role="alert">Confira os campos: use números maiores ou iguais a zero e porcentagens de 0 a 100.</p>
+<p class="calc-err" id="calcErr" role="alert">Confira os campos: use números maiores ou iguais a zero, porcentagens de 0 a 100 e pelo menos 1 noite por reserva.</p>
 <div id="calcOut" aria-live="polite">
 <h3 class="calc-sub">Quanto você paga de comissão ao Booking</h3>
 <div class="calc-res">
@@ -483,7 +483,7 @@ if(document.prerendering){document.addEventListener('prerenderingchange',go,{onc
   function calc(){
     var d=parse($('c-diaria').value),n=parse($('c-noites').value),s=parse($('c-share').value),
         c=parse($('c-com').value),e=parse($('c-estadia').value);
-    var ok=[d,n,s,c,e].every(function(x){return isFinite(x)&&x>=0})&&s<=100&&c<=100;
+    var ok=[d,n,s,c,e].every(function(x){return isFinite(x)&&x>=0})&&s<=100&&c<=100&&e>=1;
     $('calcErr').className='calc-err'+(ok?'':' on');$('calcOut').style.opacity=ok?'':'.35';
     if(!ok)return;
     var cd=d*c/100, cr=cd*e, nb=n*s/100, mes=cd*nb, ano=mes*12;
