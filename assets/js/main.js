@@ -6,10 +6,13 @@
 /* ---------- Origem da visita nos links do formulário ----------
    Todo link para o formulário leva a origem real de quem chegou ao site
    (UTMs, clique de anúncio ou site de onde veio), guardada por 30 dias em
-   localStorage ("kh_origem"). O utm_content de cada botão não muda.
-   Parâmetros próprios no link: kh_lp (página de entrada da visita que definiu a
-   origem), kh_ft ("source/medium" do primeiro toque) e kh_flp (entrada do primeiro
-   toque, guardado em "kh_primeiro").
+   localStorage ("kh_origem"). Se a visita chegou com utm_content (o nome do anúncio,
+   que é a chave de cruzamento no Komplexa Pricing), ele vale no link; o id do botão
+   vai em kh_cta. Sem utm_content na origem, o utm_content do botão continua.
+   Parâmetros próprios no link: kh_cta (botão do site que levou ao formulário, só
+   quando o utm_content veio do anúncio), kh_lp (página de entrada da visita que
+   definiu a origem), kh_ft ("source/medium" do primeiro toque) e kh_flp (entrada do
+   primeiro toque, guardado em "kh_primeiro").
    Fica antes do GSAP para funcionar mesmo se a animação não carregar. */
 const khOrigem = (() => {
   const CHAVE = 'kh_origem', VALIDADE = 30 * 864e5;
@@ -45,7 +48,7 @@ const khOrigem = (() => {
   const daVisita = () => {
     const q = new URLSearchParams(location.search);
     const pega = k => (q.get(k) || '').trim();
-    const o = { campaign: pega('utm_campaign'), term: pega('utm_term'), fbclid: pega('fbclid'), gclid: pega('gclid') };
+    const o = { campaign: pega('utm_campaign'), term: pega('utm_term'), content: pega('utm_content'), fbclid: pega('fbclid'), gclid: pega('gclid') };
     if (pega('utm_source')) {
       const r = classifica(pega('utm_source'));
       o.source = pega('utm_source');
@@ -97,20 +100,25 @@ const khOrigem = (() => {
     if (!primeiro && visita) primeiro = { ft: origem.source + '/' + (origem.medium || ''), flp: origem.lp || '' };
   }
 
-  /* link do formulário com a origem; mantém o utm_content e o resto do href */
+  /* link do formulário com a origem e o resto do href. O utm_content é o do anúncio
+     quando a visita trouxe um (out/2026: antes o botão sobrescrevia e o lead chegava
+     ao Pricing sem o nome do anúncio); o botão vai em kh_cta. Sem utm_content na
+     origem, o botão continua no utm_content. */
   const link = href => {
     let u;
     try { u = new URL(href, location.href); } catch (e) { return href; }
     try {
       const antes = u.searchParams, p = new URLSearchParams();
       const put = (k, v) => { if (v) p.set(k, v); };
+      const botao = antes.get('utm_content');
       put('utm_source', origem.source);
       put('utm_medium', origem.medium);
       put('utm_campaign', origem.campaign || 'site-komplexahoteis');
       put('utm_term', origem.term);
-      put('utm_content', antes.get('utm_content'));
+      put('utm_content', origem.content || botao);
+      if (origem.content && botao) put('kh_cta', botao);
       antes.forEach((v, k) => {
-        if (!/^(utm_(source|medium|campaign|term|content)|fbclid|gclid|kh_(lp|ft|flp))$/.test(k)) p.append(k, v);
+        if (!/^(utm_(source|medium|campaign|term|content)|fbclid|gclid|kh_(cta|lp|ft|flp))$/.test(k)) p.append(k, v);
       });
       put('fbclid', origem.fbclid);
       put('gclid', origem.gclid);
