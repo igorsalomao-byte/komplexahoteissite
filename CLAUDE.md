@@ -113,8 +113,11 @@ html = sh.head(base, title, description, canonical, extra='<style>…</style>' )
 **Origem real (out/2026):** o bloco `khOrigem` no topo de `assets/js/main.js` reescreve esses links ao carregar e no clique,
 trocando `utm_source/medium/campaign/term` (e repassando `fbclid`/`gclid`) pela origem da visita: UTMs da URL, clique de
 anúncio ou referrer (IA, buscador, rede social, `<domínio>`/referral, `direto`/`nenhum`), guardada 30 dias em
-`localStorage` (`kh_origem`); "direto" não sobrescreve origem válida. `utm_campaign` padrão `site-komplexahoteis`;
-`utm_content` do botão não muda. No HTML os links continuam com `utm_source=komplexahoteis&utm_medium=site`. O concierge
+`localStorage` (`kh_origem`); "direto" não sobrescreve origem válida. `utm_campaign` padrão `site-komplexahoteis`.
+`utm_content` (18/out/2026): se a visita chegou com `utm_content` (o nome do anúncio, chave de cruzamento no Komplexa
+Pricing), ele vale no link e o id do botão vai em `kh_cta`; sem `utm_content` na origem, o botão continua no `utm_content`.
+Antes o botão sempre sobrescrevia, e o lead vindo de anúncio chegava ao Pricing como `home-boutique-*`, sem o anúncio.
+No HTML os links continuam com `utm_source=komplexahoteis&utm_medium=site`. O concierge
 passa por `khOrigem.link(FORM_URL)`. Os decks em `d/` não carregam o `main.js` e mantêm os links fixos.
 
 **Fotos:** converter para WebP (≤1920px no lado maior, q72 para foto, q80 para tela) antes de subir;
