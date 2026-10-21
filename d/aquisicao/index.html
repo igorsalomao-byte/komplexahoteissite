@@ -1038,6 +1038,34 @@ table.cmp{width:100%;border-collapse:separate;border-spacing:0}
   .slide-ia .a-ia .gst:last-of-type{grid-column:auto}
   .ia-steps{grid-template-columns:1fr;gap:12px}
 }
+
+/* ─── METAS: hoje x meta ─── */
+.mt-grid{flex:1;min-height:0;display:grid;grid-template-columns:400px 1fr;gap:28px;margin-top:18px}
+.mt-in{display:flex;flex-direction:column;gap:10px}
+.mt-in .cl{font-size:10px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:rgba(255,255,255,.5);display:block}
+.mt-out{display:grid;grid-template-rows:1fr 1fr;gap:14px;min-height:0}
+.mt-card{position:relative;border-radius:16px;padding:16px 22px;display:flex;flex-direction:column;gap:6px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.1)}
+.mt-card.hoje{border-color:rgba(248,113,113,.35);background:linear-gradient(180deg,rgba(248,113,113,.09),rgba(255,255,255,.02))}
+.mt-card.meta{border:1.5px solid transparent;background:linear-gradient(180deg,#14304F 0%,#0E2240 100%) padding-box,var(--grad) border-box}
+.mt-card .tag{font-size:10px;font-weight:800;letter-spacing:1.6px;text-transform:uppercase}
+.mt-card.hoje .tag{color:#FCA5A5}.mt-card.meta .tag{color:var(--g3)}
+.mt-big{display:flex;align-items:baseline;gap:12px;margin:0 0 4px}
+.mt-big b{font-size:40px;font-weight:800;letter-spacing:-1px;line-height:1.05;white-space:nowrap}
+.mt-card.hoje .mt-big b{color:#FCA5A5}
+.mt-card.meta .mt-big b{background:var(--grad);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+.mt-big span{font-size:14px;color:rgba(255,255,255,.8)}
+.mt-big small{display:block;font-size:12px;color:rgba(255,255,255,.5);margin-top:2px}
+.mt-row{display:flex;justify-content:space-between;gap:12px;font-size:13px;color:rgba(255,255,255,.65);border-top:1px solid rgba(255,255,255,.08);padding-top:6px}
+.mt-row b{color:#fff;font-weight:700}
+.mt-note{font-size:11.5px;color:rgba(255,255,255,.55);margin:2px 0 0}
+.co-meta{margin:10px 0 0;font-size:13px;line-height:1.45;color:#9BE9FF}
+.co-meta b{color:#fff}
+@media (max-width:760px){
+  .mt-grid{grid-template-columns:1fr;gap:18px}
+  .mt-out{grid-template-rows:auto}
+  .mt-big{flex-direction:column;gap:4px}
+  .mt-big b{font-size:32px}
+}
 </style>
 </head>
 <body>
@@ -1060,7 +1088,7 @@ table.cmp{width:100%;border-collapse:separate;border-spacing:0}
 
 <!-- ═══════════════ 02 · AUTORIDADE ═══════════════ -->
 <section class="slide dark">
-  <div class="top"><img class="brand" src="assets/logotipo_white.svg" alt="Komplexa"><span class="pg">02 · 13</span></div>
+  <div class="top"><img class="brand" src="assets/logotipo_white.svg" alt="Komplexa"><span class="pg">02 · 10</span></div>
   <div class="body">
     <div class="auth-grid">
       <div>
@@ -1115,12 +1143,12 @@ table.cmp{width:100%;border-collapse:separate;border-spacing:0}
       </div>
     </div>
   </div>
-  <div class="bot"><span>komplexahoteis.com</span><span>02 · 13</span></div>
+  <div class="bot"><span>komplexahoteis.com</span><span>02 · 10</span></div>
 </section>
 
 <!-- ═══════════════ 03 · MONEY SLIDE HORIZONTAL ═══════════════ -->
 <section class="slide dark slide-money">
-  <div class="top"><img class="brand" src="assets/logotipo_white.svg" alt="Komplexa"><span class="pg">03 · 13</span></div>
+  <div class="top"><img class="brand" src="assets/logotipo_white.svg" alt="Komplexa"><span class="pg">03 · 10</span></div>
   <div class="body">
     <div class="money-head">
       <div class="eyebrow">O método</div>
@@ -1299,12 +1327,12 @@ table.cmp{width:100%;border-collapse:separate;border-spacing:0}
       <span class="mchip"><span class="d"></span>Dados do hóspede viram audiência</span>
     </div>
   </div>
-  <div class="bot"><span>komplexahoteis.com</span><span>03 · 13</span></div>
+  <div class="bot"><span>komplexahoteis.com</span><span>03 · 10</span></div>
 </section>
 
 <!-- ═══════════════ 04 · IA APLICADA ═══════════════ -->
 <section class="slide dark slide-ia" id="slide-ia">
-  <div class="top"><img class="brand" src="assets/logotipo_white.svg" alt="Komplexa"><span class="pg">04 · 13</span></div>
+  <div class="top"><img class="brand" src="assets/logotipo_white.svg" alt="Komplexa"><span class="pg">04 · 10</span></div>
   <div class="body">
     <div class="ia-head">
       <div>
@@ -1342,12 +1370,12 @@ table.cmp{width:100%;border-collapse:separate;border-spacing:0}
       <div class="st"><span class="n">3</span><span><b>Anúncio para quem reserva</b><small>verba realocada pelo que gera reserva, conferido no PMS</small></span></div>
     </div>
   </div>
-  <div class="bot"><span>komplexahoteis.com</span><span>04 · 13</span></div>
+  <div class="bot"><span>komplexahoteis.com</span><span>04 · 10</span></div>
 </section>
 
 <!-- ═══════════════ 04 · CASES ═══════════════ -->
 <section class="slide dark slide-cases">
-  <div class="top"><img class="brand" src="assets/logotipo_white.svg" alt="Komplexa"><span class="pg">05 · 13</span></div>
+  <div class="top"><img class="brand" src="assets/logotipo_white.svg" alt="Komplexa"><span class="pg">05 · 10</span></div>
   <div class="body">
     <div class="eyebrow">Cases reais · Clientes Komplexa</div>
     <h2 class="title" style="font-size:38px">Resultados que <em>se repetem</em>.</h2>
@@ -1423,171 +1451,56 @@ table.cmp{width:100%;border-collapse:separate;border-spacing:0}
       </div>
     </div>
   </div>
-  <div class="bot"><span>komplexahoteis.com</span><span>05 · 13</span></div>
+  <div class="bot"><span>komplexahoteis.com</span><span>05 · 10</span></div>
 </section>
 
-<!-- ═══════════════ 05 · MARKETING → MOTOR ═══════════════ -->
-<section class="slide light">
-  <div class="top"><img class="brand" src="assets/logotipo_blue.svg" alt="Komplexa"><span class="pg">06 · 13</span></div>
+<!-- ═══════════════ METAS: HOJE x META ═══════════════ -->
+<section class="slide dark slide-planos slide-metas" id="metas">
+  <div class="top"><img class="brand" src="assets/logotipo_white.svg" alt="Komplexa"><span class="pg">06 · 10</span></div>
   <div class="body">
-    <div class="mkt-grid">
-      <div>
-        <div class="eyebrow">Produto · Marketing</div>
-        <h2 class="title" style="font-size:38px">Marketing orientado<br>a <em>vendas</em>.</h2>
-        <div class="mkt-points">
-          <div class="mp"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="4.5"/><circle cx="12" cy="12" r="1" fill="#fff" stroke="none"/></svg></span><span><strong>Campanhas de venda, não de curtida</strong>: Google e Meta otimizados para reserva, apontando direto pro motor.</span></div>
-          <div class="mp"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a9 9 0 11-3-6.7"/><polyline points="21 4 21 9 16 9"/></svg></span><span><strong>Remarketing cross-canal</strong>: pesquisou no Google, saiu sem reservar, é reimpactado no Instagram.</span></div>
-          <div class="mp"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 12l-8 8-8-8 8-8z" opacity="0"/><path d="M20.59 13.41l-7.17 7.17a2 2 0 01-2.83 0L2 12V2h10l8.59 8.59a2 2 0 010 2.82z"/><circle cx="6.5" cy="6.5" r="1" fill="#fff" stroke="none"/></svg></span><span><strong>Criativo por etapa do funil</strong>: abandonou o checkout com datas escolhidas? Recebe a arte com 10% off.</span></div>
-          <div class="mp"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="M7 14l4-4 3 3 5-6"/></svg></span><span><strong>Tudo rastreado até o PMS</strong>: cada real investido tem reserva na ponta, não métrica de vaidade.</span></div>
+    <div>
+      <div class="eyebrow">Metas</div>
+      <h2 class="title" style="font-size:32px;margin-bottom:0">Quanto o seu hotel <em>deixa na mesa</em> hoje.</h2>
+    </div>
+    <div class="mt-grid">
+      <div class="mt-in">
+        <span class="cl">Dados do hotel</span>
+        <div class="conta-fields">
+          <label class="cf"><span>Diária média (R$)</span><input id="mDiaria" type="number" inputmode="numeric" min="1" step="10" value="350"></label>
+          <label class="cf"><span>Quartos (UHs)</span><input id="mUhs" type="number" inputmode="numeric" min="1" step="1" value="20"></label>
+          <label class="cf"><span>Ocupação média (%)</span><input id="mOcup" type="number" inputmode="decimal" min="0" max="100" step="1" value="55"></label>
+          <label class="cf"><span>Reservas pelo Booking (%)</span><input id="mBook" type="number" inputmode="decimal" min="0" max="100" step="5" value="40"></label>
         </div>
-        <div class="mkt-note"><span class="d"></span>O site novo integrado ao motor faz parte do produto: é ele que registra a jornada inteira e barateia o anúncio com o tempo.</div>
+        <span class="cl" style="margin-top:4px">Meta</span>
+        <div class="conta-fields">
+          <label class="cf"><span>Ocupação meta (%)</span><input id="mMetaOc" type="number" inputmode="decimal" min="0" max="100" step="1" value="60"></label>
+          <label class="cf"><span>Diária média meta (R$)</span><input id="mMetaDi" type="number" inputmode="numeric" min="1" step="10" value="370"></label>
+        </div>
+        <p class="conta-faixa">Cenário para planejar a meta junto com o hotel, não promessa de resultado.</p>
       </div>
-      <div class="mkt-panel" style="background-image:url('assets/hotel/hotel-05.jpg')">
-        <div class="mkt-flow">
-          <div class="mkf f1"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 10.5v3a1 1 0 001 1h2l5 4V4.5l-5 4H4a1 1 0 00-1 1z"/><path d="M15.8 8.5a4.5 4.5 0 010 7"/></svg></span><span class="tx">Anúncio<small>a pessoa certa vê o hotel</small></span></div>
-          <span class="mkarr a1">▼</span>
-          <div class="mkf f2"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="16" rx="2"/><line x1="3" y1="10" x2="21" y2="10"/><line x1="8" y1="3" x2="8" y2="7"/><line x1="16" y1="3" x2="16" y2="7"/></svg></span><span class="tx">Motor de reservas<small>escolhe as datas e paga direto</small></span></div>
-          <span class="mkarr a2">▼</span>
-          <div class="mkf f3 win"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M8 12l3 3 5-6"/></svg></span><span class="tx">Reserva confirmada<small>receita direta, sem depender de OTA</small></span></div>
+      <div class="mt-out">
+        <div class="mt-card hoje">
+          <span class="tag">Hoje</span>
+          <div class="mt-big"><b id="mVazio">R$ 0</b><span>por mês em quartos vazios<small id="mVazioS"></small></span></div>
+          <div class="mt-row"><span>Receita atual de hospedagem</span><b id="mRec"></b></div>
+          <div class="mt-row"><span>Comissão paga ao Booking (18%)</span><b id="mCom"></b></div>
+        </div>
+        <div class="mt-card meta">
+          <span class="tag">Meta</span>
+          <div class="mt-big"><b id="mInc">+R$ 0</b><span>a mais por mês<small id="mAno"></small></span></div>
+          <div class="mt-row"><span>Ocupação</span><b id="mOc2"></b></div>
+          <div class="mt-row"><span>Diária média</span><b id="mDi2"></b></div>
+          <p class="mt-note">Vendido pelo canal direto, esse valor entra sem comissão de OTA.</p>
         </div>
       </div>
     </div>
   </div>
-  <div class="bot"><span>komplexahoteis.com</span><span>06 · 13</span></div>
-</section>
-
-<!-- ═══════════════ 06 · BANCO DE CRIATIVOS ═══════════════ -->
-<section class="slide dark slide-banco">
-  <div class="top"><img class="brand" src="assets/logotipo_white.svg" alt="Komplexa"><span class="pg">07 · 13</span></div>
-  <div class="body">
-    <div class="eyebrow">Produto · Criativos</div>
-    <h2 class="title" style="font-size:38px">Banco de criativos <em>validados</em>.</h2>
-    <div style="display:flex;align-items:center;gap:14px;flex-wrap:wrap">
-      <span class="money-hint"><span class="d"></span>Vídeo real de campanha, clique no som</span>
-      <span class="vbadge">✓ Validados em dezenas de hotéis</span>
-    </div>
-    <div class="banco-grid">
-      <div class="bk-item video b1">
-        <video src="assets/criativos/criativo-video.mp4?v=2" autoplay muted loop playsinline></video>
-        <span class="tagv">▶ Vídeo · campanha real</span>
-        <button class="snd2" onclick="var v=this.parentNode.querySelector('video');v.muted=!v.muted;this.textContent=v.muted?'🔇':'🔊'">🔇</button>
-      </div>
-      <div class="bk-item tall b2">
-        <img src="assets/criativos/criativo-01.jpg?v=2" alt="Criativo oferta 10% off">
-        <span class="tagv">Estático · oferta</span>
-      </div>
-      <div class="bk-item tall b3">
-        <img src="assets/criativos/criativo-02.jpg?v=2" alt="Criativo pacote romântico">
-        <span class="tagv">Estático · pacote</span>
-      </div>
-      <div class="bk-tile b4">
-        <span class="v">Dezenas</span>
-        <span class="l"><strong>de hotéis já rodaram estes modelos</strong>: validados em campanha real, não em teoria.</span>
-      </div>
-      <div class="bk-tile b5">
-        <span class="v">Funil</span>
-        <span class="l"><strong>Mensagem certa por etapa</strong>. Ex.: 10% off pra quem abandonou o checkout.</span>
-      </div>
-    </div>
-  </div>
-  <div class="bot"><span>komplexahoteis.com</span><span>07 · 13</span></div>
-</section>
-
-<!-- ═══════════════ 07 · COMERCIAL ═══════════════ -->
-<section class="slide dark slide-com">
-  <div class="top"><img class="brand" src="assets/logotipo_white.svg" alt="Komplexa"><span class="pg">08 · 13</span></div>
-  <div class="body">
-    <div style="display:flex;align-items:center;gap:14px;flex-wrap:wrap;margin-bottom:10px">
-      <div class="eyebrow" style="margin-bottom:0">Produto · Vendas</div>
-      <span class="vbadge" style="text-transform:none;letter-spacing:.2px">Incluso no plano Operação Completa + Comercial</span>
-    </div>
-    <h2 class="title" style="font-size:38px">Comercial acompanhado até a <em>reserva efetuada</em>.</h2>
-
-    <div class="crm-live">
-      <div class="dm-crm">
-        <div class="col"><div class="h">Novo lead</div></div>
-        <div class="col"><div class="h">Proposta</div></div>
-        <div class="col win"><div class="h">Venda efetuada</div></div>
-        <div class="dm-lead">Casal · 3 noites<b>R$ 2.450</b><small>via WhatsApp</small></div>
-        <div class="confetti"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
-      </div>
-    </div>
-
-    <div class="com-chips">
-      <div class="com-chip">
-        <div class="h"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 9h18M8 14h3M8 17h6"/></svg></span>CRM incluso na verba</div>
-        <p>Contratado e configurado dentro do investimento: nenhum lead se perde em conversa esquecida.</p>
-      </div>
-      <div class="com-chip">
-        <div class="h"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19V6a2 2 0 012-2h12a2 2 0 012 2v13"/><path d="M8 9h8M8 13h5"/><path d="M2 19h20"/></svg></span>Script e processo</div>
-        <p>Passo a passo do atendimento, da primeira resposta ao fechamento, testado em hotelaria.</p>
-      </div>
-      <div class="com-chip">
-        <div class="h"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 00-4-4H6a4 4 0 00-4 4v2"/><circle cx="9.5" cy="7" r="4"/><path d="M22 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg></span>Treinamento contínuo</div>
-        <p>Consultoria com o time do hotel: não é palestra avulsa, é acompanhamento de rotina.</p>
-      </div>
-      <div class="com-chip">
-        <div class="h"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="M7 14l4-4 3 3 5-6"/></svg></span>Medição até o PMS</div>
-        <p>Sabemos onde cada venda nasce e onde trava: receita real, não métrica de vaidade.</p>
-      </div>
-    </div>
-
-    <div class="com-punch">
-      <span class="st">✦</span>
-      <span>Agência de tráfego entrega clique. A Komplexa acompanha até a <em>reserva no PMS</em>.</span>
-    </div>
-  </div>
-  <div class="bot"><span>komplexahoteis.com</span><span>08 · 13</span></div>
-</section>
-
-<!-- ═══════════════ 08 · OUTRAS FRENTES ═══════════════ -->
-<section class="slide slide-wed">
-  <div class="wed-bg"></div>
-  <div class="top"><img class="brand" src="assets/logotipo_white.svg" alt="Komplexa"><span class="pg">09 · 13</span></div>
-  <div class="body">
-    <div class="wed-copy">
-      <div class="eyebrow">Outras frentes de receita</div>
-      <h2 class="title">Cada frente, uma<br><em>linha de produção</em>.</h2>
-      <p class="lead">O mesmo método que vende diária vende casamento, com página, captação e campanha próprias.</p>
-      <div class="wed-mini">
-        <span><i></i>Landing própria da frente</span>
-        <span><i></i>Captação qualificada</span>
-        <span><i></i>Campanha + comercial dedicados</span>
-      </div>
-      <div class="wed-selo">Operação Completa + Comercial: 1 página de frente inclusa, com campanha dentro da mesma verba</div>
-      <div class="wed-frentes">
-        <span class="fc hero">Casamentos</span>
-        <span class="fc">Eventos corporativos</span>
-        <span class="fc">Day use</span>
-        <span class="fc">Réveillon &amp; datas</span>
-      </div>
-    </div>
-  </div>
-
-  <div class="wed-phone">
-    <div class="wp-notch"><i></i></div>
-    <div class="wp-screen">
-      <div class="wp-hero">
-        <span class="k">Casamentos</span>
-        <span class="h">O sim, no jardim.</span>
-      </div>
-      <div class="wp-form">
-        <div class="wf"><span>Nomes</span><b>Ana &amp; Pedro</b></div>
-        <div class="wf"><span>Data prevista</span><b>Setembro 2027</b></div>
-        <div class="wf"><span>Convidados</span><b>120</b></div>
-        <div class="wgo">Receber proposta</div>
-      </div>
-    </div>
-  </div>
-  <div class="wnote n1"><span class="t">💍 Novo lead · Ana &amp; Pedro</span><small>120 convidados · Setembro 2027</small></div>
-  <div class="wnote n2"><span class="t">✓ Lead qualificado</span><small>direto no CRM do hotel</small></div>
-
-  <div class="bot"><span>komplexahoteis.com</span><span>09 · 13</span></div>
+  <div class="bot"><span>komplexahoteis.com</span><span>06 · 10</span></div>
 </section>
 
 <!-- ═══════════════ 09 · COMPARE OS PLANOS ═══════════════ -->
 <section class="slide dark slide-planos">
-  <div class="top"><img class="brand" src="assets/logotipo_white.svg" alt="Komplexa"><span class="pg">10 · 13</span></div>
+  <div class="top"><img class="brand" src="assets/logotipo_white.svg" alt="Komplexa"><span class="pg">07 · 10</span></div>
   <div class="body">
     <div class="cmp-wrap">
       <table class="cmp">
@@ -1610,17 +1523,18 @@ table.cmp{width:100%;border-collapse:separate;border-spacing:0}
           <tr><td class="f">Garantia: 4 entregas em 28 dias ou dinheiro de volta</td><td class="v"><span class="no">-</span></td><td class="v rec"><span class="ok">✓</span></td><td class="v"><span class="ok">✓</span></td></tr>
           <tr class="g"><td class="f">Só no Completa + Comercial</td><td class="v"></td><td class="v rec"></td><td class="v"></td></tr>
           <tr><td class="f">Script, processo e treinamento do time de atendimento</td><td class="v"><span class="no">-</span></td><td class="v rec"><span class="no">-</span></td><td class="v"><span class="ok">✓</span></td></tr>
+          <tr><td class="f">CRM configurado, incluso no investimento</td><td class="v"><span class="no">-</span></td><td class="v rec"><span class="no">-</span></td><td class="v"><span class="ok">✓</span></td></tr>
           <tr><td class="f">1 página de frente de receita, com campanha</td><td class="v"><span class="no">-</span></td><td class="v rec"><span class="no">-</span></td><td class="v"><span class="ok">✓</span></td></tr>
         </tbody>
       </table>
     </div>
   </div>
-  <div class="bot"><span>komplexahoteis.com</span><span>10 · 13</span></div>
+  <div class="bot"><span>komplexahoteis.com</span><span>07 · 10</span></div>
 </section>
 
 <!-- ═══════════════ 10 · OS PLANOS ═══════════════ -->
 <section class="slide dark slide-planos" id="planos">
-  <div class="top"><img class="brand" src="assets/logotipo_white.svg" alt="Komplexa"><span class="pg">11 · 13</span></div>
+  <div class="top"><img class="brand" src="assets/logotipo_white.svg" alt="Komplexa"><span class="pg">08 · 10</span></div>
   <div class="body">
     <div class="planos-head">
       <div>
@@ -1703,12 +1617,12 @@ table.cmp{width:100%;border-collapse:separate;border-spacing:0}
 
     <p class="planos-foot">Sem fidelidade. Sem renovação automática. Verba de anúncio não inclusa. Condição válida para contratos fechados em setembro de 2026.</p>
   </div>
-  <div class="bot"><span>komplexahoteis.com</span><span>11 · 13</span></div>
+  <div class="bot"><span>komplexahoteis.com</span><span>08 · 10</span></div>
 </section>
 
 <!-- ═══════════════ 12 · A CONTA ═══════════════ -->
 <section class="slide dark slide-planos" id="conta">
-  <div class="top"><img class="brand" src="assets/logotipo_white.svg" alt="Komplexa"><span class="pg">12 · 13</span></div>
+  <div class="top"><img class="brand" src="assets/logotipo_white.svg" alt="Komplexa"><span class="pg">09 · 10</span></div>
   <div class="body">
     <div>
       <div class="eyebrow">A conta</div>
@@ -1742,16 +1656,17 @@ table.cmp{width:100%;border-collapse:separate;border-spacing:0}
         </div>
         <div class="co-bar"><div class="tk"><i id="cBar" style="width:0"></i></div><div class="lg"><span id="cBarL"></span><span id="cBarR"></span></div></div>
         <p class="co-first" id="cFirst"></p>
+        <p class="co-meta" id="cMeta"></p>
       </div>
     </div>
     <p class="conta-foot">É a conta de empate: quanto o hotel precisa vender a mais para o investimento se pagar. A garantia cobre a entrega, não o volume de reservas.</p>
   </div>
-  <div class="bot"><span>komplexahoteis.com</span><span>12 · 13</span></div>
+  <div class="bot"><span>komplexahoteis.com</span><span>09 · 10</span></div>
 </section>
 
 <!-- ═══════════════ 13 · GARANTIA E COMO COMEÇA ═══════════════ -->
 <section class="slide dark">
-  <div class="top"><img class="brand" src="assets/logotipo_white.svg" alt="Komplexa"><span class="pg">13 · 13</span></div>
+  <div class="top"><img class="brand" src="assets/logotipo_white.svg" alt="Komplexa"><span class="pg">10 · 10</span></div>
   <div class="body">
     <div class="next-grid">
       <div>
@@ -1783,7 +1698,7 @@ table.cmp{width:100%;border-collapse:separate;border-spacing:0}
       </div>
     </div>
   </div>
-  <div class="bot"><span>komplexahoteis.com</span><span>13 · 13</span></div>
+  <div class="bot"><span>komplexahoteis.com</span><span>10 · 10</span></div>
 </section>
 
 <!-- pop-up dos widgets e cases (filho do deck: funciona em doc view e fullscreen) -->
@@ -2083,9 +1998,10 @@ if (verbaUrl && location.hash === '#planos') {
       $('cInv').innerHTML = mensal ? 'Preencha a diária média do hotel.' : 'Acima de R$ 30 mil de verba, o valor do plano é <b>sob consulta</b>.';
       ['cDiarias','cRes','cCada'].forEach(id => $(id).textContent = '·'); $('cPct').textContent = '·';
       $('cBar').style.width = '0'; $('cBarL').textContent = ''; $('cBarR').textContent = ''; $('cFirst').textContent = '';
+      window.__inv = 0; if (window.__contaMeta) window.__contaMeta();
       return;
     }
-    const inv = mensal + verba;
+    const inv = mensal + verba; window.__inv = inv;
     const diarias = Math.ceil(inv / diaria);
     const reservas = Math.ceil(diarias / noites);
     const noitesMes = uhs * 30;
@@ -2102,6 +2018,7 @@ if (verbaUrl && location.hash === '#planos') {
     $('cFirst').innerHTML = IMPL[plano]
       ? 'No 1º mês, a mensalidade dá lugar à implantação de <b>' + brl(IMPL[plano]) + '</b>: com o anúncio, são <b>' + Math.ceil((IMPL[plano] + verba) / diaria) + ' diárias</b>. Do 2º mês em diante, vale a conta acima.'
       : 'Sem implantação: a conta acima vale desde o 1º mês.';
+    if (window.__contaMeta) window.__contaMeta();
   }
   document.querySelectorAll('.cp-btn').forEach(b => b.addEventListener('click', () => {
     plano = b.dataset.cp;
@@ -2110,6 +2027,51 @@ if (verbaUrl && location.hash === '#planos') {
   }));
   ['cDiaria','cUhs','cVerba','cNoites'].forEach(id => $(id).addEventListener('input', conta));
   conta();
+})();
+
+/* ─── metas: hoje x meta (liga diária e UHs com "A conta") ─── */
+(function(){
+  const $ = id => document.getElementById(id);
+  if (!$('metas')) return;
+  const brl = v => 'R$ ' + Math.round(v).toLocaleString('pt-BR');
+  const pct = v => v.toLocaleString('pt-BR', { maximumFractionDigits: 1 }) + '%';
+  const num = id => { const v = parseFloat($(id).value); return isFinite(v) && v > 0 ? v : 0; };
+  function meta(){
+    const d = num('mDiaria'), u = num('mUhs'), oc = Math.min(100, num('mOcup')), bk = Math.min(100, num('mBook'));
+    const noites = u * 30, vend = noites * oc / 100, rec = vend * d, vaz = Math.max(0, noites - vend);
+    $('mVazio').textContent = brl(vaz * d);
+    $('mVazioS').textContent = Math.round(vaz).toLocaleString('pt-BR') + ' de ' + noites.toLocaleString('pt-BR') + ' noites do mês sem venda';
+    $('mRec').textContent = brl(rec) + '/mês';
+    $('mCom').textContent = brl(rec * bk / 100 * 0.18) + '/mês';
+    const oc2 = Math.min(100, num('mMetaOc')), d2 = num('mMetaDi');
+    const inc = Math.max(0, noites * oc2 / 100 * d2 - rec);
+    $('mInc').textContent = '+' + brl(inc);
+    $('mAno').textContent = brl(inc * 12) + ' por ano';
+    $('mOc2').textContent = pct(oc) + ' → ' + pct(oc2);
+    $('mDi2').textContent = brl(d) + ' → ' + brl(d2);
+    window.__metaInc = inc;
+    if (window.__contaMeta) window.__contaMeta();
+  }
+  // mesmo hotel nos dois slides: diária e UHs andam juntos
+  [['mDiaria','cDiaria'], ['mUhs','cUhs']].forEach(([m, c]) => {
+    $(m).addEventListener('input', () => {
+      if ($(c)) { $(c).value = $(m).value; $(c).dispatchEvent(new Event('input')); }
+      meta();
+    });
+    if ($(c)) $(c).addEventListener('input', e => { if (!e.isTrusted) return; $(m).value = $(c).value; meta(); });
+  });
+  ['mOcup','mBook'].forEach(id => $(id).addEventListener('input', meta));
+  ['mMetaOc','mMetaDi'].forEach(id => $(id).addEventListener('input', meta));
+  window.__contaMeta = function(){
+    const el = $('cMeta'); if (!el) return;
+    const inc = window.__metaInc || 0, inv = window.__inv || 0;
+    el.innerHTML = inc > 0 && inv > 0
+      ? 'Na meta definida, o hotel fatura <b>' + brl(inc) + '</b> a mais por mês: <b>' + (inc / inv).toLocaleString('pt-BR', { maximumFractionDigits: 1 }) + 'x</b> o investimento do mês.'
+      : '';
+  };
+  // a conta parte dos mesmos números do slide de metas
+  if ($('cDiaria')) { $('cDiaria').value = $('mDiaria').value; $('cUhs').value = $('mUhs').value; $('cDiaria').dispatchEvent(new Event('input')); }
+  meta();
 })();
 
 if(location.hash.startsWith('#pop-')) openPop(location.hash.slice(5));
