@@ -1,0 +1,401 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow,noarchive,nosnippet">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" href="/assets/img/favicon.svg" type="image/svg+xml">
+<title>Komplexa · Formas de trabalhar</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Fraunces:ital,wght@1,400;1,500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --navy:#0E1E35;--navy9:#081525;--g1:#1670C3;--g2:#1099E9;--g3:#24D5FF;
+  --grad:linear-gradient(90deg,#1670C3 0%,#1099E9 48%,#24D5FF 100%);
+  --ink:#fff;--mut:rgba(255,255,255,.62);--mut2:rgba(255,255,255,.45);
+  --line:rgba(255,255,255,.1);--card:rgba(255,255,255,.045);
+  --fd:'Inter',system-ui,sans-serif;--fs:'Fraunces',Georgia,serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{min-height:100%}
+body{font-family:var(--fd);color:var(--ink);-webkit-font-smoothing:antialiased;
+  background:radial-gradient(70% 50% at 50% 0%,rgba(36,213,255,.13),transparent 70%),linear-gradient(180deg,#0E1E35,#081525 70%);background-attachment:fixed}
+button{font-family:inherit;color:inherit;cursor:pointer;border:0;background:none}
+em.gi{font-family:var(--fs);font-style:italic;font-weight:400;letter-spacing:0;background:var(--grad);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;padding-right:.08em}
+svg{display:block}
+
+/* topo */
+.app-top{position:sticky;top:0;z-index:20;display:flex;align-items:center;justify-content:space-between;gap:24px;max-width:1240px;margin:0 auto;padding:22px 32px;
+  background:linear-gradient(180deg,rgba(14,30,53,.92),rgba(14,30,53,0));backdrop-filter:blur(6px)}
+.app-top img{height:30px;width:auto;cursor:pointer}
+.nav{display:flex;gap:4px;padding:4px;border-radius:100px;background:rgba(255,255,255,.05);border:1px solid var(--line)}
+.nav button{font-size:13.5px;font-weight:600;color:var(--mut);padding:9px 18px;border-radius:100px;transition:background .2s,color .2s}
+.nav button:hover{color:#fff}
+.nav button.on{background:#fff;color:var(--navy)}
+
+main{max-width:1240px;margin:0 auto;padding:12px 32px 72px}
+.view{display:none}
+.view.on{display:block;animation:vin .45s cubic-bezier(.3,1,.4,1)}
+@keyframes vin{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+
+.v-head{display:flex;justify-content:space-between;align-items:flex-end;gap:32px;margin:18px 0 34px}
+.eyebrow{display:block;font-size:12.5px;font-weight:700;letter-spacing:1.8px;text-transform:uppercase;color:var(--g3);margin-bottom:12px}
+h1{font-size:48px;font-weight:800;letter-spacing:-1.6px;line-height:1.05}
+.lead{max-width:520px;font-size:16px;line-height:1.55;color:var(--mut)}
+.back{display:inline-flex;align-items:center;gap:8px;font-size:13.5px;font-weight:600;color:var(--mut);margin-bottom:22px}
+.back:hover{color:#fff}.back svg{width:16px;height:16px}
+
+/* ═══ tela 1: as três sessões ═══ */
+.hub{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.sess{position:relative;display:flex;flex-direction:column;text-align:left;padding:34px 32px 28px;border-radius:24px;min-height:460px;
+  background:linear-gradient(180deg,rgba(255,255,255,.07),rgba(255,255,255,.02));border:1px solid var(--line);transition:transform .3s,border-color .3s,box-shadow .3s}
+.sess:hover{transform:translateY(-6px);border-color:rgba(36,213,255,.5);box-shadow:0 30px 70px rgba(16,153,233,.22)}
+.sess-ic{width:56px;height:56px;border-radius:16px;display:grid;place-items:center;background:var(--grad);box-shadow:0 12px 30px rgba(16,153,233,.4)}
+.sess-ic svg{width:28px;height:28px;color:#fff}
+.sess-k{margin-top:22px;font-size:11.5px;font-weight:800;letter-spacing:1.5px;text-transform:uppercase;color:var(--g3)}
+.sess h2{margin-top:6px;font-size:34px;font-weight:800;letter-spacing:-.8px}
+.sess > p{margin-top:8px;font-size:15px;line-height:1.5;color:var(--mut)}
+.sess-price{margin-top:24px;padding:18px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.sess-price small{display:block;font-size:12.5px;color:var(--mut2)}
+.sess-price b{display:block;margin-top:4px;font-size:40px;font-weight:800;letter-spacing:-1.4px;line-height:1}
+.sess-price b span{font-size:16px;font-weight:600;letter-spacing:0;color:var(--mut)}
+.sess-price i{display:block;margin-top:6px;font-style:normal;font-size:13px;color:var(--mut)}
+.sess ul{list-style:none;margin:26px 0 28px;padding-top:24px;border-top:1px solid var(--line);display:flex;flex-direction:column;gap:11px}
+.sess li{display:flex;gap:10px;align-items:flex-start;font-size:14.5px;line-height:1.35}
+.ck{width:20px;height:20px;padding:4px;border-radius:50%;background:rgba(36,213,255,.15);color:var(--g3);flex:none;margin-top:-1px}
+.sess-go{margin-top:auto;display:flex;align-items:center;justify-content:space-between;padding:14px 18px;border-radius:14px;font-size:14.5px;font-weight:700;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.14);transition:background .25s,color .25s}
+.sess-go svg{width:18px;height:18px;transition:transform .25s}
+.sess:hover .sess-go{background:var(--grad);color:var(--navy9);border-color:transparent}
+.sess:hover .sess-go svg{transform:translateX(4px)}
+.guia{margin-top:22px;display:grid;grid-template-columns:auto repeat(3,1fr);align-items:center;gap:18px;padding:18px 24px;border-radius:18px;background:rgba(36,213,255,.06);border:1px solid rgba(36,213,255,.22)}
+.guia > b{font-size:15px;padding-right:6px}
+.guia div{display:flex;flex-direction:column;gap:2px;padding-left:18px;border-left:1px solid rgba(255,255,255,.12)}
+.guia div span{font-size:13px;color:var(--mut)}
+.guia div strong{font-size:14.5px}
+.guia div strong em{font-style:normal;color:var(--g3)}
+
+/* cartões de plano (sites, projetos, mensalidade) */
+.grid2{display:grid;grid-template-columns:repeat(2,minmax(0,440px));justify-content:center;gap:24px}
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;align-items:stretch}
+.pc{position:relative;display:flex;flex-direction:column;padding:30px 30px 26px;border-radius:24px;background:linear-gradient(180deg,rgba(255,255,255,.065),rgba(255,255,255,.02));border:1px solid var(--line)}
+.pc.hi{border:1.5px solid transparent;background:radial-gradient(110% 50% at 50% 0%,rgba(36,213,255,.2),transparent 65%),linear-gradient(180deg,#14304F,#0B1A31) padding-box,var(--grad) border-box;box-shadow:0 30px 80px rgba(16,153,233,.28)}
+.selo{position:absolute;top:0;left:50%;transform:translate(-50%,-50%);font-size:11px;font-weight:800;letter-spacing:1.4px;text-transform:uppercase;color:var(--navy9);background:var(--grad);border-radius:100px;padding:7px 16px;white-space:nowrap;box-shadow:0 8px 24px rgba(36,213,255,.4)}
+.pc h3{font-size:24px;font-weight:800;letter-spacing:-.5px;line-height:1.15}
+.pc .sub{margin-top:6px;font-size:14.5px;color:var(--mut);line-height:1.45}
+.badge{align-self:flex-start;display:inline-flex;align-items:center;gap:8px;margin-top:14px;font-size:12.5px;font-weight:700;color:#9BE9FF;padding:6px 13px 6px 9px;border-radius:100px;background:rgba(36,213,255,.1);border:1px solid rgba(36,213,255,.4)}
+.badge svg{width:15px;height:15px}
+.badge.warn{color:#FFD08A;background:rgba(245,158,11,.1);border-color:rgba(245,158,11,.45)}
+.price{margin-top:22px;padding:20px 0 18px;border-top:1px solid var(--line)}
+.price .lb{display:block;font-size:12px;font-weight:700;letter-spacing:1.2px;text-transform:uppercase;color:var(--mut2)}
+.price .v{display:flex;align-items:flex-start;gap:6px;margin-top:8px;line-height:.9}
+.price .v .c{font-size:22px;font-weight:800;margin-top:8px}
+.price .v b{font-size:64px;font-weight:800;letter-spacing:-3px}
+.price .v .p{align-self:flex-end;font-size:16px;font-weight:600;color:var(--mut);margin-bottom:8px}
+.pc.hi .price .v b{background:var(--grad);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;padding-right:3px}
+.price .de{margin-top:10px;font-size:14px;color:var(--mut)}
+.price .de s{color:var(--mut2);text-decoration-color:#FF6B6B}
+.price .de b{color:#fff}
+.add{display:flex;align-items:center;gap:12px;padding:13px 16px;border-radius:14px;border:1.5px dashed rgba(255,255,255,.25);background:rgba(255,255,255,.03)}
+.add .pl{width:28px;height:28px;border-radius:50%;display:grid;place-items:center;font-size:17px;font-weight:800;color:var(--g3);background:rgba(36,213,255,.14);flex:none}
+.add div{font-size:14px;line-height:1.4}.add div b{font-size:15px}.add div small{display:block;font-size:12px;color:var(--mut2)}
+.mes{margin-top:12px;font-size:13px;color:var(--mut)}.mes b{color:#fff}
+.pc ul{list-style:none;margin:22px 0 0;padding-top:20px;border-top:1px solid var(--line);display:flex;flex-direction:column;gap:12px}
+.pc li{display:flex;gap:11px;align-items:flex-start;font-size:15px;line-height:1.35}
+.pc .ft{margin-top:auto;padding-top:20px;display:flex;flex-direction:column;gap:8px}
+.pc .ft p{font-size:13px;line-height:1.45;color:var(--mut2)}
+.gar{display:flex;align-items:center;gap:9px;font-size:13.5px;color:rgba(255,255,255,.85)}.gar b{color:#fff}
+.gar svg{width:20px;height:20px;color:#2DD79B;flex:none}
+.pc li .ck{margin-top:0}
+.foot{margin-top:28px;text-align:center;font-size:13.5px;color:var(--mut)}
+.foot a{color:var(--g3);font-weight:600;text-decoration:none;cursor:pointer}
+
+/* seletor de prazo */
+.prazo{display:flex;flex-direction:column;align-items:flex-end;gap:8px}
+.prazo span{font-size:12px;font-weight:700;letter-spacing:1.4px;text-transform:uppercase;color:var(--mut2)}
+.seg{position:relative;display:grid;grid-template-columns:repeat(3,1fr);padding:5px;border-radius:100px;background:rgba(255,255,255,.06);border:1px solid var(--line)}
+.seg i{position:absolute;top:5px;bottom:5px;left:5px;width:calc((100% - 10px)/3);border-radius:100px;background:#fff;transition:transform .35s cubic-bezier(.3,1,.4,1);box-shadow:0 8px 24px rgba(36,213,255,.25)}
+.seg button{position:relative;z-index:1;font-size:15px;font-weight:700;padding:12px 26px;color:var(--mut);transition:color .3s;white-space:nowrap}
+.seg button.on{color:var(--navy)}
+.tick{display:inline-block;transition:opacity .2s}
+.tick.flip{animation:flip .35s ease}
+@keyframes flip{from{opacity:0;transform:translateY(-8px)}to{opacity:1;transform:none}}
+
+.pc{cursor:pointer;transition:border-color .3s,box-shadow .3s,transform .3s}
+.pc:not(.hi):hover{border-color:rgba(36,213,255,.45);transform:translateY(-3px)}
+.pc.hi{transform:translateY(-6px)}
+.pc .selo{animation:seloIn .35s cubic-bezier(.3,1.4,.5,1)}
+@keyframes seloIn{from{opacity:0;transform:translate(-50%,-30%) scale(.8)}to{opacity:1;transform:translate(-50%,-50%)}}
+@media (max-width:900px){
+  .app-top{padding:16px 18px;flex-direction:column;align-items:flex-start;gap:12px}
+  .nav{width:100%;overflow-x:auto}.nav button{padding:8px 13px;white-space:nowrap}
+  main{padding:8px 18px 56px}
+  h1{font-size:34px}
+  .v-head{flex-direction:column;align-items:flex-start;gap:16px}
+  .hub,.grid3,.grid2{grid-template-columns:minmax(0,1fr)}
+  .sess{min-height:0}
+  .guia{grid-template-columns:1fr}.guia div{padding-left:0;border-left:0}
+  .prazo{align-items:flex-start;width:100%}.seg{width:100%}.seg button{padding:11px 0}
+  .price .v b{font-size:52px}
+}
+</style>
+</head>
+<body>
+
+<header class="app-top">
+  <img src="/d/aquisicao/assets/logotipo_white.svg" alt="Komplexa" data-go="inicio">
+</header>
+
+<main>
+
+<!-- ═══════════ TELA 1: AS TRÊS SESSÕES ═══════════ -->
+<section class="view" data-view="inicio">
+  <div class="v-head">
+    <div><span class="eyebrow">Como trabalhamos</span><h1>Três formas de <em class="gi">começar</em>.</h1></div>
+    <p class="lead">Só o site, um projeto com prazo fechado ou a operação completa por mês. Escolha a que cabe no momento do hotel e veja as opções.</p>
+  </div>
+
+  <div class="hub">
+    <button class="sess" data-go="sites">
+      <span class="sess-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2.5" y="4" width="19" height="15" rx="2"/><path d="M2.5 8.5h19M7 13h10M7 16h6"/></svg></span>
+      <span class="sess-k">Pagamento único</span>
+      <h2>Websites</h2>
+      <p>O site do hotel, pronto para vender direto.</p>
+      <ul>
+        <li><svg class="ck" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Integrado ao motor de reservas</li>
+        <li><svg class="ck" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Preparado para o Google e para as IAs</li>
+        <li><svg class="ck" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Hospedagem inclusa</li>
+      </ul>
+      <span class="sess-go">Ver as opções de site <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+    </button>
+
+    <button class="sess" data-go="projetos">
+      <span class="sess-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4.5" width="18" height="16" rx="2"/><path d="M3 9.5h18M8 2.5v4M16 2.5v4"/><path d="M8.5 15l2.3 2.3 4.7-4.6"/></svg></span>
+      <span class="sess-k">3, 6 ou 12 meses</span>
+      <h2>Projetos</h2>
+      <p>Um canal, um objetivo e um prazo fechado.</p>
+      <ul>
+        <li><svg class="ck" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Google Ads, Meta Ads ou os dois</li>
+        <li><svg class="ck" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Projeto Google já inclui o site</li>
+        <li><svg class="ck" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Valor total fechado no início</li>
+      </ul>
+      <span class="sess-go">Ver as opções de projeto <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+    </button>
+
+    <button class="sess" data-go="mensalidade">
+      <span class="sess-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a9 9 0 11-3-6.7"/><path d="M21 4v5h-5"/></svg></span>
+      <span class="sess-k">Sem fidelidade</span>
+      <h2>Mensalidade</h2>
+      <p>A operação contínua, com a equipe inteira.</p>
+      <ul>
+        <li><svg class="ck" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Google e Meta juntos</li>
+        <li><svg class="ck" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>4 especialistas no WhatsApp do hotel</li>
+        <li><svg class="ck" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Cancele quando quiser</li>
+      </ul>
+      <span class="sess-go">Ver as opções de mensalidade <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+    </button>
+  </div>
+
+  <div class="guia">
+    <b>Por onde começar</b>
+    <div data-go="sites" style="cursor:pointer"><span>Precisa de um site novo</span><strong>Só o site <em>→ Websites</em></strong></div>
+    <div data-go="projetos" style="cursor:pointer"><span>Quer começar por um canal</span><strong>Com prazo fechado <em>→ Projetos</em></strong></div>
+    <div data-go="mensalidade" style="cursor:pointer"><span>Quer a equipe inteira</span><strong>Sem prazo <em>→ Mensalidade</em></strong></div>
+  </div>
+</section>
+
+<!-- ═══════════ WEBSITES ═══════════ -->
+<section class="view" data-view="sites">
+  <button class="back" data-go="inicio"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M11 6l-6 6 6 6"/></svg>Voltar para as opções</button>
+  <div class="v-head">
+    <div><span class="eyebrow">Websites · pagamento único</span><h1>O site do hotel, <em class="gi">do seu jeito</em>.</h1></div>
+    <p class="lead">Dois modelos. Os dois integrados ao motor de reservas, com hospedagem inclusa e código entregue ao hotel.</p>
+  </div>
+  <div class="grid2">
+    <article class="pc">
+      <h3>Site padrão</h3>
+      <p class="sub">Para colocar o hotel no ar, rápido e bem feito.</p>
+      <div class="price"><span class="lb">Pagamento único</span><div class="v"><span class="c">R$</span><b>1.900</b></div></div>
+      <ul>
+        <li><svg class="ck" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Website novo, com hospedagem inclusa</li>
+        <li><svg class="ck" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Integrado ao motor de reservas</li>
+        <li><svg class="ck" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Preparado para celular, Google e IAs</li>
+      </ul>
+    </article>
+    <article class="pc">
+      <h3>Site boutique</h3>
+      <p class="sub">Editorial, feito sob medida para a casa.</p>
+      <div class="price"><span class="lb">Pagamento único</span><div class="v"><span class="c">R$</span><b>3.950</b></div><p class="de"><s>de R$ 4.750</s> · condição atual</p></div>
+      <ul>
+        <li><svg class="ck" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Página inicial editorial e uma página por acomodação</li>
+        <li><svg class="ck" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Experiências, galeria e localização</li>
+        <li><svg class="ck" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Textos escritos por nós, aprovados com vocês</li>
+        <li><svg class="ck" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Motor de reservas integrado, com a origem de cada visita</li>
+        <li><svg class="ck" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Preparado para celular, Google e IAs</li>
+        <li><svg class="ck" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Hospedagem sem custo e código entregue a vocês</li>
+      </ul>
+    </article>
+  </div>
+</section>
+
+<!-- ═══════════ PROJETOS ═══════════ -->
+<section class="view" data-view="projetos">
+  <button class="back" data-go="inicio"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M11 6l-6 6 6 6"/></svg>Voltar para as opções</button>
+  <div class="v-head">
+    <div><span class="eyebrow">Projetos · prazo fechado</span><h1>Um objetivo, <em class="gi">um prazo</em>.</h1></div>
+    <div class="prazo"><span>Duração do projeto</span>
+      <div class="seg" id="seg"><i></i><button data-m="3" class="on">3 meses</button><button data-m="6">6 meses</button><button data-m="12">12 meses</button></div>
+    </div>
+  </div>
+  <div class="grid3">
+    <article class="pc" data-mes="1478" data-ads="1000">
+      <h3>Google Ads</h3>
+      <p class="sub">Aparecer para quem já está buscando hospedagem na sua região.</p>
+      <span class="badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="8" width="18" height="13" rx="2"/><path d="M12 8v13M3 12h18M12 8c-1.5-3-6-3.5-6-1s4 1 6 1M12 8c1.5-3 6-3.5 6-1s-4 1-6 1"/></svg>Site padrão incluso · vale R$ 1.900</span>
+      <div class="price"><span class="lb">Projeto de <span class="t-m">3</span> meses</span><div class="v"><span class="c">R$</span><b class="t-tot">4.434</b></div><p class="de"><b>R$ 1.478</b>/mês × <span class="t-m">3</span> meses</p></div>
+      <div class="add"><span class="pl">+</span><div><b>R$ 1.000/mês</b> de anúncio no Google<small>pago direto à plataforma, na conta do hotel</small></div></div>
+      <p class="mes">No mês, com o anúncio: <b class="t-mes">R$ 2.478</b></p>
+      <ul>
+        <li><svg class="ck" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Site padrão integrado ao motor de reservas</li>
+        <li><svg class="ck" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Campanhas no Google, na conta do hotel</li>
+        <li><svg class="ck" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Otimização toda semana</li>
+        <li><svg class="ck" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Relatório com a origem das reservas</li>
+      </ul>
+    </article>
+
+    <article class="pc" data-mes="1850" data-ads="1000">
+      <h3>Meta Ads</h3>
+      <p class="sub">Fazer o hotel ser desejado no Instagram e no Facebook.</p>
+      <span class="badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M10 9.5v5l4.5-2.5z" fill="currentColor"/></svg>4 criativos novos por mês</span>
+      <div class="price"><span class="lb">Projeto de <span class="t-m">3</span> meses</span><div class="v"><span class="c">R$</span><b class="t-tot">5.550</b></div><p class="de"><b>R$ 1.850</b>/mês × <span class="t-m">3</span> meses</p></div>
+      <div class="add"><span class="pl">+</span><div><b>R$ 1.000/mês</b> de anúncio na Meta<small>pago direto à plataforma, na conta do hotel</small></div></div>
+      <p class="mes">No mês, com o anúncio: <b class="t-mes">R$ 2.850</b></p>
+      <ul>
+        <li><svg class="ck" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Campanhas no Instagram e Facebook, na conta do hotel</li>
+        <li><svg class="ck" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>4 criativos novos por mês</li>
+        <li><svg class="ck" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Otimização toda semana</li>
+        <li><svg class="ck" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Relatório com a origem das reservas</li>
+      </ul>
+    </article>
+
+    <article class="pc" data-mes="2190" data-ads="2000">
+      <h3>Google + Meta</h3>
+      <p class="sub">Os dois canais juntos, com o site, no mesmo prazo.</p>
+      <div class="price"><span class="lb">Projeto de <span class="t-m">3</span> meses</span><div class="v"><span class="c">R$</span><b class="t-tot">6.570</b></div><p class="de"><b>R$ 2.190</b>/mês × <span class="t-m">3</span> meses</p></div>
+      <div class="add"><span class="pl">+</span><div><b>R$ 2.000/mês</b> de anúncio<small>R$ 1.000 no Google e R$ 1.000 na Meta, direto às plataformas</small></div></div>
+      <p class="mes">No mês, com o anúncio: <b class="t-mes">R$ 4.190</b></p>
+      <ul>
+        <li><svg class="ck" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Tudo do projeto Google e do projeto Meta</li>
+        <li><svg class="ck" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Site padrão incluso</li>
+        <li><svg class="ck" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Remarketing entre os dois canais</li>
+        <li><svg class="ck" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Reunião mensal de resultado</li>
+      </ul>
+    </article>
+  </div>
+  <p class="foot">No fim do prazo, o hotel decide se continua com a gente. Site e contas de anúncio ficam com o hotel.</p>
+</section>
+
+<!-- ═══════════ MENSALIDADE ═══════════ -->
+<section class="view" data-view="mensalidade">
+  <button class="back" data-go="inicio"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M11 6l-6 6 6 6"/></svg>Voltar para as opções</button>
+  <div class="v-head">
+    <div><span class="eyebrow">Mensalidade · sem fidelidade</span><h1>A operação <em class="gi">completa</em>.</h1></div>
+    <p class="lead">Google e Meta juntos, com a equipe toda no WhatsApp do hotel. Verba de anúncio a partir de R$ 2.000 por mês, paga direto às plataformas.</p>
+  </div>
+  <div class="grid3">
+    <article class="pc">
+      <h3>Anúncios</h3>
+      <p class="sub">Mais gente encontrando o seu hotel.</p>
+      <div class="price"><span class="lb">Por mês</span><div class="v"><span class="c">R$</span><b>2.090</b><span class="p">/mês</span></div></div>
+      <div class="add"><span class="pl">+</span><div><b>R$ 2.000/mês</b> de anúncio no Google e na Meta<small>a partir de · pago direto às plataformas, na conta do hotel</small></div></div>
+      <p class="mes">No mês, com o anúncio: <b>R$ 4.090</b></p>
+      <ul>
+        <li><svg class="ck" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Google e Meta, na conta do hotel</li>
+        <li><svg class="ck" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Otimização toda semana</li>
+        <li><svg class="ck" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>4 criativos novos por mês</li>
+        <li><svg class="ck" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Relatório com a origem das reservas</li>
+      </ul>
+      <div class="ft"><p>Para hotéis que já têm site e Instagram prontos.</p></div>
+    </article>
+
+    <article class="pc">
+      <h3>Operação Completa</h3>
+      <p class="sub">Mais gente reservando direto no seu site.</p>
+      <div class="price"><span class="lb">Por mês</span><div class="v"><span class="c">R$</span><b>2.350</b><span class="p">/mês</span></div></div>
+      <div class="add"><span class="pl">+</span><div><b>R$ 2.000/mês</b> de anúncio no Google e na Meta<small>a partir de · pago direto às plataformas, na conta do hotel</small></div></div>
+      <p class="mes">No mês, com o anúncio: <b>R$ 4.350</b></p>
+      <ul>
+        <li><svg class="ck" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Planejamento de ofertas com o Account</li>
+        <li><svg class="ck" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Site novo e Instagram estruturado</li>
+        <li><svg class="ck" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Campanhas otimizadas toda semana</li>
+        <li><svg class="ck" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Remarketing por etapa da jornada</li>
+        <li><svg class="ck" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>4 criativos novos por mês</li>
+        <li><svg class="ck" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Rastreio até a reserva e reunião mensal</li>
+      </ul>
+      <div class="ft"><div class="gar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 3v6c0 4.6-3.4 8.4-8 9-4.6-.6-8-4.4-8-9V6l8-3z"/><path d="M8.5 12l2.5 2.5 4.5-5"/></svg><span><b>Garantia:</b> 4 entregas em 28 dias ou 100% de volta</span></div></div>
+    </article>
+
+    <article class="pc">
+      <h3>Completa + Comercial</h3>
+      <p class="sub">Seu time fechando mais reservas e eventos.</p>
+      <div class="price"><span class="lb">Por mês</span><div class="v"><span class="c">R$</span><b>3.240</b><span class="p">/mês</span></div></div>
+      <div class="add"><span class="pl">+</span><div><b>R$ 2.000/mês</b> de anúncio no Google e na Meta<small>a partir de · pago direto às plataformas, na conta do hotel</small></div></div>
+      <p class="mes">No mês, com o anúncio: <b>R$ 5.240</b></p>
+      <ul>
+        <li><svg class="ck" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Tudo da Operação Completa</li>
+        <li><svg class="ck" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Consultoria comercial com os sócios</li>
+        <li><svg class="ck" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Script e treinamento do atendimento</li>
+        <li><svg class="ck" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Página para casamentos ou eventos</li>
+      </ul>
+      <div class="ft"><p>Para time de atendimento de 1 a 2 pessoas. Com 3 ou mais, valor ajustado na proposta.</p></div>
+    </article>
+  </div>
+  <p class="foot">Sem fidelidade · sem renovação automática · tudo no nome do hotel</p>
+</section>
+
+</main>
+
+<script>
+(function(){
+  const views = ['inicio', 'sites', 'projetos', 'mensalidade'];
+  function show(v){
+    if (!views.includes(v)) v = 'inicio';
+    document.querySelectorAll('.view').forEach(s => s.classList.toggle('on', s.dataset.view === v));
+    document.querySelectorAll('.nav button').forEach(b => b.classList.toggle('on', b.dataset.go === v));
+    window.scrollTo({top: 0, behavior: 'instant' in window ? 'instant' : 'auto'});
+  }
+  document.addEventListener('click', e => {
+    const el = e.target.closest('[data-go]'); if (!el) return;
+    e.preventDefault(); location.hash = el.dataset.go;
+  });
+  window.addEventListener('hashchange', () => show(location.hash.slice(1)));
+  show(location.hash.slice(1));
+
+
+  // o plano clicado vira o recomendado
+  document.querySelectorAll('.grid2, .grid3').forEach(g => g.addEventListener('click', e => {
+    const c = e.target.closest('.pc'); if (!c) return;
+    const ja = c.classList.contains('hi');
+    g.querySelectorAll('.pc').forEach(x => { x.classList.remove('hi'); x.querySelector('.selo')?.remove(); });
+    if (ja) return;
+    c.classList.add('hi');
+    const s = document.createElement('span'); s.className = 'selo'; s.textContent = 'Recomendado'; c.prepend(s);
+  }));
+  // projetos: prazo multiplica a mensalidade do projeto
+  const brl = v => 'R$ ' + v.toLocaleString('pt-BR');
+  const seg = document.getElementById('seg');
+  function prazo(m){
+    seg.querySelectorAll('button').forEach((b, i) => { const on = +b.dataset.m === m; b.classList.toggle('on', on); if (on) seg.querySelector('i').style.transform = 'translateX(' + (i * 100) + '%)'; });
+    document.querySelectorAll('[data-view="projetos"] .pc').forEach(c => {
+      const mes = +c.dataset.mes, ads = +c.dataset.ads;
+      c.querySelectorAll('.t-m').forEach(e => e.textContent = m);
+      const tot = c.querySelector('.t-tot'); tot.textContent = (mes * m).toLocaleString('pt-BR');
+      tot.classList.remove('flip'); void tot.offsetWidth; tot.classList.add('flip');
+      c.querySelector('.t-mes').textContent = brl(mes + ads);
+    });
+  }
+  seg.addEventListener('click', e => { const b = e.target.closest('button'); if (b) prazo(+b.dataset.m); });
+  prazo(+(new URLSearchParams(location.search).get('meses')) || 3);
+})();
+</script>
+</body>
+</html>
