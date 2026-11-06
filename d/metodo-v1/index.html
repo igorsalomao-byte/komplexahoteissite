@@ -1,0 +1,422 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow,noarchive,nosnippet">
+<title>Komplexa — O método</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Fraunces:ital,wght@1,400;1,500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --navy:#0E1E35;--navy9:#081525;--white:#fff;
+  --blue:#1670C3;--g1:#1670C3;--g2:#1099E9;--g3:#24D5FF;
+  --grad:linear-gradient(90deg,#1670C3 0%,#1099E9 48%,#24D5FF 100%);
+  --grad-r:radial-gradient(circle at 70% 50%,rgba(36,213,255,.35) 0%,transparent 60%);
+  --txt:#4A5770;--gray:#8896A8;--bdr:#DDE3ED;--bg:#F3F6FA;
+  --fd:'Inter',system-ui,sans-serif;
+  --page-bg:#0a0f1a;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{font-family:var(--fd);background:var(--page-bg);color:var(--navy);-webkit-font-smoothing:antialiased}
+
+/* ─── DECK (stacked doc view) ─── */
+.deck{display:flex;flex-direction:column;align-items:center;gap:32px;padding:64px 24px 96px}
+.slide{
+  width:1280px;height:720px;border-radius:8px;overflow:hidden;
+  box-shadow:0 20px 60px rgba(0,0,0,.4);
+  position:relative;display:flex;flex-direction:column;
+}
+.slide *{font-family:var(--fd)}
+
+.slide.dark{background:var(--navy);color:#fff}
+.slide.dark::before{content:"";position:absolute;inset:0;background:var(--grad-r);opacity:.4;pointer-events:none}
+
+.slide .top{display:flex;justify-content:space-between;align-items:center;padding:36px 56px 0;position:relative;z-index:2}
+.slide .top img.brand{height:32px;width:auto}
+.slide .top .pg{font-size:11px;letter-spacing:1.5px;text-transform:uppercase;font-weight:600;color:rgba(255,255,255,.45)}
+
+.slide .body{flex:1;padding:36px 56px 24px;position:relative;z-index:2;display:flex;flex-direction:column}
+.slide .bot{padding:20px 56px 28px;display:flex;justify-content:space-between;align-items:flex-end;font-size:10px;color:rgba(255,255,255,.4);letter-spacing:.6px;text-transform:uppercase;position:relative;z-index:2}
+
+.eyebrow{display:inline-block;font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:1.8px;margin-bottom:14px;color:var(--g3)}
+.title{font-weight:800;font-size:52px;line-height:1.02;letter-spacing:-1.6px;margin:0 0 14px;color:#fff}
+.title em{font-style:normal;font-family:'Fraunces',Georgia,serif;font-weight:400;letter-spacing:-.5px;background:var(--grad);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+.lead{font-size:16px;line-height:1.55;max-width:720px;color:rgba(255,255,255,.72)}
+.lead strong{color:#fff;font-weight:600}
+
+/* ─── SLIDE · MÉTODO (bifurcated funnel) ─── */
+.slide-metodo .body{justify-content:flex-start;gap:0}
+.metodo-head{max-width:920px}
+
+/* container e viewBox compartilham a MESMA proporção (1000×400):
+   nodes em left/top % mapeiam 1:1 nas coordenadas do SVG */
+.metodo-flow{
+  width:100%;
+  flex:1;
+  margin-top:8px;
+  position:relative;
+  min-height:0;
+}
+
+.flow-svg{
+  position:absolute;
+  inset:0;
+  width:100%;height:100%;
+  overflow:visible;
+  pointer-events:none;
+}
+
+/* branch paths — draw animation */
+.branch{
+  stroke-dasharray:1;
+  stroke-dashoffset:1;
+  animation:drawBranch 1.8s cubic-bezier(.4,0,.2,1) forwards;
+}
+.branch.top{animation-delay:.35s}
+.branch.bot{animation-delay:.55s}
+@keyframes drawBranch{to{stroke-dashoffset:0}}
+
+@keyframes fadeIn{to{opacity:1}}
+
+/* Nodes — o CENTRO DO ÍCONE ancora no ponto exato da linha;
+   o label fica absoluto (acima ou abaixo), fora do cálculo de centro */
+.node{
+  position:absolute;
+  transform:translate(-50%,-50%);
+  z-index:3;
+}
+.node-inner{
+  position:relative;
+  opacity:0;transform:scale(.7);
+  animation:nodeIn .55s cubic-bezier(.34,1.4,.64,1) forwards;
+}
+.node.start .node-inner{animation-delay:.2s}
+.node.ads .node-inner{animation-delay:.4s}
+.node.n3 .node-inner{animation-delay:.6s}
+.node.n4 .node-inner{animation-delay:.6s}
+.node.n5 .node-inner{animation-delay:.8s}
+.node.n6 .node-inner{animation-delay:.8s}
+.node.n7 .node-inner{animation-delay:1.0s}
+.node.n8 .node-inner{animation-delay:1.2s}
+.node.end .node-inner{animation-delay:1.5s}
+@keyframes nodeIn{to{opacity:1;transform:scale(1)}}
+
+.node .ico{
+  position:relative;
+  width:72px;height:72px;border-radius:50%;
+  background:radial-gradient(circle at 30% 30%,#1a2a45,var(--navy9));
+  border:1.5px solid rgba(255,255,255,.92);
+  display:grid;place-items:center;
+  color:#fff;
+  box-shadow:0 5px 22px rgba(0,0,0,.45);
+}
+.node .ico svg{width:30px;height:30px}
+.node.start .ico,
+.node.end .ico{
+  width:84px;height:84px;
+  border-width:2px;
+  border-color:var(--g3);
+  box-shadow:0 6px 30px rgba(36,213,255,.4);
+}
+.node.start .ico svg,
+.node.end .ico svg{width:36px;height:36px}
+
+/* label absoluto: não desloca o ícone do ponto da linha */
+.node .lbl{
+  position:absolute;
+  top:calc(100% + 10px);
+  left:50%;transform:translateX(-50%);
+  font-size:12.5px;font-weight:600;color:#fff;
+  text-align:center;letter-spacing:-.05px;line-height:1.25;
+  white-space:nowrap;
+}
+/* nós da rota de cima: label ACIMA (área interna do diagrama fica livre) */
+.node.lbl-up .lbl{
+  top:auto;
+  bottom:calc(100% + 10px);
+}
+.node.start .lbl,
+.node.end .lbl{font-size:13.5px;color:var(--g3)}
+
+/* ─── PRESENT MODE ─── */
+.toggle-present{position:fixed;top:14px;right:14px;background:var(--grad);color:#fff;border:none;padding:8px 16px;border-radius:8px;font-family:var(--fd);font-weight:600;font-size:12px;cursor:pointer;z-index:99;letter-spacing:.3px}
+.nav-hint{position:fixed;bottom:12px;left:50%;transform:translateX(-50%);font-size:11px;color:rgba(255,255,255,.4);letter-spacing:.5px;z-index:99;display:none;font-family:var(--fd)}
+
+.deck.present{padding:0;gap:0;background:#000;position:fixed;inset:0;overflow:hidden;display:flex;align-items:center;justify-content:center}
+.deck.present .slide{display:none;transform:scale(var(--present-scale,1));transform-origin:center;box-shadow:none;border-radius:0}
+.deck.present .slide.active{display:flex}
+.deck.present ~ .nav-hint{display:block}
+
+@media print{
+  .toggle-present,.nav-hint{display:none!important}
+  .deck{padding:0;gap:0}
+  .slide{box-shadow:none;border-radius:0;page-break-after:always;break-after:page}
+}
+</style>
+</head>
+<body>
+
+<button class="toggle-present" onclick="togglePresent()">▶ Apresentar</button>
+
+<div class="deck" id="deck">
+
+<!-- ═══════════════════ 01 · MÉTODO (money slide) ═══════════════════ -->
+<section class="slide dark active slide-metodo">
+  <div class="top">
+    <img class="brand" src="assets/logotipo_white.svg" alt="Komplexa">
+    <span class="pg">01 · 10</span>
+  </div>
+
+  <div class="body">
+    <div class="metodo-head">
+      <div class="eyebrow">O método</div>
+      <h1 class="title">Do criativo à <em>reserva direta</em>.</h1>
+    </div>
+
+    <div class="metodo-flow">
+      <svg class="flow-svg" viewBox="0 0 1000 400" preserveAspectRatio="none">
+        <defs>
+          <linearGradient id="mainGrad" x1="0" y1="0" x2="1" y2="0">
+            <stop offset="0" stop-color="#1670C3"/>
+            <stop offset=".5" stop-color="#1099E9"/>
+            <stop offset="1" stop-color="#24D5FF"/>
+          </linearGradient>
+          <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+            <feGaussianBlur stdDeviation="3" result="b"/>
+            <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+          </filter>
+        </defs>
+
+        <!-- ROUTE A (topo · autoatendimento): Criativos → ADS → Site → Motor → Reserva -->
+        <path class="branch top" pathLength="1"
+              d="M 60 200 L 180 200 L 300 90 L 810 90 L 920 200"
+              stroke="url(#mainGrad)" stroke-width="2.6" fill="none" opacity=".95"
+              filter="url(#glow)" stroke-linecap="round" stroke-linejoin="round"/>
+
+        <!-- ROUTE B (base · conversão assistida): Criativos → ADS → Landing → WhatsApp → Treinamento → Remarketing → Reserva -->
+        <path class="branch bot" pathLength="1"
+              d="M 60 200 L 180 200 L 300 310 L 780 310 L 920 200"
+              stroke="url(#mainGrad)" stroke-width="2.6" fill="none" opacity=".95"
+              filter="url(#glow)" stroke-linecap="round" stroke-linejoin="round"/>
+
+        <!-- CROSS (tracejada): Site → WhatsApp -->
+        <path class="branch cross" pathLength="1"
+              d="M 300 90 L 460 310"
+              stroke="rgba(255,255,255,.5)" stroke-width="1.5" fill="none"
+              stroke-dasharray="4 5" stroke-linecap="round"/>
+
+        <!-- Flowing dots — Rota A -->
+        <circle r="4" fill="#24D5FF" filter="url(#glow)" opacity=".95">
+          <animateMotion dur="6.5s" repeatCount="indefinite" begin="2s"
+                         path="M 60 200 L 180 200 L 300 90 L 810 90 L 920 200"/>
+        </circle>
+        <circle r="3" fill="#fff" filter="url(#glow)" opacity=".85">
+          <animateMotion dur="6.5s" repeatCount="indefinite" begin="4s"
+                         path="M 60 200 L 180 200 L 300 90 L 810 90 L 920 200"/>
+        </circle>
+
+        <!-- Flowing dots — Rota B -->
+        <circle r="4" fill="#24D5FF" filter="url(#glow)" opacity=".95">
+          <animateMotion dur="7.5s" repeatCount="indefinite" begin="2.5s"
+                         path="M 60 200 L 180 200 L 300 310 L 780 310 L 920 200"/>
+        </circle>
+        <circle r="3" fill="#fff" filter="url(#glow)" opacity=".85">
+          <animateMotion dur="7.5s" repeatCount="indefinite" begin="4.5s"
+                         path="M 60 200 L 180 200 L 300 310 L 780 310 L 920 200"/>
+        </circle>
+
+        <!-- Dot no cross -->
+        <circle r="2.5" fill="#fff" opacity=".7">
+          <animateMotion dur="4s" repeatCount="indefinite" begin="3.2s"
+                         path="M 300 90 L 460 310"/>
+        </circle>
+      </svg>
+
+      <!-- 1. Criativos & Ofertas (start) · SVG (60,200) -->
+      <div class="node start" style="left:6%;top:50%">
+        <div class="node-inner">
+          <div class="ico">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M9 18h6M10 21h4M12 3a6 6 0 016 6c0 2.5-1.5 3.5-2.5 5H8.5C7.5 12.5 6 11.5 6 9a6 6 0 016-6z"/>
+              <path d="M12 8v4"/>
+            </svg>
+          </div>
+          <div class="lbl">Criativos<br>&amp; ofertas</div>
+        </div>
+      </div>
+
+      <!-- 2. ADS · SVG (180,200) -->
+      <div class="node ads" style="left:18%;top:50%">
+        <div class="node-inner">
+          <div class="ico">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M3 10.5v3a1 1 0 001 1h2l5 4V4.5l-5 4H4a1 1 0 00-1 1z"/>
+              <path d="M15.8 8.5a4.5 4.5 0 010 7"/>
+              <path d="M18.8 5.5a8 8 0 010 13"/>
+            </svg>
+          </div>
+          <div class="lbl">ADS</div>
+        </div>
+      </div>
+
+      <!-- 3. Site (rota topo) · SVG (300,90) · label acima -->
+      <div class="node n3 lbl-up" style="left:30%;top:22.5%">
+        <div class="node-inner">
+          <div class="ico">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="3" y="4" width="18" height="16" rx="2"/>
+              <line x1="3" y1="9" x2="21" y2="9"/>
+              <circle cx="6" cy="6.5" r=".9" fill="currentColor" stroke="none"/>
+              <circle cx="8.5" cy="6.5" r=".9" fill="currentColor" stroke="none"/>
+              <path d="M8 13h8M8 16h5"/>
+            </svg>
+          </div>
+          <div class="lbl">Site próprio</div>
+        </div>
+      </div>
+
+      <!-- 4. Landing page (rota base) · SVG (300,310) -->
+      <div class="node n4" style="left:30%;top:77.5%">
+        <div class="node-inner">
+          <div class="ico">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 3l7 4-7 4-7-4 7-4z"/>
+              <path d="M5 11l7 4 7-4"/>
+              <path d="M5 15l7 4 7-4"/>
+            </svg>
+          </div>
+          <div class="lbl">Landing page</div>
+        </div>
+      </div>
+
+      <!-- 5. Motor de reservas (rota topo) · SVG (540,90) · label acima -->
+      <div class="node n5 lbl-up" style="left:54%;top:22.5%">
+        <div class="node-inner">
+          <div class="ico">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="3" y="5" width="18" height="16" rx="2"/>
+              <line x1="3" y1="10" x2="21" y2="10"/>
+              <line x1="8" y1="3" x2="8" y2="7"/>
+              <line x1="16" y1="3" x2="16" y2="7"/>
+              <path d="M8 15l3 3 5-6"/>
+            </svg>
+          </div>
+          <div class="lbl">Motor de reservas</div>
+        </div>
+      </div>
+
+      <!-- 6. WhatsApp (rota base · converge Landing + cross do Site) · SVG (460,310) -->
+      <div class="node n6" style="left:46%;top:77.5%">
+        <div class="node-inner">
+          <div class="ico">
+            <svg viewBox="0 0 24 24" fill="currentColor" stroke="none">
+              <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413"/>
+            </svg>
+          </div>
+          <div class="lbl">WhatsApp</div>
+        </div>
+      </div>
+
+      <!-- 7. Treinamento comercial (rota base) · SVG (620,310) -->
+      <div class="node n7" style="left:62%;top:77.5%">
+        <div class="node-inner">
+          <div class="ico">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M4 14v-3a8 8 0 0116 0v3"/>
+              <path d="M4 15v-1a2 2 0 012-2h2v6H6a2 2 0 01-2-2z"/>
+              <path d="M20 15v-1a2 2 0 00-2-2h-2v6h2a2 2 0 002-2z"/>
+              <path d="M12 21a2 2 0 002-2h-4a2 2 0 002 2z"/>
+            </svg>
+          </div>
+          <div class="lbl">Treinamento<br>comercial</div>
+        </div>
+      </div>
+
+      <!-- 8. Remarketing (rota base · vértice de subida) · SVG (780,310) -->
+      <div class="node n8" style="left:78%;top:77.5%">
+        <div class="node-inner">
+          <div class="ico">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M21 12a9 9 0 11-3-6.7"/>
+              <polyline points="21 4 21 9 16 9"/>
+            </svg>
+          </div>
+          <div class="lbl">Remarketing</div>
+        </div>
+      </div>
+
+      <!-- 9. Reserva direta (end) · SVG (920,200) -->
+      <div class="node end" style="left:92%;top:50%">
+        <div class="node-inner">
+          <div class="ico">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="9"/>
+              <path d="M8 12l3 3 5-6"/>
+            </svg>
+          </div>
+          <div class="lbl">Reserva<br>direta</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="bot">
+    <span>komplexahoteis.com</span>
+    <span>01 · 10</span>
+  </div>
+</section>
+
+</div>
+
+<div class="nav-hint">← →  navegar  ·  Esc  sair</div>
+
+<script>
+const deck = document.getElementById('deck');
+const slides = deck.querySelectorAll('.slide');
+let current = 0;
+
+function show(i){
+  slides.forEach((s,idx) => s.classList.toggle('active', idx === i));
+  current = i;
+}
+
+function applyPresentScale(){
+  const w = window.innerWidth, h = window.innerHeight;
+  const fitW = w / 1280, fitH = h / 720;
+  const fillScale = Math.max(fitW, fitH);
+  const fitScale = Math.min(fitW, fitH);
+  const scale = fitScale + (fillScale - fitScale) * 0.7;
+  deck.style.setProperty('--present-scale', scale.toFixed(3));
+}
+
+function togglePresent(){
+  deck.classList.toggle('present');
+  const btn = document.querySelector('.toggle-present');
+  if(deck.classList.contains('present')){
+    btn.textContent = '✕ Sair';
+    show(0);
+    applyPresentScale();
+    if(deck.requestFullscreen){ deck.requestFullscreen().then(applyPresentScale).catch(()=>{}); }
+  } else {
+    btn.textContent = '▶ Apresentar';
+    slides.forEach(s => s.classList.add('active'));
+    deck.style.removeProperty('--present-scale');
+    if(document.fullscreenElement) document.exitFullscreen();
+  }
+}
+
+window.addEventListener('resize', () => { if(deck.classList.contains('present')) applyPresentScale(); });
+
+document.addEventListener('keydown', e => {
+  if(!deck.classList.contains('present')) return;
+  if(e.key === 'ArrowRight' || e.key === ' '){ if(current < slides.length-1) show(current+1); }
+  if(e.key === 'ArrowLeft'){ if(current > 0) show(current-1); }
+  if(e.key === 'Escape'){ togglePresent(); }
+});
+
+document.addEventListener('fullscreenchange', () => {
+  if(!document.fullscreenElement && deck.classList.contains('present')) togglePresent();
+});
+</script>
+</body>
+</html>
