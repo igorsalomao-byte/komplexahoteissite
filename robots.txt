@@ -3,59 +3,70 @@
 
 User-agent: *
 Allow: /
-# Apresentações privadas enviadas a leads e clientes (também têm noindex)
+# Apresentações privadas enviadas a leads e clientes (também têm noindex) e imagens dos e-mails
 Disallow: /d/
 Disallow: /novo-x7k2/
+Disallow: /email/
 
 # Buscadores e assistentes de IA: liberados para ler e citar o conteúdo público
 User-agent: Googlebot
 Allow: /
 Disallow: /d/
 Disallow: /novo-x7k2/
+Disallow: /email/
 
 User-agent: Bingbot
 Allow: /
 Disallow: /d/
 Disallow: /novo-x7k2/
+Disallow: /email/
 
 User-agent: Google-Extended
 Allow: /
 Disallow: /d/
 Disallow: /novo-x7k2/
+Disallow: /email/
 
 User-agent: GPTBot
 Allow: /
 Disallow: /d/
 Disallow: /novo-x7k2/
+Disallow: /email/
 
 User-agent: OAI-SearchBot
 Allow: /
 Disallow: /d/
 Disallow: /novo-x7k2/
+Disallow: /email/
 
 User-agent: ChatGPT-User
 Allow: /
 Disallow: /d/
 Disallow: /novo-x7k2/
+Disallow: /email/
 
 User-agent: ClaudeBot
 Allow: /
 Disallow: /d/
 Disallow: /novo-x7k2/
+Disallow: /email/
 
 User-agent: Claude-SearchBot
 Allow: /
 Disallow: /d/
 Disallow: /novo-x7k2/
+Disallow: /email/
 
 User-agent: PerplexityBot
 Allow: /
 Disallow: /d/
 Disallow: /novo-x7k2/
+Disallow: /email/
 
 User-agent: Applebot-Extended
 Allow: /
 Disallow: /d/
 Disallow: /novo-x7k2/
+Disallow: /email/
 
 Sitemap: https://komplexahoteis.com/sitemap.xml
