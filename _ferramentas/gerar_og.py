@@ -53,6 +53,7 @@ for f in sorted(glob.glob(os.path.join(ROOT, 'blog', 'post-*.html'))):
     itens.append((os.path.basename(f)[:-5], page(over, t, 'komplexahoteis.com · Blog')))
 itens.append(('guia-reservas-diretas', page('Guia completo', 'Reservas diretas para hotéis e pousadas: o guia completo', 'komplexahoteis.com · Guia 2026')))
 itens.append(('calculadora-comissao-booking', page('Ferramenta gratuita', 'Calculadora de comissão do Booking para hotéis e pousadas', 'komplexahoteis.com · Calculadora')))
+itens.append(('case-solar-dona-dora', page('Case real · Pousada em Capitólio', 'Solar Dona Dora: 3,4x de faturamento no mês mais fraco do ano', 'komplexahoteis.com · Cases')))
 itens.append(('igor-salomao', page('Fundador · Komplexa Hotéis', 'Igor Salomão', 'Marketing e reservas diretas para hotelaria', foto=True)))
 
 for slug, doc in itens:
