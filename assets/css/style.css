@@ -451,6 +451,8 @@ footer{background:#F6F9FC;border-top:1px solid rgba(14,30,53,.08);
 
 /* ============ REVEAL BASE ============ */
 html.js .rv{opacity:0;transform:translateY(38px)}
+html.js .rv.rv-in{opacity:1;transform:none;transition:opacity 1s cubic-bezier(.215,.61,.355,1),transform 1s cubic-bezier(.215,.61,.355,1)}
+html.js .rv.rv-done{opacity:1;transform:none}
 
 /* ============================================================
    CASES — Ato 06 · Confirmar
@@ -488,7 +490,7 @@ html.js .rv{opacity:0;transform:translateY(38px)}
   transition:transform .45s var(--ease),box-shadow .45s var(--ease)}
 .cs-card:hover{transform:translateY(-6px);
   box-shadow:0 26px 60px rgba(0,0,0,.5),0 0 0 1px rgba(36,213,255,.35)}
-.cs-card>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.cs-card>img,.cs-card>picture>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
 .cs-card::after{content:'';position:absolute;inset:0;
   background:linear-gradient(180deg,rgba(8,21,37,.25) 0%,rgba(8,21,37,.62) 38%,
   rgba(8,21,37,.93) 62%,rgba(8,21,37,.98) 100%)}

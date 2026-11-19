@@ -283,11 +283,23 @@ if (logoFix && heroEl) {
   });
 }
 
-/* ---------- Reveals genéricos ---------- */
-gsap.utils.toArray('.rv').forEach(el => {
-  gsap.to(el, { opacity: 1, y: 0, duration: 1, ease: 'power3.out',
-    scrollTrigger: { trigger: el, start: 'top 88%' } });
-});
+/* ---------- Reveals genéricos ----------
+   Um IntersectionObserver só, com a transição no CSS. Antes cada .rv tinha o próprio
+   ScrollTrigger (41 na home), e medir todos travava o celular no carregamento. */
+(() => {
+  const els = document.querySelectorAll('.rv');
+  const fim = el => { el.classList.add('rv-done'); el.classList.remove('rv-in'); };
+  const entra = el => {
+    el.classList.add('rv-in');
+    el.addEventListener('transitionend', e => { if (e.target === el) fim(el); }, { once: true });
+    setTimeout(() => fim(el), 1300);
+  };
+  if (!('IntersectionObserver' in window)) { els.forEach(fim); return; }
+  const io = new IntersectionObserver(es => es.forEach(e => {
+    if (e.isIntersecting) { io.unobserve(e.target); entra(e.target); }
+  }), { rootMargin: '0px 0px -12% 0px' });
+  els.forEach(el => io.observe(el));
+})();
 /* Stagger interno das linhas de quarto (texto sobe em cascata) */
 gsap.utils.toArray('.room-txt').forEach(txt => {
   gsap.fromTo(txt.children, { opacity: 0, y: 44 },
