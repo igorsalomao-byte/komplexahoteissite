@@ -284,22 +284,34 @@ if (logoFix && heroEl) {
 }
 
 /* ---------- Reveals genéricos ----------
-   Um IntersectionObserver só, com a transição no CSS. Antes cada .rv tinha o próprio
-   ScrollTrigger (41 na home), e medir todos travava o celular no carregamento. */
+   Uma checagem só por quadro de rolagem, com a transição no CSS. Antes cada .rv tinha o
+   próprio ScrollTrigger (41 na home), e medir todos travava o celular no carregamento.
+   Como o gatilho antigo, revela também o que a rolagem pulou (passou do ponto de uma vez). */
 (() => {
-  const els = document.querySelectorAll('.rv');
+  let pend = [...document.querySelectorAll('.rv')];
   const fim = el => { el.classList.add('rv-done'); el.classList.remove('rv-in'); };
   const entra = el => {
     el.classList.add('rv-in');
     el.addEventListener('transitionend', e => { if (e.target === el) fim(el); }, { once: true });
     setTimeout(() => fim(el), 1300);
   };
-  if (!('IntersectionObserver' in window)) { els.forEach(fim); return; }
-  const io = new IntersectionObserver(es => es.forEach(e => {
-    if (e.isIntersecting) { io.unobserve(e.target); entra(e.target); }
-  }), { rootMargin: '0px 0px -12% 0px' });
-  els.forEach(el => io.observe(el));
+  let raf = 0;
+  const check = () => {
+    raf = 0;
+    const lim = innerHeight * .88;
+    const hit = pend.filter(el => el.getBoundingClientRect().top < lim);   /* só leituras... */
+    if (!hit.length) return;
+    pend = pend.filter(el => !hit.includes(el));
+    hit.forEach(entra);                                                   /* ...depois as escritas */
+    if (!pend.length) { removeEventListener('scroll', agenda); removeEventListener('resize', agenda); }
+  };
+  const agenda = () => { if (!raf) raf = requestAnimationFrame(check); };
+  addEventListener('scroll', agenda, { passive: true });
+  addEventListener('resize', agenda, { passive: true });
+  addEventListener('load', agenda);
+  check();
 })();
+
 /* Stagger interno das linhas de quarto (texto sobe em cascata) */
 gsap.utils.toArray('.room-txt').forEach(txt => {
   gsap.fromTo(txt.children, { opacity: 0, y: 44 },
