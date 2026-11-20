@@ -54,6 +54,10 @@ for f in sorted(glob.glob(os.path.join(ROOT, 'blog', 'post-*.html'))):
 itens.append(('guia-reservas-diretas', page('Guia completo', 'Reservas diretas para hotéis e pousadas: o guia completo', 'komplexahoteis.com · Guia 2026')))
 itens.append(('calculadora-comissao-booking', page('Ferramenta gratuita', 'Calculadora de comissão do Booking para hotéis e pousadas', 'komplexahoteis.com · Calculadora')))
 itens.append(('case-solar-dona-dora', page('Case real · Pousada em Capitólio', 'Solar Dona Dora: 3,4x de faturamento no mês mais fraco do ano', 'komplexahoteis.com · Cases')))
+itens.append(('hoteis-comerciais', page('Hotéis comerciais e de negócios', 'Marketing para hotéis comerciais: do Google à reserva direta', 'komplexahoteis.com · Hotéis comerciais')))
+itens.append(('pousadas', page('Pousadas', 'Marketing para pousadas: mais reservas diretas, menos Booking', 'komplexahoteis.com · Pousadas')))
+itens.append(('resorts', page('Resorts', 'Marketing para resorts: hospedagem, eventos e casamentos no canal direto', 'komplexahoteis.com · Resorts')))
+itens.append(('cases', page('Cases reais · conferidos no PMS', 'Resultados de hotéis e pousadas atendidos pela Komplexa', 'komplexahoteis.com · Cases')))
 itens.append(('igor-salomao', page('Fundador · Komplexa Hotéis', 'Igor Salomão', 'Marketing e reservas diretas para hotelaria', foto=True)))
 
 for slug, doc in itens:
