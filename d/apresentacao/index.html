@@ -968,7 +968,7 @@ html.mob .pfsw{display:none}
 .pmenu .pmh h2{margin:0}
 .pmenu .pmh .sub{margin:0;font-size:13.5px;max-width:34ch;text-align:right;color:var(--muted)}
 .pmenu .pmh .sub b{color:#fff}
-.pgrid{display:grid;grid-template-columns:1.14fr 1fr 1fr;gap:16px;flex:1;min-height:0}
+.pgrid{display:grid;grid-template-columns:minmax(0,1.14fr) minmax(0,1fr) minmax(0,1fr);gap:16px;flex:1;min-height:0}
 .pc{position:relative;display:flex;flex-direction:column;text-align:left;background:var(--card);border:1px solid var(--line);border-radius:22px;padding:20px 22px 16px;cursor:pointer;color:inherit;font:inherit;transition:border-color .25s,transform .25s var(--ease),box-shadow .25s}
 .pc:hover,.pc:focus-visible{border-color:rgba(36,213,255,.6);transform:translateY(-3px);outline:none}
 .pc.rec{order:-1;background:linear-gradient(180deg,#132646 0%,#0E1B30 100%);border-color:rgba(36,213,255,.6);box-shadow:0 0 0 7px rgba(36,213,255,.07),0 30px 70px rgba(0,0,0,.55)}
@@ -996,16 +996,24 @@ html.mob .pfsw{display:none}
 .cx span{display:block;font-size:11.5px;line-height:1.3;color:var(--muted);margin-top:1px}
 .cx em{font-style:normal;font:700 12px var(--font);color:var(--accent);white-space:nowrap}
 /* menu sem a faixa de complementos: cartões mais altos, tipo maior */
-.nocx .pc{padding:26px 26px 22px}
+.nocx .pmh{margin-bottom:30px}
+.nocx .pgrid{flex:none;margin-bottom:auto}
+.nocx .pc{padding:24px 26px 20px}
+.nocx .pc .pcg{margin-top:18px}
+.nocx .pc .pcg>span{white-space:nowrap;font-size:11.5px}
+.nocx .pc .pcg em{padding:7px 11px;font-size:12.5px}
 .nocx .pc .pct{margin-bottom:14px}
-.nocx .pc h3{font-size:46px;margin-top:16px}.nocx .pc.rec h3{font-size:56px}
-.nocx .pc .pco{font-size:15.5px;margin-top:12px}
-.nocx .pc ul{margin-top:16px;padding-top:16px;gap:10px}
-.nocx .pc li{font-size:14.5px;padding-left:25px}
+.nocx .pc h3{font-size:40px;margin-top:16px;white-space:nowrap}.nocx .pc.rec h3{font-size:50px}
+.nocx .pc .pco{font-size:14.5px;margin-top:12px;min-height:62px}
+.nocx .pc ul{margin-top:14px;padding-top:14px;gap:9px}
+.nocx .pc li{font-size:14px;padding-left:25px}
 .nocx .pc li::before{top:2px}.nocx .pc li::after{top:6px}
-.nocx .pc .pcl{margin-top:16px;font-size:12.5px}
+.nocx .pc .pcl{margin-top:16px;font-size:12px;white-space:nowrap}
+html.mob .nocx .pc .pcl{white-space:normal}
 html.mob .nocx .pc{padding:20px 22px 16px}
-html.mob .nocx .pc h3,html.mob .nocx .pc.rec h3{font-size:38px}
+html.mob .nocx .pc h3,html.mob .nocx .pc.rec h3{font-size:38px;white-space:normal}
+html.mob .nocx .pc .pco{min-height:0}
+html.mob .nocx .pmh{margin-bottom:18px}
 /* complemento aberto */
 .pdet.pcomp.on{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center;height:100%}
 .cxd .display{font-size:96px}
@@ -1033,7 +1041,10 @@ html.mob .ptabs button{font-size:11.5px;padding:7px 11px}
 html.mob .pmenu{height:auto}
 html.mob .pmenu .pmh{flex-direction:column;align-items:flex-start;gap:10px}
 html.mob .pmenu .pmh .sub{text-align:left;max-width:none}
-html.mob .pgrid{grid-template-columns:1fr;gap:18px}
+html.mob .pgrid{grid-template-columns:minmax(0,1fr);gap:18px}
+html.mob .pc{width:100%;min-width:0;box-sizing:border-box}
+html.mob .pc .pcg{flex-wrap:wrap}
+html.mob .nocx .pc .pcg>span{white-space:normal}
 html.mob .pc h3,html.mob .pc.rec h3{font-size:38px}
 html.mob .pc .pcg{margin-top:14px}
 html.mob .cxrow{flex-direction:column}
@@ -1514,7 +1525,7 @@ html.mob .cxp b{font-size:30px}
   <div class="sbody tcvb">
     <div class="pmenu nocx">
       <div class="pmh rv"><h2>Um método. <b>Três formas de ligar o MOTOR.</b></h2><p class="sub">O diagnóstico indica o caminho. <b>Clique no produto</b> para ver entregas e valores.</p></div>
-      <div class="pgrid"><button type="button" class="pc rv" style="--d:.1s" data-open="motor"><span class="recb">Indicado para este hotel</span><span class="pct">Pousadas e hotéis de experiência</span><span class="lt5"><i class="on">M</i><i class="on">O</i><i class="on">T</i><i class="on">O</i><i class="on">R</i></span><h3>Método MOTOR</h3><p class="pco">O canal próprio de reservas inteiro: do anúncio ao fechamento no WhatsApp, com a reserva conferida no PMS.</p><ul><li>Google e Meta na conta do hotel</li><li>Site boutique integrado ao motor do hotel</li><li>Script e time do hotel treinado no WhatsApp</li><li>Painel em reais, cada reserva no PMS</li></ul><span class="pcl">Fecha os vazamentos: <b>Desejo · Decisão · Venda</b></span><span class="pcg"><span>3 planos · 3, 6 ou 12 meses</span><em>Ver entregas e valores →</em></span></button><button type="button" class="pc rv" style="--d:.18s" data-open="comercial"><span class="recb">Indicado para este hotel</span><span class="pct">Hotéis urbanos e de negócios</span><span class="lt5"><i class="on">M</i><i class="on">O</i><i class="on">T</i><i class="on">O</i><i class="on">R</i></span><h3>MOTOR Comercial</h3><p class="pco">O MOTOR calibrado para quem viaja a trabalho: Google primeiro, preço na hora e página "Para empresas".</p><ul><li>Site novo com preço na hora</li><li>Página "Para empresas" com tarifa acordo</li><li>Google otimizado toda semana</li><li>Relatório em reais</li></ul><span class="pcl">Fecha os vazamentos: <b>Busca · Decisão · Recorrência</b></span><span class="pcg"><span>1 plano · 3, 6 ou 12 meses</span><em>Ver entregas e valores →</em></span></button><button type="button" class="pc rv" style="--d:.26s" data-open="creators"><span class="recb">Indicado para este hotel</span><span class="pct">Pousadas que se vendem pela imagem</span><span class="lt5"><i class="on">M</i><i class="on">O</i><i class="">T</i><i class="">O</i><i class="on">R</i></span><h3>Creators + Meta Ads</h3><p class="pco">Um creator da Kaptura hospedado todo mês e anúncios no Meta com o material dele. Começa sem site novo.</p><ul><li>Meta Ads na conta do hotel</li><li>1 a 3 sessões de creator por mês</li><li>Vídeos editados prontos para anúncio</li><li>Painel em reais, cada reserva no PMS</li></ul><span class="pcl">Fecha os vazamentos: <b>Desejo · Venda</b></span><span class="pcg"><span>3 planos · 3, 6 ou 12 meses</span><em>Ver entregas e valores →</em></span></button></div>
+      <div class="pgrid"><button type="button" class="pc rv" style="--d:.1s" data-open="motor"><span class="recb">Indicado para este hotel</span><span class="pct">Pousadas e hotéis de experiência</span><span class="lt5"><i class="on">M</i><i class="on">O</i><i class="on">T</i><i class="on">O</i><i class="on">R</i></span><h3>Método MOTOR</h3><p class="pco">O canal próprio de reservas inteiro: do anúncio ao fechamento no WhatsApp, com a reserva conferida no PMS.</p><ul><li>Google e Meta na conta do hotel</li><li>4 criativos novos por mês</li><li>Site boutique integrado ao motor do hotel</li><li>Plano de ofertas e de temporada</li><li>Script e treinamento do atendimento</li><li>Painel em reais, cada reserva no PMS</li></ul><span class="pcl">Vazamentos que fecha: <b>Desejo · Decisão · Venda</b></span><span class="pcg"><span>3 planos · 3 a 12 meses</span><em>Ver entregas e valores →</em></span></button><button type="button" class="pc rv" style="--d:.18s" data-open="comercial"><span class="recb">Indicado para este hotel</span><span class="pct">Hotéis urbanos e de negócios</span><span class="lt5"><i class="on">M</i><i class="on">O</i><i class="on">T</i><i class="on">O</i><i class="on">R</i></span><h3>MOTOR Comercial</h3><p class="pco">O MOTOR calibrado para quem viaja a trabalho: Google primeiro, preço na hora e página "Para empresas".</p><ul><li>Site novo com preço na hora</li><li>Página "Para empresas"</li><li>Google otimizado toda semana</li><li>Hotel Ads no Maps</li><li>Script de WhatsApp e cliente oculto</li><li>Relatório em reais</li></ul><span class="pcl">Vazamentos que fecha: <b>Busca · Decisão · Recorrência</b></span><span class="pcg"><span>1 plano · 3 a 12 meses</span><em>Ver entregas e valores →</em></span></button><button type="button" class="pc rv" style="--d:.26s" data-open="creators"><span class="recb">Indicado para este hotel</span><span class="pct">Pousadas que se vendem pela imagem</span><span class="lt5"><i class="on">M</i><i class="on">O</i><i class="">T</i><i class="">O</i><i class="on">R</i></span><h3>Creators + Meta Ads</h3><p class="pco">Um creator da Kaptura hospedado todo mês e anúncios no Meta com o material dele. Começa sem site novo.</p><ul><li>Meta Ads na conta do hotel</li><li>1 a 3 sessões de creator por mês</li><li>2 a 6 vídeos editados por mês</li><li>Fotos e material bruto de cada sessão</li><li>Remarketing para quem saiu do site</li><li>Painel em reais, cada reserva no PMS</li></ul><span class="pcl">Vazamentos que fecha: <b>Desejo · Venda</b></span><span class="pcg"><span>3 planos · 3 a 12 meses</span><em>Ver entregas e valores →</em></span></button></div>
       
     </div>
     <div class="pdet" data-prod="motor"><div class="tcvtop rv">
